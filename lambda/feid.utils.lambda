@@ -1,0 +1,113 @@
+/*
+fiako.utils vX.X.X
+LOGIC / UTILITIES FUNCTIONS
+BY FIAKO ENGINEERING
+GIST LOGIC/UTILITIES (feid.utils): https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa
+REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
+*/
+
+// INDEPENDENT FUNCTIONS
+
+REPEATCOLS = LAMBDA(
+    vector,
+    [num_repeat],
+    LET(
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        colvector, TOCOL(vector),
+        repeatvector, CHOOSECOLS(colvector, SEQUENCE(num_repeat,,1,0)),
+        TOCOL(repeatvector,,TRUE)
+    )
+);
+
+REPEATROWS = LAMBDA(
+    vector,
+    [num_repeat],
+    LET(
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        repeatvector, REPEATCOLS(vector, num_repeat),
+        TOROW(repeatvector,,TRUE)
+    )
+);
+
+SORTCOLS = LAMBDA(
+    table,
+    table_header,
+    LET(
+        header, table_header,
+        values, table,
+        ncols, COLUMNS(table),
+        headstack, VSTACK(header, SEQUENCE(1, ncols)),
+        headsorted, SORT(headstack, 1, 1, TRUE),
+        newindex, CHOOSEROWS(headsorted, 2),
+        sortedvalues, CHOOSECOLS(values, newindex),
+        sortedheader, CHOOSEROWS(headsorted, 1),
+        VSTACK(sortedheader, sortedvalues)
+    )
+);
+
+// DEPENDENT FUNCTIONS (USING PREVIOUS FUNCTIONS)
+
+RESHAPECOLS = LAMBDA(
+    array,
+    [nsplit],
+    LET(
+        nsplit, IF(ISOMITTED(nsplit), 2, nsplit),
+        ncols, COLUMNS(array),
+        nrows, ROWS(array),
+        divider, CEILING.MATH(ncols/nsplit),
+        seqarray, feid.utils.REPEATCOLS(SEQUENCE(1,divider), nsplit),
+        flatseq, TAKE(TOCOL(seqarray,,TRUE),ncols),
+        repseq, feid.utils.REPEATCOLS(flatseq, nrows),
+        flatarray, TOCOL(array),
+        sortedarray, SORTBY(flatarray,repseq),
+        IF(
+            MOD(ncols, nsplit)=0,
+            WRAPROWS(sortedarray, nsplit, ""),
+            CONCAT(
+                "Pick another nsplit. ",
+                "MOD(",ncols,",",nsplit,")",
+                " != 0."
+            )
+        )
+    )
+);
+
+FIND_INDEX2D = LAMBDA(
+    lookup_value, 
+    array,
+    LET(
+        nrows, ROWS(array),
+        ncols, COLUMNS(array),
+        size, nrows*ncols,
+        colarray, TOCOL(array),
+        seqrows, SORT(REPEATCOLS(SEQUENCE(nrows), ncols)),
+        seqcols, REPEATCOLS(SEQUENCE(ncols), nrows),
+        idnumber, SEQUENCE(size),
+        lookuptable, HSTACK(idnumber, seqrows, seqcols),
+        FILTER(lookuptable, colarray=lookup_value)
+    )
+);
+
+/*
+MIT License
+
+Copyright (c) 2022 PT. FIAKO ENJINIRING INDONESIA
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
