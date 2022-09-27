@@ -1,9 +1,10 @@
 /*
-fiako.utils vX.X.X
-LOGIC / UTILITIES FUNCTIONS
-BY FIAKO ENGINEERING
+fiako.utils v0.1.0
+LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
 GIST LOGIC/UTILITIES (feid.utils): https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa
 REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
+AUTHOR: @taruma, @iingLK
+TESTED: v2208
 */
 
 // INDEPENDENT FUNCTIONS
@@ -16,16 +17,6 @@ REPEATCOLS = LAMBDA(
         colvector, TOCOL(vector),
         repeatvector, CHOOSECOLS(colvector, SEQUENCE(num_repeat,,1,0)),
         TOCOL(repeatvector,,TRUE)
-    )
-);
-
-REPEATROWS = LAMBDA(
-    vector,
-    [num_repeat],
-    LET(
-        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
-        repeatvector, REPEATCOLS(vector, num_repeat),
-        TOROW(repeatvector,,TRUE)
     )
 );
 
@@ -47,6 +38,16 @@ SORTCOLS = LAMBDA(
 
 // DEPENDENT FUNCTIONS (USING PREVIOUS FUNCTIONS)
 
+REPEATROWS = LAMBDA(
+    vector,
+    [num_repeat],
+    LET(
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        repeatvector, REPEATCOLS(vector, num_repeat),
+        TOROW(repeatvector,,TRUE)
+    )
+);
+
 RESHAPECOLS = LAMBDA(
     array,
     [nsplit],
@@ -55,9 +56,9 @@ RESHAPECOLS = LAMBDA(
         ncols, COLUMNS(array),
         nrows, ROWS(array),
         divider, CEILING.MATH(ncols/nsplit),
-        seqarray, feid.utils.REPEATCOLS(SEQUENCE(1,divider), nsplit),
+        seqarray, CHOOSEROWS(SEQUENCE(1,divider), SEQUENCE(nsplit,,1,0)),
         flatseq, TAKE(TOCOL(seqarray,,TRUE),ncols),
-        repseq, feid.utils.REPEATCOLS(flatseq, nrows),
+        repseq, REPEATCOLS(flatseq, nrows),
         flatarray, TOCOL(array),
         sortedarray, SORTBY(flatarray,repseq),
         IF(
@@ -72,7 +73,7 @@ RESHAPECOLS = LAMBDA(
     )
 );
 
-FIND_INDEX2D = LAMBDA(
+FINDINDEX2D = LAMBDA(
     lookup_value, 
     array,
     LET(
