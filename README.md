@@ -6,6 +6,8 @@
 
 Official collection of Lambda Formula by FIAKO Engineering.
 
+Repository: [fiakoenjiniring/feidlambda](https://github.com/fiakoenjiniring/feidlambda)
+
 ## Koleksi FEID Lambda
 
 Saat ini hanya tersedia 1 koleksi fungsi lambda yaitu:
