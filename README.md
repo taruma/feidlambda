@@ -10,9 +10,7 @@ Official collection of Lambda Formula by FIAKO Engineering.
 
 Saat ini hanya tersedia 1 koleksi fungsi lambda yaitu:
 
-- `feid.utils` ([Official GIST](https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa)): kumpulan fungsi dasar berupa _logic_ atau _utilities_ yang dapat digunakan untuk membangun fungsi lambda bersifat _"narrative"_. 
-
-```https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa```
+- `feid.utils` ([Official GIST](https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa)): kumpulan fungsi dasar berupa _logic_ atau _utilities_ yang dapat digunakan untuk membangun fungsi lambda bersifat _"narrative"_. ```https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa```
 
 
 ## Instruksi penggunaan FEID Lambda
