@@ -14,8 +14,25 @@ Saat ini hanya tersedia 1 koleksi fungsi lambda yaitu:
 
 - `feid.utils` ([Official GIST](https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa)): kumpulan fungsi dasar berupa _logic_ atau _utilities_ yang dapat digunakan untuk membangun fungsi lambda bersifat _"narrative"_. ```https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa```
 
+### Koleksi `feid.utils`
 
-## Instruksi penggunaan FEID Lambda
+**v0.2** | [Demo/GIF seluruh fitur di v0.2](./feidlambda-v-0-2.md)
+
+- `feid.utils.COMPAREVECTOR`: Memeriksa apakah setiap elemen di LEFT VECTOR merupakan bagian (_equal_ / `=`)  dari RIGHT VECTOR. Return: BOOLEAN VECTOR.
+- `feid.utils.MULTICHECK`: Memeriksa apakah pada setiap kolom _equal_ / `=` dengan SEARCH VECTOR. Dan diproses setiap barisnya menggunakan AND atau OR. Return: BOOLEAN VECTOR. 
+- `feid.utils.DROPROWS`: Menghapus baris ke-n dari suatu array. Return: ARRAY. 
+- `feid.utils.DROPCOLS`: Menghapus kolom ke-n dari suatu array. Return: ARRAY. 
+- `feid.utils.COUNTMULTICHECK`: Menghitung jumlah `TRUE` dari `MULTICHECK`. Return: INTEGER.
+
+**v0.1** | [Demo/GIF seluruh fitur di v0.1](./feidlambda-v-0-1.md)
+
+- `feid.utils.REPEATCOLS`: Mengulangi _vector_ sebanyak _n_ dalam bentuk kolom. RETURN: COLUMN VECTOR. `=feid.utils.REPEATCOLS(vector, [num_repeat])`
+- `feid.utils.SORTCOLS`: Menyusun ulang setiap kolom, berdasarkan _header_ yang diurutkan. RETURN: ARRAY. `=feid.utils.SORTCOLS(table, table_header)`
+- `feid.utils.REPEATROWS`: Serupa dengan `.REPEATCOLS`, mengulangi _vector_ sebanyak _n_ dalam bentuk baris. RETURN: ROW VECTOR. `=feid.utils.REPEATROWS(vector, [num_repeat])`
+- `feid.utils.RESHAPECOLS`: Mengubah dimensi array dari dimensi _rows x columns_, menjadi _rows x nsplit_ tanpa mengubah susunan baris array. RETURN: ARRAY. `=feid.utils.RESHAPECOLS(array, [nsplit])`
+- `feid.utils.FINDINDEX2D`: Mencari index suatu elemen dari _array_ dengan keluaran berupa urutan elemennya, posisi baris dan kolom. RETURN: ARRAY / ROW VECTOR with {number element; index row; index column}. `=feid.utils.FINDINDEX2D(lookup_value, array)`
+
+## Instruksi instalasi FEID Lambda
 
 1. _Install_ add-ins **Advanced Formula Environment**.
 
