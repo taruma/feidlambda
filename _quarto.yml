@@ -3,15 +3,51 @@ project:
 
 website:
   title: "feidlambda"
+  search: false
   navbar:
+    title: false
+    background: primary
+    # foreground: warning
+    search: false
+    pinned: false
+
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: test.md
+        text: feidlambda
+        
+    # right:
+    #   - href: index.qmd
+    #     text: Home
+    #   - text: Hello
+    #     menu: 
+    #     - about.qmd
+    #     - test.md
+
+  # sidebar:
+  #   style: "floating"
+  #   search: false
+  #   contents:
+  #     - section: "Basics"
+  #       contents:
+  #         - index.qmd
+  #         - basics-knitr.qmd
+  #         - basics-jupyter.qmd
+  #     - section: "Layout"
+  #       contents:
+  #         - layout.qmd
+  #         - layout-knitr.qmd
+  #         - layout-jupyter.qmd    
+
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)"
+    left: "&copy; CC-BY PT. FIAKO ENJINIRING INDONESIA"
 
 format:
   html:
-    theme: cosmo
+    theme: cosmos
     css: styles.css
     toc: true
 
