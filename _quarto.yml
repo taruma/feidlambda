@@ -3,11 +3,11 @@ project:
 
 website:
   title: "feidlambda"
-  search: false
+  search: true
   navbar:
     title: false
-    background: primary
-    # foreground: warning
+    background: dark
+    foreground: warning
     search: false
     pinned: false
 
@@ -47,7 +47,7 @@ website:
 
 format:
   html:
-    theme: cosmos
+    theme: journal
     css: styles.css
     toc: true
 
