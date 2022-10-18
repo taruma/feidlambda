@@ -1,22 +1,48 @@
 project:
   type: website
+  preview: 
+      port: 3637
 
 website:
   title: "feidlambda"
-  search: true
+  description: "LAMBDAPROJECT by FIAKO ENGINEERING"
+
+  site-url: https://dev.fiako.engineering/feidlambda
+  repo-url: https://github.com/fiakoenjiniring/feidlambda
+
+  reader-mode: true
+  search: 
+    location: sidebar
+    type: textbox
+  page-navigation: true
+
+
+  # FOR TWITTER / open-graph
+  image: "fiakologo.png"
+  favicon: "fiakologo.png"
+
+  ## NAVIGATION BAR
   navbar:
     title: false
     background: dark
     foreground: warning
-    search: false
     pinned: false
 
+    collapse: true
+
+    logo: "fiakologo.png"
+
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - href: test.md
-        text: feidlambda
+      - text: Home
+        href: index.qmd
+      - text: feidlambda
+        menu:
+        - text: feidlambda v0.1
+          href: test.md
+        - text: feidlambda v0.2
+        # href: index.qmd
+      # - href: test.md
+      #   text: feidlambda
         
     # right:
     #   - href: index.qmd
@@ -26,28 +52,56 @@ website:
     #     - about.qmd
     #     - test.md
 
-  # sidebar:
-  #   style: "floating"
-  #   search: false
-  #   contents:
-  #     - section: "Basics"
-  #       contents:
-  #         - index.qmd
-  #         - basics-knitr.qmd
-  #         - basics-jupyter.qmd
-  #     - section: "Layout"
-  #       contents:
-  #         - layout.qmd
-  #         - layout-knitr.qmd
-  #         - layout-jupyter.qmd    
+    right:
+      - icon: plugin
+        href: https://twitter.com
+        aria-label: feidlambda twitter
+
+
+  ## SIDEBAR
+  sidebar:
+    style: "floating"
+    border: true
+
+    tools: 
+      - icon: house-door-fill
+        href: index.qmd
+        # menu: 
+        #   - text: github
+        #     href: https://github.com
+    
+    contents:
+      - section: "Basics"
+        contents:
+          - "Fitur 2021"
+          - "Dynamic Array"
+          - "LET"
+          - "LAMBDA"
+          - "Features 365"
+
+
+      - section: "Basics"
+        contents:
+          - index.qmd
+          - basics-knitr.qmd
+          - basics-jupyter.qmd
+      - section: "Layout"
+        contents:
+          - layout.qmd
+          - layout-knitr.qmd
+          - layout-jupyter.qmd    
 
   page-footer:
-    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)"
-    left: "&copy; CC-BY PT. FIAKO ENJINIRING INDONESIA"
+    right: >-
+      developed by **fiako**dev. 
+      built with ❤️ and [Quarto](https://quarto.org/).
+    left: >-
+      &copy; 2022 PT. FIAKO ENJINIRING INDONESIA. 
+      <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
 
 format:
   html:
-    theme: journal
+    theme: cosmo
     css: styles.css
     toc: true
 
