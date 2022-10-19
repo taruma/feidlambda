@@ -1,7 +1,19 @@
 ---
-title: "feidlambda"
+pagetitle: "feidlambda"
+# title: Home
+format: html
+toc: false
+html-math-method: mathjax
+link-external-newwindow: true
+page-layout: full
 ---
 
-This is a Quarto website.
+::: {.text-center .m-0}
+# $\text{fe}\hat{i}\text{d} \lambda \text{mbd} \bigtriangleup$ 🤔
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: {.callout-important .text-center}
+## Dalam Pengembangan
+
+Saat ini `feidlambda` (koleksi lambda) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca [Public Roadmap fiakodev Q4 2022](https://dev.fiako.engineering/logs/public-roadmap-october-2022).
+:::

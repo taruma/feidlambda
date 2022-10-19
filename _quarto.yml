@@ -5,14 +5,14 @@ project:
 
 website:
   title: "feidlambda"
-  description: "LAMBDAPROJECT by FIAKO ENGINEERING"
+  description: "feidlambda by fiakodev"
 
   site-url: https://dev.fiako.engineering/feidlambda
   repo-url: https://github.com/fiakoenjiniring/feidlambda
 
   reader-mode: true
   search: 
-    location: sidebar
+    location: navbar
     type: textbox
   page-navigation: true
 
@@ -25,8 +25,8 @@ website:
   navbar:
     title: false
     background: dark
-    foreground: warning
-    pinned: false
+    # foreground: warning
+    # pinned: false
 
     collapse: true
 
@@ -37,60 +37,16 @@ website:
         href: index.qmd
       - text: feidlambda
         menu:
-        - text: feidlambda v0.1
-          href: test.md
-        - text: feidlambda v0.2
-        # href: index.qmd
-      # - href: test.md
-      #   text: feidlambda
+        - href: release/feidlambda-0-2-0.qmd
+        - href: release/feidlambda-0-1-0.qmd
         
     # right:
-    #   - href: index.qmd
-    #     text: Home
-    #   - text: Hello
-    #     menu: 
-    #     - about.qmd
-    #     - test.md
-
-    right:
-      - icon: plugin
-        href: https://twitter.com
-        aria-label: feidlambda twitter
+    #   - icon: twitter
+    #     href: https://twitter.com
+    #     aria-label: feidlambda twitter
 
 
   ## SIDEBAR
-  sidebar:
-    style: "floating"
-    border: true
-
-    tools: 
-      - icon: house-door-fill
-        href: index.qmd
-        # menu: 
-        #   - text: github
-        #     href: https://github.com
-    
-    contents:
-      - section: "Basics"
-        contents:
-          - "Fitur 2021"
-          - "Dynamic Array"
-          - "LET"
-          - "LAMBDA"
-          - "Features 365"
-
-
-      - section: "Basics"
-        contents:
-          - index.qmd
-          - basics-knitr.qmd
-          - basics-jupyter.qmd
-      - section: "Layout"
-        contents:
-          - layout.qmd
-          - layout-knitr.qmd
-          - layout-jupyter.qmd    
-
   page-footer:
     right: >-
       developed by **fiako**dev. 
@@ -101,8 +57,8 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: default
+    # css: styles.css
     toc: true
 
 
