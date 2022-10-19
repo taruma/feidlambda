@@ -58,7 +58,7 @@ website:
 format:
   html:
     theme: default
-    # css: styles.css
+    css: styles.css
     toc: true
 
 

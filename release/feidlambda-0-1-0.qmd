@@ -8,23 +8,18 @@ abstract: |
   Pada _prerelease_ feidlambda (v0.1.0) memperkenalkan beberapa fitur untuk memanipulasi
   _dynamic array_. Berikut fitur yang ditambahkan pada `feidlambda v0.1.0`: `REPEATCOLS`, `SORTCOLS`, `REPEATROWS`, `REPEATCOLS`, `FINDINDEX2D`.
 date: 2022-09-28
-format: 
-  html:
-    toc: true
-    toc-location: right
 
-    number-sections: true
-    number-offset: [0, 0]
+toc: true
+toc-location: right
 
-    lang: id
-    license: CC BY-NC-SA
-    link-external-newwindow: true
-    cap-location: bottom
-    image-height: 30%
-    
+number-sections: true
+# number-offset: [0, 0]
+
+link-external-newwindow: true
+layout: article
 ---
 
-FUNCTIONS FEIDLAMBDA v0.1:
+Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.1.0:
 
 - `feid.utils.REPEATCOLS`: Mengulangi _vector_ sebanyak _n_ dalam bentuk kolom. RETURN: COLUMN VECTOR.
 - `feid.utils.SORTCOLS`: Menyusun ulang setiap kolom, berdasarkan _header_ yang diurutkan. RETURN: ARRAY.
@@ -42,40 +37,47 @@ FUNCTIONS FEIDLAMBDA v0.1:
 Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 ::: 
 
-::: {.text-center}
-![REPEATCOLS](./img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
-:::
-
-
+![`feid.utils.REPEATCOLS`](./img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
 
 ## SORTCOLS
 
-```=feid.utils.SORTCOLS(table, table_header)```
+```r
+=feid.utils.SORTCOLS(table, table_header)
+```
 
-Catatan: Jika input table sebagai array, maka pastikan memisahkan antara header array dan isinya.
+::: {.column-margin .callout-note}
+Jika _input table_ sebagai `array`, maka pastikan memisahkan antara _header array_ dan isinya.
+::: 
 
-![](./img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
+![`feid.utils.SORTCOLS`](./img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
 
 ## REPEATROWS
 
-```=feid.utils.REPEATROWS(vector, [num_repeat])```
+```r
+=feid.utils.REPEATROWS(vector, [num_repeat])
+```
+::: {.column-margin .callout-note}
+Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
+::: 
 
-Catatan: Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
-
-![](./img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
+![`feid.utils.REPEATROWS`](./img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
 
 ## RESHAPECOLS
 
-```=feid.utils.RESHAPECOLS(array, [nsplit])```
+```r
+=feid.utils.RESHAPECOLS(array, [nsplit])
+```
 
-Catatan: Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
+::: {.column-margin .callout-note}
+Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
+::: 
 
-![](./img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
+![`feid.utils.RESHAPECOLS`](./img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
 
 ## FINDINDEX2D
 
-```=feid.utils.FINDINDEX2D(lookup_value, array)```
+```r
+=feid.utils.FINDINDEX2D(lookup_value, array)
+```
 
-![](./img-0-1-0/demo-feidlambda-0-1-findindex2d.gif)
-
----
+![`feid.utils.FINDINDEX2D`](./img-0-1-0/demo-feidlambda-0-1-findindex2d.gif)
