@@ -1,0 +1,113 @@
+---
+title: |
+  feidlambda 0.2.0
+subtitle: |
+  Fitur terbaru di `feidlambda v0.2.0`
+author: "Taruma Sakti Megariansyah"
+abstract: |
+  Pada _prerelease_ feidlambda (v0.2.0) memperkenalkan beberapa fitur untuk memanipulasi
+  _dynamic array_. Berikut fitur yang ditambahkan pada `feidlambda v0.2.0`: `COMPAREVECTOR`, `MULTICHECK`, `DROPROWS`, `DROPCOLS`, `COUNTMULTICHECK`.
+date: 2022-09-28
+
+toc: true
+toc-location: right
+number-sections: true
+number-offset: [0, 5]
+link-external-newwindow: true
+layout: article
+---
+
+::: {.callout-important icon="false" .text-center}
+## Official GIST **feid.utils** (v0.2.0)
+<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa><br>
+[_Pre-release Page_ (GitHub)](https://github.com/fiakoenjiniring/feidlambda/releases/tag/v0.2.0){.fs-6}
+:::
+
+Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.2.0:
+
+## COMPAREVECTOR
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`COMPAREVECTOR 
+: Memeriksa apakah setiap elemen di `LEFT VECTOR` merupakan bagian (_equal_ / `=`) dari `RIGHT VECTOR`.
+
+_return_
+: _BOOLEAN VECTOR_
+:::
+
+```r
+=feid.utils.COMPAREVECTOR(left_vector, right_vector)
+```
+
+![`feid.utils.COMPAREVECTOR`](./img-0-2-0/feidlambda-v0-2-comparevector.gif)
+
+## MULTICHECK
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`MULTICHECK 
+: Memeriksa apakah pada setiap kolom _equal_ / `=` dengan `SEARCH VECTOR`. Dan diproses setiap barisnya menggunakan `AND` atau `OR`.
+
+_return_
+: _BOOLEAN VECTOR_
+:::
+::: {.column-margin .callout-note}
+`check_condition` diisi `"OR"` atau `"AND"`, jika tidak diisi dianggap `"AND"`.
+:::
+
+```r
+=feid.utils.MULTICHECK(array, search_vector, [check_condition])
+```
+
+![`feid.utils.MULTICHECK`](./img-0-2-0/feidlambda-v0-2-multicheck.gif)
+
+## DROPROWS
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`DROPROWS 
+: Menghapus baris ke-n dari `array`.
+
+_return_
+: _ARRAY_
+:::
+
+```r
+=feid.utils.DROPROWS(array, index_to_drop)
+```
+
+![`feid.utils.DROPROWS`](./img-0-2-0/feidlambda-v0-2-droprows.gif)
+
+## DROPCOLS
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`DROPCOLS 
+: Menghapus kolom ke-n dari `array`.
+
+_return_
+: _ARRAY_
+:::
+
+```r
+=feid.utils.DROPCOLS(array, index_to_drop)
+```
+
+![`feid.utils.DROPCOLS`](./img-0-2-0/feidlambda-v0-2-dropcols.gif)
+
+## COUNTMULTICHECK
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`COUNTMULTICHECK 
+: Menghitung jumlah `TRUE` dari `MULTICHECK`.
+
+_return_
+: _INTEGER_
+:::
+::: {.column-margin .callout-note}
+`check_condition` diisi `"OR"` atau `"AND"`, jika tidak diisi dianggap `"AND"`.
+:::
+
+```r
+=feid.utils.COUNTMULTICHECK(array, search_vector, [check_condition])
+```
+
+![`feid.utils.COUNTMULTICHECK`](./img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
+

@@ -1,0 +1,67 @@
+project:
+  type: website
+  preview: 
+      port: 3637
+
+website:
+  title: "feidlambda"
+  description: "feidlambda by fiakodev"
+
+  site-url: https://dev.fiako.engineering/feidlambda
+  repo-url: https://github.com/fiakoenjiniring/feidlambda
+
+  reader-mode: true
+  search: 
+    location: navbar
+    type: textbox
+  page-navigation: true
+
+
+  # FOR TWITTER / open-graph
+  image: "fiakologo.png"
+  favicon: "fiakologo.png"
+
+  ## NAVIGATION BAR
+  navbar:
+    title: false
+    background: dark
+    # foreground: warning
+    # pinned: false
+
+    collapse: true
+
+    logo: "fiakologo.png"
+
+    left:
+      - text: Home
+        href: index.qmd
+      - text: feidlambda 0.x
+        menu:
+        - href: release/feidlambda-0-2-0.qmd
+        - href: release/feidlambda-0-1-0.qmd
+        - href: release/feidlambda.qmd
+        - href: release/penggunaan.qmd
+        
+    # right:
+    #   - icon: twitter
+    #     href: https://twitter.com
+    #     aria-label: feidlambda twitter
+
+
+  ## SIDEBAR
+  page-footer:
+    right: >-
+      developed by **fiako**dev. 
+      built with ❤️ and [Quarto](https://quarto.org/).
+    left: >-
+      &copy; 2022 PT. FIAKO ENJINIRING INDONESIA. 
+      <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
+
+format:
+  html:
+    theme: zephyr # lux, materia, minty, sandstone, spacelab, yeti
+    css: styles.css
+    toc: true
+
+
+
