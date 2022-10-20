@@ -10,7 +10,7 @@ website:
   title: "feidlambda"
   description: "feidlambda by fiakodev"
 
-  site-url: https://dev.fiako.engineering/feidlambda
+  site-url: https://lambda.fiako.engineering
   repo-url: https://github.com/fiakoenjiniring/feidlambda
 
   reader-mode: true
