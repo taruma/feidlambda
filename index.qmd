@@ -9,7 +9,7 @@ page-layout: full
 ---
 
 ::: {.text-center .m-0}
-# $\text{fe}\hat{i}\text{d} \lambda \text{mbd} \bigtriangleup$ 🤔
+# $\text{fe}\hat{i}\text{d} \lambda \text{mbd} \bigtriangleup$
 :::
 
 ::: {.text-center .callout-important appearance="simple" icon="false"}

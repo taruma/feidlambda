@@ -18,7 +18,8 @@ layout: article
 
 ::: {.callout-important icon="false" .text-center}
 ## Official GIST **feid.utils** (v0.2.0)
-<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa>
+<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa><br>
+[_Pre-release Page_ (GitHub)](https://github.com/fiakoenjiniring/feidlambda/releases/tag/v0.1.0){.fs-6}
 :::
 
 Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.1.0:
