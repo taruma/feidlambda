@@ -12,6 +12,7 @@ website:
 
   site-url: https://lambda.fiako.engineering
   repo-url: https://github.com/fiakoenjiniring/feidlambda
+  repo-actions: [edit, issue]
 
   reader-mode: true
   search: 
@@ -38,12 +39,14 @@ website:
     left:
       - text: Home
         href: index.qmd
+      - text: Dokumentasi
+        menu:
+        - href: docs/penggunaan.qmd
       - text: feidlambda 0.x
         menu:
+        - href: release/feidlambda.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
-        - href: release/feidlambda.qmd
-        - href: release/penggunaan.qmd
         
     # right:
     #   - icon: twitter

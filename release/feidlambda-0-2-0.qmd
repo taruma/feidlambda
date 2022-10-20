@@ -29,15 +29,18 @@ Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.2.0:
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`COMPAREVECTOR 
-: Memeriksa apakah setiap elemen di `LEFT VECTOR` merupakan bagian (_equal_ / `=`) dari `RIGHT VECTOR`.
+: Memeriksa apakah setiap elemen di `left_vector` memiliki nilai yang sama di isian `right_vector`. 
 
 _return_
-: _BOOLEAN VECTOR_
+: _LOGICAL VECTOR_
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.COMPAREVECTOR(left_vector, right_vector)
 ```
+:::
 
 ![`feid.utils.COMPAREVECTOR`](./img-0-2-0/feidlambda-v0-2-comparevector.gif)
 
@@ -45,18 +48,22 @@ _return_
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`MULTICHECK 
-: Memeriksa apakah pada setiap kolom _equal_ / `=` dengan `SEARCH VECTOR`. Dan diproses setiap barisnya menggunakan `AND` atau `OR`.
+: Memeriksa apakah setiap kolom pada `array` memiliki nilai isian `search_vector`. Dan diproses setiap barisnya menggunakan `check_condition` yang dapat diisi dengan `"AND"` atau `"OR"`.
 
 _return_
 : _BOOLEAN VECTOR_
 :::
-::: {.column-margin .callout-note}
+
+::: {.column-margin .callout-warning}
 `check_condition` diisi `"OR"` atau `"AND"`, jika tidak diisi dianggap `"AND"`.
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.MULTICHECK(array, search_vector, [check_condition])
 ```
+:::
 
 ![`feid.utils.MULTICHECK`](./img-0-2-0/feidlambda-v0-2-multicheck.gif)
 
@@ -64,15 +71,18 @@ _return_
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`DROPROWS 
-: Menghapus baris ke-n dari `array`.
+: Menghapus baris berdasarkan `index_to_drop` dari `array`.
 
 _return_
 : _ARRAY_
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.DROPROWS(array, index_to_drop)
 ```
+:::
 
 ![`feid.utils.DROPROWS`](./img-0-2-0/feidlambda-v0-2-droprows.gif)
 
@@ -80,15 +90,18 @@ _return_
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`DROPCOLS 
-: Menghapus kolom ke-n dari `array`.
+: Menghapus kolom berdasarkan `index_to_drop` dari `array`.
 
 _return_
 : _ARRAY_
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.DROPCOLS(array, index_to_drop)
 ```
+:::
 
 ![`feid.utils.DROPCOLS`](./img-0-2-0/feidlambda-v0-2-dropcols.gif)
 
@@ -101,13 +114,16 @@ _return_
 _return_
 : _INTEGER_
 :::
-::: {.column-margin .callout-note}
+::: {.column-margin .callout-warning}
 `check_condition` diisi `"OR"` atau `"AND"`, jika tidak diisi dianggap `"AND"`.
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.COUNTMULTICHECK(array, search_vector, [check_condition])
 ```
+:::
 
 ![`feid.utils.COUNTMULTICHECK`](./img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
 

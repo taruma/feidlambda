@@ -28,7 +28,7 @@ Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.1.0:
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`REPEATCOLS 
-: Mengulangi _vector_ sebanyak _n_ dalam bentuk kolom.
+: Mengulangi `vector` sebanyak `num_repeat` dalam bentuk kolom.
 
 _return_
 : _COLUMN VECTOR_
@@ -38,9 +38,12 @@ _return_
 Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 ::: 
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.REPEATCOLS(vector, [num_repeat])
 ```
+:::
 
 ![`feid.utils.REPEATCOLS`](./img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
 
@@ -48,19 +51,22 @@ Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`SORTCOLS 
-: Menyusun ulang setiap kolom, berdasarkan _header_ yang diurutkan.
+: Menyusun ulang urutan kolom `table`, berdasarkan `table_header` yang telah diurutkan.
 
 _return_
 : _ARRAY_
 :::
 
 ::: {.column-margin .callout-warning appearance="simple"}
-Jika _input table_ sebagai `array`, maka pastikan memisahkan antara _header array_ dan isinya.
+Jika _input_ `table` sebagai `array`, maka pastikan memisahkan antara `table_header` dengan isinya.
 ::: 
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.SORTCOLS(table, table_header)
 ```
+:::
 
 ![`feid.utils.SORTCOLS`](./img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
 
@@ -68,7 +74,7 @@ Jika _input table_ sebagai `array`, maka pastikan memisahkan antara _header arra
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`REPEATROWS 
-: Serupa dengan `.REPEATCOLS`, mengulangi _vector_ sebanyak _n_ dalam bentuk baris
+: Mengulangi `vector` sebanyak `num_repeat` dalam bentuk baris.
 
 _return_
 : _ROW VECTOR_
@@ -78,9 +84,12 @@ _return_
 Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 ::: 
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.REPEATROWS(vector, [num_repeat])
 ```
+:::
 
 ![`feid.utils.REPEATROWS`](./img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
 
@@ -88,7 +97,7 @@ Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 
 ::: {.callout-tip appearance="minimal"}
 `feid.utils.`RESHAPECOLS
-: Mengubah dimensi array dari dimensi _rows x columns_, menjadi _rows x nsplit_ tanpa mengubah susunan baris _array_.
+: Mengubah dimensi `array` dari dimensi $\text{rows} \times \text{cols}$, menjadi $\text{rows} + \text{} \times \textrm{nsplit}$ tanpa mengubah susunan baris _array_.
 
 _return_
 : _ARRAY_
@@ -98,9 +107,12 @@ _return_
 Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
 ::: 
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.RESHAPECOLS(array, [nsplit])
 ```
+:::
 
 ![`feid.utils.RESHAPECOLS`](./img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
 
@@ -114,8 +126,11 @@ _return_
 : _ARRAY / ROW VECTOR_ with {number element; index row; index column}
 :::
 
+::: {.callout-caution icon="false" .text-center .font-monospace}
+## _SYNTAX_
 ```r
 =feid.utils.FINDINDEX2D(lookup_value, array)
 ```
+:::
 
 ![`feid.utils.FINDINDEX2D`](./img-0-1-0/demo-feidlambda-0-1-findindex2d.gif)

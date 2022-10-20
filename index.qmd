@@ -9,7 +9,7 @@ page-layout: full
 ---
 
 ::: {.text-center .m-0}
-# $\text{fe}\hat{i}\text{d} \lambda \text{mbd} \bigtriangleup$
+# $\text{fe}\hat{i}\text{d} \textbf{l} \lambda \text{m} \textsf{b} \texttt{d} \bigtriangleup$
 :::
 
 ::: {.text-center .callout-important appearance="simple" icon="false"}
@@ -22,5 +22,5 @@ Saat ini `feidlambda` (koleksi lambda) masih dalam tahap pengembangan. Untuk leb
 ## Official GIST **feid.utils** (v0.2.0)
 <https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa>
 ---
-[v0.2.0](release/feidlambda-0-2-0.qmd) | [v0.1.0](release/feidlambda-0-1-0.qmd) | [panduan](release/penggunaan.qmd)
+[v0.2.0](release/feidlambda-0-2-0.qmd) | [v0.1.0](release/feidlambda-0-1-0.qmd) | [panduan](docs/penggunaan.qmd) | [source code](release/feidlambda.qmd)
 :::
