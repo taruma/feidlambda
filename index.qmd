@@ -12,8 +12,15 @@ page-layout: full
 # $\text{fe}\hat{i}\text{d} \lambda \text{mbd} \bigtriangleup$ 🤔
 :::
 
-::: {.callout-important .text-center}
+::: {.text-center .callout-important appearance="simple" icon="false"}
 ## Dalam Pengembangan
 
 Saat ini `feidlambda` (koleksi lambda) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca [Public Roadmap fiakodev Q4 2022](https://dev.fiako.engineering/logs/public-roadmap-october-2022).
+:::
+
+::: {.callout-tip icon="false" .text-center}
+## Official GIST **feid.utils** (v0.2.0)
+<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa>
+---
+[v0.2.0](release/feidlambda-0-2-0.qmd) | [v0.1.0](release/feidlambda-0-1-0.qmd) | [panduan](release/penggunaan.qmd)
 :::

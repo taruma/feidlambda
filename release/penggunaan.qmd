@@ -1,0 +1,58 @@
+---
+title: |
+  Penggunaan feidlambda
+subtitle: |
+  Panduan pemasangan koleksi lambda `feidlambda` versi 0.x
+author: Taruma Sakti Megariansyah
+date: 2022-10-20
+toc: true
+toc-location: right
+number-sections: true
+link-external-newwindow: true
+layout: article
+---
+
+## **Advanced Formula Environment**
+
+_Install_ add-ins **Advanced Formula Environment** dari menu `Insert` > `Get Add-ins` > Cari **Advanced Formula Environment** (AFE). 
+
+::: {.column-page}
+![Menambahkan **Advanced Formula Environment** _Add-ins_](https://user-images.githubusercontent.com/1007910/192432581-0fd50e59-b0d0-4d9a-b802-81fda91060cb.png)
+:::
+
+## _Import_ menggunakan AFE
+
+Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Home` > `Advanced Formula Environment` > `Import`. 
+
+::: {.column-page}
+![Melakukan _import_ di AFE](https://user-images.githubusercontent.com/1007910/192432838-0b21184d-f06b-4d03-b56b-97aad0cd392a.png)
+:::
+
+## Salin _Github Gist URL_
+
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new namespace_" dan isi _namespace_ dengan nama koleksi (contoh: `feid.utils`). 
+
+::: {.callout-tip appearance="simple"}
+Lakukan langkah _import_ (2-3) untuk setiap koleksi yang ingin ditambahkan. 
+:::
+
+![Isi _GitHub Gist URL_ dan _Namespace_](https://user-images.githubusercontent.com/1007910/192433790-edfb2237-dcc9-41e0-898e-36d8a58e3438.png)
+
+## _Sync_ formula 
+
+Setelah _import_ seluruh koleksi yang digunakan, lakukan _synchronize_ yang bertujuan menyamakan nama pada _Formula/Excel Name Manager_. 
+
+::: {.callout-caution appearance="simple"}
+Jika muncul peringatan mengenai _hidden sheets_, pilih "Allow ...". 
+::: 
+
+![_Synchronize_ AFE](https://user-images.githubusercontent.com/1007910/192444394-78f8a5d5-1015-45b7-91e9-57f77f86923f.png)
+
+
+## Gunakan koleksi lambda
+
+Selesai _sync_, fungsi lambda bisa langsung digunakan. 
+
+::: {.column-page}
+![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/192445916-242b2745-110b-44f7-9332-245b7fdaa695.png)
+:::

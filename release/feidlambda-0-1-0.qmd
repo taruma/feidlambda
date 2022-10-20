@@ -11,70 +11,107 @@ date: 2022-09-28
 
 toc: true
 toc-location: right
-
 number-sections: true
-# number-offset: [0, 0]
-
 link-external-newwindow: true
 layout: article
 ---
 
+::: {.callout-important icon="false" .text-center}
+## Official GIST **feid.utils** (v0.2.0)
+<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa>
+:::
+
 Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.1.0:
 
-- `feid.utils.REPEATCOLS`: Mengulangi _vector_ sebanyak _n_ dalam bentuk kolom. RETURN: COLUMN VECTOR.
-- `feid.utils.SORTCOLS`: Menyusun ulang setiap kolom, berdasarkan _header_ yang diurutkan. RETURN: ARRAY.
-- `feid.utils.REPEATROWS`: Serupa dengan `.REPEATCOLS`, mengulangi _vector_ sebanyak _n_ dalam bentuk baris. RETURN: ROW VECTOR.
-- `feid.utils.RESHAPECOLS`: Mengubah dimensi array dari dimensi _rows x columns_, menjadi _rows x nsplit_ tanpa mengubah susunan baris array. RETURN: ARRAY.
-- `feid.utils.FINDINDEX2D`: Mencari index suatu elemen dari _array_ dengan keluaran berupa urutan elemennya, posisi baris dan kolom. RETURN: ARRAY / ROW VECTOR with {number element; index row; index column}.
-
-
 ## REPEATCOLS
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`REPEATCOLS 
+: Mengulangi _vector_ sebanyak _n_ dalam bentuk kolom.
+
+_return_
+: _COLUMN VECTOR_
+:::
+
+::: {.column-margin .callout-warning appearance="simple"}
+Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
+::: 
 
 ```r
 =feid.utils.REPEATCOLS(vector, [num_repeat])
 ```
-::: {.column-margin .callout-note}
-Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
-::: 
 
 ![`feid.utils.REPEATCOLS`](./img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
 
 ## SORTCOLS
 
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`SORTCOLS 
+: Menyusun ulang setiap kolom, berdasarkan _header_ yang diurutkan.
+
+_return_
+: _ARRAY_
+:::
+
+::: {.column-margin .callout-warning appearance="simple"}
+Jika _input table_ sebagai `array`, maka pastikan memisahkan antara _header array_ dan isinya.
+::: 
+
 ```r
 =feid.utils.SORTCOLS(table, table_header)
 ```
-
-::: {.column-margin .callout-note}
-Jika _input table_ sebagai `array`, maka pastikan memisahkan antara _header array_ dan isinya.
-::: 
 
 ![`feid.utils.SORTCOLS`](./img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
 
 ## REPEATROWS
 
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`REPEATROWS 
+: Serupa dengan `.REPEATCOLS`, mengulangi _vector_ sebanyak _n_ dalam bentuk baris
+
+_return_
+: _ROW VECTOR_
+:::
+
+::: {.column-margin .callout-warning appearance="simple"}
+Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
+::: 
+
 ```r
 =feid.utils.REPEATROWS(vector, [num_repeat])
 ```
-::: {.column-margin .callout-note}
-Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
-::: 
 
 ![`feid.utils.REPEATROWS`](./img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
 
 ## RESHAPECOLS
 
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`RESHAPECOLS
+: Mengubah dimensi array dari dimensi _rows x columns_, menjadi _rows x nsplit_ tanpa mengubah susunan baris _array_.
+
+_return_
+: _ARRAY_
+:::
+
+::: {.column-margin .callout-warning appearance="simple"}
+Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
+::: 
+
 ```r
 =feid.utils.RESHAPECOLS(array, [nsplit])
 ```
 
-::: {.column-margin .callout-note}
-Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
-::: 
-
 ![`feid.utils.RESHAPECOLS`](./img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
 
 ## FINDINDEX2D
+
+::: {.callout-tip appearance="minimal"}
+`feid.utils.`FINDINDEX2D
+: Mencari index suatu elemen dari _array_ dengan keluaran berupa urutan elemennya, posisi baris dan kolom.
+
+_return_
+: _ARRAY / ROW VECTOR_ with {number element; index row; index column}
+:::
 
 ```r
 =feid.utils.FINDINDEX2D(lookup_value, array)
