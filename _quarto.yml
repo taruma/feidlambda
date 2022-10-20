@@ -3,6 +3,9 @@ project:
   preview: 
       port: 3637
 
+execute: 
+  freeze: auto
+
 website:
   title: "feidlambda"
   description: "feidlambda by fiakodev"
