@@ -1,6 +1,6 @@
 # feidlambda
 
-Situs: https://dev.fiako.engineering/feidlambda
+Situs: https://lambda.fiako.engineering
 
 Koleksi dan portal informasi lambda oleh FIAKO Engineering
 
