@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lambda.fiako.engineering/release/penggunaan.html</loc>
-    <lastmod>2022-10-20T09:25:00.098Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
-    <lastmod>2022-10-20T09:25:00.838Z</lastmod>
+    <loc>https://lambda.fiako.engineering/index.html</loc>
+    <lastmod>2022-10-20T14:57:53.293Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2022-10-20T09:25:01.778Z</lastmod>
+    <lastmod>2022-10-20T14:57:54.485Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2022-10-20T09:25:02.374Z</lastmod>
+    <lastmod>2022-10-20T14:57:55.265Z</lastmod>
   </url>
   <url>
-    <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2022-10-20T09:25:02.706Z</lastmod>
+    <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
+    <lastmod>2022-10-20T14:57:56.149Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2022-10-20T09:25:02.994Z</lastmod>
+    <lastmod>2022-10-20T14:57:56.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/penggunaan.html</loc>
+    <lastmod>2022-10-20T14:57:57.397Z</lastmod>
   </url>
 </urlset>
