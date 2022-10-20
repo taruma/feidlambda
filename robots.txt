@@ -1,1 +1,1 @@
-Sitemap: https://dev.fiako.engineering/feidlambda/sitemap.xml
+Sitemap: https://lambda.fiako.engineering/sitemap.xml
