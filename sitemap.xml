@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2022-10-20T15:00:16.395Z</lastmod>
+    <lastmod>2022-10-21T09:45:12.007Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2022-10-20T15:00:17.339Z</lastmod>
+    <lastmod>2022-10-21T09:45:12.943Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2022-10-20T15:00:18.047Z</lastmod>
+    <lastmod>2022-10-21T09:45:13.535Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
-    <lastmod>2022-10-20T15:00:19.839Z</lastmod>
+    <lastmod>2022-10-21T09:45:14.215Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2022-10-20T15:00:20.511Z</lastmod>
+    <lastmod>2022-10-21T09:45:14.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
+    <lastmod>2022-10-21T09:45:15.235Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/penggunaan.html</loc>
-    <lastmod>2022-10-20T15:00:20.823Z</lastmod>
+    <lastmod>2022-10-21T09:45:15.583Z</lastmod>
   </url>
 </urlset>
