@@ -8,7 +8,7 @@ execute:
 
 website:
   title: "feidlambda"
-  description: "feidlambda by fiakodev"
+  description: "Koleksi lambda oleh FIAKO Engineering"
 
   site-url: https://lambda.fiako.engineering
   repo-url: https://github.com/fiakoenjiniring/feidlambda
@@ -42,6 +42,7 @@ website:
       - text: Dokumentasi
         menu:
         - href: docs/penggunaan.qmd
+        - href: docs/glossary.qmd
       - text: feidlambda 0.x
         menu:
         - href: release/feidlambda.qmd
@@ -53,6 +54,22 @@ website:
     #     href: https://twitter.com
     #     aria-label: feidlambda twitter
 
+  sidebar: 
+    - id: side-docs
+      style: floating
+      contents:
+        - section: "Dokumentasi"
+          contents: 
+            - href: docs/penggunaan.qmd
+            - href: docs/glossary.qmd
+
+    - id: side-feidlambda
+      style: floating
+      contents:
+        - section: Basics
+          contents:
+            - "yoooo"
+            - "aaaa"
 
   ## SIDEBAR
   page-footer:

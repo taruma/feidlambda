@@ -6,6 +6,7 @@ toc: false
 html-math-method: mathjax
 link-external-newwindow: true
 page-layout: full
+sidebar: false
 ---
 
 ::: {.text-center .m-0}
