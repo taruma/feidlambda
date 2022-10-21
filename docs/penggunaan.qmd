@@ -10,6 +10,7 @@ toc-location: right
 number-sections: true
 link-external-newwindow: true
 layout: article
+sidebar: side-docs
 ---
 
 ## **Advanced Formula Environment**
