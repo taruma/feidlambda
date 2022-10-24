@@ -91,17 +91,144 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 - Gunakan `numerical_vector=1` untuk menghasilkan _logical vector_ (`{TRUE, FALSE, TRUE}`)
 :::
 
-## Menggunakan `AND` dan `OR`
+<!-- ## Menggunakan `AND` dan `OR` -->
 
 # Fungsi `IS*`
 
-## Kumpulan Fungsi `IS*`
+## Fungsi `IS*`
 
+### SYNTAX
 
+```default
+=IS*(value)
+```
+
+::: {.incremental}
+- Memeriksa nilai tertentu dan mengembalikan `TRUE` atau `FALSE` bergantung pada hasilnya. ^[[Fungsi IS](https://support.microsoft.com/id-id/office/fungsi-is-0f2d7971-6019-40a0-a171-f2d869135665), Microsoft Support.]
+- `ISBLANK` bernilai `TRUE` jika sel kosong.
+- `ISNUMBER` bernilai `TRUE` jika sel berisikan angka.
+:::
+
+## Koleksi Fungsi `IS*` (1)
+
+### Periksa nilai error / kosong
+
+::: {.incremental}
+- `ISNA(...)`: Cek nilai apakah `#N/A`.
+- `ISERR(...)`: Cek nilai apakah error selain `#N/A` (`#VALUE!`, `#REF!`, `#DIV/0!`, `#NUM!`, `#NAME?`, atau `#NULL!`).
+- `ISERROR(...)`: Cek nilai apakah error (seluruh jenis error).
+- `ISBLANK(...)`: Cek nilai apakah kosong.
+:::
+
+## Koleksi Fungsi `IS*` (2)
+
+### Periksa nilai jenis sel
+
+::: {.incremental}
+- `ISLOGICAL(...)`: Cek nilai apakah _logical_ (`TRUE` atau `FALSE`).
+- `ISNUMBER(...)`: Cek nilai apakah _numeric_ ($\mathbb{R}$).
+- `ISTEXT(...)`: Cek nilai apakah teks. Dan `ISNONTEXT(...)`: Cek niai apakah bukan teks (_number_, _logical_, _error_)
+- `ISFORMULA(...)`: Cek nilai apakah formula.
+:::
+
+## Koleksi Fungsi `IS*` (3)
+
+### Periksa nilai angka
+
+::: {.incremental}
+- `ISEVEN(...)`: Cek nilai apakah bilangan genap.
+- `ISODD(...)`: Cek nilai apakah bilangan ganjil.
+:::
 
 # 3 _Dynamic Array Formula_ (DAF)
 
+## Menyeleksi/memilih data 
+
+- `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
+
+```default
+=FILTER(array, include, [if_empty])
+```
+
+- `UNIQUE(...)`: Fungsi `UNIQUE` menghasilkan daftar nilai yang unik dalam daftar atau rentang. ^[[Fungsi UNIQUE](https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e), Microsoft Support.]
+
+```default
+=UNIQUE(array, [by_col], [exactly_once])
+```
+
+## Membangkitkan data {.smaller}
+
+- `SEQUENCE(...)`: Fungsi `SEQUENCE` memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti ${1, 2, 3, 4, \dots}$. ^[[Fungsi SEQUENCE](https://support.microsoft.com/id-id/office/fungsi-sequence-57467a98-57e0-4817-9f14-2eb78519ca90), Microsoft Support.]
+
+```default
+=SEQUENCE(rows, [columns], [start], [step])
+```
+
+- `RANDARRAY(...)`: Fungsi `RANDARRAY` menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. ^[[Fungsi RANDARRAY](https://support.microsoft.com/id-id/office/randarray-fungsi-randarray-21261e55-3bec-4885-86a6-8b0a47fd4d33), Microsoft Support.]
+
+```default
+=RANDARRAY([rows], [columns], [min], [max], [whole_number])
+```
+
+## Menyusun data
+
+- `SORT(...)`: Fungsi `SORT` mengurutkan konten rentang atau larik. ^[[Fungsi SORT](https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c), Microsoft Support.]
+
+```default
+=SORT(array, [sort_index], [sort_order], [by_col])
+```
+
+- `SORTBY(...)`: Fungsi `SORTBY` mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. ^[[Fungsi SORTBY](https://support.microsoft.com/id-id/office/fungsi-sortby-cd2d7a62-1b93-435c-b561-d6a35134f28f), Microsoft Support.]
+
+```default
+=SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
+```
+
+## Mencari data {.smaller}
+
+- `XLOOKUP(...)`: Fungsi `XLOOKUP` mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, `XLOOKUP` dapat mengembalikan kecocokan terdekat (perkiraan). ^[[Fungsi XLOOKUP](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929), Microsoft Support.]
+
+```default
+=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])
+```
+
+- `XMATCH(...)`: Fungsi `XMATCH` mengembalikan posisi relatif item dalam array atau rentang sel. ^[[Fungsi XMATCH](https://support.microsoft.com/id-id/office/fungsi-xmatch-d966da31-7a6b-4a13-a1c6-5a33ed6a0312), Microsoft Support.]
+
+```default
+=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])
+```
+
 # 4 Fungsi Baru (2019-2021)
+
+## Penggabungan Teks (Excel 2019) {.smaller}
+
+- `CONCAT(...)`: Fungsi `CONCAT` menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. ^[[Fungsi CONCAT](https://support.microsoft.com/id-id/office/concat-fungsi-concat-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2), Microsoft Support.]
+
+```default
+=CONCAT(text1, [text2], ...)
+```
+
+- `TEXTJOIN(...)`: Fungsi `TEXTJOIN` menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, ^[[Fungsi TEXTJOIN](https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c), Microsoft Support.]
+
+```default
+=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)
+```
+
+## KOLEKSI `IF*` {.smaller}
+
+- `IFS(...)`: Fungsi `IFS` memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi `TRUE` pertama. `IFS` dapat menggantikan beberapa pernyataan `IF` yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. ^[[Fungsi IFS](https://support.microsoft.com/id-id/office/ifs-fungsi-ifs-36329a26-37b2-467c-972b-4a39bd951d45), Microsoft Support.]
+
+```default
+=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)
+```
+
+- `MINIFS(...)` / `MAXIFS(...)`: Fungsi `MINIFS` mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi `MAXIFS` mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. ^[[Fungsi MINIFS](https://support.microsoft.com/id-id/office/minifs-fungsi-minifs-6ca1ddaa-079b-4e74-80cc-72eef32e6599), Microsoft Support.] ^[[Fungsi MAXIFS](https://support.microsoft.com/id-id/office/maxifs-fungsi-maxifs-dfd611e6-da2c-488a-919b-9b6376b28883), Microsoft Support.]
+
+```default
+=[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)
+```
+
+## SWITCH
 
 # 5 _User Defined Lambda_ (UDL) dengan `LAMBDA`
 
