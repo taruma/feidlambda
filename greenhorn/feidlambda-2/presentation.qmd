@@ -1,0 +1,112 @@
+---
+title: "feidlambda II"
+subtitle: "Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA"
+date: 2022-10-25
+author: Taruma Sakti Megariansyah
+format:
+  revealjs: 
+    smaller: false
+    scrollable: true
+    slide-tone: false
+    slide-number: true
+    chalkboard: 
+      buttons: true
+    preview-links: true
+    theme: default
+    logo: /fiakologo.png
+    transition: slide
+---
+
+## Agenda
+
+Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA_
+
+::: {.incremental}
+- Review Daftar Istilah & _Dynamic Array Formula_
+- _Logical_
+- _Dynamic Array Formula_ (DAF)
+- Fungsi Baru (2019-2021)
+- _User Defined Lambda_ (UDL) dengan `LAMBDA`
+:::
+
+# 1 Review
+
+# [Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html)
+
+# 2 _Logical_
+
+# Fungsi dan Operator _Logical_
+
+## `AND` {.smaller}
+
+### Syntax
+
+```default 
+=AND(logical1, [logical2], ...)
+```
+
+::: {.incremental}
+- Fungsi logika, untuk menentukan apakah **semua kondisi** dalam sebuah tes adalah `TRUE`. ^[[AND (Fungsi AND)](https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9), Microsoft Support.]
+- Menghasilkan nilai `TRUE` ketika dua (atau lebih) bernilai `TRUE`. Jika terdapat satu atau lebih nilai `FALSE` maka menghasilkan nilai `FALSE`. 
+- Jika input berupa _logical vector_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`AND(elemen_1, elemen_2, ...)`). 
+:::
+
+## Operator `AND` (`*`) {.smaller}
+
+### Syntax
+
+```default 
+=logical_vector1 * logical_vector2
+```
+
+::: {.incremental}
+- Mengevaluasi `AND` pada setiap elemen dengan _vector/array_. <br>`={AND(elemen1_vector1, elemen1_vector2, ...), AND(elemen2_vector1, elemen2_vector2, ...), ...}`.
+- Menghasilkan _numerical vector_ yang bernilai `0` (`FALSE`) atau `1` (`TRUE`). Contohnya: `{1, 0, 1}`
+- Gunakan `numerical_vector=1` untuk menghasilkan _logical vector_ (`{TRUE, FALSE, TRUE}`)
+:::
+
+## `OR`
+
+```default 
+=OR(logical1, [logical2], ...)
+```
+
+::: {.incremental}
+- Fungsi logika, untuk menentukan apakah **salah satu kondisi** dalam sebuah tes adalah `TRUE`. ^[[`OR` function](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0), Microsoft Support.]
+- Menghasilkan nilai `TRUE` ketika salah satu bernilai `TRUE`. 
+- Jika input berupa _logical vector_ saja (`OR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`OR(elemen_1, elemen_2, ...)`). 
+:::
+
+## Operator `OR` (`+`) {.smaller}
+
+### Syntax
+
+```default 
+=logical_vector1 * logical_vector2
+```
+
+::: {.incremental}
+- Mengevaluasi `OR` pada setiap elemen dengan _vector/array_. <br>`={OR(elemen1_vector1, elemen1_vector2, ...), OR(elemen2_vector1, elemen2_vector2, ...), ...}`.
+- Menghasilkan _numerical vector_ yang bernilai `0` (`FALSE`) atau `1` (`TRUE`). Contohnya: `{1, 0, 1}`
+- Gunakan `numerical_vector=1` untuk menghasilkan _logical vector_ (`{TRUE, FALSE, TRUE}`)
+:::
+
+## Menggunakan `AND` dan `OR`
+
+# Fungsi `IS*`
+
+## Kumpulan Fungsi `IS*`
+
+
+
+# 3 _Dynamic Array Formula_ (DAF)
+
+# 4 Fungsi Baru (2019-2021)
+
+# 5 _User Defined Lambda_ (UDL) dengan `LAMBDA`
+
+<!-- 
+
+::: {style="text-align: center; margin-top: 1em"}
+[Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html){preview-link="true" style="text-align: center"}
+::: -->

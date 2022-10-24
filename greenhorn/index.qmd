@@ -1,0 +1,27 @@
+---
+pagetitle: "Greenhorn feidlambda by fiakodev"
+# title: Home
+toc: false
+format: html
+html-math-method: mathjax
+link-external-newwindow: true
+page-layout: full
+sidebar: false
+---
+
+::: {.text-center .m-0}
+# Greenhorn $\text{fe}\hat{i}\text{d} \textbf{l} \lambda \text{m} \textsf{b} \texttt{d} \bigtriangleup$ by **fiako**dev
+:::
+
+::: {.text-center .callout-important appearance="simple" icon="false"}
+## Dalam Pengembangan dan Pelatihan
+Pelatihan ini masih dalam tahap pengembangan dan pelaksanaan. Seluruh materi yang disinggung akan dicatat di bagian greenhorn ini. 
+:::
+
+::: {.text-center .fs-4}
+**feidlambda I** (WIP)<br>Introduction to Dynamic Array 
+
+[**feidlambda II** (WIP)<br>Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA](/greenhorn/feidlambda-2/index.qmd)
+
+**feidlambda III** (WIP)<br>Advanced Dynamic Array + Best Practices UDF
+:::

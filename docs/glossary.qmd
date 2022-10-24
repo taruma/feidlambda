@@ -32,9 +32,9 @@ Angka / numerik. Numerik yang dimaksud adalah bilangan real: $\mathbb{R} = \{-1,
 Sel. 
 
 ::: {#fig-glossary-cell .column-page layout-ncol="2" layout-valign="bottom"}
-![Cell (Excel)](./img-glossary/cell_excel.png){#fig-cell-excel width=350}
+![Cell (Excel)](img-glossary/cell_excel.png){#fig-cell-excel width=350}
 
-![Cell (Ilustrasi)](./img-glossary/cell_ilust.png){#fig-cell-ilust width=350}
+![Cell (Ilustrasi)](img-glossary/cell_ilust.png){#fig-cell-ilust width=350}
 
 _Cell_
 :::
@@ -44,9 +44,9 @@ _Cell_
 Rentang yang terdiri dari lebih dari satu sel.
 
 ::: {#fig-glossary-range .column-page layout-ncol="2" layout-valign="bottom"}
-![Range (Excel)](./img-glossary/range_excel.png){#fig-range-excel width=350}
+![Range (Excel)](img-glossary/range_excel.png){#fig-range-excel width=350}
 
-![Range (Ilustrasi)](./img-glossary/range_ilust.png){#fig-range-ilust width=350}
+![Range (Ilustrasi)](img-glossary/range_ilust.png){#fig-range-ilust width=350}
 
 _Range_
 :::
@@ -56,9 +56,9 @@ _Range_
 _Range_ yang memiliki 1 dimensi.
 
 ::: {#fig-glossary-vector .column-page layout-ncol="2" layout-valign="bottom"}
-![Vector (Excel)](./img-glossary/vector_excel.png){#fig-vector-excel width=350}
+![Vector (Excel)](img-glossary/vector_excel.png){#fig-vector-excel width=350}
 
-![Vector (Ilustrasi)](./img-glossary/vector_ilust.png){#fig-vector-ilust width=350}
+![Vector (Ilustrasi)](img-glossary/vector_ilust.png){#fig-vector-ilust width=350}
 
 _Vector_
 :::
@@ -68,9 +68,9 @@ _Vector_
 _Range_ yang memiliki 2 dimensi. Penggunaan istilah _array_ menginformasikan bahwa _range_ berupa dua dimensi. 
 
 ::: {#fig-glossary-array .column-page layout-ncol="2" layout-valign="bottom"}
-![Array (Excel)](./img-glossary/array_excel.png){#fig-array-excel width=350}
+![Array (Excel)](img-glossary/array_excel.png){#fig-array-excel width=350}
 
-![Array (Ilustrasi)](./img-glossary/array_ilust.png){#fig-array-ilust width=350}
+![Array (Ilustrasi)](img-glossary/array_ilust.png){#fig-array-ilust width=350}
 
 _Array_
 :::
@@ -80,9 +80,9 @@ _Array_
 _Array_ yang memiliki _header_ dalam format tabel. 
 
 ::: {#fig-glossary-table .column-page layout-ncol="2" layout-valign="center"}
-![Table (Excel)](./img-glossary/table_excel.png){#fig-table-excel width=350}
+![Table (Excel)](img-glossary/table_excel.png){#fig-table-excel width=350}
 
-![Table (Ilustrasi)](./img-glossary/table_ilust.png){#fig-table-ilust width=350}
+![Table (Ilustrasi)](img-glossary/table_ilust.png){#fig-table-ilust width=350}
 
 _Table_
 :::
@@ -92,9 +92,9 @@ _Table_
 _Vector_ atau _array_ yang berisikan nilai `TRUE` atau `FALSE`.
 
 ::: {#fig-glossary-logical-vector .column-page layout-ncol="2" layout-valign="center"}
-![Logical Vector (Excel)](./img-glossary/logical-vector_excel.png){#fig-logical-vector-excel width=350}
+![Logical Vector (Excel)](img-glossary/logical-vector_excel.png){#fig-logical-vector-excel width=350}
 
-![Logical Vector (Ilustrasi)](./img-glossary/logical-vector_ilust.png){#fig-logical-vector-ilust width=350}
+![Logical Vector (Ilustrasi)](img-glossary/logical-vector_ilust.png){#fig-logical-vector-ilust width=350}
 
 _Logical Vector_
 :::
@@ -104,9 +104,9 @@ _Logical Vector_
 _Vector_ atau _array_ yang berisikan nilai _numerik_. 
 
 ::: {#fig-glossary-numeric-vector .column-page layout-ncol="2" layout-valign="center"}
-![Numeric Vector (Excel)](./img-glossary/numeric-vector_excel.png){#fig-numeric-vector-excel width=350}
+![Numeric Vector (Excel)](img-glossary/numeric-vector_excel.png){#fig-numeric-vector-excel width=350}
 
-![Numeric Vector (Ilustrasi)](./img-glossary/numeric-vector_ilust.png){#fig-numeric-vector-ilust width=350}
+![Numeric Vector (Ilustrasi)](img-glossary/numeric-vector_ilust.png){#fig-numeric-vector-ilust width=350}
 
 _Numeric Vector_
 :::
@@ -115,34 +115,34 @@ _Numeric Vector_
 
 _Vector_ yang melebar ke samping atau berupa baris. 
 
-![Row Vector (Excel)](./img-glossary/row-vector_excel.png){#fig-row-vector-excel width=350}
+![Row Vector (Excel)](img-glossary/row-vector_excel.png){#fig-row-vector-excel width=350}
 
 ##### _COLUMN VECTOR_
 
 _Vector_ yang memanjang ke bawah atau berupa kolom.
 
-![Column Vector (Excel)](./img-glossary/column-vector_excel.png){#fig-column-vector-excel height=350}
+![Column Vector (Excel)](img-glossary/column-vector_excel.png){#fig-column-vector-excel height=350}
 
 ##### _DYNAMIC ARRAY_
 
 Larik dinamis adalah kumpulan nilai / sel yang merupakan satu kesatuan. Dapat berupa _vector_ (1D) atau _array_ (2D).
 
 ::: {#fig-glossary-dynamic-array-vector .column-screen-inset layout="[[1,1,1]]" layout-valign="bottom"}
-![_Column Vector_ Biasa](./img-glossary/dynamic-array_col_nda_excel.png){#fig-dynamic-array-col-nda height=350}
+![_Column Vector_ Biasa](img-glossary/dynamic-array_col_nda_excel.png){#fig-dynamic-array-col-nda height=350}
 
-![_Dynamic Array_ pada _Column Vector_](./img-glossary/dynamic-array_col_excel.gif){#fig-dynamic-array-col-gif height=350}
+![_Dynamic Array_ pada _Column Vector_](img-glossary/dynamic-array_col_excel.gif){#fig-dynamic-array-col-gif height=350}
 
-![_Column Vector_ (_Dynamic Array_)](./img-glossary/dynamic-array_col_da_excel.png){#fig-dynamic-array-col-da height=350}
+![_Column Vector_ (_Dynamic Array_)](img-glossary/dynamic-array_col_da_excel.png){#fig-dynamic-array-col-da height=350}
 
 _Dynamic Array_ (_Vector_)
 :::
 
 ::: {#fig-glossary-dynamic-array-array .column-screen-inset layout="[[1,1,1]]" layout-valign="bottom"}
-![_Array_ Biasa](./img-glossary/dynamic-array_array_nda_excel.png){#fig-dynamic-array-col-nda height=350}
+![_Array_ Biasa](img-glossary/dynamic-array_array_nda_excel.png){#fig-dynamic-array-col-nda height=350}
 
-![_Dynamic Array_ pada _Array_](./img-glossary/dynamic-array_array_excel.gif){#fig-dynamic-array-col-gif height=350}
+![_Dynamic Array_ pada _Array_](img-glossary/dynamic-array_array_excel.gif){#fig-dynamic-array-col-gif height=350}
 
-![_Array_ (_Dynamic Array_)](./img-glossary/dynamic-array_array_da_excel.png){#fig-dynamic-array-col-da height=350}
+![_Array_ (_Dynamic Array_)](img-glossary/dynamic-array_array_da_excel.png){#fig-dynamic-array-col-da height=350}
 
 _Dynamic Array_ (_Array_)
 :::
@@ -154,9 +154,9 @@ Formula yang mengeluarkan hasil lebih dari satu sel (_vector_ / _array_) dalam b
 Persamaan yang termasuk _dynamic array formula_ antara lain: `=POWER()`, `=ABS()`, `=ROUNDUP()`, dll. Yang perlu diingat bahwa formula _dynamic array_ mampu menghasilkan nilai dalam bentuk _vector_ atau _array_ sesuai jenis nilai yang dimasukkan.
 
 ::: {#fig-glossary-dynamic-array-formula .column-screen-inset layout="[[40,60]]" layout-valign="bottom"}
-![Formula Biasa](./img-glossary/dynamic-array-formula_normal_excel.png){#fig-dynamic-array-formula-normal height=350}
+![Formula Biasa](img-glossary/dynamic-array-formula_normal_excel.png){#fig-dynamic-array-formula-normal height=350}
 
-![_Dynamic Array Formula_](./img-glossary/dynamic-array-formula_da_excel.png){#fig-dynamic-array-formula-dynamic height=350}
+![_Dynamic Array Formula_](img-glossary/dynamic-array-formula_da_excel.png){#fig-dynamic-array-formula-dynamic height=350}
 
 _Dynamic Array Formula_
 :::

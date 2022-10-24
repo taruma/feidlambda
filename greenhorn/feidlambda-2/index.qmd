@@ -1,0 +1,35 @@
+---
+pagetitle: "feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA"
+title: feidlambda II
+
+subtitle: |
+    Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA
+
+title-block-banner: true
+toc: true
+format: 
+    html:
+        link-external-newwindow: true
+        page-layout: full
+sidebar: side-greenhorn
+
+author: Taruma Sakti Megariansyah
+date: 2022-10-25
+# author-title: Penulis
+abstract: |
+    Pada pertemuan kedua, pembelajaran akan fokus untuk mengeksplorasi kegunaan _dynamic array formula_ dan penggunaan fungsi `LAMBDA`. 
+---
+
+Topik Pembahasan:
+
+- Review _Glossary_ (Daftar Istilah). 
+- Review _Dynamic Array_ dan _Dynamic Array Formula_.
+- Operator & Fungsi Logical: AND (*), OR (+). 
+- Fungsi `IS*`: `ISBLANK`, `ISERR`, `ISERROR`, `ISEVEN`, `ISFORMULA`, `ISNA`, `ISNONTEXT`, `ISNUMBER`, `ISODD`.
+- _Dynamic Array Formula_ (DAF): `FILTER`, `RANDARRAY`, `SEQUENCE`, `SORT`, `SORTBY`, `UNIQUE`, `XLOOKUP`, `XMATCH`.
+- Fungsi Baru (2019-2021): 
+    - 2019: `CONCAT`, `IFS`, `MAXIFS`, `MINIFS`, `SWITCH`, `TEXTJOIN`.
+    - 2021: `LET`.
+- _User Defined Lambda_ (UDL) dengan `LAMBDA`.
+- Kombinasi `LAMBDA` dan `LET`.
+- Berbagi UDL dengan [GitHub Gist](https://gist.github.com) dan _Advanced Formula Environment_ (AFE). 
