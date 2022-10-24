@@ -127,9 +127,10 @@ website:
 
 format:
   html:
-    theme: default # lux, materia, minty, sandstone, spacelab, yeti, zephyr
+    theme: minty # lux, materia, minty, sandstone, spacelab, yeti, zephyr
     css: styles.css
     toc: true
+    link-external-newwindow: true
 
 
 

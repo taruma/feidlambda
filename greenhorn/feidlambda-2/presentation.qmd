@@ -9,12 +9,14 @@ format:
     scrollable: true
     slide-tone: false
     slide-number: true
-    chalkboard: 
-      buttons: true
     preview-links: true
-    theme: default
+    theme: moon
     logo: /fiakologo.png
-    transition: slide
+    transition: convex
+    embed-resources: true
+    # multiplex: true
+    footer: |
+      &copy; 2022 Taruma Sakti Megariansyah. <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
 ---
 
 ## Agenda
@@ -144,6 +146,7 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 
 ## Menyeleksi/memilih data 
 
+::: {.incremental}
 - `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
 
 ```default
@@ -155,9 +158,11 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 ```default
 =UNIQUE(array, [by_col], [exactly_once])
 ```
+:::
 
 ## Membangkitkan data {.smaller}
 
+::: {.incremental}
 - `SEQUENCE(...)`: Fungsi `SEQUENCE` memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti ${1, 2, 3, 4, \dots}$. ^[[Fungsi SEQUENCE](https://support.microsoft.com/id-id/office/fungsi-sequence-57467a98-57e0-4817-9f14-2eb78519ca90), Microsoft Support.]
 
 ```default
@@ -169,9 +174,11 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 ```default
 =RANDARRAY([rows], [columns], [min], [max], [whole_number])
 ```
+:::
 
 ## Menyusun data
 
+::: {.incremental}
 - `SORT(...)`: Fungsi `SORT` mengurutkan konten rentang atau larik. ^[[Fungsi SORT](https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c), Microsoft Support.]
 
 ```default
@@ -183,9 +190,11 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 ```default
 =SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
 ```
+:::
 
 ## Mencari data {.smaller}
 
+::: {.incremental}
 - `XLOOKUP(...)`: Fungsi `XLOOKUP` mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, `XLOOKUP` dapat mengembalikan kecocokan terdekat (perkiraan). ^[[Fungsi XLOOKUP](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929), Microsoft Support.]
 
 ```default
@@ -197,25 +206,31 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 ```default
 =XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])
 ```
+:::
 
 # 4 Fungsi Baru (2019-2021)
 
-## Penggabungan Teks (Excel 2019) {.smaller}
+# Excel 2019
 
+## Penggabungan Teks {.smaller}
+
+::: {.incremental}
 - `CONCAT(...)`: Fungsi `CONCAT` menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. ^[[Fungsi CONCAT](https://support.microsoft.com/id-id/office/concat-fungsi-concat-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2), Microsoft Support.]
 
 ```default
 =CONCAT(text1, [text2], ...)
 ```
 
-- `TEXTJOIN(...)`: Fungsi `TEXTJOIN` menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, ^[[Fungsi TEXTJOIN](https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c), Microsoft Support.]
+- `TEXTJOIN(...)`: Fungsi `TEXTJOIN` menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. ^[[Fungsi TEXTJOIN](https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c), Microsoft Support.]
 
 ```default
 =TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)
 ```
+:::
 
 ## KOLEKSI `IF*` {.smaller}
 
+::: {.incremental}
 - `IFS(...)`: Fungsi `IFS` memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi `TRUE` pertama. `IFS` dapat menggantikan beberapa pernyataan `IF` yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. ^[[Fungsi IFS](https://support.microsoft.com/id-id/office/ifs-fungsi-ifs-36329a26-37b2-467c-972b-4a39bd951d45), Microsoft Support.]
 
 ```default
@@ -227,13 +242,83 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 ```default
 =[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)
 ```
+:::
 
 ## SWITCH
 
+- `SWITCH(...)`: Fungsi `SWITCH` mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. ^[[Fungsi SWITCH](https://support.microsoft.com/id-id/office/switch-fungsi-switch-47ab33c0-28ce-4530-8a45-d532ec4aa25e), Microsoft Support.] 
+
+```default
+=SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])
+```
+
+# EXCEL 2021
+
+## LET
+
+- `LET(...)`: Fungsi `LET` menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup `LET` fungsi. Mirip dengan variabel dalam pemrograman, `LET` dilakukan melalui Excel rumus asli Anda. ^[[Fungsi LET](https://support.microsoft.com/id-id/office/fungsi-let-34842dd8-b92b-4d3f-b325-b8b8f9908999), Microsoft Support.] 
+
+```default
+=LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)
+```
+
 # 5 _User Defined Lambda_ (UDL) dengan `LAMBDA`
 
-<!-- 
+## Mengenal LAMBDA dan UDL
 
-::: {style="text-align: center; margin-top: 1em"}
-[Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html){preview-link="true" style="text-align: center"}
-::: -->
+- `LAMBDA(...)`: Gunakan fungsi `LAMBDA` untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. ^[[Fungsi LAMBDA](https://support.microsoft.com/id-id/office/fungsi-lambda-bd212d27-1cd1-4321-a34a-ccbf254b8b67), Microsoft Support.] 
+
+```default
+=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
+```
+
+## `LAMBDA` dan `LET`
+
+::: {.incremental}
+- `LAMBDA` dan `LET` biasanya digunakan bersamaan untuk memudahkan pembuatan UDL ataupun membaca/_troubleshooting_.
+- `LAMBDA` berfungsi menerima `input` dan membungkusnya sebagai fungsi baru di Excel. 
+- `LET` digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari `LAMBDA`. 
+:::
+
+## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+
+```r
+=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
+```
+
+## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+
+```{.r code-line-numbers="1,5|2-3|4"}
+=LAMBDA(
+  parameter1, 
+  [parameter2, parameter3, ...],
+  calculation
+)
+```
+
+## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+
+```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7"}
+=LAMBDA(
+  parameter1, 
+  [parameter2, parameter3, ...],
+  LET(
+    name1, value1,
+    [name2, value2, name3, value3, ...],
+    calculation
+  )
+)
+```
+
+## Contoh LAMBDA dan LET
+
+- Mengurangi setiap elemen dari _numeric vector_ dengan setengah dari rata-ratanya.
+- $\mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2}$
+
+## _Advanced Formula Environment_
+
+## Berbagi UDL
+
+# Terima Kasih
+
+Taruma Sakti Megariansyah, [hi@taruma.info](mailto:hi@taruma.info)
