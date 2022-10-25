@@ -298,7 +298,7 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 
 ## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
 
-```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7"}
+```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7|"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -310,14 +310,299 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 )
 ```
 
-## Contoh LAMBDA dan LET
+# Contoh `LAMBDA` dan `LET`
 
-- Mengurangi setiap elemen dari _numeric vector_ dengan setengah dari rata-ratanya.
+## Contoh `LAMBDA` dan `LET`
+
+- Mengurangi setiap elemen dari _numeric vector_ ($\mathbf{x}$) dengan setengah dari rata-ratanya ($\frac{\text{mean}(\mathbf{x})}{2}$).
 - $\mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2}$
 
-## _Advanced Formula Environment_
+## Menentukan _input_ `LAMBDA` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="|2-3"}
+=LAMBDA(
+  parameter1, 
+  [parameter2, parameter3, ...],
+  calculation
+)
+```
+
+## Menentukan _input_ `LAMBDA` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="2|3"}
+=LAMBDA(
+  vector,
+  calculation
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="3-7"}
+=LAMBDA(
+  vector,
+  LET(
+    name1, value1,
+    [name2, value2, name3, value3, ...],
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="4"}
+=LAMBDA(
+  vector,
+  LET(
+    x, vector,
+    [name2, value2, name3, value3, ...],
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="4"}
+=LAMBDA(
+  vector,
+  LET(
+    ..., ...,
+    [name2, value2, name3, value3, ...],
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="4"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    [name2, value2, name3, value3, ...],
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="5"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    ..., ...,
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="6"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    y, vector - halfavg,
+    calculation
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="7-8"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    y, vector - halfavg,
+    y
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="6"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    vector - halfavg
+  )
+)
+```
+
+## Kalkulasi dengan `LET` {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    vector - halfavg
+  )
+)
+```
+
+# Pengembangan lebih lanjut
+
+## Validasi _input_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="2"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg/2,
+    vector - halfavg
+  )
+)
+```
+
+## Validasi _input_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="2|4-5"}
+=LAMBDA(
+  vector,
+  LET(
+    vector_clean, FILTER(vector, ISNUMBER(vector)),
+    avg, AVERAGE(vector_clean),
+    halfavg, avg/2,
+    vector - halfavg
+  )
+)
+```
+
+## _Refactoring_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="5-6"}
+=LAMBDA(
+  vector,
+  LET(
+    vector_clean, FILTER(vector, ISNUMBER(vector)),
+    avg, AVERAGE(vector_clean),
+    halfavg, avg/2,
+    vector - halfavg
+  )
+)
+```
+
+## _Refactoring_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+```{.r code-line-numbers="5"}
+=LAMBDA(
+  vector,
+  LET(
+    vector_clean, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_clean) / 2,
+    vector - halfavg
+  )
+)
+```
+
+## _Optional argument/parameter_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+
+```{.r code-line-numbers="3|5|7|3,5,7"}
+=LAMBDA(
+  vector,
+  [n],
+  LET(
+    n, IF(ISOMITTED(n), 2, n),
+    vector_clean, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_clean) / n,
+    vector - halfavg
+  )
+)
+```
+
+## _Optional argument/parameter_ {auto-animate="true"}
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+
+```r
+=LAMBDA(
+  vector,
+  [n],
+  LET(
+    n, IF(ISOMITTED(n), 2, n),
+    vector_clean, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_clean) / n,
+    vector - halfavg
+  )
+)
+```
+
+## Penggunaan Formula
+
+$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+
+::: {.incremental}
+- Formula tersebut disimpan sebagai `HALFAVG` di _Formulas Name Manager_.
+- Sintaksnya `=HALFAVG(vector, [n])`.
+- `=HALFAVG(D5:D10)` (maka $n=2$).
+- `=HALFAVG(D5#, 4)` (maka $n=4$).
+:::
+
+## _Advanced Formula Environment_ (AFE)
+
+::: {.incremental}
+- Excel add-ins yang memudahkan mengatur formula pada lembar kerja. 
+- Alternatif _Formulas Name Manager_.
+- Memiliki fitur _syntax highlighting_ dan _shortcut_ umum untuk _coding_.
+- Dapat _import_ UDL hasil dari orang lain. ^[Harus melalui Github Gist.]
+:::
 
 ## Berbagi UDL
+
+::: {.incremental}
+- Memiliki [GitHub Account](https://github.com). 
+- Mengupload kode UDL dari AFE ke [GitHub Gist](https://gist.github.com). 
+- _Share_ link Gist.
+:::
 
 # Terima Kasih
 
