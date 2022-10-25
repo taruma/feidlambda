@@ -48,11 +48,23 @@ website:
         - href: release/feidlambda.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
+      - text: Greenhorn
+        menu:
+        - text: "Greenhorn"
+          href: greenhorn/index.qmd
+        - text: feidlambda I
+          href: greenhorn/index.qmd
+          # href: greenhorn/feidlambda-2/presentation.qmd
+        - text: feidlambda II
+          href: greenhorn/feidlambda-2/index.qmd
+        - text: feidlambda III
+          href: greenhorn/index.qmd
+          # href: release/feidlambda-0-1-0.qmd
+
         
-    # right:
-    #   - icon: twitter
-    #     href: https://twitter.com
-    #     aria-label: feidlambda twitter
+    right:
+      - icon: github
+        href: https://github.com/fiakoenjiniring/feidlambda
 
   sidebar: 
     - id: side-docs
@@ -70,6 +82,39 @@ website:
           contents:
             - "yoooo"
             - "aaaa"
+    
+    - id: side-feidlambda-2
+      style: floating
+      contents:
+      - text: Pendahuluan
+        href: greenhorn/feidlambda-2/index.qmd
+      - text: Presentasi
+        href: greenhorn/feidlambda-2/presentation.qmd
+      - Review
+      - section: Logical
+        contents:
+          - Fungsi Logical
+          - Operator Logical
+          - Fungsi IS*
+      - section: Dynamic Array Formula
+        contents:
+          - FILTER, UNIQUE
+          - RANDARRAY, SEQUENCE
+          - SORT, SORTBY
+          - XLOOKUP, XMATCH
+      - section: Fungsi Baru
+        contents:
+          - CONCAT
+          - IFS, MAXIFS, MINIFS
+          - SWITCH
+          - TEXTJOIN
+          - LET
+      - section: User Defined Lambda (UDL)
+        contents:
+          - Pengenalan LAMBDA
+          - Menggabungkan LAMBDA dan LET
+          - Advanced Formula Environment (AFE)
+          - Berbagi UDL
 
   ## SIDEBAR
   page-footer:
@@ -82,9 +127,10 @@ website:
 
 format:
   html:
-    theme: zephyr # lux, materia, minty, sandstone, spacelab, yeti
+    theme: minty # lux, materia, minty, sandstone, spacelab, yeti, zephyr
     css: styles.css
     toc: true
+    link-external-newwindow: true
 
 
 

@@ -45,7 +45,7 @@ Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 ```
 :::
 
-![`feid.utils.REPEATCOLS`](./img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
+![`feid.utils.REPEATCOLS`](img-0-1-0/demo-feidlambda-0-1-repeatcols.gif)
 
 ## SORTCOLS
 
@@ -68,7 +68,7 @@ Jika _input_ `table` sebagai `array`, maka pastikan memisahkan antara `table_hea
 ```
 :::
 
-![`feid.utils.SORTCOLS`](./img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
+![`feid.utils.SORTCOLS`](img-0-1-0/demo-feidlambda-0-1-sortcols.gif)
 
 ## REPEATROWS
 
@@ -91,7 +91,7 @@ Jika `num_repeat` tidak diisi, maka secara _default_ bernilai 2.
 ```
 :::
 
-![`feid.utils.REPEATROWS`](./img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
+![`feid.utils.REPEATROWS`](img-0-1-0/demo-feidlambda-0-1-repeatrows.gif)
 
 ## RESHAPECOLS
 
@@ -114,7 +114,7 @@ Jika `nsplit` tidak diisi, maka _default_ bernilai 2.
 ```
 :::
 
-![`feid.utils.RESHAPECOLS`](./img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
+![`feid.utils.RESHAPECOLS`](img-0-1-0/demo-feidlambda-0-1-reshapecols.gif)
 
 ## FINDINDEX2D
 
@@ -133,4 +133,4 @@ _return_
 ```
 :::
 
-![`feid.utils.FINDINDEX2D`](./img-0-1-0/demo-feidlambda-0-1-findindex2d.gif)
+![`feid.utils.FINDINDEX2D`](img-0-1-0/demo-feidlambda-0-1-findindex2d.gif)

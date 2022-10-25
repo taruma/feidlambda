@@ -42,7 +42,7 @@ _return_
 ```
 :::
 
-![`feid.utils.COMPAREVECTOR`](./img-0-2-0/feidlambda-v0-2-comparevector.gif)
+![`feid.utils.COMPAREVECTOR`](img-0-2-0/feidlambda-v0-2-comparevector.gif)
 
 ## MULTICHECK
 
@@ -65,7 +65,7 @@ _return_
 ```
 :::
 
-![`feid.utils.MULTICHECK`](./img-0-2-0/feidlambda-v0-2-multicheck.gif)
+![`feid.utils.MULTICHECK`](img-0-2-0/feidlambda-v0-2-multicheck.gif)
 
 ## DROPROWS
 
@@ -84,7 +84,7 @@ _return_
 ```
 :::
 
-![`feid.utils.DROPROWS`](./img-0-2-0/feidlambda-v0-2-droprows.gif)
+![`feid.utils.DROPROWS`](img-0-2-0/feidlambda-v0-2-droprows.gif)
 
 ## DROPCOLS
 
@@ -103,7 +103,7 @@ _return_
 ```
 :::
 
-![`feid.utils.DROPCOLS`](./img-0-2-0/feidlambda-v0-2-dropcols.gif)
+![`feid.utils.DROPCOLS`](img-0-2-0/feidlambda-v0-2-dropcols.gif)
 
 ## COUNTMULTICHECK
 
@@ -125,5 +125,5 @@ _return_
 ```
 :::
 
-![`feid.utils.COUNTMULTICHECK`](./img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
+![`feid.utils.COUNTMULTICHECK`](img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
 
