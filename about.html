@@ -113,6 +113,34 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-greenhorn" role="button" data-bs-toggle="dropdown" aria-expanded="false">Greenhorn</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-greenhorn">    
+        <li>
+    <a class="dropdown-item" href="./greenhorn/index.html">
+ <span class="dropdown-text">Greenhorn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./greenhorn/index.html">
+ <span class="dropdown-text">feidlambda I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./greenhorn/feidlambda-2/index.html">
+ <span class="dropdown-text">feidlambda II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./greenhorn/index.html">
+ <span class="dropdown-text">feidlambda III</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fiakoenjiniring/feidlambda"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -254,6 +282,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/lambda\.fiako\.engineering/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->

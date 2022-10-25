@@ -2,30 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2022-10-21T09:45:12.007Z</lastmod>
+    <lastmod>2022-10-25T01:34:11.299Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2022-10-21T09:45:12.943Z</lastmod>
+    <lastmod>2022-10-25T01:34:12.247Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2022-10-21T09:45:13.535Z</lastmod>
+    <lastmod>2022-10-25T01:34:12.863Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
-    <lastmod>2022-10-21T09:45:14.215Z</lastmod>
+    <lastmod>2022-10-25T01:34:13.603Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2022-10-21T09:45:14.843Z</lastmod>
+    <lastmod>2022-10-25T01:34:14.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/index.html</loc>
+    <lastmod>2022-10-25T01:34:14.607Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation.html</loc>
+    <lastmod>2022-10-25T01:34:18.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/index.html</loc>
+    <lastmod>2022-10-25T01:34:19.175Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation_ex.html</loc>
+    <lastmod>2022-10-25T01:34:19.959Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
-    <lastmod>2022-10-21T09:45:15.235Z</lastmod>
+    <lastmod>2022-10-25T01:34:20.391Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/penggunaan.html</loc>
-    <lastmod>2022-10-21T09:45:15.583Z</lastmod>
+    <lastmod>2022-10-25T01:34:20.735Z</lastmod>
   </url>
 </urlset>

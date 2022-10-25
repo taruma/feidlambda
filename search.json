@@ -105,6 +105,510 @@
     "text": "test"
   },
   {
+    "objectID": "greenhorn/index.html",
+    "href": "greenhorn/index.html",
+    "title": "feidlambda",
+    "section": "",
+    "text": "Dalam Pengembangan dan Pelatihan\n\n\n\nPelatihan ini masih dalam tahap pengembangan dan pelaksanaan. Seluruh materi yang disinggung akan dicatat di bagian greenhorn ini.\n\n\n\nfeidlambda I (WIP)Introduction to Dynamic Array\nfeidlambda II (WIP)Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA\nfeidlambda III (WIP)Advanced Dynamic Array + Best Practices UDF"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#agenda",
+    "href": "greenhorn/feidlambda-2/presentation.html#agenda",
+    "title": "feidlambda II",
+    "section": "Agenda",
+    "text": "Agenda\nAgenda untuk feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA\n\n\nReview Daftar Istilah & Dynamic Array Formula\nLogical\nDynamic Array Formula (DAF)\nFungsi Baru (2019-2021)\nUser Defined Lambda (UDL) dengan LAMBDA"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#and",
+    "href": "greenhorn/feidlambda-2/presentation.html#and",
+    "title": "feidlambda II",
+    "section": "AND",
+    "text": "AND\nSyntax\n=AND(logical1, [logical2], ...)\n\n\nFungsi logika, untuk menentukan apakah semua kondisi dalam sebuah tes adalah TRUE. 1\nMenghasilkan nilai TRUE ketika dua (atau lebih) bernilai TRUE. Jika terdapat satu atau lebih nilai FALSE maka menghasilkan nilai FALSE.\nJika input berupa logical vector saja (AND(logical_vector)), maka akan mengevaluasi seluruh elemen pada logical vector (AND(elemen_1, elemen_2, ...)).\n\n\nAND (Fungsi AND), Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#operator-and",
+    "href": "greenhorn/feidlambda-2/presentation.html#operator-and",
+    "title": "feidlambda II",
+    "section": "Operator AND (*)",
+    "text": "Operator AND (*)\nSyntax\n=logical_vector1 * logical_vector2\n\n\nMengevaluasi AND pada setiap elemen dengan vector/array. ={AND(elemen1_vector1, elemen1_vector2, ...), AND(elemen2_vector1, elemen2_vector2, ...), ...}.\nMenghasilkan numerical vector yang bernilai 0 (FALSE) atau 1 (TRUE). Contohnya: {1, 0, 1}\nGunakan numerical_vector=1 untuk menghasilkan logical vector ({TRUE, FALSE, TRUE})"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#or",
+    "href": "greenhorn/feidlambda-2/presentation.html#or",
+    "title": "feidlambda II",
+    "section": "OR",
+    "text": "OR\n=OR(logical1, [logical2], ...)\n\n\nFungsi logika, untuk menentukan apakah salah satu kondisi dalam sebuah tes adalah TRUE. 1\nMenghasilkan nilai TRUE ketika salah satu bernilai TRUE.\nJika input berupa logical vector saja (OR(logical_vector)), maka akan mengevaluasi seluruh elemen pada logical vector (OR(elemen_1, elemen_2, ...)).\n\n\nOR function, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#operator-or",
+    "href": "greenhorn/feidlambda-2/presentation.html#operator-or",
+    "title": "feidlambda II",
+    "section": "Operator OR (+)",
+    "text": "Operator OR (+)\nSyntax\n=logical_vector1 * logical_vector2\n\n\nMengevaluasi OR pada setiap elemen dengan vector/array. ={OR(elemen1_vector1, elemen1_vector2, ...), OR(elemen2_vector1, elemen2_vector2, ...), ...}.\nMenghasilkan numerical vector yang bernilai 0 (FALSE) atau 1 (TRUE). Contohnya: {1, 0, 1}\nGunakan numerical_vector=1 untuk menghasilkan logical vector ({TRUE, FALSE, TRUE})"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#fungsi-is-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#fungsi-is-1",
+    "title": "feidlambda II",
+    "section": "Fungsi IS*",
+    "text": "Fungsi IS*\nSYNTAX\n=IS*(value)\n\n\nMemeriksa nilai tertentu dan mengembalikan TRUE atau FALSE bergantung pada hasilnya. 1\nISBLANK bernilai TRUE jika sel kosong.\nISNUMBER bernilai TRUE jika sel berisikan angka.\n\n\nFungsi IS, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-1",
+    "title": "feidlambda II",
+    "section": "Koleksi Fungsi IS* (1)",
+    "text": "Koleksi Fungsi IS* (1)\nPeriksa nilai error / kosong\n\n\nISNA(...): Cek nilai apakah #N/A.\nISERR(...): Cek nilai apakah error selain #N/A (#VALUE!, #REF!, #DIV/0!, #NUM!, #NAME?, atau #NULL!).\nISERROR(...): Cek nilai apakah error (seluruh jenis error).\nISBLANK(...): Cek nilai apakah kosong."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-2",
+    "href": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-2",
+    "title": "feidlambda II",
+    "section": "Koleksi Fungsi IS* (2)",
+    "text": "Koleksi Fungsi IS* (2)\nPeriksa nilai jenis sel\n\n\nISLOGICAL(...): Cek nilai apakah logical (TRUE atau FALSE).\nISNUMBER(...): Cek nilai apakah numeric (\\(\\mathbb{R}\\)).\nISTEXT(...): Cek nilai apakah teks. Dan ISNONTEXT(...): Cek niai apakah bukan teks (number, logical, error)\nISFORMULA(...): Cek nilai apakah formula."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-3",
+    "href": "greenhorn/feidlambda-2/presentation.html#koleksi-fungsi-is-3",
+    "title": "feidlambda II",
+    "section": "Koleksi Fungsi IS* (3)",
+    "text": "Koleksi Fungsi IS* (3)\nPeriksa nilai angka\n\n\nISEVEN(...): Cek nilai apakah bilangan genap.\nISODD(...): Cek nilai apakah bilangan ganjil."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menyeleksimemilih-data",
+    "href": "greenhorn/feidlambda-2/presentation.html#menyeleksimemilih-data",
+    "title": "feidlambda II",
+    "section": "Menyeleksi/memilih data",
+    "text": "Menyeleksi/memilih data\n\n\nFILTER(...): Fungsi FILTER memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. 1\n\n=FILTER(array, include, [if_empty])\n\nUNIQUE(...): Fungsi UNIQUE menghasilkan daftar nilai yang unik dalam daftar atau rentang. 2\n\n=UNIQUE(array, [by_col], [exactly_once])\n\nFungsi FILTER, Microsoft Support.Fungsi UNIQUE, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#membangkitkan-data",
+    "href": "greenhorn/feidlambda-2/presentation.html#membangkitkan-data",
+    "title": "feidlambda II",
+    "section": "Membangkitkan data",
+    "text": "Membangkitkan data\n\n\nSEQUENCE(...): Fungsi SEQUENCE memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti \\({1, 2, 3, 4, \\dots}\\). 1\n\n=SEQUENCE(rows, [columns], [start], [step])\n\nRANDARRAY(...): Fungsi RANDARRAY menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. 2\n\n=RANDARRAY([rows], [columns], [min], [max], [whole_number])\n\nFungsi SEQUENCE, Microsoft Support.Fungsi RANDARRAY, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menyusun-data",
+    "href": "greenhorn/feidlambda-2/presentation.html#menyusun-data",
+    "title": "feidlambda II",
+    "section": "Menyusun data",
+    "text": "Menyusun data\n\n\nSORT(...): Fungsi SORT mengurutkan konten rentang atau larik. 1\n\n=SORT(array, [sort_index], [sort_order], [by_col])\n\nSORTBY(...): Fungsi SORTBY mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. 2\n\n=SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)\n\nFungsi SORT, Microsoft Support.Fungsi SORTBY, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#mencari-data",
+    "href": "greenhorn/feidlambda-2/presentation.html#mencari-data",
+    "title": "feidlambda II",
+    "section": "Mencari data",
+    "text": "Mencari data\n\n\nXLOOKUP(...): Fungsi XLOOKUP mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, XLOOKUP dapat mengembalikan kecocokan terdekat (perkiraan). 1\n\n=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])\n\nXMATCH(...): Fungsi XMATCH mengembalikan posisi relatif item dalam array atau rentang sel. 2\n\n=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])\n\nFungsi XLOOKUP, Microsoft Support.Fungsi XMATCH, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#penggabungan-teks",
+    "href": "greenhorn/feidlambda-2/presentation.html#penggabungan-teks",
+    "title": "feidlambda II",
+    "section": "Penggabungan Teks",
+    "text": "Penggabungan Teks\n\n\nCONCAT(...): Fungsi CONCAT menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. 1\n\n=CONCAT(text1, [text2], ...)\n\nTEXTJOIN(...): Fungsi TEXTJOIN menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. 2\n\n=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)\n\nFungsi CONCAT, Microsoft Support.Fungsi TEXTJOIN, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#koleksi-if",
+    "href": "greenhorn/feidlambda-2/presentation.html#koleksi-if",
+    "title": "feidlambda II",
+    "section": "KOLEKSI IF*",
+    "text": "KOLEKSI IF*\n\n\nIFS(...): Fungsi IFS memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi TRUE pertama. IFS dapat menggantikan beberapa pernyataan IF yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. 1\n\n=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)\n\nMINIFS(...) / MAXIFS(...): Fungsi MINIFS mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi MAXIFS mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. 2 3\n\n=[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)\n\nFungsi IFS, Microsoft Support.Fungsi MINIFS, Microsoft Support.Fungsi MAXIFS, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#switch",
+    "href": "greenhorn/feidlambda-2/presentation.html#switch",
+    "title": "feidlambda II",
+    "section": "SWITCH",
+    "text": "SWITCH\n\nSWITCH(...): Fungsi SWITCH mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. 1\n\n=SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])\nFungsi SWITCH, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#let",
+    "href": "greenhorn/feidlambda-2/presentation.html#let",
+    "title": "feidlambda II",
+    "section": "LET",
+    "text": "LET\n\nLET(...): Fungsi LET menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup LET fungsi. Mirip dengan variabel dalam pemrograman, LET dilakukan melalui Excel rumus asli Anda. 1\n\n=LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)\nFungsi LET, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#mengenal-lambda-dan-udl",
+    "href": "greenhorn/feidlambda-2/presentation.html#mengenal-lambda-dan-udl",
+    "title": "feidlambda II",
+    "section": "Mengenal LAMBDA dan UDL",
+    "text": "Mengenal LAMBDA dan UDL\n\nLAMBDA(...): Gunakan fungsi LAMBDA untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. 1\n\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)\nFungsi LAMBDA, Microsoft Support."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#lambda-dan-let",
+    "href": "greenhorn/feidlambda-2/presentation.html#lambda-dan-let",
+    "title": "feidlambda II",
+    "section": "LAMBDA dan LET",
+    "text": "LAMBDA dan LET\n\n\nLAMBDA dan LET biasanya digunakan bersamaan untuk memudahkan pembuatan UDL ataupun membaca/troubleshooting.\nLAMBDA berfungsi menerima input dan membungkusnya sebagai fungsi baru di Excel.\nLET digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari LAMBDA."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let",
+    "href": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let",
+    "title": "feidlambda II",
+    "section": "Menggabungkan LAMBDA dan LET",
+    "text": "Menggabungkan LAMBDA dan LET\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let-1",
+    "title": "feidlambda II",
+    "section": "Menggabungkan LAMBDA dan LET",
+    "text": "Menggabungkan LAMBDA dan LET\n=LAMBDA(\n  parameter1, \n  [parameter2, parameter3, ...],\n  calculation\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let-2",
+    "href": "greenhorn/feidlambda-2/presentation.html#menggabungkan-lambda-dan-let-2",
+    "title": "feidlambda II",
+    "section": "Menggabungkan LAMBDA dan LET",
+    "text": "Menggabungkan LAMBDA dan LET\n=LAMBDA(\n  parameter1, \n  [parameter2, parameter3, ...],\n  LET(\n    name1, value1,\n    [name2, value2, name3, value3, ...],\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#contoh-lambda-dan-let-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#contoh-lambda-dan-let-1",
+    "title": "feidlambda II",
+    "section": "Contoh LAMBDA dan LET",
+    "text": "Contoh LAMBDA dan LET\n\nMengurangi setiap elemen dari numeric vector (\\(\\mathbf{x}\\)) dengan setengah dari rata-ratanya (\\(\\frac{\\text{mean}(\\mathbf{x})}{2}\\)).\n\\(\\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2}\\)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menentukan-input-lambda",
+    "href": "greenhorn/feidlambda-2/presentation.html#menentukan-input-lambda",
+    "title": "feidlambda II",
+    "section": "Menentukan input LAMBDA",
+    "text": "Menentukan input LAMBDA\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  parameter1, \n  [parameter2, parameter3, ...],\n  calculation\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#menentukan-input-lambda-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#menentukan-input-lambda-1",
+    "title": "feidlambda II",
+    "section": "Menentukan input LAMBDA",
+    "text": "Menentukan input LAMBDA\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  calculation\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    name1, value1,\n    [name2, value2, name3, value3, ...],\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-1",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    x, vector,\n    [name2, value2, name3, value3, ...],\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-2",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-2",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    ..., ...,\n    [name2, value2, name3, value3, ...],\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-3",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-3",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    [name2, value2, name3, value3, ...],\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-4",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-4",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    ..., ...,\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-5",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-5",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    y, vector - halfavg,\n    calculation\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-6",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-6",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    y, vector - halfavg,\n    y\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-7",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-7",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-8",
+    "href": "greenhorn/feidlambda-2/presentation.html#kalkulasi-dengan-let-8",
+    "title": "feidlambda II",
+    "section": "Kalkulasi dengan LET",
+    "text": "Kalkulasi dengan LET\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#validasi-input",
+    "href": "greenhorn/feidlambda-2/presentation.html#validasi-input",
+    "title": "feidlambda II",
+    "section": "Validasi input",
+    "text": "Validasi input\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg/2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#validasi-input-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#validasi-input-1",
+    "title": "feidlambda II",
+    "section": "Validasi input",
+    "text": "Validasi input\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    vector_clean, FILTER(vector, ISNUMBER(vector)),\n    avg, AVERAGE(vector_clean),\n    halfavg, avg/2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#refactoring",
+    "href": "greenhorn/feidlambda-2/presentation.html#refactoring",
+    "title": "feidlambda II",
+    "section": "Refactoring",
+    "text": "Refactoring\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    vector_clean, FILTER(vector, ISNUMBER(vector)),\n    avg, AVERAGE(vector_clean),\n    halfavg, avg/2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#refactoring-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#refactoring-1",
+    "title": "feidlambda II",
+    "section": "Refactoring",
+    "text": "Refactoring\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{2} \\]\n=LAMBDA(\n  vector,\n  LET(\n    vector_clean, FILTER(vector, ISNUMBER(vector)),\n    halfavg, AVERAGE(vector_clean) / 2,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#optional-argumentparameter",
+    "href": "greenhorn/feidlambda-2/presentation.html#optional-argumentparameter",
+    "title": "feidlambda II",
+    "section": "Optional argument/parameter",
+    "text": "Optional argument/parameter\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{n} \\]\n=LAMBDA(\n  vector,\n  [n],\n  LET(\n    n, IF(ISOMITTED(n), 2, n),\n    vector_clean, FILTER(vector, ISNUMBER(vector)),\n    halfavg, AVERAGE(vector_clean) / n,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#optional-argumentparameter-1",
+    "href": "greenhorn/feidlambda-2/presentation.html#optional-argumentparameter-1",
+    "title": "feidlambda II",
+    "section": "Optional argument/parameter",
+    "text": "Optional argument/parameter\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{n} \\]\n=LAMBDA(\n  vector,\n  [n],\n  LET(\n    n, IF(ISOMITTED(n), 2, n),\n    vector_clean, FILTER(vector, ISNUMBER(vector)),\n    halfavg, AVERAGE(vector_clean) / n,\n    vector - halfavg\n  )\n)"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#penggunaan-formula",
+    "href": "greenhorn/feidlambda-2/presentation.html#penggunaan-formula",
+    "title": "feidlambda II",
+    "section": "Penggunaan Formula",
+    "text": "Penggunaan Formula\n\\[ \\mathbf{y} \\leftarrow \\mathbf{x} - \\frac{\\text{mean}(\\mathbf{x})}{n} \\]\n\n\nFormula tersebut disimpan sebagai HALFAVG di Formulas Name Manager.\nSintaksnya =HALFAVG(vector, [n]).\n=HALFAVG(D5:D10) (maka \\(n=2\\)).\n=HALFAVG(D5#, 4) (maka \\(n=4\\))."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#advanced-formula-environment-afe",
+    "href": "greenhorn/feidlambda-2/presentation.html#advanced-formula-environment-afe",
+    "title": "feidlambda II",
+    "section": "Advanced Formula Environment (AFE)",
+    "text": "Advanced Formula Environment (AFE)\n\n\nExcel add-ins yang memudahkan mengatur formula pada lembar kerja.\nAlternatif Formulas Name Manager.\nMemiliki fitur syntax highlighting dan shortcut umum untuk coding.\nDapat import UDL hasil dari orang lain. 1\n\n\nHarus melalui Github Gist."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#berbagi-udl",
+    "href": "greenhorn/feidlambda-2/presentation.html#berbagi-udl",
+    "title": "feidlambda II",
+    "section": "Berbagi UDL",
+    "text": "Berbagi UDL\n\n\nMemiliki GitHub Account.\nMengupload kode UDL dari AFE ke GitHub Gist.\nShare link Gist."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/index.html",
+    "href": "greenhorn/feidlambda-2/index.html",
+    "title": "feidlambda II",
+    "section": "",
+    "text": "Review Glossary (Daftar Istilah).\nReview Dynamic Array dan Dynamic Array Formula.\nOperator & Fungsi Logical: AND (*), OR (+).\nFungsi IS*: ISBLANK, ISERR, ISERROR, ISEVEN, ISFORMULA, ISNA, ISNONTEXT, ISNUMBER, ISODD.\nDynamic Array Formula (DAF): FILTER, RANDARRAY, SEQUENCE, SORT, SORTBY, UNIQUE, XLOOKUP, XMATCH.\nFungsi Baru (2019-2021):\n\n2019: CONCAT, IFS, MAXIFS, MINIFS, SWITCH, TEXTJOIN.\n2021: LET.\n\nUser Defined Lambda (UDL) dengan LAMBDA.\nKombinasi LAMBDA dan LET.\nBerbagi UDL dengan GitHub Gist dan Advanced Formula Environment (AFE)."
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#hello-there",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#hello-there",
+    "title": "Quarto Presentations",
+    "section": "Hello, There",
+    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#pretty-code",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#pretty-code",
+    "title": "Quarto Presentations",
+    "section": "Pretty Code",
+    "text": "Pretty Code\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n  })\n}\n\nLearn more: Syntax Highlighting"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#code-animations",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#code-animations",
+    "title": "Quarto Presentations",
+    "section": "Code Animations",
+    "text": "Code Animations\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n    barplot(WorldPhones[,input$region]*1000, \n            main=input$region,\n            ylab=\"Number of Telephones\",\n            xlab=\"Year\")\n  })\n}\n\nLearn more: Code Animations"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#line-highlighting",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#line-highlighting",
+    "title": "Quarto Presentations",
+    "section": "Line Highlighting",
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#executable-code",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#executable-code",
+    "title": "Quarto Presentations",
+    "section": "Executable Code",
+    "text": "Executable Code\n#| echo: true\n#| fig-width: 10\n#| fig-height: 4.5\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\nLearn more: Executable Code"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#latex-equations",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#latex-equations",
+    "title": "Quarto Presentations",
+    "section": "LaTeX Equations",
+    "text": "LaTeX Equations\nMathJax rendering of equations to HTML\n\n\n\\begin{gather*}\na_1=b_1+c_1\\\\\na_2=b_2+c_2-d_2+e_2\n\\end{gather*}\n\n\\begin{align}\na_{11}& =b_{11}&\n  a_{12}& =b_{12}\\\\\na_{21}& =b_{21}&\n  a_{22}& =b_{22}+c_{22}\n\\end{align}\n\n\\[\\begin{gather*}\na_1=b_1+c_1\\\\\na_2=b_2+c_2-d_2+e_2\n\\end{gather*}\\]\n\\[\\begin{align}\na_{11}& =b_{11}&\n  a_{12}& =b_{12}\\\\\na_{21}& =b_{21}&\n  a_{22}& =b_{22}+c_{22}\n\\end{align}\\]\n\n\n\nLearn more: LaTeX Equations"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#column-layout",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#column-layout",
+    "title": "Quarto Presentations",
+    "section": "Column Layout",
+    "text": "Column Layout\nArrange content into columns of varying widths:\n\n\nMotor Trend Car Road Tests\nThe data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.\n\n\n\nknitr::kable(head(mtcars)[,c(\"mpg\", \"cyl\", \"disp\", \"hp\", \"wt\")])\n\n\n\nLearn more: Multiple Columns"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#incremental-lists",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#incremental-lists",
+    "title": "Quarto Presentations",
+    "section": "Incremental Lists",
+    "text": "Incremental Lists\nLists can optionally be displayed incrementally:\n\n\nFirst item\nSecond item\nThird item\n\n\n\n Insert pauses to make other types of content display incrementally.\n\nLearn more: Incremental Lists"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#fragments",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#fragments",
+    "title": "Quarto Presentations",
+    "section": "Fragments",
+    "text": "Fragments\nIncremental text display and animation with fragments:\n\n\nFade in\n\n\nSlide up while fading in\n\n\nSlide left while fading in\n\n\nFade in then semi out\n\n\n\nStrike\n\n\nHighlight red\n\n\nLearn more: Fragments"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#slide-backgrounds",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#slide-backgrounds",
+    "title": "Quarto Presentations",
+    "section": "Slide Backgrounds",
+    "text": "Slide Backgrounds\nSet the background attribute on a slide to change the background color (all CSS color formats are supported).\nDifferent background transitions are available via the background-transition option.\n\nLearn more: Slide Backgrounds"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#media-backgrounds",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#media-backgrounds",
+    "title": "Quarto Presentations",
+    "section": "Media Backgrounds",
+    "text": "Media Backgrounds\nYou can also use the following as a slide background:\n\nAn image: background-image\nA video: background-video\nAn iframe: background-iframe\n\n\nLearn more: Media Backgrounds"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#absolute-position",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#absolute-position",
+    "title": "Quarto Presentations",
+    "section": "Absolute Position",
+    "text": "Absolute Position\nPosition images or other elements at precise locations\n\n\n\n\nLearn more: Absolute Position"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#auto-animate",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#auto-animate",
+    "title": "Quarto Presentations",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#auto-animate-1",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#auto-animate-1",
+    "title": "Quarto Presentations",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate.\n\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Auto-Animate"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#slide-transitions",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#slide-transitions",
+    "title": "Quarto Presentations",
+    "section": "Slide Transitions",
+    "text": "Slide Transitions\nThe next few slides will transition using the slide transition\n\n\n\n\n\n\n\nTransition\nDescription\n\n\n\n\nnone\nNo transition (default, switch instantly)\n\n\nfade\nCross fade\n\n\nslide\nSlide horizontally\n\n\nconvex\nSlide at a convex angle\n\n\nconcave\nSlide at a concave angle\n\n\nzoom\nScale the incoming slide so it grows in from the center of the screen.\n\n\n\n\nLearn more: Slide Transitions"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#tabsets",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#tabsets",
+    "title": "Quarto Presentations",
+    "section": "Tabsets",
+    "text": "Tabsets\n\nPlotData\n\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\nknitr::kable(mtcars)\n\n\n\n\nLearn more: Tabsets"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#interactive-slides",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#interactive-slides",
+    "title": "Quarto Presentations",
+    "section": "Interactive Slides",
+    "text": "Interactive Slides\nInclude Jupyter widgets and htmlwidgets in your presentations\n#| echo: false\n#| fig-height: 5\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n\nLearn more: Jupyter widgets, htmlwidgets"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#interactive-slides-1",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#interactive-slides-1",
+    "title": "Quarto Presentations",
+    "section": "Interactive Slides",
+    "text": "Interactive Slides\nTurn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.\nojs_define(actors = data.frame(\n  x = rnorm(100),\n  y = rnorm(100)\n))\n//| panel: sidebar\nviewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"talent weight\" })\nviewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: \"looks weight\" })\nviewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: \"min fame\" })\n//| panel: fill\nimport { plotActors } from './actors.js';\nplotActors(actors, talentWeight, looksWeight, minimum)\n\nLearn more: Observable, Shiny, Component Layout"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#preview-links",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#preview-links",
+    "title": "Quarto Presentations",
+    "section": "Preview Links",
+    "text": "Preview Links\nNavigate to hyperlinks without disrupting the flow of your presentation.\nUse the preview-links option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:\n\nMatplotlib: Visualization with Python\n\n\nLearn more: Preview Links"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#themes",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#themes",
+    "title": "Quarto Presentations",
+    "section": "Themes",
+    "text": "Themes\n10 Built-in Themes (or create your own)\n\n\n\n\n\n\n\n\n\n\n\nLearn more: Themes"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#easy-navigation",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#easy-navigation",
+    "title": "Quarto Presentations",
+    "section": "Easy Navigation",
+    "text": "Easy Navigation\n\nQuickly jump to other parts of your presentation\n\n\n\n\n\n\n\nToggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.\n\n\n\nYou can also press m to toggle the menu open and closed.\n\nLearn more: Navigation"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#chalkboard",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#chalkboard",
+    "title": "Quarto Presentations",
+    "section": "Chalkboard",
+    "text": "Chalkboard\n\nFree form drawing and slide annotations\n\n\n\n\n\n\n\nUse the chalkboard button at the bottom left of the slide to toggle the chalkboard.\n\n\n\n\n\n\n\n\n\nUse the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.\n\n\n\nYou can also press b to toggle the chalkboard or c to toggle the notes canvas.\n\nLearn more: Chalkboard"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#point-of-view",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#point-of-view",
+    "title": "Quarto Presentations",
+    "section": "Point of View",
+    "text": "Point of View\nPress o to toggle overview mode:\n\nHold down the Alt key (or Ctrl in Linux) and click on any element to zoom towards it—try it now on this slide.\n\nLearn more: Overview Mode, Slide Zoom"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#speaker-view",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#speaker-view",
+    "title": "Quarto Presentations",
+    "section": "Speaker View",
+    "text": "Speaker View\nPress s (or use the presentation menu) to open speaker view\n\n\nLearn more: Speaker View"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#authoring-tools",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#authoring-tools",
+    "title": "Quarto Presentations",
+    "section": "Authoring Tools",
+    "text": "Authoring Tools\nLive side-by-side preview for any notebook or text editor including Jupyter and VS Code\n\n\n\n\n\n\n\n\nLearn more: Jupyter, VS Code, Text Editors"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#authoring-tools-1",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#authoring-tools-1",
+    "title": "Quarto Presentations",
+    "section": "Authoring Tools",
+    "text": "Authoring Tools\nRStudio includes an integrated presentation preview pane\n\n\nLearn more: RStudio"
+  },
+  {
+    "objectID": "greenhorn/feidlambda-2/presentation_ex.html#and-more",
+    "href": "greenhorn/feidlambda-2/presentation_ex.html#and-more",
+    "title": "Quarto Presentations",
+    "section": "And More…",
+    "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\n\nhttps://quarto.org"
+  },
+  {
     "objectID": "docs/glossary.html",
     "href": "docs/glossary.html",
     "title": "Daftar Istilah",
