@@ -1,8 +1,13 @@
 ---
-title: "feidlambda II"
-subtitle: "Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA"
-date: 2022-10-25
-author: Taruma Sakti Megariansyah
+title: |
+  Greenhorn: feidlambda II
+subtitle: |
+  _**Exploring Dynamic Array + User Defined Lambda (UDL) with `LAMBDA`**_
+date: |
+  _`25 Oktober 2022`_<br>
+  [Update: _`27 Oktober 2022`_]
+author: |
+  Taruma Sakti Megariansyah (**fiako**dev)
 format:
   revealjs: 
     smaller: false
@@ -13,9 +18,10 @@ format:
     theme: moon
     logo: /fiakologo.png
     transition: convex
-    embed-resources: true
+    embed-resources: false #TODO
     touch: true
     controls: true
+    incremental: true
     # multiplex: true
     footer: |
       &copy; 2022 Taruma Sakti Megariansyah. <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
@@ -23,83 +29,414 @@ format:
 
 ## Agenda
 
-Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA_
+Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with `LAMBDA`_
 
-::: {.incremental}
-- Review Daftar Istilah & _Dynamic Array Formula_
-- _Logical_
+- Review Daftar Istilah
+- Eksplorasi tentang _Logical_
 - _Dynamic Array Formula_ (DAF)
-- Fungsi Baru (2019-2021)
+- Fungsi Baru dari Excel 2019 dan 2021
 - _User Defined Lambda_ (UDL) dengan `LAMBDA`
-:::
 
-# 1 Review
+# 1 Review [Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html)
 
-# [Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html)
+# 2 Eksplorasi tentang _Logical_
 
-# 2 _Logical_
+Fungsi _logical_ dan Fungsi `IS*(...)`
 
-# Fungsi dan Operator _Logical_
+# Fungsi _Logical_
 
-## `AND` {.smaller}
+`NOT(...)`, `AND(...)`, `OR(...)`, `XOR(...)`
+
+# Fungsi `NOT(...)`
+
+## `NOT` (1)
+
+. . .
 
 ### Syntax
 
-```default 
+```vb 
+=NOT(logical)
+```
+
+- Fungsi `NOT` membalikkan nilai argumennya. ^[[`NOT` (Fungsi `NOT`)](https://support.microsoft.com/id-id/office/not-fungsi-not-9cfc6011-a054-40c7-a140-cd4ba2d87d77), Microsoft Support.]
+- Menghasilkan nilai `TRUE` ketika kondisi bernilai `FALSE`, dan berlaku sebaliknya. 
+- `NOT(TRUE)` $\Rightarrow$ `FALSE`
+- `NOT(FALSE)` $\Rightarrow$ `TRUE`
+
+## `NOT` (2) {.smaller}
+
+. . .
+
+$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+
+- `NOT(vector)`<br> 
+  $\Rightarrow$ `NOT({TRUE, TRUE, FALSE})`<br> 
+  $\Rightarrow$ `{FALSE, FALSE, TRUE}`
+- `NOT(TRANSPOSE(vector))`<br> 
+  $\Rightarrow$ `NOT({TRUE; TRUE; FALSE})`<br> 
+  $\Rightarrow$ `{FALSE; FALSE; TRUE}`
+- Jika input berupa _logical vector/array_ saja (`NOT(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector/array_ (`AND(elemen_1, elemen_2, ...)`). 
+
+# Fungsi `AND(...)`
+
+## `AND` (1)
+
+. . .
+
+### Syntax
+
+```vb 
 =AND(logical1, [logical2], ...)
 ```
 
-::: {.incremental}
 - Fungsi logika, untuk menentukan apakah **semua kondisi** dalam sebuah tes adalah `TRUE`. ^[[AND (Fungsi AND)](https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9), Microsoft Support.]
-- Menghasilkan nilai `TRUE` ketika dua (atau lebih) bernilai `TRUE`. Jika terdapat satu atau lebih nilai `FALSE` maka menghasilkan nilai `FALSE`. 
-- Jika input berupa _logical vector_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`AND(elemen_1, elemen_2, ...)`). 
-:::
+- Menghasilkan nilai `TRUE` ketika seluruh kondisi bernilai `TRUE`. Jika terdapat **satu atau lebih** bernilai `FALSE` maka menghasilkan nilai `FALSE`. 
 
-## Operator `AND` (`*`) {.smaller}
+## `AND` (2) {.smaller}
+
+. . .
+
+### Contoh
+
+- `AND(TRUE, TRUE) | AND(TRUE, TRUE, TRUE)` $\Rightarrow$ `TRUE`
+- `AND(TRUE, FALSE) | AND(TRUE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
+- `AND(FALSE, FALSE) | AND(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
+
+. . .
+
+$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+
+- `AND(vector)` $\Rightarrow$ `AND(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
+- Jika input berupa _logical vector_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`AND(elemen_1, elemen_2, ...)`). 
+
+# Fungsi `OR(...)`
+
+## `OR` (1)
+
+. . .
 
 ### Syntax
 
-```default 
-=logical_vector1 * logical_vector2
-```
-
-::: {.incremental}
-- Mengevaluasi `AND` pada setiap elemen dengan _vector/array_. <br>`={AND(elemen1_vector1, elemen1_vector2, ...), AND(elemen2_vector1, elemen2_vector2, ...), ...}`.
-- Menghasilkan _numerical vector_ yang bernilai `0` (`FALSE`) atau `1` (`TRUE`). Contohnya: `{1, 0, 1}`
-- Gunakan `numerical_vector=1` untuk menghasilkan _logical vector_ (`{TRUE, FALSE, TRUE}`)
-:::
-
-## `OR`
-
-```default 
+```vb 
 =OR(logical1, [logical2], ...)
 ```
 
-::: {.incremental}
 - Fungsi logika, untuk menentukan apakah **salah satu kondisi** dalam sebuah tes adalah `TRUE`. ^[[`OR` function](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0), Microsoft Support.]
-- Menghasilkan nilai `TRUE` ketika salah satu bernilai `TRUE`. 
-- Jika input berupa _logical vector_ saja (`OR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`OR(elemen_1, elemen_2, ...)`). 
-:::
+- Menghasilkan nilai `TRUE` ketika salah satu kondisi bernilai `TRUE`. 
 
-## Operator `OR` (`+`) {.smaller}
+## `OR` (2) {.smaller}
+
+. . .
+
+### Contoh
+
+- `OR(TRUE, TRUE) | OR(TRUE, TRUE, TRUE)` $\Rightarrow$ `TRUE`
+- `OR(TRUE, FALSE) | OR(TRUE, FALSE, FALSE)` $\Rightarrow$ `TRUE`
+- `OR(FALSE, FALSE) | OR(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
+
+. . .
+
+$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+
+- `OR(vector)` $\Rightarrow$ `OR(TRUE, TRUE, FALSE)` $\Rightarrow$ `TRUE`
+- Jika input berupa _logical vector_ saja (`OR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`OR(elemen_1, elemen_2, ...)`). 
+
+# Fungsi `XOR(...)`
+
+## `XOR` (1)
+
+. . .
 
 ### Syntax
 
-```default 
-=logical_vector1 * logical_vector2
+```vb 
+=XOR(logical1, [logical2], ...)
 ```
 
-::: {.incremental}
-- Mengevaluasi `OR` pada setiap elemen dengan _vector/array_. <br>`={OR(elemen1_vector1, elemen1_vector2, ...), OR(elemen2_vector1, elemen2_vector2, ...), ...}`.
-- Menghasilkan _numerical vector_ yang bernilai `0` (`FALSE`) atau `1` (`TRUE`). Contohnya: `{1, 0, 1}`
-- Gunakan `numerical_vector=1` untuk menghasilkan _logical vector_ (`{TRUE, FALSE, TRUE}`)
-:::
+- Fungsi `XOR` mengembalikan logika **Exclusive Or** dari semua argumen. ^[[`XOR` function](https://support.microsoft.com/id-id/office/xor-fungsi-xor-1548d4c2-5e47-4f77-9a92-0533bba14f37), Microsoft Support.]
+- Menghasilkan nilai `TRUE` ketika hanya satu kondisi bernilai `TRUE`. 
 
-<!-- ## Menggunakan `AND` dan `OR` -->
+## `XOR` (2) {.smaller}
 
-# Fungsi `IS*`
+. . .
+
+### Contoh
+
+- `XOR(TRUE, TRUE) | OR(TRUE, TRUE, TRUE)` $\Rightarrow$ `FALSE`
+- `XOR(TRUE, FALSE) | OR(TRUE, FALSE, FALSE)` $\Rightarrow$ `TRUE`
+- `XOR(TRUE, FALSE, TRUE)` $\Rightarrow$ `FALSE`
+- `XOR(FALSE, FALSE) | OR(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
+
+. . .
+
+$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+
+- `XOR(vector)` $\Rightarrow$ `XOR(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
+- Jika input berupa _logical vector_ saja (`XOR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`XOR(elemen_1, elemen_2, ...)`). 
+
+# _Logical_ $\iff$ _Number_
+
+## _Logical_ $\Rightarrow$ _Number_ (1)
+
+- `FALSE` $\Rightarrow$ `0`. Bernilai `FALSE` jika nilai `0`. $\{ x = 0 \}$
+- `TRUE` $\neq$ `0`. Bernilai `TRUE` jika nilai **bukan** `0`. $\{ x \in \mathbf{R}\ |\ x \neq 0 \}$
+
+- Mengubah _logical_ menjadi _number_ dapat menggunakan fungsi `INT(...)`.
+- `INT(TRUE)` $\Rightarrow$ `1`.
+- `INT(FALSE)` $\Rightarrow$ `0`.
+ 
+## _Logical_ $\Rightarrow$ _Number_ (2)
+
+- Fungsi `INT(...)` merupakan _Dynamic Array Formula_, sehingga jika _input_ berupa _vector/array_ akan dievaluasi setiap elemennya.
+- `INT({TRUE, FALSE, FALSE, TRUE})` $\Rightarrow$ `{1, 0, 0, 1}`. 
+
+## _Logical_ dan operator matematik {.smaller}
+
+- _Logical vector_ akan diubah menjadi _numeric vector_ ketika bertemu operator matematik (`+`, `*`, `-`, `/`).
+- Perubahan _logical_ menjadi _number_ sama dengan proses penggunaan fungsi `INT(...)`.
+- Operator matematik kali `*` dan tambah `+` dapat mengindikasikan fungsi _logical_ `AND` (`*`) dan `OR` (`+`). 
+
+. . .
+
+$$
+\overbrace{
+  \begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{FALSE}\\
+  \texttt{FALSE}
+  \end{bmatrix}
+}^{\text{logical vector/array}}
+\underbrace{\times\ |\ +}_\text{operator}
+\overbrace{
+  \begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
+  \end{bmatrix}
+}^{\text{logical vector/array}}
+$$
+
+# Operator kali `*` ($\times$) sebagai `AND`
+
+## Operator kali `*` sebagai `AND` (1)
+
+- Setiap nilai yang dikalikan dengan `0` akan bernilai `0`. 
+
+. . .
+
+$$x \times 0 = 0\ \{x \in \mathbf{R}\}$$
+
+- Setiap nilai yang dikalikan dengan `FALSE` akan bernilai `FALSE`. 
+
+## Operator kali `*` sebagai `AND` (2)
+
+. . .
+
+$$
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{FALSE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{0}\\
+  \texttt{0}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{1}\\
+  \texttt{0}
+\end{bmatrix}
+=
+\underbrace{
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{0}\\
+  \texttt{0}
+\end{bmatrix}
+}_{\text{hasil akhir}}
+$$
+
+. . .
+
+$$
+\Rightarrow
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{0}\\
+  \texttt{0}
+\end{bmatrix}
+\underbrace{\Rightarrow}_{\neq 0}
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{FALSE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+$$
+
+
+# Operator tambah `+` ($+$) sebagai `OR`
+
+## Operator tambah `+` sebagai `OR` (1)
+
+- Berlaku seperti pertambahan pada umumnya.
+
+. . .
+
+$$x + 0 = x$$
+
+$$x + y = x + y$$ 
+
+- Setiap nilai yang **bukan `0`** bernilai `TRUE`. 
+
+## Operator tambah `+` sebagai `OR` (2)
+
+. . .
+
+$$
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{FALSE}\\
+  \texttt{FALSE}
+\end{bmatrix}
++
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{0}\\
+  \texttt{0}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+  \texttt{1}\\
+  \texttt{1}\\
+  \texttt{0}
+\end{bmatrix}
+=
+\underbrace{
+\begin{bmatrix}
+  \texttt{2}\\
+  \texttt{1}\\
+  \texttt{0}
+\end{bmatrix}
+}_{\text{hasil akhir}}
+$$
+
+. . .
+
+$$
+\Rightarrow
+\begin{bmatrix}
+  \texttt{2}\\
+  \texttt{1}\\
+  \texttt{0}
+\end{bmatrix}
+\underbrace{\Rightarrow}_{\neq 0}
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+$$
+
+# _Number_ $\Rightarrow$ _Logical_
+
+## _Number_ $\Rightarrow$ _Logical_ (1)
+
+- _Numeric array_ dapat digunakan sebagai kondisi _logical_ **tunggal**. 
+- Setiap _numeric array_ yang digunakan sebagai _conditional_ secara tidak langsung berubah menjadi _logical array_. 
+- Perubahan tersebut sama saja jika membandingkan _array_ **tidak sama dengan `0`**. $(\mathbf{x}_{\text{number}} \neq 0 \Rightarrow \mathbf{x}_{\text{logical}})$
+
+## _Number_ $\Rightarrow$ _Logical_ (2)
+
+. . .
+
+$$
+  \underbrace{
+    \begin{bmatrix}
+      \texttt{3}\\
+      \texttt{-1}\\
+      \texttt{0}
+    \end{bmatrix}
+  }_{\textit{numeric vector}}
+  \neq 0
+  \Rightarrow
+  \underbrace{
+    \begin{bmatrix}
+      \texttt{TRUE}\\
+      \texttt{TRUE}\\
+      \texttt{FALSE}
+    \end{bmatrix}
+  }_{\textit{logical vector}}
+$$
+
+- Sama saja dengan `=vektor<>0`.
+
+## _Number_ $\Rightarrow$ _Logical_ (2) {.smaller}
+
+. . .
+
+$$
+\texttt{IF}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      \texttt{3}\\
+      \texttt{-1}\\
+      \texttt{0}
+    \end{bmatrix}
+  }_{\textit{numeric vector}}
+  ,
+  \underbrace{\dots}_{\texttt{TRUE}}
+  ,
+  \underbrace{\dots}_{\texttt{FALSE}}
+\right)
+$$
+
+. . .
+
+$$
+\texttt{IF}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      \texttt{TRUE}\\
+      \texttt{TRUE}\\
+      \texttt{FALSE}
+    \end{bmatrix}
+  }_{\textit{logical vector}}
+  ,
+  \underbrace{\dots}_{\texttt{TRUE}}
+  ,
+  \underbrace{\dots}_{\texttt{FALSE}}
+\right)
+$$
+
+## Yang perlu diperhatikan
+
+- Setiap _logical array_ bertemu dengan operator matematik, hasilnya **selalu _numeric array_**.
+- Jika _numeric array_ digunakan sebagai _conditional_, maka akan dikonversi menjadi _logical array_. 
+
+# Mengenal Fungsi `IS*`
 
 ## Fungsi `IS*`
+
+. . .
 
 ### SYNTAX
 
@@ -107,42 +444,31 @@ Agenda untuk _feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)
 =IS*(value)
 ```
 
-::: {.incremental}
 - Memeriksa nilai tertentu dan mengembalikan `TRUE` atau `FALSE` bergantung pada hasilnya. ^[[Fungsi IS](https://support.microsoft.com/id-id/office/fungsi-is-0f2d7971-6019-40a0-a171-f2d869135665), Microsoft Support.]
-- `ISBLANK` bernilai `TRUE` jika sel kosong.
-- `ISNUMBER` bernilai `TRUE` jika sel berisikan angka.
-:::
+- Fungsi `IS*(...)` merupakan _Dynamic Array Formula_. 
+- `ISBLANK(...)` bernilai `TRUE` jika sel kosong.
+- `ISNUMBER(...)` bernilai `TRUE` jika sel berisikan angka.
 
-## Koleksi Fungsi `IS*` (1)
+# Koleksi Fungsi `IS*`
 
-### Periksa nilai error / kosong
+## Periksa _error_ / kosong
 
-::: {.incremental}
 - `ISNA(...)`: Cek nilai apakah `#N/A`.
 - `ISERR(...)`: Cek nilai apakah error selain `#N/A` (`#VALUE!`, `#REF!`, `#DIV/0!`, `#NUM!`, `#NAME?`, atau `#NULL!`).
 - `ISERROR(...)`: Cek nilai apakah error (seluruh jenis error).
 - `ISBLANK(...)`: Cek nilai apakah kosong.
-:::
 
-## Koleksi Fungsi `IS*` (2)
+## Periksa jenis sel
 
-### Periksa nilai jenis sel
-
-::: {.incremental}
 - `ISLOGICAL(...)`: Cek nilai apakah _logical_ (`TRUE` atau `FALSE`).
 - `ISNUMBER(...)`: Cek nilai apakah _numeric_ ($\mathbb{R}$).
 - `ISTEXT(...)`: Cek nilai apakah teks. Dan `ISNONTEXT(...)`: Cek niai apakah bukan teks (_number_, _logical_, _error_)
 - `ISFORMULA(...)`: Cek nilai apakah formula.
-:::
 
-## Koleksi Fungsi `IS*` (3)
+## Periksa jenis bilangan
 
-### Periksa nilai angka
-
-::: {.incremental}
 - `ISEVEN(...)`: Cek nilai apakah bilangan genap.
 - `ISODD(...)`: Cek nilai apakah bilangan ganjil.
-:::
 
 # 3 _Dynamic Array Formula_ (DAF)
 
