@@ -2,10 +2,10 @@
 title: |
   Greenhorn: feidlambda II
 subtitle: |
-  _**Exploring Dynamic Array + User Defined Lambda (UDL) with `LAMBDA`**_
+  _**Exploring Dynamic Array + User Defined `Lambda` (UDL)**_
 date: |
-  _`25 Oktober 2022`_<br>
-  [Update: _`27 Oktober 2022`_]
+  _`v1.0: 25 Oktober 2022`_<br>
+  [v2.0: _`28 Oktober 2022`_]
 author: |
   Taruma Sakti Megariansyah (**fiako**dev)
 format:
@@ -29,13 +29,13 @@ format:
 
 ## Agenda
 
-Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with `LAMBDA`_
+Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined `Lambda` (UDL)_
 
 - Review Daftar Istilah
 - Eksplorasi tentang _Logical_
 - _Dynamic Array Formula_ (DAF)
 - Fungsi Baru dari Excel 2019 dan 2021
-- _User Defined Lambda_ (UDL) dengan `LAMBDA`
+- _User Defined `Lambda`_ (UDL)
 
 # 1 Review [Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html)
 
@@ -68,7 +68,7 @@ Fungsi _logical_ dan Fungsi `IS*(...)`
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
 
 - `NOT(vector)`<br> 
   $\Rightarrow$ `NOT({TRUE, TRUE, FALSE})`<br> 
@@ -76,7 +76,7 @@ $$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 - `NOT(TRANSPOSE(vector))`<br> 
   $\Rightarrow$ `NOT({TRUE; TRUE; FALSE})`<br> 
   $\Rightarrow$ `{FALSE; FALSE; TRUE}`
-- Jika input berupa _logical vector/array_ saja (`NOT(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector/array_ (`AND(elemen_1, elemen_2, ...)`). 
+- Jika input berupa _logical array_ saja (`NOT(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
 
 # Fungsi `AND(...)`
 
@@ -105,10 +105,10 @@ $$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
 
 - `AND(vector)` $\Rightarrow$ `AND(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
-- Jika input berupa _logical vector_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`AND(elemen_1, elemen_2, ...)`). 
+- Jika input berupa _logical array_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
 
 # Fungsi `OR(...)`
 
@@ -137,10 +137,10 @@ $$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
 
 - `OR(vector)` $\Rightarrow$ `OR(TRUE, TRUE, FALSE)` $\Rightarrow$ `TRUE`
-- Jika input berupa _logical vector_ saja (`OR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`OR(elemen_1, elemen_2, ...)`). 
+- Jika input berupa _logical array_ saja (`OR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`OR(elemen_1, elemen_2, ...)`). 
 
 # Fungsi `XOR(...)`
 
@@ -170,10 +170,10 @@ $$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
 
 - `XOR(vector)` $\Rightarrow$ `XOR(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
-- Jika input berupa _logical vector_ saja (`XOR(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical vector_ (`XOR(elemen_1, elemen_2, ...)`). 
+- Jika input berupa _logical array_ saja (`XOR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`XOR(elemen_1, elemen_2, ...)`). 
 
 # _Logical_ $\iff$ _Number_
 
@@ -188,14 +188,29 @@ $$ \mathbf{ \mathbf{vector} \leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
  
 ## _Logical_ $\Rightarrow$ _Number_ (2)
 
-- Fungsi `INT(...)` merupakan _Dynamic Array Formula_, sehingga jika _input_ berupa _vector/array_ akan dievaluasi setiap elemennya.
+- Fungsi `INT(...)` merupakan _Dynamic Array Formula_, sehingga jika _input_ berupa _array_ akan dievaluasi setiap elemennya.
 - `INT({TRUE, FALSE, FALSE, TRUE})` $\Rightarrow$ `{1, 0, 0, 1}`. 
 
-## _Logical_ dan operator matematik {.smaller}
+## _Logical_ dan operator aritmatika (1) {.smaller}
 
-- _Logical vector_ akan diubah menjadi _numeric vector_ ketika bertemu operator matematik (`+`, `*`, `-`, `/`).
+- _Logical array_ akan diubah menjadi _numeric array_ ketika bertemu operator aritmatika (`+`, `*`, `-`, `/`).
 - Perubahan _logical_ menjadi _number_ sama dengan proses penggunaan fungsi `INT(...)`.
-- Operator matematik kali `*` dan tambah `+` dapat mengindikasikan fungsi _logical_ `AND` (`*`) dan `OR` (`+`). 
+- Operator aritmatika perkalian (`*` / $\times$) dan penambahan (`+`) dapat berperilaku seperti fungsi _logical_ `AND` (`*`) dan `OR` (`+`). 
+- Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (_array_) menggunakan simbol $\odot$. Akan tetapi, pada materi ini simbol $\times$ diartikan sebagai perkalian setiap elemen (_element-wise_) dan **bukan perkalian matriks**.
+
+## _Logical_ dan operator aritmatika (2) {.smaller}
+
+. . .
+
+$$
+\mathbf{X}\underbrace{\textsf{ operator }}_{\times\ |\ +}\mathbf{Y}
+$$
+
+$$
+\{
+  \mathbf{X} \in \{\texttt{TRUE}, \texttt{FALSE}\}, \mathbf{Y} \in \{\texttt{TRUE}, \texttt{FALSE}\} 
+\} 
+$$
 
 . . .
 
@@ -206,7 +221,7 @@ $$
   \texttt{FALSE}\\
   \texttt{FALSE}
   \end{bmatrix}
-}^{\text{logical vector/array}}
+}^{\text{logical array}}
 \underbrace{\times\ |\ +}_\text{operator}
 \overbrace{
   \begin{bmatrix}
@@ -214,12 +229,28 @@ $$
   \texttt{TRUE}\\
   \texttt{FALSE}
   \end{bmatrix}
-}^{\text{logical vector/array}}
+}^{\text{logical array}}
+\Rightarrow
+\overbrace{
+  \begin{bmatrix}
+  1\\
+  0\\
+  0
+  \end{bmatrix}
+}^{\text{numeric array}}
+\underbrace{\times\ |\ +}_\text{operator}
+\overbrace{
+  \begin{bmatrix}
+  1\\
+  1\\
+  0
+  \end{bmatrix}
+}^{\text{numeric array}}
 $$
 
-# Operator kali `*` ($\times$) sebagai `AND`
+# Operator perkalian
 
-## Operator kali `*` sebagai `AND` (1)
+## Operator perkalian `*` sebagai `AND` (1)
 
 - Setiap nilai yang dikalikan dengan `0` akan bernilai `0`. 
 
@@ -229,7 +260,7 @@ $$x \times 0 = 0\ \{x \in \mathbf{R}\}$$
 
 - Setiap nilai yang dikalikan dengan `FALSE` akan bernilai `FALSE`. 
 
-## Operator kali `*` sebagai `AND` (2)
+## Operator perkalian `*` sebagai `AND` (2)
 
 . . .
 
@@ -247,22 +278,22 @@ $$
 \end{bmatrix}
 \Rightarrow
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{0}\\
-  \texttt{0}
+  1\\
+  0\\
+  0
 \end{bmatrix}
 \times
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{1}\\
-  \texttt{0}
+  1\\
+  1\\
+  0
 \end{bmatrix}
 =
 \underbrace{
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{0}\\
-  \texttt{0}
+  1\\
+  0\\
+  0
 \end{bmatrix}
 }_{\text{hasil akhir}}
 $$
@@ -272,11 +303,11 @@ $$
 $$
 \Rightarrow
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{0}\\
-  \texttt{0}
+  1\\
+  0\\
+  0
 \end{bmatrix}
-\underbrace{\Rightarrow}_{\neq 0}
+\neq 0 =
 \begin{bmatrix}
   \texttt{TRUE}\\
   \texttt{FALSE}\\
@@ -285,11 +316,11 @@ $$
 $$
 
 
-# Operator tambah `+` ($+$) sebagai `OR`
+# Operator penambahan
 
-## Operator tambah `+` sebagai `OR` (1)
+## Operator penambahan `+` sebagai `OR` (1)
 
-- Berlaku seperti pertambahan pada umumnya.
+- Berlaku seperti penambahan pada umumnya.
 
 . . .
 
@@ -299,7 +330,7 @@ $$x + y = x + y$$
 
 - Setiap nilai yang **bukan `0`** bernilai `TRUE`. 
 
-## Operator tambah `+` sebagai `OR` (2)
+## Operator penambahan `+` sebagai `OR` (2)
 
 . . .
 
@@ -317,22 +348,22 @@ $$
 \end{bmatrix}
 \Rightarrow
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{0}\\
-  \texttt{0}
+  1\\
+  0\\
+  0
 \end{bmatrix}
-\times
++
 \begin{bmatrix}
-  \texttt{1}\\
-  \texttt{1}\\
-  \texttt{0}
+  1\\
+  1\\
+  0
 \end{bmatrix}
 =
 \underbrace{
 \begin{bmatrix}
-  \texttt{2}\\
-  \texttt{1}\\
-  \texttt{0}
+  2\\
+  1\\
+  0
 \end{bmatrix}
 }_{\text{hasil akhir}}
 $$
@@ -342,11 +373,11 @@ $$
 $$
 \Rightarrow
 \begin{bmatrix}
-  \texttt{2}\\
-  \texttt{1}\\
-  \texttt{0}
+  2\\
+  1\\
+  0
 \end{bmatrix}
-\underbrace{\Rightarrow}_{\neq 0}
+\neq 0 =
 \begin{bmatrix}
   \texttt{TRUE}\\
   \texttt{TRUE}\\
@@ -360,7 +391,7 @@ $$
 
 - _Numeric array_ dapat digunakan sebagai kondisi _logical_ **tunggal**. 
 - Setiap _numeric array_ yang digunakan sebagai _conditional_ secara tidak langsung berubah menjadi _logical array_. 
-- Perubahan tersebut sama saja jika membandingkan _array_ **tidak sama dengan `0`**. $(\mathbf{x}_{\text{number}} \neq 0 \Rightarrow \mathbf{x}_{\text{logical}})$
+- Perubahan tersebut sama saja jika membandingkan _array_ **tidak sama dengan `0`**. $(\mathbf{x}_{\text{number}} \neq 0 = \mathbf{x}_{\text{logical}})$
 
 ## _Number_ $\Rightarrow$ _Logical_ (2)
 
@@ -369,11 +400,11 @@ $$
 $$
   \underbrace{
     \begin{bmatrix}
-      \texttt{3}\\
-      \texttt{-1}\\
-      \texttt{0}
+      3\\
+      -1\\
+      0
     \end{bmatrix}
-  }_{\textit{numeric vector}}
+  }_{\textit{numeric array}}
   \neq 0
   \Rightarrow
   \underbrace{
@@ -382,10 +413,10 @@ $$
       \texttt{TRUE}\\
       \texttt{FALSE}
     \end{bmatrix}
-  }_{\textit{logical vector}}
+  }_{\textit{logical array}}
 $$
 
-- Sama saja dengan `=vektor<>0`.
+- Sama saja dengan `=array<>0`.
 
 ## _Number_ $\Rightarrow$ _Logical_ (2) {.smaller}
 
@@ -396,9 +427,9 @@ $$
 \left(
   \underbrace{
     \begin{bmatrix}
-      \texttt{3}\\
-      \texttt{-1}\\
-      \texttt{0}
+      3\\
+      -1\\
+      0
     \end{bmatrix}
   }_{\textit{numeric vector}}
   ,
@@ -429,8 +460,8 @@ $$
 
 ## Yang perlu diperhatikan
 
-- Setiap _logical array_ bertemu dengan operator matematik, hasilnya **selalu _numeric array_**.
-- Jika _numeric array_ digunakan sebagai _conditional_, maka akan dikonversi menjadi _logical array_. 
+- Hasil dari _logical array_ bertemu dengan operator aritmatika **selalu _numeric array_**.
+- Jika _numeric array_ digunakan sebagai argumen _conditional_, maka akan dikonversikan menjadi _logical array_. 
 
 # Mengenal Fungsi `IS*`
 
@@ -474,8 +505,9 @@ $$
 
 ## Menyeleksi/memilih data 
 
-::: {.incremental}
 - `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
+
+. . .
 
 ```default
 =FILTER(array, include, [if_empty])
@@ -483,10 +515,11 @@ $$
 
 - `UNIQUE(...)`: Fungsi `UNIQUE` menghasilkan daftar nilai yang unik dalam daftar atau rentang. ^[[Fungsi UNIQUE](https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e), Microsoft Support.]
 
+. . .
+
 ```default
 =UNIQUE(array, [by_col], [exactly_once])
 ```
-:::
 
 ## Membangkitkan data {.smaller}
 
