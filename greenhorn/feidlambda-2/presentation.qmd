@@ -4,20 +4,23 @@ title: |
 subtitle: |
   _**Exploring Dynamic Array + User Defined `Lambda` (UDL)**_
 date: |
-  _`v1.0: 25 Oktober 2022`_<br>
-  [_`v2.0: 28 Oktober 2022`_]
+  _`v1.0 -> 25 Oktober 2022`_<br>
+  [_`v2.0 -> 28 Oktober 2022`_]
 author: |
   Taruma Sakti Megariansyah (**fiako**dev)
 format:
   revealjs: 
+    include-in-header: |
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code">
     smaller: false
     scrollable: true
     slide-tone: false
     slide-number: true
     preview-links: true
-    theme: sky
+    theme: [simple, presentation.scss]
       # [dark] >-> night > moon > dark
-      # [light] >-> default > serif (formal) > simple (code-like) > sky (code | thin)
+      # [light] >-> default > serif (formal) > simple (code-like) > sky (code | thin / broken) 
     logo: /fiakologo.png
     transition: convex
     embed-resources: false #TODO
@@ -25,6 +28,7 @@ format:
     controls: true
     incremental: true
     # multiplex: true
+    # highlight-style: arrow
     footer: |
       [Edit this presentation](https://github.com/fiakoenjiniring/feidlambda/edit/main/greenhorn/feidlambda-2/presentation.qmd){target="_blank" preview-link="false"} | [Report an issue](https://github.com/fiakoenjiniring/feidlambda/issues/new){target="_blank" preview-link="false"}
 ---
@@ -46,6 +50,10 @@ Bahan presentasi dibuat oleh **Taruma Sakti Megariansyah**
 **Lisensi**
 
 Seluruh materi presentasi menggunakan lisensi [CC-BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/){target="_blank" preview-link="false"}
+
+**Kontak**
+
+[team@dev.fiako.engineering](mailto:team@dev.fiako.engineering)
 
 ## Agenda
 
@@ -559,7 +567,7 @@ $$
 
 # Mengenal Fungsi `IS*(...)`
 
-Kumpulan fungsi logika untuk memvalidasi _input_. 
+Kumpulan fungsi logika untuk mevalidasi _input_. 
 
 ## Fungsi `IS*(...)`
 
@@ -599,7 +607,11 @@ Kumpulan fungsi logika untuk memvalidasi _input_.
 
 # 3 _Dynamic Array Formula_ (DAF)
 
-## Menyeleksi/memilih data (1)
+# Menyeleksi/memilih data
+
+Menggunakan `FILTER(...)` dan `UNIQUE(...)`
+
+## `FILTER(...)` (1)
 
 - `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
 
@@ -609,7 +621,115 @@ Kumpulan fungsi logika untuk memvalidasi _input_.
 =FILTER(array, include, [if_empty])
 ```
 
-## Menyeleksi/memilih data (1)
+- Argumen `include` harus berupa _vector_ (kolom atau baris). dan jumlah kolom/baris harus sama dengan `array`. 
+- Argumen `if_empty` dapat diisi dengan nilai ketika argumen include kosong atau `FALSE`.
+
+## `FILTER(...)` (2) {.smaller}
+
+. . .
+
+$$
+\texttt{FILTER}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      10 & 8\\
+      \textit{A} & -100\\
+      -3 & \textit{y}
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        \texttt{TRUE}\\
+        \texttt{FALSE}\\
+        \texttt{TRUE}
+      \end{bmatrix}
+    }^{\textit{logical column vector}}
+  }_{\texttt{include}}
+\right)
+\Leftrightarrow
+  \underbrace{
+    \begin{bmatrix}
+        10 & 8\\
+        -3 & \textit{y}
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{FILTER}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      10 & 8\\
+      \textit{A} & -100\\
+      -3 & \textit{y}
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        \texttt{FALSE} & \texttt{TRUE}
+      \end{bmatrix}
+    }^{\textit{logical row vector}}
+  }_{\texttt{include}}
+\right)
+\Leftrightarrow
+  \underbrace{
+    \begin{bmatrix}
+        8\\
+        -100\\
+        \textit{y}
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `FILTER(...)` (3) {.smaller}
+
+. . .
+
+$$
+\texttt{FILTER}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      10 & 8\\
+      \textit{A} & -100\\
+      -3 & \textit{y}
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        \texttt{FALSE}\\
+        \texttt{FALSE}\\
+        \texttt{FALSE}
+      \end{bmatrix}
+    }^{\textit{logical column vector}}
+  }_{\texttt{include}}
+  ,
+  \underbrace{
+    \text{"tidak ada"}
+  }_{\texttt{if_empty}}
+\right)
+$$
+
+. . .
+
+$$
+\Leftrightarrow
+  \underbrace{
+    \text{"tidak ada"}
+  }_{\textit{hasil}}
+$$
+
+## `UNIQUE(...)` (1) {.smaller}
 
 - `UNIQUE(...)`: Fungsi `UNIQUE` menghasilkan daftar nilai yang unik dalam daftar atau rentang. ^[[Fungsi UNIQUE](https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e), Microsoft Support.]
 
@@ -619,53 +739,390 @@ Kumpulan fungsi logika untuk memvalidasi _input_.
 =UNIQUE(array, [by_col], [exactly_once])
 ```
 
-## Membangkitkan data {.smaller}
+- Penggunaan argumen `by_col` untuk mencari nilai unik untuk setiap baris atau kolom. Nilai _default_ argumen `by_col <- FALSE`.
+- Argumen `exactly_once` dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika `exactly_once <- TRUE`, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai _default_ argumen `exactly_once <- FALSE`. 
 
-::: {.incremental}
+## `UNIQUE(...)` (2)
+
+. . .
+
+$$
+\texttt{UNIQUE}
+\left(
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        1 & 1 & 3 & 1\\
+        4 & 2 & 7 & 2\\
+        3 & 2 & 8 & 2\\
+        1 & 1 & 3 & 1\\
+        5 & 2 & 9 & 2
+      \end{bmatrix}      
+    }^{\textit{array / vector}}
+  }_{\texttt{array}}
+\right)
+\Rightarrow
+  \underbrace{
+    \begin{bmatrix}
+        1 & 1 & 3 & 1\\
+        4 & 2 & 7 & 2\\
+        3 & 2 & 8 & 2\\
+        5 & 2 & 9 & 2
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `UNIQUE(...)` (3) {.smaller}
+
+$$
+\texttt{UNIQUE}
+\left(
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        1 & 1 & 3 & 1\\
+        4 & 2 & 7 & 2\\
+        3 & 2 & 8 & 2\\
+        1 & 1 & 3 & 1\\
+        5 & 2 & 9 & 2
+      \end{bmatrix}      
+    }^{\textit{array / vector}}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    \texttt{ TRUE }
+  }_{\texttt{by_col}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        1 & 1 & 3\\
+        4 & 2 & 7\\
+        3 & 2 & 8\\
+        1 & 1 & 3\\
+        5 & 2 & 9
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `UNIQUE(...)` (4) {.smaller}
+
+$$
+\texttt{UNIQUE}
+\left(
+  \underbrace{
+    \overbrace{
+      \begin{bmatrix}
+        1 & 1 & 3 & 1\\
+        4 & 2 & 7 & 2\\
+        3 & 2 & 8 & 2\\
+        1 & 1 & 3 & 1\\
+        5 & 2 & 9 & 2
+      \end{bmatrix}      
+    }^{\textit{array / vector}}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    \texttt{ FALSE }
+  }_{\texttt{by_col}}
+  ,
+  \underbrace{
+    \texttt{ TRUE }
+  }_{\texttt{exactly_once}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        4 & 2 & 7 & 2\\
+        3 & 2 & 8 & 2\\
+        5 & 2 & 9 & 2
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+# Membangkitkan data
+
+Menggunakan `SEQUENCE(...)` dan `RANDARRAY(...)`.
+
+## `SEQUENCE(...)` (1)
+
 - `SEQUENCE(...)`: Fungsi `SEQUENCE` memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti ${1, 2, 3, 4, \dots}$. ^[[Fungsi SEQUENCE](https://support.microsoft.com/id-id/office/fungsi-sequence-57467a98-57e0-4817-9f14-2eb78519ca90), Microsoft Support.]
+
+. . .
 
 ```default
 =SEQUENCE(rows, [columns], [start], [step])
 ```
+- Hasil `SEQUENCE(...) => numeric vector/array`. 
+- Nilai _default_ argumen: `columns <- 1`, `start <- 1`, `step <- 1`. 
+
+## `SEQUENCE(...)` (2) {.smaller}
+
+. . .
+
+$$
+\texttt{SEQUENCE}
+\left(
+  \underbrace{
+    5
+  }_{\texttt{rows}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        1\\
+        2\\
+        3\\
+        4\\
+        5
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{SEQUENCE}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    4
+  }_{\texttt{columns}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        1	& 2	 & 3	& 4\\
+        5	& 6	 & 7	& 8\\
+        9	& 10 & 11	& 12
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `SEQUENCE(...)` (3) {.smaller}
+
+. . .
+
+$$
+\texttt{SEQUENCE}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    4
+  }_{\texttt{columns}}
+  ,
+  \underbrace{
+    10
+  }_{\texttt{start}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        10 & 11 & 12 & 13\\
+        14 & 15 & 16 & 17\\
+        18 & 19 & 20 & 21\\
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+
+. . .
+
+$$
+\texttt{SEQUENCE}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    4
+  }_{\texttt{columns}}
+  ,
+  \underbrace{
+    10
+  }_{\texttt{start}}
+  ,
+  \underbrace{
+    3
+  }_{\texttt{step}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        10 & 13 & 16 & 19\\
+        22 & 25 & 28 & 31\\
+        34 & 37 & 40 & 43\\
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `RANDARRAY(...)` (1) {.smaller}
 
 - `RANDARRAY(...)`: Fungsi `RANDARRAY` menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. ^[[Fungsi RANDARRAY](https://support.microsoft.com/id-id/office/randarray-fungsi-randarray-21261e55-3bec-4885-86a6-8b0a47fd4d33), Microsoft Support.]
+
+. . .
 
 ```default
 =RANDARRAY([rows], [columns], [min], [max], [whole_number])
 ```
-:::
 
-## Menyusun data
+- Nilai _default_ argumen: `rows <- 1`, `columns <- 1`, `min <- 0`, `max <- 1`, `whole_number <- FALSE`. 
+- Jika tidak diisi argumen maka hasil `RANDARRAY()` adalah bilangan _real_ $\mathbb{R}$ acak dengan rentang $[0, 1]$. 
 
-::: {.incremental}
+## `RANDARRAY(...)` (2) {.smaller}
+
+. . .
+
+$$
+\texttt{RANDARRAY}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        0.036290129\\
+        0.831941087\\
+        0.596526220
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{RANDARRAY}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    2
+  }_{\texttt{columns}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        0.950708256 & 0.044725252\\
+        0.111202134 & 0.34866703\\
+        0.119602266 & 0.792763221
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `RANDARRAY(...)` (3) {.smaller}
+
+. . .
+
+$$
+\texttt{RANDARRAY}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    2
+  }_{\texttt{columns}}
+  ,
+  \underbrace{
+    3
+  }_{\texttt{min}}
+  ,
+  \underbrace{
+    10
+  }_{\texttt{max}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        5.033450196 & 7.903953859\\
+        7.918426053 & 6.750036234\\
+        7.926034250 & 3.596169723\\
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{RANDARRAY}
+\left(
+  \underbrace{
+    3
+  }_{\texttt{rows}}
+  ,
+  \underbrace{
+    2
+  }_{\texttt{columns}}
+  ,
+  \underbrace{
+    3
+  }_{\texttt{min}}
+  ,
+  \underbrace{
+    10
+  }_{\texttt{max}}
+  ,
+  \underbrace{
+    \texttt{ TRUE }
+  }_{\texttt{whole_number}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        9 & 4\\
+        5 & 6\\
+        7 & 8
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+# Menyusun data
+
+## `SORT(...)` (1) 
+
 - `SORT(...)`: Fungsi `SORT` mengurutkan konten rentang atau larik. ^[[Fungsi SORT](https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c), Microsoft Support.]
 
 ```default
 =SORT(array, [sort_index], [sort_order], [by_col])
 ```
 
+## `SORTBY(...)` (1) 
+
 - `SORTBY(...)`: Fungsi `SORTBY` mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. ^[[Fungsi SORTBY](https://support.microsoft.com/id-id/office/fungsi-sortby-cd2d7a62-1b93-435c-b561-d6a35134f28f), Microsoft Support.]
 
 ```default
 =SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
 ```
-:::
 
-## Mencari data {.smaller}
+# Mencari data
 
-::: {.incremental}
+## `XLOOKUP(...)` (1) 
+
 - `XLOOKUP(...)`: Fungsi `XLOOKUP` mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, `XLOOKUP` dapat mengembalikan kecocokan terdekat (perkiraan). ^[[Fungsi XLOOKUP](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929), Microsoft Support.]
 
 ```default
 =XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])
 ```
 
+## `XMATCH(...)` (1) 
+
 - `XMATCH(...)`: Fungsi `XMATCH` mengembalikan posisi relatif item dalam array atau rentang sel. ^[[Fungsi XMATCH](https://support.microsoft.com/id-id/office/fungsi-xmatch-d966da31-7a6b-4a13-a1c6-5a33ed6a0312), Microsoft Support.]
 
 ```default
 =XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])
 ```
-:::
 
 # 4 Fungsi Baru (2019-2021)
 
@@ -739,15 +1196,15 @@ Kumpulan fungsi logika untuk memvalidasi _input_.
 - `LET` digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari `LAMBDA`. 
 :::
 
-## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+## Menggabungkan `LAMBDA` dan `LET` 1 {auto-animate="true"}
 
-```r
+```{.r code-line-numbers="true"}
 =LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
 ```
 
-## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+## Menggabungkan `LAMBDA` dan `LET` 1 {auto-animate="true"}
 
-```{.r code-line-numbers="1,5|2-3|4"}
+```{.r code-line-numbers="1,5"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -755,9 +1212,9 @@ Kumpulan fungsi logika untuk memvalidasi _input_.
 )
 ```
 
-## Menggabungkan `LAMBDA` dan `LET` {auto-animate="true"}
+## Menggabungkan `LAMBDA` dan `LET` 2 {auto-animate="true"}
 
-```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7|"}
+```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -799,7 +1256,7 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+## Kalkulasi dengan `LET` 1 {auto-animate="true"}
 
 $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 
@@ -814,7 +1271,7 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+## Kalkulasi dengan `LET` 2 {auto-animate="true"}
 
 $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 
@@ -829,7 +1286,7 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+## Kalkulasi dengan `LET` 3 {auto-animate="true"}
 
 $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 
