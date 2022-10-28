@@ -1,11 +1,11 @@
 ---
 title: |
-  Greenhorn: feidlambda II
+  Greenhorn:<br>feidlambda II
 subtitle: |
   _**Exploring Dynamic Array + User Defined `Lambda` (UDL)**_
 date: |
   _`v1.0: 25 Oktober 2022`_<br>
-  [v2.0: _`28 Oktober 2022`_]
+  [_`v2.0: 28 Oktober 2022`_]
 author: |
   Taruma Sakti Megariansyah (**fiako**dev)
 format:
@@ -15,7 +15,9 @@ format:
     slide-tone: false
     slide-number: true
     preview-links: true
-    theme: moon
+    theme: sky
+      # [dark] >-> night > moon > dark
+      # [light] >-> default > serif (formal) > simple (code-like) > sky (code | thin)
     logo: /fiakologo.png
     transition: convex
     embed-resources: false #TODO
@@ -24,8 +26,26 @@ format:
     incremental: true
     # multiplex: true
     footer: |
-      &copy; 2022 Taruma Sakti Megariansyah. <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
+      [Edit this presentation](https://github.com/fiakoenjiniring/feidlambda/edit/main/greenhorn/feidlambda-2/presentation.qmd){target="_blank" preview-link="false"} | [Report an issue](https://github.com/fiakoenjiniring/feidlambda/issues/new){target="_blank" preview-link="false"}
 ---
+
+## feidlambda II {.smaller}
+
+**Kegiatan**
+
+Greenhorn
+
+**Topik**
+
+_Exploring Dynamic Array and User Defined `Lambda` (UDL)_<br>Memanfaatkan _Dynamic Array_ dan _User-Defined `LAMBDA` (UDL)_
+
+**_Author_**
+
+Bahan presentasi dibuat oleh **Taruma Sakti Megariansyah**
+
+**Lisensi**
+
+Seluruh materi presentasi menggunakan lisensi [CC-BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/){target="_blank" preview-link="false"}
 
 ## Agenda
 
@@ -41,7 +61,7 @@ Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined `L
 
 # 2 Eksplorasi tentang _Logical_
 
-Fungsi _logical_ dan Fungsi `IS*(...)`
+Eksplorasi mengenai fungsi yang menghasilkan _logical_ yaitu `TRUE` atau `FALSE`.
 
 # Fungsi _Logical_
 
@@ -68,7 +88,12 @@ Fungsi _logical_ dan Fungsi `IS*(...)`
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$
+\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
+\begin{bmatrix}
+  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
 
 - `NOT(vector)`<br> 
   $\Rightarrow$ `NOT({TRUE, TRUE, FALSE})`<br> 
@@ -105,7 +130,12 @@ $$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$
+\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
+\begin{bmatrix}
+  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
 
 - `AND(vector)` $\Rightarrow$ `AND(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
 - Jika input berupa _logical array_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
@@ -137,7 +167,12 @@ $$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$
+\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
+\begin{bmatrix}
+  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
 
 - `OR(vector)` $\Rightarrow$ `OR(TRUE, TRUE, FALSE)` $\Rightarrow$ `TRUE`
 - Jika input berupa _logical array_ saja (`OR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`OR(elemen_1, elemen_2, ...)`). 
@@ -170,7 +205,12 @@ $$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt
 
 . . .
 
-$$ \mathbf{ \mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow \left[ \texttt{TRUE}, \texttt{TRUE}, \texttt{FALSE} \right]}$$
+$$
+\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
+\begin{bmatrix}
+  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
 
 - `XOR(vector)` $\Rightarrow$ `XOR(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
 - Jika input berupa _logical array_ saja (`XOR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`XOR(elemen_1, elemen_2, ...)`). 
@@ -222,7 +262,7 @@ $$
   \texttt{FALSE}
   \end{bmatrix}
 }^{\text{logical array}}
-\underbrace{\times\ |\ +}_\text{operator}
+\underbrace{\ \times\ |\ +\ }_\text{operator}
 \overbrace{
   \begin{bmatrix}
   \texttt{TRUE}\\
@@ -238,7 +278,7 @@ $$
   0
   \end{bmatrix}
 }^{\text{numeric array}}
-\underbrace{\times\ |\ +}_\text{operator}
+\underbrace{\ \times\ |\ +\ }_\text{operator}
 \overbrace{
   \begin{bmatrix}
   1\\
@@ -256,7 +296,9 @@ $$
 
 . . .
 
-$$x \times 0 = 0\ \{x \in \mathbf{R}\}$$
+$$
+x \times 0 = 0,\ \{x \in \mathbf{R}\}
+$$
 
 - Setiap nilai yang dikalikan dengan `FALSE` akan bernilai `FALSE`. 
 
@@ -324,9 +366,13 @@ $$
 
 . . .
 
-$$x + 0 = x$$
+$$
+x + 0 = x
+$$
 
-$$x + y = x + y$$ 
+$$
+x + y = x + y
+$$ 
 
 - Setiap nilai yang **bukan `0`** bernilai `TRUE`. 
 
@@ -458,14 +504,64 @@ $$
 \right)
 $$
 
-## Yang perlu diperhatikan
+## Yang perlu diperhatikan {.smaller}
 
 - Hasil dari _logical array_ bertemu dengan operator aritmatika **selalu _numeric array_**.
+
+. . .
+
+$$
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{FALSE}\\
+  \texttt{FALSE}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+  \texttt{TRUE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
+\end{bmatrix}
++
+\begin{bmatrix}
+  \texttt{FALSE}\\
+  \texttt{TRUE}\\
+  \texttt{TRUE}
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  1\\
+  0\\
+  0
+\end{bmatrix}
+\times
+\begin{bmatrix}
+  1\\
+  1\\
+  0
+\end{bmatrix}
++
+\begin{bmatrix}
+  0\\
+  1\\
+  1
+\end{bmatrix}
+=
+\begin{bmatrix}
+  1\\
+  1\\
+  1
+\end{bmatrix}
+$$
+
+
 - Jika _numeric array_ digunakan sebagai argumen _conditional_, maka akan dikonversikan menjadi _logical array_. 
 
-# Mengenal Fungsi `IS*`
+# Mengenal Fungsi `IS*(...)`
 
-## Fungsi `IS*`
+Kumpulan fungsi logika untuk memvalidasi _input_. 
+
+## Fungsi `IS*(...)`
 
 . . .
 
@@ -492,7 +588,7 @@ $$
 ## Periksa jenis sel
 
 - `ISLOGICAL(...)`: Cek nilai apakah _logical_ (`TRUE` atau `FALSE`).
-- `ISNUMBER(...)`: Cek nilai apakah _numeric_ ($\mathbb{R}$).
+- `ISNUMBER(...)`: Cek nilai apakah angka ($\mathbb{R}$).
 - `ISTEXT(...)`: Cek nilai apakah teks. Dan `ISNONTEXT(...)`: Cek niai apakah bukan teks (_number_, _logical_, _error_)
 - `ISFORMULA(...)`: Cek nilai apakah formula.
 
@@ -503,7 +599,7 @@ $$
 
 # 3 _Dynamic Array Formula_ (DAF)
 
-## Menyeleksi/memilih data 
+## Menyeleksi/memilih data (1)
 
 - `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
 
@@ -512,6 +608,8 @@ $$
 ```default
 =FILTER(array, include, [if_empty])
 ```
+
+## Menyeleksi/memilih data (1)
 
 - `UNIQUE(...)`: Fungsi `UNIQUE` menghasilkan daftar nilai yang unik dalam daftar atau rentang. ^[[Fungsi UNIQUE](https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e), Microsoft Support.]
 
