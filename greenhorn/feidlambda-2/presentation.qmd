@@ -67,6 +67,47 @@ Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined `L
 
 # 1 Review [Daftar Istilah](https://lambda.fiako.engineering/docs/glossary.html)
 
+## _Vector_ dan _Array_ {.smaller}
+
+- Istilah _array_ dapat diartikan _range_ yang memiliki 1 dimensi atau 2 dimensi.
+- _Array_ dapat dibangkitkan menggunakan sintaks "`={...}`". Dengan "`,`" sebagai pemisah kolom (sepanjang baris), "`;`" sebagai pemisah baris (sepanjang kolom).  
+
+. . .
+
+$$
+\texttt{{1,2,3}}
+=
+\begin{bmatrix}
+  1 & 2 & 3
+\end{bmatrix}
+,
+\texttt{{1;2;3}}
+=
+\begin{bmatrix}
+  1\\
+  2\\
+  3
+\end{bmatrix}
+$$
+
+. . .
+
+$$
+\texttt{\{}
+  \underbrace{\texttt{1,2,3}}_{\textit{baris ke-}1}
+  \texttt{;}
+  \underbrace{\texttt{4,5,6}}_{\textit{baris ke-}2}
+  \texttt{;}
+  \underbrace{\texttt{7,8,9}}_{\textit{baris ke-}3}
+\texttt{\}}
+=
+\begin{bmatrix}
+  1 & 2 & 3\\
+  4 & 5 & 6\\
+  7 & 8 & 9
+\end{bmatrix}
+$$
+
 # 2 Eksplorasi tentang _Logical_
 
 Eksplorasi mengenai fungsi yang menghasilkan _logical_ yaitu `TRUE` atau `FALSE`.
@@ -89,27 +130,62 @@ Eksplorasi mengenai fungsi yang menghasilkan _logical_ yaitu `TRUE` atau `FALSE`
 
 - Fungsi `NOT` membalikkan nilai argumennya. ^[[`NOT` (Fungsi `NOT`)](https://support.microsoft.com/id-id/office/not-fungsi-not-9cfc6011-a054-40c7-a140-cd4ba2d87d77), Microsoft Support.]
 - Menghasilkan nilai `TRUE` ketika kondisi bernilai `FALSE`, dan berlaku sebaliknya. 
-- `NOT(TRUE)` $\Rightarrow$ `FALSE`
-- `NOT(FALSE)` $\Rightarrow$ `TRUE`
+- `NOT(TRUE) = FALSE`
+- `NOT(FALSE) = TRUE`
 
 ## `NOT` (2) {.smaller}
 
 . . .
 
 $$
-\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
+\texttt{NOT}
+\left(
+  \begin{bmatrix}
+    \texttt{TRUE}\\
+    \texttt{FALSE}\\
+    \texttt{TRUE}
+  \end{bmatrix}
+\right)
+=
 \begin{bmatrix}
-  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
+  \texttt{FALSE}\\
+  \texttt{TRUE}\\
+  \texttt{FALSE}
 \end{bmatrix}
 $$
 
-- `NOT(vector)`<br> 
-  $\Rightarrow$ `NOT({TRUE, TRUE, FALSE})`<br> 
-  $\Rightarrow$ `{FALSE, FALSE, TRUE}`
-- `NOT(TRANSPOSE(vector))`<br> 
-  $\Rightarrow$ `NOT({TRUE; TRUE; FALSE})`<br> 
-  $\Rightarrow$ `{FALSE; FALSE; TRUE}`
-- Jika input berupa _logical array_ saja (`NOT(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
+. . .
+
+$$
+\texttt{NOT}
+\left(
+  \begin{bmatrix}
+    \texttt{TRUE} & \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+  \texttt{FALSE} & \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
+
+. . .
+
+$$
+\texttt{NOT}
+\left(
+  \begin{bmatrix}
+    \texttt{TRUE} & \texttt{FALSE}\\
+    \texttt{FALSE} & \texttt{TRUE}\\
+  \end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+  \texttt{FALSE} & \texttt{TRUE}\\
+  \texttt{TRUE} & \texttt{FALSE}
+\end{bmatrix}
+$$
+
 
 # Fungsi `AND(...)`
 
@@ -138,15 +214,15 @@ $$
 
 . . .
 
+TODO
+
 $$
-\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
-\begin{bmatrix}
-  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
-\end{bmatrix}
+a
+\underleftarrow{a}
+\underparen{asdasd}
 $$
 
-- `AND(vector)` $\Rightarrow$ `AND(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
-- Jika input berupa _logical array_ saja (`AND(logical_vector)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
+- Jika input berupa _logical array_ saja (`AND(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
 
 # Fungsi `OR(...)`
 
@@ -1090,13 +1166,140 @@ $$
 
 # Menyusun data
 
+Menggunakan `SORT(...)` dan `SORTBY(...)`.
+
 ## `SORT(...)` (1) 
 
 - `SORT(...)`: Fungsi `SORT` mengurutkan konten rentang atau larik. ^[[Fungsi SORT](https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c), Microsoft Support.]
 
+. . .
+
 ```default
 =SORT(array, [sort_index], [sort_order], [by_col])
 ```
+
+- Nilai _default_ argumen: `sort_index <- 1`, `sort_order <- 1 (Ascending)`, `by_col <- FALSE`.
+
+## `SORT(...)` (2) {.smaller}
+
+. . .
+
+$$
+\texttt{SORT}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      3 & 2 & 4 & 4\\
+      2 & 3 & 1 & 2\\
+      4 & 2 & 3 & 2
+    \end{bmatrix}
+  }_{\texttt{array}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        2 & 3 & 1 & 2\\
+        3 & 2 & 4 & 4\\
+        4 & 2 & 3 & 2
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{SORT}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      3 & 2 & 4 & 4\\
+      2 & 3 & 1 & 2\\
+      4 & 2 & 3 & 2
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    3
+  }_{\texttt{sort_index}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        2 & 3 & 1 & 2\\
+        4 & 2 & 3 & 2\\
+        3 & 2 & 4 & 4
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+## `SORT(...)` (3) {.smaller}
+
+. . .
+
+$$
+\texttt{SORT}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      3 & 2 & 4 & 4\\
+      2 & 3 & 1 & 2\\
+      4 & 2 & 3 & 2
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    3
+  }_{\texttt{sort_index}}
+  ,
+  \underbrace{
+    -1
+  }_{\texttt{sort_order}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        3 & 2 & 4 & 4\\
+        4 & 2 & 3 & 2\\
+        2 & 3 & 1 & 2
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
+. . .
+
+$$
+\texttt{SORT}
+\left(
+  \underbrace{
+    \begin{bmatrix}
+      3 & 2 & 4 & 4\\
+      2 & 3 & 1 & 2\\
+      4 & 2 & 3 & 2
+    \end{bmatrix}
+  }_{\texttt{array}}
+  ,
+  \underbrace{
+    2
+  }_{\texttt{sort_index}}
+  ,
+  \underbrace{
+    1
+  }_{\texttt{sort_order}}
+  ,
+  \underbrace{
+    \texttt{ TRUE }
+  }_{\texttt{by_col}}
+\right)
+\Rightarrow
+  \underbrace{
+      \begin{bmatrix}
+        4 & 3 & 4 & 2\\
+        1 & 2 & 2 & 3\\
+        3 & 4 & 2 & 2
+      \end{bmatrix}
+  }_{\textit{hasil}}
+$$
+
 
 ## `SORTBY(...)` (1) 
 
@@ -1105,6 +1308,8 @@ $$
 ```default
 =SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
 ```
+
+
 
 # Mencari data
 
