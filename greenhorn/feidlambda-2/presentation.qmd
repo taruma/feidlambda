@@ -18,22 +18,23 @@ format:
     slide-tone: false
     slide-number: true
     preview-links: true
-    theme: [simple, presentation.scss]
+    theme: [dark, presentation.scss]
       # [dark] >-> night > moon > dark
       # [light] >-> default > serif (formal) > simple (code-like) > sky (code | thin / broken) 
     logo: /fiakologo.png
     transition: convex
-    embed-resources: false #TODO
+    embed-resources: false
     touch: true
     controls: true
     incremental: true
+    margin: 0.15
     # multiplex: true
     # highlight-style: arrow
     footer: |
       [Edit this presentation](https://github.com/fiakoenjiniring/feidlambda/edit/main/greenhorn/feidlambda-2/presentation.qmd){target="_blank" preview-link="false"} | [Report an issue](https://github.com/fiakoenjiniring/feidlambda/issues/new){target="_blank" preview-link="false"}
 ---
 
-## feidlambda II {.smaller}
+## {.smaller}
 
 **Kegiatan**
 
@@ -189,115 +190,431 @@ $$
 
 # Fungsi `AND(...)`
 
-## `AND` (1)
+## `AND` (1) {.smaller}
+
+- Fungsi logika, untuk menentukan apakah **semua kondisi** dalam sebuah tes adalah `TRUE`. ^[[AND (Fungsi AND)](https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9), Microsoft Support.]
 
 . . .
 
-### Syntax
-
-```vb 
+```vb
 =AND(logical1, [logical2], ...)
 ```
 
-- Fungsi logika, untuk menentukan apakah **semua kondisi** dalam sebuah tes adalah `TRUE`. ^[[AND (Fungsi AND)](https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9), Microsoft Support.]
-- Menghasilkan nilai `TRUE` ketika seluruh kondisi bernilai `TRUE`. Jika terdapat **satu atau lebih** bernilai `FALSE` maka menghasilkan nilai `FALSE`. 
-
-## `AND` (2) {.smaller}
-
-. . .
-
-### Contoh
-
-- `AND(TRUE, TRUE) | AND(TRUE, TRUE, TRUE)` $\Rightarrow$ `TRUE`
-- `AND(TRUE, FALSE) | AND(TRUE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
-- `AND(FALSE, FALSE) | AND(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
-
-. . .
-
-TODO
-
-$$
-a
-\underleftarrow{a}
-\underparen{asdasd}
-$$
-
+- Menghasilkan nilai `TRUE` ketika **seluruh kondisi** bernilai `TRUE`. Jika terdapat **satu atau lebih** bernilai `FALSE` maka menghasilkan nilai `FALSE`. 
 - Jika input berupa _logical array_ saja (`AND(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`AND(elemen_1, elemen_2, ...)`). 
+
+## `AND` (2)
+
+$$
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{AND}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}, 
+  \texttt{FALSE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+## `AND` (3) {.smaller}
+
+$$
+\texttt{AND}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{AND}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ \texttt{TRUE} \\ \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{AND}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} \\ 
+  \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}, \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{AND}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ 
+  \texttt{FALSE} 
+  \end{bmatrix}
+  ,
+  \begin{bmatrix}
+  \texttt{TRUE} \\ 
+  \texttt{FALSE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{AND}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}, \texttt{FALSE}
+\right)
+=
+\texttt{FALSE}
+$$
 
 # Fungsi `OR(...)`
 
 ## `OR` (1)
 
-. . .
+- Fungsi logika, untuk menentukan apakah **salah satu kondisi** dalam sebuah tes adalah `TRUE`. ^[[`OR` function](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0), Microsoft Support.]
 
-### Syntax
+. . .
 
 ```vb 
 =OR(logical1, [logical2], ...)
 ```
 
-- Fungsi logika, untuk menentukan apakah **salah satu kondisi** dalam sebuah tes adalah `TRUE`. ^[[`OR` function](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0), Microsoft Support.]
 - Menghasilkan nilai `TRUE` ketika salah satu kondisi bernilai `TRUE`. 
-
-## `OR` (2) {.smaller}
-
-. . .
-
-### Contoh
-
-- `OR(TRUE, TRUE) | OR(TRUE, TRUE, TRUE)` $\Rightarrow$ `TRUE`
-- `OR(TRUE, FALSE) | OR(TRUE, FALSE, FALSE)` $\Rightarrow$ `TRUE`
-- `OR(FALSE, FALSE) | OR(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
-
-. . .
-
-$$
-\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
-\begin{bmatrix}
-  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
-\end{bmatrix}
-$$
-
-- `OR(vector)` $\Rightarrow$ `OR(TRUE, TRUE, FALSE)` $\Rightarrow$ `TRUE`
 - Jika input berupa _logical array_ saja (`OR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`OR(elemen_1, elemen_2, ...)`). 
+
+## `OR` (2)
+
+$$
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{OR}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}, 
+  \texttt{FALSE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+## `OR` (3) {.smaller}
+
+$$
+\texttt{OR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{OR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ \texttt{TRUE} \\ \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{OR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} \\ 
+  \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}, \texttt{TRUE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{OR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ 
+  \texttt{FALSE} 
+  \end{bmatrix}
+  ,
+  \begin{bmatrix}
+  \texttt{TRUE} \\ 
+  \texttt{FALSE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{OR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}, \texttt{FALSE}
+\right)
+=
+\texttt{TRUE}
+$$
 
 # Fungsi `XOR(...)`
 
 ## `XOR` (1)
 
-. . .
+- Fungsi `XOR` mengembalikan logika **Exclusive Or** dari semua argumen. ^[[`XOR` function](https://support.microsoft.com/id-id/office/xor-fungsi-xor-1548d4c2-5e47-4f77-9a92-0533bba14f37), Microsoft Support.]
 
-### Syntax
+. . .
 
 ```vb 
 =XOR(logical1, [logical2], ...)
 ```
 
-- Fungsi `XOR` mengembalikan logika **Exclusive Or** dari semua argumen. ^[[`XOR` function](https://support.microsoft.com/id-id/office/xor-fungsi-xor-1548d4c2-5e47-4f77-9a92-0533bba14f37), Microsoft Support.]
 - Menghasilkan nilai `TRUE` ketika hanya satu kondisi bernilai `TRUE`. 
-
-## `XOR` (2) {.smaller}
-
-. . .
-
-### Contoh
-
-- `XOR(TRUE, TRUE) | OR(TRUE, TRUE, TRUE)` $\Rightarrow$ `FALSE`
-- `XOR(TRUE, FALSE) | OR(TRUE, FALSE, FALSE)` $\Rightarrow$ `TRUE`
-- `XOR(TRUE, FALSE, TRUE)` $\Rightarrow$ `FALSE`
-- `XOR(FALSE, FALSE) | OR(FALSE, FALSE, FALSE)` $\Rightarrow$ `FALSE`
-
-. . .
-
-$$
-\mathbf{vector} \Leftrightarrow \mathbf{x} \leftarrow 
-\begin{bmatrix}
-  \texttt{TRUE} & \texttt{TRUE} & \texttt{FALSE}
-\end{bmatrix}
-$$
-
-- `XOR(vector)` $\Rightarrow$ `XOR(TRUE, TRUE, FALSE)` $\Rightarrow$ `FALSE`
 - Jika input berupa _logical array_ saja (`XOR(logical_array)`), maka akan mengevaluasi seluruh elemen pada _logical array_ (`XOR(elemen_1, elemen_2, ...)`). 
+
+## `XOR` (2)
+
+$$
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{TRUE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{FALSE}, \texttt{FALSE}, 
+  \texttt{FALSE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+## `XOR` (3) {.smaller}
+
+$$
+\texttt{XOR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{FALSE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}
+\right)
+=
+\texttt{TRUE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} & \texttt{FALSE} \\ 
+  \texttt{FALSE} & \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}, \texttt{TRUE}
+\right)
+=
+\texttt{FALSE}
+$$
+
+$$
+\texttt{XOR}
+\left(
+  \begin{bmatrix}
+  \texttt{TRUE} \\ 
+  \texttt{FALSE} 
+  \end{bmatrix}
+  ,
+  \begin{bmatrix}
+  \texttt{FALSE} \\ 
+  \texttt{FALSE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{XOR}
+\left(
+  \texttt{TRUE}, \texttt{FALSE}, 
+  \texttt{FALSE}, \texttt{FALSE}
+\right)
+=
+\texttt{TRUE}
+$$
+
 
 # _Logical_ $\iff$ _Number_
 
@@ -319,7 +636,7 @@ $$
 
 - _Logical array_ akan diubah menjadi _numeric array_ ketika bertemu operator aritmatika (`+`, `*`, `-`, `/`).
 - Perubahan _logical_ menjadi _number_ sama dengan proses penggunaan fungsi `INT(...)`.
-- Operator aritmatika perkalian (`*` / $\times$) dan penambahan (`+`) dapat berperilaku seperti fungsi _logical_ `AND` (`*`) dan `OR` (`+`). 
+- Operator aritmatika perkalian (`*` / $\times$) dan penambahan (`+`) dapat berperilaku seperti fungsi _logical_ `OR` (`*`) dan `OR` (`+`). 
 - Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (_array_) menggunakan simbol $\odot$. Akan tetapi, pada materi ini simbol $\times$ diartikan sebagai perkalian setiap elemen (_element-wise_) dan **bukan perkalian matriks**.
 
 ## _Logical_ dan operator aritmatika (2) {.smaller}
