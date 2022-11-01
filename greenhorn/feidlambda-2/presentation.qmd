@@ -615,29 +615,23 @@ $$
 \texttt{TRUE}
 $$
 
-
 # _Logical_ $\iff$ _Number_
 
 ## _Logical_ $\Rightarrow$ _Number_ (1)
 
-- `FALSE` $\Rightarrow$ `0`. Bernilai `FALSE` jika nilai `0`. $\{ x = 0 \}$
-- `TRUE` $\neq$ `0`. Bernilai `TRUE` jika nilai **bukan** `0`. $\{ x \in \mathbf{R}\ |\ x \neq 0 \}$
+- $\texttt{FALSE} = 0$. Bernilai `FALSE` jika bernilai `0`. $\{ x = 0 \}$
+- $\texttt{TRUE} \neq 0$. Bernilai `TRUE` jika nilai **bukan** `0`. $\{ x \in \mathbb{R}\ |\ x \neq 0 \}$
 
-- Mengubah _logical_ menjadi _number_ dapat menggunakan fungsi `INT(...)`.
-- `INT(TRUE)` $\Rightarrow$ `1`.
-- `INT(FALSE)` $\Rightarrow$ `0`.
+- Mengubah _logical_ menjadi _number_ dapat menggunakan fungsi `INT(...)`. ^[[INT (FUNGSI INT)](https://support.microsoft.com/id-id/office/int-fungsi-int-a6c4af9e-356d-4369-ab6a-cb1fd9d343ef), Microsoft Support.]
+- $\texttt{INT}(\texttt{TRUE}) = 1$.
+- $\texttt{INT}(\texttt{FALSE}) = 0$.
  
-## _Logical_ $\Rightarrow$ _Number_ (2)
-
-- Fungsi `INT(...)` merupakan _Dynamic Array Formula_, sehingga jika _input_ berupa _array_ akan dievaluasi setiap elemennya.
-- `INT({TRUE, FALSE, FALSE, TRUE})` $\Rightarrow$ `{1, 0, 0, 1}`. 
-
 ## _Logical_ dan operator aritmatika (1) {.smaller}
 
 - _Logical array_ akan diubah menjadi _numeric array_ ketika bertemu operator aritmatika (`+`, `*`, `-`, `/`).
 - Perubahan _logical_ menjadi _number_ sama dengan proses penggunaan fungsi `INT(...)`.
-- Operator aritmatika perkalian (`*` / $\times$) dan penambahan (`+`) dapat berperilaku seperti fungsi _logical_ `OR` (`*`) dan `OR` (`+`). 
-- Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (_array_) menggunakan simbol $\odot$. Akan tetapi, pada materi ini simbol $\times$ diartikan sebagai perkalian setiap elemen (_element-wise_) dan **bukan perkalian matriks**.
+- Operator aritmatika perkalian (`*` / $\times$) dan penambahan (`+`) dapat berperilaku seperti fungsi _logical_ `AND` (`*`) dan `OR` (`+`). 
+- Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (_array_) menggunakan simbol $\odot$. Akan tetapi, pada materi ini simbol $\times$ diartikan sebagai **perkalian setiap elemen** (_element-wise_) dan **bukan perkalian matriks**.
 
 ## _Logical_ dan operator aritmatika (2) {.smaller}
 
@@ -698,7 +692,7 @@ $$
 . . .
 
 $$
-x \times 0 = 0,\ \{x \in \mathbf{R}\}
+x \times 0 = 0,\ \{x \in \mathbb{R}\}
 $$
 
 - Setiap nilai yang dikalikan dengan `FALSE` akan bernilai `FALSE`. 
@@ -738,19 +732,24 @@ $$
   0\\
   0
 \end{bmatrix}
-}_{\text{hasil akhir}}
+}_{\textit{hasil akhir}}
 $$
 
 . . .
 
 $$
 \Rightarrow
-\begin{bmatrix}
-  1\\
-  0\\
-  0
-\end{bmatrix}
-\neq 0 =
+\underbrace{
+  \left(
+    \begin{bmatrix}
+    1\\
+    0\\
+    0
+  \end{bmatrix}
+  \neq 0
+  \right)
+}_{\textit{mengubah menjadi logical}}
+=
 \begin{bmatrix}
   \texttt{TRUE}\\
   \texttt{FALSE}\\
@@ -768,16 +767,16 @@ $$
 . . .
 
 $$
-x + 0 = x
+x + 0 = x, \{x \in \mathbb{R}\}
 $$
 
 $$
-x + y = x + y
+x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 $$ 
 
-- Setiap nilai yang **bukan `0`** bernilai `TRUE`. 
+- Setiap nilai yang **bukan `0`** bernilai `TRUE`. $\texttt{TRUE} \neq 0$
 
-## Operator penambahan `+` sebagai `OR` (2)
+## Operator penambahan `+` sebagai `OR` (2) {.smaller}
 
 . . .
 
@@ -812,19 +811,24 @@ $$
   1\\
   0
 \end{bmatrix}
-}_{\text{hasil akhir}}
+}_{\textit{hasil akhir}}
 $$
 
 . . .
 
 $$
 \Rightarrow
-\begin{bmatrix}
-  2\\
-  1\\
-  0
-\end{bmatrix}
-\neq 0 =
+\underbrace{
+  \left(
+    \begin{bmatrix}
+      2\\
+      1\\
+      0
+    \end{bmatrix}
+    \neq 0
+  \right)
+}_{\textit{mengubah menjadi logical}}
+=
 \begin{bmatrix}
   \texttt{TRUE}\\
   \texttt{TRUE}\\
@@ -836,34 +840,57 @@ $$
 
 ## _Number_ $\Rightarrow$ _Logical_ (1)
 
-- _Numeric array_ dapat digunakan sebagai kondisi _logical_ **tunggal**. 
+- _Numeric array_ dapat digunakan sebagai kondisi _logical_. 
 - Setiap _numeric array_ yang digunakan sebagai _conditional_ secara tidak langsung berubah menjadi _logical array_. 
-- Perubahan tersebut sama saja jika membandingkan _array_ **tidak sama dengan `0`**. $(\mathbf{x}_{\text{number}} \neq 0 = \mathbf{x}_{\text{logical}})$
+- Perubahan tersebut sama saja jika membandingkan _array_ **tidak sama dengan `0`**. 
+$$
+\left(
+  \mathbf{x}_{\text{number}} \neq 0
+\right)
+=
+\mathbf{x}_{\text{logical}}
+$$
 
 ## _Number_ $\Rightarrow$ _Logical_ (2)
 
 . . .
 
 $$
+\texttt{NOT}
+\left(
   \underbrace{
     \begin{bmatrix}
       3\\
       -1\\
       0
     \end{bmatrix}
-  }_{\textit{numeric array}}
-  \neq 0
-  \Rightarrow
+  }_{\textit{numeric}}
+  \equiv
+  0
+\right)
+=
+\left(
   \underbrace{
     \begin{bmatrix}
-      \texttt{TRUE}\\
-      \texttt{TRUE}\\
-      \texttt{FALSE}
+      3\\
+      -1\\
+      0
     \end{bmatrix}
-  }_{\textit{logical array}}
+  }_{\textit{numeric}}
+  \neq
+  0
+\right)
+=
+\underbrace{
+  \begin{bmatrix}
+    \texttt{TRUE}\\
+    \texttt{TRUE}\\
+    \texttt{FALSE}
+  \end{bmatrix}
+}_{\textit{logical}}
 $$
 
-- Sama saja dengan `=array<>0`.
+- Sama saja dengan formula `=NOT(array=0)` atau `=array<>0`.
 
 ## _Number_ $\Rightarrow$ _Logical_ (2) {.smaller}
 
@@ -878,17 +905,13 @@ $$
       -1\\
       0
     \end{bmatrix}
-  }_{\textit{numeric vector}}
+  }_{\textit{numeric}}
   ,
   \underbrace{\dots}_{\texttt{TRUE}}
   ,
   \underbrace{\dots}_{\texttt{FALSE}}
 \right)
-$$
-
-. . .
-
-$$
+\Rightarrow
 \texttt{IF}
 \left(
   \underbrace{
@@ -897,7 +920,7 @@ $$
       \texttt{TRUE}\\
       \texttt{FALSE}
     \end{bmatrix}
-  }_{\textit{logical vector}}
+  }_{\textit{logical}}
   ,
   \underbrace{\dots}_{\texttt{TRUE}}
   ,
@@ -973,7 +996,6 @@ Kumpulan fungsi logika untuk mevalidasi _input_.
 ```
 
 - Memeriksa nilai tertentu dan mengembalikan `TRUE` atau `FALSE` bergantung pada hasilnya. ^[[Fungsi IS](https://support.microsoft.com/id-id/office/fungsi-is-0f2d7971-6019-40a0-a171-f2d869135665), Microsoft Support.]
-- Fungsi `IS*(...)` merupakan _Dynamic Array Formula_. 
 - `ISBLANK(...)` bernilai `TRUE` jika sel kosong.
 - `ISNUMBER(...)` bernilai `TRUE` jika sel berisikan angka.
 
@@ -998,7 +1020,175 @@ Kumpulan fungsi logika untuk mevalidasi _input_.
 - `ISEVEN(...)`: Cek nilai apakah bilangan genap.
 - `ISODD(...)`: Cek nilai apakah bilangan ganjil.
 
+# Validasi _input_ dengan `ISNUMBER(...)`
+
+## Validasi dengan `ISNUMBER(...)` (1)
+
+. . .
+
+$$ 
+\mathbf{x}
+\mapsto
+f(\mathbf{x})
+=
+\mathbf{y} 
+= 
+\mathbf{x} + 2
+, 
+\{ \mathbf{x} \in \mathbb{R} \}
+$$
+
+- Umumnya nilai $\mathbf{y}$ dihitung dengan formula `=x+2` dengan asumsi $\mathbf{y}$ selalu merupakan **angka** $\{ \mathbf{x} \in \mathbb{R} \}$.
+
+. . .
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+  3 \\ 2 \\ 7
+\end{bmatrix}
+\mapsto
+f(\mathbf{x})
+=
+\begin{bmatrix}
+  3 \\ 2 \\ 7
+\end{bmatrix}
++ 2 
+=
+\begin{bmatrix}
+  5 \\ 4 \\ 9
+\end{bmatrix}
+$$
+
+## Validasi dengan `ISNUMBER(...)` (2) 
+
+- Bagaimana jika $\mathbf{x}$ memiliki elemen yang bukan angka yaitu _text_ / _string_?
+
+. . .
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+  3 \\ \textrm{bob} \\ 2
+\end{bmatrix}
+\mapsto
+f(\mathbf{x})
+=
+\begin{bmatrix}
+  3 \\ \textrm{bob} \\ 2
+\end{bmatrix}
++ 2 
+=
+\begin{bmatrix}
+  5 \\ \texttt{#VALUE!} \\ 2
+\end{bmatrix}
+$$
+
+## Validasi dengan `ISNUMBER(...)` (3)  {.smaller}
+
+- Validasi input menggunakan `ISNUMBER(...)`  
+
+. . .
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+  3 \\ \textrm{bob} \\ 2
+\end{bmatrix}
+\mapsto
+\texttt{ISNUMBER}
+\left(
+  \mathbf{x}
+\right)
+=
+\texttt{ISNUMBER}
+\left(
+  \begin{bmatrix}
+    3 \\ \textrm{bob} \\ 2
+  \end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+  \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
+\end{bmatrix}
+$$
+
+. . .
+
+$$
+\begin{bmatrix}
+  \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
+\end{bmatrix}
+\mapsto
+\texttt{AND}
+\left(
+  \mathbf{x}
+\right)
+=
+\texttt{AND}
+\left(
+  \begin{bmatrix}
+    \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
+  \end{bmatrix}
+\right)
+= 
+\texttt{FALSE}
+$$
+
+. . .
+
+$$
+\mathbf{x}
+\mapsto
+\texttt{AND}(
+  \texttt{ISNUMBER}(
+    \mathbf{x}
+  )
+)
+=
+\texttt{AND}(
+  \texttt{ISNUMBER}(
+    \begin{bmatrix}
+      3 \\ \textrm{bob} \\ 2
+    \end{bmatrix}
+  )
+) 
+=
+\texttt{FALSE}
+$$
+
+## Validasi dengan `ISNUMBER(...)` (4) {.smaller}
+
+. . .
+
+$$
+\begin{equation}
+  \mathbf{x} 
+  \mapsto 
+  \texttt{AND}
+  (
+    \texttt{ISNUMBER}(\mathbf{x})
+  )
+  =
+  \begin{cases}
+    \texttt{TRUE} & \mathbf{x} \mapsto f : \mathbf{x} \in \mathbb{R} \rightarrow \mathbb{R}\\
+    \texttt{FALSE} & \textrm{return}\ \texttt{#VALUE!} \\
+    \texttt{FALSE} & \mathbf{x} \mapsto g(\mathbf{x}) = \texttt{FILTER}(\dots) \mapsto \\
+    & f: g(\mathbf{x}) \in \mathbb{R} \rightarrow \mathbb{R}\\
+  \end{cases}
+\end{equation}
+$$
+
+- Validasi ini dapat diimplementasikan ketika terdapat ketidakpastian jika $\mathbf{x}$ dapat bernilai bukan angka ($\mathbf{x} \in \mathbb{R} \lor \mathbf{x} \notin \mathbb{R}$)
+- Solusi lain dengan melakukan _filter_ pada $\mathbf{x}$ dan hanya mengambil elemen yang angka dengan `FILTER(...)`. 
+
 # 3 _Dynamic Array Formula_ (DAF)
+
+Koleksi fungsi baru (Excel 2021) yang memanfaatkan _dynamic array_. 
+
 
 # Menyeleksi/memilih data
 
