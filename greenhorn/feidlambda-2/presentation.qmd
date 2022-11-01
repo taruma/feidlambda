@@ -643,8 +643,31 @@ $$
 
 $$
 \{
-  \mathbf{X} \in \{\texttt{TRUE}, \texttt{FALSE}\}, \mathbf{Y} \in \{\texttt{TRUE}, \texttt{FALSE}\} 
-\} 
+  \mathbf{X} \in \mathbb{B}, \mathbf{Y} \in \mathbb{B}
+\}
+$$ 
+
+- Simbol $\mathbb{B}$ untuk menyatakan nilai _logical_ atau _boolean_. ^[[Boolean Domain](https://en.wikipedia.org/wiki/Boolean_domain)]
+
+. . .
+
+$$
+\mathbb{B} = 
+\{
+  \texttt{TRUE, FALSE}
+\}
+=
+\{
+  0, 1
+\}
+=
+\{
+  \text{T}, \text{F}
+\}
+=
+\{
+  \top, \bot
+\}
 $$
 
 . . .
@@ -1022,23 +1045,35 @@ Kumpulan fungsi logika untuk mevalidasi _input_.
 
 # Validasi _input_ dengan `ISNUMBER(...)`
 
-## Validasi dengan `ISNUMBER(...)` (1)
+## Validasi dengan `ISNUMBER(...)` (1) {.smaller}
 
 . . .
 
 $$ 
-\mathbf{x}
-\mapsto
-f(\mathbf{x})
-=
-\mathbf{y} 
-= 
-\mathbf{x} + 2
-, 
-\{ \mathbf{x} \in \mathbb{R} \}
+f : \mathbb{R} \to \mathbb{R}
 $$
 
-- Umumnya nilai $\mathbf{y}$ dihitung dengan formula `=x+2` dengan asumsi $\mathbf{y}$ selalu merupakan **angka** $\{ \mathbf{x} \in \mathbb{R} \}$.
+. . .
+
+$$
+f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
+$$
+
+. . .
+
+$$
+\mathbf{x} \in \mathbb{R}, \mathbf{y} \in \mathbb{R}
+$$
+
+. . .
+
+$$
+\mathbf{x}
+\mapsto
+\mathbf{x} + 2
+$$
+
+- Umumnya nilai $\mathbf{y}$ dihitung dengan formula `=x+2` dengan asumsi $\mathbf{x}$ bernilai **angka** $\{ \mathbf{x} \in \mathbb{R} \}$.
 
 . . .
 
@@ -1063,7 +1098,7 @@ $$
 
 ## Validasi dengan `ISNUMBER(...)` (2) 
 
-- Bagaimana jika $\mathbf{x}$ memiliki elemen yang bukan angka yaitu _text_ / _string_?
+- Bagaimana jika $\mathbf{x}$ memiliki elemen yang bukan angka yaitu _text_ / _error_ / _logical_?
 
 . . .
 
@@ -1174,7 +1209,7 @@ $$
   )
   =
   \begin{cases}
-    \texttt{TRUE} & \mathbf{x} \mapsto f : \mathbf{x} \in \mathbb{R} \rightarrow \mathbb{R}\\
+    \texttt{TRUE} & f : \mathbf{x} \in \mathbb{R} \rightarrow \mathbb{R}\\
     \texttt{FALSE} & \textrm{return}\ \texttt{#VALUE!} \\
     \texttt{FALSE} & \mathbf{x} \mapsto g(\mathbf{x}) = \texttt{FILTER}(\dots) \mapsto \\
     & f: g(\mathbf{x}) \in \mathbb{R} \rightarrow \mathbb{R}\\
@@ -1305,6 +1340,8 @@ $$
 \textrm{tidak ada}
 $$
 
+## `FILTER(...)` (4) {.smaller}
+
 . . .
 
 $$
@@ -1312,15 +1349,20 @@ $$
 $$
 
 $$
-\texttt{include} = \mathbf{i} \rightarrow \mathbf{i} \in \mathbb{Y}^{k}, \{k = m \lor k = n\}
-$$
-
-$$
 \mathbb{U} = \{ \textrm{seluruh nilai } u \textrm{ yang dapat digunakan di Excel}\}
 $$
+
+- $m$ menunjukkan jumlah baris dan $n$ menunjukkan jumlah kolom. 
+
+. . .
+
 $$
-\mathbb{Y} = \{\textrm{seluruh nilai } y \textrm{ di mana } y \in \{ \texttt{TRUE}, \texttt{FALSE}\}\}
+\texttt{include} = \mathbf{i} \rightarrow \mathbf{i} \in \mathbb{B}^{k}, \{k = m \lor k = n\}
 $$
+
+- $\mathbf{i}$ selalu berupa _logical vector_ dengan jumlah baris/kolom $k$ sama dengan $m \lor n$. 
+
+
 
 ## `UNIQUE(...)` (1) {.smaller}
 
