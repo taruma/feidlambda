@@ -1232,13 +1232,13 @@ $$
     }^{\textit{logical column vector}}
   }_{\texttt{include}}
 \right)
-\Leftrightarrow
-  \underbrace{
-    \begin{bmatrix}
-        10 & 8\\
-        -3 & \textit{y}
-      \end{bmatrix}
-  }_{\textit{hasil}}
+=
+\underbrace{
+  \begin{bmatrix}
+      10 & 8\\
+      -3 & \textit{y}
+    \end{bmatrix}
+}_{\textit{hasil}}
 $$
 
 . . .
@@ -1262,14 +1262,14 @@ $$
     }^{\textit{logical row vector}}
   }_{\texttt{include}}
 \right)
-\Leftrightarrow
-  \underbrace{
-    \begin{bmatrix}
-        8\\
-        -100\\
-        \textit{y}
-      \end{bmatrix}
-  }_{\textit{hasil}}
+=
+\underbrace{
+  \begin{bmatrix}
+      8\\
+      -100\\
+      \textit{y}
+    \end{bmatrix}
+}_{\textit{hasil}}
 $$
 
 ## `FILTER(...)` (3) {.smaller}
@@ -1298,18 +1298,28 @@ $$
   }_{\texttt{include}}
   ,
   \underbrace{
-    \text{"tidak ada"}
+    \textrm{tidak ada}
   }_{\texttt{if_empty}}
 \right)
+=
+\textrm{tidak ada}
 $$
 
 . . .
 
 $$
-\Leftrightarrow
-  \underbrace{
-    \text{"tidak ada"}
-  }_{\textit{hasil}}
+\texttt{array} = \mathbf{A} \rightarrow \mathbf{A} \in \mathbb{U}^{m \times n}, \{m, n \in \mathbb{N}\ |\ m, n \neq 0 \}
+$$
+
+$$
+\texttt{include} = \mathbf{i} \rightarrow \mathbf{i} \in \mathbb{Y}^{k}, \{k = m \lor k = n\}
+$$
+
+$$
+\mathbb{U} = \{ \textrm{seluruh nilai } u \textrm{ yang dapat digunakan di Excel}\}
+$$
+$$
+\mathbb{Y} = \{\textrm{seluruh nilai } y \textrm{ di mana } y \in \{ \texttt{TRUE}, \texttt{FALSE}\}\}
 $$
 
 ## `UNIQUE(...)` (1) {.smaller}
