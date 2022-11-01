@@ -1691,7 +1691,7 @@ Menggunakan `SORT(...)` dan `SORTBY(...)`.
 
 . . .
 
-```default
+```vb
 =SORT(array, [sort_index], [sort_order], [by_col])
 ```
 
@@ -1822,10 +1822,57 @@ $$
 
 - `SORTBY(...)`: Fungsi `SORTBY` mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. ^[[Fungsi SORTBY](https://support.microsoft.com/id-id/office/fungsi-sortby-cd2d7a62-1b93-435c-b561-d6a35134f28f), Microsoft Support.]
 
-```default
+. . .
+
+```vb
 =SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
 ```
 
+- Nilai default `sort_order <- 1` (_ascending_).
+- Nilai `by_array` harus berupa vektor atau _array_ 1 dimensi. Dan jenisnya harus sama dengan nilai `by_array` lainnya (tidak boleh berbeda dimensinya). 
+- Jika diurutkan hanya berdasarkan satu _array_ dan berdasarkan kolom/baris di dalam _array_ tersebut, sebaiknya menggunakan `SORT`. 
+
+## `SORTBY(...)` (2)
+
+$$
+\mathbf{A} 
+= 
+\begin{bmatrix}
+  \textrm{A} & \textrm{AB} & \textrm{ABA}\\
+  \textrm{B} & \textrm{BC} & \textrm{BCB}\\
+  \textrm{C} & \textrm{CD} & \textrm{CDC}\\
+  \textrm{D} & \textrm{DE} & \textrm{DED}\\
+  \textrm{E} & \textrm{EF} & \textrm{EFE}\\
+  \textrm{F} & \textrm{FG} & \textrm{FGF}\\
+  \textrm{G} & \textrm{GI} & \textrm{GIG}\\
+\end{bmatrix}
+$$
+
+$$
+\mathbf{b}_1
+= 
+\begin{bmatrix}
+  1\\
+  3\\
+  3\\
+  2\\
+  2\\
+  1\\
+  4\\
+\end{bmatrix}
+,
+\mathbf{b}_2
+= 
+\begin{bmatrix}
+  1\\
+  3\\
+  5\\
+  6\\
+  2\\
+  7\\
+  8\\
+\end{bmatrix}
+$$
 
 
 # Mencari data
