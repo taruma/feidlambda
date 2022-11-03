@@ -2051,6 +2051,8 @@ $$
 
 - `XLOOKUP(...)`: Fungsi `XLOOKUP` mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, `XLOOKUP` dapat mengembalikan kecocokan terdekat (perkiraan). ^[[Fungsi XLOOKUP](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929), Microsoft Support.]
 
+. . .
+
 ```default
 =XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])
 ```
@@ -2059,18 +2061,21 @@ $$
 
 - `XMATCH(...)`: Fungsi `XMATCH` mengembalikan posisi relatif item dalam array atau rentang sel. ^[[Fungsi XMATCH](https://support.microsoft.com/id-id/office/fungsi-xmatch-d966da31-7a6b-4a13-a1c6-5a33ed6a0312), Microsoft Support.]
 
+. . .
+
 ```default
 =XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])
 ```
 
 # 4 Fungsi Baru (2019-2021)
 
-# Excel 2019
+# Penggabungan Teks {.smaller}
 
-## Penggabungan Teks {.smaller}
+## `CONCAT(...)` dan `TEXTJOIN(...)` (1) {.smaller}
 
-::: {.incremental}
 - `CONCAT(...)`: Fungsi `CONCAT` menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. ^[[Fungsi CONCAT](https://support.microsoft.com/id-id/office/concat-fungsi-concat-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2), Microsoft Support.]
+
+. . .
 
 ```default
 =CONCAT(text1, [text2], ...)
@@ -2078,15 +2083,79 @@ $$
 
 - `TEXTJOIN(...)`: Fungsi `TEXTJOIN` menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. ^[[Fungsi TEXTJOIN](https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c), Microsoft Support.]
 
+. . .
+
 ```default
 =TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)
 ```
-:::
 
-## KOLEKSI `IF*` {.smaller}
+## `CONCAT(...)` dan `TEXTJOIN(...)` (2) {.smaller}
 
-::: {.incremental}
+- Hal yang membedakan `TEXTJOIN(...)` dengan `CONCAT(...)` adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai `TEXTJOIN(...) === CONCAT(...)` ketika argumen `delimeter <- ""` dan `ignore_empty <- TRUE`. 
+
+. . .
+
+$$
+\mathbf{T} = 
+\begin{bmatrix}
+  \textrm{nama} &
+  \textrm{saya} &
+  \textrm{taruma}\\
+  1 &
+  \textrm{pergi} &
+  3 \\
+  \texttt{TRUE} &
+  100 &
+  \texttt{FALSE}\\
+\end{bmatrix}
+$$
+
+## `CONCAT(...)` dan `TEXTJOIN(...)` (2) {.smaller}
+
+. . .
+
+$$
+\mathbf{T} = 
+\begin{bmatrix}
+  \textrm{nama} &
+  \textrm{saya} &
+  \textrm{taruma}\\
+  1 &
+  \textrm{pergi} &
+  3 \\
+  \texttt{TRUE} &
+  100 &
+  \texttt{FALSE}\\
+\end{bmatrix}
+$$
+
+. . .
+
+$$
+\texttt{CONCAT}(\mathbf{T}) =
+\textrm{namasayataruma1pergi3TRUE100FALSE}
+$$
+
+$$
+\texttt{TEXTJOIN}(\texttt{""}, \texttt{TRUE}, \mathbf{T}) =
+\textrm{namasayataruma1pergi3TRUE100FALSE}
+$$
+
+. . .
+
+$$
+\texttt{TEXTJOIN}(\texttt{" "}, \texttt{TRUE}, \mathbf{T}) =
+\textrm{nama saya taruma 1 pergi 3 TRUE 100 FALSE}
+$$
+
+
+# KOLEKSI `IF*`
+
+## `IFS(...)` dan `MINIFS(...)` {.smaller}
+
 - `IFS(...)`: Fungsi `IFS` memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi `TRUE` pertama. `IFS` dapat menggantikan beberapa pernyataan `IF` yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. ^[[Fungsi IFS](https://support.microsoft.com/id-id/office/ifs-fungsi-ifs-36329a26-37b2-467c-972b-4a39bd951d45), Microsoft Support.]
+
+. . .
 
 ```default
 =IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)
@@ -2094,28 +2163,135 @@ $$
 
 - `MINIFS(...)` / `MAXIFS(...)`: Fungsi `MINIFS` mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi `MAXIFS` mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. ^[[Fungsi MINIFS](https://support.microsoft.com/id-id/office/minifs-fungsi-minifs-6ca1ddaa-079b-4e74-80cc-72eef32e6599), Microsoft Support.] ^[[Fungsi MAXIFS](https://support.microsoft.com/id-id/office/maxifs-fungsi-maxifs-dfd611e6-da2c-488a-919b-9b6376b28883), Microsoft Support.]
 
+. . .
+
 ```default
 =[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)
 ```
-:::
 
-## SWITCH
+## CONTOH `IFS` (`IF(...)`) {auto-animate="true"}
+
+$$
+[-\infty,70) \Rightarrow \text{C}\\
+[70,85) \Rightarrow \text{B}\\
+[85,\infty) \Rightarrow \text{A}
+$$
+
+```{.r}
+=IF(
+  x < 70, "C", 
+  IF(
+    x < 85, "B",
+    "A"c
+  )
+)
+```
+
+## CONTOH `IFS` (`IFS(...)`) {auto-animate="true"}
+
+$$
+[-\infty,70) \Rightarrow \text{C}\\
+[70,85) \Rightarrow \text{B}\\
+[85,\infty) \Rightarrow \text{A}
+$$
+
+```{.r}
+=IFS(
+  x < 70, "C", 
+  x < 85, "B",
+  TRUE, "A"
+)
+```
+
+# `SWITCH(...)` dan `LET(...)`
+
+## `SWITCH(...)`
 
 - `SWITCH(...)`: Fungsi `SWITCH` mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. ^[[Fungsi SWITCH](https://support.microsoft.com/id-id/office/switch-fungsi-switch-47ab33c0-28ce-4530-8a45-d532ec4aa25e), Microsoft Support.] 
+
+. . .
 
 ```default
 =SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])
 ```
 
-# EXCEL 2021
-
-## LET
+## `LET(...)`
 
 - `LET(...)`: Fungsi `LET` menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup `LET` fungsi. Mirip dengan variabel dalam pemrograman, `LET` dilakukan melalui Excel rumus asli Anda. ^[[Fungsi LET](https://support.microsoft.com/id-id/office/fungsi-let-34842dd8-b92b-4d3f-b325-b8b8f9908999), Microsoft Support.] 
+
+. . .
 
 ```default
 =LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)
 ```
+
+## CONTOH `LET(...)` dan `SWITCH(...)` {auto-animate="true"}
+
+$$
+\text{A} \Rightarrow 90,
+\text{B} \Rightarrow 80,
+\text{C} \Rightarrow 70,
+\text{D} \Rightarrow 60,\\
+\notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
+$$
+
+```{.r}
+=IFS(
+  C$2 = "A", 90,
+  C$2 = "B", 80,
+  C$2 = "C", 70,
+  C$2 = "D", 60,
+  TRUE, 20
+)
+```
+
+## CONTOH `LET(...)` dan `SWITCH(...)` {auto-animate="true"}
+
+$$
+\text{A} \Rightarrow 90,
+\text{B} \Rightarrow 80,
+\text{C} \Rightarrow 70,
+\text{D} \Rightarrow 60,\\
+\notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
+$$
+
+```{.r code-line-numbers="1,2,4-7"}
+=LET(
+  data, C$2,
+  IFS(
+    data = "A", 90,
+    data = "B", 80,
+    data = "C", 70,
+    data = "D", 60,
+    TRUE, 20
+  )
+)
+```
+
+## CONTOH `LET(...)` dan `SWITCH(...)` {auto-animate="true"}
+
+$$
+\text{A} \Rightarrow 90,
+\text{B} \Rightarrow 80,
+\text{C} \Rightarrow 70,
+\text{D} \Rightarrow 60,\\
+\notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
+$$
+
+```{.r code-line-numbers="3-10"}
+=LET(
+  data, C$2,
+  SWITCH(
+    data,
+    "A", 90,
+    "B", 80,
+    "C", 70,
+    "D", 60,
+    20
+  )
+)
+```
+
 
 # 5 _User Defined Lambda_ (UDL) dengan `LAMBDA`
 
