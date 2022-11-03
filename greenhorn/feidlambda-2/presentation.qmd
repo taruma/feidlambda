@@ -29,6 +29,7 @@ format:
     # highlight-style: arrow
     footer: |
       [Edit this presentation](https://github.com/fiakoenjiniring/feidlambda/edit/main/greenhorn/feidlambda-2/presentation.qmd){target="_blank" preview-link="false"} | [Report an issue](https://github.com/fiakoenjiniring/feidlambda/issues/new){target="_blank" preview-link="false"}
+    code-copy: true
 ---
 
 ## {.smaller}
@@ -2292,34 +2293,252 @@ $$
 )
 ```
 
+# Implementasi pada validasi input
+Memperbaiki validasi input dari kasus sebelumnya.
+
+## Kasus validasi {.smaller}
+
+. . .
+
+$$ 
+f : \mathbb{R} \to \mathbb{R}
+$$
+
+$$
+f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
+$$
+
+$$
+\mathbf{x} \in \mathbb{R}, \mathbf{y} \in \mathbb{R}
+$$
+
+$$
+\mathbf{x}
+\mapsto
+\mathbf{x} + 2
+$$
+
+. . .
+
+$$
+\begin{equation}
+  \mathbf{x} 
+  \mapsto 
+  \texttt{AND}
+  (
+    \texttt{ISNUMBER}(\mathbf{x})
+  )
+  =
+  \begin{cases}
+    \texttt{TRUE} & f : \mathbf{x} \in \mathbb{R} \rightarrow \mathbb{R}\\
+    \texttt{FALSE} & \textrm{return}\ \texttt{#VALUE!} \\
+    \texttt{FALSE} & \mathbf{x} \mapsto g(\mathbf{x}) = \texttt{FILTER}(\dots) \mapsto \\
+    & f: g(\mathbf{x}) \in \mathbb{R} \rightarrow \mathbb{R}\\
+  \end{cases}
+\end{equation}
+$$
+
+- $\mathbf{x}$ akan dievaluasi terlebih dahulu dan di filter dengan memilih elemen yang berupa angka saja.
+- $\mathbf{x} \mapsto \mathbf{y}$ dengan $y \in \mathbb{R}$ dan $x \in \mathbb{?}$.
+
+## Formula {auto-animate="true"}
+
+. . .
+
+$$
+g : \mathbf{x} \in \mathbb{?} \to \mathbb{R}
+$$
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r}
+=LET(
+  ...
+)
+```
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r code-line-numbers="2-3"}
+=LET(
+  x, H8:H15,
+  ...
+)
+```
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r code-line-numbers="3-4"}
+=LET(
+  x, H8:H15,
+  logical_isnumber, ISNUMBER(x),
+  ...
+)
+```
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r code-line-numbers="3-5"}
+=LET(
+  x, H8:H15,
+  logical_isnumber, ISNUMBER(x),
+  y, FILTER(x, logical_isnumber),
+  ...
+)
+```
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r code-line-numbers="3-4"}
+=LET(
+  x, H8:H15,
+  y, FILTER(x, ISNUMBER(x)),
+  y + 2
+)
+```
+
+## Formula {auto-animate="true"}
+
+$$
+g(\mathbf{x}) = f(
+  \underbrace{
+    \texttt{FILTER}(\mathbf{x}, \texttt{ISNUMBER}(\mathbf{x}))
+  }_{\mathbf{y\ \in\ \mathbb{R}}}
+)
+=
+\underbrace{
+  f(\mathbf{y})
+}_{\in\ \mathbb{R}}
+= 
+\mathbf{y} + 2
+$$
+
+```{.r}
+=LET(
+  x, H8:H15,
+  y, FILTER(x, ISNUMBER(x)),
+  y + 2
+)
+```
 
 # 5 _User Defined Lambda_ (UDL) dengan `LAMBDA`
 
-## Mengenal LAMBDA dan UDL
+## `LAMBDA` dan UDL {.smaller}
 
 - `LAMBDA(...)`: Gunakan fungsi `LAMBDA` untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. ^[[Fungsi LAMBDA](https://support.microsoft.com/id-id/office/fungsi-lambda-bd212d27-1cd1-4321-a34a-ccbf254b8b67), Microsoft Support.] 
+
+. . .
 
 ```default
 =LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
 ```
 
+- _User Defined Lambda_ (UDL) sama halnya dengan _User Defined Function_ (UDF) hanya spesifik pada penggunaan `LAMBDA`. UDF sendiri adalah fungsi yang dibuat oleh pengguna. 
+
 ## `LAMBDA` dan `LET`
 
-::: {.incremental}
 - `LAMBDA` dan `LET` biasanya digunakan bersamaan untuk memudahkan pembuatan UDL ataupun membaca/_troubleshooting_.
-- `LAMBDA` berfungsi menerima `input` dan membungkusnya sebagai fungsi baru di Excel. 
+- `LAMBDA` berfungsi menerima `input` dan membungkusnya sebagai fungsi baru di Excel sebagai UDL. 
 - `LET` digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari `LAMBDA`. 
-:::
+- Jika UDL cukup sederhana, `LET` tidak perlu digunakan.
 
-## Menggabungkan `LAMBDA` dan `LET` 1 {auto-animate="true"}
+## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
+
+. . .
 
 ```{.r code-line-numbers="true"}
 =LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
 ```
 
-## Menggabungkan `LAMBDA` dan `LET` 1 {auto-animate="true"}
+- Untuk memudahkan membaca kode, buat baris baru diantara `(...)`.
 
-```{.r code-line-numbers="1,5"}
+## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
+
+```{.r code-line-numbers="2-4"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2327,9 +2546,11 @@ $$
 )
 ```
 
-## Menggabungkan `LAMBDA` dan `LET` 2 {auto-animate="true"}
+- Ubah `calculation` dengan `LET(...)`.
 
-```{.r code-line-numbers="1-3,9|4-8|2-3|4,8|5-6|7"}
+## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
+
+```{.r code-line-numbers="4-8|"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2341,18 +2562,61 @@ $$
 )
 ```
 
-# Contoh `LAMBDA` dan `LET`
+- Argumen `parameter` yang berasal dari `LAMBDA`, dapat langsung digunakan di `LET` tanpa melakukan pendefinisian ulang.
 
-## Contoh `LAMBDA` dan `LET`
+## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
 
-- Mengurangi setiap elemen dari _numeric vector_ ($\mathbf{x}$) dengan setengah dari rata-ratanya ($\frac{\text{mean}(\mathbf{x})}{2}$).
-- $\mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2}$
+```{.r code-line-numbers="2-4,6-8"}
+=LAMBDA(
+  parameter1, 
+  parameter2,
+  parameter3,
+  LET(
+    name1, parameter1 + parameter2,
+    name2, parameter3 - name1
+    name1 / parameter2
+  )
+)
+```
 
-## Menentukan _input_ `LAMBDA` {auto-animate="true"}
+::: {.nonincremental}
+- `parameter2` bisa langsung digunakan pada `LET` tanpa pendefinisian ulang.
+:::
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+# Contoh Kasus
+Mengurangi setiap elemen pada vektor dengan setengah rata-ratanya.
 
-```{.r code-line-numbers="|2-3"}
+## Deskripsi Kasus
+
+- Mengurangi setiap elemen dari _numeric vector_ ($\mathbf{x}$) dengan setengah dari rata-ratanya ($\frac{\texttt{mean}(\mathbf{x})}{2}$).
+
+. . .
+
+$$
+f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
+$$
+
+$$
+f(\mathbf{x}) = 
+\mathbf{x} - \frac{\overline{\mathbf{x}}}{2}
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+
+## Fungsi `LAMBDA` {auto-animate="true"}
+
+. . .
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+. . .
+
+```{.r code-line-numbers="2-3"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2360,9 +2624,16 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Menentukan _input_ `LAMBDA` {auto-animate="true"}
+- menentukan _input_ variabel untuk fungsi `LAMBDA`.
+- $f(\mathbf{x})$ menunjukkan input fungsi $f$ hanya vektor $\mathbf{x}$
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## _input_ `LAMBDA` {auto-animate="true"}
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
 
 ```{.r code-line-numbers="2|3"}
 =LAMBDA(
@@ -2371,9 +2642,15 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Kalkulasi dengan `LET` 1 {auto-animate="true"}
+- Karena fungsi $f$ memiliki perhitungan `AVERAGE(...)`, yang sebaiknya disimpan di variabel sementara, maka diperlukan kalkulasi menggunakan `LET(...)`. 
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## Menggunakan `LET` {auto-animate="true"}
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
 
 ```{.r code-line-numbers="3-7"}
 =LAMBDA(
@@ -2386,128 +2663,198 @@ $$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
 )
 ```
 
-## Kalkulasi dengan `LET` 2 {auto-animate="true"}
+- Karena pada persamaan asli $f$ menggunakan simbol $\mathbf{x}$, bisa dilakukan _assignment_ / pendefinisian berupa `x <- vector`.
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+
+## Argumen _redundant_ / berulang {.smaller auto-animate="true"}
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
 
 ```{.r code-line-numbers="4"}
 =LAMBDA(
   vector,
   LET(
     x, vector,
-    [name2, value2, name3, value3, ...],
-    calculation
-  )
-)
-```
-
-## Kalkulasi dengan `LET` 3 {auto-animate="true"}
-
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
-
-```{.r code-line-numbers="4"}
-=LAMBDA(
-  vector,
-  LET(
-    ..., ...,
-    [name2, value2, name3, value3, ...],
-    calculation
-  )
-)
-```
-
-## Kalkulasi dengan `LET` {auto-animate="true"}
-
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
-
-```{.r code-line-numbers="4"}
-=LAMBDA(
-  vector,
-  LET(
-    avg, AVERAGE(vector),
-    [name2, value2, name3, value3, ...],
-    calculation
-  )
-)
-```
-
-## Kalkulasi dengan `LET` {auto-animate="true"}
-
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
-
-```{.r code-line-numbers="5"}
-=LAMBDA(
-  vector,
-  LET(
-    avg, AVERAGE(vector),
-    halfavg, avg/2,
     ..., ...,
     calculation
   )
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+- `x <- vector` merupakan argumen yang tidak perlu (_redundant_ / berulang) dikarenakan tidak ada modifikasi pada input _vector_.
+- Selain itu, pada proses pengembangan `LAMBDA` lebih baik menggunakan nama variabel yang mudah diingat atau dipahami. 
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## Perhitungan dalam fungsi `LET` {.smaller auto-animate="true"}
 
-```{.r code-line-numbers="6"}
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+```{.r code-line-numbers="4"}
 =LAMBDA(
   vector,
   LET(
-    avg, AVERAGE(vector),
-    halfavg, avg/2,
-    y, vector - halfavg,
+    ..., ...,
     calculation
   )
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+- Nilai rata-rata bisa disimpan sebagai variabel `avg`.
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+. . .
 
-```{.r code-line-numbers="7-8"}
+```r
+avg <- AVERAGE(vector)
+```
+
+- Variabel `halfavg` menyatakan nilai setengah dari rata-rata vektor.
+
+. . .
+
+```r
+halfavg <- avg / 2
+```
+
+- Hasil akhir dapat disimpan sebagai variabel `result`.
+
+. . .
+
+```r
+result <- vector - halfavg
+```
+
+## Mengisi hasil dari `LAMBDA` {.smaller auto-animate="true"}
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+```{.r code-line-numbers="7"}
 =LAMBDA(
   vector,
   LET(
     avg, AVERAGE(vector),
-    halfavg, avg/2,
-    y, vector - halfavg,
-    y
+    halfavg, avg / 2,
+    result, vector - halfavg,
+    ...
   )
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+- Fungsi `LAMBDA` ini masih belum mengeluarkan hasil atau _return_ dari fungsinya. 
+- Pada argumen terakhir `LET` disampaikan kembali hasil yang diperoleh dari seluruh perhitungan. Yaitu `result`. 
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## Menghindari pendefinisian berulang {.smaller auto-animate="true"}
 
-```{.r code-line-numbers="6"}
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+```{.r code-line-numbers="6-7"}
 =LAMBDA(
   vector,
   LET(
     avg, AVERAGE(vector),
-    halfavg, avg/2,
+    halfavg, avg / 2,
+    result, vector - halfavg,
+    result
+  )
+)
+```
+
+- Pada baris ke-6 dan ke-7 bisa dibuat lebih sederhana menjadi satu baris dan langsung memberikan _return_ atau hasil dari fungsi `LAMBDA`.
+
+## Formula akhir {auto-animate="true"}
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+```{.r code-line-numbers="6|"}
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg / 2,
     vector - halfavg
   )
 )
 ```
 
-## Kalkulasi dengan `LET` {auto-animate="true"}
+- Fungsi `LAMBDA` sudah lengkap dan bisa langsung digunakan.
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## Rekap {auto-animate="true"}
 
-```{.r}
+. . .
+
+$$
+f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
+$$
+
+. . .
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+. . .
+
+```r
 =LAMBDA(
   vector,
   LET(
     avg, AVERAGE(vector),
-    halfavg, avg/2,
+    halfavg, avg / 2,
     vector - halfavg
   )
 )
 ```
+
+## Menggunakan formula di Excel (1) {.smaller auto-animate="true"}
+
+$$
+f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
+$$
+
+$$
+f(\mathbf{x})
+=
+\mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
+$$
+
+```r
+=LAMBDA(
+  vector,
+  LET(
+    avg, AVERAGE(vector),
+    halfavg, avg / 2,
+    vector - halfavg
+  )
+)
+```
+
+- Salin formula diatas dan simpan sebagai fungsi bernama `HALFAVG(...)`.
+
+## Menggunakan formula di Excel (2)
+
+![](assets/feidlambda-2-formula-excel.gif)
+
+- Salin formula diatas dan simpan sebagai fungsi bernama `HALFAVG(...)`.
 
 # Pengembangan lebih lanjut
 
