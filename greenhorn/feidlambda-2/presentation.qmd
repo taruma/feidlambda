@@ -2111,7 +2111,7 @@ $$
 \end{bmatrix}
 $$
 
-## `CONCAT(...)` dan `TEXTJOIN(...)` (2) {.smaller}
+## `CONCAT(...)` dan `TEXTJOIN(...)` (3) {.smaller}
 
 . . .
 
@@ -2738,7 +2738,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="7"}
+```{.r code-line-numbers="4-6|7"}
 =LAMBDA(
   vector,
   LET(
@@ -2854,134 +2854,274 @@ $$
 
 ![](assets/feidlambda-2-formula-excel.gif)
 
-- Salin formula diatas dan simpan sebagai fungsi bernama `HALFAVG(...)`.
-
 # Pengembangan lebih lanjut
 
-## Validasi _input_ {auto-animate="true"}
+## Validasi _input_ (1) {.smaller auto-animate="true"}
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+$$
+g : \mathbf{y} \in \mathbb{?} \to \mathbb{R}
+$$
 
-```{.r code-line-numbers="2"}
+$$
+\mathbb{y}_{\textit{filtered}} \leftarrow \text{VALIDASI}(\mathbf{y})
+$$
+
+$$
+g(\mathbf{y})
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
+$$
+
+```{.r code-line-numbers="2,4,5,7"}
 =LAMBDA(
   vector,
   LET(
+    ...,...,
     avg, AVERAGE(vector),
-    halfavg, avg/2,
+    halfavg, avg / 2,
     vector - halfavg
   )
 )
 ```
 
-## Validasi _input_ {auto-animate="true"}
+## Validasi _input_ (2) {auto-animate="true"}
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+$$
+g(\mathbf{y})
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
+$$
 
-```{.r code-line-numbers="2|4-5"}
+```{.r code-line-numbers="2,4,5,7"}
 =LAMBDA(
   vector,
   LET(
-    vector_clean, FILTER(vector, ISNUMBER(vector)),
-    avg, AVERAGE(vector_clean),
-    halfavg, avg/2,
-    vector - halfavg
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    avg, AVERAGE(vector_filtered),
+    halfavg, avg / 2,
+    vector_filtered - halfavg
   )
 )
 ```
 
-## _Refactoring_ {auto-animate="true"}
+## _Refactoring_ (1) {.smaller auto-animate="true"}
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+$$
+g(\mathbf{y})
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
+$$
 
 ```{.r code-line-numbers="5-6"}
 =LAMBDA(
   vector,
   LET(
-    vector_clean, FILTER(vector, ISNUMBER(vector)),
-    avg, AVERAGE(vector_clean),
-    halfavg, avg/2,
-    vector - halfavg
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    avg, AVERAGE(vector_filtered),
+    halfavg, avg / 2,
+    vector_filtered - halfavg
   )
 )
 ```
 
-## _Refactoring_ {auto-animate="true"}
+- _Refactoring_ merupakan perubahan dari kode program yang sudah ada tanpa mengubah hasil dari program tersebut.
+- variabel `avg` bisa langsung diterapkan pada variabel `halfavg`. 
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{2} $$
+## _Refactoring_ (2) {auto-animate="true"}
+
+$$
+g(\mathbf{y})
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
+$$
 
 ```{.r code-line-numbers="5"}
 =LAMBDA(
   vector,
   LET(
-    vector_clean, FILTER(vector, ISNUMBER(vector)),
-    halfavg, AVERAGE(vector_clean) / 2,
-    vector - halfavg
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / 2,
+    vector_filtered - halfavg
   )
 )
 ```
 
-## _Optional argument/parameter_ {auto-animate="true"}
+## _Optional argument_ (1) {auto-animate="true"}
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+$$
+g(\mathbf{y})
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
+$$
 
-```{.r code-line-numbers="3|5|7|3,5,7"}
+. . .
+
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+$$
+\begin{equation}
+  n = 
+  \begin{cases}
+    \dots & \mathbf{y}, n = 2 \mapsto g(\mathbf{y}, 2) = f(\mathbf{y}_{\textit{filtered}})\\
+    n & \mathbf{y}, n \mapsto g(\mathbf{y}, n)
+  \end{cases}
+\end{equation}
+$$
+
+## _Optional argument_ (2) {auto-animate="true"}
+
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+```{.r code-line-numbers="true"}
+=LAMBDA(
+  vector,
+  LET(
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / 2,
+    vector_filtered - halfavg
+  )
+)
+```
+
+## _Optional argument_ (3) {auto-animate="true"}
+
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+```{.r code-line-numbers="3,5,7"}
+=LAMBDA(
+  vector,
+  ...,
+  LET(
+    ...,...,
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / 2,
+    vector_filtered - halfavg
+  )
+)
+```
+
+## _Optional argument_ (4) {auto-animate="true"}
+
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+```{.r code-line-numbers="3,5,7"}
+=LAMBDA(
+  vector,
+  [n],
+  LET(
+    ...,...,
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / n,
+    vector_filtered - halfavg
+  )
+)
+```
+
+## _Optional argument_ (5) {.smaller auto-animate="true"}
+
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+```{.r code-line-numbers="3,5,7"}
 =LAMBDA(
   vector,
   [n],
   LET(
     n, IF(ISOMITTED(n), 2, n),
-    vector_clean, FILTER(vector, ISNUMBER(vector)),
-    halfavg, AVERAGE(vector_clean) / n,
-    vector - halfavg
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / n,
+    vector_filtered - halfavg
   )
 )
 ```
 
-## _Optional argument/parameter_ {auto-animate="true"}
+$$
+\begin{equation}
+  n \mapsto \texttt{ISOMITTED}(n) =
+  \begin{cases}
+    \texttt{TRUE} & n \leftarrow 2 \\
+    \texttt{FALSE} & n \leftarrow n
+  \end{cases}
+\end{equation}
+$$
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+## Formula Akhir {.smaller auto-animate="true"}
 
-```r
+$$
+\mathbf{y}, n \mapsto g(\mathbf{y}, n)
+=
+\mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
+$$
+
+```{.r code-line-numbers="true"}
 =LAMBDA(
   vector,
   [n],
   LET(
     n, IF(ISOMITTED(n), 2, n),
-    vector_clean, FILTER(vector, ISNUMBER(vector)),
-    halfavg, AVERAGE(vector_clean) / n,
-    vector - halfavg
+    vector_filtered, FILTER(vector, ISNUMBER(vector)),
+    halfavg, AVERAGE(vector_filtered) / n,
+    vector_filtered - halfavg
   )
 )
 ```
 
-## Penggunaan Formula
+- Formula tersebut disimpan sebagai `HALFAVGN` di _Formulas Name Manager_.
+- Sintaksnya `=HALFAVGN(vector, [n])`.
+- `=HALFAVGN(D5:D10)` (maka $n=2$).
+- `=HALFAVGN(D5#, 4)` (maka $n=4$).
 
-$$ \mathbf{y} \leftarrow \mathbf{x} - \frac{\text{mean}(\mathbf{x})}{n} $$
+# feidlambda III
+Pengenalan mengembangkan `LAMBDA` dan fungsi yang berkaitan dengan `LAMBDA`
 
-::: {.incremental}
-- Formula tersebut disimpan sebagai `HALFAVG` di _Formulas Name Manager_.
-- Sintaksnya `=HALFAVG(vector, [n])`.
-- `=HALFAVG(D5:D10)` (maka $n=2$).
-- `=HALFAVG(D5#, 4)` (maka $n=4$).
-:::
+## Pengenalan _Advanced Formula Environment_ (AFE)
 
-## _Advanced Formula Environment_ (AFE)
-
-::: {.incremental}
-- Excel add-ins yang memudahkan mengatur formula pada lembar kerja. 
+- Excel add-ins yang memudahkan mengatur kumpulan formula pada lembar kerja. 
 - Alternatif _Formulas Name Manager_.
 - Memiliki fitur _syntax highlighting_ dan _shortcut_ umum untuk _coding_.
-- Dapat _import_ UDL hasil dari orang lain. ^[Harus melalui Github Gist.]
-:::
+- Dapat _import_ UDL hasil dari orang lain menggunakan GitHub Gist.
 
-## Berbagi UDL
+## Demonstrasi menggunakan AFE (1)
 
-::: {.incremental}
-- Memiliki [GitHub Account](https://github.com). 
-- Mengupload kode UDL dari AFE ke [GitHub Gist](https://gist.github.com). 
-- _Share_ link Gist.
+![](assets/feidlambda-2-afe-1.gif)
+
+## Demonstrasi menggunakan AFE (1)
+
+![](assets/feidlambda-2-afe-2.gif)
+
+## Daftar fungsi yang dibahas di feidlambda III {.smaller}
+
+::: {.nonincremental}
+- Fungsi vektorisasi `SCAN`, `MAP`, `REDUCE`. 
+- Transformasi kolom dengan `TOCOL`, `TOROW`, `WRAPCOLS`, `WRAPROWS`.
+- Menggabungkan _array_ dengan `VSTACK` dan `HSTACK`
+- Manipulasi _array_ dengan `DROP`, `EXPAND`.
+- Memilih kolom/baris dengan `CHOOSECOLS` dan `CHOOSEROWS`, `TAKE`
+- Fungsi teks `TEXTAFTER`, `TEXTBEFORE`, `TEXTSPLIT`, `VALUETOTEXT`, `ARRAYTOTEXT`. 
+- Iterasi dengan `BYCOL` dan `BYROW`,
 :::
 
 # Terima Kasih
 
 Taruma Sakti Megariansyah, [hi@taruma.info](mailto:hi@taruma.info)
+
+# [Lanjut ke Latihan >](/greenhorn/feidlambda-2/index.html)
