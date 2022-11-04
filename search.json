@@ -546,6 +546,13 @@
     "text": "CONTOH IFS (IFS(...))\n\\[\n[-\\infty,70) \\Rightarrow \\text{C}\\\\\n[70,85) \\Rightarrow \\text{B}\\\\\n[85,\\infty) \\Rightarrow \\text{A}\n\\]\n=IFS(\n  x < 70, \"C\", \n  x < 85, \"B\",\n  TRUE, \"A\"\n)"
   },
   {
+    "objectID": "greenhorn/feidlambda-2/presentation.html#switch...",
+    "href": "greenhorn/feidlambda-2/presentation.html#switch...",
+    "title": "Greenhorn:feidlambda II",
+    "section": "SWITCH(...)",
+    "text": "SWITCH(...)\n\nSWITCH(...): Fungsi SWITCH mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. 1\n\n=SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])\nFungsi SWITCH, Microsoft Support."
+  },
+  {
     "objectID": "greenhorn/feidlambda-2/presentation.html#let...",
     "href": "greenhorn/feidlambda-2/presentation.html#let...",
     "title": "Greenhorn:feidlambda II",
