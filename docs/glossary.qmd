@@ -2,10 +2,10 @@
 title: |
   Daftar Istilah
 subtitle: |
-  Daftar istilah yang digunakan oleh fiakodev dalam pengembangan _lambda_.
+  Daftar istilah yang digunakan oleh fiakodev dalam pengembangan `LAMBDA`.
 author: Taruma Sakti Megariansyah
 abstract: |
-  Istilah ini digunakan untuk memudahkan penyampaian dan konsistensi dalam pengembangan lambda. Istilah ini digunakan di FIAKO Engineering.  
+  Istilah ini digunakan untuk memudahkan penyampaian dan konsistensi dalam pengembangan `LAMBDA`. Istilah ini digunakan di FIAKO Engineering.  
 abstract-title: Information
 date: 2022-10-21
 toc: true
@@ -26,6 +26,10 @@ Angka / numerik. Numerik yang dimaksud adalah bilangan real: $\mathbb{R} = \{-1,
 ##### _LOGICAL_
 
 `TRUE` atau `FALSE`. Dapat dikenal juga sebagai _boolean_. Nilai _logical_ bisa juga direpresentasikan dalam bentuk _numerik_ dengan `0` berarti `FALSE`, sedangkan nilai numerik selain `0` dianggap `TRUE`.
+
+##### _TEXT_
+
+Karakter atau teks. Dikenal juga sebagai _string_. 
 
 ##### _CELL_
 
@@ -65,7 +69,7 @@ _Vector_
 
 ##### _ARRAY_
 
-_Range_ yang memiliki 2 dimensi. Penggunaan istilah _array_ menginformasikan bahwa _range_ berupa dua dimensi. 
+_Range_ yang memiliki 1 dimensi atau 2 dimensi. Untuk membedakan antara 1 dimensi dan 2 dimensi, istilah _array_ digunakan untuk _range_ yang memiliki 2 dimensi. Meskipun _array_ di excel bisa merepresentasikan _range_ 1 dimensi atau _range_ 2 dimensi. 
 
 ::: {#fig-glossary-array .column-page layout-ncol="2" layout-valign="bottom"}
 ![Array (Excel)](img-glossary/array_excel.png){#fig-array-excel width=350}
