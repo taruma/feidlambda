@@ -90,31 +90,27 @@ website:
         href: greenhorn/feidlambda-2/index.qmd
       - text: Presentasi
         href: greenhorn/feidlambda-2/presentation.qmd
-      - Review
-      - section: Logical
+      - Review Daftar Istilah
+      - section: Explorasi tentang _Logical_
         contents:
           - Fungsi Logical
-          - Operator Logical
-          - Fungsi IS*
-      - section: Dynamic Array Formula
+          - Logical dan Number
+          - Fungsi `IS*`
+      - section: _Dynamic Array Formula_ (DAF)
         contents:
-          - FILTER, UNIQUE
-          - RANDARRAY, SEQUENCE
-          - SORT, SORTBY
-          - XLOOKUP, XMATCH
-      - section: Fungsi Baru
+          - Menyeleksi/memilih data
+          - Membangkitkan data
+          - Menyusun data
+          - Mencari data
+      - section: Fungsi Baru dari Excel 2019 dan 2021
         contents:
-          - CONCAT
-          - IFS, MAXIFS, MINIFS
-          - SWITCH
-          - TEXTJOIN
-          - LET
-      - section: User Defined Lambda (UDL)
+          - Penggabungan Teks
+          - Koleksi `IF*`
+      - section: User Defined _Lambda_ (UDL)
         contents:
-          - Pengenalan LAMBDA
-          - Menggabungkan LAMBDA dan LET
-          - Advanced Formula Environment (AFE)
-          - Berbagi UDL
+          - LAMBDA dan UDL
+          - Contoh
+          - Pengembangan lebih lanjut
 
   ## SIDEBAR
   page-footer:
