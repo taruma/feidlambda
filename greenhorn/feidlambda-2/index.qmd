@@ -1,9 +1,9 @@
 ---
-pagetitle: "feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA"
+pagetitle: "feidlambda II: Exploring Dynamic Array + User Defined Lambda (UDL)"
 title: feidlambda II
 
 subtitle: |
-    Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA
+    Exploring Dynamic Array + User Defined Lambda (UDL)
 
 title-block-banner: true
 toc: true
@@ -15,9 +15,8 @@ sidebar: side-greenhorn
 
 author: Taruma Sakti Megariansyah
 date: 2022-10-25
-# author-title: Penulis
 abstract: |
-    Pada pertemuan kedua, pembelajaran akan fokus untuk mengeksplorasi kegunaan _dynamic array formula_ dan penggunaan fungsi `LAMBDA`. 
+    Pada feidlambda II, pembelajaran akan fokus untuk mengeksplorasi kegunaan _dynamic array formula_ dan penggunaan fungsi `LAMBDA`. 
 ---
 
 Topik Pembahasan:

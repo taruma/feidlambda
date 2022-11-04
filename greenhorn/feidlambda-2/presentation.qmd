@@ -23,7 +23,7 @@ format:
     embed-resources: false
     touch: true
     controls: true
-    incremental: true
+    incremental: false
     margin: 0.15
     # multiplex: true
     # highlight-style: arrow
@@ -71,8 +71,6 @@ Agenda untuk _Greenhorn feidlambda II: Exploring Dynamic Array + User Defined `L
 - Istilah _array_ dapat diartikan _range_ yang memiliki 1 dimensi atau 2 dimensi.
 - _Array_ dapat dibangkitkan menggunakan sintaks "`={...}`". Dengan "`,`" sebagai pemisah kolom (sepanjang baris), "`;`" sebagai pemisah baris (sepanjang kolom).  
 
-. . .
-
 $$
 \texttt{{1,2,3}}
 =
@@ -88,8 +86,6 @@ $$
   3
 \end{bmatrix}
 $$
-
-. . .
 
 $$
 \texttt{\{}
@@ -119,8 +115,6 @@ Eksplorasi mengenai fungsi yang menghasilkan _logical_ yaitu `TRUE` atau `FALSE`
 
 ## `NOT` (1)
 
-. . .
-
 ### Syntax
 
 ```vb 
@@ -133,8 +127,6 @@ Eksplorasi mengenai fungsi yang menghasilkan _logical_ yaitu `TRUE` atau `FALSE`
 - `NOT(FALSE) = TRUE`
 
 ## `NOT` (2) {.smaller}
-
-. . .
 
 $$
 \texttt{NOT}
@@ -153,8 +145,6 @@ $$
 \end{bmatrix}
 $$
 
-. . .
-
 $$
 \texttt{NOT}
 \left(
@@ -167,8 +157,6 @@ $$
   \texttt{FALSE} & \texttt{TRUE} & \texttt{FALSE}
 \end{bmatrix}
 $$
-
-. . .
 
 $$
 \texttt{NOT}
@@ -185,14 +173,11 @@ $$
 \end{bmatrix}
 $$
 
-
 # Fungsi `AND(...)`
 
 ## `AND` (1) {.smaller}
 
 - Fungsi logika, untuk menentukan apakah **semua kondisi** dalam sebuah tes adalah `TRUE`. ^[[AND (Fungsi AND)](https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9), Microsoft Support.]
-
-. . .
 
 ```vb
 =AND(logical1, [logical2], ...)
@@ -331,8 +316,6 @@ $$
 
 - Fungsi logika, untuk menentukan apakah **salah satu kondisi** dalam sebuah tes adalah `TRUE`. ^[[`OR` function](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0), Microsoft Support.]
 
-. . .
-
 ```vb 
 =OR(logical1, [logical2], ...)
 ```
@@ -469,8 +452,6 @@ $$
 ## `XOR` (1)
 
 - Fungsi `XOR` mengembalikan logika **Exclusive Or** dari semua argumen. ^[[`XOR` function](https://support.microsoft.com/id-id/office/xor-fungsi-xor-1548d4c2-5e47-4f77-9a92-0533bba14f37), Microsoft Support.]
-
-. . .
 
 ```vb 
 =XOR(logical1, [logical2], ...)
@@ -633,42 +614,38 @@ $$
 
 ## _Logical_ dan operator aritmatika (2) {.smaller}
 
-. . .
+$$
+\mathbf{X}
+\underbrace{\textsf{ operator }}_{\times\ |\ +}
+\mathbf{Y} 
+\Rightarrow 
+\mathbf{P}
+\underbrace{\textsf{ operator }}_{\times\ |\ +}
+\mathbf{Q}
+$$
 
 $$
-\mathbf{X}\underbrace{\textsf{ operator }}_{\times\ |\ +}\mathbf{Y}
-$$
-
-$$
-\{
-  \mathbf{X} \in \mathbb{B}, \mathbf{Y} \in \mathbb{B}
-\}
+\mathbf{X} \in \mathbb{B}_l, \mathbf{Y} \in \mathbb{B}_l, 
+\mathbf{P} \in \mathbb{B}_i, \mathbf{Q} \in \mathbb{B}_i
 $$ 
 
 - Simbol $\mathbb{B}$ untuk menyatakan nilai _logical_ atau _boolean_. ^[[Boolean Domain](https://en.wikipedia.org/wiki/Boolean_domain)]
 
-. . .
-
 $$
-\mathbb{B} = 
+\mathbb{B}_l = 
 \{
   \texttt{TRUE, FALSE}
 \}
 =
 \{
-  0, 1
-\}
-=
-\{
   \text{T}, \text{F}
 \}
-=
+,
+\mathbb{B}_i = 
 \{
-  \top, \bot
+  0, 1
 \}
 $$
-
-. . .
 
 $$
 \overbrace{
@@ -710,8 +687,6 @@ $$
 
 - Setiap nilai yang dikalikan dengan `0` akan bernilai `0`. 
 
-. . .
-
 $$
 x \times 0 = 0,\ \{x \in \mathbb{R}\}
 $$
@@ -719,8 +694,6 @@ $$
 - Setiap nilai yang dikalikan dengan `FALSE` akan bernilai `FALSE`. 
 
 ## Operator perkalian `*` sebagai `AND` (2)
-
-. . .
 
 $$
 \begin{bmatrix}
@@ -756,8 +729,6 @@ $$
 }_{\textit{hasil akhir}}
 $$
 
-. . .
-
 $$
 \Rightarrow
 \underbrace{
@@ -778,28 +749,23 @@ $$
 \end{bmatrix}
 $$
 
-
 # Operator penambahan
 
 ## Operator penambahan `+` sebagai `OR` (1)
 
 - Berlaku seperti penambahan pada umumnya.
 
-. . .
-
 $$
-x + 0 = x, \{x \in \mathbb{R}\}
+x + 0 = x, x \in \mathbb{R}
 $$
 
 $$
-x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
+x + y = x + y,  x \in \mathbb{R}, y \in \mathbb{R}
 $$ 
 
 - Setiap nilai yang **bukan `0`** bernilai `TRUE`. $\texttt{TRUE} \neq 0$
 
 ## Operator penambahan `+` sebagai `OR` (2) {.smaller}
-
-. . .
 
 $$
 \begin{bmatrix}
@@ -834,8 +800,6 @@ $$
 \end{bmatrix}
 }_{\textit{hasil akhir}}
 $$
-
-. . .
 
 $$
 \Rightarrow
@@ -873,8 +837,6 @@ $$
 $$
 
 ## _Number_ $\Rightarrow$ _Logical_ (2)
-
-. . .
 
 $$
 \texttt{NOT}
@@ -915,8 +877,6 @@ $$
 
 ## _Number_ $\Rightarrow$ _Logical_ (2) {.smaller}
 
-. . .
-
 $$
 \texttt{IF}
 \left(
@@ -952,8 +912,6 @@ $$
 ## Yang perlu diperhatikan {.smaller}
 
 - Hasil dari _logical array_ bertemu dengan operator aritmatika **selalu _numeric array_**.
-
-. . .
 
 $$
 \begin{bmatrix}
@@ -999,7 +957,6 @@ $$
 \end{bmatrix}
 $$
 
-
 - Jika _numeric array_ digunakan sebagai argumen _conditional_, maka akan dikonversikan menjadi _logical array_. 
 
 # Mengenal Fungsi `IS*(...)`
@@ -1008,11 +965,9 @@ Kumpulan fungsi logika untuk mevalidasi _input_.
 
 ## Fungsi `IS*(...)`
 
-. . .
-
 ### SYNTAX
 
-```default
+```scala
 =IS*(value)
 ```
 
@@ -1045,25 +1000,17 @@ Kumpulan fungsi logika untuk mevalidasi _input_.
 
 ## Validasi dengan `ISNUMBER(...)` (1) {.smaller}
 
-. . .
-
 $$ 
 f : \mathbb{R} \to \mathbb{R}
 $$
-
-. . .
 
 $$
 f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
 $$
 
-. . .
-
 $$
 \mathbf{x} \in \mathbb{R}, \mathbf{y} \in \mathbb{R}
 $$
-
-. . .
 
 $$
 \mathbf{x}
@@ -1072,8 +1019,6 @@ $$
 $$
 
 - Umumnya nilai $\mathbf{y}$ dihitung dengan formula `=x+2` dengan asumsi $\mathbf{x}$ bernilai **angka** $\{ \mathbf{x} \in \mathbb{R} \}$.
-
-. . .
 
 $$
 \mathbf{x}
@@ -1098,8 +1043,6 @@ $$
 
 - Bagaimana jika $\mathbf{x}$ memiliki elemen yang bukan angka yaitu _text_ / _error_ / _logical_?
 
-. . .
-
 $$
 \mathbf{x}
 =
@@ -1122,8 +1065,6 @@ $$
 ## Validasi dengan `ISNUMBER(...)` (3)  {.smaller}
 
 - Validasi input menggunakan `ISNUMBER(...)`  
-
-. . .
 
 $$
 \mathbf{x}
@@ -1149,8 +1090,6 @@ $$
 \end{bmatrix}
 $$
 
-. . .
-
 $$
 \begin{bmatrix}
   \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
@@ -1170,8 +1109,6 @@ $$
 = 
 \texttt{FALSE}
 $$
-
-. . .
 
 $$
 \mathbf{x}
@@ -1194,8 +1131,6 @@ $$
 $$
 
 ## Validasi dengan `ISNUMBER(...)` (4) {.smaller}
-
-. . .
 
 $$
 \begin{equation}
@@ -1222,7 +1157,6 @@ $$
 
 Koleksi fungsi baru (Excel 2021) yang memanfaatkan _dynamic array_. 
 
-
 # Menyeleksi/memilih data
 
 Menggunakan `FILTER(...)` dan `UNIQUE(...)`
@@ -1231,9 +1165,7 @@ Menggunakan `FILTER(...)` dan `UNIQUE(...)`
 
 - `FILTER(...)`: Fungsi `FILTER` memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. ^[[Fungsi FILTER](https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =FILTER(array, include, [if_empty])
 ```
 
@@ -1241,8 +1173,6 @@ Menggunakan `FILTER(...)` dan `UNIQUE(...)`
 - Argumen `if_empty` dapat diisi dengan nilai ketika argumen include kosong atau `FALSE`.
 
 ## `FILTER(...)` (2) {.smaller}
-
-. . .
 
 $$
 \texttt{FILTER}
@@ -1273,8 +1203,6 @@ $$
     \end{bmatrix}
 }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{FILTER}
@@ -1307,8 +1235,6 @@ $$
 
 ## `FILTER(...)` (3) {.smaller}
 
-. . .
-
 $$
 \texttt{FILTER}
 \left(
@@ -1340,8 +1266,6 @@ $$
 
 ## `FILTER(...)` (4) {.smaller}
 
-. . .
-
 $$
 \texttt{array} = \mathbf{A} \rightarrow \mathbf{A} \in \mathbb{U}^{m \times n}, \{m, n \in \mathbb{N}\ |\ m, n \neq 0 \}
 $$
@@ -1352,23 +1276,17 @@ $$
 
 - $m$ menunjukkan jumlah baris dan $n$ menunjukkan jumlah kolom. 
 
-. . .
-
 $$
 \texttt{include} = \mathbf{i} \rightarrow \mathbf{i} \in \mathbb{B}^{k}, \{k = m \lor k = n\}
 $$
 
 - $\mathbf{i}$ selalu berupa _logical vector_ dengan jumlah baris/kolom $k$ sama dengan $m \lor n$. 
 
-
-
 ## `UNIQUE(...)` (1) {.smaller}
 
 - `UNIQUE(...)`: Fungsi `UNIQUE` menghasilkan daftar nilai yang unik dalam daftar atau rentang. ^[[Fungsi UNIQUE](https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =UNIQUE(array, [by_col], [exactly_once])
 ```
 
@@ -1376,8 +1294,6 @@ $$
 - Argumen `exactly_once` dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika `exactly_once <- TRUE`, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai _default_ argumen `exactly_once <- FALSE`. 
 
 ## `UNIQUE(...)` (2)
-
-. . .
 
 $$
 \texttt{UNIQUE}
@@ -1481,17 +1397,13 @@ Menggunakan `SEQUENCE(...)` dan `RANDARRAY(...)`.
 
 - `SEQUENCE(...)`: Fungsi `SEQUENCE` memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti ${1, 2, 3, 4, \dots}$. ^[[Fungsi SEQUENCE](https://support.microsoft.com/id-id/office/fungsi-sequence-57467a98-57e0-4817-9f14-2eb78519ca90), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =SEQUENCE(rows, [columns], [start], [step])
 ```
 - Hasil `SEQUENCE(...) => numeric vector/array`. 
 - Nilai _default_ argumen: `columns <- 1`, `start <- 1`, `step <- 1`. 
 
 ## `SEQUENCE(...)` (2) {.smaller}
-
-. . .
 
 $$
 \texttt{SEQUENCE}
@@ -1511,8 +1423,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{SEQUENCE}
@@ -1536,8 +1446,6 @@ $$
 $$
 
 ## `SEQUENCE(...)` (3) {.smaller}
-
-. . .
 
 $$
 \texttt{SEQUENCE}
@@ -1563,9 +1471,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-
-. . .
 
 $$
 \texttt{SEQUENCE}
@@ -1600,9 +1505,7 @@ $$
 
 - `RANDARRAY(...)`: Fungsi `RANDARRAY` menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. ^[[Fungsi RANDARRAY](https://support.microsoft.com/id-id/office/randarray-fungsi-randarray-21261e55-3bec-4885-86a6-8b0a47fd4d33), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =RANDARRAY([rows], [columns], [min], [max], [whole_number])
 ```
 
@@ -1610,8 +1513,6 @@ $$
 - Jika tidak diisi argumen maka hasil `RANDARRAY()` adalah bilangan _real_ $\mathbb{R}$ acak dengan rentang $[0, 1]$. 
 
 ## `RANDARRAY(...)` (2) {.smaller}
-
-. . .
 
 $$
 \texttt{RANDARRAY}
@@ -1629,8 +1530,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{RANDARRAY}
@@ -1654,8 +1553,6 @@ $$
 $$
 
 ## `RANDARRAY(...)` (3) {.smaller}
-
-. . .
 
 $$
 \texttt{RANDARRAY}
@@ -1685,8 +1582,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{RANDARRAY}
@@ -1729,8 +1624,6 @@ Menggunakan `SORT(...)` dan `SORTBY(...)`.
 
 - `SORT(...)`: Fungsi `SORT` mengurutkan konten rentang atau larik. ^[[Fungsi SORT](https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c), Microsoft Support.]
 
-. . .
-
 ```vb
 =SORT(array, [sort_index], [sort_order], [by_col])
 ```
@@ -1738,8 +1631,6 @@ Menggunakan `SORT(...)` dan `SORTBY(...)`.
 - Nilai _default_ argumen: `sort_index <- 1`, `sort_order <- 1 (Ascending)`, `by_col <- FALSE`.
 
 ## `SORT(...)` (2) {.smaller}
-
-. . .
 
 $$
 \texttt{SORT}
@@ -1761,8 +1652,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{SORT}
@@ -1790,8 +1679,6 @@ $$
 $$
 
 ## `SORT(...)` (3) {.smaller}
-
-. . .
 
 $$
 \texttt{SORT}
@@ -1821,8 +1708,6 @@ $$
       \end{bmatrix}
   }_{\textit{hasil}}
 $$
-
-. . .
 
 $$
 \texttt{SORT}
@@ -1857,12 +1742,9 @@ $$
   }_{\textit{hasil}}
 $$
 
-
 ## `SORTBY(...)` (1) {.smaller}
 
 - `SORTBY(...)`: Fungsi `SORTBY` mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. ^[[Fungsi SORTBY](https://support.microsoft.com/id-id/office/fungsi-sortby-cd2d7a62-1b93-435c-b561-d6a35134f28f), Microsoft Support.]
-
-. . .
 
 ```vb
 =SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)
@@ -2052,9 +1934,7 @@ $$
 
 - `XLOOKUP(...)`: Fungsi `XLOOKUP` mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, `XLOOKUP` dapat mengembalikan kecocokan terdekat (perkiraan). ^[[Fungsi XLOOKUP](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])
 ```
 
@@ -2062,9 +1942,7 @@ $$
 
 - `XMATCH(...)`: Fungsi `XMATCH` mengembalikan posisi relatif item dalam array atau rentang sel. ^[[Fungsi XMATCH](https://support.microsoft.com/id-id/office/fungsi-xmatch-d966da31-7a6b-4a13-a1c6-5a33ed6a0312), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])
 ```
 
@@ -2076,25 +1954,19 @@ $$
 
 - `CONCAT(...)`: Fungsi `CONCAT` menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. ^[[Fungsi CONCAT](https://support.microsoft.com/id-id/office/concat-fungsi-concat-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =CONCAT(text1, [text2], ...)
 ```
 
 - `TEXTJOIN(...)`: Fungsi `TEXTJOIN` menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. ^[[Fungsi TEXTJOIN](https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)
 ```
 
 ## `CONCAT(...)` dan `TEXTJOIN(...)` (2) {.smaller}
 
 - Hal yang membedakan `TEXTJOIN(...)` dengan `CONCAT(...)` adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai `TEXTJOIN(...) === CONCAT(...)` ketika argumen `delimeter <- ""` dan `ignore_empty <- TRUE`. 
-
-. . .
 
 $$
 \mathbf{T} = 
@@ -2113,8 +1985,6 @@ $$
 
 ## `CONCAT(...)` dan `TEXTJOIN(...)` (3) {.smaller}
 
-. . .
-
 $$
 \mathbf{T} = 
 \begin{bmatrix}
@@ -2130,8 +2000,6 @@ $$
 \end{bmatrix}
 $$
 
-. . .
-
 $$
 \texttt{CONCAT}(\mathbf{T}) =
 \textrm{namasayataruma1pergi3TRUE100FALSE}
@@ -2142,13 +2010,10 @@ $$
 \textrm{namasayataruma1pergi3TRUE100FALSE}
 $$
 
-. . .
-
 $$
 \texttt{TEXTJOIN}(\texttt{" "}, \texttt{TRUE}, \mathbf{T}) =
 \textrm{nama saya taruma 1 pergi 3 TRUE 100 FALSE}
 $$
-
 
 # KOLEKSI `IF*`
 
@@ -2156,17 +2021,13 @@ $$
 
 - `IFS(...)`: Fungsi `IFS` memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi `TRUE` pertama. `IFS` dapat menggantikan beberapa pernyataan `IF` yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. ^[[Fungsi IFS](https://support.microsoft.com/id-id/office/ifs-fungsi-ifs-36329a26-37b2-467c-972b-4a39bd951d45), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)
 ```
 
 - `MINIFS(...)` / `MAXIFS(...)`: Fungsi `MINIFS` mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi `MAXIFS` mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. ^[[Fungsi MINIFS](https://support.microsoft.com/id-id/office/minifs-fungsi-minifs-6ca1ddaa-079b-4e74-80cc-72eef32e6599), Microsoft Support.] ^[[Fungsi MAXIFS](https://support.microsoft.com/id-id/office/maxifs-fungsi-maxifs-dfd611e6-da2c-488a-919b-9b6376b28883), Microsoft Support.]
 
-. . .
-
-```default
+```scala
 =[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)
 ```
 
@@ -2178,12 +2039,12 @@ $$
 [85,\infty) \Rightarrow \text{A}
 $$
 
-```{.r}
+```{.scala}
 =IF(
   x < 70, "C", 
   IF(
     x < 85, "B",
-    "A"c
+    "A"
   )
 )
 ```
@@ -2196,7 +2057,7 @@ $$
 [85,\infty) \Rightarrow \text{A}
 $$
 
-```{.r}
+```{.scala}
 =IFS(
   x < 70, "C", 
   x < 85, "B",
@@ -2205,14 +2066,12 @@ $$
 ```
 
 # `SWITCH(...)` dan `LET(...)`
-
+``$
 ## `SWITCH(...)`
 
 - `SWITCH(...)`: Fungsi `SWITCH` mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. ^[[Fungsi SWITCH](https://support.microsoft.com/id-id/office/switch-fungsi-switch-47ab33c0-28ce-4530-8a45-d532ec4aa25e), Microsoft Support.] 
 
-. . .
-
-```default
+```scala
 =SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])
 ```
 
@@ -2220,9 +2079,7 @@ $$
 
 - `LET(...)`: Fungsi `LET` menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup `LET` fungsi. Mirip dengan variabel dalam pemrograman, `LET` dilakukan melalui Excel rumus asli Anda. ^[[Fungsi LET](https://support.microsoft.com/id-id/office/fungsi-let-34842dd8-b92b-4d3f-b325-b8b8f9908999), Microsoft Support.] 
 
-. . .
-
-```default
+```scala
 =LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)
 ```
 
@@ -2236,7 +2093,7 @@ $$
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 $$
 
-```{.r}
+```{.scala}
 =IFS(
   C$2 = "A", 90,
   C$2 = "B", 80,
@@ -2256,7 +2113,7 @@ $$
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 $$
 
-```{.r code-line-numbers="1,2,4-7"}
+```{.scala code-line-numbers="1,2,4-7"}
 =LET(
   data, C$2,
   IFS(
@@ -2279,7 +2136,7 @@ $$
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 $$
 
-```{.r code-line-numbers="3-10"}
+```{.scala code-line-numbers="3-10"}
 =LET(
   data, C$2,
   SWITCH(
@@ -2298,8 +2155,6 @@ Memperbaiki validasi input dari kasus sebelumnya.
 
 ## Kasus validasi {.smaller}
 
-. . .
-
 $$ 
 f : \mathbb{R} \to \mathbb{R}
 $$
@@ -2317,8 +2172,6 @@ $$
 \mapsto
 \mathbf{x} + 2
 $$
-
-. . .
 
 $$
 \begin{equation}
@@ -2342,8 +2195,6 @@ $$
 - $\mathbf{x} \mapsto \mathbf{y}$ dengan $y \in \mathbb{R}$ dan $x \in \mathbb{?}$.
 
 ## Formula {auto-animate="true"}
-
-. . .
 
 $$
 g : \mathbf{x} \in \mathbb{?} \to \mathbb{R}
@@ -2379,7 +2230,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r}
+```{.scala}
 =LET(
   ...
 )
@@ -2401,7 +2252,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r code-line-numbers="2-3"}
+```{.scala code-line-numbers="2-3"}
 =LET(
   x, H8:H15,
   ...
@@ -2424,7 +2275,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r code-line-numbers="3-4"}
+```{.scala code-line-numbers="3-4"}
 =LET(
   x, H8:H15,
   logical_isnumber, ISNUMBER(x),
@@ -2448,7 +2299,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r code-line-numbers="3-5"}
+```{.scala code-line-numbers="3-5"}
 =LET(
   x, H8:H15,
   logical_isnumber, ISNUMBER(x),
@@ -2473,7 +2324,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r code-line-numbers="3-4"}
+```{.scala code-line-numbers="3-4"}
 =LET(
   x, H8:H15,
   y, FILTER(x, ISNUMBER(x)),
@@ -2497,7 +2348,7 @@ g(\mathbf{x}) = f(
 \mathbf{y} + 2
 $$
 
-```{.r}
+```{.scala}
 =LET(
   x, H8:H15,
   y, FILTER(x, ISNUMBER(x)),
@@ -2511,9 +2362,7 @@ $$
 
 - `LAMBDA(...)`: Gunakan fungsi `LAMBDA` untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. ^[[Fungsi LAMBDA](https://support.microsoft.com/id-id/office/fungsi-lambda-bd212d27-1cd1-4321-a34a-ccbf254b8b67), Microsoft Support.] 
 
-. . .
-
-```default
+```scala
 =LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
 ```
 
@@ -2528,9 +2377,7 @@ $$
 
 ## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
 
-. . .
-
-```{.r code-line-numbers="true"}
+```{.scala code-line-numbers="true"}
 =LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)
 ```
 
@@ -2538,7 +2385,7 @@ $$
 
 ## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
 
-```{.r code-line-numbers="2-4"}
+```{.scala code-line-numbers="2-4"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2550,7 +2397,7 @@ $$
 
 ## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
 
-```{.r code-line-numbers="4-8|"}
+```{.scala code-line-numbers="4-8|"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2566,7 +2413,7 @@ $$
 
 ## Sintaks `LAMBDA` dan `LET` {auto-animate="true"}
 
-```{.r code-line-numbers="2-4,6-8"}
+```{.scala code-line-numbers="2-4,6-8"}
 =LAMBDA(
   parameter1, 
   parameter2,
@@ -2590,8 +2437,6 @@ Mengurangi setiap elemen pada vektor dengan setengah rata-ratanya.
 
 - Mengurangi setiap elemen dari _numeric vector_ ($\mathbf{x}$) dengan setengah dari rata-ratanya ($\frac{\texttt{mean}(\mathbf{x})}{2}$).
 
-. . .
-
 $$
 f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
 $$
@@ -2603,10 +2448,7 @@ f(\mathbf{x}) =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-
 ## Fungsi `LAMBDA` {auto-animate="true"}
-
-. . .
 
 $$
 f(\mathbf{x})
@@ -2614,9 +2456,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-. . .
-
-```{.r code-line-numbers="2-3"}
+```{.scala code-line-numbers="2-3"}
 =LAMBDA(
   parameter1, 
   [parameter2, parameter3, ...],
@@ -2635,7 +2475,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="2|3"}
+```{.scala code-line-numbers="2|3"}
 =LAMBDA(
   vector,
   calculation
@@ -2652,7 +2492,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="3-7"}
+```{.scala code-line-numbers="3-7"}
 =LAMBDA(
   vector,
   LET(
@@ -2665,7 +2505,6 @@ $$
 
 - Karena pada persamaan asli $f$ menggunakan simbol $\mathbf{x}$, bisa dilakukan _assignment_ / pendefinisian berupa `x <- vector`.
 
-
 ## Argumen _redundant_ / berulang {.smaller auto-animate="true"}
 
 $$
@@ -2674,7 +2513,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="4"}
+```{.scala code-line-numbers="4"}
 =LAMBDA(
   vector,
   LET(
@@ -2696,7 +2535,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="4"}
+```{.scala code-line-numbers="4"}
 =LAMBDA(
   vector,
   LET(
@@ -2708,23 +2547,17 @@ $$
 
 - Nilai rata-rata bisa disimpan sebagai variabel `avg`.
 
-. . .
-
 ```r
 avg <- AVERAGE(vector)
 ```
 
 - Variabel `halfavg` menyatakan nilai setengah dari rata-rata vektor.
 
-. . .
-
 ```r
 halfavg <- avg / 2
 ```
 
 - Hasil akhir dapat disimpan sebagai variabel `result`.
-
-. . .
 
 ```r
 result <- vector - halfavg
@@ -2738,7 +2571,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="4-6|7"}
+```{.scala code-line-numbers="4-6|7"}
 =LAMBDA(
   vector,
   LET(
@@ -2761,7 +2594,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="6-7"}
+```{.scala code-line-numbers="6-7"}
 =LAMBDA(
   vector,
   LET(
@@ -2783,7 +2616,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```{.r code-line-numbers="6|"}
+```{.scala code-line-numbers="6|"}
 =LAMBDA(
   vector,
   LET(
@@ -2798,13 +2631,9 @@ $$
 
 ## Rekap {auto-animate="true"}
 
-. . .
-
 $$
 f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
 $$
-
-. . .
 
 $$
 f(\mathbf{x})
@@ -2812,9 +2641,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-. . .
-
-```r
+```scala
 =LAMBDA(
   vector,
   LET(
@@ -2837,7 +2664,7 @@ f(\mathbf{x})
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 $$
 
-```r
+```scala
 =LAMBDA(
   vector,
   LET(
@@ -2872,7 +2699,7 @@ g(\mathbf{y})
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 $$
 
-```{.r code-line-numbers="2,4,5,7"}
+```{.scala code-line-numbers="2,4,5,7"}
 =LAMBDA(
   vector,
   LET(
@@ -2892,7 +2719,7 @@ g(\mathbf{y})
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 $$
 
-```{.r code-line-numbers="2,4,5,7"}
+```{.scala code-line-numbers="2,4,5,7"}
 =LAMBDA(
   vector,
   LET(
@@ -2912,7 +2739,7 @@ g(\mathbf{y})
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 $$
 
-```{.r code-line-numbers="5-6"}
+```{.scala code-line-numbers="5-6"}
 =LAMBDA(
   vector,
   LET(
@@ -2935,7 +2762,7 @@ g(\mathbf{y})
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 $$
 
-```{.r code-line-numbers="5"}
+```{.scala code-line-numbers="5"}
 =LAMBDA(
   vector,
   LET(
@@ -2953,8 +2780,6 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 $$
-
-. . .
 
 $$
 \mathbf{y}, n \mapsto g(\mathbf{y}, n)
@@ -2980,7 +2805,7 @@ $$
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 $$
 
-```{.r code-line-numbers="true"}
+```{.scala code-line-numbers="true"}
 =LAMBDA(
   vector,
   LET(
@@ -2999,7 +2824,7 @@ $$
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 $$
 
-```{.r code-line-numbers="3,5,7"}
+```{.scala code-line-numbers="3,5,7"}
 =LAMBDA(
   vector,
   ...,
@@ -3020,7 +2845,7 @@ $$
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 $$
 
-```{.r code-line-numbers="3,5,7"}
+```{.scala code-line-numbers="3,5,7"}
 =LAMBDA(
   vector,
   [n],
@@ -3041,7 +2866,7 @@ $$
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 $$
 
-```{.r code-line-numbers="3,5,7"}
+```{.scala code-line-numbers="3,5,7"}
 =LAMBDA(
   vector,
   [n],
@@ -3072,7 +2897,7 @@ $$
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 $$
 
-```{.r code-line-numbers="true"}
+```{.scala code-line-numbers="true"}
 =LAMBDA(
   vector,
   [n],
