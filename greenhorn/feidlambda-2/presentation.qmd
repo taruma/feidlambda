@@ -2066,7 +2066,7 @@ $$
 ```
 
 # `SWITCH(...)` dan `LET(...)`
-``$
+
 ## `SWITCH(...)`
 
 - `SWITCH(...)`: Fungsi `SWITCH` mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. ^[[Fungsi SWITCH](https://support.microsoft.com/id-id/office/switch-fungsi-switch-47ab33c0-28ce-4530-8a45-d532ec4aa25e), Microsoft Support.] 
