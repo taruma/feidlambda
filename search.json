@@ -130,28 +130,28 @@
     "href": "greenhorn/feidlambda-2/presentation.html#vector-dan-array",
     "title": "Greenhorn:feidlambda II",
     "section": "Vector dan Array",
-    "text": "Vector dan Array\n\nIstilah array dapat diartikan range yang memiliki 1 dimensi atau 2 dimensi.\nArray dapat dibangkitkan menggunakan sintaks “={...}”. Dengan “,” sebagai pemisah kolom (sepanjang baris), “;” sebagai pemisah baris (sepanjang kolom).\n\n\n\\[\n\\texttt{{1,2,3}}\n=\n\\begin{bmatrix}\n  1 & 2 & 3\n\\end{bmatrix}\n,\n\\texttt{{1;2;3}}\n=\n\\begin{bmatrix}\n  1\\\\\n  2\\\\\n  3\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\texttt{\\{}\n  \\underbrace{\\texttt{1,2,3}}_{\\textit{baris ke-}1}\n  \\texttt{;}\n  \\underbrace{\\texttt{4,5,6}}_{\\textit{baris ke-}2}\n  \\texttt{;}\n  \\underbrace{\\texttt{7,8,9}}_{\\textit{baris ke-}3}\n\\texttt{\\}}\n=\n\\begin{bmatrix}\n  1 & 2 & 3\\\\\n  4 & 5 & 6\\\\\n  7 & 8 & 9\n\\end{bmatrix}\n\\]"
+    "text": "Vector dan Array\n\nIstilah array dapat diartikan range yang memiliki 1 dimensi atau 2 dimensi.\nArray dapat dibangkitkan menggunakan sintaks “={...}”. Dengan “,” sebagai pemisah kolom (sepanjang baris), “;” sebagai pemisah baris (sepanjang kolom).\n\n\\[\n\\texttt{{1,2,3}}\n=\n\\begin{bmatrix}\n  1 & 2 & 3\n\\end{bmatrix}\n,\n\\texttt{{1;2;3}}\n=\n\\begin{bmatrix}\n  1\\\\\n  2\\\\\n  3\n\\end{bmatrix}\n\\]\n\\[\n\\texttt{\\{}\n  \\underbrace{\\texttt{1,2,3}}_{\\textit{baris ke-}1}\n  \\texttt{;}\n  \\underbrace{\\texttt{4,5,6}}_{\\textit{baris ke-}2}\n  \\texttt{;}\n  \\underbrace{\\texttt{7,8,9}}_{\\textit{baris ke-}3}\n\\texttt{\\}}\n=\n\\begin{bmatrix}\n  1 & 2 & 3\\\\\n  4 & 5 & 6\\\\\n  7 & 8 & 9\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#not-1",
     "href": "greenhorn/feidlambda-2/presentation.html#not-1",
     "title": "Greenhorn:feidlambda II",
     "section": "NOT (1)",
-    "text": "NOT (1)\n\nSyntax\n=NOT(logical)\n\nFungsi NOT membalikkan nilai argumennya. 1\nMenghasilkan nilai TRUE ketika kondisi bernilai FALSE, dan berlaku sebaliknya.\nNOT(TRUE) = FALSE\nNOT(FALSE) = TRUE\n\n\nNOT (Fungsi NOT), Microsoft Support."
+    "text": "NOT (1)\nSyntax\n=NOT(logical)\n\nFungsi NOT membalikkan nilai argumennya. 1\nMenghasilkan nilai TRUE ketika kondisi bernilai FALSE, dan berlaku sebaliknya.\nNOT(TRUE) = FALSE\nNOT(FALSE) = TRUE\n\nNOT (Fungsi NOT), Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#not-2",
     "href": "greenhorn/feidlambda-2/presentation.html#not-2",
     "title": "Greenhorn:feidlambda II",
     "section": "NOT (2)",
-    "text": "NOT (2)\n\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE}\\\\\n    \\texttt{FALSE}\\\\\n    \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} & \\texttt{FALSE} & \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE} & \\texttt{TRUE} & \\texttt{FALSE}\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} & \\texttt{FALSE}\\\\\n    \\texttt{FALSE} & \\texttt{TRUE}\\\\\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE} & \\texttt{TRUE}\\\\\n  \\texttt{TRUE} & \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
+    "text": "NOT (2)\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE}\\\\\n    \\texttt{FALSE}\\\\\n    \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} & \\texttt{FALSE} & \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE} & \\texttt{TRUE} & \\texttt{FALSE}\n\\end{bmatrix}\n\\]\n\\[\n\\texttt{NOT}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} & \\texttt{FALSE}\\\\\n    \\texttt{FALSE} & \\texttt{TRUE}\\\\\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{FALSE} & \\texttt{TRUE}\\\\\n  \\texttt{TRUE} & \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#and-1",
     "href": "greenhorn/feidlambda-2/presentation.html#and-1",
     "title": "Greenhorn:feidlambda II",
     "section": "AND (1)",
-    "text": "AND (1)\n\nFungsi logika, untuk menentukan apakah semua kondisi dalam sebuah tes adalah TRUE. 1\n\n\n=AND(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika seluruh kondisi bernilai TRUE. Jika terdapat satu atau lebih bernilai FALSE maka menghasilkan nilai FALSE.\nJika input berupa logical array saja (AND(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (AND(elemen_1, elemen_2, ...)).\n\n\nAND (Fungsi AND), Microsoft Support."
+    "text": "AND (1)\n\nFungsi logika, untuk menentukan apakah semua kondisi dalam sebuah tes adalah TRUE. 1\n\n=AND(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika seluruh kondisi bernilai TRUE. Jika terdapat satu atau lebih bernilai FALSE maka menghasilkan nilai FALSE.\nJika input berupa logical array saja (AND(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (AND(elemen_1, elemen_2, ...)).\n\nAND (Fungsi AND), Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#and-2",
@@ -172,7 +172,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#or-1",
     "title": "Greenhorn:feidlambda II",
     "section": "OR (1)",
-    "text": "OR (1)\n\nFungsi logika, untuk menentukan apakah salah satu kondisi dalam sebuah tes adalah TRUE. 1\n\n\n=OR(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika salah satu kondisi bernilai TRUE.\nJika input berupa logical array saja (OR(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (OR(elemen_1, elemen_2, ...)).\n\n\nOR function, Microsoft Support."
+    "text": "OR (1)\n\nFungsi logika, untuk menentukan apakah salah satu kondisi dalam sebuah tes adalah TRUE. 1\n\n=OR(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika salah satu kondisi bernilai TRUE.\nJika input berupa logical array saja (OR(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (OR(elemen_1, elemen_2, ...)).\n\nOR function, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#or-2",
@@ -193,7 +193,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#xor-1",
     "title": "Greenhorn:feidlambda II",
     "section": "XOR (1)",
-    "text": "XOR (1)\n\nFungsi XOR mengembalikan logika Exclusive Or dari semua argumen. 1\n\n\n=XOR(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika hanya satu kondisi bernilai TRUE.\nJika input berupa logical array saja (XOR(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (XOR(elemen_1, elemen_2, ...)).\n\n\nXOR function, Microsoft Support."
+    "text": "XOR (1)\n\nFungsi XOR mengembalikan logika Exclusive Or dari semua argumen. 1\n\n=XOR(logical1, [logical2], ...)\n\nMenghasilkan nilai TRUE ketika hanya satu kondisi bernilai TRUE.\nJika input berupa logical array saja (XOR(logical_array)), maka akan mengevaluasi seluruh elemen pada logical array (XOR(elemen_1, elemen_2, ...)).\n\nXOR function, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#xor-2",
@@ -228,35 +228,35 @@
     "href": "greenhorn/feidlambda-2/presentation.html#logical-dan-operator-aritmatika-2",
     "title": "Greenhorn:feidlambda II",
     "section": "Logical dan operator aritmatika (2)",
-    "text": "Logical dan operator aritmatika (2)\n\n\\[\n\\mathbf{X}\\underbrace{\\textsf{ operator }}_{\\times\\ |\\ +}\\mathbf{Y}\n\\]\n\\[\n\\{\n  \\mathbf{X} \\in \\mathbb{B}, \\mathbf{Y} \\in \\mathbb{B}\n\\}\n\\]\n\nSimbol \\(\\mathbb{B}\\) untuk menyatakan nilai logical atau boolean. 1\n\n\n\n\\[\n\\mathbb{B} =\n\\{\n  \\texttt{TRUE, FALSE}\n\\}\n=\n\\{\n  0, 1\n\\}\n=\n\\{\n  \\text{T}, \\text{F}\n\\}\n=\n\\{\n  \\top, \\bot\n\\}\n\\]\n\n\n\\[\n\\overbrace{\n  \\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n  \\end{bmatrix}\n}^{\\text{logical array}}\n\\underbrace{\\ \\times\\ |\\ +\\ }_\\text{operator}\n\\overbrace{\n  \\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n  \\end{bmatrix}\n}^{\\text{logical array}}\n\\Rightarrow\n\\overbrace{\n  \\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n  \\end{bmatrix}\n}^{\\text{numeric array}}\n\\underbrace{\\ \\times\\ |\\ +\\ }_\\text{operator}\n\\overbrace{\n  \\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n  \\end{bmatrix}\n}^{\\text{numeric array}}\n\\]\n\nBoolean Domain"
+    "text": "Logical dan operator aritmatika (2)\n\\[\n\\mathbf{X}\n\\underbrace{\\textsf{ operator }}_{\\times\\ |\\ +}\n\\mathbf{Y}\n\\Rightarrow\n\\mathbf{P}\n\\underbrace{\\textsf{ operator }}_{\\times\\ |\\ +}\n\\mathbf{Q}\n\\]\n\\[\n\\mathbf{X} \\in \\mathbb{B}_l, \\mathbf{Y} \\in \\mathbb{B}_l,\n\\mathbf{P} \\in \\mathbb{B}_i, \\mathbf{Q} \\in \\mathbb{B}_i\n\\]\n\nSimbol \\(\\mathbb{B}\\) untuk menyatakan nilai logical atau boolean. 1\n\n\\[\n\\mathbb{B}_l =\n\\{\n  \\texttt{TRUE, FALSE}\n\\}\n=\n\\{\n  \\text{T}, \\text{F}\n\\}\n,\n\\mathbb{B}_i =\n\\{\n  0, 1\n\\}\n\\]\n\\[\n\\overbrace{\n  \\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n  \\end{bmatrix}\n}^{\\text{logical array}}\n\\underbrace{\\ \\times\\ |\\ +\\ }_\\text{operator}\n\\overbrace{\n  \\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n  \\end{bmatrix}\n}^{\\text{logical array}}\n\\Rightarrow\n\\overbrace{\n  \\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n  \\end{bmatrix}\n}^{\\text{numeric array}}\n\\underbrace{\\ \\times\\ |\\ +\\ }_\\text{operator}\n\\overbrace{\n  \\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n  \\end{bmatrix}\n}^{\\text{numeric array}}\n\\]\nBoolean Domain"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#operator-perkalian-sebagai-and-1",
     "href": "greenhorn/feidlambda-2/presentation.html#operator-perkalian-sebagai-and-1",
     "title": "Greenhorn:feidlambda II",
     "section": "Operator perkalian * sebagai AND (1)",
-    "text": "Operator perkalian * sebagai AND (1)\n\nSetiap nilai yang dikalikan dengan 0 akan bernilai 0.\n\n\n\\[\nx \\times 0 = 0,\\ \\{x \\in \\mathbb{R}\\}\n\\]\n\nSetiap nilai yang dikalikan dengan FALSE akan bernilai FALSE."
+    "text": "Operator perkalian * sebagai AND (1)\n\nSetiap nilai yang dikalikan dengan 0 akan bernilai 0.\n\n\\[\nx \\times 0 = 0,\\ \\{x \\in \\mathbb{R}\\}\n\\]\n\nSetiap nilai yang dikalikan dengan FALSE akan bernilai FALSE."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#operator-perkalian-sebagai-and-2",
     "href": "greenhorn/feidlambda-2/presentation.html#operator-perkalian-sebagai-and-2",
     "title": "Greenhorn:feidlambda II",
     "section": "Operator perkalian * sebagai AND (2)",
-    "text": "Operator perkalian * sebagai AND (2)\n\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n=\n\\underbrace{\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n}_{\\textit{hasil akhir}}\n\\]\n\n\n\\[\n\\Rightarrow\n\\underbrace{\n  \\left(\n    \\begin{bmatrix}\n    1\\\\\n    0\\\\\n    0\n  \\end{bmatrix}\n  \\neq 0\n  \\right)\n}_{\\textit{mengubah menjadi logical}}\n=\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
+    "text": "Operator perkalian * sebagai AND (2)\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n=\n\\underbrace{\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n}_{\\textit{hasil akhir}}\n\\]\n\\[\n\\Rightarrow\n\\underbrace{\n  \\left(\n    \\begin{bmatrix}\n    1\\\\\n    0\\\\\n    0\n  \\end{bmatrix}\n  \\neq 0\n  \\right)\n}_{\\textit{mengubah menjadi logical}}\n=\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#operator-penambahan-sebagai-or-1",
     "href": "greenhorn/feidlambda-2/presentation.html#operator-penambahan-sebagai-or-1",
     "title": "Greenhorn:feidlambda II",
     "section": "Operator penambahan + sebagai OR (1)",
-    "text": "Operator penambahan + sebagai OR (1)\n\nBerlaku seperti penambahan pada umumnya.\n\n\n\\[\nx + 0 = x, \\{x \\in \\mathbb{R}\\}\n\\]\n\\[\nx + y = x + y,  \\{x \\in \\mathbb{R}, y \\in \\mathbb{R}\\}\n\\]\n\nSetiap nilai yang bukan 0 bernilai TRUE. \\(\\texttt{TRUE} \\neq 0\\)"
+    "text": "Operator penambahan + sebagai OR (1)\n\nBerlaku seperti penambahan pada umumnya.\n\n\\[\nx + 0 = x, x \\in \\mathbb{R}\n\\]\n\\[\nx + y = x + y,  x \\in \\mathbb{R}, y \\in \\mathbb{R}\n\\]\n\nSetiap nilai yang bukan 0 bernilai TRUE. \\(\\texttt{TRUE} \\neq 0\\)"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#operator-penambahan-sebagai-or-2",
     "href": "greenhorn/feidlambda-2/presentation.html#operator-penambahan-sebagai-or-2",
     "title": "Greenhorn:feidlambda II",
     "section": "Operator penambahan + sebagai OR (2)",
-    "text": "Operator penambahan + sebagai OR (2)\n\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n=\n\\underbrace{\n\\begin{bmatrix}\n  2\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n}_{\\textit{hasil akhir}}\n\\]\n\n\n\\[\n\\Rightarrow\n\\underbrace{\n  \\left(\n    \\begin{bmatrix}\n      2\\\\\n      1\\\\\n      0\n    \\end{bmatrix}\n    \\neq 0\n  \\right)\n}_{\\textit{mengubah menjadi logical}}\n=\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
+    "text": "Operator penambahan + sebagai OR (2)\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n=\n\\underbrace{\n\\begin{bmatrix}\n  2\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n}_{\\textit{hasil akhir}}\n\\]\n\\[\n\\Rightarrow\n\\underbrace{\n  \\left(\n    \\begin{bmatrix}\n      2\\\\\n      1\\\\\n      0\n    \\end{bmatrix}\n    \\neq 0\n  \\right)\n}_{\\textit{mengubah menjadi logical}}\n=\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#number-rightarrow-logical-1",
@@ -270,28 +270,28 @@
     "href": "greenhorn/feidlambda-2/presentation.html#number-rightarrow-logical-2",
     "title": "Greenhorn:feidlambda II",
     "section": "Number \\(\\Rightarrow\\) Logical (2)",
-    "text": "Number \\(\\Rightarrow\\) Logical (2)\n\n\\[\n\\texttt{NOT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  \\equiv\n  0\n\\right)\n=\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  \\neq\n  0\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n    \\texttt{TRUE}\\\\\n    \\texttt{TRUE}\\\\\n    \\texttt{FALSE}\n  \\end{bmatrix}\n}_{\\textit{logical}}\n\\]\n\nSama saja dengan formula =NOT(array=0) atau =array<>0."
+    "text": "Number \\(\\Rightarrow\\) Logical (2)\n\\[\n\\texttt{NOT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  \\equiv\n  0\n\\right)\n=\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  \\neq\n  0\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n    \\texttt{TRUE}\\\\\n    \\texttt{TRUE}\\\\\n    \\texttt{FALSE}\n  \\end{bmatrix}\n}_{\\textit{logical}}\n\\]\n\nSama saja dengan formula =NOT(array=0) atau =array<>0."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#number-rightarrow-logical-2-1",
     "href": "greenhorn/feidlambda-2/presentation.html#number-rightarrow-logical-2-1",
     "title": "Greenhorn:feidlambda II",
     "section": "Number \\(\\Rightarrow\\) Logical (2)",
-    "text": "Number \\(\\Rightarrow\\) Logical (2)\n\n\\[\n\\texttt{IF}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{TRUE}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{FALSE}}\n\\right)\n\\Rightarrow\n\\texttt{IF}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      \\texttt{TRUE}\\\\\n      \\texttt{TRUE}\\\\\n      \\texttt{FALSE}\n    \\end{bmatrix}\n  }_{\\textit{logical}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{TRUE}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{FALSE}}\n\\right)\n\\]"
+    "text": "Number \\(\\Rightarrow\\) Logical (2)\n\\[\n\\texttt{IF}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3\\\\\n      -1\\\\\n      0\n    \\end{bmatrix}\n  }_{\\textit{numeric}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{TRUE}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{FALSE}}\n\\right)\n\\Rightarrow\n\\texttt{IF}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      \\texttt{TRUE}\\\\\n      \\texttt{TRUE}\\\\\n      \\texttt{FALSE}\n    \\end{bmatrix}\n  }_{\\textit{logical}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{TRUE}}\n  ,\n  \\underbrace{\\dots}_{\\texttt{FALSE}}\n\\right)\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#yang-perlu-diperhatikan",
     "href": "greenhorn/feidlambda-2/presentation.html#yang-perlu-diperhatikan",
     "title": "Greenhorn:feidlambda II",
     "section": "Yang perlu diperhatikan",
-    "text": "Yang perlu diperhatikan\n\nHasil dari logical array bertemu dengan operator aritmatika selalu numeric array.\n\n\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  \\texttt{FALSE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  0\\\\\n  1\\\\\n  1\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  1\n\\end{bmatrix}\n\\]\n\nJika numeric array digunakan sebagai argumen conditional, maka akan dikonversikan menjadi logical array."
+    "text": "Yang perlu diperhatikan\n\nHasil dari logical array bertemu dengan operator aritmatika selalu numeric array.\n\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{FALSE}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  \\texttt{FALSE}\\\\\n  \\texttt{TRUE}\\\\\n  \\texttt{TRUE}\n\\end{bmatrix}\n\\Rightarrow\n\\begin{bmatrix}\n  1\\\\\n  0\\\\\n  0\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  0\n\\end{bmatrix}\n+\n\\begin{bmatrix}\n  0\\\\\n  1\\\\\n  1\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n  1\\\\\n  1\\\\\n  1\n\\end{bmatrix}\n\\]\n\nJika numeric array digunakan sebagai argumen conditional, maka akan dikonversikan menjadi logical array."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#fungsi-is...",
     "href": "greenhorn/feidlambda-2/presentation.html#fungsi-is...",
     "title": "Greenhorn:feidlambda II",
     "section": "Fungsi IS*(...)",
-    "text": "Fungsi IS*(...)\n\nSYNTAX\n=IS*(value)\n\nMemeriksa nilai tertentu dan mengembalikan TRUE atau FALSE bergantung pada hasilnya. 1\nISBLANK(...) bernilai TRUE jika sel kosong.\nISNUMBER(...) bernilai TRUE jika sel berisikan angka.\n\n\nFungsi IS, Microsoft Support."
+    "text": "Fungsi IS*(...)\nSYNTAX\n=IS*(value)\n\nMemeriksa nilai tertentu dan mengembalikan TRUE atau FALSE bergantung pada hasilnya. 1\nISBLANK(...) bernilai TRUE jika sel kosong.\nISNUMBER(...) bernilai TRUE jika sel berisikan angka.\n\nFungsi IS, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#periksa-error-kosong",
@@ -319,70 +319,70 @@
     "href": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "Validasi dengan ISNUMBER(...) (1)",
-    "text": "Validasi dengan ISNUMBER(...) (1)\n\n\\[\nf : \\mathbb{R} \\to \\mathbb{R}\n\\]\n\n\n\\[\nf(\\mathbf{x}) = \\mathbf{y} = \\mathbf{x} + 2\n\\]\n\n\n\\[\n\\mathbf{x} \\in \\mathbb{R}, \\mathbf{y} \\in \\mathbb{R}\n\\]\n\n\n\\[\n\\mathbf{x}\n\\mapsto\n\\mathbf{x} + 2\n\\]\n\nUmumnya nilai \\(\\mathbf{y}\\) dihitung dengan formula =x+2 dengan asumsi \\(\\mathbf{x}\\) bernilai angka \\(\\{ \\mathbf{x} \\in \\mathbb{R} \\}\\).\n\n\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ 2 \\\\ 7\n\\end{bmatrix}\n\\mapsto\nf(\\mathbf{x})\n=\n\\begin{bmatrix}\n  3 \\\\ 2 \\\\ 7\n\\end{bmatrix}\n+ 2\n=\n\\begin{bmatrix}\n  5 \\\\ 4 \\\\ 9\n\\end{bmatrix}\n\\]"
+    "text": "Validasi dengan ISNUMBER(...) (1)\n\\[\nf : \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x}) = \\mathbf{y} = \\mathbf{x} + 2\n\\]\n\\[\n\\mathbf{x} \\in \\mathbb{R}, \\mathbf{y} \\in \\mathbb{R}\n\\]\n\\[\n\\mathbf{x}\n\\mapsto\n\\mathbf{x} + 2\n\\]\n\nUmumnya nilai \\(\\mathbf{y}\\) dihitung dengan formula =x+2 dengan asumsi \\(\\mathbf{x}\\) bernilai angka \\(\\{ \\mathbf{x} \\in \\mathbb{R} \\}\\).\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ 2 \\\\ 7\n\\end{bmatrix}\n\\mapsto\nf(\\mathbf{x})\n=\n\\begin{bmatrix}\n  3 \\\\ 2 \\\\ 7\n\\end{bmatrix}\n+ 2\n=\n\\begin{bmatrix}\n  5 \\\\ 4 \\\\ 9\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "Validasi dengan ISNUMBER(...) (2)",
-    "text": "Validasi dengan ISNUMBER(...) (2)\n\nBagaimana jika \\(\\mathbf{x}\\) memiliki elemen yang bukan angka yaitu text / error / logical?\n\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n\\mapsto\nf(\\mathbf{x})\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n+ 2\n=\n\\begin{bmatrix}\n  5 \\\\ \\texttt{#VALUE!} \\\\ 2\n\\end{bmatrix}\n\\]"
+    "text": "Validasi dengan ISNUMBER(...) (2)\n\nBagaimana jika \\(\\mathbf{x}\\) memiliki elemen yang bukan angka yaitu text / error / logical?\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n\\mapsto\nf(\\mathbf{x})\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n+ 2\n=\n\\begin{bmatrix}\n  5 \\\\ \\texttt{#VALUE!} \\\\ 2\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "Validasi dengan ISNUMBER(...) (3)",
-    "text": "Validasi dengan ISNUMBER(...) (3)\n\nValidasi input menggunakan ISNUMBER(...)\n\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n\\mapsto\n\\texttt{ISNUMBER}\n\\left(\n  \\mathbf{x}\n\\right)\n=\n\\texttt{ISNUMBER}\n\\left(\n  \\begin{bmatrix}\n    3 \\\\ \\textrm{bob} \\\\ 2\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n\\end{bmatrix}\n\\mapsto\n\\texttt{AND}\n\\left(\n  \\mathbf{x}\n\\right)\n=\n\\texttt{AND}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\texttt{FALSE}\n\\]\n\n\n\\[\n\\mathbf{x}\n\\mapsto\n\\texttt{AND}(\n  \\texttt{ISNUMBER}(\n    \\mathbf{x}\n  )\n)\n=\n\\texttt{AND}(\n  \\texttt{ISNUMBER}(\n    \\begin{bmatrix}\n      3 \\\\ \\textrm{bob} \\\\ 2\n    \\end{bmatrix}\n  )\n)\n=\n\\texttt{FALSE}\n\\]"
+    "text": "Validasi dengan ISNUMBER(...) (3)\n\nValidasi input menggunakan ISNUMBER(...)\n\n\\[\n\\mathbf{x}\n=\n\\begin{bmatrix}\n  3 \\\\ \\textrm{bob} \\\\ 2\n\\end{bmatrix}\n\\mapsto\n\\texttt{ISNUMBER}\n\\left(\n  \\mathbf{x}\n\\right)\n=\n\\texttt{ISNUMBER}\n\\left(\n  \\begin{bmatrix}\n    3 \\\\ \\textrm{bob} \\\\ 2\n  \\end{bmatrix}\n\\right)\n=\n\\begin{bmatrix}\n  \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n\\end{bmatrix}\n\\]\n\\[\n\\begin{bmatrix}\n  \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n\\end{bmatrix}\n\\mapsto\n\\texttt{AND}\n\\left(\n  \\mathbf{x}\n\\right)\n=\n\\texttt{AND}\n\\left(\n  \\begin{bmatrix}\n    \\texttt{TRUE} \\\\ \\texttt{FALSE} \\\\ \\texttt{TRUE}\n  \\end{bmatrix}\n\\right)\n=\n\\texttt{FALSE}\n\\]\n\\[\n\\mathbf{x}\n\\mapsto\n\\texttt{AND}(\n  \\texttt{ISNUMBER}(\n    \\mathbf{x}\n  )\n)\n=\n\\texttt{AND}(\n  \\texttt{ISNUMBER}(\n    \\begin{bmatrix}\n      3 \\\\ \\textrm{bob} \\\\ 2\n    \\end{bmatrix}\n  )\n)\n=\n\\texttt{FALSE}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-4",
     "href": "greenhorn/feidlambda-2/presentation.html#validasi-dengan-isnumber...-4",
     "title": "Greenhorn:feidlambda II",
     "section": "Validasi dengan ISNUMBER(...) (4)",
-    "text": "Validasi dengan ISNUMBER(...) (4)\n\n\\[\n\\begin{equation}\n  \\mathbf{x}\n  \\mapsto\n  \\texttt{AND}\n  (\n    \\texttt{ISNUMBER}(\\mathbf{x})\n  )\n  =\n  \\begin{cases}\n    \\texttt{TRUE} & f : \\mathbf{x} \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n    \\texttt{FALSE} & \\textrm{return}\\ \\texttt{#VALUE!} \\\\\n    \\texttt{FALSE} & \\mathbf{x} \\mapsto g(\\mathbf{x}) = \\texttt{FILTER}(\\dots) \\mapsto \\\\\n    & f: g(\\mathbf{x}) \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n  \\end{cases}\n\\end{equation}\n\\]\n\nValidasi ini dapat diimplementasikan ketika terdapat ketidakpastian jika \\(\\mathbf{x}\\) dapat bernilai bukan angka (\\(\\mathbf{x} \\in \\mathbb{R} \\lor \\mathbf{x} \\notin \\mathbb{R}\\))\nSolusi lain dengan melakukan filter pada \\(\\mathbf{x}\\) dan hanya mengambil elemen yang angka dengan FILTER(...)."
+    "text": "Validasi dengan ISNUMBER(...) (4)\n\\[\n\\begin{equation}\n  \\mathbf{x}\n  \\mapsto\n  \\texttt{AND}\n  (\n    \\texttt{ISNUMBER}(\\mathbf{x})\n  )\n  =\n  \\begin{cases}\n    \\texttt{TRUE} & f : \\mathbf{x} \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n    \\texttt{FALSE} & \\textrm{return}\\ \\texttt{#VALUE!} \\\\\n    \\texttt{FALSE} & \\mathbf{x} \\mapsto g(\\mathbf{x}) = \\texttt{FILTER}(\\dots) \\mapsto \\\\\n    & f: g(\\mathbf{x}) \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n  \\end{cases}\n\\end{equation}\n\\]\n\nValidasi ini dapat diimplementasikan ketika terdapat ketidakpastian jika \\(\\mathbf{x}\\) dapat bernilai bukan angka (\\(\\mathbf{x} \\in \\mathbb{R} \\lor \\mathbf{x} \\notin \\mathbb{R}\\))\nSolusi lain dengan melakukan filter pada \\(\\mathbf{x}\\) dan hanya mengambil elemen yang angka dengan FILTER(...)."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#filter...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#filter...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "FILTER(...) (1)",
-    "text": "FILTER(...) (1)\n\nFILTER(...): Fungsi FILTER memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. 1\n\n\n=FILTER(array, include, [if_empty])\n\nArgumen include harus berupa vector (kolom atau baris). dan jumlah kolom/baris harus sama dengan array.\nArgumen if_empty dapat diisi dengan nilai ketika argumen include kosong atau FALSE.\n\n\nFungsi FILTER, Microsoft Support."
+    "text": "FILTER(...) (1)\n\nFILTER(...): Fungsi FILTER memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. 1\n\n=FILTER(array, include, [if_empty])\n\nArgumen include harus berupa vector (kolom atau baris). dan jumlah kolom/baris harus sama dengan array.\nArgumen if_empty dapat diisi dengan nilai ketika argumen include kosong atau FALSE.\n\nFungsi FILTER, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#filter...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#filter...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "FILTER(...) (2)",
-    "text": "FILTER(...) (2)\n\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{TRUE}\\\\\n        \\texttt{FALSE}\\\\\n        \\texttt{TRUE}\n      \\end{bmatrix}\n    }^{\\textit{logical column vector}}\n  }_{\\texttt{include}}\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n      10 & 8\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n}_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{FALSE} & \\texttt{TRUE}\n      \\end{bmatrix}\n    }^{\\textit{logical row vector}}\n  }_{\\texttt{include}}\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n      8\\\\\n      -100\\\\\n      \\textit{y}\n    \\end{bmatrix}\n}_{\\textit{hasil}}\n\\]"
+    "text": "FILTER(...) (2)\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{TRUE}\\\\\n        \\texttt{FALSE}\\\\\n        \\texttt{TRUE}\n      \\end{bmatrix}\n    }^{\\textit{logical column vector}}\n  }_{\\texttt{include}}\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n      10 & 8\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n}_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{FALSE} & \\texttt{TRUE}\n      \\end{bmatrix}\n    }^{\\textit{logical row vector}}\n  }_{\\texttt{include}}\n\\right)\n=\n\\underbrace{\n  \\begin{bmatrix}\n      8\\\\\n      -100\\\\\n      \\textit{y}\n    \\end{bmatrix}\n}_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#filter...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#filter...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "FILTER(...) (3)",
-    "text": "FILTER(...) (3)\n\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{FALSE}\\\\\n        \\texttt{FALSE}\\\\\n        \\texttt{FALSE}\n      \\end{bmatrix}\n    }^{\\textit{logical column vector}}\n  }_{\\texttt{include}}\n  ,\n  \\underbrace{\n    \\textrm{tidak ada}\n  }_{\\texttt{if_empty}}\n\\right)\n=\n\\textrm{tidak ada}\n\\]"
+    "text": "FILTER(...) (3)\n\\[\n\\texttt{FILTER}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      10 & 8\\\\\n      \\textit{A} & -100\\\\\n      -3 & \\textit{y}\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        \\texttt{FALSE}\\\\\n        \\texttt{FALSE}\\\\\n        \\texttt{FALSE}\n      \\end{bmatrix}\n    }^{\\textit{logical column vector}}\n  }_{\\texttt{include}}\n  ,\n  \\underbrace{\n    \\textrm{tidak ada}\n  }_{\\texttt{if_empty}}\n\\right)\n=\n\\textrm{tidak ada}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#filter...-4",
     "href": "greenhorn/feidlambda-2/presentation.html#filter...-4",
     "title": "Greenhorn:feidlambda II",
     "section": "FILTER(...) (4)",
-    "text": "FILTER(...) (4)\n\n\\[\n\\texttt{array} = \\mathbf{A} \\rightarrow \\mathbf{A} \\in \\mathbb{U}^{m \\times n}, \\{m, n \\in \\mathbb{N}\\ |\\ m, n \\neq 0 \\}\n\\]\n\\[\n\\mathbb{U} = \\{ \\textrm{seluruh nilai } u \\textrm{ yang dapat digunakan di Excel}\\}\n\\]\n\n\\(m\\) menunjukkan jumlah baris dan \\(n\\) menunjukkan jumlah kolom.\n\n\n\n\\[\n\\texttt{include} = \\mathbf{i} \\rightarrow \\mathbf{i} \\in \\mathbb{B}^{k}, \\{k = m \\lor k = n\\}\n\\]\n\n\\(\\mathbf{i}\\) selalu berupa logical vector dengan jumlah baris/kolom \\(k\\) sama dengan \\(m \\lor n\\)."
+    "text": "FILTER(...) (4)\n\\[\n\\texttt{array} = \\mathbf{A} \\rightarrow \\mathbf{A} \\in \\mathbb{U}^{m \\times n}, \\{m, n \\in \\mathbb{N}\\ |\\ m, n \\neq 0 \\}\n\\]\n\\[\n\\mathbb{U} = \\{ \\textrm{seluruh nilai } u \\textrm{ yang dapat digunakan di Excel}\\}\n\\]\n\n\\(m\\) menunjukkan jumlah baris dan \\(n\\) menunjukkan jumlah kolom.\n\n\\[\n\\texttt{include} = \\mathbf{i} \\rightarrow \\mathbf{i} \\in \\mathbb{B}^{k}, \\{k = m \\lor k = n\\}\n\\]\n\n\\(\\mathbf{i}\\) selalu berupa logical vector dengan jumlah baris/kolom \\(k\\) sama dengan \\(m \\lor n\\)."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#unique...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#unique...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "UNIQUE(...) (1)",
-    "text": "UNIQUE(...) (1)\n\nUNIQUE(...): Fungsi UNIQUE menghasilkan daftar nilai yang unik dalam daftar atau rentang. 1\n\n\n=UNIQUE(array, [by_col], [exactly_once])\n\nPenggunaan argumen by_col untuk mencari nilai unik untuk setiap baris atau kolom. Nilai default argumen by_col <- FALSE.\nArgumen exactly_once dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika exactly_once <- TRUE, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai default argumen exactly_once <- FALSE.\n\n\nFungsi UNIQUE, Microsoft Support."
+    "text": "UNIQUE(...) (1)\n\nUNIQUE(...): Fungsi UNIQUE menghasilkan daftar nilai yang unik dalam daftar atau rentang. 1\n\n=UNIQUE(array, [by_col], [exactly_once])\n\nPenggunaan argumen by_col untuk mencari nilai unik untuk setiap baris atau kolom. Nilai default argumen by_col <- FALSE.\nArgumen exactly_once dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika exactly_once <- TRUE, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai default argumen exactly_once <- FALSE.\n\nFungsi UNIQUE, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#unique...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#unique...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "UNIQUE(...) (2)",
-    "text": "UNIQUE(...) (2)\n\n\\[\n\\texttt{UNIQUE}\n\\left(\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        1 & 1 & 3 & 1\\\\\n        4 & 2 & 7 & 2\\\\\n        3 & 2 & 8 & 2\\\\\n        1 & 1 & 3 & 1\\\\\n        5 & 2 & 9 & 2\n      \\end{bmatrix}      \n    }^{\\textit{array / vector}}\n  }_{\\texttt{array}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n    \\begin{bmatrix}\n        1 & 1 & 3 & 1\\\\\n        4 & 2 & 7 & 2\\\\\n        3 & 2 & 8 & 2\\\\\n        5 & 2 & 9 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "UNIQUE(...) (2)\n\\[\n\\texttt{UNIQUE}\n\\left(\n  \\underbrace{\n    \\overbrace{\n      \\begin{bmatrix}\n        1 & 1 & 3 & 1\\\\\n        4 & 2 & 7 & 2\\\\\n        3 & 2 & 8 & 2\\\\\n        1 & 1 & 3 & 1\\\\\n        5 & 2 & 9 & 2\n      \\end{bmatrix}      \n    }^{\\textit{array / vector}}\n  }_{\\texttt{array}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n    \\begin{bmatrix}\n        1 & 1 & 3 & 1\\\\\n        4 & 2 & 7 & 2\\\\\n        3 & 2 & 8 & 2\\\\\n        5 & 2 & 9 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#unique...-3",
@@ -403,70 +403,70 @@
     "href": "greenhorn/feidlambda-2/presentation.html#sequence...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "SEQUENCE(...) (1)",
-    "text": "SEQUENCE(...) (1)\n\nSEQUENCE(...): Fungsi SEQUENCE memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti \\({1, 2, 3, 4, \\dots}\\). 1\n\n\n=SEQUENCE(rows, [columns], [start], [step])\n\nHasil SEQUENCE(...) => numeric vector/array.\nNilai default argumen: columns <- 1, start <- 1, step <- 1.\n\n\nFungsi SEQUENCE, Microsoft Support."
+    "text": "SEQUENCE(...) (1)\n\nSEQUENCE(...): Fungsi SEQUENCE memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti \\({1, 2, 3, 4, \\dots}\\). 1\n\n=SEQUENCE(rows, [columns], [start], [step])\n\nHasil SEQUENCE(...) => numeric vector/array.\nNilai default argumen: columns <- 1, start <- 1, step <- 1.\n\nFungsi SEQUENCE, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sequence...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#sequence...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "SEQUENCE(...) (2)",
-    "text": "SEQUENCE(...) (2)\n\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    5\n  }_{\\texttt{rows}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        1\\\\\n        2\\\\\n        3\\\\\n        4\\\\\n        5\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        1   & 2  & 3    & 4\\\\\n        5   & 6  & 7    & 8\\\\\n        9   & 10 & 11   & 12\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "SEQUENCE(...) (2)\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    5\n  }_{\\texttt{rows}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        1\\\\\n        2\\\\\n        3\\\\\n        4\\\\\n        5\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        1   & 2  & 3    & 4\\\\\n        5   & 6  & 7    & 8\\\\\n        9   & 10 & 11   & 12\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sequence...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#sequence...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "SEQUENCE(...) (3)",
-    "text": "SEQUENCE(...) (3)\n\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{start}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        10 & 11 & 12 & 13\\\\\n        14 & 15 & 16 & 17\\\\\n        18 & 19 & 20 & 21\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{start}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{step}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        10 & 13 & 16 & 19\\\\\n        22 & 25 & 28 & 31\\\\\n        34 & 37 & 40 & 43\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "SEQUENCE(...) (3)\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{start}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        10 & 11 & 12 & 13\\\\\n        14 & 15 & 16 & 17\\\\\n        18 & 19 & 20 & 21\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{SEQUENCE}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    4\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{start}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{step}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        10 & 13 & 16 & 19\\\\\n        22 & 25 & 28 & 31\\\\\n        34 & 37 & 40 & 43\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#randarray...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#randarray...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "RANDARRAY(...) (1)",
-    "text": "RANDARRAY(...) (1)\n\nRANDARRAY(...): Fungsi RANDARRAY menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. 1\n\n\n=RANDARRAY([rows], [columns], [min], [max], [whole_number])\n\nNilai default argumen: rows <- 1, columns <- 1, min <- 0, max <- 1, whole_number <- FALSE.\nJika tidak diisi argumen maka hasil RANDARRAY() adalah bilangan real \\(\\mathbb{R}\\) acak dengan rentang \\([0, 1]\\).\n\n\nFungsi RANDARRAY, Microsoft Support."
+    "text": "RANDARRAY(...) (1)\n\nRANDARRAY(...): Fungsi RANDARRAY menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. 1\n\n=RANDARRAY([rows], [columns], [min], [max], [whole_number])\n\nNilai default argumen: rows <- 1, columns <- 1, min <- 0, max <- 1, whole_number <- FALSE.\nJika tidak diisi argumen maka hasil RANDARRAY() adalah bilangan real \\(\\mathbb{R}\\) acak dengan rentang \\([0, 1]\\).\n\nFungsi RANDARRAY, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#randarray...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#randarray...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "RANDARRAY(...) (2)",
-    "text": "RANDARRAY(...) (2)\n\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        0.036290129\\\\\n        0.831941087\\\\\n        0.596526220\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        0.950708256 & 0.044725252\\\\\n        0.111202134 & 0.34866703\\\\\n        0.119602266 & 0.792763221\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "RANDARRAY(...) (2)\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        0.036290129\\\\\n        0.831941087\\\\\n        0.596526220\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        0.950708256 & 0.044725252\\\\\n        0.111202134 & 0.34866703\\\\\n        0.119602266 & 0.792763221\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#randarray...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#randarray...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "RANDARRAY(...) (3)",
-    "text": "RANDARRAY(...) (3)\n\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{min}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{max}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        5.033450196 & 7.903953859\\\\\n        7.918426053 & 6.750036234\\\\\n        7.926034250 & 3.596169723\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{min}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{max}}\n  ,\n  \\underbrace{\n    \\texttt{ TRUE }\n  }_{\\texttt{whole_number}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        9 & 4\\\\\n        5 & 6\\\\\n        7 & 8\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "RANDARRAY(...) (3)\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{min}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{max}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        5.033450196 & 7.903953859\\\\\n        7.918426053 & 6.750036234\\\\\n        7.926034250 & 3.596169723\\\\\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{RANDARRAY}\n\\left(\n  \\underbrace{\n    3\n  }_{\\texttt{rows}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{columns}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{min}}\n  ,\n  \\underbrace{\n    10\n  }_{\\texttt{max}}\n  ,\n  \\underbrace{\n    \\texttt{ TRUE }\n  }_{\\texttt{whole_number}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        9 & 4\\\\\n        5 & 6\\\\\n        7 & 8\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sort...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#sort...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "SORT(...) (1)",
-    "text": "SORT(...) (1)\n\nSORT(...): Fungsi SORT mengurutkan konten rentang atau larik. 1\n\n\n=SORT(array, [sort_index], [sort_order], [by_col])\n\nNilai default argumen: sort_index <- 1, sort_order <- 1 (Ascending), by_col <- FALSE.\n\n\nFungsi SORT, Microsoft Support."
+    "text": "SORT(...) (1)\n\nSORT(...): Fungsi SORT mengurutkan konten rentang atau larik. 1\n\n=SORT(array, [sort_index], [sort_order], [by_col])\n\nNilai default argumen: sort_index <- 1, sort_order <- 1 (Ascending), by_col <- FALSE.\n\nFungsi SORT, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sort...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#sort...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "SORT(...) (2)",
-    "text": "SORT(...) (2)\n\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        2 & 3 & 1 & 2\\\\\n        3 & 2 & 4 & 4\\\\\n        4 & 2 & 3 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{sort_index}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        2 & 3 & 1 & 2\\\\\n        4 & 2 & 3 & 2\\\\\n        3 & 2 & 4 & 4\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "SORT(...) (2)\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        2 & 3 & 1 & 2\\\\\n        3 & 2 & 4 & 4\\\\\n        4 & 2 & 3 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{sort_index}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        2 & 3 & 1 & 2\\\\\n        4 & 2 & 3 & 2\\\\\n        3 & 2 & 4 & 4\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sort...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#sort...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "SORT(...) (3)",
-    "text": "SORT(...) (3)\n\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{sort_index}}\n  ,\n  \\underbrace{\n    -1\n  }_{\\texttt{sort_order}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        3 & 2 & 4 & 4\\\\\n        4 & 2 & 3 & 2\\\\\n        2 & 3 & 1 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\n\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{sort_index}}\n  ,\n  \\underbrace{\n    1\n  }_{\\texttt{sort_order}}\n  ,\n  \\underbrace{\n    \\texttt{ TRUE }\n  }_{\\texttt{by_col}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        4 & 3 & 4 & 2\\\\\n        1 & 2 & 2 & 3\\\\\n        3 & 4 & 2 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
+    "text": "SORT(...) (3)\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    3\n  }_{\\texttt{sort_index}}\n  ,\n  \\underbrace{\n    -1\n  }_{\\texttt{sort_order}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        3 & 2 & 4 & 4\\\\\n        4 & 2 & 3 & 2\\\\\n        2 & 3 & 1 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]\n\\[\n\\texttt{SORT}\n\\left(\n  \\underbrace{\n    \\begin{bmatrix}\n      3 & 2 & 4 & 4\\\\\n      2 & 3 & 1 & 2\\\\\n      4 & 2 & 3 & 2\n    \\end{bmatrix}\n  }_{\\texttt{array}}\n  ,\n  \\underbrace{\n    2\n  }_{\\texttt{sort_index}}\n  ,\n  \\underbrace{\n    1\n  }_{\\texttt{sort_order}}\n  ,\n  \\underbrace{\n    \\texttt{ TRUE }\n  }_{\\texttt{by_col}}\n\\right)\n\\Rightarrow\n  \\underbrace{\n      \\begin{bmatrix}\n        4 & 3 & 4 & 2\\\\\n        1 & 2 & 2 & 3\\\\\n        3 & 4 & 2 & 2\n      \\end{bmatrix}\n  }_{\\textit{hasil}}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sortby...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#sortby...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "SORTBY(...) (1)",
-    "text": "SORTBY(...) (1)\n\nSORTBY(...): Fungsi SORTBY mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. 1\n\n\n=SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)\n\nNilai default sort_order <- 1 (ascending).\nNilai by_array harus berupa vektor atau array 1 dimensi. Dan jenisnya harus sama dengan nilai by_array lainnya (tidak boleh berbeda dimensinya).\nJika diurutkan hanya berdasarkan satu array dan berdasarkan kolom/baris di dalam array tersebut, sebaiknya menggunakan SORT.\n\n\nFungsi SORTBY, Microsoft Support."
+    "text": "SORTBY(...) (1)\n\nSORTBY(...): Fungsi SORTBY mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. 1\n\n=SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)\n\nNilai default sort_order <- 1 (ascending).\nNilai by_array harus berupa vektor atau array 1 dimensi. Dan jenisnya harus sama dengan nilai by_array lainnya (tidak boleh berbeda dimensinya).\nJika diurutkan hanya berdasarkan satu array dan berdasarkan kolom/baris di dalam array tersebut, sebaiknya menggunakan SORT.\n\nFungsi SORTBY, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sortby...-2",
@@ -494,49 +494,49 @@
     "href": "greenhorn/feidlambda-2/presentation.html#xlookup...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "XLOOKUP(...) (1)",
-    "text": "XLOOKUP(...) (1)\n\nXLOOKUP(...): Fungsi XLOOKUP mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, XLOOKUP dapat mengembalikan kecocokan terdekat (perkiraan). 1\n\n\n=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])\n\nFungsi XLOOKUP, Microsoft Support."
+    "text": "XLOOKUP(...) (1)\n\nXLOOKUP(...): Fungsi XLOOKUP mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, XLOOKUP dapat mengembalikan kecocokan terdekat (perkiraan). 1\n\n=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])\nFungsi XLOOKUP, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#xmatch...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#xmatch...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "XMATCH(...) (1)",
-    "text": "XMATCH(...) (1)\n\nXMATCH(...): Fungsi XMATCH mengembalikan posisi relatif item dalam array atau rentang sel. 1\n\n\n=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])\n\nFungsi XMATCH, Microsoft Support."
+    "text": "XMATCH(...) (1)\n\nXMATCH(...): Fungsi XMATCH mengembalikan posisi relatif item dalam array atau rentang sel. 1\n\n=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])\nFungsi XMATCH, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-1",
     "href": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-1",
     "title": "Greenhorn:feidlambda II",
     "section": "CONCAT(...) dan TEXTJOIN(...) (1)",
-    "text": "CONCAT(...) dan TEXTJOIN(...) (1)\n\nCONCAT(...): Fungsi CONCAT menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. 1\n\n\n=CONCAT(text1, [text2], ...)\n\nTEXTJOIN(...): Fungsi TEXTJOIN menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. 2\n\n\n\n=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)\n\nFungsi CONCAT, Microsoft Support.Fungsi TEXTJOIN, Microsoft Support."
+    "text": "CONCAT(...) dan TEXTJOIN(...) (1)\n\nCONCAT(...): Fungsi CONCAT menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. 1\n\n=CONCAT(text1, [text2], ...)\n\nTEXTJOIN(...): Fungsi TEXTJOIN menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. 2\n\n=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)\nFungsi CONCAT, Microsoft Support.Fungsi TEXTJOIN, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-2",
     "href": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-2",
     "title": "Greenhorn:feidlambda II",
     "section": "CONCAT(...) dan TEXTJOIN(...) (2)",
-    "text": "CONCAT(...) dan TEXTJOIN(...) (2)\n\nHal yang membedakan TEXTJOIN(...) dengan CONCAT(...) adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai TEXTJOIN(...) === CONCAT(...) ketika argumen delimeter <- \"\" dan ignore_empty <- TRUE.\n\n\n\\[\n\\mathbf{T} =\n\\begin{bmatrix}\n  \\textrm{nama} &\n  \\textrm{saya} &\n  \\textrm{taruma}\\\\\n  1 &\n  \\textrm{pergi} &\n  3 \\\\\n  \\texttt{TRUE} &\n  100 &\n  \\texttt{FALSE}\\\\\n\\end{bmatrix}\n\\]"
+    "text": "CONCAT(...) dan TEXTJOIN(...) (2)\n\nHal yang membedakan TEXTJOIN(...) dengan CONCAT(...) adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai TEXTJOIN(...) === CONCAT(...) ketika argumen delimeter <- \"\" dan ignore_empty <- TRUE.\n\n\\[\n\\mathbf{T} =\n\\begin{bmatrix}\n  \\textrm{nama} &\n  \\textrm{saya} &\n  \\textrm{taruma}\\\\\n  1 &\n  \\textrm{pergi} &\n  3 \\\\\n  \\texttt{TRUE} &\n  100 &\n  \\texttt{FALSE}\\\\\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-3",
     "href": "greenhorn/feidlambda-2/presentation.html#concat...-dan-textjoin...-3",
     "title": "Greenhorn:feidlambda II",
     "section": "CONCAT(...) dan TEXTJOIN(...) (3)",
-    "text": "CONCAT(...) dan TEXTJOIN(...) (3)\n\n\\[\n\\mathbf{T} =\n\\begin{bmatrix}\n  \\textrm{nama} &\n  \\textrm{saya} &\n  \\textrm{taruma}\\\\\n  1 &\n  \\textrm{pergi} &\n  3 \\\\\n  \\texttt{TRUE} &\n  100 &\n  \\texttt{FALSE}\\\\\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\texttt{CONCAT}(\\mathbf{T}) =\n\\textrm{namasayataruma1pergi3TRUE100FALSE}\n\\]\n\\[\n\\texttt{TEXTJOIN}(\\texttt{\"\"}, \\texttt{TRUE}, \\mathbf{T}) =\n\\textrm{namasayataruma1pergi3TRUE100FALSE}\n\\]\n\n\n\\[\n\\texttt{TEXTJOIN}(\\texttt{\" \"}, \\texttt{TRUE}, \\mathbf{T}) =\n\\textrm{nama saya taruma 1 pergi 3 TRUE 100 FALSE}\n\\]"
+    "text": "CONCAT(...) dan TEXTJOIN(...) (3)\n\\[\n\\mathbf{T} =\n\\begin{bmatrix}\n  \\textrm{nama} &\n  \\textrm{saya} &\n  \\textrm{taruma}\\\\\n  1 &\n  \\textrm{pergi} &\n  3 \\\\\n  \\texttt{TRUE} &\n  100 &\n  \\texttt{FALSE}\\\\\n\\end{bmatrix}\n\\]\n\\[\n\\texttt{CONCAT}(\\mathbf{T}) =\n\\textrm{namasayataruma1pergi3TRUE100FALSE}\n\\]\n\\[\n\\texttt{TEXTJOIN}(\\texttt{\"\"}, \\texttt{TRUE}, \\mathbf{T}) =\n\\textrm{namasayataruma1pergi3TRUE100FALSE}\n\\]\n\\[\n\\texttt{TEXTJOIN}(\\texttt{\" \"}, \\texttt{TRUE}, \\mathbf{T}) =\n\\textrm{nama saya taruma 1 pergi 3 TRUE 100 FALSE}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#ifs...-dan-minifs...",
     "href": "greenhorn/feidlambda-2/presentation.html#ifs...-dan-minifs...",
     "title": "Greenhorn:feidlambda II",
     "section": "IFS(...) dan MINIFS(...)",
-    "text": "IFS(...) dan MINIFS(...)\n\nIFS(...): Fungsi IFS memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi TRUE pertama. IFS dapat menggantikan beberapa pernyataan IF yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. 1\n\n\n=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)\n\nMINIFS(...) / MAXIFS(...): Fungsi MINIFS mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi MAXIFS mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. 2 3\n\n\n\n=[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)\n\nFungsi IFS, Microsoft Support.Fungsi MINIFS, Microsoft Support.Fungsi MAXIFS, Microsoft Support."
+    "text": "IFS(...) dan MINIFS(...)\n\nIFS(...): Fungsi IFS memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi TRUE pertama. IFS dapat menggantikan beberapa pernyataan IF yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. 1\n\n=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)\n\nMINIFS(...) / MAXIFS(...): Fungsi MINIFS mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi MAXIFS mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. 2 3\n\n=[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)\nFungsi IFS, Microsoft Support.Fungsi MINIFS, Microsoft Support.Fungsi MAXIFS, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#contoh-ifs-if...",
     "href": "greenhorn/feidlambda-2/presentation.html#contoh-ifs-if...",
     "title": "Greenhorn:feidlambda II",
     "section": "CONTOH IFS (IF(...))",
-    "text": "CONTOH IFS (IF(...))\n\\[\n[-\\infty,70) \\Rightarrow \\text{C}\\\\\n[70,85) \\Rightarrow \\text{B}\\\\\n[85,\\infty) \\Rightarrow \\text{A}\n\\]\n=IF(\n  x < 70, \"C\", \n  IF(\n    x < 85, \"B\",\n    \"A\"c\n  )\n)"
+    "text": "CONTOH IFS (IF(...))\n\\[\n[-\\infty,70) \\Rightarrow \\text{C}\\\\\n[70,85) \\Rightarrow \\text{B}\\\\\n[85,\\infty) \\Rightarrow \\text{A}\n\\]\n=IF(\n  x < 70, \"C\", \n  IF(\n    x < 85, \"B\",\n    \"A\"\n  )\n)"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#contoh-ifs-ifs...",
@@ -546,18 +546,11 @@
     "text": "CONTOH IFS (IFS(...))\n\\[\n[-\\infty,70) \\Rightarrow \\text{C}\\\\\n[70,85) \\Rightarrow \\text{B}\\\\\n[85,\\infty) \\Rightarrow \\text{A}\n\\]\n=IFS(\n  x < 70, \"C\", \n  x < 85, \"B\",\n  TRUE, \"A\"\n)"
   },
   {
-    "objectID": "greenhorn/feidlambda-2/presentation.html#switch...",
-    "href": "greenhorn/feidlambda-2/presentation.html#switch...",
-    "title": "Greenhorn:feidlambda II",
-    "section": "SWITCH(...)",
-    "text": "SWITCH(...)\n\nSWITCH(...): Fungsi SWITCH mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. 1\n\n\n=SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])\n\nFungsi SWITCH, Microsoft Support."
-  },
-  {
     "objectID": "greenhorn/feidlambda-2/presentation.html#let...",
     "href": "greenhorn/feidlambda-2/presentation.html#let...",
     "title": "Greenhorn:feidlambda II",
     "section": "LET(...)",
-    "text": "LET(...)\n\nLET(...): Fungsi LET menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup LET fungsi. Mirip dengan variabel dalam pemrograman, LET dilakukan melalui Excel rumus asli Anda. 1\n\n\n=LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)\n\nFungsi LET, Microsoft Support."
+    "text": "LET(...)\n\nLET(...): Fungsi LET menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup LET fungsi. Mirip dengan variabel dalam pemrograman, LET dilakukan melalui Excel rumus asli Anda. 1\n\n=LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)\nFungsi LET, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#contoh-let...-dan-switch...",
@@ -585,14 +578,14 @@
     "href": "greenhorn/feidlambda-2/presentation.html#kasus-validasi",
     "title": "Greenhorn:feidlambda II",
     "section": "Kasus validasi",
-    "text": "Kasus validasi\n\n\\[\nf : \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x}) = \\mathbf{y} = \\mathbf{x} + 2\n\\]\n\\[\n\\mathbf{x} \\in \\mathbb{R}, \\mathbf{y} \\in \\mathbb{R}\n\\]\n\\[\n\\mathbf{x}\n\\mapsto\n\\mathbf{x} + 2\n\\]\n\n\n\\[\n\\begin{equation}\n  \\mathbf{x}\n  \\mapsto\n  \\texttt{AND}\n  (\n    \\texttt{ISNUMBER}(\\mathbf{x})\n  )\n  =\n  \\begin{cases}\n    \\texttt{TRUE} & f : \\mathbf{x} \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n    \\texttt{FALSE} & \\textrm{return}\\ \\texttt{#VALUE!} \\\\\n    \\texttt{FALSE} & \\mathbf{x} \\mapsto g(\\mathbf{x}) = \\texttt{FILTER}(\\dots) \\mapsto \\\\\n    & f: g(\\mathbf{x}) \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n  \\end{cases}\n\\end{equation}\n\\]\n\n\\(\\mathbf{x}\\) akan dievaluasi terlebih dahulu dan di filter dengan memilih elemen yang berupa angka saja.\n\\(\\mathbf{x} \\mapsto \\mathbf{y}\\) dengan \\(y \\in \\mathbb{R}\\) dan \\(x \\in \\mathbb{?}\\)."
+    "text": "Kasus validasi\n\\[\nf : \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x}) = \\mathbf{y} = \\mathbf{x} + 2\n\\]\n\\[\n\\mathbf{x} \\in \\mathbb{R}, \\mathbf{y} \\in \\mathbb{R}\n\\]\n\\[\n\\mathbf{x}\n\\mapsto\n\\mathbf{x} + 2\n\\]\n\\[\n\\begin{equation}\n  \\mathbf{x}\n  \\mapsto\n  \\texttt{AND}\n  (\n    \\texttt{ISNUMBER}(\\mathbf{x})\n  )\n  =\n  \\begin{cases}\n    \\texttt{TRUE} & f : \\mathbf{x} \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n    \\texttt{FALSE} & \\textrm{return}\\ \\texttt{#VALUE!} \\\\\n    \\texttt{FALSE} & \\mathbf{x} \\mapsto g(\\mathbf{x}) = \\texttt{FILTER}(\\dots) \\mapsto \\\\\n    & f: g(\\mathbf{x}) \\in \\mathbb{R} \\rightarrow \\mathbb{R}\\\\\n  \\end{cases}\n\\end{equation}\n\\]\n\n\\(\\mathbf{x}\\) akan dievaluasi terlebih dahulu dan di filter dengan memilih elemen yang berupa angka saja.\n\\(\\mathbf{x} \\mapsto \\mathbf{y}\\) dengan \\(y \\in \\mathbb{R}\\) dan \\(x \\in \\mathbb{?}\\)."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#formula",
     "href": "greenhorn/feidlambda-2/presentation.html#formula",
     "title": "Greenhorn:feidlambda II",
     "section": "Formula",
-    "text": "Formula\n\n\\[\ng : \\mathbf{x} \\in \\mathbb{?} \\to \\mathbb{R}\n\\]\n\\[\ng(\\mathbf{x}) = f(\n  \\underbrace{\n    \\texttt{FILTER}(\\mathbf{x}, \\texttt{ISNUMBER}(\\mathbf{x}))\n  }_{\\mathbf{y\\ \\in\\ \\mathbb{R}}}\n)\n=\n\\underbrace{\n  f(\\mathbf{y})\n}_{\\in\\ \\mathbb{R}}\n=\n\\mathbf{y} + 2\n\\]"
+    "text": "Formula\n\\[\ng : \\mathbf{x} \\in \\mathbb{?} \\to \\mathbb{R}\n\\]\n\\[\ng(\\mathbf{x}) = f(\n  \\underbrace{\n    \\texttt{FILTER}(\\mathbf{x}, \\texttt{ISNUMBER}(\\mathbf{x}))\n  }_{\\mathbf{y\\ \\in\\ \\mathbb{R}}}\n)\n=\n\\underbrace{\n  f(\\mathbf{y})\n}_{\\in\\ \\mathbb{R}}\n=\n\\mathbf{y} + 2\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#formula-1",
@@ -641,7 +634,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#lambda-dan-udl",
     "title": "Greenhorn:feidlambda II",
     "section": "LAMBDA dan UDL",
-    "text": "LAMBDA dan UDL\n\nLAMBDA(...): Gunakan fungsi LAMBDA untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. 1\n\n\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)\n\nUser Defined Lambda (UDL) sama halnya dengan User Defined Function (UDF) hanya spesifik pada penggunaan LAMBDA. UDF sendiri adalah fungsi yang dibuat oleh pengguna.\n\n\nFungsi LAMBDA, Microsoft Support."
+    "text": "LAMBDA dan UDL\n\nLAMBDA(...): Gunakan fungsi LAMBDA untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. 1\n\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)\n\nUser Defined Lambda (UDL) sama halnya dengan User Defined Function (UDF) hanya spesifik pada penggunaan LAMBDA. UDF sendiri adalah fungsi yang dibuat oleh pengguna.\n\nFungsi LAMBDA, Microsoft Support."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#lambda-dan-let",
@@ -655,7 +648,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#sintaks-lambda-dan-let",
     "title": "Greenhorn:feidlambda II",
     "section": "Sintaks LAMBDA dan LET",
-    "text": "Sintaks LAMBDA dan LET\n\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)\n\nUntuk memudahkan membaca kode, buat baris baru diantara (...)."
+    "text": "Sintaks LAMBDA dan LET\n=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)\n\nUntuk memudahkan membaca kode, buat baris baru diantara (...)."
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#sintaks-lambda-dan-let-1",
@@ -683,14 +676,14 @@
     "href": "greenhorn/feidlambda-2/presentation.html#deskripsi-kasus",
     "title": "Greenhorn:feidlambda II",
     "section": "Deskripsi Kasus",
-    "text": "Deskripsi Kasus\n\nMengurangi setiap elemen dari numeric vector (\\(\\mathbf{x}\\)) dengan setengah dari rata-ratanya (\\(\\frac{\\texttt{mean}(\\mathbf{x})}{2}\\)).\n\n\n\\[\nf : \\mathbf{x} \\in \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x}) =\n\\mathbf{x} - \\frac{\\overline{\\mathbf{x}}}{2}\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]"
+    "text": "Deskripsi Kasus\n\nMengurangi setiap elemen dari numeric vector (\\(\\mathbf{x}\\)) dengan setengah dari rata-ratanya (\\(\\frac{\\texttt{mean}(\\mathbf{x})}{2}\\)).\n\n\\[\nf : \\mathbf{x} \\in \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x}) =\n\\mathbf{x} - \\frac{\\overline{\\mathbf{x}}}{2}\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#fungsi-lambda",
     "href": "greenhorn/feidlambda-2/presentation.html#fungsi-lambda",
     "title": "Greenhorn:feidlambda II",
     "section": "Fungsi LAMBDA",
-    "text": "Fungsi LAMBDA\n\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n\n\n=LAMBDA(\n  parameter1, \n  [parameter2, parameter3, ...],\n  calculation\n)\n\nmenentukan input variabel untuk fungsi LAMBDA.\n\\(f(\\mathbf{x})\\) menunjukkan input fungsi \\(f\\) hanya vektor \\(\\mathbf{x}\\)"
+    "text": "Fungsi LAMBDA\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n=LAMBDA(\n  parameter1, \n  [parameter2, parameter3, ...],\n  calculation\n)\n\nmenentukan input variabel untuk fungsi LAMBDA.\n\\(f(\\mathbf{x})\\) menunjukkan input fungsi \\(f\\) hanya vektor \\(\\mathbf{x}\\)"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#input-lambda",
@@ -718,7 +711,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#perhitungan-dalam-fungsi-let",
     "title": "Greenhorn:feidlambda II",
     "section": "Perhitungan dalam fungsi LET",
-    "text": "Perhitungan dalam fungsi LET\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n=LAMBDA(\n  vector,\n  LET(\n    ..., ...,\n    calculation\n  )\n)\n\nNilai rata-rata bisa disimpan sebagai variabel avg.\n\n\navg <- AVERAGE(vector)\n\nVariabel halfavg menyatakan nilai setengah dari rata-rata vektor.\n\n\n\nhalfavg <- avg / 2\n\nHasil akhir dapat disimpan sebagai variabel result.\n\n\n\nresult <- vector - halfavg"
+    "text": "Perhitungan dalam fungsi LET\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n=LAMBDA(\n  vector,\n  LET(\n    ..., ...,\n    calculation\n  )\n)\n\nNilai rata-rata bisa disimpan sebagai variabel avg.\n\navg <- AVERAGE(vector)\n\nVariabel halfavg menyatakan nilai setengah dari rata-rata vektor.\n\nhalfavg <- avg / 2\n\nHasil akhir dapat disimpan sebagai variabel result.\n\nresult <- vector - halfavg"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#mengisi-hasil-dari-lambda",
@@ -746,7 +739,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#rekap",
     "title": "Greenhorn:feidlambda II",
     "section": "Rekap",
-    "text": "Rekap\n\n\\[\nf : \\mathbf{x} \\in \\mathbb{R} \\to \\mathbb{R}\n\\]\n\n\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n\n\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg / 2,\n    vector - halfavg\n  )\n)"
+    "text": "Rekap\n\\[\nf : \\mathbf{x} \\in \\mathbb{R} \\to \\mathbb{R}\n\\]\n\\[\nf(\\mathbf{x})\n=\n\\mathbf{x} - \\frac{\\texttt{AVERAGE}(\\mathbf{x})}{2}\n\\]\n=LAMBDA(\n  vector,\n  LET(\n    avg, AVERAGE(vector),\n    halfavg, avg / 2,\n    vector - halfavg\n  )\n)"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#menggunakan-formula-di-excel-1",
@@ -795,7 +788,7 @@
     "href": "greenhorn/feidlambda-2/presentation.html#optional-argument-1",
     "title": "Greenhorn:feidlambda II",
     "section": "Optional argument (1)",
-    "text": "Optional argument (1)\n\\[\ng(\\mathbf{y})\n=\n\\mathbf{y}_{\\textit{filtered}} - \\frac{\\texttt{AVERAGE}(\\mathbf{y}_{\\textit{filtered}})}{2}\n\\]\n\n\\[\n\\mathbf{y}, n \\mapsto g(\\mathbf{y}, n)\n=\n\\mathbf{y}_{\\textit{filtered}} - \\frac{\\texttt{AVERAGE}(\\mathbf{y}_{\\textit{filtered}})}{n}\n\\]\n\\[\n\\begin{equation}\n  n =\n  \\begin{cases}\n    \\dots & \\mathbf{y}, n = 2 \\mapsto g(\\mathbf{y}, 2) = f(\\mathbf{y}_{\\textit{filtered}})\\\\\n    n & \\mathbf{y}, n \\mapsto g(\\mathbf{y}, n)\n  \\end{cases}\n\\end{equation}\n\\]"
+    "text": "Optional argument (1)\n\\[\ng(\\mathbf{y})\n=\n\\mathbf{y}_{\\textit{filtered}} - \\frac{\\texttt{AVERAGE}(\\mathbf{y}_{\\textit{filtered}})}{2}\n\\]\n\\[\n\\mathbf{y}, n \\mapsto g(\\mathbf{y}, n)\n=\n\\mathbf{y}_{\\textit{filtered}} - \\frac{\\texttt{AVERAGE}(\\mathbf{y}_{\\textit{filtered}})}{n}\n\\]\n\\[\n\\begin{equation}\n  n =\n  \\begin{cases}\n    \\dots & \\mathbf{y}, n = 2 \\mapsto g(\\mathbf{y}, 2) = f(\\mathbf{y}_{\\textit{filtered}})\\\\\n    n & \\mathbf{y}, n \\mapsto g(\\mathbf{y}, n)\n  \\end{cases}\n\\end{equation}\n\\]"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#optional-argument-2",
@@ -872,7 +865,7 @@
     "href": "docs/glossary.html",
     "title": "Daftar Istilah",
     "section": "",
-    "text": "LOGICAL\nTRUE atau FALSE. Dapat dikenal juga sebagai boolean. Nilai logical bisa juga direpresentasikan dalam bentuk numerik dengan 0 berarti FALSE, sedangkan nilai numerik selain 0 dianggap TRUE.\n\n\nCELL\nSel.\n\n\n\n\n\n\n\n(a) Cell (Excel)\n\n\n\n\n\n\n\n(b) Cell (Ilustrasi)\n\n\n\n\nFigure 1: Cell\n\n\n\n\nRANGE\nRentang yang terdiri dari lebih dari satu sel.\n\n\n\n\n\n\n\n(a) Range (Excel)\n\n\n\n\n\n\n\n(b) Range (Ilustrasi)\n\n\n\n\nFigure 2: Range\n\n\n\n\nVECTOR\nRange yang memiliki 1 dimensi.\n\n\n\n\n\n\n\n(a) Vector (Excel)\n\n\n\n\n\n\n\n(b) Vector (Ilustrasi)\n\n\n\n\nFigure 3: Vector\n\n\n\n\nARRAY\nRange yang memiliki 2 dimensi. Penggunaan istilah array menginformasikan bahwa range berupa dua dimensi.\n\n\n\n\n\n\n\n(a) Array (Excel)\n\n\n\n\n\n\n\n(b) Array (Ilustrasi)\n\n\n\n\nFigure 4: Array\n\n\n\n\nTABLE\nArray yang memiliki header dalam format tabel.\n\n\n\n\n\n\n\n(a) Table (Excel)\n\n\n\n\n\n\n\n(b) Table (Ilustrasi)\n\n\n\n\nFigure 5: Table\n\n\n\n\nLOGICAL VECTOR / LOGICAL ARRAY\nVector atau array yang berisikan nilai TRUE atau FALSE.\n\n\n\n\n\n\n\n(a) Logical Vector (Excel)\n\n\n\n\n\n\n\n(b) Logical Vector (Ilustrasi)\n\n\n\n\nFigure 6: Logical Vector\n\n\n\n\nNUMERIC VECTOR / NUMERIC ARRAY\nVector atau array yang berisikan nilai numerik.\n\n\n\n\n\n\n\n(a) Numeric Vector (Excel)\n\n\n\n\n\n\n\n(b) Numeric Vector (Ilustrasi)\n\n\n\n\nFigure 7: Numeric Vector\n\n\n\n\nROW VECTOR\nVector yang melebar ke samping atau berupa baris.\n\n\n\nFigure 8: Row Vector (Excel)\n\n\n\n\nCOLUMN VECTOR\nVector yang memanjang ke bawah atau berupa kolom.\n\n\n\nFigure 9: Column Vector (Excel)\n\n\n\n\nDYNAMIC ARRAY\nLarik dinamis adalah kumpulan nilai / sel yang merupakan satu kesatuan. Dapat berupa vector (1D) atau array (2D).\n\n\n\n\n\n\n\n(a) Column Vector Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Column Vector\n\n\n\n\n\n\n\n(c) Column Vector (Dynamic Array)\n\n\n\n\nFigure 10: Dynamic Array (Vector)\n\n\n\n\n\n\n\n\n\n(a) Array Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Array\n\n\n\n\n\n\n\n(c) Array (Dynamic Array)\n\n\n\n\nFigure 11: Dynamic Array (Array)\n\n\n\n\nDYNAMIC ARRAY FORMULA\nFormula yang mengeluarkan hasil lebih dari satu sel (vector / array) dalam bentuk dynamic array.\nPersamaan yang termasuk dynamic array formula antara lain: =POWER(), =ABS(), =ROUNDUP(), dll. Yang perlu diingat bahwa formula dynamic array mampu menghasilkan nilai dalam bentuk vector atau array sesuai jenis nilai yang dimasukkan.\n\n\n\n\n\n\n\n(a) Formula Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array Formula\n\n\n\n\nFigure 12: Dynamic Array Formula"
+    "text": "LOGICAL\nTRUE atau FALSE. Dapat dikenal juga sebagai boolean. Nilai logical bisa juga direpresentasikan dalam bentuk numerik dengan 0 berarti FALSE, sedangkan nilai numerik selain 0 dianggap TRUE.\n\n\nTEXT\nKarakter atau teks. Dikenal juga sebagai string.\n\n\nCELL\nSel.\n\n\n\n\n\n\n\n(a) Cell (Excel)\n\n\n\n\n\n\n\n(b) Cell (Ilustrasi)\n\n\n\n\nFigure 1: Cell\n\n\n\n\nRANGE\nRentang yang terdiri dari lebih dari satu sel.\n\n\n\n\n\n\n\n(a) Range (Excel)\n\n\n\n\n\n\n\n(b) Range (Ilustrasi)\n\n\n\n\nFigure 2: Range\n\n\n\n\nVECTOR\nRange yang memiliki 1 dimensi.\n\n\n\n\n\n\n\n(a) Vector (Excel)\n\n\n\n\n\n\n\n(b) Vector (Ilustrasi)\n\n\n\n\nFigure 3: Vector\n\n\n\n\nARRAY\nRange yang memiliki 1 dimensi atau 2 dimensi. Untuk membedakan antara 1 dimensi dan 2 dimensi, istilah array digunakan untuk range yang memiliki 2 dimensi. Meskipun array di excel bisa merepresentasikan range 1 dimensi atau range 2 dimensi.\n\n\n\n\n\n\n\n(a) Array (Excel)\n\n\n\n\n\n\n\n(b) Array (Ilustrasi)\n\n\n\n\nFigure 4: Array\n\n\n\n\nTABLE\nArray yang memiliki header dalam format tabel.\n\n\n\n\n\n\n\n(a) Table (Excel)\n\n\n\n\n\n\n\n(b) Table (Ilustrasi)\n\n\n\n\nFigure 5: Table\n\n\n\n\nLOGICAL VECTOR / LOGICAL ARRAY\nVector atau array yang berisikan nilai TRUE atau FALSE.\n\n\n\n\n\n\n\n(a) Logical Vector (Excel)\n\n\n\n\n\n\n\n(b) Logical Vector (Ilustrasi)\n\n\n\n\nFigure 6: Logical Vector\n\n\n\n\nNUMERIC VECTOR / NUMERIC ARRAY\nVector atau array yang berisikan nilai numerik.\n\n\n\n\n\n\n\n(a) Numeric Vector (Excel)\n\n\n\n\n\n\n\n(b) Numeric Vector (Ilustrasi)\n\n\n\n\nFigure 7: Numeric Vector\n\n\n\n\nROW VECTOR\nVector yang melebar ke samping atau berupa baris.\n\n\n\nFigure 8: Row Vector (Excel)\n\n\n\n\nCOLUMN VECTOR\nVector yang memanjang ke bawah atau berupa kolom.\n\n\n\nFigure 9: Column Vector (Excel)\n\n\n\n\nDYNAMIC ARRAY\nLarik dinamis adalah kumpulan nilai / sel yang merupakan satu kesatuan. Dapat berupa vector (1D) atau array (2D).\n\n\n\n\n\n\n\n(a) Column Vector Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Column Vector\n\n\n\n\n\n\n\n(c) Column Vector (Dynamic Array)\n\n\n\n\nFigure 10: Dynamic Array (Vector)\n\n\n\n\n\n\n\n\n\n(a) Array Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Array\n\n\n\n\n\n\n\n(c) Array (Dynamic Array)\n\n\n\n\nFigure 11: Dynamic Array (Array)\n\n\n\n\nDYNAMIC ARRAY FORMULA\nFormula yang mengeluarkan hasil lebih dari satu sel (vector / array) dalam bentuk dynamic array.\nPersamaan yang termasuk dynamic array formula antara lain: =POWER(), =ABS(), =ROUNDUP(), dll. Yang perlu diingat bahwa formula dynamic array mampu menghasilkan nilai dalam bentuk vector atau array sesuai jenis nilai yang dimasukkan.\n\n\n\n\n\n\n\n(a) Formula Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array Formula\n\n\n\n\nFigure 12: Dynamic Array Formula"
   },
   {
     "objectID": "docs/penggunaan.html",

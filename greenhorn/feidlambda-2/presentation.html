@@ -413,11 +413,11 @@
 <h2>Agenda</h2>
 <p>Agenda untuk <em>Greenhorn feidlambda II: Exploring Dynamic Array + User Defined <code>Lambda</code> (UDL)</em></p>
 <ul>
-<li class="fragment">Review <a href="https://lambda.fiako.engineering/docs/glossary.html">Daftar Istilah</a></li>
-<li class="fragment">Eksplorasi tentang <em>Logical</em></li>
-<li class="fragment"><em>Dynamic Array Formula</em> (DAF)</li>
-<li class="fragment">Fungsi Baru dari Excel 2019 dan 2021</li>
-<li class="fragment"><em>User Defined <code>Lambda</code></em> (UDL)</li>
+<li>Review <a href="https://lambda.fiako.engineering/docs/glossary.html">Daftar Istilah</a></li>
+<li>Eksplorasi tentang <em>Logical</em></li>
+<li><em>Dynamic Array Formula</em> (DAF)</li>
+<li>Fungsi Baru dari Excel 2019 dan 2021</li>
+<li><em>User Defined <code>Lambda</code></em> (UDL)</li>
 </ul>
 </section>
 <section>
@@ -428,10 +428,9 @@
 <section id="vector-dan-array" class="slide level2 smaller">
 <h2><em>Vector</em> dan <em>Array</em></h2>
 <ul>
-<li class="fragment">Istilah <em>array</em> dapat diartikan <em>range</em> yang memiliki 1 dimensi atau 2 dimensi.</li>
-<li class="fragment"><em>Array</em> dapat dibangkitkan menggunakan sintaks “<code>={...}</code>”. Dengan “<code>,</code>” sebagai pemisah kolom (sepanjang baris), “<code>;</code>” sebagai pemisah baris (sepanjang kolom).</li>
+<li>Istilah <em>array</em> dapat diartikan <em>range</em> yang memiliki 1 dimensi atau 2 dimensi.</li>
+<li><em>Array</em> dapat dibangkitkan menggunakan sintaks “<code>={...}</code>”. Dengan “<code>,</code>” sebagai pemisah kolom (sepanjang baris), “<code>;</code>” sebagai pemisah baris (sepanjang kolom).</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{{1,2,3}}
 =
@@ -447,8 +446,6 @@
   3
 \end{bmatrix}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{\{}
   \underbrace{\texttt{1,2,3}}_{\textit{baris ke-}1}
@@ -464,7 +461,6 @@
   7 &amp; 8 &amp; 9
 \end{bmatrix}
 \]</span></p>
-</div>
 </section></section>
 <section id="eksplorasi-tentang-logical" class="title-slide slide level1 center">
 <h1>2 Eksplorasi tentang <em>Logical</em></h1>
@@ -483,20 +479,17 @@
 </section>
 <section id="not-1" class="slide level2">
 <h2><code>NOT</code> (1)</h2>
-<div class="fragment">
 <h3 id="syntax">Syntax</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb1-1"><a href="#cb1-1"></a>=<span class="kw">NOT</span>(logical)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Fungsi <code>NOT</code> membalikkan nilai argumennya. <sup>1</sup></li>
-<li class="fragment">Menghasilkan nilai <code>TRUE</code> ketika kondisi bernilai <code>FALSE</code>, dan berlaku sebaliknya.</li>
-<li class="fragment"><code>NOT(TRUE) = FALSE</code></li>
-<li class="fragment"><code>NOT(FALSE) = TRUE</code></li>
+<li>Fungsi <code>NOT</code> membalikkan nilai argumennya. <sup>1</sup></li>
+<li>Menghasilkan nilai <code>TRUE</code> ketika kondisi bernilai <code>FALSE</code>, dan berlaku sebaliknya.</li>
+<li><code>NOT(TRUE) = FALSE</code></li>
+<li><code>NOT(FALSE) = TRUE</code></li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://support.microsoft.com/id-id/office/not-fungsi-not-9cfc6011-a054-40c7-a140-cd4ba2d87d77"><code>NOT</code> (Fungsi <code>NOT</code>)</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="not-2" class="slide level2 smaller">
 <h2><code>NOT</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{NOT}
 \left(
@@ -513,8 +506,6 @@
   \texttt{FALSE}
 \end{bmatrix}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{NOT}
 \left(
@@ -527,8 +518,6 @@
   \texttt{FALSE} &amp; \texttt{TRUE} &amp; \texttt{FALSE}
 \end{bmatrix}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{NOT}
 \left(
@@ -543,7 +532,6 @@
   \texttt{TRUE} &amp; \texttt{FALSE}
 \end{bmatrix}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="fungsi-and..." class="title-slide slide level1 center">
@@ -553,15 +541,13 @@
 <section id="and-1" class="slide level2 smaller">
 <h2><code>AND</code> (1)</h2>
 <ul>
-<li class="fragment">Fungsi logika, untuk menentukan apakah <strong>semua kondisi</strong> dalam sebuah tes adalah <code>TRUE</code>. <sup>1</sup></li>
+<li>Fungsi logika, untuk menentukan apakah <strong>semua kondisi</strong> dalam sebuah tes adalah <code>TRUE</code>. <sup>1</sup></li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb2-1"><a href="#cb2-1"></a>=<span class="kw">AND</span>(logical1, [logical2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Menghasilkan nilai <code>TRUE</code> ketika <strong>seluruh kondisi</strong> bernilai <code>TRUE</code>. Jika terdapat <strong>satu atau lebih</strong> bernilai <code>FALSE</code> maka menghasilkan nilai <code>FALSE</code>.</li>
-<li class="fragment">Jika input berupa <em>logical array</em> saja (<code>AND(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>AND(elemen_1, elemen_2, ...)</code>).</li>
+<li>Menghasilkan nilai <code>TRUE</code> ketika <strong>seluruh kondisi</strong> bernilai <code>TRUE</code>. Jika terdapat <strong>satu atau lebih</strong> bernilai <code>FALSE</code> maka menghasilkan nilai <code>FALSE</code>.</li>
+<li>Jika input berupa <em>logical array</em> saja (<code>AND(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>AND(elemen_1, elemen_2, ...)</code>).</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn2"><p><a href="https://support.microsoft.com/id-id/office/and-fungsi-and-5f19b2e8-e1df-4408-897a-ce285a19e9d9">AND (Fungsi AND)</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="and-2" class="slide level2">
 <h2><code>AND</code> (2)</h2>
@@ -690,15 +676,13 @@
 <section id="or-1" class="slide level2">
 <h2><code>OR</code> (1)</h2>
 <ul>
-<li class="fragment">Fungsi logika, untuk menentukan apakah <strong>salah satu kondisi</strong> dalam sebuah tes adalah <code>TRUE</code>. <sup>1</sup></li>
+<li>Fungsi logika, untuk menentukan apakah <strong>salah satu kondisi</strong> dalam sebuah tes adalah <code>TRUE</code>. <sup>1</sup></li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb3-1"><a href="#cb3-1"></a>=<span class="kw">OR</span>(logical1, [logical2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Menghasilkan nilai <code>TRUE</code> ketika salah satu kondisi bernilai <code>TRUE</code>.</li>
-<li class="fragment">Jika input berupa <em>logical array</em> saja (<code>OR(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>OR(elemen_1, elemen_2, ...)</code>).</li>
+<li>Menghasilkan nilai <code>TRUE</code> ketika salah satu kondisi bernilai <code>TRUE</code>.</li>
+<li>Jika input berupa <em>logical array</em> saja (<code>OR(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>OR(elemen_1, elemen_2, ...)</code>).</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn3"><p><a href="https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0"><code>OR</code> function</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="or-2" class="slide level2">
 <h2><code>OR</code> (2)</h2>
@@ -827,15 +811,13 @@
 <section id="xor-1" class="slide level2">
 <h2><code>XOR</code> (1)</h2>
 <ul>
-<li class="fragment">Fungsi <code>XOR</code> mengembalikan logika <strong>Exclusive Or</strong> dari semua argumen. <sup>1</sup></li>
+<li>Fungsi <code>XOR</code> mengembalikan logika <strong>Exclusive Or</strong> dari semua argumen. <sup>1</sup></li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb4-1"><a href="#cb4-1"></a>=<span class="kw">XOR</span>(logical1, [logical2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Menghasilkan nilai <code>TRUE</code> ketika hanya satu kondisi bernilai <code>TRUE</code>.</li>
-<li class="fragment">Jika input berupa <em>logical array</em> saja (<code>XOR(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>XOR(elemen_1, elemen_2, ...)</code>).</li>
+<li>Menghasilkan nilai <code>TRUE</code> ketika hanya satu kondisi bernilai <code>TRUE</code>.</li>
+<li>Jika input berupa <em>logical array</em> saja (<code>XOR(logical_array)</code>), maka akan mengevaluasi seluruh elemen pada <em>logical array</em> (<code>XOR(elemen_1, elemen_2, ...)</code>).</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn4"><p><a href="https://support.microsoft.com/id-id/office/xor-fungsi-xor-1548d4c2-5e47-4f77-9a92-0533bba14f37"><code>XOR</code> function</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="xor-2" class="slide level2">
 <h2><code>XOR</code> (2)</h2>
@@ -973,58 +955,55 @@
 <section id="logical-rightarrow-number-1" class="slide level2">
 <h2><em>Logical</em> <span class="math inline">\(\Rightarrow\)</span> <em>Number</em> (1)</h2>
 <ul>
-<li class="fragment"><p><span class="math inline">\(\texttt{FALSE} = 0\)</span>. Bernilai <code>FALSE</code> jika bernilai <code>0</code>. <span class="math inline">\(\{ x = 0 \}\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(\texttt{TRUE} \neq 0\)</span>. Bernilai <code>TRUE</code> jika nilai <strong>bukan</strong> <code>0</code>. <span class="math inline">\(\{ x \in \mathbb{R}\ |\ x \neq 0 \}\)</span></p></li>
-<li class="fragment"><p>Mengubah <em>logical</em> menjadi <em>number</em> dapat menggunakan fungsi <code>INT(...)</code>. <sup>1</sup></p></li>
-<li class="fragment"><p><span class="math inline">\(\texttt{INT}(\texttt{TRUE}) = 1\)</span>.</p></li>
-<li class="fragment"><p><span class="math inline">\(\texttt{INT}(\texttt{FALSE}) = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(\texttt{FALSE} = 0\)</span>. Bernilai <code>FALSE</code> jika bernilai <code>0</code>. <span class="math inline">\(\{ x = 0 \}\)</span></p></li>
+<li><p><span class="math inline">\(\texttt{TRUE} \neq 0\)</span>. Bernilai <code>TRUE</code> jika nilai <strong>bukan</strong> <code>0</code>. <span class="math inline">\(\{ x \in \mathbb{R}\ |\ x \neq 0 \}\)</span></p></li>
+<li><p>Mengubah <em>logical</em> menjadi <em>number</em> dapat menggunakan fungsi <code>INT(...)</code>. <sup>1</sup></p></li>
+<li><p><span class="math inline">\(\texttt{INT}(\texttt{TRUE}) = 1\)</span>.</p></li>
+<li><p><span class="math inline">\(\texttt{INT}(\texttt{FALSE}) = 0\)</span>.</p></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn5"><p><a href="https://support.microsoft.com/id-id/office/int-fungsi-int-a6c4af9e-356d-4369-ab6a-cb1fd9d343ef">INT (FUNGSI INT)</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="logical-dan-operator-aritmatika-1" class="slide level2 smaller">
 <h2><em>Logical</em> dan operator aritmatika (1)</h2>
 <ul>
-<li class="fragment"><em>Logical array</em> akan diubah menjadi <em>numeric array</em> ketika bertemu operator aritmatika (<code>+</code>, <code>*</code>, <code>-</code>, <code>/</code>).</li>
-<li class="fragment">Perubahan <em>logical</em> menjadi <em>number</em> sama dengan proses penggunaan fungsi <code>INT(...)</code>.</li>
-<li class="fragment">Operator aritmatika perkalian (<code>*</code> / <span class="math inline">\(\times\)</span>) dan penambahan (<code>+</code>) dapat berperilaku seperti fungsi <em>logical</em> <code>AND</code> (<code>*</code>) dan <code>OR</code> (<code>+</code>).</li>
-<li class="fragment">Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (<em>array</em>) menggunakan simbol <span class="math inline">\(\odot\)</span>. Akan tetapi, pada materi ini simbol <span class="math inline">\(\times\)</span> diartikan sebagai <strong>perkalian setiap elemen</strong> (<em>element-wise</em>) dan <strong>bukan perkalian matriks</strong>.</li>
+<li><em>Logical array</em> akan diubah menjadi <em>numeric array</em> ketika bertemu operator aritmatika (<code>+</code>, <code>*</code>, <code>-</code>, <code>/</code>).</li>
+<li>Perubahan <em>logical</em> menjadi <em>number</em> sama dengan proses penggunaan fungsi <code>INT(...)</code>.</li>
+<li>Operator aritmatika perkalian (<code>*</code> / <span class="math inline">\(\times\)</span>) dan penambahan (<code>+</code>) dapat berperilaku seperti fungsi <em>logical</em> <code>AND</code> (<code>*</code>) dan <code>OR</code> (<code>+</code>).</li>
+<li>Umumnya operator perkalian setiap elemen dalam suatu vector atau matriks (<em>array</em>) menggunakan simbol <span class="math inline">\(\odot\)</span>. Akan tetapi, pada materi ini simbol <span class="math inline">\(\times\)</span> diartikan sebagai <strong>perkalian setiap elemen</strong> (<em>element-wise</em>) dan <strong>bukan perkalian matriks</strong>.</li>
 </ul>
 </section>
 <section id="logical-dan-operator-aritmatika-2" class="slide level2 smaller">
 <h2><em>Logical</em> dan operator aritmatika (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
-\mathbf{X}\underbrace{\textsf{ operator }}_{\times\ |\ +}\mathbf{Y}
+\mathbf{X}
+\underbrace{\textsf{ operator }}_{\times\ |\ +}
+\mathbf{Y}
+\Rightarrow
+\mathbf{P}
+\underbrace{\textsf{ operator }}_{\times\ |\ +}
+\mathbf{Q}
 \]</span></p>
 <p><span class="math display">\[
-\{
-  \mathbf{X} \in \mathbb{B}, \mathbf{Y} \in \mathbb{B}
-\}
+\mathbf{X} \in \mathbb{B}_l, \mathbf{Y} \in \mathbb{B}_l,
+\mathbf{P} \in \mathbb{B}_i, \mathbf{Q} \in \mathbb{B}_i
 \]</span></p>
 <ul>
-<li class="fragment">Simbol <span class="math inline">\(\mathbb{B}\)</span> untuk menyatakan nilai <em>logical</em> atau <em>boolean</em>. <sup>1</sup></li>
+<li>Simbol <span class="math inline">\(\mathbb{B}\)</span> untuk menyatakan nilai <em>logical</em> atau <em>boolean</em>. <sup>1</sup></li>
 </ul>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
-\mathbb{B} =
+\mathbb{B}_l =
 \{
   \texttt{TRUE, FALSE}
 \}
 =
 \{
-  0, 1
-\}
-=
-\{
   \text{T}, \text{F}
 \}
-=
+,
+\mathbb{B}_i =
 \{
-  \top, \bot
+  0, 1
 \}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \overbrace{
   \begin{bmatrix}
@@ -1058,7 +1037,6 @@
   \end{bmatrix}
 }^{\text{numeric array}}
 \]</span></p>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn6"><p><a href="https://en.wikipedia.org/wiki/Boolean_domain">Boolean Domain</a></p></li></ol></aside></section></section>
 <section>
 <section id="operator-perkalian" class="title-slide slide level1 center">
@@ -1068,20 +1046,17 @@
 <section id="operator-perkalian-sebagai-and-1" class="slide level2">
 <h2>Operator perkalian <code>*</code> sebagai <code>AND</code> (1)</h2>
 <ul>
-<li class="fragment">Setiap nilai yang dikalikan dengan <code>0</code> akan bernilai <code>0</code>.</li>
+<li>Setiap nilai yang dikalikan dengan <code>0</code> akan bernilai <code>0</code>.</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 x \times 0 = 0,\ \{x \in \mathbb{R}\}
 \]</span></p>
 <ul>
-<li class="fragment">Setiap nilai yang dikalikan dengan <code>FALSE</code> akan bernilai <code>FALSE</code>.</li>
+<li>Setiap nilai yang dikalikan dengan <code>FALSE</code> akan bernilai <code>FALSE</code>.</li>
 </ul>
-</div>
 </section>
 <section id="operator-perkalian-sebagai-and-2" class="slide level2">
 <h2>Operator perkalian <code>*</code> sebagai <code>AND</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{bmatrix}
   \texttt{TRUE}\\
@@ -1115,8 +1090,6 @@ x \times 0 = 0,\ \{x \in \mathbb{R}\}
 \end{bmatrix}
 }_{\textit{hasil akhir}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \Rightarrow
 \underbrace{
@@ -1136,7 +1109,6 @@ x \times 0 = 0,\ \{x \in \mathbb{R}\}
   \texttt{FALSE}
 \end{bmatrix}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="operator-penambahan" class="title-slide slide level1 center">
@@ -1146,23 +1118,20 @@ x \times 0 = 0,\ \{x \in \mathbb{R}\}
 <section id="operator-penambahan-sebagai-or-1" class="slide level2">
 <h2>Operator penambahan <code>+</code> sebagai <code>OR</code> (1)</h2>
 <ul>
-<li class="fragment">Berlaku seperti penambahan pada umumnya.</li>
+<li>Berlaku seperti penambahan pada umumnya.</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
-x + 0 = x, \{x \in \mathbb{R}\}
+x + 0 = x, x \in \mathbb{R}
 \]</span></p>
 <p><span class="math display">\[
-x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
+x + y = x + y,  x \in \mathbb{R}, y \in \mathbb{R}
 \]</span></p>
 <ul>
-<li class="fragment">Setiap nilai yang <strong>bukan <code>0</code></strong> bernilai <code>TRUE</code>. <span class="math inline">\(\texttt{TRUE} \neq 0\)</span></li>
+<li>Setiap nilai yang <strong>bukan <code>0</code></strong> bernilai <code>TRUE</code>. <span class="math inline">\(\texttt{TRUE} \neq 0\)</span></li>
 </ul>
-</div>
 </section>
 <section id="operator-penambahan-sebagai-or-2" class="slide level2 smaller">
 <h2>Operator penambahan <code>+</code> sebagai <code>OR</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{bmatrix}
   \texttt{TRUE}\\
@@ -1196,8 +1165,6 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 \end{bmatrix}
 }_{\textit{hasil akhir}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \Rightarrow
 \underbrace{
@@ -1217,7 +1184,6 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
   \texttt{FALSE}
 \end{bmatrix}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="number-rightarrow-logical" class="title-slide slide level1 center">
@@ -1227,9 +1193,9 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 <section id="number-rightarrow-logical-1" class="slide level2">
 <h2><em>Number</em> <span class="math inline">\(\Rightarrow\)</span> <em>Logical</em> (1)</h2>
 <ul>
-<li class="fragment"><em>Numeric array</em> dapat digunakan sebagai kondisi <em>logical</em>.</li>
-<li class="fragment">Setiap <em>numeric array</em> yang digunakan sebagai <em>conditional</em> secara tidak langsung berubah menjadi <em>logical array</em>.</li>
-<li class="fragment">Perubahan tersebut sama saja jika membandingkan <em>array</em> <strong>tidak sama dengan <code>0</code></strong>. <span class="math display">\[
+<li><em>Numeric array</em> dapat digunakan sebagai kondisi <em>logical</em>.</li>
+<li>Setiap <em>numeric array</em> yang digunakan sebagai <em>conditional</em> secara tidak langsung berubah menjadi <em>logical array</em>.</li>
+<li>Perubahan tersebut sama saja jika membandingkan <em>array</em> <strong>tidak sama dengan <code>0</code></strong>. <span class="math display">\[
 \left(
 \mathbf{x}_{\text{number}} \neq 0
 \right)
@@ -1240,7 +1206,6 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 </section>
 <section id="number-rightarrow-logical-2" class="slide level2">
 <h2><em>Number</em> <span class="math inline">\(\Rightarrow\)</span> <em>Logical</em> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{NOT}
 \left(
@@ -1276,13 +1241,11 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 }_{\textit{logical}}
 \]</span></p>
 <ul>
-<li class="fragment">Sama saja dengan formula <code>=NOT(array=0)</code> atau <code>=array&lt;&gt;0</code>.</li>
+<li>Sama saja dengan formula <code>=NOT(array=0)</code> atau <code>=array&lt;&gt;0</code>.</li>
 </ul>
-</div>
 </section>
 <section id="number-rightarrow-logical-2-1" class="slide level2 smaller">
 <h2><em>Number</em> <span class="math inline">\(\Rightarrow\)</span> <em>Logical</em> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{IF}
 \left(
@@ -1314,14 +1277,12 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
   \underbrace{\dots}_{\texttt{FALSE}}
 \right)
 \]</span></p>
-</div>
 </section>
 <section id="yang-perlu-diperhatikan" class="slide level2 smaller">
 <h2>Yang perlu diperhatikan</h2>
 <ul>
-<li class="fragment">Hasil dari <em>logical array</em> bertemu dengan operator aritmatika <strong>selalu <em>numeric array</em></strong>.</li>
+<li>Hasil dari <em>logical array</em> bertemu dengan operator aritmatika <strong>selalu <em>numeric array</em></strong>.</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{bmatrix}
   \texttt{TRUE}\\
@@ -1366,9 +1327,8 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 \end{bmatrix}
 \]</span></p>
 <ul>
-<li class="fragment">Jika <em>numeric array</em> digunakan sebagai argumen <em>conditional</em>, maka akan dikonversikan menjadi <em>logical array</em>.</li>
+<li>Jika <em>numeric array</em> digunakan sebagai argumen <em>conditional</em>, maka akan dikonversikan menjadi <em>logical array</em>.</li>
 </ul>
-</div>
 </section></section>
 <section>
 <section id="mengenal-fungsi-is..." class="title-slide slide level1 center">
@@ -1377,15 +1337,13 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 </section>
 <section id="fungsi-is..." class="slide level2">
 <h2>Fungsi <code>IS*(...)</code></h2>
-<div class="fragment">
 <h3 id="syntax-1">SYNTAX</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>=IS*(value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">=</span>IS<span class="op">*(</span>value<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Memeriksa nilai tertentu dan mengembalikan <code>TRUE</code> atau <code>FALSE</code> bergantung pada hasilnya. <sup>1</sup></li>
-<li class="fragment"><code>ISBLANK(...)</code> bernilai <code>TRUE</code> jika sel kosong.</li>
-<li class="fragment"><code>ISNUMBER(...)</code> bernilai <code>TRUE</code> jika sel berisikan angka.</li>
+<li>Memeriksa nilai tertentu dan mengembalikan <code>TRUE</code> atau <code>FALSE</code> bergantung pada hasilnya. <sup>1</sup></li>
+<li><code>ISBLANK(...)</code> bernilai <code>TRUE</code> jika sel kosong.</li>
+<li><code>ISNUMBER(...)</code> bernilai <code>TRUE</code> jika sel berisikan angka.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn7"><p><a href="https://support.microsoft.com/id-id/office/fungsi-is-0f2d7971-6019-40a0-a171-f2d869135665">Fungsi IS</a>, Microsoft Support.</p></li></ol></aside></section></section>
 <section>
 <section id="koleksi-fungsi-is" class="title-slide slide level1 center">
@@ -1395,26 +1353,26 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 <section id="periksa-error-kosong" class="slide level2">
 <h2>Periksa <em>error</em> / kosong</h2>
 <ul>
-<li class="fragment"><code>ISNA(...)</code>: Cek nilai apakah <code>#N/A</code>.</li>
-<li class="fragment"><code>ISERR(...)</code>: Cek nilai apakah error selain <code>#N/A</code> (<code>#VALUE!</code>, <code>#REF!</code>, <code>#DIV/0!</code>, <code>#NUM!</code>, <code>#NAME?</code>, atau <code>#NULL!</code>).</li>
-<li class="fragment"><code>ISERROR(...)</code>: Cek nilai apakah error (seluruh jenis error).</li>
-<li class="fragment"><code>ISBLANK(...)</code>: Cek nilai apakah kosong.</li>
+<li><code>ISNA(...)</code>: Cek nilai apakah <code>#N/A</code>.</li>
+<li><code>ISERR(...)</code>: Cek nilai apakah error selain <code>#N/A</code> (<code>#VALUE!</code>, <code>#REF!</code>, <code>#DIV/0!</code>, <code>#NUM!</code>, <code>#NAME?</code>, atau <code>#NULL!</code>).</li>
+<li><code>ISERROR(...)</code>: Cek nilai apakah error (seluruh jenis error).</li>
+<li><code>ISBLANK(...)</code>: Cek nilai apakah kosong.</li>
 </ul>
 </section>
 <section id="periksa-jenis-sel" class="slide level2">
 <h2>Periksa jenis sel</h2>
 <ul>
-<li class="fragment"><code>ISLOGICAL(...)</code>: Cek nilai apakah <em>logical</em> (<code>TRUE</code> atau <code>FALSE</code>).</li>
-<li class="fragment"><code>ISNUMBER(...)</code>: Cek nilai apakah angka (<span class="math inline">\(\mathbb{R}\)</span>).</li>
-<li class="fragment"><code>ISTEXT(...)</code>: Cek nilai apakah teks. Dan <code>ISNONTEXT(...)</code>: Cek niai apakah bukan teks (<em>number</em>, <em>logical</em>, <em>error</em>)</li>
-<li class="fragment"><code>ISFORMULA(...)</code>: Cek nilai apakah formula.</li>
+<li><code>ISLOGICAL(...)</code>: Cek nilai apakah <em>logical</em> (<code>TRUE</code> atau <code>FALSE</code>).</li>
+<li><code>ISNUMBER(...)</code>: Cek nilai apakah angka (<span class="math inline">\(\mathbb{R}\)</span>).</li>
+<li><code>ISTEXT(...)</code>: Cek nilai apakah teks. Dan <code>ISNONTEXT(...)</code>: Cek niai apakah bukan teks (<em>number</em>, <em>logical</em>, <em>error</em>)</li>
+<li><code>ISFORMULA(...)</code>: Cek nilai apakah formula.</li>
 </ul>
 </section>
 <section id="periksa-jenis-bilangan" class="slide level2">
 <h2>Periksa jenis bilangan</h2>
 <ul>
-<li class="fragment"><code>ISEVEN(...)</code>: Cek nilai apakah bilangan genap.</li>
-<li class="fragment"><code>ISODD(...)</code>: Cek nilai apakah bilangan ganjil.</li>
+<li><code>ISEVEN(...)</code>: Cek nilai apakah bilangan genap.</li>
+<li><code>ISODD(...)</code>: Cek nilai apakah bilangan ganjil.</li>
 </ul>
 </section></section>
 <section>
@@ -1424,32 +1382,23 @@ x + y = x + y,  \{x \in \mathbb{R}, y \in \mathbb{R}\}
 </section>
 <section id="validasi-dengan-isnumber...-1" class="slide level2 smaller">
 <h2>Validasi dengan <code>ISNUMBER(...)</code> (1)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 f : \mathbb{R} \to \mathbb{R}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x} \in \mathbb{R}, \mathbf{y} \in \mathbb{R}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x}
 \mapsto
 \mathbf{x} + 2
 \]</span></p>
 <ul>
-<li class="fragment">Umumnya nilai <span class="math inline">\(\mathbf{y}\)</span> dihitung dengan formula <code>=x+2</code> dengan asumsi <span class="math inline">\(\mathbf{x}\)</span> bernilai <strong>angka</strong> <span class="math inline">\(\{ \mathbf{x} \in \mathbb{R} \}\)</span>.</li>
+<li>Umumnya nilai <span class="math inline">\(\mathbf{y}\)</span> dihitung dengan formula <code>=x+2</code> dengan asumsi <span class="math inline">\(\mathbf{x}\)</span> bernilai <strong>angka</strong> <span class="math inline">\(\{ \mathbf{x} \in \mathbb{R} \}\)</span>.</li>
 </ul>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x}
 =
@@ -1468,14 +1417,12 @@ f(\mathbf{x})
   5 \\ 4 \\ 9
 \end{bmatrix}
 \]</span></p>
-</div>
 </section>
 <section id="validasi-dengan-isnumber...-2" class="slide level2">
 <h2>Validasi dengan <code>ISNUMBER(...)</code> (2)</h2>
 <ul>
-<li class="fragment">Bagaimana jika <span class="math inline">\(\mathbf{x}\)</span> memiliki elemen yang bukan angka yaitu <em>text</em> / <em>error</em> / <em>logical</em>?</li>
+<li>Bagaimana jika <span class="math inline">\(\mathbf{x}\)</span> memiliki elemen yang bukan angka yaitu <em>text</em> / <em>error</em> / <em>logical</em>?</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x}
 =
@@ -1494,14 +1441,12 @@ f(\mathbf{x})
   5 \\ \texttt{#VALUE!} \\ 2
 \end{bmatrix}
 \]</span></p>
-</div>
 </section>
 <section id="validasi-dengan-isnumber...-3" class="slide level2 smaller">
 <h2>Validasi dengan <code>ISNUMBER(...)</code> (3)</h2>
 <ul>
-<li class="fragment">Validasi input menggunakan <code>ISNUMBER(...)</code></li>
+<li>Validasi input menggunakan <code>ISNUMBER(...)</code></li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x}
 =
@@ -1525,8 +1470,6 @@ f(\mathbf{x})
   \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
 \end{bmatrix}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{bmatrix}
   \texttt{TRUE} \\ \texttt{FALSE} \\ \texttt{TRUE}
@@ -1546,8 +1489,6 @@ f(\mathbf{x})
 =
 \texttt{FALSE}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{x}
 \mapsto
@@ -1567,11 +1508,9 @@ f(\mathbf{x})
 =
 \texttt{FALSE}
 \]</span></p>
-</div>
 </section>
 <section id="validasi-dengan-isnumber...-4" class="slide level2 smaller">
 <h2>Validasi dengan <code>ISNUMBER(...)</code> (4)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{equation}
   \mathbf{x}
@@ -1590,10 +1529,9 @@ f(\mathbf{x})
 \end{equation}
 \]</span></p>
 <ul>
-<li class="fragment">Validasi ini dapat diimplementasikan ketika terdapat ketidakpastian jika <span class="math inline">\(\mathbf{x}\)</span> dapat bernilai bukan angka (<span class="math inline">\(\mathbf{x} \in \mathbb{R} \lor \mathbf{x} \notin \mathbb{R}\)</span>)</li>
-<li class="fragment">Solusi lain dengan melakukan <em>filter</em> pada <span class="math inline">\(\mathbf{x}\)</span> dan hanya mengambil elemen yang angka dengan <code>FILTER(...)</code>.</li>
+<li>Validasi ini dapat diimplementasikan ketika terdapat ketidakpastian jika <span class="math inline">\(\mathbf{x}\)</span> dapat bernilai bukan angka (<span class="math inline">\(\mathbf{x} \in \mathbb{R} \lor \mathbf{x} \notin \mathbb{R}\)</span>)</li>
+<li>Solusi lain dengan melakukan <em>filter</em> pada <span class="math inline">\(\mathbf{x}\)</span> dan hanya mengambil elemen yang angka dengan <code>FILTER(...)</code>.</li>
 </ul>
-</div>
 </section></section>
 <section id="dynamic-array-formula-daf" class="title-slide slide level1 center">
 <h1>3 <em>Dynamic Array Formula</em> (DAF)</h1>
@@ -1608,19 +1546,16 @@ f(\mathbf{x})
 <section id="filter...-1" class="slide level2">
 <h2><code>FILTER(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>FILTER(...)</code>: Fungsi <code>FILTER</code> memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. <sup>1</sup></li>
+<li><code>FILTER(...)</code>: Fungsi <code>FILTER</code> memungkinkan Anda memfilter rentang data berdasarkan kriteria yang ditetapkan. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1"></a>=FILTER(array, include, [if_empty])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">=</span><span class="fu">FILTER</span><span class="op">(</span>array<span class="op">,</span> include<span class="op">,</span> <span class="op">[</span>if_empty<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Argumen <code>include</code> harus berupa <em>vector</em> (kolom atau baris). dan jumlah kolom/baris harus sama dengan <code>array</code>.</li>
-<li class="fragment">Argumen <code>if_empty</code> dapat diisi dengan nilai ketika argumen include kosong atau <code>FALSE</code>.</li>
+<li>Argumen <code>include</code> harus berupa <em>vector</em> (kolom atau baris). dan jumlah kolom/baris harus sama dengan <code>array</code>.</li>
+<li>Argumen <code>if_empty</code> dapat diisi dengan nilai ketika argumen include kosong atau <code>FALSE</code>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn8"><p><a href="https://support.microsoft.com/id-id/office/fungsi-filter-f4f7cb66-82eb-4767-8f7c-4877ad80c759">Fungsi FILTER</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="filter...-2" class="slide level2 smaller">
 <h2><code>FILTER(...)</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{FILTER}
 \left(
@@ -1650,8 +1585,6 @@ f(\mathbf{x})
     \end{bmatrix}
 }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{FILTER}
 \left(
@@ -1680,11 +1613,9 @@ f(\mathbf{x})
     \end{bmatrix}
 }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="filter...-3" class="slide level2 smaller">
 <h2><code>FILTER(...)</code> (3)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{FILTER}
 \left(
@@ -1713,11 +1644,9 @@ f(\mathbf{x})
 =
 \textrm{tidak ada}
 \]</span></p>
-</div>
 </section>
 <section id="filter...-4" class="slide level2 smaller">
 <h2><code>FILTER(...)</code> (4)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{array} = \mathbf{A} \rightarrow \mathbf{A} \in \mathbb{U}^{m \times n}, \{m, n \in \mathbb{N}\ |\ m, n \neq 0 \}
 \]</span></p>
@@ -1725,34 +1654,28 @@ f(\mathbf{x})
 \mathbb{U} = \{ \textrm{seluruh nilai } u \textrm{ yang dapat digunakan di Excel}\}
 \]</span></p>
 <ul>
-<li class="fragment"><span class="math inline">\(m\)</span> menunjukkan jumlah baris dan <span class="math inline">\(n\)</span> menunjukkan jumlah kolom.</li>
+<li><span class="math inline">\(m\)</span> menunjukkan jumlah baris dan <span class="math inline">\(n\)</span> menunjukkan jumlah kolom.</li>
 </ul>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{include} = \mathbf{i} \rightarrow \mathbf{i} \in \mathbb{B}^{k}, \{k = m \lor k = n\}
 \]</span></p>
 <ul>
-<li class="fragment"><span class="math inline">\(\mathbf{i}\)</span> selalu berupa <em>logical vector</em> dengan jumlah baris/kolom <span class="math inline">\(k\)</span> sama dengan <span class="math inline">\(m \lor n\)</span>.</li>
+<li><span class="math inline">\(\mathbf{i}\)</span> selalu berupa <em>logical vector</em> dengan jumlah baris/kolom <span class="math inline">\(k\)</span> sama dengan <span class="math inline">\(m \lor n\)</span>.</li>
 </ul>
-</div>
 </section>
 <section id="unique...-1" class="slide level2 smaller">
 <h2><code>UNIQUE(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>UNIQUE(...)</code>: Fungsi <code>UNIQUE</code> menghasilkan daftar nilai yang unik dalam daftar atau rentang. <sup>1</sup></li>
+<li><code>UNIQUE(...)</code>: Fungsi <code>UNIQUE</code> menghasilkan daftar nilai yang unik dalam daftar atau rentang. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>=UNIQUE(array, [by_col], [exactly_once])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">=</span><span class="fu">UNIQUE</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>by_col<span class="op">],</span> <span class="op">[</span>exactly_once<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Penggunaan argumen <code>by_col</code> untuk mencari nilai unik untuk setiap baris atau kolom. Nilai <em>default</em> argumen <code>by_col &lt;- FALSE</code>.</li>
-<li class="fragment">Argumen <code>exactly_once</code> dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika <code>exactly_once &lt;- TRUE</code>, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai <em>default</em> argumen <code>exactly_once &lt;- FALSE</code>.</li>
+<li>Penggunaan argumen <code>by_col</code> untuk mencari nilai unik untuk setiap baris atau kolom. Nilai <em>default</em> argumen <code>by_col &lt;- FALSE</code>.</li>
+<li>Argumen <code>exactly_once</code> dapat digunakan untuk menyaring nilai unik yang muncul lebih dari satu kali. Jika <code>exactly_once &lt;- TRUE</code>, maka jika terdapat nilai unik yang muncul dua kali akan dihapus. Nilai <em>default</em> argumen <code>exactly_once &lt;- FALSE</code>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn9"><p><a href="https://support.microsoft.com/id-id/office/fungsi-unique-c5ab87fd-30a3-4ce9-9d1a-40204fb85e1e">Fungsi UNIQUE</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="unique...-2" class="slide level2">
 <h2><code>UNIQUE(...)</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{UNIQUE}
 \left(
@@ -1778,7 +1701,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="unique...-3" class="slide level2 smaller">
 <h2><code>UNIQUE(...)</code> (3)</h2>
@@ -1856,19 +1778,16 @@ f(\mathbf{x})
 <section id="sequence...-1" class="slide level2">
 <h2><code>SEQUENCE(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>SEQUENCE(...)</code>: Fungsi <code>SEQUENCE</code> memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti <span class="math inline">\({1, 2, 3, 4, \dots}\)</span>. <sup>1</sup></li>
+<li><code>SEQUENCE(...)</code>: Fungsi <code>SEQUENCE</code> memungkinkan Anda menghasilkan daftar angka yang berurutan dalam larik seperti <span class="math inline">\({1, 2, 3, 4, \dots}\)</span>. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1"></a>=SEQUENCE(rows, [columns], [start], [step])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">=</span><span class="fu">SEQUENCE</span><span class="op">(</span>rows<span class="op">,</span> <span class="op">[</span>columns<span class="op">],</span> <span class="op">[</span>start<span class="op">],</span> <span class="op">[</span>step<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Hasil <code>SEQUENCE(...) =&gt; numeric vector/array</code>.</li>
-<li class="fragment">Nilai <em>default</em> argumen: <code>columns &lt;- 1</code>, <code>start &lt;- 1</code>, <code>step &lt;- 1</code>.</li>
+<li>Hasil <code>SEQUENCE(...) =&gt; numeric vector/array</code>.</li>
+<li>Nilai <em>default</em> argumen: <code>columns &lt;- 1</code>, <code>start &lt;- 1</code>, <code>step &lt;- 1</code>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn10"><p><a href="https://support.microsoft.com/id-id/office/fungsi-sequence-57467a98-57e0-4817-9f14-2eb78519ca90">Fungsi SEQUENCE</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="sequence...-2" class="slide level2 smaller">
 <h2><code>SEQUENCE(...)</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SEQUENCE}
 \left(
@@ -1887,8 +1806,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SEQUENCE}
 \left(
@@ -1909,11 +1826,9 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="sequence...-3" class="slide level2 smaller">
 <h2><code>SEQUENCE(...)</code> (3)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SEQUENCE}
 \left(
@@ -1938,8 +1853,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SEQUENCE}
 \left(
@@ -1968,24 +1881,20 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="randarray...-1" class="slide level2 smaller">
 <h2><code>RANDARRAY(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>RANDARRAY(...)</code>: Fungsi <code>RANDARRAY</code> menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. <sup>1</sup></li>
+<li><code>RANDARRAY(...)</code>: Fungsi <code>RANDARRAY</code> menghasilkan larik angka acak. Anda dapat menentukan jumlah baris dan kolom yang akan diisi, nilai minimum dan maksimum, dan apakah fungsi mengembalikan bilangan bulat atau nilai desimal. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1"></a>=RANDARRAY([rows], [columns], [min], [max], [whole_number])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">=</span><span class="fu">RANDARRAY</span><span class="op">([</span>rows<span class="op">],</span> <span class="op">[</span>columns<span class="op">],</span> <span class="op">[</span>min<span class="op">],</span> <span class="op">[</span>max<span class="op">],</span> <span class="op">[</span>whole_number<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Nilai <em>default</em> argumen: <code>rows &lt;- 1</code>, <code>columns &lt;- 1</code>, <code>min &lt;- 0</code>, <code>max &lt;- 1</code>, <code>whole_number &lt;- FALSE</code>.</li>
-<li class="fragment">Jika tidak diisi argumen maka hasil <code>RANDARRAY()</code> adalah bilangan <em>real</em> <span class="math inline">\(\mathbb{R}\)</span> acak dengan rentang <span class="math inline">\([0, 1]\)</span>.</li>
+<li>Nilai <em>default</em> argumen: <code>rows &lt;- 1</code>, <code>columns &lt;- 1</code>, <code>min &lt;- 0</code>, <code>max &lt;- 1</code>, <code>whole_number &lt;- FALSE</code>.</li>
+<li>Jika tidak diisi argumen maka hasil <code>RANDARRAY()</code> adalah bilangan <em>real</em> <span class="math inline">\(\mathbb{R}\)</span> acak dengan rentang <span class="math inline">\([0, 1]\)</span>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn11"><p><a href="https://support.microsoft.com/id-id/office/randarray-fungsi-randarray-21261e55-3bec-4885-86a6-8b0a47fd4d33">Fungsi RANDARRAY</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="randarray...-2" class="slide level2 smaller">
 <h2><code>RANDARRAY(...)</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{RANDARRAY}
 \left(
@@ -2002,8 +1911,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{RANDARRAY}
 \left(
@@ -2024,11 +1931,9 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="randarray...-3" class="slide level2 smaller">
 <h2><code>RANDARRAY(...)</code> (3)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{RANDARRAY}
 \left(
@@ -2057,8 +1962,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{RANDARRAY}
 \left(
@@ -2091,7 +1994,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="menyusun-data" class="title-slide slide level1 center">
@@ -2101,18 +2003,15 @@ f(\mathbf{x})
 <section id="sort...-1" class="slide level2">
 <h2><code>SORT(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>SORT(...)</code>: Fungsi <code>SORT</code> mengurutkan konten rentang atau larik. <sup>1</sup></li>
+<li><code>SORT(...)</code>: Fungsi <code>SORT</code> mengurutkan konten rentang atau larik. <sup>1</sup></li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb10-1"><a href="#cb10-1"></a>=SORT(array, [sort_index], [sort_order], [by_col])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Nilai <em>default</em> argumen: <code>sort_index &lt;- 1</code>, <code>sort_order &lt;- 1 (Ascending)</code>, <code>by_col &lt;- FALSE</code>.</li>
+<li>Nilai <em>default</em> argumen: <code>sort_index &lt;- 1</code>, <code>sort_order &lt;- 1 (Ascending)</code>, <code>by_col &lt;- FALSE</code>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn12"><p><a href="https://support.microsoft.com/id-id/office/fungsi-sort-22f63bd0-ccc8-492f-953d-c20e8e44b86c">Fungsi SORT</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="sort...-2" class="slide level2 smaller">
 <h2><code>SORT(...)</code> (2)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SORT}
 \left(
@@ -2133,8 +2032,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SORT}
 \left(
@@ -2159,11 +2056,9 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="sort...-3" class="slide level2 smaller">
 <h2><code>SORT(...)</code> (3)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SORT}
 \left(
@@ -2192,8 +2087,6 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{SORT}
 \left(
@@ -2226,21 +2119,18 @@ f(\mathbf{x})
       \end{bmatrix}
   }_{\textit{hasil}}
 \]</span></p>
-</div>
 </section>
 <section id="sortby...-1" class="slide level2 smaller">
 <h2><code>SORTBY(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>SORTBY(...)</code>: Fungsi <code>SORTBY</code> mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. <sup>1</sup></li>
+<li><code>SORTBY(...)</code>: Fungsi <code>SORTBY</code> mengurutkan konten rentang atau larik berdasarkan nilai dalam rentang atau larik yang terkait. <sup>1</sup></li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource vb number-lines code-with-copy"><code class="sourceCode monobasic"><span id="cb11-1"><a href="#cb11-1"></a>=SORTBY(array, by_array1, [sort_order1], [by_array2], [sort_order2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Nilai default <code>sort_order &lt;- 1</code> (<em>ascending</em>).</li>
-<li class="fragment">Nilai <code>by_array</code> harus berupa vektor atau <em>array</em> 1 dimensi. Dan jenisnya harus sama dengan nilai <code>by_array</code> lainnya (tidak boleh berbeda dimensinya).</li>
-<li class="fragment">Jika diurutkan hanya berdasarkan satu <em>array</em> dan berdasarkan kolom/baris di dalam <em>array</em> tersebut, sebaiknya menggunakan <code>SORT</code>.</li>
+<li>Nilai default <code>sort_order &lt;- 1</code> (<em>ascending</em>).</li>
+<li>Nilai <code>by_array</code> harus berupa vektor atau <em>array</em> 1 dimensi. Dan jenisnya harus sama dengan nilai <code>by_array</code> lainnya (tidak boleh berbeda dimensinya).</li>
+<li>Jika diurutkan hanya berdasarkan satu <em>array</em> dan berdasarkan kolom/baris di dalam <em>array</em> tersebut, sebaiknya menggunakan <code>SORT</code>.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn13"><p><a href="https://support.microsoft.com/id-id/office/fungsi-sortby-cd2d7a62-1b93-435c-b561-d6a35134f28f">Fungsi SORTBY</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="sortby...-2" class="slide level2 smaller">
 <h2><code>SORTBY(...)</code> (2)</h2>
@@ -2420,20 +2310,16 @@ f(\mathbf{x})
 <section id="xlookup...-1" class="slide level2">
 <h2><code>XLOOKUP(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>XLOOKUP(...)</code>: Fungsi <code>XLOOKUP</code> mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, <code>XLOOKUP</code> dapat mengembalikan kecocokan terdekat (perkiraan). <sup>1</sup></li>
+<li><code>XLOOKUP(...)</code>: Fungsi <code>XLOOKUP</code> mencari rentang atau array, lalu mengembalikan item yang terkait dengan kecocokan pertama yang ditemukannya. Jika tidak ada kecocokan, <code>XLOOKUP</code> dapat mengembalikan kecocokan terdekat (perkiraan). <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1"></a>=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">=</span><span class="fu">XLOOKUP</span><span class="op">(</span>lookup_value<span class="op">,</span> lookup_array<span class="op">,</span> return_array<span class="op">,</span> <span class="op">[</span>if_not_found<span class="op">],</span> <span class="op">[</span>match_mode<span class="op">],</span> <span class="op">[</span>search_mode<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn14"><p><a href="https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929">Fungsi XLOOKUP</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="xmatch...-1" class="slide level2">
 <h2><code>XMATCH(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>XMATCH(...)</code>: Fungsi <code>XMATCH</code> mengembalikan posisi relatif item dalam array atau rentang sel. <sup>1</sup></li>
+<li><code>XMATCH(...)</code>: Fungsi <code>XMATCH</code> mengembalikan posisi relatif item dalam array atau rentang sel. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1"></a>=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb13-1"><a href="#cb13-1"></a><span class="op">=</span><span class="fu">XMATCH</span><span class="op">(</span>lookup_value<span class="op">,</span> lookup_array<span class="op">,</span> <span class="op">[</span>match_mode<span class="op">],</span> <span class="op">[</span>search_mode<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn15"><p><a href="https://support.microsoft.com/id-id/office/fungsi-xmatch-d966da31-7a6b-4a13-a1c6-5a33ed6a0312">Fungsi XMATCH</a>, Microsoft Support.</p></li></ol></aside></section></section>
 <section id="fungsi-baru-2019-2021" class="title-slide slide level1 center">
 <h1>4 Fungsi Baru (2019-2021)</h1>
@@ -2448,24 +2334,19 @@ f(\mathbf{x})
 <section id="concat...-dan-textjoin...-1" class="slide level2 smaller">
 <h2><code>CONCAT(...)</code> dan <code>TEXTJOIN(...)</code> (1)</h2>
 <ul>
-<li class="fragment"><code>CONCAT(...)</code>: Fungsi <code>CONCAT</code> menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. <sup>1</sup></li>
+<li><code>CONCAT(...)</code>: Fungsi <code>CONCAT</code> menggabungkan teks dari beberapa rentang dan/atau string, tetapi tidak menyediakan argumen pemisah atau IgnoreEmpty. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1"></a>=CONCAT(text1, [text2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb14-1"><a href="#cb14-1"></a><span class="op">=</span><span class="fu">CONCAT</span><span class="op">(</span>text1<span class="op">,</span> <span class="op">[</span>text2<span class="op">],</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><code>TEXTJOIN(...)</code>: Fungsi <code>TEXTJOIN</code> menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. <sup>2</sup></li>
+<li><code>TEXTJOIN(...)</code>: Fungsi <code>TEXTJOIN</code> menggabungkan teks dari beberapa rentang dan/atau string, serta menyertakan pemisah yang Anda tentukan antara tiap nilai teks yang akan digabungkan. Jika pemisah adalah string teks kosong, fungsi ini akan secara efektif menggabungkan rentang. <sup>2</sup></li>
 </ul>
-</div>
-<div class="fragment">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1"></a>=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb15-1"><a href="#cb15-1"></a><span class="op">=</span><span class="fu">TEXTJOIN</span><span class="op">(</span>delimiter<span class="op">,</span> ignore_empty<span class="op">,</span> text1<span class="op">,</span> <span class="op">[</span>text2<span class="op">],</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn16"><p><a href="https://support.microsoft.com/id-id/office/concat-fungsi-concat-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2">Fungsi CONCAT</a>, Microsoft Support.</p></li><li id="fn17"><p><a href="https://support.microsoft.com/id-id/office/textjoin-fungsi-textjoin-357b449a-ec91-49d0-80c3-0e8fc845691c">Fungsi TEXTJOIN</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="concat...-dan-textjoin...-2" class="slide level2 smaller">
 <h2><code>CONCAT(...)</code> dan <code>TEXTJOIN(...)</code> (2)</h2>
 <ul>
-<li class="fragment">Hal yang membedakan <code>TEXTJOIN(...)</code> dengan <code>CONCAT(...)</code> adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai <code>TEXTJOIN(...) === CONCAT(...)</code> ketika argumen <code>delimeter &lt;- ""</code> dan <code>ignore_empty &lt;- TRUE</code>.</li>
+<li>Hal yang membedakan <code>TEXTJOIN(...)</code> dengan <code>CONCAT(...)</code> adalah argumen karakter diantara teks gabungan dengan kondisi ketika sel kosong. Nilai <code>TEXTJOIN(...) === CONCAT(...)</code> ketika argumen <code>delimeter &lt;- ""</code> dan <code>ignore_empty &lt;- TRUE</code>.</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{T} =
 \begin{bmatrix}
@@ -2480,11 +2361,9 @@ f(\mathbf{x})
   \texttt{FALSE}\\
 \end{bmatrix}
 \]</span></p>
-</div>
 </section>
 <section id="concat...-dan-textjoin...-3" class="slide level2 smaller">
 <h2><code>CONCAT(...)</code> dan <code>TEXTJOIN(...)</code> (3)</h2>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{T} =
 \begin{bmatrix}
@@ -2499,8 +2378,6 @@ f(\mathbf{x})
   \texttt{FALSE}\\
 \end{bmatrix}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{CONCAT}(\mathbf{T}) =
 \textrm{namasayataruma1pergi3TRUE100FALSE}
@@ -2509,13 +2386,10 @@ f(\mathbf{x})
 \texttt{TEXTJOIN}(\texttt{""}, \texttt{TRUE}, \mathbf{T}) =
 \textrm{namasayataruma1pergi3TRUE100FALSE}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \texttt{TEXTJOIN}(\texttt{" "}, \texttt{TRUE}, \mathbf{T}) =
 \textrm{nama saya taruma 1 pergi 3 TRUE 100 FALSE}
 \]</span></p>
-</div>
 </section></section>
 <section>
 <section id="koleksi-if" class="title-slide slide level1 center">
@@ -2525,17 +2399,13 @@ f(\mathbf{x})
 <section id="ifs...-dan-minifs..." class="slide level2 smaller">
 <h2><code>IFS(...)</code> dan <code>MINIFS(...)</code></h2>
 <ul>
-<li class="fragment"><code>IFS(...)</code>: Fungsi <code>IFS</code> memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi <code>TRUE</code> pertama. <code>IFS</code> dapat menggantikan beberapa pernyataan <code>IF</code> yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. <sup>1</sup></li>
+<li><code>IFS(...)</code>: Fungsi <code>IFS</code> memeriksa apakah satu atau beberapa kondisi terpenuhi dan mengembalikan nilai yang sesuai dengan kondisi <code>TRUE</code> pertama. <code>IFS</code> dapat menggantikan beberapa pernyataan <code>IF</code> yang bertumpuk, dan jauh lebih mudah dibaca dengan beberapa kondisi. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1"></a>=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ..., value_if_false)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">=</span><span class="fu">IFS</span><span class="op">(</span>logical_test1<span class="op">,</span> value_if_true1<span class="op">,</span> <span class="op">[</span>logical_test2<span class="op">,</span> value_if_true2<span class="op">],</span> <span class="op">[</span>logical_test3<span class="op">,</span> value_if_true3<span class="op">],</span> <span class="op">...,</span> value_if_false<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><code>MINIFS(...)</code> / <code>MAXIFS(...)</code>: Fungsi <code>MINIFS</code> mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi <code>MAXIFS</code> mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. <sup>2</sup> <sup>3</sup></li>
+<li><code>MINIFS(...)</code> / <code>MAXIFS(...)</code>: Fungsi <code>MINIFS</code> mengembalikan nilai minimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu / Fungsi <code>MAXIFS</code> mengembalikan nilai maksimal di antara sel yang ditentukan oleh kumpulan persyaratan atau kriteria tertentu. <sup>2</sup> <sup>3</sup></li>
 </ul>
-</div>
-<div class="fragment">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1"></a>=[MIN/MAX]IFS([min/max]_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">=[</span>MIN<span class="op">/</span>MAX<span class="op">]</span><span class="fu">IFS</span><span class="op">([</span>min<span class="op">/</span>max<span class="op">]</span>_range<span class="op">,</span> criteria_range1<span class="op">,</span> criteria1<span class="op">,</span> <span class="op">[</span>criteria_range2<span class="op">,</span> criteria2<span class="op">],</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn18"><p><a href="https://support.microsoft.com/id-id/office/ifs-fungsi-ifs-36329a26-37b2-467c-972b-4a39bd951d45">Fungsi IFS</a>, Microsoft Support.</p></li><li id="fn19"><p><a href="https://support.microsoft.com/id-id/office/minifs-fungsi-minifs-6ca1ddaa-079b-4e74-80cc-72eef32e6599">Fungsi MINIFS</a>, Microsoft Support.</p></li><li id="fn20"><p><a href="https://support.microsoft.com/id-id/office/maxifs-fungsi-maxifs-dfd611e6-da2c-488a-919b-9b6376b28883">Fungsi MAXIFS</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="contoh-ifs-if..." class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">CONTOH <code>IFS</code> (<code>IF(...)</code>)</h2>
@@ -2544,13 +2414,13 @@ f(\mathbf{x})
 [70,85) \Rightarrow \text{B}\\
 [85,\infty) \Rightarrow \text{A}
 \]</span></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a><span class="ot">=</span><span class="fu">IF</span>(</span>
-<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  x <span class="sc">&lt;</span> <span class="dv">70</span>, <span class="st">"C"</span>, </span>
-<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  <span class="fu">IF</span>(</span>
-<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>    x <span class="sc">&lt;</span> <span class="dv">85</span>, <span class="st">"B"</span>,</span>
-<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>    <span class="st">"A"</span>c</span>
-<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>  )</span>
-<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a><span class="op">=</span><span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  x <span class="op">&lt;</span> <span class="dv">70</span><span class="op">,</span> <span class="st">"C"</span><span class="op">,</span> </span>
+<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>    x <span class="op">&lt;</span> <span class="dv">85</span><span class="op">,</span> <span class="st">"B"</span><span class="op">,</span></span>
+<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>    <span class="st">"A"</span></span>
+<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>  <span class="op">)</span></span>
+<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="contoh-ifs-ifs..." class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">CONTOH <code>IFS</code> (<code>IFS(...)</code>)</h2>
@@ -2559,34 +2429,27 @@ f(\mathbf{x})
 [70,85) \Rightarrow \text{B}\\
 [85,\infty) \Rightarrow \text{A}
 \]</span></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a><span class="ot">=</span><span class="fu">IFS</span>(</span>
-<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  x <span class="sc">&lt;</span> <span class="dv">70</span>, <span class="st">"C"</span>, </span>
-<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>  x <span class="sc">&lt;</span> <span class="dv">85</span>, <span class="st">"B"</span>,</span>
-<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  <span class="cn">TRUE</span>, <span class="st">"A"</span></span>
-<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a><span class="op">=</span><span class="fu">IFS</span><span class="op">(</span></span>
+<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  x <span class="op">&lt;</span> <span class="dv">70</span><span class="op">,</span> <span class="st">"C"</span><span class="op">,</span> </span>
+<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>  x <span class="op">&lt;</span> <span class="dv">85</span><span class="op">,</span> <span class="st">"B"</span><span class="op">,</span></span>
+<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  TRUE<span class="op">,</span> <span class="st">"A"</span></span>
+<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="switch...-dan-let..." class="title-slide slide level1 center">
 <h1><code>SWITCH(...)</code> dan <code>LET(...)</code></h1>
-
-</section>
-<section id="switch..." class="slide level2">
-<h2><code>SWITCH(...)</code></h2>
+<p>`<code>$ ##</code>SWITCH(…)`</p>
 <ul>
-<li class="fragment"><code>SWITCH(...)</code>: Fungsi <code>SWITCH</code> mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. <sup>1</sup></li>
+<li><code>SWITCH(...)</code>: Fungsi <code>SWITCH</code> mengevaluasi satu nilai (disebut ekspresi) terhadap daftar nilai, dan mengembalikan hasil yang terkait dengan nilai cocok pertama. Jika tidak terdapat kecocokan, nilai default opsional mungkin akan dikembalikan. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1"></a>=SWITCH(expression, value1, result1, [default or value2, result2], ..., [default or value3, result3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">=</span><span class="fu">SWITCH</span><span class="op">(</span>expression<span class="op">,</span> value1<span class="op">,</span> result1<span class="op">,</span> <span class="op">[</span>default or value2<span class="op">,</span> result2<span class="op">],</span> <span class="op">...,</span> <span class="op">[</span>default or value3<span class="op">,</span> result3<span class="op">])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn21"><p><a href="https://support.microsoft.com/id-id/office/switch-fungsi-switch-47ab33c0-28ce-4530-8a45-d532ec4aa25e">Fungsi SWITCH</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="let..." class="slide level2">
 <h2><code>LET(...)</code></h2>
 <ul>
-<li class="fragment"><code>LET(...)</code>: Fungsi <code>LET</code> menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup <code>LET</code> fungsi. Mirip dengan variabel dalam pemrograman, <code>LET</code> dilakukan melalui Excel rumus asli Anda. <sup>1</sup></li>
+<li><code>LET(...)</code>: Fungsi <code>LET</code> menetapkan nama ke hasil perhitungan. Ini memungkinkan menyimpan perhitungan menengah, nilai, atau menetapkan nama di dalam rumus. Nama ini hanya berlaku di dalam lingkup <code>LET</code> fungsi. Mirip dengan variabel dalam pemrograman, <code>LET</code> dilakukan melalui Excel rumus asli Anda. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1"></a>=LET(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name2], ..., calculation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb21-1"><a href="#cb21-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span>name1<span class="op">,</span> name_value1<span class="op">,</span> calculation_or_name2<span class="op">,</span> <span class="op">[</span>name_value2<span class="op">,</span> calculation_or_name2<span class="op">],</span> <span class="op">...,</span> calculation<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside><ol class="aside-footnotes"><li id="fn22"><p><a href="https://support.microsoft.com/id-id/office/fungsi-let-34842dd8-b92b-4d3f-b325-b8b8f9908999">Fungsi LET</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="contoh-let...-dan-switch..." class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">CONTOH <code>LET(...)</code> dan <code>SWITCH(...)</code></h2>
@@ -2597,13 +2460,13 @@ f(\mathbf{x})
 \text{D} \Rightarrow 60,\\
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 \]</span></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a><span class="ot">=</span><span class="fu">IFS</span>(</span>
-<span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  C<span class="sc">$</span><span class="dv">2</span> <span class="ot">=</span> <span class="st">"A"</span>, <span class="dv">90</span>,</span>
-<span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>  C<span class="sc">$</span><span class="dv">2</span> <span class="ot">=</span> <span class="st">"B"</span>, <span class="dv">80</span>,</span>
-<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  C<span class="sc">$</span><span class="dv">2</span> <span class="ot">=</span> <span class="st">"C"</span>, <span class="dv">70</span>,</span>
-<span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  C<span class="sc">$</span><span class="dv">2</span> <span class="ot">=</span> <span class="st">"D"</span>, <span class="dv">60</span>,</span>
-<span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  <span class="cn">TRUE</span>, <span class="dv">20</span></span>
-<span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a><span class="op">=</span><span class="fu">IFS</span><span class="op">(</span></span>
+<span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  C$<span class="dv">2</span> <span class="op">=</span> <span class="st">"A"</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span></span>
+<span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>  C$<span class="dv">2</span> <span class="op">=</span> <span class="st">"B"</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span></span>
+<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  C$<span class="dv">2</span> <span class="op">=</span> <span class="st">"C"</span><span class="op">,</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  C$<span class="dv">2</span> <span class="op">=</span> <span class="st">"D"</span><span class="op">,</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  TRUE<span class="op">,</span> <span class="dv">20</span></span>
+<span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="contoh-let...-dan-switch...-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">CONTOH <code>LET(...)</code> dan <code>SWITCH(...)</code></h2>
@@ -2614,16 +2477,16 @@ f(\mathbf{x})
 \text{D} \Rightarrow 60,\\
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 \]</span></p>
-<div class="sourceCode" id="cb23" data-code-line-numbers="1,2,4-7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  data, C<span class="sc">$</span><span class="dv">2</span>,</span>
-<span id="cb23-3" class="hljs-ln-code"><a href="#cb23-3"></a>  <span class="fu">IFS</span>(</span>
-<span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>    <span class="at">data =</span> <span class="st">"A"</span>, <span class="dv">90</span>,</span>
-<span id="cb23-5" class="hljs-ln-code"><a href="#cb23-5"></a>    <span class="at">data =</span> <span class="st">"B"</span>, <span class="dv">80</span>,</span>
-<span id="cb23-6" class="hljs-ln-code"><a href="#cb23-6"></a>    <span class="at">data =</span> <span class="st">"C"</span>, <span class="dv">70</span>,</span>
-<span id="cb23-7" class="hljs-ln-code"><a href="#cb23-7"></a>    <span class="at">data =</span> <span class="st">"D"</span>, <span class="dv">60</span>,</span>
-<span id="cb23-8" class="hljs-ln-code"><a href="#cb23-8"></a>    <span class="cn">TRUE</span>, <span class="dv">20</span></span>
-<span id="cb23-9" class="hljs-ln-code"><a href="#cb23-9"></a>  )</span>
-<span id="cb23-10" class="hljs-ln-code"><a href="#cb23-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-code-line-numbers="1,2,4-7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  data<span class="op">,</span> C$<span class="dv">2</span><span class="op">,</span></span>
+<span id="cb23-3" class="hljs-ln-code"><a href="#cb23-3"></a>  <span class="fu">IFS</span><span class="op">(</span></span>
+<span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>    data <span class="op">=</span> <span class="st">"A"</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span></span>
+<span id="cb23-5" class="hljs-ln-code"><a href="#cb23-5"></a>    data <span class="op">=</span> <span class="st">"B"</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span></span>
+<span id="cb23-6" class="hljs-ln-code"><a href="#cb23-6"></a>    data <span class="op">=</span> <span class="st">"C"</span><span class="op">,</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb23-7" class="hljs-ln-code"><a href="#cb23-7"></a>    data <span class="op">=</span> <span class="st">"D"</span><span class="op">,</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb23-8" class="hljs-ln-code"><a href="#cb23-8"></a>    TRUE<span class="op">,</span> <span class="dv">20</span></span>
+<span id="cb23-9" class="hljs-ln-code"><a href="#cb23-9"></a>  <span class="op">)</span></span>
+<span id="cb23-10" class="hljs-ln-code"><a href="#cb23-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="contoh-let...-dan-switch...-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">CONTOH <code>LET(...)</code> dan <code>SWITCH(...)</code></h2>
@@ -2634,17 +2497,17 @@ f(\mathbf{x})
 \text{D} \Rightarrow 60,\\
 \notin \{\text{A}, \text{B}, \text{C}, \text{D}\} \Rightarrow 20
 \]</span></p>
-<div class="sourceCode" id="cb24" data-code-line-numbers="3-10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  data, C<span class="sc">$</span><span class="dv">2</span>,</span>
-<span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>  <span class="fu">SWITCH</span>(</span>
-<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>    data,</span>
-<span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a>    <span class="st">"A"</span>, <span class="dv">90</span>,</span>
-<span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a>    <span class="st">"B"</span>, <span class="dv">80</span>,</span>
-<span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a>    <span class="st">"C"</span>, <span class="dv">70</span>,</span>
-<span id="cb24-8" class="hljs-ln-code"><a href="#cb24-8"></a>    <span class="st">"D"</span>, <span class="dv">60</span>,</span>
+<div class="sourceCode" id="cb24" data-code-line-numbers="3-10"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  data<span class="op">,</span> C$<span class="dv">2</span><span class="op">,</span></span>
+<span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>  <span class="fu">SWITCH</span><span class="op">(</span></span>
+<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>    data<span class="op">,</span></span>
+<span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a>    <span class="st">"A"</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span></span>
+<span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a>    <span class="st">"B"</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span></span>
+<span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a>    <span class="st">"C"</span><span class="op">,</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb24-8" class="hljs-ln-code"><a href="#cb24-8"></a>    <span class="st">"D"</span><span class="op">,</span> <span class="dv">60</span><span class="op">,</span></span>
 <span id="cb24-9" class="hljs-ln-code"><a href="#cb24-9"></a>    <span class="dv">20</span></span>
-<span id="cb24-10" class="hljs-ln-code"><a href="#cb24-10"></a>  )</span>
-<span id="cb24-11" class="hljs-ln-code"><a href="#cb24-11"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-10" class="hljs-ln-code"><a href="#cb24-10"></a>  <span class="op">)</span></span>
+<span id="cb24-11" class="hljs-ln-code"><a href="#cb24-11"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="implementasi-pada-validasi-input" class="title-slide slide level1 center">
@@ -2653,7 +2516,6 @@ f(\mathbf{x})
 </section>
 <section id="kasus-validasi" class="slide level2 smaller">
 <h2>Kasus validasi</h2>
-<div class="fragment">
 <p><span class="math display">\[
 f : \mathbb{R} \to \mathbb{R}
 \]</span></p>
@@ -2668,8 +2530,6 @@ f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
 \mapsto
 \mathbf{x} + 2
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 \begin{equation}
   \mathbf{x}
@@ -2688,14 +2548,12 @@ f(\mathbf{x}) = \mathbf{y} = \mathbf{x} + 2
 \end{equation}
 \]</span></p>
 <ul>
-<li class="fragment"><span class="math inline">\(\mathbf{x}\)</span> akan dievaluasi terlebih dahulu dan di filter dengan memilih elemen yang berupa angka saja.</li>
-<li class="fragment"><span class="math inline">\(\mathbf{x} \mapsto \mathbf{y}\)</span> dengan <span class="math inline">\(y \in \mathbb{R}\)</span> dan <span class="math inline">\(x \in \mathbb{?}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{x}\)</span> akan dievaluasi terlebih dahulu dan di filter dengan memilih elemen yang berupa angka saja.</li>
+<li><span class="math inline">\(\mathbf{x} \mapsto \mathbf{y}\)</span> dengan <span class="math inline">\(y \in \mathbb{R}\)</span> dan <span class="math inline">\(x \in \mathbb{?}\)</span>.</li>
 </ul>
-</div>
 </section>
 <section id="formula" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
-<div class="fragment">
 <p><span class="math display">\[
 g : \mathbf{x} \in \mathbb{?} \to \mathbb{R}
 \]</span></p>
@@ -2712,7 +2570,6 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-</div>
 </section>
 <section id="formula-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2729,9 +2586,9 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb25-1" class="hljs-ln-code"><a href="#cb25-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb25-2" class="hljs-ln-code"><a href="#cb25-2"></a>  ...</span>
-<span id="cb25-3" class="hljs-ln-code"><a href="#cb25-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb25-1" class="hljs-ln-code"><a href="#cb25-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb25-2" class="hljs-ln-code"><a href="#cb25-2"></a>  <span class="op">...</span></span>
+<span id="cb25-3" class="hljs-ln-code"><a href="#cb25-3"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formula-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2748,10 +2605,10 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb26" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a>  x, H8<span class="sc">:</span>H15,</span>
-<span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>  ...</span>
-<span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26" data-code-line-numbers="2-3"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a>  x<span class="op">,</span> H8<span class="op">:</span>H15<span class="op">,</span></span>
+<span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>  <span class="op">...</span></span>
+<span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formula-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2768,11 +2625,11 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb27" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a href="#cb27-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb27-2" class="hljs-ln-code"><a href="#cb27-2"></a>  x, H8<span class="sc">:</span>H15,</span>
-<span id="cb27-3" class="hljs-ln-code"><a href="#cb27-3"></a>  logical_isnumber, <span class="fu">ISNUMBER</span>(x),</span>
-<span id="cb27-4" class="hljs-ln-code"><a href="#cb27-4"></a>  ...</span>
-<span id="cb27-5" class="hljs-ln-code"><a href="#cb27-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27" data-code-line-numbers="3-4"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb27-1" class="hljs-ln-code"><a href="#cb27-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb27-2" class="hljs-ln-code"><a href="#cb27-2"></a>  x<span class="op">,</span> H8<span class="op">:</span>H15<span class="op">,</span></span>
+<span id="cb27-3" class="hljs-ln-code"><a href="#cb27-3"></a>  logical_isnumber<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>x<span class="op">),</span></span>
+<span id="cb27-4" class="hljs-ln-code"><a href="#cb27-4"></a>  <span class="op">...</span></span>
+<span id="cb27-5" class="hljs-ln-code"><a href="#cb27-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formula-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2789,12 +2646,12 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb28" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a>  x, H8<span class="sc">:</span>H15,</span>
-<span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a>  logical_isnumber, <span class="fu">ISNUMBER</span>(x),</span>
-<span id="cb28-4" class="hljs-ln-code"><a href="#cb28-4"></a>  y, <span class="fu">FILTER</span>(x, logical_isnumber),</span>
-<span id="cb28-5" class="hljs-ln-code"><a href="#cb28-5"></a>  ...</span>
-<span id="cb28-6" class="hljs-ln-code"><a href="#cb28-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28" data-code-line-numbers="3-5"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a>  x<span class="op">,</span> H8<span class="op">:</span>H15<span class="op">,</span></span>
+<span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a>  logical_isnumber<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>x<span class="op">),</span></span>
+<span id="cb28-4" class="hljs-ln-code"><a href="#cb28-4"></a>  y<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>x<span class="op">,</span> logical_isnumber<span class="op">),</span></span>
+<span id="cb28-5" class="hljs-ln-code"><a href="#cb28-5"></a>  <span class="op">...</span></span>
+<span id="cb28-6" class="hljs-ln-code"><a href="#cb28-6"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formula-5" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2811,11 +2668,11 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb29" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb29-1" class="hljs-ln-code"><a href="#cb29-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb29-2" class="hljs-ln-code"><a href="#cb29-2"></a>  x, H8<span class="sc">:</span>H15,</span>
-<span id="cb29-3" class="hljs-ln-code"><a href="#cb29-3"></a>  y, <span class="fu">FILTER</span>(x, <span class="fu">ISNUMBER</span>(x)),</span>
-<span id="cb29-4" class="hljs-ln-code"><a href="#cb29-4"></a>  y <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb29-5" class="hljs-ln-code"><a href="#cb29-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29" data-code-line-numbers="3-4"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb29-1" class="hljs-ln-code"><a href="#cb29-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb29-2" class="hljs-ln-code"><a href="#cb29-2"></a>  x<span class="op">,</span> H8<span class="op">:</span>H15<span class="op">,</span></span>
+<span id="cb29-3" class="hljs-ln-code"><a href="#cb29-3"></a>  y<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>x<span class="op">)),</span></span>
+<span id="cb29-4" class="hljs-ln-code"><a href="#cb29-4"></a>  y <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb29-5" class="hljs-ln-code"><a href="#cb29-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formula-6" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Formula</h2>
@@ -2832,11 +2689,11 @@ g(\mathbf{x}) = f(
 =
 \mathbf{y} + 2
 \]</span></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a href="#cb30-1"></a><span class="ot">=</span><span class="fu">LET</span>(</span>
-<span id="cb30-2" class="hljs-ln-code"><a href="#cb30-2"></a>  x, H8<span class="sc">:</span>H15,</span>
-<span id="cb30-3" class="hljs-ln-code"><a href="#cb30-3"></a>  y, <span class="fu">FILTER</span>(x, <span class="fu">ISNUMBER</span>(x)),</span>
-<span id="cb30-4" class="hljs-ln-code"><a href="#cb30-4"></a>  y <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb30-5" class="hljs-ln-code"><a href="#cb30-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb30-1" class="hljs-ln-code"><a href="#cb30-1"></a><span class="op">=</span><span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb30-2" class="hljs-ln-code"><a href="#cb30-2"></a>  x<span class="op">,</span> H8<span class="op">:</span>H15<span class="op">,</span></span>
+<span id="cb30-3" class="hljs-ln-code"><a href="#cb30-3"></a>  y<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>x<span class="op">)),</span></span>
+<span id="cb30-4" class="hljs-ln-code"><a href="#cb30-4"></a>  y <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb30-5" class="hljs-ln-code"><a href="#cb30-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="user-defined-lambda-udl-dengan-lambda" class="title-slide slide level1 center">
@@ -2846,71 +2703,67 @@ g(\mathbf{x}) = f(
 <section id="lambda-dan-udl" class="slide level2 smaller">
 <h2><code>LAMBDA</code> dan UDL</h2>
 <ul>
-<li class="fragment"><code>LAMBDA(...)</code>: Gunakan fungsi <code>LAMBDA</code> untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. <sup>1</sup></li>
+<li><code>LAMBDA(...)</code>: Gunakan fungsi <code>LAMBDA</code> untuk membuat fungsi kustom yang dapat digunakan kembali dan memanggilnya dengan nama yang mudah dikenali. Fungsi baru tersedia di seluruh buku kerja dan disebut seperti fungsi asli Excel. <sup>1</sup></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a href="#cb31-1"></a>=LAMBDA(parameter1, [parameter2, parameter3, ...], calculation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span>parameter1<span class="op">,</span> <span class="op">[</span>parameter2<span class="op">,</span> parameter3<span class="op">,</span> <span class="op">...],</span> calculation<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><em>User Defined Lambda</em> (UDL) sama halnya dengan <em>User Defined Function</em> (UDF) hanya spesifik pada penggunaan <code>LAMBDA</code>. UDF sendiri adalah fungsi yang dibuat oleh pengguna.</li>
+<li><em>User Defined Lambda</em> (UDL) sama halnya dengan <em>User Defined Function</em> (UDF) hanya spesifik pada penggunaan <code>LAMBDA</code>. UDF sendiri adalah fungsi yang dibuat oleh pengguna.</li>
 </ul>
-</div>
 <aside><ol class="aside-footnotes"><li id="fn23"><p><a href="https://support.microsoft.com/id-id/office/fungsi-lambda-bd212d27-1cd1-4321-a34a-ccbf254b8b67">Fungsi LAMBDA</a>, Microsoft Support.</p></li></ol></aside></section>
 <section id="lambda-dan-let" class="slide level2">
 <h2><code>LAMBDA</code> dan <code>LET</code></h2>
 <ul>
-<li class="fragment"><code>LAMBDA</code> dan <code>LET</code> biasanya digunakan bersamaan untuk memudahkan pembuatan UDL ataupun membaca/<em>troubleshooting</em>.</li>
-<li class="fragment"><code>LAMBDA</code> berfungsi menerima <code>input</code> dan membungkusnya sebagai fungsi baru di Excel sebagai UDL.</li>
-<li class="fragment"><code>LET</code> digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari <code>LAMBDA</code>.</li>
-<li class="fragment">Jika UDL cukup sederhana, <code>LET</code> tidak perlu digunakan.</li>
+<li><code>LAMBDA</code> dan <code>LET</code> biasanya digunakan bersamaan untuk memudahkan pembuatan UDL ataupun membaca/<em>troubleshooting</em>.</li>
+<li><code>LAMBDA</code> berfungsi menerima <code>input</code> dan membungkusnya sebagai fungsi baru di Excel sebagai UDL.</li>
+<li><code>LET</code> digunakan untuk melakukan perhitungan/kalkulasi setelah menerima input dari <code>LAMBDA</code>.</li>
+<li>Jika UDL cukup sederhana, <code>LET</code> tidak perlu digunakan.</li>
 </ul>
 </section>
 <section id="sintaks-lambda-dan-let" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Sintaks <code>LAMBDA</code> dan <code>LET</code></h2>
-<div class="fragment">
-<div class="sourceCode" id="cb32" data-code-line-numbers="true"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(parameter1, [parameter2, parameter3, ...], calculation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32" data-code-line-numbers="true"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span>parameter1<span class="op">,</span> <span class="op">[</span>parameter2<span class="op">,</span> parameter3<span class="op">,</span> <span class="op">...],</span> calculation<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Untuk memudahkan membaca kode, buat baris baru diantara <code>(...)</code>.</li>
+<li>Untuk memudahkan membaca kode, buat baris baru diantara <code>(...)</code>.</li>
 </ul>
-</div>
 </section>
 <section id="sintaks-lambda-dan-let-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Sintaks <code>LAMBDA</code> dan <code>LET</code></h2>
-<div class="sourceCode" id="cb33" data-code-line-numbers="2-4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb33-1" class="hljs-ln-code"><a href="#cb33-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb33-2" class="hljs-ln-code"><a href="#cb33-2"></a>  parameter1, </span>
-<span id="cb33-3" class="hljs-ln-code"><a href="#cb33-3"></a>  [parameter2, parameter3, ...],</span>
+<div class="sourceCode" id="cb33" data-code-line-numbers="2-4"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb33-1" class="hljs-ln-code"><a href="#cb33-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb33-2" class="hljs-ln-code"><a href="#cb33-2"></a>  parameter1<span class="op">,</span> </span>
+<span id="cb33-3" class="hljs-ln-code"><a href="#cb33-3"></a>  <span class="op">[</span>parameter2<span class="op">,</span> parameter3<span class="op">,</span> <span class="op">...],</span></span>
 <span id="cb33-4" class="hljs-ln-code"><a href="#cb33-4"></a>  calculation</span>
-<span id="cb33-5" class="hljs-ln-code"><a href="#cb33-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-5" class="hljs-ln-code"><a href="#cb33-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Ubah <code>calculation</code> dengan <code>LET(...)</code>.</li>
+<li>Ubah <code>calculation</code> dengan <code>LET(...)</code>.</li>
 </ul>
 </section>
 <section id="sintaks-lambda-dan-let-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Sintaks <code>LAMBDA</code> dan <code>LET</code></h2>
-<div class="sourceCode" id="cb34" data-code-line-numbers="4-8|"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a href="#cb34-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb34-2" class="hljs-ln-code"><a href="#cb34-2"></a>  parameter1, </span>
-<span id="cb34-3" class="hljs-ln-code"><a href="#cb34-3"></a>  [parameter2, parameter3, ...],</span>
-<span id="cb34-4" class="hljs-ln-code"><a href="#cb34-4"></a>  <span class="fu">LET</span>(</span>
-<span id="cb34-5" class="hljs-ln-code"><a href="#cb34-5"></a>    name1, value1,</span>
-<span id="cb34-6" class="hljs-ln-code"><a href="#cb34-6"></a>    [name2, value2, name3, value3, ...],</span>
+<div class="sourceCode" id="cb34" data-code-line-numbers="4-8|"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb34-1" class="hljs-ln-code"><a href="#cb34-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb34-2" class="hljs-ln-code"><a href="#cb34-2"></a>  parameter1<span class="op">,</span> </span>
+<span id="cb34-3" class="hljs-ln-code"><a href="#cb34-3"></a>  <span class="op">[</span>parameter2<span class="op">,</span> parameter3<span class="op">,</span> <span class="op">...],</span></span>
+<span id="cb34-4" class="hljs-ln-code"><a href="#cb34-4"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb34-5" class="hljs-ln-code"><a href="#cb34-5"></a>    name1<span class="op">,</span> value1<span class="op">,</span></span>
+<span id="cb34-6" class="hljs-ln-code"><a href="#cb34-6"></a>    <span class="op">[</span>name2<span class="op">,</span> value2<span class="op">,</span> name3<span class="op">,</span> value3<span class="op">,</span> <span class="op">...],</span></span>
 <span id="cb34-7" class="hljs-ln-code"><a href="#cb34-7"></a>    calculation</span>
-<span id="cb34-8" class="hljs-ln-code"><a href="#cb34-8"></a>  )</span>
-<span id="cb34-9" class="hljs-ln-code"><a href="#cb34-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-8" class="hljs-ln-code"><a href="#cb34-8"></a>  <span class="op">)</span></span>
+<span id="cb34-9" class="hljs-ln-code"><a href="#cb34-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Argumen <code>parameter</code> yang berasal dari <code>LAMBDA</code>, dapat langsung digunakan di <code>LET</code> tanpa melakukan pendefinisian ulang.</li>
+<li>Argumen <code>parameter</code> yang berasal dari <code>LAMBDA</code>, dapat langsung digunakan di <code>LET</code> tanpa melakukan pendefinisian ulang.</li>
 </ul>
 </section>
 <section id="sintaks-lambda-dan-let-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Sintaks <code>LAMBDA</code> dan <code>LET</code></h2>
-<div class="sourceCode" id="cb35" data-code-line-numbers="2-4,6-8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb35-1" class="hljs-ln-code"><a href="#cb35-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb35-2" class="hljs-ln-code"><a href="#cb35-2"></a>  parameter1, </span>
-<span id="cb35-3" class="hljs-ln-code"><a href="#cb35-3"></a>  parameter2,</span>
-<span id="cb35-4" class="hljs-ln-code"><a href="#cb35-4"></a>  parameter3,</span>
-<span id="cb35-5" class="hljs-ln-code"><a href="#cb35-5"></a>  <span class="fu">LET</span>(</span>
-<span id="cb35-6" class="hljs-ln-code"><a href="#cb35-6"></a>    name1, parameter1 <span class="sc">+</span> parameter2,</span>
-<span id="cb35-7" class="hljs-ln-code"><a href="#cb35-7"></a>    name2, parameter3 <span class="sc">-</span> name1</span>
-<span id="cb35-8" class="hljs-ln-code"><a href="#cb35-8"></a>    name1 <span class="sc">/</span> parameter2</span>
-<span id="cb35-9" class="hljs-ln-code"><a href="#cb35-9"></a>  )</span>
-<span id="cb35-10" class="hljs-ln-code"><a href="#cb35-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35" data-code-line-numbers="2-4,6-8"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb35-1" class="hljs-ln-code"><a href="#cb35-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb35-2" class="hljs-ln-code"><a href="#cb35-2"></a>  parameter1<span class="op">,</span> </span>
+<span id="cb35-3" class="hljs-ln-code"><a href="#cb35-3"></a>  parameter2<span class="op">,</span></span>
+<span id="cb35-4" class="hljs-ln-code"><a href="#cb35-4"></a>  parameter3<span class="op">,</span></span>
+<span id="cb35-5" class="hljs-ln-code"><a href="#cb35-5"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb35-6" class="hljs-ln-code"><a href="#cb35-6"></a>    name1<span class="op">,</span> parameter1 <span class="op">+</span> parameter2<span class="op">,</span></span>
+<span id="cb35-7" class="hljs-ln-code"><a href="#cb35-7"></a>    name2<span class="op">,</span> parameter3 <span class="op">-</span> name1</span>
+<span id="cb35-8" class="hljs-ln-code"><a href="#cb35-8"></a>    name1 <span class="op">/</span> parameter2</span>
+<span id="cb35-9" class="hljs-ln-code"><a href="#cb35-9"></a>  <span class="op">)</span></span>
+<span id="cb35-10" class="hljs-ln-code"><a href="#cb35-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
 <li><code>parameter2</code> bisa langsung digunakan pada <code>LET</code> tanpa pendefinisian ulang.</li>
@@ -2925,9 +2778,8 @@ g(\mathbf{x}) = f(
 <section id="deskripsi-kasus" class="slide level2">
 <h2>Deskripsi Kasus</h2>
 <ul>
-<li class="fragment">Mengurangi setiap elemen dari <em>numeric vector</em> (<span class="math inline">\(\mathbf{x}\)</span>) dengan setengah dari rata-ratanya (<span class="math inline">\(\frac{\texttt{mean}(\mathbf{x})}{2}\)</span>).</li>
+<li>Mengurangi setiap elemen dari <em>numeric vector</em> (<span class="math inline">\(\mathbf{x}\)</span>) dengan setengah dari rata-ratanya (<span class="math inline">\(\frac{\texttt{mean}(\mathbf{x})}{2}\)</span>).</li>
 </ul>
-<div class="fragment">
 <p><span class="math display">\[
 f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
 \]</span></p>
@@ -2937,28 +2789,23 @@ f(\mathbf{x}) =
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-</div>
 </section>
 <section id="fungsi-lambda" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Fungsi <code>LAMBDA</code></h2>
-<div class="fragment">
 <p><span class="math display">\[
 f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-</div>
-<div class="fragment">
-<div class="sourceCode" id="cb36" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb36-1" class="hljs-ln-code"><a href="#cb36-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb36-2" class="hljs-ln-code"><a href="#cb36-2"></a>  parameter1, </span>
-<span id="cb36-3" class="hljs-ln-code"><a href="#cb36-3"></a>  [parameter2, parameter3, ...],</span>
+<div class="sourceCode" id="cb36" data-code-line-numbers="2-3"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb36-1" class="hljs-ln-code"><a href="#cb36-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb36-2" class="hljs-ln-code"><a href="#cb36-2"></a>  parameter1<span class="op">,</span> </span>
+<span id="cb36-3" class="hljs-ln-code"><a href="#cb36-3"></a>  <span class="op">[</span>parameter2<span class="op">,</span> parameter3<span class="op">,</span> <span class="op">...],</span></span>
 <span id="cb36-4" class="hljs-ln-code"><a href="#cb36-4"></a>  calculation</span>
-<span id="cb36-5" class="hljs-ln-code"><a href="#cb36-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5" class="hljs-ln-code"><a href="#cb36-5"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">menentukan <em>input</em> variabel untuk fungsi <code>LAMBDA</code>.</li>
-<li class="fragment"><span class="math inline">\(f(\mathbf{x})\)</span> menunjukkan input fungsi <span class="math inline">\(f\)</span> hanya vektor <span class="math inline">\(\mathbf{x}\)</span></li>
+<li>menentukan <em>input</em> variabel untuk fungsi <code>LAMBDA</code>.</li>
+<li><span class="math inline">\(f(\mathbf{x})\)</span> menunjukkan input fungsi <span class="math inline">\(f\)</span> hanya vektor <span class="math inline">\(\mathbf{x}\)</span></li>
 </ul>
-</div>
 </section>
 <section id="input-lambda" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>input</em> <code>LAMBDA</code></h2>
@@ -2967,12 +2814,12 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb37" data-code-line-numbers="2|3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb37-2" class="hljs-ln-code"><a href="#cb37-2"></a>  vector,</span>
+<div class="sourceCode" id="cb37" data-code-line-numbers="2|3"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb37-2" class="hljs-ln-code"><a href="#cb37-2"></a>  vector<span class="op">,</span></span>
 <span id="cb37-3" class="hljs-ln-code"><a href="#cb37-3"></a>  calculation</span>
-<span id="cb37-4" class="hljs-ln-code"><a href="#cb37-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-4" class="hljs-ln-code"><a href="#cb37-4"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Karena fungsi <span class="math inline">\(f\)</span> memiliki perhitungan <code>AVERAGE(...)</code>, yang sebaiknya disimpan di variabel sementara, maka diperlukan kalkulasi menggunakan <code>LET(...)</code>.</li>
+<li>Karena fungsi <span class="math inline">\(f\)</span> memiliki perhitungan <code>AVERAGE(...)</code>, yang sebaiknya disimpan di variabel sementara, maka diperlukan kalkulasi menggunakan <code>LET(...)</code>.</li>
 </ul>
 </section>
 <section id="menggunakan-let" class="slide level2" data-auto-animate="true">
@@ -2982,16 +2829,16 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb38" data-code-line-numbers="3-7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb38-2" class="hljs-ln-code"><a href="#cb38-2"></a>  vector,</span>
-<span id="cb38-3" class="hljs-ln-code"><a href="#cb38-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb38-4" class="hljs-ln-code"><a href="#cb38-4"></a>    name1, value1,</span>
-<span id="cb38-5" class="hljs-ln-code"><a href="#cb38-5"></a>    [name2, value2, name3, value3, ...],</span>
+<div class="sourceCode" id="cb38" data-code-line-numbers="3-7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb38-2" class="hljs-ln-code"><a href="#cb38-2"></a>  vector<span class="op">,</span></span>
+<span id="cb38-3" class="hljs-ln-code"><a href="#cb38-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb38-4" class="hljs-ln-code"><a href="#cb38-4"></a>    name1<span class="op">,</span> value1<span class="op">,</span></span>
+<span id="cb38-5" class="hljs-ln-code"><a href="#cb38-5"></a>    <span class="op">[</span>name2<span class="op">,</span> value2<span class="op">,</span> name3<span class="op">,</span> value3<span class="op">,</span> <span class="op">...],</span></span>
 <span id="cb38-6" class="hljs-ln-code"><a href="#cb38-6"></a>    calculation</span>
-<span id="cb38-7" class="hljs-ln-code"><a href="#cb38-7"></a>  )</span>
-<span id="cb38-8" class="hljs-ln-code"><a href="#cb38-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-7" class="hljs-ln-code"><a href="#cb38-7"></a>  <span class="op">)</span></span>
+<span id="cb38-8" class="hljs-ln-code"><a href="#cb38-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Karena pada persamaan asli <span class="math inline">\(f\)</span> menggunakan simbol <span class="math inline">\(\mathbf{x}\)</span>, bisa dilakukan <em>assignment</em> / pendefinisian berupa <code>x &lt;- vector</code>.</li>
+<li>Karena pada persamaan asli <span class="math inline">\(f\)</span> menggunakan simbol <span class="math inline">\(\mathbf{x}\)</span>, bisa dilakukan <em>assignment</em> / pendefinisian berupa <code>x &lt;- vector</code>.</li>
 </ul>
 </section>
 <section id="argumen-redundant-berulang" class="slide level2 smaller" data-auto-animate="true">
@@ -3001,17 +2848,17 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb39" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb39-1" class="hljs-ln-code"><a href="#cb39-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb39-2" class="hljs-ln-code"><a href="#cb39-2"></a>  vector,</span>
-<span id="cb39-3" class="hljs-ln-code"><a href="#cb39-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb39-4" class="hljs-ln-code"><a href="#cb39-4"></a>    x, vector,</span>
-<span id="cb39-5" class="hljs-ln-code"><a href="#cb39-5"></a>    ..., ...,</span>
+<div class="sourceCode" id="cb39" data-code-line-numbers="4"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb39-1" class="hljs-ln-code"><a href="#cb39-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb39-2" class="hljs-ln-code"><a href="#cb39-2"></a>  vector<span class="op">,</span></span>
+<span id="cb39-3" class="hljs-ln-code"><a href="#cb39-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb39-4" class="hljs-ln-code"><a href="#cb39-4"></a>    x<span class="op">,</span> vector<span class="op">,</span></span>
+<span id="cb39-5" class="hljs-ln-code"><a href="#cb39-5"></a>    <span class="op">...,</span> <span class="op">...,</span></span>
 <span id="cb39-6" class="hljs-ln-code"><a href="#cb39-6"></a>    calculation</span>
-<span id="cb39-7" class="hljs-ln-code"><a href="#cb39-7"></a>  )</span>
-<span id="cb39-8" class="hljs-ln-code"><a href="#cb39-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-7" class="hljs-ln-code"><a href="#cb39-7"></a>  <span class="op">)</span></span>
+<span id="cb39-8" class="hljs-ln-code"><a href="#cb39-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><code>x &lt;- vector</code> merupakan argumen yang tidak perlu (<em>redundant</em> / berulang) dikarenakan tidak ada modifikasi pada input <em>vector</em>.</li>
-<li class="fragment">Selain itu, pada proses pengembangan <code>LAMBDA</code> lebih baik menggunakan nama variabel yang mudah diingat atau dipahami.</li>
+<li><code>x &lt;- vector</code> merupakan argumen yang tidak perlu (<em>redundant</em> / berulang) dikarenakan tidak ada modifikasi pada input <em>vector</em>.</li>
+<li>Selain itu, pada proses pengembangan <code>LAMBDA</code> lebih baik menggunakan nama variabel yang mudah diingat atau dipahami.</li>
 </ul>
 </section>
 <section id="perhitungan-dalam-fungsi-let" class="slide level2 smaller" data-auto-animate="true">
@@ -3021,31 +2868,25 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb40" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb40-2"><a href="#cb40-2"></a>  vector,</span>
-<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb40-4"><a href="#cb40-4"></a>    ..., ...,</span>
+<div class="sourceCode" id="cb40" data-code-line-numbers="4"><pre class="sourceCode numberSource scala number-lines code-with-copy"><code class="sourceCode scala"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  vector<span class="op">,</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="op">...,</span> <span class="op">...,</span></span>
 <span id="cb40-5"><a href="#cb40-5"></a>    calculation</span>
-<span id="cb40-6"><a href="#cb40-6"></a>  )</span>
-<span id="cb40-7"><a href="#cb40-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="op">)</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Nilai rata-rata bisa disimpan sebagai variabel <code>avg</code>.</li>
+<li>Nilai rata-rata bisa disimpan sebagai variabel <code>avg</code>.</li>
 </ul>
-<div class="fragment">
 <div class="sourceCode" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>avg <span class="ot">&lt;-</span> <span class="fu">AVERAGE</span>(vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Variabel <code>halfavg</code> menyatakan nilai setengah dari rata-rata vektor.</li>
+<li>Variabel <code>halfavg</code> menyatakan nilai setengah dari rata-rata vektor.</li>
 </ul>
-</div>
-<div class="fragment">
 <div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>halfavg <span class="ot">&lt;-</span> avg <span class="sc">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Hasil akhir dapat disimpan sebagai variabel <code>result</code>.</li>
+<li>Hasil akhir dapat disimpan sebagai variabel <code>result</code>.</li>
 </ul>
-</div>
-<div class="fragment">
 <div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>result <span class="ot">&lt;-</span> vector <span class="sc">-</span> halfavg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="mengisi-hasil-dari-lambda" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Mengisi hasil dari <code>LAMBDA</code></h2>
@@ -3054,18 +2895,18 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb44" data-code-line-numbers="4-6|7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb44-1" class="hljs-ln-code"><a href="#cb44-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb44-2" class="hljs-ln-code"><a href="#cb44-2"></a>  vector,</span>
-<span id="cb44-3" class="hljs-ln-code"><a href="#cb44-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb44-4" class="hljs-ln-code"><a href="#cb44-4"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb44-5" class="hljs-ln-code"><a href="#cb44-5"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb44-6" class="hljs-ln-code"><a href="#cb44-6"></a>    result, vector <span class="sc">-</span> halfavg,</span>
-<span id="cb44-7" class="hljs-ln-code"><a href="#cb44-7"></a>    ...</span>
-<span id="cb44-8" class="hljs-ln-code"><a href="#cb44-8"></a>  )</span>
-<span id="cb44-9" class="hljs-ln-code"><a href="#cb44-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44" data-code-line-numbers="4-6|7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb44-1" class="hljs-ln-code"><a href="#cb44-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb44-2" class="hljs-ln-code"><a href="#cb44-2"></a>  vector<span class="op">,</span></span>
+<span id="cb44-3" class="hljs-ln-code"><a href="#cb44-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb44-4" class="hljs-ln-code"><a href="#cb44-4"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb44-5" class="hljs-ln-code"><a href="#cb44-5"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb44-6" class="hljs-ln-code"><a href="#cb44-6"></a>    result<span class="op">,</span> vector <span class="op">-</span> halfavg<span class="op">,</span></span>
+<span id="cb44-7" class="hljs-ln-code"><a href="#cb44-7"></a>    <span class="op">...</span></span>
+<span id="cb44-8" class="hljs-ln-code"><a href="#cb44-8"></a>  <span class="op">)</span></span>
+<span id="cb44-9" class="hljs-ln-code"><a href="#cb44-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Fungsi <code>LAMBDA</code> ini masih belum mengeluarkan hasil atau <em>return</em> dari fungsinya.</li>
-<li class="fragment">Pada argumen terakhir <code>LET</code> disampaikan kembali hasil yang diperoleh dari seluruh perhitungan. Yaitu <code>result</code>.</li>
+<li>Fungsi <code>LAMBDA</code> ini masih belum mengeluarkan hasil atau <em>return</em> dari fungsinya.</li>
+<li>Pada argumen terakhir <code>LET</code> disampaikan kembali hasil yang diperoleh dari seluruh perhitungan. Yaitu <code>result</code>.</li>
 </ul>
 </section>
 <section id="menghindari-pendefinisian-berulang" class="slide level2 smaller" data-auto-animate="true">
@@ -3075,17 +2916,17 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb45" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb45-1" class="hljs-ln-code"><a href="#cb45-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb45-2" class="hljs-ln-code"><a href="#cb45-2"></a>  vector,</span>
-<span id="cb45-3" class="hljs-ln-code"><a href="#cb45-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb45-4" class="hljs-ln-code"><a href="#cb45-4"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb45-5" class="hljs-ln-code"><a href="#cb45-5"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb45-6" class="hljs-ln-code"><a href="#cb45-6"></a>    result, vector <span class="sc">-</span> halfavg,</span>
+<div class="sourceCode" id="cb45" data-code-line-numbers="6-7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb45-1" class="hljs-ln-code"><a href="#cb45-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb45-2" class="hljs-ln-code"><a href="#cb45-2"></a>  vector<span class="op">,</span></span>
+<span id="cb45-3" class="hljs-ln-code"><a href="#cb45-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb45-4" class="hljs-ln-code"><a href="#cb45-4"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb45-5" class="hljs-ln-code"><a href="#cb45-5"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb45-6" class="hljs-ln-code"><a href="#cb45-6"></a>    result<span class="op">,</span> vector <span class="op">-</span> halfavg<span class="op">,</span></span>
 <span id="cb45-7" class="hljs-ln-code"><a href="#cb45-7"></a>    result</span>
-<span id="cb45-8" class="hljs-ln-code"><a href="#cb45-8"></a>  )</span>
-<span id="cb45-9" class="hljs-ln-code"><a href="#cb45-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-8" class="hljs-ln-code"><a href="#cb45-8"></a>  <span class="op">)</span></span>
+<span id="cb45-9" class="hljs-ln-code"><a href="#cb45-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Pada baris ke-6 dan ke-7 bisa dibuat lebih sederhana menjadi satu baris dan langsung memberikan <em>return</em> atau hasil dari fungsi <code>LAMBDA</code>.</li>
+<li>Pada baris ke-6 dan ke-7 bisa dibuat lebih sederhana menjadi satu baris dan langsung memberikan <em>return</em> atau hasil dari fungsi <code>LAMBDA</code>.</li>
 </ul>
 </section>
 <section id="formula-akhir" class="slide level2" data-auto-animate="true">
@@ -3095,42 +2936,36 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb46" data-code-line-numbers="6|"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb46-1" class="hljs-ln-code"><a href="#cb46-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb46-2" class="hljs-ln-code"><a href="#cb46-2"></a>  vector,</span>
-<span id="cb46-3" class="hljs-ln-code"><a href="#cb46-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb46-4" class="hljs-ln-code"><a href="#cb46-4"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb46-5" class="hljs-ln-code"><a href="#cb46-5"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb46-6" class="hljs-ln-code"><a href="#cb46-6"></a>    vector <span class="sc">-</span> halfavg</span>
-<span id="cb46-7" class="hljs-ln-code"><a href="#cb46-7"></a>  )</span>
-<span id="cb46-8" class="hljs-ln-code"><a href="#cb46-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46" data-code-line-numbers="6|"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb46-1" class="hljs-ln-code"><a href="#cb46-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb46-2" class="hljs-ln-code"><a href="#cb46-2"></a>  vector<span class="op">,</span></span>
+<span id="cb46-3" class="hljs-ln-code"><a href="#cb46-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb46-4" class="hljs-ln-code"><a href="#cb46-4"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb46-5" class="hljs-ln-code"><a href="#cb46-5"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb46-6" class="hljs-ln-code"><a href="#cb46-6"></a>    vector <span class="op">-</span> halfavg</span>
+<span id="cb46-7" class="hljs-ln-code"><a href="#cb46-7"></a>  <span class="op">)</span></span>
+<span id="cb46-8" class="hljs-ln-code"><a href="#cb46-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Fungsi <code>LAMBDA</code> sudah lengkap dan bisa langsung digunakan.</li>
+<li>Fungsi <code>LAMBDA</code> sudah lengkap dan bisa langsung digunakan.</li>
 </ul>
 </section>
 <section id="rekap" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Rekap</h2>
-<div class="fragment">
 <p><span class="math display">\[
 f : \mathbf{x} \in \mathbb{R} \to \mathbb{R}
 \]</span></p>
-</div>
-<div class="fragment">
 <p><span class="math display">\[
 f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-</div>
-<div class="fragment">
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb47-1" class="hljs-ln-code"><a href="#cb47-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb47-2" class="hljs-ln-code"><a href="#cb47-2"></a>  vector,</span>
-<span id="cb47-3" class="hljs-ln-code"><a href="#cb47-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb47-4" class="hljs-ln-code"><a href="#cb47-4"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb47-5" class="hljs-ln-code"><a href="#cb47-5"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb47-6" class="hljs-ln-code"><a href="#cb47-6"></a>    vector <span class="sc">-</span> halfavg</span>
-<span id="cb47-7" class="hljs-ln-code"><a href="#cb47-7"></a>  )</span>
-<span id="cb47-8" class="hljs-ln-code"><a href="#cb47-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb47-1" class="hljs-ln-code"><a href="#cb47-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb47-2" class="hljs-ln-code"><a href="#cb47-2"></a>  vector<span class="op">,</span></span>
+<span id="cb47-3" class="hljs-ln-code"><a href="#cb47-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb47-4" class="hljs-ln-code"><a href="#cb47-4"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb47-5" class="hljs-ln-code"><a href="#cb47-5"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb47-6" class="hljs-ln-code"><a href="#cb47-6"></a>    vector <span class="op">-</span> halfavg</span>
+<span id="cb47-7" class="hljs-ln-code"><a href="#cb47-7"></a>  <span class="op">)</span></span>
+<span id="cb47-8" class="hljs-ln-code"><a href="#cb47-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="menggunakan-formula-di-excel-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Menggunakan formula di Excel (1)</h2>
@@ -3142,16 +2977,16 @@ f(\mathbf{x})
 =
 \mathbf{x} - \frac{\texttt{AVERAGE}(\mathbf{x})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb48-1" class="hljs-ln-code"><a href="#cb48-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb48-2" class="hljs-ln-code"><a href="#cb48-2"></a>  vector,</span>
-<span id="cb48-3" class="hljs-ln-code"><a href="#cb48-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb48-4" class="hljs-ln-code"><a href="#cb48-4"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb48-5" class="hljs-ln-code"><a href="#cb48-5"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb48-6" class="hljs-ln-code"><a href="#cb48-6"></a>    vector <span class="sc">-</span> halfavg</span>
-<span id="cb48-7" class="hljs-ln-code"><a href="#cb48-7"></a>  )</span>
-<span id="cb48-8" class="hljs-ln-code"><a href="#cb48-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb48-1" class="hljs-ln-code"><a href="#cb48-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb48-2" class="hljs-ln-code"><a href="#cb48-2"></a>  vector<span class="op">,</span></span>
+<span id="cb48-3" class="hljs-ln-code"><a href="#cb48-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb48-4" class="hljs-ln-code"><a href="#cb48-4"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb48-5" class="hljs-ln-code"><a href="#cb48-5"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb48-6" class="hljs-ln-code"><a href="#cb48-6"></a>    vector <span class="op">-</span> halfavg</span>
+<span id="cb48-7" class="hljs-ln-code"><a href="#cb48-7"></a>  <span class="op">)</span></span>
+<span id="cb48-8" class="hljs-ln-code"><a href="#cb48-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Salin formula diatas dan simpan sebagai fungsi bernama <code>HALFAVG(...)</code>.</li>
+<li>Salin formula diatas dan simpan sebagai fungsi bernama <code>HALFAVG(...)</code>.</li>
 </ul>
 </section>
 <section id="menggunakan-formula-di-excel-2" class="slide level2">
@@ -3176,15 +3011,15 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb49" data-code-line-numbers="2,4,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb49-1" class="hljs-ln-code"><a href="#cb49-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb49-2" class="hljs-ln-code"><a href="#cb49-2"></a>  vector,</span>
-<span id="cb49-3" class="hljs-ln-code"><a href="#cb49-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb49-4" class="hljs-ln-code"><a href="#cb49-4"></a>    ...,...,</span>
-<span id="cb49-5" class="hljs-ln-code"><a href="#cb49-5"></a>    avg, <span class="fu">AVERAGE</span>(vector),</span>
-<span id="cb49-6" class="hljs-ln-code"><a href="#cb49-6"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb49-7" class="hljs-ln-code"><a href="#cb49-7"></a>    vector <span class="sc">-</span> halfavg</span>
-<span id="cb49-8" class="hljs-ln-code"><a href="#cb49-8"></a>  )</span>
-<span id="cb49-9" class="hljs-ln-code"><a href="#cb49-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49" data-code-line-numbers="2,4,5,7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb49-1" class="hljs-ln-code"><a href="#cb49-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb49-2" class="hljs-ln-code"><a href="#cb49-2"></a>  vector<span class="op">,</span></span>
+<span id="cb49-3" class="hljs-ln-code"><a href="#cb49-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb49-4" class="hljs-ln-code"><a href="#cb49-4"></a>    <span class="op">...,...,</span></span>
+<span id="cb49-5" class="hljs-ln-code"><a href="#cb49-5"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb49-6" class="hljs-ln-code"><a href="#cb49-6"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb49-7" class="hljs-ln-code"><a href="#cb49-7"></a>    vector <span class="op">-</span> halfavg</span>
+<span id="cb49-8" class="hljs-ln-code"><a href="#cb49-8"></a>  <span class="op">)</span></span>
+<span id="cb49-9" class="hljs-ln-code"><a href="#cb49-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="validasi-input-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Validasi <em>input</em> (2)</h2>
@@ -3193,15 +3028,15 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb50" data-code-line-numbers="2,4,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb50-1" class="hljs-ln-code"><a href="#cb50-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb50-2" class="hljs-ln-code"><a href="#cb50-2"></a>  vector,</span>
-<span id="cb50-3" class="hljs-ln-code"><a href="#cb50-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb50-4" class="hljs-ln-code"><a href="#cb50-4"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb50-5" class="hljs-ln-code"><a href="#cb50-5"></a>    avg, <span class="fu">AVERAGE</span>(vector_filtered),</span>
-<span id="cb50-6" class="hljs-ln-code"><a href="#cb50-6"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb50-7" class="hljs-ln-code"><a href="#cb50-7"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb50-8" class="hljs-ln-code"><a href="#cb50-8"></a>  )</span>
-<span id="cb50-9" class="hljs-ln-code"><a href="#cb50-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50" data-code-line-numbers="2,4,5,7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb50-1" class="hljs-ln-code"><a href="#cb50-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb50-2" class="hljs-ln-code"><a href="#cb50-2"></a>  vector<span class="op">,</span></span>
+<span id="cb50-3" class="hljs-ln-code"><a href="#cb50-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb50-4" class="hljs-ln-code"><a href="#cb50-4"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb50-5" class="hljs-ln-code"><a href="#cb50-5"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">),</span></span>
+<span id="cb50-6" class="hljs-ln-code"><a href="#cb50-6"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb50-7" class="hljs-ln-code"><a href="#cb50-7"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb50-8" class="hljs-ln-code"><a href="#cb50-8"></a>  <span class="op">)</span></span>
+<span id="cb50-9" class="hljs-ln-code"><a href="#cb50-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="refactoring-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Refactoring</em> (1)</h2>
@@ -3210,18 +3045,18 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb51" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb51-1" class="hljs-ln-code"><a href="#cb51-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb51-2" class="hljs-ln-code"><a href="#cb51-2"></a>  vector,</span>
-<span id="cb51-3" class="hljs-ln-code"><a href="#cb51-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb51-4" class="hljs-ln-code"><a href="#cb51-4"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb51-5" class="hljs-ln-code"><a href="#cb51-5"></a>    avg, <span class="fu">AVERAGE</span>(vector_filtered),</span>
-<span id="cb51-6" class="hljs-ln-code"><a href="#cb51-6"></a>    halfavg, avg <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb51-7" class="hljs-ln-code"><a href="#cb51-7"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb51-8" class="hljs-ln-code"><a href="#cb51-8"></a>  )</span>
-<span id="cb51-9" class="hljs-ln-code"><a href="#cb51-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51" data-code-line-numbers="5-6"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb51-1" class="hljs-ln-code"><a href="#cb51-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb51-2" class="hljs-ln-code"><a href="#cb51-2"></a>  vector<span class="op">,</span></span>
+<span id="cb51-3" class="hljs-ln-code"><a href="#cb51-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb51-4" class="hljs-ln-code"><a href="#cb51-4"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb51-5" class="hljs-ln-code"><a href="#cb51-5"></a>    avg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">),</span></span>
+<span id="cb51-6" class="hljs-ln-code"><a href="#cb51-6"></a>    halfavg<span class="op">,</span> avg <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb51-7" class="hljs-ln-code"><a href="#cb51-7"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb51-8" class="hljs-ln-code"><a href="#cb51-8"></a>  <span class="op">)</span></span>
+<span id="cb51-9" class="hljs-ln-code"><a href="#cb51-9"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><em>Refactoring</em> merupakan perubahan dari kode program yang sudah ada tanpa mengubah hasil dari program tersebut.</li>
-<li class="fragment">variabel <code>avg</code> bisa langsung diterapkan pada variabel <code>halfavg</code>.</li>
+<li><em>Refactoring</em> merupakan perubahan dari kode program yang sudah ada tanpa mengubah hasil dari program tersebut.</li>
+<li>variabel <code>avg</code> bisa langsung diterapkan pada variabel <code>halfavg</code>.</li>
 </ul>
 </section>
 <section id="refactoring-2" class="slide level2" data-auto-animate="true">
@@ -3231,14 +3066,14 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 \]</span></p>
-<div class="sourceCode" id="cb52" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb52-1" class="hljs-ln-code"><a href="#cb52-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb52-2" class="hljs-ln-code"><a href="#cb52-2"></a>  vector,</span>
-<span id="cb52-3" class="hljs-ln-code"><a href="#cb52-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb52-4" class="hljs-ln-code"><a href="#cb52-4"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb52-5" class="hljs-ln-code"><a href="#cb52-5"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb52-6" class="hljs-ln-code"><a href="#cb52-6"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb52-7" class="hljs-ln-code"><a href="#cb52-7"></a>  )</span>
-<span id="cb52-8" class="hljs-ln-code"><a href="#cb52-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52" data-code-line-numbers="5"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb52-1" class="hljs-ln-code"><a href="#cb52-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb52-2" class="hljs-ln-code"><a href="#cb52-2"></a>  vector<span class="op">,</span></span>
+<span id="cb52-3" class="hljs-ln-code"><a href="#cb52-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb52-4" class="hljs-ln-code"><a href="#cb52-4"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb52-5" class="hljs-ln-code"><a href="#cb52-5"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb52-6" class="hljs-ln-code"><a href="#cb52-6"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb52-7" class="hljs-ln-code"><a href="#cb52-7"></a>  <span class="op">)</span></span>
+<span id="cb52-8" class="hljs-ln-code"><a href="#cb52-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="optional-argument-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Optional argument</em> (1)</h2>
@@ -3247,7 +3082,6 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{2}
 \]</span></p>
-<div class="fragment">
 <p><span class="math display">\[
 \mathbf{y}, n \mapsto g(\mathbf{y}, n)
 =
@@ -3262,7 +3096,6 @@ g(\mathbf{y})
   \end{cases}
 \end{equation}
 \]</span></p>
-</div>
 </section>
 <section id="optional-argument-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Optional argument</em> (2)</h2>
@@ -3271,14 +3104,14 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 \]</span></p>
-<div class="sourceCode" id="cb53" data-code-line-numbers="true"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb53-1" class="hljs-ln-code"><a href="#cb53-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb53-2" class="hljs-ln-code"><a href="#cb53-2"></a>  vector,</span>
-<span id="cb53-3" class="hljs-ln-code"><a href="#cb53-3"></a>  <span class="fu">LET</span>(</span>
-<span id="cb53-4" class="hljs-ln-code"><a href="#cb53-4"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb53-5" class="hljs-ln-code"><a href="#cb53-5"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb53-6" class="hljs-ln-code"><a href="#cb53-6"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb53-7" class="hljs-ln-code"><a href="#cb53-7"></a>  )</span>
-<span id="cb53-8" class="hljs-ln-code"><a href="#cb53-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53" data-code-line-numbers="true"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb53-1" class="hljs-ln-code"><a href="#cb53-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb53-2" class="hljs-ln-code"><a href="#cb53-2"></a>  vector<span class="op">,</span></span>
+<span id="cb53-3" class="hljs-ln-code"><a href="#cb53-3"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb53-4" class="hljs-ln-code"><a href="#cb53-4"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb53-5" class="hljs-ln-code"><a href="#cb53-5"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb53-6" class="hljs-ln-code"><a href="#cb53-6"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb53-7" class="hljs-ln-code"><a href="#cb53-7"></a>  <span class="op">)</span></span>
+<span id="cb53-8" class="hljs-ln-code"><a href="#cb53-8"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="optional-argument-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Optional argument</em> (3)</h2>
@@ -3287,16 +3120,16 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 \]</span></p>
-<div class="sourceCode" id="cb54" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb54-1" class="hljs-ln-code"><a href="#cb54-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb54-2" class="hljs-ln-code"><a href="#cb54-2"></a>  vector,</span>
-<span id="cb54-3" class="hljs-ln-code"><a href="#cb54-3"></a>  ...,</span>
-<span id="cb54-4" class="hljs-ln-code"><a href="#cb54-4"></a>  <span class="fu">LET</span>(</span>
-<span id="cb54-5" class="hljs-ln-code"><a href="#cb54-5"></a>    ...,...,</span>
-<span id="cb54-6" class="hljs-ln-code"><a href="#cb54-6"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb54-7" class="hljs-ln-code"><a href="#cb54-7"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> <span class="dv">2</span>,</span>
-<span id="cb54-8" class="hljs-ln-code"><a href="#cb54-8"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb54-9" class="hljs-ln-code"><a href="#cb54-9"></a>  )</span>
-<span id="cb54-10" class="hljs-ln-code"><a href="#cb54-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb54-1" class="hljs-ln-code"><a href="#cb54-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb54-2" class="hljs-ln-code"><a href="#cb54-2"></a>  vector<span class="op">,</span></span>
+<span id="cb54-3" class="hljs-ln-code"><a href="#cb54-3"></a>  <span class="op">...,</span></span>
+<span id="cb54-4" class="hljs-ln-code"><a href="#cb54-4"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb54-5" class="hljs-ln-code"><a href="#cb54-5"></a>    <span class="op">...,...,</span></span>
+<span id="cb54-6" class="hljs-ln-code"><a href="#cb54-6"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb54-7" class="hljs-ln-code"><a href="#cb54-7"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb54-8" class="hljs-ln-code"><a href="#cb54-8"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb54-9" class="hljs-ln-code"><a href="#cb54-9"></a>  <span class="op">)</span></span>
+<span id="cb54-10" class="hljs-ln-code"><a href="#cb54-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="optional-argument-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Optional argument</em> (4)</h2>
@@ -3305,16 +3138,16 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 \]</span></p>
-<div class="sourceCode" id="cb55" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb55-1" class="hljs-ln-code"><a href="#cb55-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb55-2" class="hljs-ln-code"><a href="#cb55-2"></a>  vector,</span>
-<span id="cb55-3" class="hljs-ln-code"><a href="#cb55-3"></a>  [n],</span>
-<span id="cb55-4" class="hljs-ln-code"><a href="#cb55-4"></a>  <span class="fu">LET</span>(</span>
-<span id="cb55-5" class="hljs-ln-code"><a href="#cb55-5"></a>    ...,...,</span>
-<span id="cb55-6" class="hljs-ln-code"><a href="#cb55-6"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb55-7" class="hljs-ln-code"><a href="#cb55-7"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> n,</span>
-<span id="cb55-8" class="hljs-ln-code"><a href="#cb55-8"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb55-9" class="hljs-ln-code"><a href="#cb55-9"></a>  )</span>
-<span id="cb55-10" class="hljs-ln-code"><a href="#cb55-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb55-1" class="hljs-ln-code"><a href="#cb55-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb55-2" class="hljs-ln-code"><a href="#cb55-2"></a>  vector<span class="op">,</span></span>
+<span id="cb55-3" class="hljs-ln-code"><a href="#cb55-3"></a>  <span class="op">[</span>n<span class="op">],</span></span>
+<span id="cb55-4" class="hljs-ln-code"><a href="#cb55-4"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb55-5" class="hljs-ln-code"><a href="#cb55-5"></a>    <span class="op">...,...,</span></span>
+<span id="cb55-6" class="hljs-ln-code"><a href="#cb55-6"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb55-7" class="hljs-ln-code"><a href="#cb55-7"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> n<span class="op">,</span></span>
+<span id="cb55-8" class="hljs-ln-code"><a href="#cb55-8"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb55-9" class="hljs-ln-code"><a href="#cb55-9"></a>  <span class="op">)</span></span>
+<span id="cb55-10" class="hljs-ln-code"><a href="#cb55-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="optional-argument-5" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><em>Optional argument</em> (5)</h2>
@@ -3323,16 +3156,16 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 \]</span></p>
-<div class="sourceCode" id="cb56" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb56-1" class="hljs-ln-code"><a href="#cb56-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb56-2" class="hljs-ln-code"><a href="#cb56-2"></a>  vector,</span>
-<span id="cb56-3" class="hljs-ln-code"><a href="#cb56-3"></a>  [n],</span>
-<span id="cb56-4" class="hljs-ln-code"><a href="#cb56-4"></a>  <span class="fu">LET</span>(</span>
-<span id="cb56-5" class="hljs-ln-code"><a href="#cb56-5"></a>    n, <span class="fu">IF</span>(<span class="fu">ISOMITTED</span>(n), <span class="dv">2</span>, n),</span>
-<span id="cb56-6" class="hljs-ln-code"><a href="#cb56-6"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb56-7" class="hljs-ln-code"><a href="#cb56-7"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> n,</span>
-<span id="cb56-8" class="hljs-ln-code"><a href="#cb56-8"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb56-9" class="hljs-ln-code"><a href="#cb56-9"></a>  )</span>
-<span id="cb56-10" class="hljs-ln-code"><a href="#cb56-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56" data-code-line-numbers="3,5,7"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb56-1" class="hljs-ln-code"><a href="#cb56-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb56-2" class="hljs-ln-code"><a href="#cb56-2"></a>  vector<span class="op">,</span></span>
+<span id="cb56-3" class="hljs-ln-code"><a href="#cb56-3"></a>  <span class="op">[</span>n<span class="op">],</span></span>
+<span id="cb56-4" class="hljs-ln-code"><a href="#cb56-4"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb56-5" class="hljs-ln-code"><a href="#cb56-5"></a>    n<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>n<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> n<span class="op">),</span></span>
+<span id="cb56-6" class="hljs-ln-code"><a href="#cb56-6"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb56-7" class="hljs-ln-code"><a href="#cb56-7"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> n<span class="op">,</span></span>
+<span id="cb56-8" class="hljs-ln-code"><a href="#cb56-8"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb56-9" class="hljs-ln-code"><a href="#cb56-9"></a>  <span class="op">)</span></span>
+<span id="cb56-10" class="hljs-ln-code"><a href="#cb56-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \begin{equation}
   n \mapsto \texttt{ISOMITTED}(n) =
@@ -3350,21 +3183,21 @@ g(\mathbf{y})
 =
 \mathbf{y}_{\textit{filtered}} - \frac{\texttt{AVERAGE}(\mathbf{y}_{\textit{filtered}})}{n}
 \]</span></p>
-<div class="sourceCode" id="cb57" data-code-line-numbers="true"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb57-1" class="hljs-ln-code"><a href="#cb57-1"></a><span class="ot">=</span><span class="fu">LAMBDA</span>(</span>
-<span id="cb57-2" class="hljs-ln-code"><a href="#cb57-2"></a>  vector,</span>
-<span id="cb57-3" class="hljs-ln-code"><a href="#cb57-3"></a>  [n],</span>
-<span id="cb57-4" class="hljs-ln-code"><a href="#cb57-4"></a>  <span class="fu">LET</span>(</span>
-<span id="cb57-5" class="hljs-ln-code"><a href="#cb57-5"></a>    n, <span class="fu">IF</span>(<span class="fu">ISOMITTED</span>(n), <span class="dv">2</span>, n),</span>
-<span id="cb57-6" class="hljs-ln-code"><a href="#cb57-6"></a>    vector_filtered, <span class="fu">FILTER</span>(vector, <span class="fu">ISNUMBER</span>(vector)),</span>
-<span id="cb57-7" class="hljs-ln-code"><a href="#cb57-7"></a>    halfavg, <span class="fu">AVERAGE</span>(vector_filtered) <span class="sc">/</span> n,</span>
-<span id="cb57-8" class="hljs-ln-code"><a href="#cb57-8"></a>    vector_filtered <span class="sc">-</span> halfavg</span>
-<span id="cb57-9" class="hljs-ln-code"><a href="#cb57-9"></a>  )</span>
-<span id="cb57-10" class="hljs-ln-code"><a href="#cb57-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57" data-code-line-numbers="true"><pre class="sourceCode numberSource scala number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode scala hljs"><span id="cb57-1" class="hljs-ln-code"><a href="#cb57-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb57-2" class="hljs-ln-code"><a href="#cb57-2"></a>  vector<span class="op">,</span></span>
+<span id="cb57-3" class="hljs-ln-code"><a href="#cb57-3"></a>  <span class="op">[</span>n<span class="op">],</span></span>
+<span id="cb57-4" class="hljs-ln-code"><a href="#cb57-4"></a>  <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb57-5" class="hljs-ln-code"><a href="#cb57-5"></a>    n<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>n<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> n<span class="op">),</span></span>
+<span id="cb57-6" class="hljs-ln-code"><a href="#cb57-6"></a>    vector_filtered<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>vector<span class="op">,</span> <span class="fu">ISNUMBER</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb57-7" class="hljs-ln-code"><a href="#cb57-7"></a>    halfavg<span class="op">,</span> <span class="fu">AVERAGE</span><span class="op">(</span>vector_filtered<span class="op">)</span> <span class="op">/</span> n<span class="op">,</span></span>
+<span id="cb57-8" class="hljs-ln-code"><a href="#cb57-8"></a>    vector_filtered <span class="op">-</span> halfavg</span>
+<span id="cb57-9" class="hljs-ln-code"><a href="#cb57-9"></a>  <span class="op">)</span></span>
+<span id="cb57-10" class="hljs-ln-code"><a href="#cb57-10"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Formula tersebut disimpan sebagai <code>HALFAVGN</code> di <em>Formulas Name Manager</em>.</li>
-<li class="fragment">Sintaksnya <code>=HALFAVGN(vector, [n])</code>.</li>
-<li class="fragment"><code>=HALFAVGN(D5:D10)</code> (maka <span class="math inline">\(n=2\)</span>).</li>
-<li class="fragment"><code>=HALFAVGN(D5#, 4)</code> (maka <span class="math inline">\(n=4\)</span>).</li>
+<li>Formula tersebut disimpan sebagai <code>HALFAVGN</code> di <em>Formulas Name Manager</em>.</li>
+<li>Sintaksnya <code>=HALFAVGN(vector, [n])</code>.</li>
+<li><code>=HALFAVGN(D5:D10)</code> (maka <span class="math inline">\(n=2\)</span>).</li>
+<li><code>=HALFAVGN(D5#, 4)</code> (maka <span class="math inline">\(n=4\)</span>).</li>
 </ul>
 </section></section>
 <section>
@@ -3375,10 +3208,10 @@ g(\mathbf{y})
 <section id="pengenalan-advanced-formula-environment-afe" class="slide level2">
 <h2>Pengenalan <em>Advanced Formula Environment</em> (AFE)</h2>
 <ul>
-<li class="fragment">Excel add-ins yang memudahkan mengatur kumpulan formula pada lembar kerja.</li>
-<li class="fragment">Alternatif <em>Formulas Name Manager</em>.</li>
-<li class="fragment">Memiliki fitur <em>syntax highlighting</em> dan <em>shortcut</em> umum untuk <em>coding</em>.</li>
-<li class="fragment">Dapat <em>import</em> UDL hasil dari orang lain menggunakan GitHub Gist.</li>
+<li>Excel add-ins yang memudahkan mengatur kumpulan formula pada lembar kerja.</li>
+<li>Alternatif <em>Formulas Name Manager</em>.</li>
+<li>Memiliki fitur <em>syntax highlighting</em> dan <em>shortcut</em> umum untuk <em>coding</em>.</li>
+<li>Dapat <em>import</em> UDL hasil dari orang lain menggunakan GitHub Gist.</li>
 </ul>
 </section>
 <section id="demonstrasi-menggunakan-afe-1" class="slide level2">
