@@ -1,115 +1,171 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "feidlambda",
-    "section": "",
-    "text": "Dalam Pengembangan\n\n\n\nSaat ini feidlambda (koleksi lambda) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca Public Roadmap fiakodev Q4 2022.\n\n\n\n\n\n\n\n\nOfficial GIST feid.utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa\n\nv0.2.0 | v0.1.0 | panduan | source code"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html",
-    "href": "release/feidlambda-0-1-0.html",
-    "title": "feidlambda 0.1.0",
-    "section": "",
-    "text": "Official GIST feid.utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa Pre-release Page (GitHub)\nBerikut daftar fungsi yang tersedia di koleksi feidlambda versi 0.1.0:"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html#repeatcols",
-    "href": "release/feidlambda-0-1-0.html#repeatcols",
-    "title": "feidlambda 0.1.0",
-    "section": "1 REPEATCOLS",
-    "text": "1 REPEATCOLS\n\n\n\n\n\n\n\nfeid.utils.REPEATCOLS\n\nMengulangi vector sebanyak num_repeat dalam bentuk kolom.\n\nreturn\n\nCOLUMN VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nJika num_repeat tidak diisi, maka secara default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.REPEATCOLS(vector, [num_repeat])\n\n\n\n\n\nfeid.utils.REPEATCOLS"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html#sortcols",
-    "href": "release/feidlambda-0-1-0.html#sortcols",
-    "title": "feidlambda 0.1.0",
-    "section": "2 SORTCOLS",
-    "text": "2 SORTCOLS\n\n\n\n\n\n\n\nfeid.utils.SORTCOLS\n\nMenyusun ulang urutan kolom table, berdasarkan table_header yang telah diurutkan.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\n\nJika input table sebagai array, maka pastikan memisahkan antara table_header dengan isinya.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.SORTCOLS(table, table_header)\n\n\n\n\n\nfeid.utils.SORTCOLS"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html#repeatrows",
-    "href": "release/feidlambda-0-1-0.html#repeatrows",
-    "title": "feidlambda 0.1.0",
-    "section": "3 REPEATROWS",
-    "text": "3 REPEATROWS\n\n\n\n\n\n\n\nfeid.utils.REPEATROWS\n\nMengulangi vector sebanyak num_repeat dalam bentuk baris.\n\nreturn\n\nROW VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nJika num_repeat tidak diisi, maka secara default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.REPEATROWS(vector, [num_repeat])\n\n\n\n\n\nfeid.utils.REPEATROWS"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html#reshapecols",
-    "href": "release/feidlambda-0-1-0.html#reshapecols",
-    "title": "feidlambda 0.1.0",
-    "section": "4 RESHAPECOLS",
-    "text": "4 RESHAPECOLS\n\n\n\n\n\n\n\nfeid.utils.RESHAPECOLS\n\nMengubah dimensi array dari dimensi \\(\\text{rows} \\times \\text{cols}\\), menjadi \\(\\text{rows} + \\text{} \\times \\textrm{nsplit}\\) tanpa mengubah susunan baris array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\n\nJika nsplit tidak diisi, maka default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.RESHAPECOLS(array, [nsplit])\n\n\n\n\n\nfeid.utils.RESHAPECOLS"
-  },
-  {
-    "objectID": "release/feidlambda-0-1-0.html#findindex2d",
-    "href": "release/feidlambda-0-1-0.html#findindex2d",
-    "title": "feidlambda 0.1.0",
-    "section": "5 FINDINDEX2D",
-    "text": "5 FINDINDEX2D\n\n\n\n\n\n\n\nfeid.utils.FINDINDEX2D\n\nMencari index suatu elemen dari array dengan keluaran berupa urutan elemennya, posisi baris dan kolom.\n\nreturn\n\nARRAY / ROW VECTOR with {number element; index row; index column}\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.FINDINDEX2D(lookup_value, array)\n\n\n\n\n\nfeid.utils.FINDINDEX2D"
-  },
-  {
     "objectID": "release/feidlambda-0-2-0.html",
     "href": "release/feidlambda-0-2-0.html",
     "title": "feidlambda 0.2.0",
     "section": "",
-    "text": "Official GIST feid.utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa Pre-release Page (GitHub)\nBerikut daftar fungsi yang tersedia di koleksi feidlambda versi 0.2.0:"
+    "text": "Official GIST feid_utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa Pre-release Page (GitHub)\nBerikut daftar fungsi yang tersedia di koleksi feidlambda versi 0.2.0:"
   },
   {
     "objectID": "release/feidlambda-0-2-0.html#comparevector",
     "href": "release/feidlambda-0-2-0.html#comparevector",
     "title": "feidlambda 0.2.0",
     "section": "6 COMPAREVECTOR",
-    "text": "6 COMPAREVECTOR\n\n\n\n\n\n\n\nfeid.utils.COMPAREVECTOR\n\nMemeriksa apakah setiap elemen di left_vector memiliki nilai yang sama di isian right_vector.\n\nreturn\n\nLOGICAL VECTOR\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.COMPAREVECTOR(left_vector, right_vector)\n\n\n\n\n\nfeid.utils.COMPAREVECTOR"
+    "text": "6 COMPAREVECTOR\n\n\n\n\n\n\n\nfeid_utils.COMPAREVECTOR\n\nMemeriksa apakah setiap elemen di left_vector memiliki nilai yang sama di isian right_vector.\n\nreturn\n\nLOGICAL VECTOR\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.COMPAREVECTOR(left_vector, right_vector)\n\n\n\n\n\nfeid_utils.COMPAREVECTOR"
   },
   {
     "objectID": "release/feidlambda-0-2-0.html#multicheck",
     "href": "release/feidlambda-0-2-0.html#multicheck",
     "title": "feidlambda 0.2.0",
     "section": "7 MULTICHECK",
-    "text": "7 MULTICHECK\n\n\n\n\n\n\n\nfeid.utils.MULTICHECK\n\nMemeriksa apakah setiap kolom pada array memiliki nilai isian search_vector. Dan diproses setiap barisnya menggunakan check_condition yang dapat diisi dengan \"AND\" atau \"OR\".\n\nreturn\n\nBOOLEAN VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\ncheck_condition diisi \"OR\" atau \"AND\", jika tidak diisi dianggap \"AND\".\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.MULTICHECK(array, search_vector, [check_condition])\n\n\n\n\n\nfeid.utils.MULTICHECK"
+    "text": "7 MULTICHECK\n\n\n\n\n\n\n\nfeid_utils.MULTICHECK\n\nMemeriksa apakah setiap kolom pada array memiliki nilai isian search_vector. Dan diproses setiap barisnya menggunakan check_condition yang dapat diisi dengan \"AND\" atau \"OR\".\n\nreturn\n\nBOOLEAN VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\ncheck_condition diisi \"OR\" atau \"AND\", jika tidak diisi dianggap \"AND\".\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.MULTICHECK(array, search_vector, [check_condition])\n\n\n\n\n\nfeid_utils.MULTICHECK"
   },
   {
     "objectID": "release/feidlambda-0-2-0.html#droprows",
     "href": "release/feidlambda-0-2-0.html#droprows",
     "title": "feidlambda 0.2.0",
     "section": "8 DROPROWS",
-    "text": "8 DROPROWS\n\n\n\n\n\n\n\nfeid.utils.DROPROWS\n\nMenghapus baris berdasarkan index_to_drop dari array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.DROPROWS(array, index_to_drop)\n\n\n\n\n\nfeid.utils.DROPROWS"
+    "text": "8 DROPROWS\n\n\n\n\n\n\n\nfeid_utils.DROPROWS\n\nMenghapus baris berdasarkan index_to_drop dari array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.DROPROWS(array, index_to_drop)\n\n\n\n\n\nfeid_utils.DROPROWS"
   },
   {
     "objectID": "release/feidlambda-0-2-0.html#dropcols",
     "href": "release/feidlambda-0-2-0.html#dropcols",
     "title": "feidlambda 0.2.0",
     "section": "9 DROPCOLS",
-    "text": "9 DROPCOLS\n\n\n\n\n\n\n\nfeid.utils.DROPCOLS\n\nMenghapus kolom berdasarkan index_to_drop dari array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.DROPCOLS(array, index_to_drop)\n\n\n\n\n\nfeid.utils.DROPCOLS"
+    "text": "9 DROPCOLS\n\n\n\n\n\n\n\nfeid_utils.DROPCOLS\n\nMenghapus kolom berdasarkan index_to_drop dari array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.DROPCOLS(array, index_to_drop)\n\n\n\n\n\nfeid_utils.DROPCOLS"
   },
   {
     "objectID": "release/feidlambda-0-2-0.html#countmulticheck",
     "href": "release/feidlambda-0-2-0.html#countmulticheck",
     "title": "feidlambda 0.2.0",
     "section": "10 COUNTMULTICHECK",
-    "text": "10 COUNTMULTICHECK\n\n\n\n\n\n\n\nfeid.utils.COUNTMULTICHECK\n\nMenghitung jumlah TRUE dari MULTICHECK.\n\nreturn\n\nINTEGER\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\ncheck_condition diisi \"OR\" atau \"AND\", jika tidak diisi dianggap \"AND\".\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid.utils.COUNTMULTICHECK(array, search_vector, [check_condition])\n\n\n\n\n\nfeid.utils.COUNTMULTICHECK"
+    "text": "10 COUNTMULTICHECK\n\n\n\n\n\n\n\nfeid_utils.COUNTMULTICHECK\n\nMenghitung jumlah TRUE dari MULTICHECK.\n\nreturn\n\nINTEGER\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\ncheck_condition diisi \"OR\" atau \"AND\", jika tidak diisi dianggap \"AND\".\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.COUNTMULTICHECK(array, search_vector, [check_condition])\n\n\n\n\n\nfeid_utils.COUNTMULTICHECK"
+  },
+  {
+    "objectID": "release/feidlambda-0-3-0.html",
+    "href": "release/feidlambda-0-3-0.html",
+    "title": "feidlambda 0.3.0 (PREVIEW)",
+    "section": "",
+    "text": "Official GIST feid_utils (v0.3.0)\n\n\n\nCOMING SOON"
+  },
+  {
+    "objectID": "release/feidlambda-0-3-0.html#perubahan-penting-dari-v0.2.0-ke-v0.3.0",
+    "href": "release/feidlambda-0-3-0.html#perubahan-penting-dari-v0.2.0-ke-v0.3.0",
+    "title": "feidlambda 0.3.0 (PREVIEW)",
+    "section": "1 Perubahan penting dari v0.2.0 ke v0.3.0",
+    "text": "1 Perubahan penting dari v0.2.0 ke v0.3.0\nTerdapat penyesuaian nama fungsi-fungsi yang telah dikembangkan di feidlambda versi 0.2.0 dan sebelumnya. Berikut perubahan nama-nama fungsi yang mulai diterapkan pada feidlambda 0.3.0:\n\nREPEATCOLS menjadi REPEAT_COLUMNS_VECTOR.\nSORTCOLS menjadi ARRANGE_BY_ROW_VECTOR.\nREPEATROWS menjadi REPEAT_ROWS_VECTOR.\nRESHAPECOLS menjadi RESHAPE_TO_LONGER.\nFINDINDEX2D menjadi GET_INDEX_FROM_ARRAY.\nCOMPAREVECTOR menjadi IS_IN_VECTOR.\nMULTICHECK menjadi IS_EQUAL_VECTOR.\nDROPROWS menjadi FILTER_DROP_ROWS.\nDROPCOLS menjadi FILTER_DROP_COLUMNS.\nCOUNTMULTICHECK menjadi COUNT_IS_EQUAL_VECTOR.\n\nBersamaan itu, akan terdapat perubahan penamaan argumen/parameter untuk setiap fungsinya. Perubahan ini disesuaikan untuk konsistensi dan kemudahan mendeskripsikan tugas setiap fungsinya. Versi v0.2.0 akan tetap tersedia tapi pengembangan lebih lanjut akan dialihkan ke versi v0.3+."
   },
   {
     "objectID": "release/feidlambda.html",
     "href": "release/feidlambda.html",
     "title": "Source Code feidlambda",
     "section": "",
-    "text": "/*\nfiako.utils v0.2.0\nLOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING\nGIST LOGIC/UTILITIES (feid.utils): https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa\nREPOSITORY: https://github.com/fiakoenjiniring/feidlambda\nAUTHOR: @taruma, LKO\nTESTED: Microsoft 365 Business v2209 (Build 15629.20156)\n*/\n\n// INDEPENDENT FUNCTIONS\n\n// NEW IN v0.1\nREPEATCOLS = LAMBDA(\n    vector,\n    [num_repeat],\n    LET(\n        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),\n        colvector, TOCOL(vector),\n        repeatvector, CHOOSECOLS(colvector, SEQUENCE(num_repeat,,1,0)),\n        TOCOL(repeatvector,,TRUE)\n    )\n);\n\nSORTCOLS = LAMBDA(\n    table,\n    table_header,\n    LET(\n        header, table_header,\n        values, table,\n        ncols, COLUMNS(table),\n        headstack, VSTACK(header, SEQUENCE(1, ncols)),\n        headsorted, SORT(headstack, 1, 1, TRUE),\n        newindex, CHOOSEROWS(headsorted, 2),\n        sortedvalues, CHOOSECOLS(values, newindex),\n        sortedheader, CHOOSEROWS(headsorted, 1),\n        VSTACK(sortedheader, sortedvalues)\n    )\n);\n\n// NEW IN v0.2\nCOMPAREVECTOR = LAMBDA(\n    left_vector,\n    right_vector,\n    LET(\n        left_vector, TOCOL(left_vector),\n        right_vector, TOCOL(right_vector),\n        BYROW(\n            left_vector, LAMBDA(\n                left, \n                OR(BYROW(\n                    right_vector, LAMBDA(\n                        right,\n                        left=right\n                    )\n                ))\n            )\n        )\n    )\n);\n\nMULTICHECK = LAMBDA(\n    array,\n    search_vector,\n    [check_condition],\n    LET(\n        searchvector, TOROW(search_vector),\n        nrows, ROWS(array),\n        repeatarray, CHOOSEROWS(searchvector, SEQUENCE(nrows,,1,0)),\n        boolarray, MAP(array, repeatarray, LAMBDA(x, y, x=y)),\n        checkcondition, IF(ISOMITTED(check_condition), \"AND\", check_condition),\n        SWITCH(LOWER(checkcondition),\n            \"and\", BYROW(boolarray, LAMBDA(x, AND(x))),\n            \"or\", BYROW(boolarray, LAMBDA(x, OR(x))),\n            \"INVALID CHECK CONDITION\"\n        )        \n    )\n);\n\n// DEPENDENT FUNCTIONS (USING PREVIOUS FUNCTIONS)\n\n// NEW IN v0.1\nREPEATROWS = LAMBDA(\n    vector,\n    [num_repeat],\n    LET(\n        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),\n        repeatvector, REPEATCOLS(vector, num_repeat),\n        TOROW(repeatvector,,TRUE)\n    )\n);\n\nRESHAPECOLS = LAMBDA(\n    array,\n    [nsplit],\n    LET(\n        nsplit, IF(ISOMITTED(nsplit), 2, nsplit),\n        ncols, COLUMNS(array),\n        nrows, ROWS(array),\n        divider, CEILING.MATH(ncols/nsplit),\n        seqarray, CHOOSEROWS(SEQUENCE(1,divider), SEQUENCE(nsplit,,1,0)),\n        flatseq, TAKE(TOCOL(seqarray,,TRUE),ncols),\n        repseq, REPEATCOLS(flatseq, nrows),\n        flatarray, TOCOL(array),\n        sortedarray, SORTBY(flatarray,repseq),\n        IF(\n            MOD(ncols, nsplit)=0,\n            WRAPROWS(sortedarray, nsplit, \"\"),\n            CONCAT(\n                \"Pick another nsplit. \",\n                \"MOD(\",ncols,\",\",nsplit,\")\",\n                \" != 0.\"\n            )\n        )\n    )\n);\n\nFINDINDEX2D = LAMBDA(\n    lookup_value, \n    array,\n    LET(\n        nrows, ROWS(array),\n        ncols, COLUMNS(array),\n        size, nrows*ncols,\n        colarray, TOCOL(array),\n        seqrows, SORT(REPEATCOLS(SEQUENCE(nrows), ncols)),\n        seqcols, REPEATCOLS(SEQUENCE(ncols), nrows),\n        idnumber, SEQUENCE(size),\n        lookuptable, HSTACK(idnumber, seqrows, seqcols),\n        FILTER(lookuptable, colarray=lookup_value)\n    )\n);\n\n// NEW IN v0.2\nDROPROWS = LAMBDA(\n    array,\n    index_to_drop,\n    LET(\n        nrows, ROWS(array),\n        indexdrop, TOCOL(index_to_drop),\n        indexdropclean, FILTER(indexdrop, NOT(ISBLANK(indexdrop))),\n        seqvector, SEQUENCE(nrows),\n        boolvector, NOT(COMPAREVECTOR(seqvector, indexdropclean)),\n        FILTER(array, boolvector)\n    )\n);\n\nDROPCOLS = LAMBDA(\n    array,\n    index_to_drop,\n    LET(\n        transarray, TRANSPOSE(array),\n        droparray, DROPROWS(transarray, index_to_drop),\n        TRANSPOSE(droparray)\n    )\n);\n\nCOUNTMULTICHECK = LAMBDA(\n    array,\n    search_vector,\n    [check_condition],\n    LET(\n        result, MULTICHECK(array, search_vector, check_condition),\n        SUM(INT(result))\n    )\n);\n\n/*\nMIT License\n\nCopyright (c) 2022 PT. FIAKO ENJINIRING INDONESIA\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n*/\n\n\n\nReuseMIT LICENSE"
+    "text": "Official GIST feid_utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa\n\n\n/*\nfiako.utils v0.2.0\nLOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING\nGIST LOGIC/UTILITIES (feid_utils): https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa\nREPOSITORY: https://github.com/fiakoenjiniring/feidlambda\nAUTHOR: @taruma, LKO\nTESTED: Microsoft 365 Business v2209 (Build 15629.20156)\n*/\n\n// INDEPENDENT FUNCTIONS\n\n// NEW IN v0.1\nREPEATCOLS = LAMBDA(\n    vector,\n    [num_repeat],\n    LET(\n        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),\n        colvector, TOCOL(vector),\n        repeatvector, CHOOSECOLS(colvector, SEQUENCE(num_repeat,,1,0)),\n        TOCOL(repeatvector,,TRUE)\n    )\n);\n\nSORTCOLS = LAMBDA(\n    table,\n    table_header,\n    LET(\n        header, table_header,\n        values, table,\n        ncols, COLUMNS(table),\n        headstack, VSTACK(header, SEQUENCE(1, ncols)),\n        headsorted, SORT(headstack, 1, 1, TRUE),\n        newindex, CHOOSEROWS(headsorted, 2),\n        sortedvalues, CHOOSECOLS(values, newindex),\n        sortedheader, CHOOSEROWS(headsorted, 1),\n        VSTACK(sortedheader, sortedvalues)\n    )\n);\n\n// NEW IN v0.2\nCOMPAREVECTOR = LAMBDA(\n    left_vector,\n    right_vector,\n    LET(\n        left_vector, TOCOL(left_vector),\n        right_vector, TOCOL(right_vector),\n        BYROW(\n            left_vector, LAMBDA(\n                left, \n                OR(BYROW(\n                    right_vector, LAMBDA(\n                        right,\n                        left=right\n                    )\n                ))\n            )\n        )\n    )\n);\n\nMULTICHECK = LAMBDA(\n    array,\n    search_vector,\n    [check_condition],\n    LET(\n        searchvector, TOROW(search_vector),\n        nrows, ROWS(array),\n        repeatarray, CHOOSEROWS(searchvector, SEQUENCE(nrows,,1,0)),\n        boolarray, MAP(array, repeatarray, LAMBDA(x, y, x=y)),\n        checkcondition, IF(ISOMITTED(check_condition), \"AND\", check_condition),\n        SWITCH(LOWER(checkcondition),\n            \"and\", BYROW(boolarray, LAMBDA(x, AND(x))),\n            \"or\", BYROW(boolarray, LAMBDA(x, OR(x))),\n            \"INVALID CHECK CONDITION\"\n        )        \n    )\n);\n\n// DEPENDENT FUNCTIONS (USING PREVIOUS FUNCTIONS)\n\n// NEW IN v0.1\nREPEATROWS = LAMBDA(\n    vector,\n    [num_repeat],\n    LET(\n        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),\n        repeatvector, REPEATCOLS(vector, num_repeat),\n        TOROW(repeatvector,,TRUE)\n    )\n);\n\nRESHAPECOLS = LAMBDA(\n    array,\n    [nsplit],\n    LET(\n        nsplit, IF(ISOMITTED(nsplit), 2, nsplit),\n        ncols, COLUMNS(array),\n        nrows, ROWS(array),\n        divider, CEILING.MATH(ncols/nsplit),\n        seqarray, CHOOSEROWS(SEQUENCE(1,divider), SEQUENCE(nsplit,,1,0)),\n        flatseq, TAKE(TOCOL(seqarray,,TRUE),ncols),\n        repseq, REPEATCOLS(flatseq, nrows),\n        flatarray, TOCOL(array),\n        sortedarray, SORTBY(flatarray,repseq),\n        IF(\n            MOD(ncols, nsplit)=0,\n            WRAPROWS(sortedarray, nsplit, \"\"),\n            CONCAT(\n                \"Pick another nsplit. \",\n                \"MOD(\",ncols,\",\",nsplit,\")\",\n                \" != 0.\"\n            )\n        )\n    )\n);\n\nFINDINDEX2D = LAMBDA(\n    lookup_value, \n    array,\n    LET(\n        nrows, ROWS(array),\n        ncols, COLUMNS(array),\n        size, nrows*ncols,\n        colarray, TOCOL(array),\n        seqrows, SORT(REPEATCOLS(SEQUENCE(nrows), ncols)),\n        seqcols, REPEATCOLS(SEQUENCE(ncols), nrows),\n        idnumber, SEQUENCE(size),\n        lookuptable, HSTACK(idnumber, seqrows, seqcols),\n        FILTER(lookuptable, colarray=lookup_value)\n    )\n);\n\n// NEW IN v0.2\nDROPROWS = LAMBDA(\n    array,\n    index_to_drop,\n    LET(\n        nrows, ROWS(array),\n        indexdrop, TOCOL(index_to_drop),\n        indexdropclean, FILTER(indexdrop, NOT(ISBLANK(indexdrop))),\n        seqvector, SEQUENCE(nrows),\n        boolvector, NOT(COMPAREVECTOR(seqvector, indexdropclean)),\n        FILTER(array, boolvector)\n    )\n);\n\nDROPCOLS = LAMBDA(\n    array,\n    index_to_drop,\n    LET(\n        transarray, TRANSPOSE(array),\n        droparray, DROPROWS(transarray, index_to_drop),\n        TRANSPOSE(droparray)\n    )\n);\n\nCOUNTMULTICHECK = LAMBDA(\n    array,\n    search_vector,\n    [check_condition],\n    LET(\n        result, MULTICHECK(array, search_vector, check_condition),\n        SUM(INT(result))\n    )\n);\n\n/*\nMIT License\n\nCopyright (c) 2022 PT. FIAKO ENJINIRING INDONESIA\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n*/\n\n\n\nReuseMIT LICENSE"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html",
+    "href": "release/feidlambda-0-1-0.html",
+    "title": "feidlambda 0.1.0",
+    "section": "",
+    "text": "Official GIST feid_utils (v0.2.0)\n\n\n\nhttps://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa Pre-release Page (GitHub)\nBerikut daftar fungsi yang tersedia di koleksi feidlambda versi 0.1.0:"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html#repeatcols",
+    "href": "release/feidlambda-0-1-0.html#repeatcols",
+    "title": "feidlambda 0.1.0",
+    "section": "1 REPEATCOLS",
+    "text": "1 REPEATCOLS\n\n\n\n\n\n\n\nfeid_utils.REPEATCOLS\n\nMengulangi vector sebanyak num_repeat dalam bentuk kolom.\n\nreturn\n\nCOLUMN VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nJika num_repeat tidak diisi, maka secara default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.REPEATCOLS(vector, [num_repeat])\n\n\n\n\n\nfeid_utils.REPEATCOLS"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html#sortcols",
+    "href": "release/feidlambda-0-1-0.html#sortcols",
+    "title": "feidlambda 0.1.0",
+    "section": "2 SORTCOLS",
+    "text": "2 SORTCOLS\n\n\n\n\n\n\n\nfeid_utils.SORTCOLS\n\nMenyusun ulang urutan kolom table, berdasarkan table_header yang telah diurutkan.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\n\nJika input table sebagai array, maka pastikan memisahkan antara table_header dengan isinya.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.SORTCOLS(table, table_header)\n\n\n\n\n\nfeid_utils.SORTCOLS"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html#repeatrows",
+    "href": "release/feidlambda-0-1-0.html#repeatrows",
+    "title": "feidlambda 0.1.0",
+    "section": "3 REPEATROWS",
+    "text": "3 REPEATROWS\n\n\n\n\n\n\n\nfeid_utils.REPEATROWS\n\nMengulangi vector sebanyak num_repeat dalam bentuk baris.\n\nreturn\n\nROW VECTOR\n\n\n\n\n\n\n\n\n\n\n\n\nJika num_repeat tidak diisi, maka secara default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.REPEATROWS(vector, [num_repeat])\n\n\n\n\n\nfeid_utils.REPEATROWS"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html#reshapecols",
+    "href": "release/feidlambda-0-1-0.html#reshapecols",
+    "title": "feidlambda 0.1.0",
+    "section": "4 RESHAPECOLS",
+    "text": "4 RESHAPECOLS\n\n\n\n\n\n\n\nfeid_utils.RESHAPECOLS\n\nMengubah dimensi array dari dimensi \\(\\text{rows} \\times \\text{cols}\\), menjadi \\(\\text{rows} + \\text{} \\times \\textrm{nsplit}\\) tanpa mengubah susunan baris array.\n\nreturn\n\nARRAY\n\n\n\n\n\n\n\n\n\n\n\n\nJika nsplit tidak diisi, maka default bernilai 2.\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.RESHAPECOLS(array, [nsplit])\n\n\n\n\n\nfeid_utils.RESHAPECOLS"
+  },
+  {
+    "objectID": "release/feidlambda-0-1-0.html#findindex2d",
+    "href": "release/feidlambda-0-1-0.html#findindex2d",
+    "title": "feidlambda 0.1.0",
+    "section": "5 FINDINDEX2D",
+    "text": "5 FINDINDEX2D\n\n\n\n\n\n\n\nfeid_utils.FINDINDEX2D\n\nMencari index suatu elemen dari array dengan keluaran berupa urutan elemennya, posisi baris dan kolom.\n\nreturn\n\nARRAY / ROW VECTOR with {number element; index row; index column}\n\n\n\n\n\n\n\n\n\n\n\nSYNTAX\n\n\n\n=feid_utils.FINDINDEX2D(lookup_value, array)\n\n\n\n\n\nfeid_utils.FINDINDEX2D"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "test"
+    "text": "About this site\ntest"
+  },
+  {
+    "objectID": "docs/glossary.html",
+    "href": "docs/glossary.html",
+    "title": "Daftar Istilah",
+    "section": "",
+    "text": "NUMERIC\nAngka / numerik. Numerik yang dimaksud adalah bilangan real: \\(\\mathbb{R} = \\{-1, 0, 1, \\pi, 2.3212, -1.2, \\frac{2}{3}, \\dots\\}\\). Bilangan complex \\(\\mathbb{C}\\) tidak termasuk.\n\n\nLOGICAL\nTRUE atau FALSE. Dapat dikenal juga sebagai boolean. Nilai logical bisa juga direpresentasikan dalam bentuk numerik dengan 0 berarti FALSE, sedangkan nilai numerik selain 0 dianggap TRUE.\n\n\nTEXT\nKarakter atau teks. Dikenal juga sebagai string.\n\n\nCELL\nSel.\n\n\n\n\n\n\n\n(a) Cell (Excel)\n\n\n\n\n\n\n\n(b) Cell (Ilustrasi)\n\n\n\n\nFigure 1: Cell\n\n\n\n\nRANGE\nRentang yang terdiri dari lebih dari satu sel.\n\n\n\n\n\n\n\n(a) Range (Excel)\n\n\n\n\n\n\n\n(b) Range (Ilustrasi)\n\n\n\n\nFigure 2: Range\n\n\n\n\nVECTOR\nRange yang memiliki 1 dimensi.\n\n\n\n\n\n\n\n(a) Vector (Excel)\n\n\n\n\n\n\n\n(b) Vector (Ilustrasi)\n\n\n\n\nFigure 3: Vector\n\n\n\n\nARRAY\nRange yang memiliki 1 dimensi atau 2 dimensi. Untuk membedakan antara 1 dimensi dan 2 dimensi, istilah array digunakan untuk range yang memiliki 2 dimensi. Meskipun array di excel bisa merepresentasikan range 1 dimensi atau range 2 dimensi.\n\n\n\n\n\n\n\n(a) Array (Excel)\n\n\n\n\n\n\n\n(b) Array (Ilustrasi)\n\n\n\n\nFigure 4: Array\n\n\n\n\nTABLE\nArray yang memiliki header dalam format tabel.\n\n\n\n\n\n\n\n(a) Table (Excel)\n\n\n\n\n\n\n\n(b) Table (Ilustrasi)\n\n\n\n\nFigure 5: Table\n\n\n\n\nLOGICAL VECTOR / LOGICAL ARRAY\nVector atau array yang berisikan nilai TRUE atau FALSE.\n\n\n\n\n\n\n\n(a) Logical Vector (Excel)\n\n\n\n\n\n\n\n(b) Logical Vector (Ilustrasi)\n\n\n\n\nFigure 6: Logical Vector\n\n\n\n\nNUMERIC VECTOR / NUMERIC ARRAY\nVector atau array yang berisikan nilai numerik.\n\n\n\n\n\n\n\n(a) Numeric Vector (Excel)\n\n\n\n\n\n\n\n(b) Numeric Vector (Ilustrasi)\n\n\n\n\nFigure 7: Numeric Vector\n\n\n\n\nROW VECTOR\nVector yang melebar ke samping atau berupa baris.\n\n\n\nFigure 8: Row Vector (Excel)\n\n\n\n\nCOLUMN VECTOR\nVector yang memanjang ke bawah atau berupa kolom.\n\n\n\nFigure 9: Column Vector (Excel)\n\n\n\n\nDYNAMIC ARRAY\nLarik dinamis adalah kumpulan nilai / sel yang merupakan satu kesatuan. Dapat berupa vector (1D) atau array (2D).\n\n\n\n\n\n\n\n(a) Column Vector Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Column Vector\n\n\n\n\n\n\n\n(c) Column Vector (Dynamic Array)\n\n\n\n\nFigure 10: Dynamic Array (Vector)\n\n\n\n\n\n\n\n\n\n(a) Array Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Array\n\n\n\n\n\n\n\n(c) Array (Dynamic Array)\n\n\n\n\nFigure 11: Dynamic Array (Array)\n\n\n\n\nDYNAMIC ARRAY FORMULA\nFormula yang mengeluarkan hasil lebih dari satu sel (vector / array) dalam bentuk dynamic array.\nPersamaan yang termasuk dynamic array formula antara lain: =POWER(), =ABS(), =ROUNDUP(), dll. Yang perlu diingat bahwa formula dynamic array mampu menghasilkan nilai dalam bentuk vector atau array sesuai jenis nilai yang dimasukkan.\n\n\n\n\n\n\n\n(a) Formula Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array Formula\n\n\n\n\nFigure 12: Dynamic Array Formula"
+  },
+  {
+    "objectID": "docs/penggunaan.html",
+    "href": "docs/penggunaan.html",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "",
+    "text": "AFE 1.1+\n\n\n\nDengan diperbaruinya versi AFE menjadi 1.1+, terdapat beberapa perubahan cara dalam melakukan import feidlambda. Perubahan berupa:\n\nHarus dilakukan instalasi ulang untuk add-ins Advanced Formula Environment.\nFitur terbaru AFE 1.1 bisa dilihat pada README AFE.\nSaat import module melalui gist, namespace modul tidak boleh memiliki karakter titik (.), sehingga yang sebelumnya feid.utils menjadi feid_utils. Perubahan ini akan dibarengi dengan pembaruan versi feidlambda 0.3.x."
+  },
+  {
+    "objectID": "docs/penggunaan.html#advanced-formula-environment",
+    "href": "docs/penggunaan.html#advanced-formula-environment",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "1 Advanced Formula Environment",
+    "text": "1 Advanced Formula Environment\nInstall add-ins Advanced Formula Environment dari menu Insert > Get Add-ins > Cari Advanced Formula Environment (AFE).\n\n\n\n\nMenambahkan Advanced Formula Environment Add-ins"
+  },
+  {
+    "objectID": "docs/penggunaan.html#import-menggunakan-afe",
+    "href": "docs/penggunaan.html#import-menggunakan-afe",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "2 Import menggunakan AFE",
+    "text": "2 Import menggunakan AFE\nSetelah AFE terpasang di Microsoft Excel, lakukan import dengan membuka AFE melalui Home > Advanced Formula Environment > Import.\n\n\n\n\nMelakukan import di AFE"
+  },
+  {
+    "objectID": "docs/penggunaan.html#salin-github-gist-url",
+    "href": "docs/penggunaan.html#salin-github-gist-url",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "3 Salin Github Gist URL",
+    "text": "3 Salin Github Gist URL\nIsi “Github Gist URL” dengan link koleksi lambda yang tersedia. Checklist ✅ bagian “Add formulas to new namespace” dan isi namespace dengan nama koleksi (contoh: feid.utils).\n\n\n\n\n\n\nLakukan langkah import (2-3) untuk setiap koleksi yang ingin ditambahkan.\n\n\n\n\n\n\nIsi GitHub Gist URL dan Namespace"
+  },
+  {
+    "objectID": "docs/penggunaan.html#sync-formula",
+    "href": "docs/penggunaan.html#sync-formula",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "4 Sync formula",
+    "text": "4 Sync formula\nSetelah import seluruh koleksi yang digunakan, lakukan synchronize yang bertujuan menyamakan nama pada Formula/Excel Name Manager.\n\n\n\n\n\n\nJika muncul peringatan mengenai hidden sheets, pilih “Allow …”.\n\n\n\n\n\n\nSynchronize AFE"
+  },
+  {
+    "objectID": "docs/penggunaan.html#gunakan-koleksi-lambda",
+    "href": "docs/penggunaan.html#gunakan-koleksi-lambda",
+    "title": "Instalasi feidlambda (outdated)",
+    "section": "5 Gunakan koleksi lambda",
+    "text": "5 Gunakan koleksi lambda\nSelesai sync, fungsi lambda bisa langsung digunakan.\n\n\n\n\nGunakan koleksi lambda yang telah di-import"
   },
   {
     "objectID": "greenhorn/index.html",
     "href": "greenhorn/index.html",
     "title": "feidlambda",
     "section": "",
-    "text": "Dalam Pengembangan dan Pelatihan\n\n\n\nPelatihan ini masih dalam tahap pengembangan dan pelaksanaan. Seluruh materi yang disinggung akan dicatat di bagian greenhorn ini.\n\n\n\nfeidlambda I (WIP)Introduction to Dynamic Array\nfeidlambda II (WIP)Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA\nfeidlambda III (WIP)Advanced Dynamic Array + Best Practices UDF"
+    "text": "Greenhorn \\(\\text{fe}\\hat{i}\\text{d} \\textbf{l} \\lambda \\text{m} \\textsf{b} \\texttt{d} \\bigtriangleup\\) by fiakodev\n\n\n\n\n\n\n\nDalam Pengembangan dan Pelatihan\n\n\n\nPelatihan ini masih dalam tahap pengembangan dan pelaksanaan. Seluruh materi yang disinggung akan dicatat di bagian greenhorn ini.\n\n\n\nfeidlambda I (WIP)Introduction to Dynamic Array\nfeidlambda II (WIP)Exploring Dynamic Array + User Defined Lambda (UDL) with LAMBDA\nfeidlambda III (WIP)Advanced Dynamic Array + Best Practices UDF"
   },
   {
     "objectID": "greenhorn/feidlambda-2/presentation.html#section",
@@ -865,48 +921,13 @@
     "href": "greenhorn/feidlambda-2/index.html",
     "title": "feidlambda II",
     "section": "",
-    "text": "Review Daftar Istilah\nEksplorasi tentang Logical\nDynamic Array Formula\nFungsi Baru dari Excel 2019 dan 2021\nUser Defined LAMBDA (UDL)"
+    "text": "Topik Pembahasan:\n\nReview Daftar Istilah\nEksplorasi tentang Logical\nDynamic Array Formula\nFungsi Baru dari Excel 2019 dan 2021\nUser Defined LAMBDA (UDL)"
   },
   {
-    "objectID": "docs/glossary.html",
-    "href": "docs/glossary.html",
-    "title": "Daftar Istilah",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "feidlambda",
     "section": "",
-    "text": "LOGICAL\nTRUE atau FALSE. Dapat dikenal juga sebagai boolean. Nilai logical bisa juga direpresentasikan dalam bentuk numerik dengan 0 berarti FALSE, sedangkan nilai numerik selain 0 dianggap TRUE.\n\n\nTEXT\nKarakter atau teks. Dikenal juga sebagai string.\n\n\nCELL\nSel.\n\n\n\n\n\n\n\n(a) Cell (Excel)\n\n\n\n\n\n\n\n(b) Cell (Ilustrasi)\n\n\n\n\nFigure 1: Cell\n\n\n\n\nRANGE\nRentang yang terdiri dari lebih dari satu sel.\n\n\n\n\n\n\n\n(a) Range (Excel)\n\n\n\n\n\n\n\n(b) Range (Ilustrasi)\n\n\n\n\nFigure 2: Range\n\n\n\n\nVECTOR\nRange yang memiliki 1 dimensi.\n\n\n\n\n\n\n\n(a) Vector (Excel)\n\n\n\n\n\n\n\n(b) Vector (Ilustrasi)\n\n\n\n\nFigure 3: Vector\n\n\n\n\nARRAY\nRange yang memiliki 1 dimensi atau 2 dimensi. Untuk membedakan antara 1 dimensi dan 2 dimensi, istilah array digunakan untuk range yang memiliki 2 dimensi. Meskipun array di excel bisa merepresentasikan range 1 dimensi atau range 2 dimensi.\n\n\n\n\n\n\n\n(a) Array (Excel)\n\n\n\n\n\n\n\n(b) Array (Ilustrasi)\n\n\n\n\nFigure 4: Array\n\n\n\n\nTABLE\nArray yang memiliki header dalam format tabel.\n\n\n\n\n\n\n\n(a) Table (Excel)\n\n\n\n\n\n\n\n(b) Table (Ilustrasi)\n\n\n\n\nFigure 5: Table\n\n\n\n\nLOGICAL VECTOR / LOGICAL ARRAY\nVector atau array yang berisikan nilai TRUE atau FALSE.\n\n\n\n\n\n\n\n(a) Logical Vector (Excel)\n\n\n\n\n\n\n\n(b) Logical Vector (Ilustrasi)\n\n\n\n\nFigure 6: Logical Vector\n\n\n\n\nNUMERIC VECTOR / NUMERIC ARRAY\nVector atau array yang berisikan nilai numerik.\n\n\n\n\n\n\n\n(a) Numeric Vector (Excel)\n\n\n\n\n\n\n\n(b) Numeric Vector (Ilustrasi)\n\n\n\n\nFigure 7: Numeric Vector\n\n\n\n\nROW VECTOR\nVector yang melebar ke samping atau berupa baris.\n\n\n\nFigure 8: Row Vector (Excel)\n\n\n\n\nCOLUMN VECTOR\nVector yang memanjang ke bawah atau berupa kolom.\n\n\n\nFigure 9: Column Vector (Excel)\n\n\n\n\nDYNAMIC ARRAY\nLarik dinamis adalah kumpulan nilai / sel yang merupakan satu kesatuan. Dapat berupa vector (1D) atau array (2D).\n\n\n\n\n\n\n\n(a) Column Vector Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Column Vector\n\n\n\n\n\n\n\n(c) Column Vector (Dynamic Array)\n\n\n\n\nFigure 10: Dynamic Array (Vector)\n\n\n\n\n\n\n\n\n\n(a) Array Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array pada Array\n\n\n\n\n\n\n\n(c) Array (Dynamic Array)\n\n\n\n\nFigure 11: Dynamic Array (Array)\n\n\n\n\nDYNAMIC ARRAY FORMULA\nFormula yang mengeluarkan hasil lebih dari satu sel (vector / array) dalam bentuk dynamic array.\nPersamaan yang termasuk dynamic array formula antara lain: =POWER(), =ABS(), =ROUNDUP(), dll. Yang perlu diingat bahwa formula dynamic array mampu menghasilkan nilai dalam bentuk vector atau array sesuai jenis nilai yang dimasukkan.\n\n\n\n\n\n\n\n(a) Formula Biasa\n\n\n\n\n\n\n\n(b) Dynamic Array Formula\n\n\n\n\nFigure 12: Dynamic Array Formula"
-  },
-  {
-    "objectID": "docs/penggunaan.html",
-    "href": "docs/penggunaan.html",
-    "title": "Penggunaan feidlambda",
-    "section": "",
-    "text": "Install add-ins Advanced Formula Environment dari menu Insert > Get Add-ins > Cari Advanced Formula Environment (AFE).\n\n\n\n\nMenambahkan Advanced Formula Environment Add-ins"
-  },
-  {
-    "objectID": "docs/penggunaan.html#import-menggunakan-afe",
-    "href": "docs/penggunaan.html#import-menggunakan-afe",
-    "title": "Penggunaan feidlambda",
-    "section": "2 Import menggunakan AFE",
-    "text": "2 Import menggunakan AFE\nSetelah AFE terpasang di Microsoft Excel, lakukan import dengan membuka AFE melalui Home > Advanced Formula Environment > Import.\n\n\n\n\nMelakukan import di AFE"
-  },
-  {
-    "objectID": "docs/penggunaan.html#salin-github-gist-url",
-    "href": "docs/penggunaan.html#salin-github-gist-url",
-    "title": "Penggunaan feidlambda",
-    "section": "3 Salin Github Gist URL",
-    "text": "3 Salin Github Gist URL\nIsi “Github Gist URL” dengan link koleksi lambda yang tersedia. Checklist ✅ bagian “Add formulas to new namespace” dan isi namespace dengan nama koleksi (contoh: feid.utils).\n\n\n\n\n\n\nLakukan langkah import (2-3) untuk setiap koleksi yang ingin ditambahkan.\n\n\n\n\n\n\nIsi GitHub Gist URL dan Namespace"
-  },
-  {
-    "objectID": "docs/penggunaan.html#sync-formula",
-    "href": "docs/penggunaan.html#sync-formula",
-    "title": "Penggunaan feidlambda",
-    "section": "4 Sync formula",
-    "text": "4 Sync formula\nSetelah import seluruh koleksi yang digunakan, lakukan synchronize yang bertujuan menyamakan nama pada Formula/Excel Name Manager.\n\n\n\n\n\n\nJika muncul peringatan mengenai hidden sheets, pilih “Allow …”.\n\n\n\n\n\n\nSynchronize AFE"
-  },
-  {
-    "objectID": "docs/penggunaan.html#gunakan-koleksi-lambda",
-    "href": "docs/penggunaan.html#gunakan-koleksi-lambda",
-    "title": "Penggunaan feidlambda",
-    "section": "5 Gunakan koleksi lambda",
-    "text": "5 Gunakan koleksi lambda\nSelesai sync, fungsi lambda bisa langsung digunakan.\n\n\n\n\nGunakan koleksi lambda yang telah di-import"
+    "text": "\\(\\text{fe}\\hat{i}\\text{d} \\textbf{l} \\lambda \\text{m} \\textsf{b} \\texttt{d} \\bigtriangleup\\)\n\n\n\n\n\n\n\nDalam Pengembangan\n\n\n\nSaat ini feidlambda (koleksi lambda) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca Public Roadmap fiakodev Q4 2022.\n\n\n\n\n\n\n\n\nPerubahan AFE 1.1+ dan feidlambda 0.3.x\n\n\n\nDengan diupdatenya AFE ke versi 1.1+, maka terdapat beberapa perubahan dalam pengembangan dan penggunaan feidlambda. Informasi perubahan ini akan diinformasikan secepatnya di bulan Januari 2023.\n\n\n\n\n\n\n\n\nOfficial GIST feidlambda\n\n\n\nGIST feid_utils v0.2.0\n\nv0.2.0 | v0.1.0 | panduan | source code"
   }
 ]
