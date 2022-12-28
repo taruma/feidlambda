@@ -18,7 +18,7 @@ layout: article
 ---
 
 ::: {.callout-important icon="false" .text-center}
-## Official GIST **feid.utils** (v0.2.0)
+## Official GIST **feid_utils** (v0.2.0)
 <https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa><br>
 [_Pre-release Page_ (GitHub)](https://github.com/fiakoenjiniring/feidlambda/releases/tag/v0.2.0){.fs-6}
 :::
@@ -28,7 +28,7 @@ Berikut daftar fungsi yang tersedia di koleksi `feidlambda` versi 0.2.0:
 ## COMPAREVECTOR
 
 ::: {.callout-tip appearance="minimal"}
-`feid.utils.`COMPAREVECTOR 
+`feid_utils.`COMPAREVECTOR 
 : Memeriksa apakah setiap elemen di `left_vector` memiliki nilai yang sama di isian `right_vector`. 
 
 _return_
@@ -38,16 +38,16 @@ _return_
 ::: {.callout-caution icon="false" .text-center .font-monospace}
 ## _SYNTAX_
 ```r
-=feid.utils.COMPAREVECTOR(left_vector, right_vector)
+=feid_utils.COMPAREVECTOR(left_vector, right_vector)
 ```
 :::
 
-![`feid.utils.COMPAREVECTOR`](img-0-2-0/feidlambda-v0-2-comparevector.gif)
+![`feid_utils.COMPAREVECTOR`](img-0-2-0/feidlambda-v0-2-comparevector.gif)
 
 ## MULTICHECK
 
 ::: {.callout-tip appearance="minimal"}
-`feid.utils.`MULTICHECK 
+`feid_utils.`MULTICHECK 
 : Memeriksa apakah setiap kolom pada `array` memiliki nilai isian `search_vector`. Dan diproses setiap barisnya menggunakan `check_condition` yang dapat diisi dengan `"AND"` atau `"OR"`.
 
 _return_
@@ -61,16 +61,16 @@ _return_
 ::: {.callout-caution icon="false" .text-center .font-monospace}
 ## _SYNTAX_
 ```r
-=feid.utils.MULTICHECK(array, search_vector, [check_condition])
+=feid_utils.MULTICHECK(array, search_vector, [check_condition])
 ```
 :::
 
-![`feid.utils.MULTICHECK`](img-0-2-0/feidlambda-v0-2-multicheck.gif)
+![`feid_utils.MULTICHECK`](img-0-2-0/feidlambda-v0-2-multicheck.gif)
 
 ## DROPROWS
 
 ::: {.callout-tip appearance="minimal"}
-`feid.utils.`DROPROWS 
+`feid_utils.`DROPROWS 
 : Menghapus baris berdasarkan `index_to_drop` dari `array`.
 
 _return_
@@ -80,16 +80,16 @@ _return_
 ::: {.callout-caution icon="false" .text-center .font-monospace}
 ## _SYNTAX_
 ```r
-=feid.utils.DROPROWS(array, index_to_drop)
+=feid_utils.DROPROWS(array, index_to_drop)
 ```
 :::
 
-![`feid.utils.DROPROWS`](img-0-2-0/feidlambda-v0-2-droprows.gif)
+![`feid_utils.DROPROWS`](img-0-2-0/feidlambda-v0-2-droprows.gif)
 
 ## DROPCOLS
 
 ::: {.callout-tip appearance="minimal"}
-`feid.utils.`DROPCOLS 
+`feid_utils.`DROPCOLS 
 : Menghapus kolom berdasarkan `index_to_drop` dari `array`.
 
 _return_
@@ -99,16 +99,16 @@ _return_
 ::: {.callout-caution icon="false" .text-center .font-monospace}
 ## _SYNTAX_
 ```r
-=feid.utils.DROPCOLS(array, index_to_drop)
+=feid_utils.DROPCOLS(array, index_to_drop)
 ```
 :::
 
-![`feid.utils.DROPCOLS`](img-0-2-0/feidlambda-v0-2-dropcols.gif)
+![`feid_utils.DROPCOLS`](img-0-2-0/feidlambda-v0-2-dropcols.gif)
 
 ## COUNTMULTICHECK
 
 ::: {.callout-tip appearance="minimal"}
-`feid.utils.`COUNTMULTICHECK 
+`feid_utils.`COUNTMULTICHECK 
 : Menghitung jumlah `TRUE` dari `MULTICHECK`.
 
 _return_
@@ -121,9 +121,9 @@ _return_
 ::: {.callout-caution icon="false" .text-center .font-monospace}
 ## _SYNTAX_
 ```r
-=feid.utils.COUNTMULTICHECK(array, search_vector, [check_condition])
+=feid_utils.COUNTMULTICHECK(array, search_vector, [check_condition])
 ```
 :::
 
-![`feid.utils.COUNTMULTICHECK`](img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
+![`feid_utils.COUNTMULTICHECK`](img-0-2-0/feidlambda-v0-2-countmulticheck.gif)
 

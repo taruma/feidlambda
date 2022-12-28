@@ -1,6 +1,6 @@
 ---
 title: |
-  Penggunaan feidlambda
+  Instalasi feidlambda (outdated)
 subtitle: |
   Panduan pemasangan koleksi lambda `feidlambda` versi 0.x
 author: Taruma Sakti Megariansyah
@@ -12,6 +12,17 @@ link-external-newwindow: true
 layout: article
 sidebar: side-docs
 ---
+
+::: {.callout-important}
+# AFE 1.1+
+
+Dengan diperbaruinya versi AFE menjadi 1.1+, terdapat beberapa perubahan cara dalam melakukan import feidlambda. Perubahan berupa:
+
+- Harus dilakukan instalasi ulang untuk add-ins _Advanced Formula Environment_. 
+- Fitur terbaru AFE 1.1 bisa dilihat pada [README AFE](https://github.com/microsoft/advanced-formula-environment#readme).
+- Saat import module melalui gist, _namespace_ modul tidak boleh memiliki karakter titik (`.`), sehingga yang sebelumnya `feid.utils` menjadi `feid_utils`. Perubahan ini akan dibarengi dengan pembaruan versi feidlambda 0.3.x.
+
+:::
 
 ## **Advanced Formula Environment**
 
