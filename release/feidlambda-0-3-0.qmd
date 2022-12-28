@@ -1,0 +1,41 @@
+---
+title: |
+  feidlambda 0.3.0 (PREVIEW)
+subtitle: |
+  Perubahan dan Fitur terbaru di `feidlambda v0.3.0`
+author: "Taruma Sakti Megariansyah"
+abstract: |
+  (PREVIEW) Berikut perubahan yang akan dilakukan pada feidlambda v0.3.0
+date: 2022-12-28
+
+toc: true
+toc-location: right
+number-sections: true
+number-offset: [0, 0]
+link-external-newwindow: true
+layout: article
+---
+
+::: {.callout-important icon="false" .text-center}
+## Official GIST **feid_utils** (v0.3.0)
+
+COMING SOON
+:::
+
+## Perubahan penting dari v0.2.0 ke v0.3.0
+
+Terdapat penyesuaian nama fungsi-fungsi yang telah dikembangkan di feidlambda versi 0.2.0 dan sebelumnya. Berikut perubahan nama-nama fungsi yang mulai diterapkan pada feidlambda 0.3.0:
+
+1. `REPEATCOLS` menjadi `REPEAT_COLUMNS_VECTOR`.
+2. `SORTCOLS` menjadi `ARRANGE_BY_ROW_VECTOR`.
+3. `REPEATROWS` menjadi `REPEAT_ROWS_VECTOR`.
+4. `RESHAPECOLS` menjadi `RESHAPE_TO_LONGER`.
+5. `FINDINDEX2D` menjadi `GET_INDEX_FROM_ARRAY`.
+6. `COMPAREVECTOR` menjadi `IS_IN_VECTOR`.
+7. `MULTICHECK` menjadi `IS_EQUAL_VECTOR`.
+8. `DROPROWS` menjadi `FILTER_DROP_ROWS`.
+9. `DROPCOLS` menjadi `FILTER_DROP_COLUMNS`.
+10. `COUNTMULTICHECK` menjadi `COUNT_IS_EQUAL_VECTOR`. 
+
+Bersamaan itu, akan terdapat perubahan penamaan argumen/parameter untuk setiap fungsinya. Perubahan ini disesuaikan untuk konsistensi dan kemudahan mendeskripsikan tugas setiap fungsinya. Versi v0.2.0 akan tetap tersedia tapi pengembangan lebih lanjut akan dialihkan ke versi v0.3+. 
+

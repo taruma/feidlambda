@@ -19,9 +19,16 @@ sidebar: false
 Saat ini `feidlambda` (koleksi lambda) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca [Public Roadmap fiakodev Q4 2022](https://dev.fiako.engineering/logs/public-roadmap-october-2022).
 :::
 
+::: {.text-center .callout-warning appearance="default"} 
+# Perubahan AFE 1.1+ dan feidlambda 0.3.x
+
+**Dengan diupdatenya AFE ke versi 1.1+, maka terdapat beberapa perubahan dalam pengembangan dan penggunaan feidlambda. Informasi perubahan ini akan diinformasikan secepatnya di bulan Januari 2023.**
+:::
+
 ::: {.callout-tip icon="false" .text-center}
-## Official GIST **feid.utils** (v0.2.0)
-<https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa>
+## Official GIST **feidlambda**
+
+[GIST `feid_utils` v0.2.0](https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa)
 ---
 [v0.2.0](release/feidlambda-0-2-0.qmd) | [v0.1.0](release/feidlambda-0-1-0.qmd) | [panduan](docs/penggunaan.qmd) | [source code](release/feidlambda.qmd)
 :::
