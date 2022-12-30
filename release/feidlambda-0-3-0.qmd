@@ -1,41 +1,61 @@
 ---
 title: |
-  feidlambda 0.3.0 (PREVIEW)
+  feidlambda v0.3
 subtitle: |
-  Perubahan dan Fitur terbaru di `feidlambda v0.3.0`
+  _Public preview_ fitur terbaru di `feidlambda v0.3`
 author: "Taruma Sakti Megariansyah"
-abstract: |
-  (PREVIEW) Berikut perubahan yang akan dilakukan pada feidlambda v0.3.0
 date: 2022-12-28
+date-modified: 2023-01-04
 
 toc: true
 toc-location: right
 number-sections: true
-number-offset: [0, 0]
+number-offset: [1, 0]
 link-external-newwindow: true
 layout: article
 ---
 
 ::: {.callout-important icon="false" .text-center}
-## Official GIST **feid_utils** (v0.3.0)
+## Official GIST **feid_utils** (v0.3)
 
 COMING SOON
 :::
 
-## Perubahan penting dari v0.2.0 ke v0.3.0
+# Perubahan penting dari v0.2 ke v0.3 {.unnumbered}
 
-Terdapat penyesuaian nama fungsi-fungsi yang telah dikembangkan di feidlambda versi 0.2.0 dan sebelumnya. Berikut perubahan nama-nama fungsi yang mulai diterapkan pada feidlambda 0.3.0:
+Perubahan dari versi feidlambda v0.2 ke v0.3 akan bersifat _breaking change_ yang penggunaan feidlambda v0.3 akan jauh berbeda dengan feidlambda v0.2. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sebelum versi v1.0, akan tetapi tetap diusahakan perubahan ini seminimal mungkin. 
 
-1. `REPEATCOLS` menjadi `REPEAT_COLUMNS_VECTOR`.
-2. `SORTCOLS` menjadi `ARRANGE_BY_ROW_VECTOR`.
-3. `REPEATROWS` menjadi `REPEAT_ROWS_VECTOR`.
-4. `RESHAPECOLS` menjadi `RESHAPE_TO_LONGER`.
-5. `FINDINDEX2D` menjadi `GET_INDEX_FROM_ARRAY`.
-6. `COMPAREVECTOR` menjadi `IS_IN_VECTOR`.
-7. `MULTICHECK` menjadi `IS_EQUAL_VECTOR`.
-8. `DROPROWS` menjadi `FILTER_DROP_ROWS`.
-9. `DROPCOLS` menjadi `FILTER_DROP_COLUMNS`.
-10. `COUNTMULTICHECK` menjadi `COUNT_IS_EQUAL_VECTOR`. 
+Berikut fungsi baru di feidlambda v0.3 yang menggantikan fungsi sebelumnya.
 
-Bersamaan itu, akan terdapat perubahan penamaan argumen/parameter untuk setiap fungsinya. Perubahan ini disesuaikan untuk konsistensi dan kemudahan mendeskripsikan tugas setiap fungsinya. Versi v0.2.0 akan tetap tersedia tapi pengembangan lebih lanjut akan dialihkan ke versi v0.3+. 
+::: {.column-page}
+
+v0.2 | v0.3
+:- | :- 
+`REPEATCOLS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_ROW(array, [num_repeat])`
+`SORTCOLS(table, table_header)` | -
+`REPEATROWS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])`
+`RESHAPECOLS(array, [nsplit])` | `RESHAPE_BY_COLUMNS(array, [n_columns])`
+`FINDINDEX2D(lookup_value, array)` | `GET_INDEX2D(lookup_value, array)`
+`COMPAREVECTOR(left_vector, right_vector)` | `IS_IN_VECTOR(lookup_vector, in_vector)` 
+`MULTICHECK(array, search_vector, [check_condition])` | `IS_EQUAL_VECTOR(lookup_array, equal_vector, [condition])`
+`DROPROWS(array, index_to_drop)` | `FILTER_DROP_ROWS(array, rows_index)`
+`DROPCOLS(array, index_to_drop)` | `FILTER_DROP_COLUMNS(array, columns_index)`
+`COUNTMULTICHECK(array, search_vector, [check_condition])` | - 
+
+: Fungsi Baru di `feidlambda` v0.3 {#tbl-comparison-new-function}
+
+:::
+
+# Fungsi Pengganti feidlambda v0.2 {.unnumbered}
+
+@tbl-comparison-new-function
+
+##
+
+
+# Fungsi Baru feidlambda v0.3 {.unnumbered .unlisted}
+
+Mulai dari versi 0.3 
+
+## `REPEAT_ARRAY_*`
 
