@@ -6,6 +6,8 @@ subtitle: |
 author: "Taruma Sakti Megariansyah"
 date: 2022-12-28
 date-modified: 2023-01-04
+date-format: full
+lang: id
 
 toc: true
 toc-location: right
@@ -23,7 +25,7 @@ COMING SOON
 
 # Perubahan penting dari v0.2 ke v0.3 {.unnumbered}
 
-Perubahan dari versi feidlambda v0.2 ke v0.3 akan bersifat _breaking change_ yang penggunaan feidlambda v0.3 akan jauh berbeda dengan feidlambda v0.2. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sebelum versi v1.0, akan tetapi tetap diusahakan perubahan ini seminimal mungkin. 
+Perubahan versi feidlambda v0.2 ke v0.3 bersifat _breaking change_, yang berarti penggunaan feidlambda v0.3 akan jauh berbeda dengan feidlambda v0.2 sehingga nama fungsi feidlambda v0.2 sudah tidak dikembangkan lebih lanjut di feidlambda v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sebelum versi v1.0, akan tetapi tetap diusahakan perubahan ini seminimal mungkin. 
 
 Berikut fungsi baru di feidlambda v0.3 yang menggantikan fungsi sebelumnya.
 
@@ -46,16 +48,86 @@ v0.2 | v0.3
 
 :::
 
-# Fungsi Pengganti feidlambda v0.2 {.unnumbered}
+Selain pengganti fungsi baru tersebut, mulai versi v0.3 akan dibuat kategori fungsi. Semisal, 
 
-@tbl-comparison-new-function
+# Beralih dari feidlambda v0.2 ke feidlambda v0.3
+
+Berikut
+
 
 ##
 
 
-# Fungsi Baru feidlambda v0.3 {.unnumbered .unlisted}
+# Fungsi Baru feidlambda v0.3
 
 Mulai dari versi 0.3 
 
 ## `REPEAT_ARRAY_*`
+
+
+
+# _Dependencies_ feidlambda v0.3
+
+## Fungsi `FILTER_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> FILTER_DROP_ROWS
+  NONE --> FILTER_DROP_COLUMNS
+  NONE --> FILTER_FUNC_COLUMN
+  FILTER_FUNC_COLUMN --> FILTER_MINMAX_COLUMN
+  FILTER_MINMAX_COLUMN --> _RECURSIVE_FILTER_MINMAX
+  _RECURSIVE_FILTER_MINMAX --> _RECURSIVE_FILTER_MINMAX
+  _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
+```
+
+## Fungsi `GET_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> GET_INDEX_2D
+```
+
+## Fungsi `IS_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> IS_ROWS_LOGICAL
+  NONE --> IS_COLUMNS_LOGICAL
+  IS_COLS_EQUAL_LOOKUP_VECTOR --> IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
+  NONE --> IS_COLS_EQUAL_LOOKUP_VECTOR
+  NONE --> IS_ALL_IN_LOOKUP_VECTOR
+```
+
+## Fungsi `REPEAT_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> REPEAT_ARRAY_BY_COLUMN
+  NONE --> REPEAT_ARRAY_BY_ROW
+  REPEAT_ARRAY_BY_ROW & REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY
+```
+
+## Fungsi `RESHAPE_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> RESHAPE_BY_COLUMNS
+```
+
+## Fungsi `ROTATE_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> ROTATE_VECTOR
+  ROTATE_VECTOR --> ROTATE_ARRAY
+```
+
+## Fungsi `SWAP_*`
+
+```{mermaid}
+flowchart LR
+  NONE --> SWAP_COLUMNS
+  NONE --> SWAP_ROWS
+```
 
