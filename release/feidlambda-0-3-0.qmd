@@ -11,10 +11,16 @@ lang: id
 
 toc: true
 toc-location: right
-number-sections: true
-number-offset: [1, 0]
+number-sections: false
+number-offset: [0, 0]
 link-external-newwindow: true
-layout: article
+
+fig-responsive: true
+
+format:
+  html:
+    mermaid-format: png
+
 ---
 
 ::: {.callout-important icon="false" .text-center}
@@ -23,11 +29,11 @@ layout: article
 COMING SOON
 :::
 
-# Perubahan penting dari v0.2 ke v0.3 {.unnumbered}
+# Perubahan penting {.unnumbered}
 
-Perubahan versi feidlambda v0.2 ke v0.3 bersifat _breaking change_, yang berarti penggunaan feidlambda v0.3 akan jauh berbeda dengan feidlambda v0.2 sehingga nama fungsi feidlambda v0.2 sudah tidak dikembangkan lebih lanjut di feidlambda v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sebelum versi v1.0, akan tetapi tetap diusahakan perubahan ini seminimal mungkin. 
+Perubahan versi feidlambda v0.2 ke v0.3 bersifat **_breaking change_**, yang berarti penggunaan v0.2 tidak dapat digunakan lagi bersamaan dengan v0.3. Hal ini bisa terlihat dari nama fungsi maupun kodenya di v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sampai versi v1.0, akan tetapi perubahan ini diusahakan seminimal mungkin. 
 
-Berikut fungsi baru di feidlambda v0.3 yang menggantikan fungsi sebelumnya.
+Berikut nama-nama fungsi baru di feidlambda v0.3 yang menggantikan fungsi di versi sebelumnya (@tbl-feidlambda-v03-comparison).
 
 ::: {.column-page}
 
@@ -36,41 +42,134 @@ v0.2 | v0.3
 `REPEATCOLS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_ROW(array, [num_repeat])`
 `SORTCOLS(table, table_header)` | -
 `REPEATROWS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])`
-`RESHAPECOLS(array, [nsplit])` | `RESHAPE_BY_COLUMNS(array, [n_columns])`
-`FINDINDEX2D(lookup_value, array)` | `GET_INDEX2D(lookup_value, array)`
-`COMPAREVECTOR(left_vector, right_vector)` | `IS_IN_VECTOR(lookup_vector, in_vector)` 
-`MULTICHECK(array, search_vector, [check_condition])` | `IS_EQUAL_VECTOR(lookup_array, equal_vector, [condition])`
-`DROPROWS(array, index_to_drop)` | `FILTER_DROP_ROWS(array, rows_index)`
-`DROPCOLS(array, index_to_drop)` | `FILTER_DROP_COLUMNS(array, columns_index)`
+`RESHAPECOLS(array, [nsplit])` | `RESHAPE_BY_COLUMNS(array, [num_split])`
+`FINDINDEX2D(lookup_value, array)` | `GET_INDEX_2D(lookup_value, array, [return_as_element])`
+`COMPAREVECTOR(left_vector, right_vector)` | `IS_ALL_IN_VECTOR(array, lookup_vector)` 
+`MULTICHECK(array, search_vector, [check_condition])` | `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector. [logical_function])`
+`DROPROWS(array, index_to_drop)` | `FILTER_DROP_ROWS(array, row_index)`
+`DROPCOLS(array, index_to_drop)` | `FILTER_DROP_COLUMNS(array, column_index)`
 `COUNTMULTICHECK(array, search_vector, [check_condition])` | - 
 
-: Fungsi Baru di `feidlambda` v0.3 {#tbl-comparison-new-function}
+: Fungsi pengganti di feidlambda v0.3 {#tbl-feidlambda-v03-comparison}
 
 :::
 
-Selain pengganti fungsi baru tersebut, mulai versi v0.3 akan dibuat kategori fungsi. Semisal, 
+Selain pengganti fungsi baru tersebut, mulai versi v0.3 akan dibuat kategori fungsi. Berikut kategori fungsi yang tersedia di versi v0.3 beserta deskripsinya:
 
-# Beralih dari feidlambda v0.2 ke feidlambda v0.3
+- `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
+- `GET_*`: Mengambil informasi dari data.
+- `IS_*`: Fungsi _logical_ tambahan.
+- `MAKE_*`: Membangkitkan data.
+- `REPEAT_*`: Mengulangi/mereptisi data.
+- `RESHAPE_*`: Mengubah dimensi data.
+- `ROTATE_*`: Merubah posisi data dengan diputar.
+- `SWAP_*`: Mengganti posisi data.
+- `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
-Berikut
+::: {.column-screen-inset-shaded}
 
+---
 
-##
+:::
 
+# Migrasi v0.2 ke v0.3 {#sec-migration}
 
-# Fungsi Baru feidlambda v0.3
+Bagian ini perlu dibaca jika menggunakan versi sebelumnya, jika tidak bisa langsung ke @sec-feid-v03 fungsi di feidlambda v0.3. 
 
-Mulai dari versi 0.3 
+## Mengulangi/merepetisi data
 
-## `REPEAT_ARRAY_*`
+Fungsi v0.2
+: `REPEATCOLS()` | `REPEATROWS()`
 
+Fungsi v0.3
+: `REPEAT_ARRAY_BY_COLUMN()` | `REPEAT_ARRAY_BY_ROW()`
 
+Di v0.2, fungsi untuk mengulangi data dapat menggunakan fungsi `REPEATCOLS()` atau `REPEATROWS()`. Akan tetapi, terdapat batasan terkait fungsi tersebut yaitu fungsi tersebut hanya menerima input berupa vector. Fungsi tersebut juga menggunakan fungsi `CHOOSE*()` sebagai fungsi utama dalam merepetisi datanya. Pada versi **v0.3**, fungsi tersebut digantikan oleh `REPEAT_ARRAY_BY_*()` atau `REPEAT_ARRAY()`. 
 
-# _Dependencies_ feidlambda v0.3
+Sintaks yang awalnya `REPEAT*(vector, [num_repeat])` menjadi `REPEAT_ARRAY_BY_*(array, [num_repeat])`, jadi untuk fungsi ini **cukup mengganti nama fungsinya** saja. Perilakunya akan tetap sama dengan versi v0.2. Di versi v0.3, terdapat fungsi baru yaitu `REPEAT_ARRAY()` yang merupakan fungsi pembungkus untuk `REPEAT_ARRAY_BY_*()` dengan sintaks `REPEAT_ARRAY(array, [num_repeat], [by_row])`. Sehingga, bisa juga cukup mengganti fungsi versi sebelumnya dengan fungsi ini dengan tambahan opsional argumen `by_row`. 
 
-## Fungsi `FILTER_*`
+## Mengurutkan data berdasarkan baris
+
+Fungsi v0.2
+: `SORTCOLS()`
+
+Fungsi v0.3
+: \-
+
+Untuk mengurutkan kolom berdasarkan baris tertentu bisa langsung menggunakan `SORT(array, [sort_index], [sort_order], [by_cols])` yang sudah disediakan di Microsoft Excel. Jadi untuk formula `SORTCOLS(table, table_header)` menjadi `SORT(array, [sort_index], [sort_order], [by_cols])` dengan catatan menggunakan argumen `by_cols <- TRUE`. 
+
+## Mengubah dimensi data
+
+Fungsi v0.2
+: `RESHAPECOLS()`
+
+Fungsi v0.3
+: `RESHAPE_BY_COLUMNS()`
+
+Untuk fungsi `RESHAPECOLS(array, [nsplit])` dapat diganti menggunakan fungsi `RESHAPE_BY_COLUMNS(array, [num_split])`. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa **cukup mengganti nama fungsinya**.
+
+## Mencari posisi nilai dari data
+
+Fungsi v0.2
+: `FINDINDEX2D()`
+
+Fungsi v0.3
+: `GET_INDEX_2D()`
+
+Untuk fungsi `FINDINDEX2D(lookup_value, array)` dapat digantikan menggunakan fungsi `GET_INDEX_2D(lookup_value, array, [return_number_only])`. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa **cukup mengganti nama fungsinya**. Terdapat tambahan argumen `return_number_only` yang hasilnya hanya menyajikan urutan keberapa elemen yang ditemukannya. 
+
+## Memeriksa hasil _logical_
+
+Fungsi v0.2
+: `COMPAREVECTOR()` | `MULTICHECK()`
+
+Fungsi v0.3
+: `IS_ALL_IN_VECTOR()` | `IS_ALL_COLS_EQUAL_VECTOR()`
+
+Untuk fungsi `COMPAREVECTOR()` dan `MULTICHECK()` sebenarnya merupakan fungsi/formula yang digunakan untuk memeriksa suatu kondisi dari data. Oleh karena itu, penamaannya di v0.3 diganti menjadi `IS_*`. Hal tersebut menyamakan dengan fungsi `IS*` lainnya, yang bertujuan untuk memeriksa bahwa dataset ini memenuhi kondisi tertentu. `COMPAREVECTOR()` pada dasarnya adalah proses yang serupa dengan `%in%` di R, yang bertugas untuk memeriksa apakah setiap nilai elemen di suatu dataset termasuk dalam kumpulan nilai. Atau kata lainnya, memeriksa apakah elemen $X_i$ di $X$ ada di elemen $Y$. Sedangkan untuk `MULTICHECK()` memeriksa untuk _setiap kolom_ mengandung nilai yang sama dengan nilai yang dicari. 
+
+Sintaks `COMPAREVECTOR(left_vector, right_vector)` menjadi `IS_ALL_IN_VECTOR(array, lookup_vector)`, yang bisa dibaca "Apakah (IS) semua elemen (ALL) termasuk (IN) di `lookup_vector` yang dicari (VECTOR)?". Sedangkan untuk `MULTICHECK(array, search_array, [check_condition])` menjadi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])`, yang bisa dibaca "Apakah (IS) semua (ALL) setiap kolom (COLS) sama dengan (EQUAL) `lookup_vector`?". Jadi secara sekilas untuk migrasi **cukup mengganti nama fungsinya** dengan catatan `IS_ALL_COLS_EQUAL_VECTOR()` memiliki perubahan argumen opsional yang menjadi `logical_function` (berupa fungsi `LAMBDA()`).
+
+## Menghapus kolom atau baris dari data
+
+Fungsi v0.2
+: `DROPROWS()` | `DROPCOLS()`
+
+Fungsi v0.3
+: `FILTER_DROP_ROWS()` | `FILTER_DROP_COLUMNS()`
+
+Fungsi `DROP*()` bertujuan untuk menghapus baris/kolom tertentu dari data. Fungsi tersebut dibuat karena saat ini belum ada fungsinya, yang telah tersedia kebalikannya yaitu mengambil kolom/baris tertentu dengan `CHOOSE*()`. Penggunaan di v0.3 sama saja dengan v0.2, yang berubah **hanya nama fungsinya**. Jadi dari `DROPROWS(array, index_to_drop)` menjadi `FILTER_DROP_ROWS(array, row_index)` dan `DROPCOLS(array, index_to_drop)` menjadi `FILTER_DROP_COLUMNS(array, column_index)`.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Fungsi feidlambda v0.3 {#sec-feid-v03}
+
+Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3
+
+- `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
+- `GET_*`: Mengambil informasi dari data.
+- `IS_*`: Fungsi _logical_ tambahan.
+- `MAKE_*`: Membangkitkan data.
+- `REPEAT_*`: Mengulangi/mereptisi data.
+- `RESHAPE_*`: Mengubah dimensi data.
+- `ROTATE_*`: Merubah posisi data dengan diputar.
+- `SWAP_*`: Mengganti posisi data.
+- `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
+
+## `FILTER_*`
+
+Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antara fungsi di kategori ini bisa dilihat di @fig-dep-filter.
 
 ```{mermaid}
+%%| label: fig-dep-filter
+%%| fig-cap: Grafik _dependencies_ kategori `FILTER_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
 flowchart LR
   NONE --> FILTER_DROP_ROWS
   NONE --> FILTER_DROP_COLUMNS
@@ -81,53 +180,71 @@ flowchart LR
   _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
 ```
 
-## Fungsi `GET_*`
+### `FILTER_DROP_ROWS()`
 
-```{mermaid}
-flowchart LR
-  NONE --> GET_INDEX_2D
-```
+### `FILTER_DROP_COLUMNS()`
 
-## Fungsi `IS_*`
+### `FILTER_FUNC_COLUMN()`
 
-```{mermaid}
-flowchart LR
-  NONE --> IS_ROWS_LOGICAL
-  NONE --> IS_COLUMNS_LOGICAL
-  IS_COLS_EQUAL_LOOKUP_VECTOR --> IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
-  NONE --> IS_COLS_EQUAL_LOOKUP_VECTOR
-  NONE --> IS_ALL_IN_LOOKUP_VECTOR
-```
+### `FILTER_MINMAX_COLUMN()`
 
-## Fungsi `REPEAT_*`
+### `_RECURSIVE_FILTER_MINMAX()`
 
-```{mermaid}
-flowchart LR
-  NONE --> REPEAT_ARRAY_BY_COLUMN
-  NONE --> REPEAT_ARRAY_BY_ROW
-  REPEAT_ARRAY_BY_ROW & REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY
-```
+### `FILTER_MINMAX_ARRAY()`
 
-## Fungsi `RESHAPE_*`
+## `GET_*`
 
-```{mermaid}
-flowchart LR
-  NONE --> RESHAPE_BY_COLUMNS
-```
+### `GET_INDEX_2D()`
 
-## Fungsi `ROTATE_*`
+## `IS_*`
 
-```{mermaid}
-flowchart LR
-  NONE --> ROTATE_VECTOR
-  ROTATE_VECTOR --> ROTATE_ARRAY
-```
+### `IS_ALL_IN_VECTOR()`
 
-## Fungsi `SWAP_*`
+### `IS_COLS_EQUAL_VECTOR()`
 
-```{mermaid}
-flowchart LR
-  NONE --> SWAP_COLUMNS
-  NONE --> SWAP_ROWS
-```
+### `IS_ALL_COLS_EQUAL_VECTOR()`
 
+### `IS_ROWS_LOGICAL()`
+
+### `IS_COLUMNS_LOGICAL()`
+
+## `MAKE_*`
+
+### `_RECURSIVE_MAKE_SEQUENCE()`
+
+### `MAKE_SEQUENCE_FROM_VECTOR()`
+
+## `REPEAT_*`
+
+### `REPEAT_ARRAY_BY_ROW()`
+
+### `REPEAT_ARRAY_BY_COLUMN()`
+
+### `REPEAT_ARRAY()`
+
+## `RESHAPE_*`
+
+### `RESHAPE_BY_COLUMNS()`
+
+## `ROTATE_*`
+
+### `ROTATE_VECTOR()`
+
+### `ROTATE_ARRAY()`
+
+## `SWAP_*`
+
+### `SWAP_COLUMNS()`
+
+### `SWAP_ROWS()`
+
+## `TEXT_*`
+
+### `TEXT_SPLIT_VECTOR()`
+
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
