@@ -2,7 +2,7 @@
 title: |
   feidlambda v0.3
 subtitle: |
-  Fitur `feidlambda v0.3`
+  Koleksi LAMBDA feidlambda v0.3
 author: "Taruma Sakti Megariansyah"
 date: 2022-12-28
 date-modified: 2023-01-06
@@ -22,7 +22,7 @@ filters:
 
 format:
   html:
-    mermaid-format: png
+    mermaid-format: js
 
 crossref: 
   chapters: true
@@ -34,118 +34,7 @@ crossref:
 [Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
-# Perubahan penting {.unnumbered}
-
-Perubahan versi feidlambda v0.2 ke v0.3 bersifat **_breaking change_**, yang berarti penggunaan v0.2 tidak dapat digunakan lagi bersamaan dengan v0.3. Hal ini bisa terlihat dari nama fungsi maupun kodenya di v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sampai versi v1.0, akan tetapi perubahan ini diusahakan seminimal mungkin. 
-
-Penamaan juga yang sebelumnya menggunakan `feid.utils` menjadi `feid` saja atau bebas tergantung penamaan _module_-nya.
-
-Berikut nama-nama fungsi baru di feidlambda v0.3 yang menggantikan fungsi di versi sebelumnya (@tbl-feidlambda-v03-comparison).
-
-::: {.column-page}
-
-v0.2 | v0.3
-:- | :- 
-`REPEATCOLS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_ROW(array, [num_repeat])`
-`SORTCOLS(table, table_header)` | -
-`REPEATROWS(vector, [num_repeat])` | `REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])`
-`RESHAPECOLS(array, [nsplit])` | `RESHAPE_BY_COLUMNS(array, [num_split])`
-`FINDINDEX2D(lookup_value, array)` | `GET_INDEX_2D(lookup_value, array, [return_as_element])`
-`COMPAREVECTOR(left_vector, right_vector)` | `IS_ALL_IN_VECTOR(array, lookup_vector)` 
-`MULTICHECK(array, search_vector, [check_condition])` | `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector. [logical_function])`
-`DROPROWS(array, index_to_drop)` | `FILTER_DROP_ROWS(array, row_index)`
-`DROPCOLS(array, index_to_drop)` | `FILTER_DROP_COLUMNS(array, column_index)`
-`COUNTMULTICHECK(array, search_vector, [check_condition])` | - 
-
-: Fungsi pengganti di feidlambda v0.3 {#tbl-feidlambda-v03-comparison}
-
-:::
-
-Selain pengganti fungsi baru tersebut, mulai versi v0.3 akan dibuat kategori fungsi. Berikut kategori fungsi yang tersedia di versi v0.3 beserta deskripsinya:
-
-- `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
-- `GET_*`: Mengambil informasi dari data.
-- `IS_*`: Fungsi _logical_ tambahan.
-- `MAKE_*`: Membangkitkan data.
-- `REPEAT_*`: Mengulangi/mereptisi data.
-- `RESHAPE_*`: Mengubah dimensi data.
-- `ROTATE_*`: Merubah posisi data dengan diputar.
-- `SWAP_*`: Mengganti posisi data.
-- `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
-
-::: {.column-screen-inset-shaded}
-
----
-
-:::
-
-# Migrasi v0.2 ke v0.3 {#sec-migration}
-
-Bagian ini perlu dibaca jika menggunakan versi sebelumnya, jika tidak bisa langsung ke @sec-feid-v03 fungsi di feidlambda v0.3. 
-
-## Mengulangi/merepetisi data
-
-Fungsi v0.2
-: `REPEATCOLS()` | `REPEATROWS()`
-
-Fungsi v0.3
-: `REPEAT_ARRAY_BY_COLUMN()` | `REPEAT_ARRAY_BY_ROW()`
-
-Di v0.2, fungsi untuk mengulangi data dapat menggunakan fungsi `REPEATCOLS()` atau `REPEATROWS()`. Akan tetapi, terdapat batasan terkait fungsi tersebut yaitu fungsi tersebut hanya menerima input berupa vector. Fungsi tersebut juga menggunakan fungsi `CHOOSE*()` sebagai fungsi utama dalam merepetisi datanya. Pada versi **v0.3**, fungsi tersebut digantikan oleh `REPEAT_ARRAY_BY_*()` atau `REPEAT_ARRAY()`. 
-
-Sintaks yang awalnya `REPEAT*(vector, [num_repeat])` menjadi `REPEAT_ARRAY_BY_*(array, [num_repeat])`, jadi untuk fungsi ini **cukup mengganti nama fungsinya** saja. Perilakunya akan tetap sama dengan versi v0.2. Di versi v0.3, terdapat fungsi baru yaitu `REPEAT_ARRAY()` yang merupakan fungsi pembungkus untuk `REPEAT_ARRAY_BY_*()` dengan sintaks `REPEAT_ARRAY(array, [num_repeat], [by_row])`. Sehingga, bisa juga cukup mengganti fungsi versi sebelumnya dengan fungsi ini dengan tambahan opsional argumen `by_row`. 
-
-## Mengurutkan data berdasarkan baris
-
-Fungsi v0.2
-: `SORTCOLS()`
-
-Fungsi v0.3
-: \-
-
-Untuk mengurutkan kolom berdasarkan baris tertentu bisa langsung menggunakan `SORT(array, [sort_index], [sort_order], [by_cols])` yang sudah disediakan di Microsoft Excel. Jadi untuk formula `SORTCOLS(table, table_header)` menjadi `SORT(array, [sort_index], [sort_order], [by_cols])` dengan catatan menggunakan argumen `by_cols <- TRUE`. 
-
-## Mengubah dimensi data
-
-Fungsi v0.2
-: `RESHAPECOLS()`
-
-Fungsi v0.3
-: `RESHAPE_BY_COLUMNS()`
-
-Untuk fungsi `RESHAPECOLS(array, [nsplit])` dapat diganti menggunakan fungsi `RESHAPE_BY_COLUMNS(array, [num_split])`. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa **cukup mengganti nama fungsinya**.
-
-## Mencari posisi nilai dari data
-
-Fungsi v0.2
-: `FINDINDEX2D()`
-
-Fungsi v0.3
-: `GET_INDEX_2D()`
-
-Untuk fungsi `FINDINDEX2D(lookup_value, array)` dapat digantikan menggunakan fungsi `GET_INDEX_2D(lookup_value, array, [return_number_only])`. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa **cukup mengganti nama fungsinya**. Terdapat tambahan argumen `return_number_only` yang hasilnya hanya menyajikan urutan keberapa elemen yang ditemukannya. 
-
-## Memeriksa hasil _logical_
-
-Fungsi v0.2
-: `COMPAREVECTOR()` | `MULTICHECK()`
-
-Fungsi v0.3
-: `IS_ALL_IN_VECTOR()` | `IS_ALL_COLS_EQUAL_VECTOR()`
-
-Untuk fungsi `COMPAREVECTOR()` dan `MULTICHECK()` sebenarnya merupakan fungsi/formula yang digunakan untuk memeriksa suatu kondisi dari data. Oleh karena itu, penamaannya di v0.3 diganti menjadi `IS_*`. Hal tersebut menyamakan dengan fungsi `IS*` lainnya, yang bertujuan untuk memeriksa bahwa dataset ini memenuhi kondisi tertentu. `COMPAREVECTOR()` pada dasarnya adalah proses yang serupa dengan `%in%` di R, yang bertugas untuk memeriksa apakah setiap nilai elemen di suatu dataset termasuk dalam kumpulan nilai. Atau kata lainnya, memeriksa apakah elemen $X_i$ di $X$ ada di elemen $Y$. Sedangkan untuk `MULTICHECK()` memeriksa untuk _setiap kolom_ mengandung nilai yang sama dengan nilai yang dicari. 
-
-Sintaks `COMPAREVECTOR(left_vector, right_vector)` menjadi `IS_ALL_IN_VECTOR(array, lookup_vector)`, yang bisa dibaca "Apakah (IS) semua elemen (ALL) termasuk (IN) di `lookup_vector` yang dicari (VECTOR)?". Sedangkan untuk `MULTICHECK(array, search_array, [check_condition])` menjadi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])`, yang bisa dibaca "Apakah (IS) semua (ALL) setiap kolom (COLS) sama dengan (EQUAL) `lookup_vector`?". Jadi secara sekilas untuk migrasi **cukup mengganti nama fungsinya** dengan catatan `IS_ALL_COLS_EQUAL_VECTOR()` memiliki perubahan argumen opsional yang menjadi `logical_function` (berupa fungsi `LAMBDA()`).
-
-## Menghapus kolom atau baris dari data
-
-Fungsi v0.2
-: `DROPROWS()` | `DROPCOLS()`
-
-Fungsi v0.3
-: `FILTER_DROP_ROWS()` | `FILTER_DROP_COLUMNS()`
-
-Fungsi `DROP*()` bertujuan untuk menghapus baris/kolom tertentu dari data. Fungsi tersebut dibuat karena saat ini belum ada fungsinya, yang telah tersedia kebalikannya yaitu mengambil kolom/baris tertentu dengan `CHOOSE*()`. Penggunaan di v0.3 sama saja dengan v0.2, yang berubah **hanya nama fungsinya**. Jadi dari `DROPROWS(array, index_to_drop)` menjadi `FILTER_DROP_ROWS(array, row_index)` dan `DROPCOLS(array, index_to_drop)` menjadi `FILTER_DROP_COLUMNS(array, column_index)`.
+Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3**](#sec-feid-v03).
 
 ::: {.column-screen-inset-shaded}
 
@@ -155,16 +44,16 @@ Fungsi `DROP*()` bertujuan untuk menghapus baris/kolom tertentu dari data. Fungs
 
 # Fungsi feidlambda v0.3 {#sec-feid-v03}
 
-Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3
+Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3:
 
 - `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
 - `GET_*`: Mengambil informasi dari data.
 - `IS_*`: Fungsi _logical_ tambahan.
 - `MAKE_*`: Membangkitkan data.
-- `REPEAT_*`: Mengulangi/mereptisi data.
+- `REPEAT_*`: Mengulangi/merepetisi data.
 - `RESHAPE_*`: Mengubah dimensi data.
 - `ROTATE_*`: Merubah posisi data dengan diputar.
-- `SWAP_*`: Mengganti posisi data.
+- `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
 ---
@@ -214,10 +103,10 @@ _Output_
 ---
 
 `array := [array | vector]`
-: data berupa _array_ atau _vector_ yang memiliki baris lebih dari satu. 
+: Data berupa _array_ atau _vector_ yang memiliki baris lebih dari satu. 
 
 `row_index := [integer number | integer vector]`
-: indeks baris yang ingin dihapus. 
+: Indeks baris yang ingin dihapus. 
 
 :::::
 
@@ -242,10 +131,10 @@ _Output_
 ---
 
 `array := [array | vector]`
-: data berupa _array_ atau _vector_ yang memiliki kolom lebih dari satu. 
+: Data berupa _array_ atau _vector_ yang memiliki kolom lebih dari satu. 
 
 `column_index := [integer number | integer vector]`
-: indeks kolom yang ingin dihapus. 
+: Indeks kolom yang ingin dihapus. 
 
 :::::
 
@@ -270,16 +159,16 @@ _Output_
 ---
 
 `array := [array | numeric array]`
-: data berupa _array_ dengan ketentuan `array` berisikan angka kecuali kolom pertama jika menggunakan opsi `ignore_first_column`. 
+: Data berupa _array_ dengan ketentuan `array` berisikan angka kecuali kolom pertama jika menggunakan opsi `ignore_first_column`. 
 
 `[ignore_first_column] := FALSE :: [TRUE | FALSE]`
-: nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari `array` akan diabaikan dan tidak dilakukan _filtering_ nilai minimum/maksimum. 
+: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari `array` akan diabaikan dan tidak dilakukan _filtering_ nilai minimum/maksimum. 
 
 `[label_vector] := NONE :: [vector]`
-: nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
+: Nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
 
 `[with_label] := FALSE :: [TRUE | FALSE]`
-: nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
+: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
 
 :::::
 
@@ -385,10 +274,10 @@ _Output_
 ---
 
 `array := [array | vector]`
-: data berupa _array_ atau _vector_. 
+: Data berupa _array_ atau _vector_. 
 
 `lookup_vector := [scalar | vector]`
-: _vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
 
 :::::
 
@@ -411,10 +300,10 @@ _Output_
 ---
 
 `array := [array | vector]`
-: data berupa _array_ . 
+: Data berupa _array_ . 
 
 `lookup_vector := [scalar | vector]`
-: _vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
 
 :::::
 
@@ -422,7 +311,7 @@ TODO: DEMO
 
 ### `IS_ALL_COLS_EQUAL_VECTOR()`
 
-Fungsi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`, dan diperiksa apakah setiap barisnya sesuai dengan `logical_function`. Fungsi ini menggunakan fungsi `IS_COLS_EQUAL_VECTOR()`.
+Fungsi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`, dan diperiksa apakah setiap barisnya sesuai dengan `logical_function`. Fungsi ini menggunakan fungsi `IS_COLS_EQUAL_VECTOR()`.
 
 :::::  {.border .p-3 .my-3 .justify}
 
@@ -442,7 +331,7 @@ _Output_
 `lookup_vector := [scalar | vector]`
 : _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
 
-`logical_function := OR() :: [lambda function]`
+`logical_function := OR() :: [LAMBDA scalar function]`
 : Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap barisnya. 
 
 :::::
@@ -466,9 +355,9 @@ _Output_
 ---
 
 `logical_array := [logical array]`
-: data berupa _logical array_ . 
+: Data berupa _logical array_ . 
 
-`[logical_function] := OR() [scalar | vector]`
+`[logical_function] := OR() [LAMBDA scalar function]`
 : Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap barisnya. 
 
 :::::
@@ -492,9 +381,9 @@ _Output_
 ---
 
 `logical_array := [logical array]`
-: data berupa _logical array_ . 
+: Data berupa _logical array_ . 
 
-`[logical_function] := OR() [scalar | vector]`
+`[logical_function] := OR() [LAMBDA scalar function]`
 : Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap kolomnya. 
 
 :::::
@@ -601,7 +490,7 @@ _Output_
 : Data dapat berupa _scalar_, _vector_, ataupun _array_. 
 
 `[num_repeat] := 2 :: [integer]`
-: Jumlah pengulangannya. 
+: Nilai _default_ yaitu 2. Jumlah pengulangannya. 
 
 :::::
 
@@ -627,7 +516,7 @@ _Output_
 : Data dapat berupa _scalar_, _vector_, ataupun _array_. 
 
 `[num_repeat] := 2 :: [integer]`
-: Jumlah pengulangannya. 
+: Nilai _default_ yaitu 2. Jumlah pengulangannya. 
 
 :::::
 
@@ -653,7 +542,7 @@ _Output_
 : Data dapat berupa _scalar_, _vector_, ataupun _array_. 
 
 `[num_repeat] := 2 :: [integer]`
-: Jumlah pengulangannya.
+: Nilai _default_ yaitu 2. Jumlah pengulangannya. 
 
 `[by_row] := TRUE :: [TRUE | FALSE]`
 : Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka pengulangan akan sepanjang baris (ke bawah), dan berlaku sebaliknya juga. 
@@ -706,7 +595,7 @@ _Output_
 : Data berupa _array_ atau _vector_. 
 
 `[num_split] := 2 :: [integer]`
-: Nilai _default_ yaitu 2. Jumlah pembagi kolom. Jumlah kolom `array` harus habis dibagi (MOD) dengan `num_split`. 
+: Nilai _default_ yaitu 2. Jumlah pembagi kolom. Jumlah kolom `array` harus habis dibagi (`MOD()`) dengan `num_split`. 
 
 :::::
 
