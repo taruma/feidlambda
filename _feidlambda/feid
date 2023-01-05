@@ -1,0 +1,412 @@
+/*
+feidlambda v0.3.0 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
+GIST (feid): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
+AUTHOR: @taruma
+TESTED: Microsoft Excel v2211 (Build 16.0.15831.20098)
+*/
+
+/*
+---- FILTER ----
+*/
+
+// NONE --> FILTER_DROP_ROWS
+FILTER_DROP_ROWS = LAMBDA(array, row_index,
+    LET(
+        row_index, TOCOL(row_index),
+        row_index_clean, FILTER(row_index, NOT(ISBLANK(row_index))),
+        nrows, ROWS(array),
+        row_sequence, SEQUENCE(nrows),
+        selected_row, BYROW(row_sequence, LAMBDA(each_row, OR(each_row = row_index_clean))),
+        FILTER(array, NOT(selected_row))
+    )
+);
+
+// NONE --> FILTER_DROP_COLUMNS
+FILTER_DROP_COLUMNS = LAMBDA(array, column_index,
+    LET(
+        column_index, TOROW(column_index),
+        column_index_clean, FILTER(column_index, NOT(ISBLANK(column_index))),
+        ncols, COLUMNS(array),
+        col_sequence, SEQUENCE(1, ncols),
+        selected_col, BYCOL(col_sequence, LAMBDA(each_col, OR(each_col = column_index_clean))),
+        FILTER(array, NOT(selected_col))
+    )
+);
+
+// NONE --> FILTER_FUNC_COLUMN
+FILTER_FUNC_COLUMN = LAMBDA(array, [col], [label_col], [with_label], [function], [label_function],
+    LET(
+        col, IF(ISOMITTED(col), 1, col),
+        label_col, IF(ISOMITTED(label_col), col, label_col),
+        with_label, IF(ISOMITTED(with_label), FALSE, with_label),
+        function, IF(ISOMITTED(function), LAMBDA(x, MAX(x)), function),
+        label_function, IF(ISOMITTED(label_function), "func", label_function),
+        selected_vector, CHOOSECOLS(array, col),
+        func_value, function(selected_vector),
+        selected_logical, selected_vector = func_value,
+        array_max, FILTER(array, selected_logical),
+        label, MAKEARRAY(ROWS(array_max), 1, LAMBDA(x, y, CONCAT(label_col, "_", label_function))),
+        IF(with_label, HSTACK(label, array_max), array_max)
+    )
+);
+
+// FILTER_FUNC_COLUMN --> FILTER_MINMAX_COLUMN
+FILTER_MINMAX_COLUMN = LAMBDA(array, [col], [label_col], [with_label],
+    LET(
+        func_1, LAMBDA(x, MIN(x)),
+        label_func_1, "min",
+        func_2, LAMBDA(x, MAX(x)),
+        label_func_2, "max",
+        func1_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_1, label_func_1),
+        func2_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_2, label_func_2),
+        VSTACK(func1_result, func2_result)
+    )
+);
+
+// FILTER_MINMAX_COLUMN --> _RECURSIVE_FILTER_MINMAX
+// _RECURSIVE_FILTER_MINMAX --> _RECURSIVE_FILTER_MINMAX
+_RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vector], [with_label],
+    LET(
+        ignore_first_column, IF(ISOMITTED(ignore_first_column), FALSE, ignore_first_column),
+        stop_col, IF(ignore_first_column, 2, 1),
+        label_vector, IF(ISOMITTED(label_vector), SEQUENCE(1, COLUMNS(array)), label_vector),
+        new_label, IF(stop_col = 2, HSTACK({" "}, label_vector), label_vector),
+        label_col, CHOOSECOLS(new_label, ntry),
+        IF(
+            ntry = stop_col,
+            FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+            LET(
+                results, FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+                next_try, ntry - 1,
+                VSTACK(
+                    _RECURSIVE_FILTER_MINMAX(
+                        array,
+                        next_try,
+                        ignore_first_column,
+                        label_vector,
+                        with_label
+                    ),
+                    results
+                )
+            )
+        )
+    )
+);
+
+// _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
+FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [label_vector], [with_label],
+    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_label)
+);
+
+/*
+---- GET ----
+*/
+
+// NONE --> GET_INDEX_2D
+GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
+    LET(
+        return_order_only, IF(ISOMITTED(return_order_only), FALSE, return_order_only),
+        nrows, ROWS(array),
+        ncols, COLUMNS(array),
+        size, nrows * ncols,
+        array_flatten, TOCOL(array, , TRUE),
+        index_sequence, SEQUENCE(nrows, ncols, 1, 1),
+        rows_sequence, MAKEARRAY(nrows, ncols, LAMBDA(x, y, x)),
+        columns_sequence, MAKEARRAY(nrows, ncols, LAMBDA(x, y, y)),
+        rows_flatten, TOCOL(rows_sequence, , TRUE),
+        columns_flatten, TOCOL(columns_sequence, , TRUE),
+        index_flatten, TOCOL(index_sequence, , TRUE),
+        lookup_table, HSTACK(index_flatten, rows_flatten, columns_flatten),
+        lookup_result, FILTER(lookup_table, array_flatten = lookup_value),
+        IF(return_order_only, CHOOSECOLS(lookup_result, 1), lookup_result)
+    )
+);
+
+/*
+---- IS ----
+*/
+
+// NONE --> IS_ALL_IN_LOOKUP_VECTOR
+IS_ALL_IN_VECTOR = LAMBDA(array, lookup_vector,
+    LET(
+        lookup_vector, TOCOL(lookup_vector),
+        MAP(array, LAMBDA(element, OR(BYROW(lookup_vector, LAMBDA(lookup, element = lookup)))))
+    )
+);
+
+// NONE --> IS_COLS_EQUAL_LOOKUP_VECTOR
+IS_COLS_EQUAL_VECTOR = LAMBDA(array, lookup_vector,
+    LET(
+        lookup_vector, TOROW(lookup_vector),
+        ncols_vector, COLUMNS(lookup_vector),
+        ncols_array, COLUMNS(array),
+        nrows_array, ROWS(array),
+        IF(
+            ncols_array = ncols_vector,
+            LET(
+                repeat_array, CHOOSEROWS(lookup_vector, SEQUENCE(nrows_array, , 1, 0)),
+                MAP(array, repeat_array, LAMBDA(x, y, x = y))
+            ),
+            "N/A"
+        )
+    )
+);
+
+// IS_COLS_EQUAL_LOOKUP_VECTOR --> IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
+IS_ALL_COLS_EQUAL_VECTOR = LAMBDA(array, lookup_vector, [logical_function],
+    LET(
+        logical_function, IF(ISOMITTED(logical_function), LAMBDA(x, OR(x)), logical_function),
+        array_boolean, IS_COLS_EQUAL_VECTOR(array, lookup_vector),
+        BYROW(array_boolean, LAMBDA(each_row, logical_function(each_row)))
+    )
+);
+
+// NONE --> IS_ROWS_LOGICAL
+IS_ROWS_LOGICAL = LAMBDA(logical_array, [logical_function],
+    LET(
+        logical_function, IF(ISOMITTED(logical_function), LAMBDA(x, OR(x)), logical_function),
+        BYROW(logical_array, LAMBDA(each_row, logical_function(each_row)))
+    )
+);
+
+// NONE --> IS_COLUMNS_LOGICAL
+IS_COLUMNS_LOGICAL = LAMBDA(logical_array, [logical_function],
+    LET(
+        logical_function, IF(ISOMITTED(logical_function), LAMBDA(x, OR(x)), logical_function),
+        BYCOL(logical_array, LAMBDA(each_col, logical_function(each_col)))
+    )
+);
+
+/*
+---- MAKE ----
+*/
+
+// _RECURSIVE_MAKE_SEQUENCE --> _RECURSIVE_MAKE_SEQUENCE
+_RECURSIVE_MAKE_SEQUENCE = LAMBDA(start_vector, end_vector, ntry, [stack_horizontally],
+    LET(
+        seq_start, INDEX(start_vector, ntry),
+        seq_end, INDEX(end_vector, ntry),
+        stack_horizontally, IF(ISOMITTED(stack_horizontally), FALSE, stack_horizontally),
+        IF(
+            ntry = 1,
+            SEQUENCE(seq_end - seq_start + 1, , seq_start),
+            LET(
+                next_try, ntry - 1,
+                results, SEQUENCE(seq_end - seq_start + 1, , seq_start),
+                IF(
+                    stack_horizontally,
+                    HSTACK(
+                        _RECURSIVE_MAKE_SEQUENCE(
+                            start_vector,
+                            end_vector,
+                            next_try,
+                            stack_horizontally
+                        ),
+                        results
+                    ),
+                    VSTACK(
+                        _RECURSIVE_MAKE_SEQUENCE(
+                            start_vector,
+                            end_vector,
+                            next_try,
+                            stack_horizontally
+                        ),
+                        results
+                    )
+                )
+            )
+        )
+    )
+);
+
+// _RECURSIVE_MAKE_SEQUENCE --> MAKE_SEQUENCE_FROM_VECTOR
+MAKE_SEQUENCE_FROM_VECTOR = LAMBDA(start_vector, end_vector, [stack_horizontally],
+    _RECURSIVE_MAKE_SEQUENCE(start_vector, end_vector, ROWS(start_vector), stack_horizontally)
+);
+
+/*
+---- REPEAT ----
+*/
+
+// REPEAT_ARRAY_BY_ROW & REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY
+REPEAT_ARRAY = LAMBDA(array, [num_repeat], [by_row],
+    LET(
+        by_row, IF(ISOMITTED(by_row), TRUE, by_row),
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        IF(
+            by_row,
+            REPEAT_ARRAY_BY_ROW(array, num_repeat),
+            REPEAT_ARRAY_BY_COLUMN(array, num_repeat)
+        )
+    )
+);
+
+// REPEAT_ARRAY_BY_ROW --> REPEAT_ARRAY_BY_ROW
+REPEAT_ARRAY_BY_ROW = LAMBDA(array, [num_repeat],
+    LET(
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        IF(
+            num_repeat = 1,
+            array,
+            LET(next_repeat, num_repeat - 1, VSTACK(REPEAT_ARRAY_BY_ROW(array, next_repeat), array))
+        )
+    )
+);
+
+// REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY_BY_COLUMN
+REPEAT_ARRAY_BY_COLUMN = LAMBDA(array, [num_repeat],
+    LET(
+        num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
+        IF(
+            num_repeat = 1,
+            array,
+            LET(
+                next_repeat, num_repeat - 1,
+                HSTACK(REPEAT_ARRAY_BY_COLUMN(array, next_repeat), array)
+            )
+        )
+    )
+);
+
+/*
+---- RESHAPE ----
+*/
+
+// NONE --> RESHAPE_BY_COLUMNS
+RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
+    LET(
+        num_split, IF(ISOMITTED(num_split), 2, num_split),
+        ncols, COLUMNS(array),
+        nrows, ROWS(array),
+        IF(
+            MOD(ncols, num_split) = 0,
+            LET(
+                divider, ncols / num_split,
+                divider_sequence, CHOOSEROWS(SEQUENCE(1, divider), SEQUENCE(num_split, , 1, 0)),
+                divider_flatten, TOCOL(divider_sequence, , TRUE),
+                divider_repeat, CHOOSEROWS(TOROW(divider_flatten), SEQUENCE(nrows, , 1, 0)),
+                divider_repeat_col, TOCOL(divider_repeat),
+                array_flatten, TOCOL(array),
+                array_sorted, SORTBY(array_flatten, divider_repeat_col),
+                WRAPROWS(array_sorted, num_split)
+            ),
+            "#INVALID_NUM_SPLIT"
+        )
+    )
+);
+
+/*
+---- ROTATE ----
+*/
+
+// NONE --> ROTATE_VECTOR
+ROTATE_VECTOR = LAMBDA(vector, n, [as_column_vector],
+    LET(
+        vector, TOCOL(vector),
+        rotated_array, IFS(
+            OR(n = 0, n >= ROWS(vector), n <= -ROWS(vector)),
+            vector,
+            n > 0,
+            VSTACK(DROP(vector, n), TAKE(vector, n)),
+            n < 0,
+            VSTACK(TAKE(vector, n), DROP(vector, n))
+        ),
+        as_column_vector, IF(ISOMITTED(as_column_vector), FALSE, TRUE),
+        IF(as_column_vector, TOROW(rotated_array), TOCOL(rotated_array))
+    )
+);
+
+// ROTATE_VECTOR --> ROTATE_ARRAY
+ROTATE_ARRAY = LAMBDA(array, n, [rotate_columns],
+    LET(
+        rotate_columns, IF(ISOMITTED(rotate_columns), TRUE, FALSE),
+        nrows, ROWS(array),
+        ncols, COLUMNS(array),
+        seqrows, SEQUENCE(nrows),
+        seqcols, SEQUENCE(1, ncols),
+        results, IF(
+            rotate_columns,
+            CHOOSECOLS(array, ROTATE_VECTOR(seqcols, n, TRUE)),
+            CHOOSEROWS(array, ROTATE_VECTOR(seqrows, n, FALSE))
+        ),
+        results
+    )
+);
+
+/*
+---- SWAP ----
+*/
+
+// NONE --> SWAP_COLUMNS
+SWAP_COLUMNS = LAMBDA(array, [from_index], [to_index],
+    LET(
+        from_index, IF(ISOMITTED(from_index), 1, from_index),
+        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        column_sequence, SEQUENCE(1, COLUMNS(array)),
+        from_logical, column_sequence = from_index,
+        to_logical, column_sequence = to_index,
+        replace_from, IF(from_logical, to_index, column_sequence),
+        replace_to, IF(to_logical, from_index, replace_from),
+        CHOOSECOLS(array, replace_to)
+    )
+);
+
+// NONE --> SWAP_ROWS
+SWAP_ROWS = LAMBDA(array, [from_index], [to_index],
+    LET(
+        from_index, IF(ISOMITTED(from_index), 1, from_index),
+        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        row_sequence, SEQUENCE(ROWS(array)),
+        from_logical, row_sequence = from_index,
+        to_logical, row_sequence = to_index,
+        replace_from, IF(from_logical, to_index, row_sequence),
+        replace_to, IF(to_logical, from_index, replace_from),
+        CHOOSEROWS(array, replace_to)
+    )
+);
+
+/*
+---- TEXT ----
+*/
+
+// NONE --> TEXT_SPLIT_VECTOR
+TEXT_SPLIT_VECTOR = LAMBDA(
+    text_vector,
+    [text_delimiter],
+    [row_delimiter],
+    [ignore_empty],
+    [match_mode],
+    [pad_with],
+    LET(
+        text_delimiter, IF(ISOMITTED(text_delimiter), " ", text_delimiter),
+        row_delimiter, IF(ISOMITTED(row_delimiter), "|<#>|", row_delimiter),
+        pad_with, IF(ISOMITTED(pad_with), "", pad_with),
+        reduce_text, REDUCE(, text_vector, LAMBDA(acc, curr, CONCAT(acc, row_delimiter, curr))),
+        TEXTSPLIT(reduce_text, text_delimiter, row_delimiter, ignore_empty, match_mode, pad_with)
+    )
+);
+
+/*
+MIT License
+
+Copyright (c) 2022-2023 PT. FIAKO ENJINIRING INDONESIA
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/

@@ -2,10 +2,10 @@
 title: |
   feidlambda v0.3
 subtitle: |
-  _Public preview_ fitur terbaru di `feidlambda v0.3`
+  Fitur `feidlambda v0.3`
 author: "Taruma Sakti Megariansyah"
 date: 2022-12-28
-date-modified: 2023-01-04
+date-modified: 2023-01-06
 date-format: full
 lang: id
 
@@ -17,21 +17,28 @@ link-external-newwindow: true
 
 fig-responsive: true
 
+filters: 
+  - "../include-code-files.lua"
+
 format:
   html:
     mermaid-format: png
 
+crossref: 
+  chapters: true
 ---
 
 ::: {.callout-important icon="false" .text-center}
-## Official GIST **feid_utils** (v0.3)
+## Official GIST **feidlambda** (v0.3)
 
-COMING SOON
+[Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
 # Perubahan penting {.unnumbered}
 
 Perubahan versi feidlambda v0.2 ke v0.3 bersifat **_breaking change_**, yang berarti penggunaan v0.2 tidak dapat digunakan lagi bersamaan dengan v0.3. Hal ini bisa terlihat dari nama fungsi maupun kodenya di v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sampai versi v1.0, akan tetapi perubahan ini diusahakan seminimal mungkin. 
+
+Penamaan juga yang sebelumnya menggunakan `feid.utils` menjadi `feid` saja atau bebas tergantung penamaan _module_-nya.
 
 Berikut nama-nama fungsi baru di feidlambda v0.3 yang menggantikan fungsi di versi sebelumnya (@tbl-feidlambda-v03-comparison).
 
@@ -160,9 +167,11 @@ Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut ka
 - `SWAP_*`: Mengganti posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
-## `FILTER_*`
+---
 
-Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antara fungsi di kategori ini bisa dilihat di @fig-dep-filter.
+## Kategori `FILTER_*` {#sec-filter}
+
+Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
 
 ```{mermaid}
 %%| label: fig-dep-filter
@@ -180,68 +189,745 @@ flowchart LR
   _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
 ```
 
-### `FILTER_DROP_ROWS()`
+Fungsi utama kategori `FILTER_*` yaitu `FILTER_DROP_ROWS()`, `FILTER_DROP_COLUMNS()`, dan `FILTER_MINMAX_ARRAY()`.
 
-### `FILTER_DROP_COLUMNS()`
+<details>
+<summary>_Source Code_ `FILTER_*`</summary>
+```{.scala include="../_feidlambda/feid_FILTER" }
+```
+</details>
 
-### `FILTER_FUNC_COLUMN()`
+### `FILTER_DROP_ROWS()` {#sec-filter-drop-rows}
 
-### `FILTER_MINMAX_COLUMN()`
+Fungsi `FILTER_DROP_ROWS(array, row_index)` digunakan untuk menghapus baris dari data.
 
-### `_RECURSIVE_FILTER_MINMAX()`
+:::::  {.border .p-3 .my-3 .justify}
 
-### `FILTER_MINMAX_ARRAY()`
+::: {.text-center .syntax}
+_Syntax_
+: FILTER_DROP_ROWS(array, row_index)
 
-## `GET_*`
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array | vector]`
+: data berupa _array_ atau _vector_ yang memiliki baris lebih dari satu. 
+
+`row_index := [integer number | integer vector]`
+: indeks baris yang ingin dihapus. 
+
+:::::
+
+TODO: DEMO
+
+### `FILTER_DROP_COLUMNS()` {#sec-filter-drop-columns}
+
+Fungsi `FILTER_DROP_COLUMNS(array, column_index)` digunakan untuk menghapus kolom dari data.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: FILTER_DROP_COLUMNS(array, column_index)
+
+_Output_
+: _array_
+
+:::
+
+---
+
+`array := [array | vector]`
+: data berupa _array_ atau _vector_ yang memiliki kolom lebih dari satu. 
+
+`column_index := [integer number | integer vector]`
+: indeks kolom yang ingin dihapus. 
+
+:::::
+
+TODO: DEMO
+
+### `FILTER_MINMAX_ARRAY()` {#sec-filter-minmax-array}
+
+Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [label_vector], [with_label])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [label_vector], [with_label])
+
+_Output_
+: _array_
+
+:::
+
+---
+
+`array := [array | numeric array]`
+: data berupa _array_ dengan ketentuan `array` berisikan angka kecuali kolom pertama jika menggunakan opsi `ignore_first_column`. 
+
+`[ignore_first_column] := FALSE :: [TRUE | FALSE]`
+: nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari `array` akan diabaikan dan tidak dilakukan _filtering_ nilai minimum/maksimum. 
+
+`[label_vector] := NONE :: [vector]`
+: nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
+
+`[with_label] := FALSE :: [TRUE | FALSE]`
+: nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `GET_*` {#sec-get}
+
+Kategori `GET_*` merupakan kumpulan fungsi yang digunakan untuk mengambil informasi dari suatu data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-get.
+
+```{mermaid}
+%%| label: fig-dep-get
+%%| fig-cap: Grafik _dependencies_ kategori `GET_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> GET_INDEX_2D
+```
+
+Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2D()`. 
+
+<details>
+<summary>_Source Code_ `GET_*`</summary>
+```{.scala include="../_feidlambda/feid_GET" }
+```
+</details>
 
 ### `GET_INDEX_2D()`
 
-## `IS_*`
+Fungsi `GET_INDEX_2D(lookup_value, array, [return_order_only])` dapat digunakan untuk mengambil informasi urutan nilai yang dicari ataupun posisi baris/kolom dari `array`. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: GET_INDEX_2D(lookup_value, array, [return_order_only])
+
+_Output_
+: _number_ atau _array_
+
+:::
+
+---
+
+`lookup_value := [scalar]`
+: Nilai yang dicari dalam `array`. Nilai `lookup_value` adalah nilai tunggal berupa _scalar_. 
+
+`array := [array]`
+: Data berupa _array_. 
+
+`[return_order_only] := FALSE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, hasil fungsi memberikan urutan angka nilai yang dicari. Urutan dimulai dari horizontal kiri teratas sampai kanan terbawah. Jika `FALSE`, maka _output_ terdiri dari nomor urut, indeks kolom, dan indeks baris. 
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `IS_*` {#sec-is}
+
+Kategori `IS_*` merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-is.
+
+```{mermaid}
+%%| label: fig-dep-is
+%%| fig-cap: Grafik _dependencies_ kategori `IS_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> IS_ALL_IN_LOOKUP_VECTOR
+  NONE --> IS_COLS_EQUAL_LOOKUP_VECTOR
+  IS_COLS_EQUAL_LOOKUP_VECTOR --> IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
+  NONE --> IS_ROWS_LOGICAL
+  NONE --> IS_COLUMNS_LOGICAL
+```
+
+Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
+
+<details>
+<summary>_Source Code_ `IS_*`</summary>
+```{.scala include="../_feidlambda/feid_IS" }
+```
+</details>
 
 ### `IS_ALL_IN_VECTOR()`
 
+Fungsi `IS_ALL_IN_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap elemen di `array` termasuk dari `lookup_vector`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: IS_ALL_IN_VECTOR(array, lookup_vector)
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array | vector]`
+: data berupa _array_ atau _vector_. 
+
+`lookup_vector := [scalar | vector]`
+: _vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+
+:::::
+
+TODO: DEMO
+
 ### `IS_COLS_EQUAL_VECTOR()`
+
+Fungsi `IS_COLS_EQUAL_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: IS_COLS_EQUAL_VECTOR(array, lookup_vector)
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array | vector]`
+: data berupa _array_ . 
+
+`lookup_vector := [scalar | vector]`
+: _vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+
+:::::
+
+TODO: DEMO
 
 ### `IS_ALL_COLS_EQUAL_VECTOR()`
 
+Fungsi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`, dan diperiksa apakah setiap barisnya sesuai dengan `logical_function`. Fungsi ini menggunakan fungsi `IS_COLS_EQUAL_VECTOR()`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])
+
+_Output_
+: _column vector_
+:::
+
+---
+
+`array := [array | vector]`
+: Data berupa _array_ . 
+
+`lookup_vector := [scalar | vector]`
+: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+
+`logical_function := OR() :: [lambda function]`
+: Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap barisnya. 
+
+:::::
+
+TODO: DEMO
+
 ### `IS_ROWS_LOGICAL()`
+
+Fungsi `IS_ROWS_LOGICAL(logical_array, [logical_function])` mengaggregasi setiap baris dari `logical_array` menggunakan fungsi `logical_function`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: IS_ROWS_LOGICAL(logical_array, [logical_function])
+
+_Output_
+: _column vector_
+:::
+
+---
+
+`logical_array := [logical array]`
+: data berupa _logical array_ . 
+
+`[logical_function] := OR() [scalar | vector]`
+: Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap barisnya. 
+
+:::::
+
+TODO: DEMO
 
 ### `IS_COLUMNS_LOGICAL()`
 
-## `MAKE_*`
+Fungsi `IS_COLUMNS_LOGICAL(logical_array, [logical_function])` mengaggregasi setiap kolom dari `logical_array` menggunakan fungsi `logical_function`.
 
-### `_RECURSIVE_MAKE_SEQUENCE()`
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: IS_COLUMNS_LOGICAL(logical_array, [logical_function])
+
+_Output_
+: _row vector_
+:::
+
+---
+
+`logical_array := [logical array]`
+: data berupa _logical array_ . 
+
+`[logical_function] := OR() [scalar | vector]`
+: Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap kolomnya. 
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `MAKE_*` {#sec-make}
+
+Kategori `MAKE_*` merupakan kumpulan fungsi yang membangkitkan (_generate_) data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-make.
+
+```{mermaid}
+%%| label: fig-dep-make
+%%| fig-cap: Grafik _dependencies_ kategori `MAKE_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  _RECURSIVE_MAKE_SEQUENCE --> _RECURSIVE_MAKE_SEQUENCE
+  _RECURSIVE_MAKE_SEQUENCE --> MAKE_SEQUENCE_FROM_VECTOR
+```
+
+Fungsi utama pada kategori ini adalah `MAKE_SEQUENCE_FROM_VECTOR()`.
+
+<details>
+<summary>_Source Code_ `MAKE_*`</summary>
+```{.scala include="../_feidlambda/feid_MAKE" }
+```
+</details>
 
 ### `MAKE_SEQUENCE_FROM_VECTOR()`
 
-## `REPEAT_*`
+Fungsi `MAKE_SEQUENCE_FROM_VECTOR(start_vector, end_vector, [stack_horizontally])` digunakan untuk mebangkitkan _sequence_ dari setiap baris/elemen di `start_vector` dan `end_vector`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: MAKE_SEQUENCE_FROM_VECTOR(start_vector, end_vector, [stack_horizontally])
+
+_Output_
+: _column vector_ atau _array_
+:::
+
+---
+
+`start_vector := [integer vector]`
+: _Vector_ yang terdiri dari bilangan bulat memulai _sequence_. 
+
+`end_vector := [integer vector]`
+: _Vector_ yang terdiri dari bilangan bulat akhir _sequence_. 
+
+`[stack_horizontally] := FALSE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu FALSE. Jika `TRUE`, maka setiap _sequence_ yang dibangkitkan akan disusun horizontal.  
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `REPEAT_*` {#sec-repeat}
+
+Kategori `REPEAT_*` merupakan kumpulan fungsi yang digunakan untuk melakukan pengulangan _array_ ataupun _vector_ dan menghasilkannya dalam bentuk _dynamic array_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-repeat.
+
+```{mermaid}
+%%| label: fig-dep-repeat
+%%| fig-cap: Grafik _dependencies_ kategori `REPEAT_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  REPEAT_ARRAY_BY_ROW & REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY
+  REPEAT_ARRAY_BY_ROW --> REPEAT_ARRAY_BY_ROW
+  REPEAT_ARRAY_BY_COLUMN --> REPEAT_ARRAY_BY_COLUMN
+```
+
+Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
+
+<details>
+<summary>_Source Code_ `REPEAT_*`</summary>
+```{.scala include="../_feidlambda/feid_REPEAT" }
+```
+</details>
 
 ### `REPEAT_ARRAY_BY_ROW()`
 
+Fungsi `REPEAT_ARRAY_BY_ROW(array, [num_repeat])` digunakan untuk mengulangi `array` sepanjang baris (ke bawah).
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: REPEAT_ARRAY_BY_ROW(array, [num_repeat])
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [scalar | vector | array]`
+: Data dapat berupa _scalar_, _vector_, ataupun _array_. 
+
+`[num_repeat] := 2 :: [integer]`
+: Jumlah pengulangannya. 
+
+:::::
+
+TODO: DEMO
+
 ### `REPEAT_ARRAY_BY_COLUMN()`
+
+Fungsi `REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])` digunakan untuk mengulangi `array` sepanjang kolom (ke kanan).
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [scalar | vector | array]`
+: Data dapat berupa _scalar_, _vector_, ataupun _array_. 
+
+`[num_repeat] := 2 :: [integer]`
+: Jumlah pengulangannya. 
+
+:::::
+
+TODO: DEMO
 
 ### `REPEAT_ARRAY()`
 
-## `RESHAPE_*`
+Fungsi `REPEAT_ARRAY(array, [num_repeat], [by_row])` digunakan untuk mengulangi `array` sepanjang baris/kolom (ke bawah/ke kanan).
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: REPEAT_ARRAY(array, [num_repeat], [by_row])
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [scalar | vector | array]`
+: Data dapat berupa _scalar_, _vector_, ataupun _array_. 
+
+`[num_repeat] := 2 :: [integer]`
+: Jumlah pengulangannya.
+
+`[by_row] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka pengulangan akan sepanjang baris (ke bawah), dan berlaku sebaliknya juga. 
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `RESHAPE_*` {#sec-reshape}
+
+Kategori `RESHAPE_*` merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-reshape.
+
+```{mermaid}
+%%| label: fig-dep-reshape
+%%| fig-cap: Grafik _dependencies_ kategori `RESHAPE_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> RESHAPE_BY_COLUMNS
+```
+
+Fungsi utama yang tersedia saat ini hanya `RESHAPE_BY_COLUMNS()`.
+
+<details>
+<summary>_Source Code_ `RESHAPE_*`</summary>
+```{.scala include="../_feidlambda/feid_RESHAPE" }
+```
+</details>
 
 ### `RESHAPE_BY_COLUMNS()`
 
-## `ROTATE_*`
+Fungsi `RESHAPE_BY_COLUMNS(array, [num_split])` digunakan untuk mengubah dimensi (transformasi) `array` berdasarkan jumlah pembagi kolomnya.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: RESHAPE_BY_COLUMNS(array, [num_split])
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array]`
+: Data berupa _array_ atau _vector_. 
+
+`[num_split] := 2 :: [integer]`
+: Nilai _default_ yaitu 2. Jumlah pembagi kolom. Jumlah kolom `array` harus habis dibagi (MOD) dengan `num_split`. 
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `ROTATE_*` {#sec-rotate}
+
+Kategori `ROTATE_*` merupakan kumpulan fungsi yang digunakan untuk menggeser atau memutar _array_ ataupun _vector_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-rotate.
+
+```{mermaid}
+%%| label: fig-dep-rotate
+%%| fig-cap: Grafik _dependencies_ kategori `ROTATE_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> ROTATE_VECTOR
+  ROTATE_VECTOR --> ROTATE_ARRAY
+```
+
+Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
+
+<details>
+<summary>_Source Code_ `ROTATE_*`</summary>
+```{.scala include="../_feidlambda/feid_ROTATE" }
+```
+</details>
 
 ### `ROTATE_VECTOR()`
 
+Fungsi `ROTATE_VECTOR(vector, n, [as_column_vector])` digunakan untuk menggeser/memutar elemen yang ada di _vector_ sebanyak `n`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: ROTATE_VECTOR(vector, n, [as_column_vector])
+
+_Output_
+: _vector_
+:::
+
+---
+
+`vector := [vector]`
+: Data berupa _vector_ (_column vector_ atau _row vector_). 
+
+`n := [integer]`
+: Jumlah berapa kali _vector_ diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
+
+`[as_column_vector] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka _output_ berupa _column vector_.
+
+:::::
+
+TODO: DEMO
+
 ### `ROTATE_ARRAY()`
 
-## `SWAP_*`
+Fungsi `ROTATE_ARRAY(array, n, [rotate_columns])` digunakan untuk menggeser/memutar elemen yang ada di _array_ sebanyak `n` berdasarkan baris atau kolom.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: ROTATE_ARRAY(array, n, [rotate_columns])
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array]`
+: Data berupa _array_. 
+
+`n := [scalar | vector]`
+: Jumlah berapa kali _vector_ diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
+
+`[rotate_columns] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka `array` diputar berdasarkan kolom. Jika `FALSE`, maka `array` diputar berdasarkan baris.
+
+:::::
+
+TODO: DEMO
+
+---
+
+## Kategori `SWAP_*`
+
+Kategori `SWAP_*` merupakan kumpulan fungsi yang digunakan untuk mengganti atau mengubah posisi elemen atau _vector_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-swap.
+
+```{mermaid}
+%%| label: fig-dep-swap
+%%| fig-cap: Grafik _dependencies_ kategori `SWAP_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> SWAP_COLUMNS
+  NONE --> SWAP_ROWS
+```
+
+Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
+
+<details>
+<summary>_Source Code_ `SWAP_*`</summary>
+```{.scala include="../_feidlambda/feid_SWAP" }
+```
+</details>
 
 ### `SWAP_COLUMNS()`
 
+Fungsi `SWAP_COLUMNS(array, [from_index], [to_index])` digunakan untuk menukar posisi kolom ke-`from_index` dengan kolom ke-`to_index`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: SWAP_COLUMNS(array, [from_index], [to_index])
+
+_Output_
+: _vector_ atau _array_
+:::
+
+---
+
+`array := [row vector | array]`
+: Data dapat berupa _array_ atau _row vector_. 
+
+`[from_index] := 1 :: [integer]`
+: Nilai _default_ yaitu 1. Posisi _index_ kolom yang ingin dipindahkan.
+
+`[to_index] := 2 :: [integer]`
+: Nilai _default_ yaitu 2. Posisi _index_ tujuan kolom.
+
+:::::
+
+TODO: DEMO
+
 ### `SWAP_ROWS()`
 
-## `TEXT_*`
+Fungsi `SWAP_ROWS(array, [from_index], [to_index])` digunakan untuk menukar posisi baris ke-`from_index` dengan baris ke-`to_index`.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: SWAP_COLUMNS(array, [from_index], [to_index])
+
+_Output_
+: _vector_ atau _array_
+:::
+
+---
+
+`array := [column vector | array]`
+: Data dapat berupa _array_ atau _column vector_. 
+
+`[from_index] := 1 :: [integer]`
+: Nilai _default_ yaitu 1. Posisi _index_ baris yang ingin dipindahkan.
+
+`[to_index] := 2 :: [integer]`
+: Nilai _default_ yaitu 2. Posisi _index_ tujuan baris.
+
+:::::
+
+TODO: DEMO
+
+## Kategori `TEXT_*` {#sec-text}
+
+Kategori `TEXT_*` merupakan kumpulan fungsi yang digunakan untuk memproses data teks. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-text.
+
+```{mermaid}
+%%| label: fig-dep-text
+%%| fig-cap: Grafik _dependencies_ kategori `TEXT_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> TEXT_SPLIT_VECTOR
+```
+
+Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
+
+<details>
+<summary>_Source Code_ `TEXT_*`</summary>
+```{.scala include="../_feidlambda/feid_TEXT" }
+```
+</details>
 
 ### `TEXT_SPLIT_VECTOR()`
 
+Fungsi `TEXT_SPLIT_VECTOR(text_vector, [text_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with])` merupakan fungsi pengembangan lanjutan dari `TEXTSPLIT()` yang mampu menerima _input_ data berupa _vector_ dan menghasilkan dalam bentuk _dynamic array_.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: TEXT_SPLIT_VECTOR(text_vector, [text_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with])
+
+_Output_
+: _array_
+:::
+
+---
+
+`text_vector := [text vector]`
+: Data harus berupa _text column vector_. 
+
+`[text_delimiter] := " " :: [text]`
+: Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap barisnya.
+
+`[as_column_vector] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka _output_ berupa _column vector_.
+
+:::::
+
+TODO: DEMO
 
 ::: {.column-screen-inset-shaded}
 

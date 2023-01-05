@@ -1,0 +1,16 @@
+// NONE --> TEXT_SPLIT_VECTOR
+TEXT_SPLIT_VECTOR = LAMBDA(
+    text_vector,
+    [text_delimiter],
+    [row_delimiter],
+    [ignore_empty],
+    [match_mode],
+    [pad_with],
+    LET(
+        text_delimiter, IF(ISOMITTED(text_delimiter), " ", text_delimiter),
+        row_delimiter, IF(ISOMITTED(row_delimiter), "|<#>|", row_delimiter),
+        pad_with, IF(ISOMITTED(pad_with), "", pad_with),
+        reduce_text, REDUCE(, text_vector, LAMBDA(acc, curr, CONCAT(acc, row_delimiter, curr))),
+        TEXTSPLIT(reduce_text, text_delimiter, row_delimiter, ignore_empty, match_mode, pad_with)
+    )
+);
