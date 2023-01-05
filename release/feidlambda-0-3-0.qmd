@@ -142,14 +142,14 @@ TODO: DEMO
 
 ### `FILTER_MINMAX_ARRAY()` {#sec-filter-minmax-array}
 
-Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [label_vector], [with_label])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
+Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_labels], [label_vector])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 
 _Syntax_
-: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [label_vector], [with_label])
+: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_labels], [label_vector])
 
 _Output_
 : _array_
@@ -164,11 +164,11 @@ _Output_
 `[ignore_first_column] := FALSE :: [TRUE | FALSE]`
 : Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari `array` akan diabaikan dan tidak dilakukan _filtering_ nilai minimum/maksimum. 
 
+`[with_labels] := FALSE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
+
 `[label_vector] := NONE :: [vector]`
 : Nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
-
-`[with_label] := FALSE :: [TRUE | FALSE]`
-: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
 
 :::::
 
