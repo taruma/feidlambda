@@ -2,46 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2022-12-28T03:36:09.487Z</lastmod>
+    <lastmod>2023-01-06T08:57:55.529Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-3-0.html</loc>
-    <lastmod>2022-12-28T03:36:10.355Z</lastmod>
+    <lastmod>2023-01-06T08:57:57.085Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
-    <lastmod>2022-12-28T03:36:11.251Z</lastmod>
+    <lastmod>2023-01-06T08:57:58.033Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2022-12-28T03:36:12.451Z</lastmod>
+    <lastmod>2023-01-06T08:57:59.149Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/release/migration-v0-2-to-v0-3.html</loc>
+    <lastmod>2023-01-06T08:57:59.625Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2022-12-28T03:36:12.855Z</lastmod>
+    <lastmod>2023-01-06T08:58:00.033Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/penggunaan-v1.html</loc>
+    <lastmod>2023-01-06T08:58:00.485Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
-    <lastmod>2022-12-28T03:36:13.451Z</lastmod>
+    <lastmod>2023-01-06T08:58:01.046Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/penggunaan.html</loc>
-    <lastmod>2022-12-28T03:36:13.895Z</lastmod>
+    <lastmod>2023-01-06T08:58:01.474Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/index.html</loc>
-    <lastmod>2022-12-28T03:36:14.335Z</lastmod>
+    <lastmod>2023-01-06T08:58:01.882Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation.html</loc>
-    <lastmod>2022-12-28T03:36:17.119Z</lastmod>
+    <lastmod>2023-01-06T08:58:03.526Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/index.html</loc>
-    <lastmod>2022-12-28T03:36:17.983Z</lastmod>
+    <lastmod>2023-01-06T08:58:04.346Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2022-12-28T03:36:18.391Z</lastmod>
+    <lastmod>2023-01-06T08:58:04.786Z</lastmod>
   </url>
 </urlset>
