@@ -1,0 +1,33 @@
+// NONE --> ROTATE_VECTOR
+ROTATE_VECTOR = LAMBDA(vector, n, [as_column_vector],
+    LET(
+        vector, TOCOL(vector),
+        rotated_array, IFS(
+            OR(n = 0, n >= ROWS(vector), n <= -ROWS(vector)),
+            vector,
+            n > 0,
+            VSTACK(DROP(vector, n), TAKE(vector, n)),
+            n < 0,
+            VSTACK(TAKE(vector, n), DROP(vector, n))
+        ),
+        as_column_vector, IF(ISOMITTED(as_column_vector), FALSE, TRUE),
+        IF(as_column_vector, TOROW(rotated_array), TOCOL(rotated_array))
+    )
+);
+
+// ROTATE_VECTOR --> ROTATE_ARRAY
+ROTATE_ARRAY = LAMBDA(array, n, [rotate_columns],
+    LET(
+        rotate_columns, IF(ISOMITTED(rotate_columns), TRUE, FALSE),
+        nrows, ROWS(array),
+        ncols, COLUMNS(array),
+        seqrows, SEQUENCE(nrows),
+        seqcols, SEQUENCE(1, ncols),
+        results, IF(
+            rotate_columns,
+            CHOOSECOLS(array, ROTATE_VECTOR(seqcols, n, TRUE)),
+            CHOOSEROWS(array, ROTATE_VECTOR(seqrows, n, FALSE))
+        ),
+        results
+    )
+);

@@ -46,6 +46,7 @@ website:
       - text: feidlambda 0.x
         menu:
         - href: release/feidlambda.qmd
+        - href: release/migration-v0-2-to-v0-3.qmd
         - href: release/feidlambda-0-3-0.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
@@ -124,7 +125,7 @@ website:
 
 format:
   html:
-    theme: minty # lux, materia, minty, sandstone, spacelab, yeti, zephyr
+    theme: journal # lux, materia, minty, sandstone, spacelab, yeti, zephyr
     css: styles.css
     toc: true
     link-external-newwindow: true

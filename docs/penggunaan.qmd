@@ -1,10 +1,14 @@
 ---
 title: |
-  Instalasi feidlambda (outdated)
+  Instalasi feidlambda
 subtitle: |
-  Panduan pemasangan koleksi lambda `feidlambda` versi 0.x
+  Panduan pemasangan `feidlambda` v0.3+
 author: Taruma Sakti Megariansyah
 date: 2022-10-20
+date-modified: 2023-01-06
+date-format: full
+lang: id
+
 toc: true
 toc-location: right
 number-sections: true
@@ -13,16 +17,7 @@ layout: article
 sidebar: side-docs
 ---
 
-::: {.callout-important}
-# AFE 1.1+
-
-Dengan diperbaruinya versi AFE menjadi 1.1+, terdapat beberapa perubahan cara dalam melakukan import feidlambda. Perubahan berupa:
-
-- Harus dilakukan instalasi ulang untuk add-ins _Advanced Formula Environment_. 
-- Fitur terbaru AFE 1.1 bisa dilihat pada [README AFE](https://github.com/microsoft/advanced-formula-environment#readme).
-- Saat import module melalui gist, _namespace_ modul tidak boleh memiliki karakter titik (`.`), sehingga yang sebelumnya `feid.utils` menjadi `feid_utils`. Perubahan ini akan dibarengi dengan pembaruan versi feidlambda 0.3.x.
-
-:::
+Panduan ini untuk __Advanced Formula Environment__ v1.1. Panduan versi sebelumnya (v1.0) bisa dilihat [disini](penggunaan-v1.qmd).
 
 ## **Advanced Formula Environment**
 
@@ -34,37 +29,35 @@ _Install_ add-ins **Advanced Formula Environment** dari menu `Insert` > `Get Add
 
 ## _Import_ menggunakan AFE
 
-Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Home` > `Advanced Formula Environment` > `Import`. 
+Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Formula` > `Advanced Formula Environment` > `Import`. 
 
 ::: {.column-page}
-![Melakukan _import_ di AFE](https://user-images.githubusercontent.com/1007910/192432838-0b21184d-f06b-4d03-b56b-97aad0cd392a.png)
+![Melakukan _import_ di AFE](https://user-images.githubusercontent.com/1007910/210946239-4c14ea78-eb85-42b3-a2f6-976e3f6b2704.png)
+
 :::
 
 ## Salin _Github Gist URL_
 
-Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new namespace_" dan isi _namespace_ dengan nama koleksi (contoh: `feid.utils`). 
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia ([Link Github Gist feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)). _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`).
 
-::: {.callout-tip appearance="simple"}
-Lakukan langkah _import_ (2-3) untuk setiap koleksi yang ingin ditambahkan. 
-:::
+![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
 
-![Isi _GitHub Gist URL_ dan _Namespace_](https://user-images.githubusercontent.com/1007910/192433790-edfb2237-dcc9-41e0-898e-36d8a58e3438.png)
+## _Save_ / _Sync_ module 
 
-## _Sync_ formula 
+Setelah _import_ seluruh koleksi yang digunakan dan berhasil, lakukan _saving_ (_sync_) yang bertujuan untuk menerapkan module ke lembar kerja Excel. Shortcut untuk _save_ yaitu `Ctrl + S`. 
 
-Setelah _import_ seluruh koleksi yang digunakan, lakukan _synchronize_ yang bertujuan menyamakan nama pada _Formula/Excel Name Manager_. 
-
-::: {.callout-caution appearance="simple"}
-Jika muncul peringatan mengenai _hidden sheets_, pilih "Allow ...". 
-::: 
-
-![_Synchronize_ AFE](https://user-images.githubusercontent.com/1007910/192444394-78f8a5d5-1015-45b7-91e9-57f77f86923f.png)
-
+![_Save_ / _Apply module_ ke lembar kerja](https://user-images.githubusercontent.com/1007910/210946979-d64c1d4a-b61b-4ab1-ab7b-b2d2c6ae4e1c.png)
 
 ## Gunakan koleksi lambda
 
-Selesai _sync_, fungsi lambda bisa langsung digunakan. 
+Selesai _save_, fungsi **feidlambda** bisa langsung digunakan. 
 
 ::: {.column-page}
-![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/192445916-242b2745-110b-44f7-9332-245b7fdaa695.png)
+![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/210947524-d4a8bce7-d33d-47b4-8a72-6cf5244c9651.png)
 :::
+
+## Baca dokumentasi **feidlambda** v0.3
+
+Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3-0.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/release/migration-v0-2-to-v0-3.qmd).
+
+Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 

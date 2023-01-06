@@ -8,6 +8,9 @@ abstract: |
   Istilah ini digunakan untuk memudahkan penyampaian dan konsistensi dalam pengembangan `LAMBDA`. Istilah ini digunakan di FIAKO Engineering.  
 abstract-title: Information
 date: 2022-10-21
+date-modified: 2023-01-06
+lang: id
+
 toc: true
 toc-title: Daftar Istilah
 toc-depth: 5
@@ -115,6 +118,10 @@ _Vector_ atau _array_ yang berisikan nilai _numerik_.
 _Numeric Vector_
 :::
 
+##### _TEXT VECTOR_ / _TEXT ARRAY_
+
+_Vector_ atau _array_ yang berisikan nilai _text_ atau _string_. 
+
 ##### _ROW VECTOR_
 
 _Vector_ yang melebar ke samping atau berupa baris. 
@@ -151,9 +158,9 @@ _Dynamic Array_ (_Vector_)
 _Dynamic Array_ (_Array_)
 :::
 
-##### _DYNAMIC ARRAY FORMULA_
+##### _DYNAMIC ARRAY FORMULA / FUNCTION_
 
-Formula yang mengeluarkan hasil lebih dari satu sel (_vector_ / _array_) dalam bentuk _dynamic array_. 
+Formula atau fungsi yang mengeluarkan hasil lebih dari satu sel (_vector_ / _array_) dalam bentuk _dynamic array_. 
 
 Persamaan yang termasuk _dynamic array formula_ antara lain: `=POWER()`, `=ABS()`, `=ROUNDUP()`, dll. Yang perlu diingat bahwa formula _dynamic array_ mampu menghasilkan nilai dalam bentuk _vector_ atau _array_ sesuai jenis nilai yang dimasukkan.
 
@@ -164,3 +171,7 @@ Persamaan yang termasuk _dynamic array formula_ antara lain: `=POWER()`, `=ABS()
 
 _Dynamic Array Formula_
 :::
+
+##### _SCALAR FORMULA / FUNCTION_
+
+Formula atau fungsi yang mengluarkan hasil satu sel atau scalar (satu nilai). 

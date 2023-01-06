@@ -1,0 +1,27 @@
+// NONE --> SWAP_COLUMNS
+SWAP_COLUMNS = LAMBDA(array, [from_index], [to_index],
+    LET(
+        from_index, IF(ISOMITTED(from_index), 1, from_index),
+        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        column_sequence, SEQUENCE(1, COLUMNS(array)),
+        from_logical, column_sequence = from_index,
+        to_logical, column_sequence = to_index,
+        replace_from, IF(from_logical, to_index, column_sequence),
+        replace_to, IF(to_logical, from_index, replace_from),
+        CHOOSECOLS(array, replace_to)
+    )
+);
+
+// NONE --> SWAP_ROWS
+SWAP_ROWS = LAMBDA(array, [from_index], [to_index],
+    LET(
+        from_index, IF(ISOMITTED(from_index), 1, from_index),
+        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        row_sequence, SEQUENCE(ROWS(array)),
+        from_logical, row_sequence = from_index,
+        to_logical, row_sequence = to_index,
+        replace_from, IF(from_logical, to_index, row_sequence),
+        replace_to, IF(to_logical, from_index, replace_from),
+        CHOOSEROWS(array, replace_to)
+    )
+);
