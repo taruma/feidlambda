@@ -83,6 +83,6 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
 );
 
 // _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
-FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [label_vector], [with_label],
-    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_label)
+FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_labels], [label_vector],
+    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_labels)
 );

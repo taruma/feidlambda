@@ -1,6 +1,6 @@
 /*
 feidlambda v0.3.0 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
-GIST (feid): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+GIST feidlambda v0.3.0: https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
 REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
 AUTHOR: @taruma
 TESTED: Microsoft Excel v2211 (Build 16.0.15831.20098)
@@ -95,8 +95,8 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
 );
 
 // _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
-FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [label_vector], [with_label],
-    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_label)
+FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_labels], [label_vector],
+    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_labels)
 );
 
 /*
@@ -128,7 +128,7 @@ GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
 */
 
 // NONE --> IS_ALL_IN_LOOKUP_VECTOR
-IS_ALL_IN_VECTOR = LAMBDA(array, lookup_vector,
+IS_ALL_IN_VECTOR = LAMBDA(lookup_vector, array,
     LET(
         lookup_vector, TOCOL(lookup_vector),
         MAP(array, LAMBDA(element, OR(BYROW(lookup_vector, LAMBDA(lookup, element = lookup)))))
@@ -136,7 +136,7 @@ IS_ALL_IN_VECTOR = LAMBDA(array, lookup_vector,
 );
 
 // NONE --> IS_COLS_EQUAL_LOOKUP_VECTOR
-IS_COLS_EQUAL_VECTOR = LAMBDA(array, lookup_vector,
+IS_COLS_EQUAL_VECTOR = LAMBDA(lookup_vector, array,
     LET(
         lookup_vector, TOROW(lookup_vector),
         ncols_vector, COLUMNS(lookup_vector),
@@ -154,10 +154,10 @@ IS_COLS_EQUAL_VECTOR = LAMBDA(array, lookup_vector,
 );
 
 // IS_COLS_EQUAL_LOOKUP_VECTOR --> IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
-IS_ALL_COLS_EQUAL_VECTOR = LAMBDA(array, lookup_vector, [logical_function],
+IS_ALL_COLS_EQUAL_VECTOR = LAMBDA(lookup_vector, array, [logical_function],
     LET(
         logical_function, IF(ISOMITTED(logical_function), LAMBDA(x, OR(x)), logical_function),
-        array_boolean, IS_COLS_EQUAL_VECTOR(array, lookup_vector),
+        array_boolean, IS_COLS_EQUAL_VECTOR(lookup_vector, array),
         BYROW(array_boolean, LAMBDA(each_row, logical_function(each_row)))
     )
 );

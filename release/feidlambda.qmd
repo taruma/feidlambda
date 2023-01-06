@@ -2,7 +2,7 @@
 title: |
   _Source Code_ feidlambda
 subtitle: |
-  _Source Code_ 0.3.0
+  _Source Code_ feidlambda v0.3
 author: fiakodev
 date: 2022-09-28
 date-modified: 2023-01-06
@@ -10,6 +10,8 @@ toc: false
 link-external-newwindow: true
 layout: article
 license: MIT LICENSE
+lang: id
+date-format: full
 
 code-copy: true
 code-line-numbers: true
@@ -24,7 +26,7 @@ filters:
 
 ::: {.callout-note icon="false" .text-center}
 ## Official GIST **feidlambda** (v0.3)
-[Official GIST feidlambda v0.3](https://gist.github.com/taruma/60610672a9bd94724cba46f68b5614fa)
+[Official GIST feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
 ```{.scala include="../_feidlambda/feid"}
