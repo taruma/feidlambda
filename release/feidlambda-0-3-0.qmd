@@ -56,6 +56,8 @@ Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut ka
 - `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
+Download excel demonstrasi [RELEASE_feidlambda_v0_3.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.0/RELEASE_feidlambda_v0_3.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.
+
 ::: {.column-screen-inset-shaded}
 
 ---
@@ -903,6 +905,16 @@ Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fun
 ::: {.column-page}
 ![Demonstrasi `TEXT_SPLIT_VECTOR`](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
 :::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+Fungsi feidlambda v0.3 memiliki $9$ kategori dengan total $23$ fungsi utama dan pendukung. Dengan perombakan struktur dan penamaan dari v0.2 ke v0.3, harapannya v0.3 sudah memiliki struktur dan penamaan yang konsisten sehingga untuk memproduksi fungsi ataupun fitur barunya lebih cepat di versi-versi berikutnya. 
+
+Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). Dan jika bertemu masalah saat penggunaan feidlambda v0.3, bisa juga membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). 
 
 ::: {.column-screen-inset-shaded}
 
