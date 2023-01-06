@@ -56,9 +56,13 @@ Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut ka
 - `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
+::: {.column-screen-inset-shaded}
+
 ---
 
-## Kategori `FILTER_*` {#sec-filter}
+:::
+
+# Kategori `FILTER_*` {#sec-filter}
 
 Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
 
@@ -110,7 +114,9 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `FILTER_DROP_ROWS()`](img-0-3-0/feidlambda-v03-01-filter-1.gif){#fig-filter-drop-rows}
+:::
 
 ### `FILTER_DROP_COLUMNS()` {#sec-filter-drop-columns}
 
@@ -138,7 +144,9 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `FILTER_DROP_COLUMNS()`](img-0-3-0/feidlambda-v03-01-filter-2.gif){#fig-filter-drop-columns}
+:::
 
 ### `FILTER_MINMAX_ARRAY()` {#sec-filter-minmax-array}
 
@@ -172,11 +180,21 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {#fig-filter-minmax-array .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![](img-0-3-0/feidlambda-v03-01-filter-3.gif)
+
+![](img-0-3-0/feidlambda-v03-01-filter-4.gif)
+
+Demonstrasi `FILTER_MINMAX_ARRAY()`
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `GET_*` {#sec-get}
+:::
+
+# Kategori `GET_*` {#sec-get}
 
 Kategori `GET_*` merupakan kumpulan fungsi yang digunakan untuk mengambil informasi dari suatu data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-get.
 
@@ -227,11 +245,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `GET_INDEX_2D()`](img-0-3-0/feidlambda-v03-02-get-1.gif){#fig-get-index-2d}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `IS_*` {#sec-is}
+:::
+
+# Kategori `IS_*` {#sec-is}
 
 Kategori `IS_*` merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-is.
 
@@ -281,7 +305,9 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `IS_ALL_IN_VECTOR()`](img-0-3-0/feidlambda-v03-03-is-1.gif){#fig-is-all-in-vector}
+:::
 
 ### `IS_COLS_EQUAL_VECTOR()`
 
@@ -307,7 +333,10 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `IS_COLS_EQUAL_VECTOR()`](img-0-3-0/feidlambda-v03-03-is-2.gif){#fig-is-cols-equal-vector}
+:::
+
 
 ### `IS_ALL_COLS_EQUAL_VECTOR()`
 
@@ -336,7 +365,10 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `IS_ALL_COLS_EQUAL_VECTOR()`](img-0-3-0/feidlambda-v03-03-is-3.gif){#fig-is-all-cols-equal-vector}
+:::
+
 
 ### `IS_ROWS_LOGICAL()`
 
@@ -362,8 +394,6 @@ _Output_
 
 :::::
 
-TODO: DEMO
-
 ### `IS_COLUMNS_LOGICAL()`
 
 Fungsi `IS_COLUMNS_LOGICAL(logical_array, [logical_function])` mengaggregasi setiap kolom dari `logical_array` menggunakan fungsi `logical_function`.
@@ -388,11 +418,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page}
+![Demonstrasi `IS_ROWS_LOGICAL()` dan `IS_COLUMNS_LOGICAL()`](img-0-3-0/feidlambda-v03-03-is-4.gif){#fig-is-rows-cols-logical}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `MAKE_*` {#sec-make}
+:::
+
+# Kategori `MAKE_*` {#sec-make}
 
 Kategori `MAKE_*` merupakan kumpulan fungsi yang membangkitkan (_generate_) data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-make.
 
@@ -442,11 +478,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `MAKE_SEQUENCE_FROM_VECTOR()`](img-0-3-0/feidlambda-v03-04-make-1.gif){#fig-make-sequence-from-vector}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `REPEAT_*` {#sec-repeat}
+:::
+
+# Kategori `REPEAT_*` {#sec-repeat}
 
 Kategori `REPEAT_*` merupakan kumpulan fungsi yang digunakan untuk melakukan pengulangan _array_ ataupun _vector_ dan menghasilkannya dalam bentuk _dynamic array_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-repeat.
 
@@ -494,7 +536,9 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `REPEAT_ARRAY_BY_ROW()`](img-0-3-0/feidlambda-v03-05-repeat-1.gif){#fig-repeat-array-by-row}
+:::
 
 ### `REPEAT_ARRAY_BY_COLUMN()`
 
@@ -520,7 +564,10 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `REPEAT_ARRAY_BY_COLUMN()`](img-0-3-0/feidlambda-v03-05-repeat-2.gif){#fig-repeat-array-by-column}
+:::
+
 
 ### `REPEAT_ARRAY()`
 
@@ -549,11 +596,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page}
+![Demonstrasi `REPEAT_ARRAY()`](img-0-3-0/feidlambda-v03-05-repeat-3.gif){#fig-repeat-array}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `RESHAPE_*` {#sec-reshape}
+:::
+
+# Kategori `RESHAPE_*` {#sec-reshape}
 
 Kategori `RESHAPE_*` merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-reshape.
 
@@ -599,11 +652,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page}
+![Demonstrasi `RESHAPE_BY_COLUMNS()`](img-0-3-0/feidlambda-v03-06-reshape-1.gif){#fig-reshape-by-columns}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `ROTATE_*` {#sec-rotate}
+:::
+
+# Kategori `ROTATE_*` {#sec-rotate}
 
 Kategori `ROTATE_*` merupakan kumpulan fungsi yang digunakan untuk menggeser atau memutar _array_ ataupun _vector_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-rotate.
 
@@ -653,7 +712,9 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `ROTATE_VECTOR()`](img-0-3-0/feidlambda-v03-07-rotate-1.gif){#fig-rotate-vector}
+:::
 
 ### `ROTATE_ARRAY()`
 
@@ -682,11 +743,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page-left}
+![Demonstrasi `ROTATE_ARRAY()`](img-0-3-0/feidlambda-v03-07-rotate-2.gif){#fig-rotate-array}
+:::
+
+::: {.column-screen-inset-shaded}
 
 ---
 
-## Kategori `SWAP_*`
+:::
+
+# Kategori `SWAP_*`
 
 Kategori `SWAP_*` merupakan kumpulan fungsi yang digunakan untuk mengganti atau mengubah posisi elemen atau _vector_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-swap.
 
@@ -736,8 +803,6 @@ _Output_
 
 :::::
 
-TODO: DEMO
-
 ### `SWAP_ROWS()`
 
 Fungsi `SWAP_ROWS(array, [from_index], [to_index])` digunakan untuk menukar posisi baris ke-`from_index` dengan baris ke-`to_index`.
@@ -765,9 +830,17 @@ _Output_
 
 :::::
 
-TODO: DEMO
+::: {.column-page}
+![Demonstrasi `SWAP_COLUMNS()` dan `SWAP_ROWS()`](img-0-3-0/feidlambda-v03-08-swap-1.gif){#fig-swap-columns-rows}
+:::
 
-## Kategori `TEXT_*` {#sec-text}
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `TEXT_*` {#sec-text}
 
 Kategori `TEXT_*` merupakan kumpulan fungsi yang digunakan untuk memproses data teks. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-text.
 
@@ -827,7 +900,9 @@ _Output_
 
 Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fungsi TEXTSPLIT](https://support.microsoft.com/id-id/office/fungsi-textsplit-b1ca414e-4c21-4ca0-b1b7-bdecace8a6e7).
 
-TODO: DEMO
+::: {.column-page}
+![Demonstrasi `TEXT_SPLIT_VECTOR`](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
+:::
 
 ::: {.column-screen-inset-shaded}
 
