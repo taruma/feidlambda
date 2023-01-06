@@ -125,7 +125,7 @@ website:
 
 format:
   html:
-    theme: minty # lux, materia, minty, sandstone, spacelab, yeti, zephyr
+    theme: journal # lux, materia, minty, sandstone, spacelab, yeti, zephyr
     css: styles.css
     toc: true
     link-external-newwindow: true

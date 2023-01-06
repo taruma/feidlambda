@@ -210,7 +210,7 @@ _Syntax_
 : GET_INDEX_2D(lookup_value, array, [return_order_only])
 
 _Output_
-: _number_ atau _array_
+: _array_ ([_order_, _row index_, _column index_]) atau _number_ (_order_)
 
 :::
 
@@ -259,25 +259,25 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 ### `IS_ALL_IN_VECTOR()`
 
-Fungsi `IS_ALL_IN_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap elemen di `array` termasuk dari `lookup_vector`.
+Fungsi `IS_ALL_IN_VECTOR(lookup_vector, array)` digunakan untuk memeriksa apakah setiap elemen di `array` termasuk dari `lookup_vector`.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: IS_ALL_IN_VECTOR(array, lookup_vector)
+: IS_ALL_IN_VECTOR(lookup_vector, array)
 
 _Output_
-: _array_
+: _logical array_
 :::
 
 ---
 
-`array := [array | vector]`
-: Data berupa _array_ atau _vector_. 
-
 `lookup_vector := [scalar | vector]`
 : _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
+
+`array := [array | vector]`
+: Data berupa _array_ atau _vector_. 
 
 :::::
 
@@ -285,25 +285,25 @@ TODO: DEMO
 
 ### `IS_COLS_EQUAL_VECTOR()`
 
-Fungsi `IS_COLS_EQUAL_VECTOR(array, lookup_vector)` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`.
+Fungsi `IS_COLS_EQUAL_VECTOR(lookup_vector, array)` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: IS_COLS_EQUAL_VECTOR(array, lookup_vector)
+: IS_COLS_EQUAL_VECTOR(lookup_vector, array)
 
 _Output_
-: _array_
+: _logical array_
 :::
 
 ---
 
+`lookup_vector := [vector]`
+: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. Jumlah elemen `lookup_vector` harus sama dengan jumlah kolom `array`.
+
 `array := [array | vector]`
 : Data berupa _array_ . 
-
-`lookup_vector := [scalar | vector]`
-: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
 
 :::::
 
@@ -311,25 +311,25 @@ TODO: DEMO
 
 ### `IS_ALL_COLS_EQUAL_VECTOR()`
 
-Fungsi `IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`, dan diperiksa apakah setiap barisnya sesuai dengan `logical_function`. Fungsi ini menggunakan fungsi `IS_COLS_EQUAL_VECTOR()`.
+Fungsi `IS_ALL_COLS_EQUAL_VECTOR(lookup_vector, array, [logical_function])` digunakan untuk memeriksa apakah setiap kolom di `array` termasuk dari setiap elemen di `lookup_vector`, dan diperiksa apakah setiap barisnya sesuai dengan `logical_function`. Fungsi ini menggunakan fungsi `IS_COLS_EQUAL_VECTOR()`.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])
+: IS_ALL_COLS_EQUAL_VECTOR(lookup_vector, array, [logical_function])
 
 _Output_
-: _column vector_
+: _column logical vector_
 :::
 
 ---
 
+`lookup_vector := [scalar | vector]`
+: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. Jumlah elemen `lookup_vector` harus sama dengan jumlah kolom `array`.
+
 `array := [array | vector]`
 : Data berupa _array_ . 
-
-`lookup_vector := [scalar | vector]`
-: _Vector_ yang terdiri dari nilai yang ingin dicocokkan. 
 
 `logical_function := OR() :: [LAMBDA scalar function]`
 : Nilai _default_ adalah fungsi _lambda_ `OR()`. Fungsi _logical_ yang digunakan untuk mengaggregasi setiap barisnya. 
@@ -809,12 +809,23 @@ _Output_
 : Data harus berupa _text column vector_. 
 
 `[text_delimiter] := " " :: [text]`
-: Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap barisnya.
+: Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap kolomnya.
 
-`[as_column_vector] := TRUE :: [TRUE | FALSE]`
-: Nilai _default_ yaitu `TRUE`. Jika `TRUE`, maka _output_ berupa _column vector_.
+`[row_delimiter] := "|<#>|" :: [text]`
+: Nilai _default_ yaitu `"|<#>|"` (spasi). Teks pemisah untuk setiap barisnya. Fungsi `TEXT_SPLIT_VECTOR()` akan membuat `text_vector` menjadi tipe teks _scalar_ sebelum diubah menjadi _dynamic array_. Sehingga, opsi ini sebaiknya disesuaikan dengan teks yang ada di `text_vector`. 
+
+`[ignore_empty] := FALSE :: [TRUE | FALSE]`
+: Tentukan `TRUE` untuk mengabaikan pemisah berurutan. Default ke `FALSE`, yang membuat sel kosong. Opsional. 
+
+`[match_mode] := 0 :: [0 | 1]`
+: Tentukan `1` untuk melakukan kecocokan yang tidak peka huruf besar kecil. Default ke `0`, yang melakukan kecocokan peka huruf besar kecil. Opsional.
+
+`[pad_with] := #N/A :: [text | number]`
+: Nilai untuk mengalihkan hasil. Defaultnya adalah #N/A.
 
 :::::
+
+Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fungsi TEXTSPLIT](https://support.microsoft.com/id-id/office/fungsi-textsplit-b1ca414e-4c21-4ca0-b1b7-bdecace8a6e7).
 
 TODO: DEMO
 
