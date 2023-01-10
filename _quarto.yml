@@ -47,22 +47,9 @@ website:
         menu:
         - href: release/feidlambda.qmd
         - href: release/migration-v0-2-to-v0-3.qmd
-        - href: release/feidlambda-0-3-0.qmd
+        - href: release/feidlambda-0-3-1.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
-      - text: Greenhorn
-        menu:
-        - text: "Greenhorn"
-          href: greenhorn/index.qmd
-        - text: feidlambda I
-          href: greenhorn/index.qmd
-          # href: greenhorn/feidlambda-2/presentation.qmd
-        - text: feidlambda II
-          href: greenhorn/feidlambda-2/index.qmd
-        - text: feidlambda III
-          href: greenhorn/index.qmd
-          # href: release/feidlambda-0-1-0.qmd
-
         
     right:
       - icon: github

@@ -1,11 +1,11 @@
 ---
 title: |
-  feidlambda v0.3
+  feidlambda v0.3.1
 subtitle: |
-  Koleksi LAMBDA feidlambda v0.3
+  Koleksi LAMBDA feidlambda v0.3.1
 author: "Taruma Sakti Megariansyah"
 date: 2022-12-28
-date-modified: 2023-01-06
+date-modified: 2023-01-13
 date-format: full
 lang: id
 
@@ -26,15 +26,19 @@ format:
 
 crossref: 
   chapters: true
+
+aliases: 
+  - feidlambda-0-3-0.html
+
 ---
 
 ::: {.callout-important icon="false" .text-center}
-## Official GIST **feidlambda** (v0.3)
+## Official GIST **feidlambda** (v0.3.1)
 
 [Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
-Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3**](#sec-feid-v03).
+Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.1**](#sec-feid-v03).
 
 ::: {.column-screen-inset-shaded}
 
@@ -921,3 +925,13 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membua
 ---
 
 :::
+
+# Changelog
+
+- 2022-01-13 (v0.3.1)
+  - Mengganti fungsi `TEXT_SPLIT_VECTOR()` menjadi fungsi _recursive_.
+  - Menambah catatan untuk limitas penggunaan `TEXT_SPLIT_VECTOR()`.
+  - Perubahan posisi argumen untuk fungsi pendukung `FILTER_MINMAX_ARRAY()`, yang mendahulukan argumen `with_label` dan diikuti `label_col` atau `label_vector`.
+- 2022-01-06 (v0.3.0)
+  - Rilis feidlambda v0.3
+
