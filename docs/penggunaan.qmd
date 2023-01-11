@@ -58,6 +58,6 @@ Selesai _save_, fungsi **feidlambda** bisa langsung digunakan.
 
 ## Baca dokumentasi **feidlambda** v0.3
 
-Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3-1.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/release/migration-v0-2-to-v0-3.qmd).
+Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/release/migration-v0-2-to-v0-3.qmd).
 
 Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 

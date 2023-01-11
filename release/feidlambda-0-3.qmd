@@ -4,7 +4,7 @@ title: |
 subtitle: |
   Koleksi LAMBDA feidlambda v0.3.1
 author: "Taruma Sakti Megariansyah"
-date: 2022-12-28
+date: 2023-01-06
 date-modified: 2023-01-13
 date-format: full
 lang: id
@@ -29,6 +29,7 @@ crossref:
 
 aliases: 
   - feidlambda-0-3-0.html
+  - feidlambda-0-3-1.html
 
 ---
 
@@ -38,6 +39,8 @@ aliases:
 [Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
+**Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/penggunaan.qmd).**
+
 Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
 
 ::: {.column-screen-inset-shaded}
@@ -46,9 +49,34 @@ Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [
 
 :::
 
-# Fungsi feidlambda v0.3 {#sec-feid-v03}
+# Update Log v0.3.x
 
-Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3:
+_Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian [_Changelog_](#changelog).
+
+- **Update v0.3.1 (2022-01-13)** 
+  - Pada fungsi `FILTER_MINMAX_ARRAY()` terdapat argumen opsional baru yaitu `take_first_only`. Jika `take_first_only = TRUE`, maka hasil filter minimum/maksimum hanya mengambil baris pertamanya saja (jika terdapat minimum/maksimum lebih dari satu baris). 
+  - Pada fungsi `SWAP_*()`, nilai argumen `from_index` dan `to_index` menerima index negatif (indeks dari belakang). Bersamaan perubahan tersebut, nilai _default_ `to_index` menjadi `-1` yang artinya secara _default_ (tanpa argumen) fungsi `SWAP_*()` menukar posisi terdepan dengan terbelakang (baik berdasarkan baris ataupun kolom). 
+  - Perubahan nama argumen pada beberapa fungsi seperti:
+    - `FILTER_MINMAX_COLUMN()`: `col -> column_index`, `with_lables -> with_label`.
+    - `GET_INDEX_2D()`: `return_order_only -> return_as_order`.
+    - `ROTATE_*()`: `n -> num_rotation`.
+    - `TEXT_SPLIT_VECTOR()`: `text_delimiter -> col_delimiter`.
+  - Fungsi `TEXT_SPLIT_VECTOR()` menggunakan metode _recursive_ dari fungsi `TEXTSPLIT()`. 
+  - Pada fungsi `TEXT_SPLIT_VECTOR()` terdapat argumen opsional baru yaitu `replace_na`, yang berfungsi untuk mengubah nilai `#NA` dari hasil akhir. 
+  - Tambahan informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()` antara lain:
+    - Hindari menggunakan `TEXT_SPLIT_VECTOR()` dengan jumlah baris yang banyak ataupun dimensi _output_ yang besar. Pastikan hasil _output_ fungsi memiliki dimensi yang kecil seperti jumlah kolom $\le 10$ dan jumlah baris $\le 1,000$.
+    - Ukuran `text_vector` masih bisa lebih besar dari batasan diatas, akan tetapi disarankan untuk penggunaan `TEXT_SPLIT_VECTOR()` selalu bertahap, yaitu dari jumlah baris yang sedikit sampai jumlah baris optimal yang tidak menampilkan _error_ atau _crash_. 
+    - Jika melebihi kemampuan, akan menghasilkan nilai _error_ berupa `#NUM` / `#CALC`. 
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Fungsi feidlambda v0.3.x {#sec-feid-v03}
+
+Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3.x:
 
 - `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
 - `GET_*`: Mengambil informasi dari data.
@@ -60,27 +88,7 @@ Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut ka
 - `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
-Download excel demonstrasi [RELEASE_feidlambda_v0_3.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.0/RELEASE_feidlambda_v0_3.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.
-
-## Update Log
-
-Catatan perubahan pada umumnya beserta penjelasannya, untuk detailnya bisa dilihat di bagian [_Changelog_](#changelog).
-
-- **Update v0.3.1 (2022-01-13)** 
-  - Posisi argumen `label_col` dan `with_label` pada fungsi utama `FILTER_MINMAX_COLUMN()` ditukar menjadi `(..., [with_label], [label_col],...)`. Perubahan ini dikarenakan argumen `label_col` baru diikuti argumen `with_label = TRUE`.
-  - Pada fungsi `FILTER_MINMAX_ARRAY()` dan `FILTER_MINMAX_COLUMN()` terdapat argumen opsional baru yaitu `take_first_only`. Jika `take_first_only = TRUE`, maka hasil filter minimum/maksimum hanya mengambil baris pertamanya saja (jika terdapat minimum/maksimum lebih dari satu baris). 
-  - Pada fungsi `SWAP_*()`, nilai argumen `from_index` dan `to_index` menerima index negatif (dari belakang). Bersamaan perubahan tersebut, nilai _default_ `to_index` menjadi `-1` yang artinya selalu menukar posisi terdepan dengan terbelakang (baik berdasarkan baris ataupun kolom). 
-  - Perubahan nama argumen pada beberapa fungsi seperti:
-    - `FILTER_MINMAX_COLUMN()`: `col -> column_index`.
-    - `GET_INDEX_2D()`: `return_order_only -> return_as_order`.
-    - `ROTATE_*()`: `n -> num_rotation`.
-    - `TEXT_SPLIT_VECTOR()`: `text_delimiter -> col_delimiter`.
-  - Fungsi `TEXT_SPLIT_VECTOR()` menggunakan metode _recursive_ dari fungsi `TEXTSPLIT()`. 
-  - Pada fungsi `TEXT_SPLIT_VECTOR()` terdapat argumen opsional baru yaitu `replace_na`, yang berfungsi untuk mengubah nilai `#NA` dari hasil akhir. 
-  - Informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()` berupa:
-    - Hindari menggunakan `TEXT_SPLIT_VECTOR()` dengan jumlah baris yang banyak ataupun dimensi _output_ yang besar. Pastikan hasil _output_ fungsi memiliki dimensi yang kecil seperti jumlah kolom $\le 10$ dan jumlah baris $\le 1,000$.
-    - Batasan diatas masih bisa dilebihi, akan tetap disarankan dalam penggunaan `TEXT_SPLIT_VECTOR()` menggunakan ukuran input yang bertahap dari kecil sampai besar. 
-    - Jika melebihi kemampuan, akan menghasilkan nilai _error_ berupa `#NUM` / `#CALC`. 
+Download excel demonstrasi [RELEASE_feidlambda_v0_3_1.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.1/RELEASE_feidlambda_v0_3_1.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.x.
 
 ::: {.column-screen-inset-shaded}
 
@@ -90,7 +98,7 @@ Catatan perubahan pada umumnya beserta penjelasannya, untuk detailnya bisa dilih
 
 # Kategori `FILTER_*` {#sec-filter}
 
-Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
+Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) data berupa _vector_ ataupun _array_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
 
 ```{mermaid}
 %%| label: fig-dep-filter

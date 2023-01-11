@@ -25,5 +25,5 @@ Saat ini `feidlambda` (koleksi LAMBDA) masih dalam tahap pengembangan. Untuk leb
 #### [GIST feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 
 ---
-[v0.3](release/feidlambda-0-3-1.qmd) | [v0.2](release/feidlambda-0-2-0.qmd) | [v0.1](release/feidlambda-0-1-0.qmd) | [panduan](docs/penggunaan.qmd) | [source code](release/feidlambda.qmd)
+[v0.3](release/feidlambda-0-3.qmd) | [v0.2](release/feidlambda-0-2-0.qmd) | [v0.1](release/feidlambda-0-1-0.qmd) | [panduan](docs/penggunaan.qmd) | [source code](release/feidlambda.qmd)
 :::
