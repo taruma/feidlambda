@@ -16,7 +16,9 @@ sidebar: false
 ::: {.text-center .mb-4}
 
 ![](https://img.shields.io/github/v/release/fiakoenjiniring/feidlambda?color=informational&label=feidlambda&labelColor=blueviolet&logo=Microsoft%20Excel&style=flat-square){height=25}
+![](https://img.shields.io/github/release-date/fiakoenjiniring/feidlambda?color=black&label=release%20date&labelColor=brown&logo=GitHub&logoColor=white){height=25}
 ![](https://img.shields.io/github/actions/workflow/status/fiakoenjiniring/feidlambda/publish.yml?branch=main&label=quarto&labelColor=informational&logo=GitHub%20Actions&logoColor=white){height=25}
+![](https://img.shields.io/github/license/fiakoenjiniring/feidlambda?color=yellow&labelColor=brown&label=license&){height=25}
 
 :::
 
