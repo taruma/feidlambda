@@ -671,7 +671,7 @@ Fungsi utama yang tersedia saat ini hanya `RESHAPE_BY_COLUMNS()`.
 
 ### `RESHAPE_BY_COLUMNS()`
 
-Fungsi `RESHAPE_BY_COLUMNS(array, [num_split])` digunakan untuk mengubah dimensi (transformasi) `array` berdasarkan jumlah pembagi kolomnya.
+Fungsi `RESHAPE_BY_COLUMNS(array, [num_split])` digunakan untuk mengubah dimensi (transformasi) `array` berdasarkan jumlah pembagi kolomnya. Jika tidak jumlah kolom tidak habis dibagi oleh `num_split` akan mengeluarkan hasil `#N/A`. 
 
 :::::  {.border .p-3 .my-3 .justify}
 
@@ -973,38 +973,40 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membua
 
 # Changelog
 
-- 2022-01-13 (v0.3.1)
-  - Perubahan `FILTER_FUNC_COLUMN()`:
-    - Mengganti nama argumen: `col -> column_index`.
-    - Menukar posisi argumen `label_col` dan `with_label`.
-    - Menambah optional argumen `take_first_only`.
-    - Penyesuaian nama variabel di `LET()`. 
-  - Perubahan `FILTER_MINMAX_COLUMN()`:
-    - Mengganti nama argumen: `col -> column_index`.
-    - Menukar posisi argumen `label_col` dan `with_label`. 
-    - Menambah _optional_ argumen `take_first_only`.
-    - Penyesuaian `FILTER_FUNC_COLUMN()` dengan posisi dan opsi argumen terbaru.
-  - Perubahan `_RECURSIVE_FILTER_MINMAX()`:
-    - Mengubah posisi argumen `label_col` dan `with_label`.
-    - Penyesuaian `FILTER_MINMAX_COLUMN()` dengan posisi dan opsi argumen terbaru.
-  - Perubahan `FILTER_MINMAX_ARRAY()`:
-    - Menambah _optional_ argumen `take_first_only`.
-    - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
-  - Perubahan `GET_INDEX_2D()`:
-    - Mengubah nama argumen: `return_order_only -> return_as_order`.
-  - Perubahan `RESHAPE_BY_COLUMNS()`:
-    - Mengubah hasil _error_ menjadi `NA()`. 
-  - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
-    - Mengubah nama argumen: `n -> num_rotation`.
-  - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:
-    - Argumen `from_index` dan `to_index` dapat menggunakan indeks negatif.
-    - Nilai _default_ `to_index` menjadi `-1`. 
-  - Perubahan `TEXT_SPLIT_VECTOR()`:
-    - Mengubah metode menjadi _recursive_.
-    - Menambah fungsi pendukung `_RECURSIVE_TEXT_SPLIT()`.
-    - Menggunakan fungsi `_RECURSIVE_TEXT_SPLIT()` sebegai fungsi pendukung metode _recursive_.
-    - Mengubah nama argumen: `text_delimiter -> col_delimiter`.
-    - Menambah _optional_ argumen `replace_na`. 
-- 2022-01-06 (v0.3.0)
+- **2022-01-13 (v0.3.1)**
+  - Perubahan fungsi utama:
+    - Perubahan `FILTER_MINMAX_ARRAY()`:
+      - Menambah _optional_ argumen `take_first_only`.
+      - Mengganti nama argumen: `with_labels -> with_label`. 
+      - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `GET_INDEX_2D()`:
+      - Mengubah nama argumen: `return_order_only -> return_as_order`.
+    - Perubahan `RESHAPE_BY_COLUMNS()`:
+      - Mengubah hasil _error_ menjadi `NA()`. 
+    - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
+      - Mengubah nama argumen: `n -> num_rotation`.
+    - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:
+      - Argumen `from_index` dan `to_index` dapat menggunakan indeks negatif.
+      - Nilai _default_ `to_index` menjadi `-1`. 
+    - Perubahan `TEXT_SPLIT_VECTOR()`:
+      - Mengubah metode menjadi _recursive_.
+      - Mengubah nama argumen: `text_delimiter -> col_delimiter`.
+      - Menambah _optional_ argumen `replace_na`. 
+  - Perubahan fungsi pendukung:
+    - Perubahan `FILTER_FUNC_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`.
+      - Menambah optional argumen `take_first_only`.
+    - Perubahan `FILTER_MINMAX_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`. 
+      - Menambah _optional_ argumen `take_first_only`.
+      - Penyesuaian `FILTER_FUNC_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `_RECURSIVE_FILTER_MINMAX()`:
+      - Mengubah posisi argumen `label_col` dan `with_label`.
+      - Penyesuaian `FILTER_MINMAX_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Fungsi baru `_RECURSIVE_TEXT_SPLIT()`:
+      - Fungsi pendukung `TEXT_SPLIT_VECTOR()`.
+- **2022-01-06 (v0.3.0)**
   - Rilis feidlambda v0.3
 
