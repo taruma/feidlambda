@@ -106,11 +106,9 @@ website:
   ## SIDEBAR
   page-footer:
     right: >-
-      developed by **fiako**dev. 
-      built with ❤️ and [Quarto](https://quarto.org/).
+      developed by **fiako**dev
     left: >-
-      &copy; 2022 PT. FIAKO ENJINIRING INDONESIA. 
-      <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
+      &copy; 2022-2023 PT. FIAKO ENJINIRING INDONESIA
 
 format:
   html:
