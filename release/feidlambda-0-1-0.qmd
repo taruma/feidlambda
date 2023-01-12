@@ -1,6 +1,6 @@
 ---
 title: |
-  feidlambda 0.1.0
+  feidlambda v0.1
 subtitle: |
   Fitur terbaru di `feidlambda v0.1.0`
 author: "Taruma Sakti Megariansyah"

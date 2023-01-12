@@ -22,8 +22,8 @@ website:
 
 
   # FOR TWITTER / open-graph
-  image: "fiakologo.png"
-  favicon: "fiakologo.png"
+  image: /assets/original_feidlambda_logo.png
+  favicon: /assets/original_feidlambda_logo.png
 
   ## NAVIGATION BAR
   navbar:
@@ -34,22 +34,24 @@ website:
 
     collapse: true
 
-    logo: "fiakologo.png"
+    logo: /assets/original_feidlambda_logo.png
 
     left:
       - text: Home
         href: index.qmd
-      - text: Dokumentasi
+      - text: feidlambda
         menu:
-        - href: docs/penggunaan.qmd
-        - href: docs/glossary.qmd
-      - text: feidlambda 0.x
-        menu:
-        - href: release/feidlambda.qmd
-        - href: release/migration-v0-2-to-v0-3.qmd
+        - href: release/source-code.qmd
         - href: release/feidlambda-0-3.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
+      - text: Dokumentasi
+        menu:
+        - href: docs/install.qmd
+        - href: docs/glossary.qmd
+      - text: Artikel
+        menu:
+        - href: article/migration-v0-2-to-v0-3.qmd
         
     right:
       - icon: github
@@ -61,7 +63,7 @@ website:
       contents:
         - section: "Dokumentasi"
           contents: 
-            - href: docs/penggunaan.qmd
+            - href: docs/install.qmd
             - href: docs/glossary.qmd
 
     - id: side-feidlambda

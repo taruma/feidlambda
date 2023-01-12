@@ -39,7 +39,7 @@ aliases:
 [Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 :::
 
-**Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/penggunaan.qmd).**
+**Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
 
 Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
 

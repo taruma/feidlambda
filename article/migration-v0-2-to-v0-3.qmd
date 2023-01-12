@@ -14,6 +14,9 @@ number-sections: false
 number-offset: [0, 0]
 link-external-newwindow: true
 
+aliases: 
+  - /release/migration-v0-2-to-v0-3.html
+
 ---
 
 Halaman ini menjelaskan mengenai perubahan feidlambda v0.2 ke v0.3 dan panduan migrasinya. 

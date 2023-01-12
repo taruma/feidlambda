@@ -9,21 +9,37 @@ page-layout: full
 sidebar: false
 ---
 
-::: {.text-center .m-0}
-# $\text{fe}\hat{i}\text{d} \textbf{l} \lambda \text{m} \textsf{b} \texttt{d} \bigtriangleup$
+::: {.text-center}
+![](/assets/original_feidlambda.png){width="300"}
 :::
 
-::: {.text-center .callout-important appearance="simple" icon="false"}
-## Dalam Pengembangan
+::: {.text-center .mb-4}
 
-Saat ini `feidlambda` (koleksi LAMBDA) masih dalam tahap pengembangan. Untuk lebih jelasnya bisa membaca [Public Roadmap fiakodev Q4 2022](https://dev.fiako.engineering/logs/public-roadmap-october-2022).
+![](https://img.shields.io/github/v/release/fiakoenjiniring/feidlambda?color=informational&label=feidlambda&labelColor=blueviolet&logo=Microsoft%20Excel&style=flat-square){height=25}
+![](https://img.shields.io/github/actions/workflow/status/fiakoenjiniring/feidlambda/publish.yml?branch=main&label=quarto&labelColor=informational&logo=GitHub%20Actions&logoColor=white){height=25}
+
 :::
 
-::: {.callout-tip icon="false" .text-center}
-## Official GIST **feidlambda**
+::: {.text-center}
 
-#### [GIST feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+[<button type="button" class="btn btn-primary">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-info">MANUAL/API</button>](/release/feidlambda-0-3.qmd)
+[<button type="button" class="btn btn-dark">_SOURCE CODE_</button>](/release/source-code.qmd)
+[<button type="button" class="btn btn-danger">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+
+### OFFICAL GIST URL (feidlambda v0.3.x)
+
+```default
+https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+```
+
+:::
+
+::: {.text-center .callout-tip appearance="minimal"}
+## **STATUS PENGEMBANGAN**
 
 ---
-[v0.3](release/feidlambda-0-3.qmd) | [v0.2](release/feidlambda-0-2-0.qmd) | [v0.1](release/feidlambda-0-1-0.qmd) | [panduan](docs/penggunaan.qmd) | [source code](release/feidlambda.qmd)
+
+**feidlambda v0.3** sudah siap digunakan oleh publik. Dengan catatan masih banyak yang perlu dipelajari, perbaiki, dan dikembangkan sehingga status feidlambda masih bersifat **eksperimental**. 
 :::
+
