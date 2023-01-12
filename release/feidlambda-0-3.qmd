@@ -33,15 +33,18 @@ aliases:
 
 ---
 
-::: {.callout-important icon="false" .text-center}
+::: {.callout-important icon="false" .text-center appearance="minimal"}
 ## Official GIST **feidlambda** (v0.3.x)
 
-[Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+```default
+https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+```
+
 :::
 
 **Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
 
-Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
+Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
 
 ::: {.column-screen-inset-shaded}
 
@@ -49,7 +52,7 @@ Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [
 
 :::
 
-# Update Log v0.3.x
+# Update Log v0.3.x {#update-log}
 
 _Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian [_Changelog_](#changelog).
 
@@ -63,10 +66,7 @@ _Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/p
     - `TEXT_SPLIT_VECTOR()`: `text_delimiter -> col_delimiter`.
   - Fungsi `TEXT_SPLIT_VECTOR()` menggunakan metode _recursive_ dari fungsi `TEXTSPLIT()`. 
   - Pada fungsi `TEXT_SPLIT_VECTOR()` terdapat argumen opsional baru yaitu `replace_na`, yang berfungsi untuk mengubah nilai `#NA` dari hasil akhir. 
-  - Tambahan informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()` antara lain:
-    - Hindari menggunakan `TEXT_SPLIT_VECTOR()` dengan jumlah baris yang banyak ataupun dimensi _output_ yang besar. Pastikan hasil _output_ fungsi memiliki dimensi yang kecil seperti jumlah kolom $\le 10$ dan jumlah baris $\le 1,000$.
-    - Ukuran `text_vector` masih bisa lebih besar dari batasan diatas, akan tetapi disarankan untuk penggunaan `TEXT_SPLIT_VECTOR()` selalu bertahap, yaitu dari jumlah baris yang sedikit sampai jumlah baris optimal yang tidak menampilkan _error_ atau _crash_. 
-    - Jika melebihi kemampuan, akan menghasilkan nilai _error_ berupa `#NUM` / `#CALC`. 
+  - Tambahan informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()`.
 
 ::: {.column-screen-inset-shaded}
 
@@ -89,6 +89,10 @@ Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut 
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
 Download excel demonstrasi [RELEASE_feidlambda_v0_3_1.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.1/RELEASE_feidlambda_v0_3_1.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.x.
+
+::: {.callout-note}
+Gambar yang ditampilkan pada halaman ini merupakan dari versi sebelumnya (feidlambda v0.3.0) dan tidak diperbarui untuk setiap _update_. Oleh karena itu, disarankan untuk mengeksplorasi langsung dari dokumen yang telah dilampirkan. 
+:::
 
 ::: {.column-screen-inset-shaded}
 
@@ -184,14 +188,14 @@ _Output_
 
 ### `FILTER_MINMAX_ARRAY()` {#sec-filter-minmax-array}
 
-Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
+Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 
 _Syntax_
-: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector])
+: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])
 
 _Output_
 : _array_
@@ -213,7 +217,7 @@ _Output_
 : Nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
 
 `[take_first_only] := FALSE :: [TRUE | FALSE]` 
-: **_(Baru di v0.3.1)_**. Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum. 
+: **_(New in v0.3.1)_**. Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum. 
 
 :::::
 
@@ -833,10 +837,10 @@ _Output_
 : Data dapat berupa _array_ atau _row vector_. 
 
 `[from_index] := 1 :: [integer]`
-: Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 `[to_index] := -1 :: [integer]`
-: Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -860,10 +864,10 @@ _Output_
 : Data dapat berupa _array_ atau _column vector_. 
 
 `[from_index] := 1 :: [integer]`
-: Nilai _default_ yaitu `1`. Posisi _index_ baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 `[to_index] := -1 :: [integer]`
-: Nilai _default_ yaitu `-1`. Posisi _index_ tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -923,7 +927,7 @@ _Output_
 : Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap kolomnya.
 
 `[row_delimiter] := "" :: [text]`
-: Nilai _default_ yaitu `""` (spasi). Teks pemisah untuk setiap barisnya. 
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `""` (tidak ada). Teks pemisah untuk setiap barisnya. 
 
 `[ignore_empty] := FALSE :: [TRUE | FALSE]`
 : Tentukan `TRUE` untuk mengabaikan pemisah berurutan. Default ke `FALSE`, yang membuat sel kosong. Opsional. 
@@ -935,14 +939,20 @@ _Output_
 : Nilai untuk mengalihkan hasil. Defaultnya adalah `#N/A`.
 
 `[replace_na] := #N/A :: [text | number]`
-: **_(Baru di v0.3.1)_**. Nilai untuk menggantikan nilai `#N/A` dari hasil akhir. Defaultnya adalah `#N/A`. Nilai `#N/A` yang ada dikarenakan proses `VSTACK()` yang memiliki dimensi hasil `TEXTSPLIT()` yang berbeda-beda. 
+: **_(New in v0.3.1)_**. Nilai untuk menggantikan nilai `#N/A` dari hasil akhir. Defaultnya adalah `#N/A`. Nilai `#N/A` yang ada dikarenakan proses `VSTACK()` yang memiliki dimensi hasil `TEXTSPLIT()` yang berbeda-beda. 
 
 :::::
 
 Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fungsi TEXTSPLIT](https://support.microsoft.com/id-id/office/fungsi-textsplit-b1ca414e-4c21-4ca0-b1b7-bdecace8a6e7).
 
+#### Limitasi `TEXT_SPLIT_VECTOR()`
+
+- Hindari menggunakan `TEXT_SPLIT_VECTOR()` dengan jumlah baris yang banyak ataupun dimensi _output_ yang besar. Pastikan hasil _output_ fungsi memiliki dimensi yang kecil seperti jumlah kolom $\le 10$ dan jumlah baris $\le 1,000$.
+- Ukuran `text_vector` masih bisa lebih besar dari batasan diatas, akan tetapi disarankan untuk penggunaan `TEXT_SPLIT_VECTOR()` selalu bertahap, yaitu dari jumlah baris yang sedikit sampai jumlah baris optimal yang tidak menampilkan _error_ atau _crash_. 
+- Jika melebihi kemampuan, akan menghasilkan nilai _error_ berupa `#NUM` / `#CALC`. 
+
 ::: {.column-page}
-![Demonstrasi `TEXT_SPLIT_VECTOR`](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
+![Demonstrasi `TEXT_SPLIT_VECTOR` (outdated)](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
 :::
 
 ::: {.column-screen-inset-shaded}
@@ -982,6 +992,8 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membua
     - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
   - Perubahan `GET_INDEX_2D()`:
     - Mengubah nama argumen: `return_order_only -> return_as_order`.
+  - Perubahan `RESHAPE_BY_COLUMNS()`:
+    - Mengubah hasil _error_ menjadi `NA()`. 
   - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
     - Mengubah nama argumen: `n -> num_rotation`.
   - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:

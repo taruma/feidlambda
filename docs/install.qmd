@@ -42,7 +42,11 @@ Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE me
 
 ## Salin _Github Gist URL_
 
-Isi "Github Gist URL" dengan link koleksi lambda yang tersedia ([Link Github Gist feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)). _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`).
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). Berikut link feidlambda v0.3.x:
+
+```default
+https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+```
 
 ![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
 

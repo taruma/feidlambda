@@ -1,9 +1,9 @@
 /*
 feidlambda v0.3.1 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
-GIST (feid): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+OFFICIAL GIST (feidlambda v0.3.x): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
 REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
 AUTHOR: @taruma
-TESTED: Microsoft Excel v2211 (Build 16.0.15831.20098)
+TESTED: Microsoft Excel v2211
 */
 
 /*
@@ -313,7 +313,7 @@ RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
                 array_sorted, SORTBY(array_flatten, divider_repeat_col),
                 WRAPROWS(array_sorted, num_split)
             ),
-            "#INVALID_NUM_SPLIT"
+            NA()
         )
     )
 );
