@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Taruma Sakti Megariansyah">
+
+<title>feidlambda - feidlambda v0.3.1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//assets/original_feidlambda_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/original_feidlambda_logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-feidlambda" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">feidlambda</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-feidlambda">    
+        <li>
+    <a class="dropdown-item" href="../release/source-code.html">
+ <span class="dropdown-text"><em>Source Code</em></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-3.html">
+ <span class="dropdown-text">feidlambda v0.3.1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-2-0.html">
+ <span class="dropdown-text">feidlambda v0.2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-1-0.html">
+ <span class="dropdown-text">feidlambda v0.1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dokumentasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dokumentasi</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dokumentasi">    
+        <li>
+    <a class="dropdown-item" href="../docs/install.html">
+ <span class="dropdown-text">Instalasi feidlambda</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/glossary.html">
+ <span class="dropdown-text">Daftar Istilah</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-artikel" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Artikel</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-artikel">    
+        <li>
+    <a class="dropdown-item" href="../article/migration-v0-2-to-v0-3.html">
+ <span class="dropdown-text">Migrasi feidlambda v0.2 ke v0.3</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fiakoenjiniring/feidlambda"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Pada halaman ini</h2>
+   
+  <ul>
+  <li><a href="#update-log" id="toc-update-log" class="nav-link active" data-scroll-target="#update-log">Update Log v0.3.x</a></li>
+  <li><a href="#sec-feid-v03" id="toc-sec-feid-v03" class="nav-link" data-scroll-target="#sec-feid-v03">Fungsi feidlambda v0.3.x</a></li>
+  <li><a href="#sec-filter" id="toc-sec-filter" class="nav-link" data-scroll-target="#sec-filter">Kategori <code>FILTER_*</code></a>
+  <ul class="collapse">
+  <li><a href="#sec-filter-drop-rows" id="toc-sec-filter-drop-rows" class="nav-link" data-scroll-target="#sec-filter-drop-rows"><code>FILTER_DROP_ROWS()</code></a></li>
+  <li><a href="#sec-filter-drop-columns" id="toc-sec-filter-drop-columns" class="nav-link" data-scroll-target="#sec-filter-drop-columns"><code>FILTER_DROP_COLUMNS()</code></a></li>
+  <li><a href="#sec-filter-minmax-array" id="toc-sec-filter-minmax-array" class="nav-link" data-scroll-target="#sec-filter-minmax-array"><code>FILTER_MINMAX_ARRAY()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-get" id="toc-sec-get" class="nav-link" data-scroll-target="#sec-get">Kategori <code>GET_*</code></a>
+  <ul class="collapse">
+  <li><a href="#get_index_2d" id="toc-get_index_2d" class="nav-link" data-scroll-target="#get_index_2d"><code>GET_INDEX_2D()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-is" id="toc-sec-is" class="nav-link" data-scroll-target="#sec-is">Kategori <code>IS_*</code></a>
+  <ul class="collapse">
+  <li><a href="#is_all_in_vector" id="toc-is_all_in_vector" class="nav-link" data-scroll-target="#is_all_in_vector"><code>IS_ALL_IN_VECTOR()</code></a></li>
+  <li><a href="#is_cols_equal_vector" id="toc-is_cols_equal_vector" class="nav-link" data-scroll-target="#is_cols_equal_vector"><code>IS_COLS_EQUAL_VECTOR()</code></a></li>
+  <li><a href="#is_all_cols_equal_vector" id="toc-is_all_cols_equal_vector" class="nav-link" data-scroll-target="#is_all_cols_equal_vector"><code>IS_ALL_COLS_EQUAL_VECTOR()</code></a></li>
+  <li><a href="#is_rows_logical" id="toc-is_rows_logical" class="nav-link" data-scroll-target="#is_rows_logical"><code>IS_ROWS_LOGICAL()</code></a></li>
+  <li><a href="#is_columns_logical" id="toc-is_columns_logical" class="nav-link" data-scroll-target="#is_columns_logical"><code>IS_COLUMNS_LOGICAL()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-make" id="toc-sec-make" class="nav-link" data-scroll-target="#sec-make">Kategori <code>MAKE_*</code></a>
+  <ul class="collapse">
+  <li><a href="#make_sequence_from_vector" id="toc-make_sequence_from_vector" class="nav-link" data-scroll-target="#make_sequence_from_vector"><code>MAKE_SEQUENCE_FROM_VECTOR()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-repeat" id="toc-sec-repeat" class="nav-link" data-scroll-target="#sec-repeat">Kategori <code>REPEAT_*</code></a>
+  <ul class="collapse">
+  <li><a href="#repeat_array_by_row" id="toc-repeat_array_by_row" class="nav-link" data-scroll-target="#repeat_array_by_row"><code>REPEAT_ARRAY_BY_ROW()</code></a></li>
+  <li><a href="#repeat_array_by_column" id="toc-repeat_array_by_column" class="nav-link" data-scroll-target="#repeat_array_by_column"><code>REPEAT_ARRAY_BY_COLUMN()</code></a></li>
+  <li><a href="#repeat_array" id="toc-repeat_array" class="nav-link" data-scroll-target="#repeat_array"><code>REPEAT_ARRAY()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-reshape" id="toc-sec-reshape" class="nav-link" data-scroll-target="#sec-reshape">Kategori <code>RESHAPE_*</code></a>
+  <ul class="collapse">
+  <li><a href="#reshape_by_columns" id="toc-reshape_by_columns" class="nav-link" data-scroll-target="#reshape_by_columns"><code>RESHAPE_BY_COLUMNS()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-rotate" id="toc-sec-rotate" class="nav-link" data-scroll-target="#sec-rotate">Kategori <code>ROTATE_*</code></a>
+  <ul class="collapse">
+  <li><a href="#rotate_vector" id="toc-rotate_vector" class="nav-link" data-scroll-target="#rotate_vector"><code>ROTATE_VECTOR()</code></a></li>
+  <li><a href="#rotate_array" id="toc-rotate_array" class="nav-link" data-scroll-target="#rotate_array"><code>ROTATE_ARRAY()</code></a></li>
+  </ul></li>
+  <li><a href="#kategori-swap_" id="toc-kategori-swap_" class="nav-link" data-scroll-target="#kategori-swap_">Kategori <code>SWAP_*</code></a>
+  <ul class="collapse">
+  <li><a href="#swap_columns" id="toc-swap_columns" class="nav-link" data-scroll-target="#swap_columns"><code>SWAP_COLUMNS()</code></a></li>
+  <li><a href="#swap_rows" id="toc-swap_rows" class="nav-link" data-scroll-target="#swap_rows"><code>SWAP_ROWS()</code></a></li>
+  </ul></li>
+  <li><a href="#sec-text" id="toc-sec-text" class="nav-link" data-scroll-target="#sec-text">Kategori <code>TEXT_*</code></a>
+  <ul class="collapse">
+  <li><a href="#text_split_vector" id="toc-text_split_vector" class="nav-link" data-scroll-target="#text_split_vector"><code>TEXT_SPLIT_VECTOR()</code></a></li>
+  </ul></li>
+  <li><a href="#changelog" id="toc-changelog" class="nav-link" data-scroll-target="#changelog">Changelog</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fiakoenjiniring/feidlambda/edit/main/release/feidlambda-0-3.qmd" class="toc-action">Ubah halaman ini</a></p><p><a href="https://github.com/fiakoenjiniring/feidlambda/issues/new" class="toc-action">Melaporkan isu</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><p>feidlambda v0.3.1</p></h1>
+<p class="subtitle lead"></p><p>Koleksi LAMBDA feidlambda v0.3.1</p><p></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Penulis</div>
+    <div class="quarto-title-meta-contents">
+             <p>Taruma Sakti Megariansyah </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Diterbitkan</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jumat, 06 Januari 2023</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Diubah</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">Jumat, 13 Januari 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout-important text-center callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Official GIST <strong>feidlambda</strong> (v0.3.x)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><strong>Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman <a href="../docs/install.html">Penggunaan</a>.</strong></p>
+<p>Bagi yang sebelumnya menggunakan versi feidlambda v0.2 <strong>wajib</strong> untuk membaca <a href="../article/migration-v0-2-to-v0-3.html">perubahan penting dan migrasi v0.2 ke v0.3</a>. Tapi, bagi yang baru menggunakan bisa <a href="#sec-feid-v03"><strong>langsung ke bagian fungsi feidlambda v0.3.x</strong></a>.</p>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+<section id="update-log" class="level1 page-columns page-full">
+<h1>Update Log v0.3.x</h1>
+<p><em>Update Log</em> merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian <a href="#changelog"><em>Changelog</em></a>.</p>
+<ul>
+<li><strong>Update v0.3.1 (2022-01-13)</strong>
+<ul>
+<li>Pada fungsi <code>FILTER_MINMAX_ARRAY()</code> terdapat argumen opsional baru yaitu <code>take_first_only</code>. Jika <code>take_first_only = TRUE</code>, maka hasil filter minimum/maksimum hanya mengambil baris pertamanya saja (jika terdapat minimum/maksimum lebih dari satu baris).</li>
+<li>Pada fungsi <code>SWAP_*()</code>, nilai argumen <code>from_index</code> dan <code>to_index</code> menerima index negatif (indeks dari belakang). Bersamaan perubahan tersebut, nilai <em>default</em> <code>to_index</code> menjadi <code>-1</code> yang artinya secara <em>default</em> (tanpa argumen) fungsi <code>SWAP_*()</code> menukar posisi terdepan dengan terbelakang (baik berdasarkan baris ataupun kolom).</li>
+<li>Perubahan nama argumen pada beberapa fungsi seperti:
+<ul>
+<li><code>FILTER_MINMAX_COLUMN()</code>: <code>col -&gt; column_index</code>, <code>with_lables -&gt; with_label</code>.</li>
+<li><code>GET_INDEX_2D()</code>: <code>return_order_only -&gt; return_as_order</code>.</li>
+<li><code>ROTATE_*()</code>: <code>n -&gt; num_rotation</code>.</li>
+<li><code>TEXT_SPLIT_VECTOR()</code>: <code>text_delimiter -&gt; col_delimiter</code>.</li>
+</ul></li>
+<li>Fungsi <code>TEXT_SPLIT_VECTOR()</code> menggunakan metode <em>recursive</em> dari fungsi <code>TEXTSPLIT()</code>.</li>
+<li>Pada fungsi <code>TEXT_SPLIT_VECTOR()</code> terdapat argumen opsional baru yaitu <code>replace_na</code>, yang berfungsi untuk mengubah nilai <code>#NA</code> dari hasil akhir.</li>
+<li>Tambahan informasi limitasi pada fungsi <code>TEXT_SPLIT_VECTOR()</code>.</li>
+</ul></li>
+</ul>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+<section id="sec-feid-v03" class="level1 page-columns page-full">
+<h1>Fungsi feidlambda v0.3.x</h1>
+<p>Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3.x:</p>
+<ul>
+<li><code>FILTER_*</code>: Melakukan <em>filtering</em> atau <em>subsetting</em> (memilah) dari data.</li>
+<li><code>GET_*</code>: Mengambil informasi dari data.</li>
+<li><code>IS_*</code>: Fungsi <em>logical</em> tambahan.</li>
+<li><code>MAKE_*</code>: Membangkitkan data.</li>
+<li><code>REPEAT_*</code>: Mengulangi/merepetisi data.</li>
+<li><code>RESHAPE_*</code>: Mengubah dimensi data.</li>
+<li><code>ROTATE_*</code>: Merubah posisi data dengan diputar.</li>
+<li><code>SWAP_*</code>: Menukar posisi data.</li>
+<li><code>TEXT_*</code>: Fungsi tambahan yang berkaitan dengan teks.</li>
+</ul>
+<p>Download excel demonstrasi <a href="https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.1/RELEASE_feidlambda_v0_3_1.xlsx">RELEASE_feidlambda_v0_3_1.xlsx</a>, untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.x.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Catatan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Gambar yang ditampilkan pada halaman ini merupakan dari versi sebelumnya (feidlambda v0.3.0) dan tidak diperbarui untuk setiap <em>update</em>. Oleh karena itu, disarankan untuk mengeksplorasi langsung dari dokumen yang telah dilampirkan.</p>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+<section id="sec-filter" class="level1 page-columns page-full">
+<h1>Kategori <code>FILTER_*</code></h1>
+<p>Kategori <code>FILTER_*</code> merupakan kumpulan fungsi yang melakukan <em>filtering</em> atau <em>subsetting</em> (memilah) data berupa <em>vector</em> ataupun <em>array</em>. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-filter">Gambar&nbsp;3.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-filter" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; FILTER_DROP_ROWS
+  NONE --&gt; FILTER_DROP_COLUMNS
+  NONE --&gt; FILTER_FUNC_COLUMN
+  FILTER_FUNC_COLUMN --&gt; FILTER_MINMAX_COLUMN
+  FILTER_MINMAX_COLUMN --&gt; _RECURSIVE_FILTER_MINMAX
+  _RECURSIVE_FILTER_MINMAX --&gt; _RECURSIVE_FILTER_MINMAX
+  _RECURSIVE_FILTER_MINMAX --&gt; FILTER_MINMAX_ARRAY
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;3.1: Grafik <em>dependencies</em> kategori <code>FILTER_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Fungsi utama kategori <code>FILTER_*</code> yaitu <code>FILTER_DROP_ROWS()</code>, <code>FILTER_DROP_COLUMNS()</code>, dan <code>FILTER_MINMAX_ARRAY()</code>.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>FILTER_*</code>
+</summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; FILTER_DROP_ROWS</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>FILTER_DROP_ROWS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> row_index<span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        row_index<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>row_index<span class="op">),</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        row_index_clean<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>row_index<span class="op">,</span> <span class="fu">NOT</span><span class="op">(</span><span class="fu">ISBLANK</span><span class="op">(</span>row_index<span class="op">))),</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        row_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows<span class="op">),</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        selected_row<span class="op">,</span> <span class="fu">BYROW</span><span class="op">(</span>row_sequence<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>each_row<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span>each_row <span class="op">=</span> row_index_clean<span class="op">))),</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">FILTER</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">NOT</span><span class="op">(</span>selected_row<span class="op">))</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; FILTER_DROP_COLUMNS</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>FILTER_DROP_COLUMNS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> column_index<span class="op">,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        column_index<span class="op">,</span> <span class="fu">TOROW</span><span class="op">(</span>column_index<span class="op">),</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        column_index_clean<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>column_index<span class="op">,</span> <span class="fu">NOT</span><span class="op">(</span><span class="fu">ISBLANK</span><span class="op">(</span>column_index<span class="op">))),</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        col_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> ncols<span class="op">),</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        selected_col<span class="op">,</span> <span class="fu">BYCOL</span><span class="op">(</span>col_sequence<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>each_col<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span>each_col <span class="op">=</span> column_index_clean<span class="op">))),</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">FILTER</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">NOT</span><span class="op">(</span>selected_col<span class="op">))</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; FILTER_FUNC_COLUMN</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>FILTER_FUNC_COLUMN <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    array<span class="op">,</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>column_index<span class="op">],</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>with_label<span class="op">],</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>label_col<span class="op">],</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>function<span class="op">],</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>label_function<span class="op">],</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>take_first_only<span class="op">],</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        take_first_only<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>take_first_only<span class="op">),</span> FALSE<span class="op">,</span> take_first_only<span class="op">),</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        column_index<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>column_index<span class="op">),</span> <span class="dv">1</span><span class="op">,</span> column_index<span class="op">),</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        label_col<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>label_col<span class="op">),</span> column_index<span class="op">,</span> label_col<span class="op">),</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        with_label<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>with_label<span class="op">),</span> FALSE<span class="op">,</span> with_label<span class="op">),</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        function<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>function<span class="op">),</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">MAX</span><span class="op">(</span>x<span class="op">)),</span> function<span class="op">),</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        label_function<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>label_function<span class="op">),</span> <span class="st">"func"</span><span class="op">,</span> label_function<span class="op">),</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        selected_vector<span class="op">,</span> <span class="fu">CHOOSECOLS</span><span class="op">(</span>array<span class="op">,</span> column_index<span class="op">),</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        func_value<span class="op">,</span> <span class="fu">function</span><span class="op">(</span>selected_vector<span class="op">),</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        selected_logical<span class="op">,</span> selected_vector <span class="op">=</span> func_value<span class="op">,</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        array_filter<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>array<span class="op">,</span> selected_logical<span class="op">),</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        array_func<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>take_first_only<span class="op">,</span> <span class="fu">TAKE</span><span class="op">(</span>array_filter<span class="op">,</span> <span class="dv">1</span><span class="op">),</span> array_filter<span class="op">),</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        label<span class="op">,</span> <span class="fu">MAKEARRAY</span><span class="op">(</span><span class="fu">ROWS</span><span class="op">(</span>array_func<span class="op">),</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> <span class="fu">CONCAT</span><span class="op">(</span>label_col<span class="op">,</span> <span class="st">"_"</span><span class="op">,</span> label_function<span class="op">))),</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span>with_label<span class="op">,</span> <span class="fu">HSTACK</span><span class="op">(</span>label<span class="op">,</span> array_func<span class="op">),</span> array_func<span class="op">)</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">// FILTER_FUNC_COLUMN --&gt; FILTER_MINMAX_COLUMN</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>FILTER_MINMAX_COLUMN <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>column_index<span class="op">],</span> <span class="op">[</span>with_label<span class="op">],</span> <span class="op">[</span>label_col<span class="op">],</span> <span class="op">[</span>take_first_only<span class="op">],</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        func_1<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">MIN</span><span class="op">(</span>x<span class="op">)),</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        label_func_1<span class="op">,</span> <span class="st">"min"</span><span class="op">,</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        func_2<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">MAX</span><span class="op">(</span>x<span class="op">)),</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        label_func_2<span class="op">,</span> <span class="st">"max"</span><span class="op">,</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        func1_result<span class="op">,</span> <span class="fu">FILTER_FUNC_COLUMN</span><span class="op">(</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>            array<span class="op">,</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>            column_index<span class="op">,</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>            with_label<span class="op">,</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>            label_col<span class="op">,</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>            func_1<span class="op">,</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>            label_func_1<span class="op">,</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>            take_first_only</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        <span class="op">),</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>        func2_result<span class="op">,</span> <span class="fu">FILTER_FUNC_COLUMN</span><span class="op">(</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>            array<span class="op">,</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>            column_index<span class="op">,</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>            with_label<span class="op">,</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            label_col<span class="op">,</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>            func_2<span class="op">,</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>            label_func_2<span class="op">,</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>            take_first_only</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="op">),</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="fu">VSTACK</span><span class="op">(</span>func1_result<span class="op">,</span> func2_result<span class="op">)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">// FILTER_MINMAX_COLUMN --&gt; _RECURSIVE_FILTER_MINMAX</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_FILTER_MINMAX --&gt; _RECURSIVE_FILTER_MINMAX</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>_RECURSIVE_FILTER_MINMAX <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    array<span class="op">,</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    ntry<span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>ignore_first_column<span class="op">],</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>with_label<span class="op">],</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>label_vector<span class="op">],</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>take_first_only<span class="op">],</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        ignore_first_column<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>ignore_first_column<span class="op">),</span> FALSE<span class="op">,</span> ignore_first_column<span class="op">),</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        stop_col<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>ignore_first_column<span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">),</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>        label_vector<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>label_vector<span class="op">),</span> <span class="fu">SEQUENCE</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">)),</span> label_vector<span class="op">),</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>        new_label<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>stop_col <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> <span class="fu">HSTACK</span><span class="op">({</span><span class="st">" "</span><span class="op">},</span> label_vector<span class="op">),</span> label_vector<span class="op">),</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>        label_col<span class="op">,</span> <span class="fu">CHOOSECOLS</span><span class="op">(</span>new_label<span class="op">,</span> ntry<span class="op">),</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>            ntry <span class="op">=</span> stop_col<span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>            <span class="fu">FILTER_MINMAX_COLUMN</span><span class="op">(</span>array<span class="op">,</span> ntry<span class="op">,</span> with_label<span class="op">,</span> label_col<span class="op">,</span> take_first_only<span class="op">),</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>                results<span class="op">,</span> <span class="fu">FILTER_MINMAX_COLUMN</span><span class="op">(</span>array<span class="op">,</span> ntry<span class="op">,</span> with_label<span class="op">,</span> label_col<span class="op">,</span> take_first_only<span class="op">),</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>                next_try<span class="op">,</span> ntry <span class="op">-</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>                <span class="fu">VSTACK</span><span class="op">(</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">_RECURSIVE_FILTER_MINMAX</span><span class="op">(</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>                        array<span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>                        next_try<span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>                        ignore_first_column<span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>                        with_label<span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>                        label_vector<span class="op">,</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>                        take_first_only</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>                    <span class="op">),</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>                    results</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>                <span class="op">)</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>            <span class="op">)</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_FILTER_MINMAX --&gt; FILTER_MINMAX_ARRAY</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>FILTER_MINMAX_ARRAY <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>ignore_first_column<span class="op">],</span> <span class="op">[</span>with_label<span class="op">],</span> <span class="op">[</span>label_vector<span class="op">],</span> <span class="op">[</span>take_first_only<span class="op">],</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    <span class="fu">_RECURSIVE_FILTER_MINMAX</span><span class="op">(</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        array<span class="op">,</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>        <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        ignore_first_column<span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>        with_label<span class="op">,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>        label_vector<span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>        take_first_only</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="sec-filter-drop-rows" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="sec-filter-drop-rows"><code>FILTER_DROP_ROWS()</code></h3>
+<p>Fungsi <code>FILTER_DROP_ROWS(array, row_index)</code> digunakan untuk menghapus baris dari data.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+FILTER_DROP_ROWS(array, row_index)
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [array | vector]</code></dt>
+<dd>
+Data berupa <em>array</em> atau <em>vector</em> yang memiliki baris lebih dari satu.
+</dd>
+<dt><code>row_index := [integer number | integer vector]</code></dt>
+<dd>
+Indeks baris yang ingin dihapus.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-filter-drop-rows" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-01-filter-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;3.2: Demonstrasi <code>FILTER_DROP_ROWS()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-filter-drop-columns" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="sec-filter-drop-columns"><code>FILTER_DROP_COLUMNS()</code></h3>
+<p>Fungsi <code>FILTER_DROP_COLUMNS(array, column_index)</code> digunakan untuk menghapus kolom dari data.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+FILTER_DROP_COLUMNS(array, column_index)
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [array | vector]</code></dt>
+<dd>
+Data berupa <em>array</em> atau <em>vector</em> yang memiliki kolom lebih dari satu.
+</dd>
+<dt><code>column_index := [integer number | integer vector]</code></dt>
+<dd>
+Indeks kolom yang ingin dihapus.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-filter-drop-columns" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-01-filter-2.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;3.3: Demonstrasi <code>FILTER_DROP_COLUMNS()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-filter-minmax-array" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="sec-filter-minmax-array"><code>FILTER_MINMAX_ARRAY()</code></h3>
+<p>Fungsi <code>FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])</code> digunakan untuk melakukan <em>filtering</em> (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa <em>dynamic array</em>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [array | numeric array]</code></dt>
+<dd>
+Data berupa <em>array</em> dengan ketentuan <code>array</code> berisikan angka kecuali kolom pertama jika menggunakan opsi <code>ignore_first_column</code>.
+</dd>
+<dt><code>[ignore_first_column] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>FALSE</code>. Jika <code>TRUE</code>, maka kolom pertama dari <code>array</code> akan diabaikan dan tidak dilakukan <em>filtering</em> nilai minimum/maksimum.
+</dd>
+<dt><code>[with_label] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>FALSE</code>. Jika <code>TRUE</code>, maka kolom pertama dari <em>output</em> adalah label informasi minimum dan maksimum seperti <code>1_min</code>, <code>1_max</code>, atau <code>no.column_min</code> dan <code>no.column_max</code>. Untuk menggunakan label sendiri, masukin <em>vector</em> label di argumen <code>label_vector</code>.
+</dd>
+<dt><code>[label_vector] := NONE :: [vector]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>NONE</code>. Jika <code>NONE</code>, maka label setiap baris akan dinomori berdasarkan kolomnya (<code>1_min</code>, <code>1_max</code>). Jika ingin menggunakan label dari nama kolom, jumlah elemen <em>vector</em> harus sama dengan jumlah kolom dari <code>array</code>. Untuk menggunakan label nilai <code>with_label</code> harus <code>TRUE</code>.
+</dd>
+<dt><code>[take_first_only] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+<strong><em>(New in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>FALSE</code>. Jika <code>TRUE</code>, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum.
+</dd>
+</dl>
+</div>
+<div id="fig-filter-minmax-array" class="column-screen-inset quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img-0-3-0/feidlambda-v03-01-filter-3.gif" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img-0-3-0/feidlambda-v03-01-filter-4.gif" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;3.4: Demonstrasi <code>FILTER_MINMAX_ARRAY()</code></figcaption><p></p>
+</figure>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-get" class="level1 page-columns page-full">
+<h1>Kategori <code>GET_*</code></h1>
+<p>Kategori <code>GET_*</code> merupakan kumpulan fungsi yang digunakan untuk mengambil informasi dari suatu data. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-get">Gambar&nbsp;4.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-get" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; GET_INDEX_2D
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;4.1: Grafik <em>dependencies</em> kategori <code>GET_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dari <a href="#fig-dep-get">Gambar&nbsp;4.1</a>, diketahui untuk versi v0.3 hanya tersedia fungsi <code>GET_INDEX_2D()</code>.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>GET_*</code>
+</summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; GET_INDEX_2D</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>GET_INDEX_2D <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_value<span class="op">,</span> array<span class="op">,</span> <span class="op">[</span>return_as_order<span class="op">],</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        return_as_order<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>return_as_order<span class="op">),</span> FALSE<span class="op">,</span> return_as_order<span class="op">),</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        size<span class="op">,</span> nrows <span class="op">*</span> ncols<span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        array_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>array<span class="op">,</span> <span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        index_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows<span class="op">,</span> ncols<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">),</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        rows_sequence<span class="op">,</span> <span class="fu">MAKEARRAY</span><span class="op">(</span>nrows<span class="op">,</span> ncols<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> x<span class="op">)),</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        columns_sequence<span class="op">,</span> <span class="fu">MAKEARRAY</span><span class="op">(</span>nrows<span class="op">,</span> ncols<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> y<span class="op">)),</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        rows_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>rows_sequence<span class="op">,</span> <span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        columns_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>columns_sequence<span class="op">,</span> <span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        index_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>index_sequence<span class="op">,</span> <span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        lookup_table<span class="op">,</span> <span class="fu">HSTACK</span><span class="op">(</span>index_flatten<span class="op">,</span> rows_flatten<span class="op">,</span> columns_flatten<span class="op">),</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        lookup_result<span class="op">,</span> <span class="fu">FILTER</span><span class="op">(</span>lookup_table<span class="op">,</span> array_flatten <span class="op">=</span> lookup_value<span class="op">),</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span>return_as_order<span class="op">,</span> <span class="fu">CHOOSECOLS</span><span class="op">(</span>lookup_result<span class="op">,</span> <span class="dv">1</span><span class="op">),</span> lookup_result<span class="op">)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="get_index_2d" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="get_index_2d"><code>GET_INDEX_2D()</code></h3>
+<p>Fungsi <code>GET_INDEX_2D(lookup_value, array, [return_as_order])</code> dapat digunakan untuk mengambil informasi urutan nilai yang dicari ataupun posisi baris/kolom dari <code>array</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+GET_INDEX_2D(lookup_value, array, [return_as_order])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em> ([<em>order</em>, <em>row index</em>, <em>column index</em>]) atau <em>number vector</em> (<em>order</em>)
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>lookup_value := [scalar]</code></dt>
+<dd>
+Nilai yang dicari dalam <code>array</code>. Nilai <code>lookup_value</code> adalah nilai tunggal berupa <em>scalar</em>.
+</dd>
+<dt><code>array := [array]</code></dt>
+<dd>
+Data berupa <em>array</em>.
+</dd>
+<dt><code>[return_as_order] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>FALSE</code>. Jika <code>TRUE</code>, hasil fungsi memberikan urutan angka nilai yang dicari. Urutan dimulai dari horizontal kiri teratas sampai kanan terbawah. Jika <code>FALSE</code>, maka <em>output</em> terdiri dari nomor urut, indeks kolom, dan indeks baris.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-get-index-2d" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-02-get-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;4.2: Demonstrasi <code>GET_INDEX_2D()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-is" class="level1 page-columns page-full">
+<h1>Kategori <code>IS_*</code></h1>
+<p>Kategori <code>IS_*</code> merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-is">Gambar&nbsp;5.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-is" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; IS_ALL_IN_LOOKUP_VECTOR
+  NONE --&gt; IS_COLS_EQUAL_LOOKUP_VECTOR
+  IS_COLS_EQUAL_LOOKUP_VECTOR --&gt; IS_ALL_COLS_EQUAL_LOOKUP_VECTOR
+  NONE --&gt; IS_ROWS_LOGICAL
+  NONE --&gt; IS_COLUMNS_LOGICAL
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;5.1: Grafik <em>dependencies</em> kategori <code>IS_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>IS_*</code>
+</summary>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; IS_ALL_IN_LOOKUP_VECTOR</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>IS_ALL_IN_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_vector<span class="op">,</span> array<span class="op">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        lookup_vector<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>lookup_vector<span class="op">),</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">MAP</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>element<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span><span class="fu">BYROW</span><span class="op">(</span>lookup_vector<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup<span class="op">,</span> element <span class="op">=</span> lookup<span class="op">)))))</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; IS_COLS_EQUAL_LOOKUP_VECTOR</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>IS_COLS_EQUAL_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_vector<span class="op">,</span> array<span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        lookup_vector<span class="op">,</span> <span class="fu">TOROW</span><span class="op">(</span>lookup_vector<span class="op">),</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        ncols_vector<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>lookup_vector<span class="op">),</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        ncols_array<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        nrows_array<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            ncols_array <span class="op">=</span> ncols_vector<span class="op">,</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                repeat_array<span class="op">,</span> <span class="fu">CHOOSEROWS</span><span class="op">(</span>lookup_vector<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows_array<span class="op">,</span> <span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">)),</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                <span class="fu">MAP</span><span class="op">(</span>array<span class="op">,</span> repeat_array<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> x <span class="op">=</span> y<span class="op">))</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>            <span class="op">),</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"N/A"</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">// IS_COLS_EQUAL_LOOKUP_VECTOR --&gt; IS_ALL_COLS_EQUAL_LOOKUP_VECTOR</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>IS_ALL_COLS_EQUAL_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_vector<span class="op">,</span> array<span class="op">,</span> <span class="op">[</span>logical_function<span class="op">],</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        logical_function<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>logical_function<span class="op">),</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span>x<span class="op">)),</span> logical_function<span class="op">),</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        array_boolean<span class="op">,</span> <span class="fu">IS_COLS_EQUAL_VECTOR</span><span class="op">(</span>lookup_vector<span class="op">,</span> array<span class="op">),</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">BYROW</span><span class="op">(</span>array_boolean<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>each_row<span class="op">,</span> <span class="fu">logical_function</span><span class="op">(</span>each_row<span class="op">)))</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; IS_ROWS_LOGICAL</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>IS_ROWS_LOGICAL <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>logical_array<span class="op">,</span> <span class="op">[</span>logical_function<span class="op">],</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>        logical_function<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>logical_function<span class="op">),</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span>x<span class="op">)),</span> logical_function<span class="op">),</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">BYROW</span><span class="op">(</span>logical_array<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>each_row<span class="op">,</span> <span class="fu">logical_function</span><span class="op">(</span>each_row<span class="op">)))</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; IS_COLUMNS_LOGICAL</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>IS_COLUMNS_LOGICAL <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>logical_array<span class="op">,</span> <span class="op">[</span>logical_function<span class="op">],</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>        logical_function<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>logical_function<span class="op">),</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span>x<span class="op">)),</span> logical_function<span class="op">),</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">BYCOL</span><span class="op">(</span>logical_array<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>each_col<span class="op">,</span> <span class="fu">logical_function</span><span class="op">(</span>each_col<span class="op">)))</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="is_all_in_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="is_all_in_vector"><code>IS_ALL_IN_VECTOR()</code></h3>
+<p>Fungsi <code>IS_ALL_IN_VECTOR(lookup_vector, array)</code> digunakan untuk memeriksa apakah setiap elemen di <code>array</code> termasuk dari <code>lookup_vector</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+IS_ALL_IN_VECTOR(lookup_vector, array)
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>logical array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>lookup_vector := [scalar | vector]</code></dt>
+<dd>
+<em>Vector</em> yang terdiri dari nilai yang ingin dicocokkan.
+</dd>
+<dt><code>array := [array | vector]</code></dt>
+<dd>
+Data berupa <em>array</em> atau <em>vector</em>.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-is-all-in-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-03-is-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;5.2: Demonstrasi <code>IS_ALL_IN_VECTOR()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="is_cols_equal_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="is_cols_equal_vector"><code>IS_COLS_EQUAL_VECTOR()</code></h3>
+<p>Fungsi <code>IS_COLS_EQUAL_VECTOR(lookup_vector, array)</code> digunakan untuk memeriksa apakah setiap kolom di <code>array</code> termasuk dari setiap elemen di <code>lookup_vector</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+IS_COLS_EQUAL_VECTOR(lookup_vector, array)
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>logical array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>lookup_vector := [vector]</code></dt>
+<dd>
+<em>Vector</em> yang terdiri dari nilai yang ingin dicocokkan. Jumlah elemen <code>lookup_vector</code> harus sama dengan jumlah kolom <code>array</code>.
+</dd>
+<dt><code>array := [array | vector]</code></dt>
+<dd>
+Data berupa <em>array</em> .
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-is-cols-equal-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-03-is-2.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;5.3: Demonstrasi <code>IS_COLS_EQUAL_VECTOR()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="is_all_cols_equal_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="is_all_cols_equal_vector"><code>IS_ALL_COLS_EQUAL_VECTOR()</code></h3>
+<p>Fungsi <code>IS_ALL_COLS_EQUAL_VECTOR(lookup_vector, array, [logical_function])</code> digunakan untuk memeriksa apakah setiap kolom di <code>array</code> termasuk dari setiap elemen di <code>lookup_vector</code>, dan diperiksa apakah setiap barisnya sesuai dengan <code>logical_function</code>. Fungsi ini menggunakan fungsi <code>IS_COLS_EQUAL_VECTOR()</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+IS_ALL_COLS_EQUAL_VECTOR(lookup_vector, array, [logical_function])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>column logical vector</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>lookup_vector := [scalar | vector]</code></dt>
+<dd>
+<em>Vector</em> yang terdiri dari nilai yang ingin dicocokkan. Jumlah elemen <code>lookup_vector</code> harus sama dengan jumlah kolom <code>array</code>.
+</dd>
+<dt><code>array := [array | vector]</code></dt>
+<dd>
+Data berupa <em>array</em> .
+</dd>
+<dt><code>logical_function := OR() :: [LAMBDA scalar function]</code></dt>
+<dd>
+Nilai <em>default</em> adalah fungsi <em>lambda</em> <code>OR()</code>. Fungsi <em>logical</em> yang digunakan untuk mengaggregasi setiap barisnya.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-is-all-cols-equal-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-03-is-3.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;5.4: Demonstrasi <code>IS_ALL_COLS_EQUAL_VECTOR()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="is_rows_logical" class="level3">
+<h3 class="anchored" data-anchor-id="is_rows_logical"><code>IS_ROWS_LOGICAL()</code></h3>
+<p>Fungsi <code>IS_ROWS_LOGICAL(logical_array, [logical_function])</code> mengaggregasi setiap baris dari <code>logical_array</code> menggunakan fungsi <code>logical_function</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+IS_ROWS_LOGICAL(logical_array, [logical_function])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>column vector</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>logical_array := [logical array]</code></dt>
+<dd>
+Data berupa <em>logical array</em> .
+</dd>
+<dt><code>[logical_function] := OR() [LAMBDA scalar function]</code></dt>
+<dd>
+Nilai <em>default</em> adalah fungsi <em>lambda</em> <code>OR()</code>. Fungsi <em>logical</em> yang digunakan untuk mengaggregasi setiap barisnya.
+</dd>
+</dl>
+</div>
+</section>
+<section id="is_columns_logical" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="is_columns_logical"><code>IS_COLUMNS_LOGICAL()</code></h3>
+<p>Fungsi <code>IS_COLUMNS_LOGICAL(logical_array, [logical_function])</code> mengaggregasi setiap kolom dari <code>logical_array</code> menggunakan fungsi <code>logical_function</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+IS_COLUMNS_LOGICAL(logical_array, [logical_function])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>row vector</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>logical_array := [logical array]</code></dt>
+<dd>
+Data berupa <em>logical array</em> .
+</dd>
+<dt><code>[logical_function] := OR() [LAMBDA scalar function]</code></dt>
+<dd>
+Nilai <em>default</em> adalah fungsi <em>lambda</em> <code>OR()</code>. Fungsi <em>logical</em> yang digunakan untuk mengaggregasi setiap kolomnya.
+</dd>
+</dl>
+</div>
+<div class="column-page">
+<div id="fig-is-rows-cols-logical" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-03-is-4.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;5.5: Demonstrasi <code>IS_ROWS_LOGICAL()</code> dan <code>IS_COLUMNS_LOGICAL()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-make" class="level1 page-columns page-full">
+<h1>Kategori <code>MAKE_*</code></h1>
+<p>Kategori <code>MAKE_*</code> merupakan kumpulan fungsi yang membangkitkan (<em>generate</em>) data. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-make">Gambar&nbsp;6.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-make" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  _RECURSIVE_MAKE_SEQUENCE --&gt; _RECURSIVE_MAKE_SEQUENCE
+  _RECURSIVE_MAKE_SEQUENCE --&gt; MAKE_SEQUENCE_FROM_VECTOR
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;6.1: Grafik <em>dependencies</em> kategori <code>MAKE_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Fungsi utama pada kategori ini adalah <code>MAKE_SEQUENCE_FROM_VECTOR()</code>.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>MAKE_*</code>
+</summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_MAKE_SEQUENCE --&gt; _RECURSIVE_MAKE_SEQUENCE</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>_RECURSIVE_MAKE_SEQUENCE <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>start_vector<span class="op">,</span> end_vector<span class="op">,</span> ntry<span class="op">,</span> <span class="op">[</span>stack_horizontally<span class="op">],</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        seq_start<span class="op">,</span> <span class="fu">INDEX</span><span class="op">(</span>start_vector<span class="op">,</span> ntry<span class="op">),</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        seq_end<span class="op">,</span> <span class="fu">INDEX</span><span class="op">(</span>end_vector<span class="op">,</span> ntry<span class="op">),</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        stack_horizontally<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>stack_horizontally<span class="op">),</span> FALSE<span class="op">,</span> stack_horizontally<span class="op">),</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            ntry <span class="op">=</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">SEQUENCE</span><span class="op">(</span>seq_end <span class="op">-</span> seq_start <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> <span class="op">,</span> seq_start<span class="op">),</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                next_try<span class="op">,</span> ntry <span class="op">-</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                results<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>seq_end <span class="op">-</span> seq_start <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> <span class="op">,</span> seq_start<span class="op">),</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                    stack_horizontally<span class="op">,</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">HSTACK</span><span class="op">(</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">_RECURSIVE_MAKE_SEQUENCE</span><span class="op">(</span>start_vector<span class="op">,</span> end_vector<span class="op">,</span> next_try<span class="op">,</span> stack_horizontally<span class="op">),</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                        results</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                    <span class="op">),</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">VSTACK</span><span class="op">(</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">_RECURSIVE_MAKE_SEQUENCE</span><span class="op">(</span>start_vector<span class="op">,</span> end_vector<span class="op">,</span> next_try<span class="op">,</span> stack_horizontally<span class="op">),</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                        results</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                    <span class="op">)</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                <span class="op">)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="op">)</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_MAKE_SEQUENCE --&gt; MAKE_SEQUENCE_FROM_VECTOR</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>MAKE_SEQUENCE_FROM_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>start_vector<span class="op">,</span> end_vector<span class="op">,</span> <span class="op">[</span>stack_horizontally<span class="op">],</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">_RECURSIVE_MAKE_SEQUENCE</span><span class="op">(</span>start_vector<span class="op">,</span> end_vector<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>start_vector<span class="op">),</span> stack_horizontally<span class="op">)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="make_sequence_from_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="make_sequence_from_vector"><code>MAKE_SEQUENCE_FROM_VECTOR()</code></h3>
+<p>Fungsi <code>MAKE_SEQUENCE_FROM_VECTOR(start_vector, end_vector, [stack_horizontally])</code> digunakan untuk mebangkitkan <em>sequence</em> dari setiap baris/elemen di <code>start_vector</code> dan <code>end_vector</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+MAKE_SEQUENCE_FROM_VECTOR(start_vector, end_vector, [stack_horizontally])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>column vector</em> atau <em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>start_vector := [integer vector]</code></dt>
+<dd>
+<em>Vector</em> yang terdiri dari bilangan bulat memulai <em>sequence</em>.
+</dd>
+<dt><code>end_vector := [integer vector]</code></dt>
+<dd>
+<em>Vector</em> yang terdiri dari bilangan bulat akhir <em>sequence</em>.
+</dd>
+<dt><code>[stack_horizontally] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu FALSE. Jika <code>TRUE</code>, maka setiap <em>sequence</em> yang dibangkitkan akan disusun horizontal.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-make-sequence-from-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-04-make-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;6.2: Demonstrasi <code>MAKE_SEQUENCE_FROM_VECTOR()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-repeat" class="level1 page-columns page-full">
+<h1>Kategori <code>REPEAT_*</code></h1>
+<p>Kategori <code>REPEAT_*</code> merupakan kumpulan fungsi yang digunakan untuk melakukan pengulangan <em>array</em> ataupun <em>vector</em> dan menghasilkannya dalam bentuk <em>dynamic array</em>. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-repeat">Gambar&nbsp;7.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-repeat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  REPEAT_ARRAY_BY_ROW &amp; REPEAT_ARRAY_BY_COLUMN --&gt; REPEAT_ARRAY
+  REPEAT_ARRAY_BY_ROW --&gt; REPEAT_ARRAY_BY_ROW
+  REPEAT_ARRAY_BY_COLUMN --&gt; REPEAT_ARRAY_BY_COLUMN
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;7.1: Grafik <em>dependencies</em> kategori <code>REPEAT_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>REPEAT_*</code>
+</summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// REPEAT_ARRAY_BY_ROW &amp; REPEAT_ARRAY_BY_COLUMN --&gt; REPEAT_ARRAY</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>REPEAT_ARRAY <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>num_repeat<span class="op">],</span> <span class="op">[</span>by_row<span class="op">],</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        by_row<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>by_row<span class="op">),</span> TRUE<span class="op">,</span> by_row<span class="op">),</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        num_repeat<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>num_repeat<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> num_repeat<span class="op">),</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span>by_row<span class="op">,</span> <span class="fu">REPEAT_ARRAY_BY_ROW</span><span class="op">(</span>array<span class="op">,</span> num_repeat<span class="op">),</span> <span class="fu">REPEAT_ARRAY_BY_COLUMN</span><span class="op">(</span>array<span class="op">,</span> num_repeat<span class="op">))</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">// REPEAT_ARRAY_BY_ROW --&gt; REPEAT_ARRAY_BY_ROW</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>REPEAT_ARRAY_BY_ROW <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>num_repeat<span class="op">],</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        num_repeat<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>num_repeat<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> num_repeat<span class="op">),</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            num_repeat <span class="op">=</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            array<span class="op">,</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span>next_repeat<span class="op">,</span> num_repeat <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">VSTACK</span><span class="op">(</span><span class="fu">REPEAT_ARRAY_BY_ROW</span><span class="op">(</span>array<span class="op">,</span> next_repeat<span class="op">),</span> array<span class="op">))</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">// REPEAT_ARRAY_BY_COLUMN --&gt; REPEAT_ARRAY_BY_COLUMN</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>REPEAT_ARRAY_BY_COLUMN <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>num_repeat<span class="op">],</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        num_repeat<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>num_repeat<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> num_repeat<span class="op">),</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>            num_repeat <span class="op">=</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>            array<span class="op">,</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span>next_repeat<span class="op">,</span> num_repeat <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">HSTACK</span><span class="op">(</span><span class="fu">REPEAT_ARRAY_BY_COLUMN</span><span class="op">(</span>array<span class="op">,</span> next_repeat<span class="op">),</span> array<span class="op">))</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="repeat_array_by_row" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="repeat_array_by_row"><code>REPEAT_ARRAY_BY_ROW()</code></h3>
+<p>Fungsi <code>REPEAT_ARRAY_BY_ROW(array, [num_repeat])</code> digunakan untuk mengulangi <code>array</code> sepanjang baris (ke bawah).</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+REPEAT_ARRAY_BY_ROW(array, [num_repeat])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [scalar | vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>scalar</em>, <em>vector</em>, ataupun <em>array</em>.
+</dd>
+<dt><code>[num_repeat] := 2 :: [integer]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu 2. Jumlah pengulangannya.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-repeat-array-by-row" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-05-repeat-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;7.2: Demonstrasi <code>REPEAT_ARRAY_BY_ROW()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="repeat_array_by_column" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="repeat_array_by_column"><code>REPEAT_ARRAY_BY_COLUMN()</code></h3>
+<p>Fungsi <code>REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])</code> digunakan untuk mengulangi <code>array</code> sepanjang kolom (ke kanan).</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [scalar | vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>scalar</em>, <em>vector</em>, ataupun <em>array</em>.
+</dd>
+<dt><code>[num_repeat] := 2 :: [integer]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu 2. Jumlah pengulangannya.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-repeat-array-by-column" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-05-repeat-2.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;7.3: Demonstrasi <code>REPEAT_ARRAY_BY_COLUMN()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="repeat_array" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="repeat_array"><code>REPEAT_ARRAY()</code></h3>
+<p>Fungsi <code>REPEAT_ARRAY(array, [num_repeat], [by_row])</code> digunakan untuk mengulangi <code>array</code> sepanjang baris/kolom (ke bawah/ke kanan).</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+REPEAT_ARRAY(array, [num_repeat], [by_row])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [scalar | vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>scalar</em>, <em>vector</em>, ataupun <em>array</em>.
+</dd>
+<dt><code>[num_repeat] := 2 :: [integer]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu 2. Jumlah pengulangannya.
+</dd>
+<dt><code>[by_row] := TRUE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>TRUE</code>. Jika <code>TRUE</code>, maka pengulangan akan sepanjang baris (ke bawah), dan berlaku sebaliknya juga.
+</dd>
+</dl>
+</div>
+<div class="column-page">
+<div id="fig-repeat-array" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-05-repeat-3.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;7.4: Demonstrasi <code>REPEAT_ARRAY()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-reshape" class="level1 page-columns page-full">
+<h1>Kategori <code>RESHAPE_*</code></h1>
+<p>Kategori <code>RESHAPE_*</code> merupakan kumpulan fungsi yang dapat digunakan untuk melakukan fungsi logical di data. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-reshape">Gambar&nbsp;8.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-reshape" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; RESHAPE_BY_COLUMNS
+</pre>
+<div id="mermaid-tooltip-6" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;8.1: Grafik <em>dependencies</em> kategori <code>RESHAPE_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Fungsi utama yang tersedia saat ini hanya <code>RESHAPE_BY_COLUMNS()</code>.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>RESHAPE_*</code>
+</summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; RESHAPE_BY_COLUMNS</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>RESHAPE_BY_COLUMNS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>num_split<span class="op">],</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        num_split<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>num_split<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> num_split<span class="op">),</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">MOD</span><span class="op">(</span>ncols<span class="op">,</span> num_split<span class="op">)</span> <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                divider<span class="op">,</span> ncols <span class="op">/</span> num_split<span class="op">,</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                divider_sequence<span class="op">,</span> <span class="fu">CHOOSEROWS</span><span class="op">(</span><span class="fu">SEQUENCE</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> divider<span class="op">),</span> <span class="fu">SEQUENCE</span><span class="op">(</span>num_split<span class="op">,</span> <span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">)),</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                divider_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>divider_sequence<span class="op">,</span> <span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                divider_repeat<span class="op">,</span> <span class="fu">CHOOSEROWS</span><span class="op">(</span><span class="fu">TOROW</span><span class="op">(</span>divider_flatten<span class="op">),</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows<span class="op">,</span> <span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">)),</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                divider_repeat_col<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>divider_repeat<span class="op">),</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                array_flatten<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                array_sorted<span class="op">,</span> <span class="fu">SORTBY</span><span class="op">(</span>array_flatten<span class="op">,</span> divider_repeat_col<span class="op">),</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                <span class="fu">WRAPROWS</span><span class="op">(</span>array_sorted<span class="op">,</span> num_split<span class="op">)</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">),</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            <span class="fu">NA</span><span class="op">()</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="reshape_by_columns" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="reshape_by_columns"><code>RESHAPE_BY_COLUMNS()</code></h3>
+<p>Fungsi <code>RESHAPE_BY_COLUMNS(array, [num_split])</code> digunakan untuk mengubah dimensi (transformasi) <code>array</code> berdasarkan jumlah pembagi kolomnya. Jika tidak jumlah kolom tidak habis dibagi oleh <code>num_split</code> akan mengeluarkan hasil <code>#N/A</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+RESHAPE_BY_COLUMNS(array, [num_split])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [array]</code></dt>
+<dd>
+Data berupa <em>array</em> atau <em>vector</em>.
+</dd>
+<dt><code>[num_split] := 2 :: [integer]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu 2. Jumlah pembagi kolom. Jumlah kolom <code>array</code> harus habis dibagi (<code>MOD()</code>) dengan <code>num_split</code>.
+</dd>
+</dl>
+</div>
+<div class="column-page">
+<div id="fig-reshape-by-columns" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-06-reshape-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;8.2: Demonstrasi <code>RESHAPE_BY_COLUMNS()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-rotate" class="level1 page-columns page-full">
+<h1>Kategori <code>ROTATE_*</code></h1>
+<p>Kategori <code>ROTATE_*</code> merupakan kumpulan fungsi yang digunakan untuk menggeser atau memutar <em>array</em> ataupun <em>vector</em>. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-rotate">Gambar&nbsp;9.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-rotate" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-7">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; ROTATE_VECTOR
+  ROTATE_VECTOR --&gt; ROTATE_ARRAY
+</pre>
+<div id="mermaid-tooltip-7" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;9.1: Grafik <em>dependencies</em> kategori <code>ROTATE_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>ROTATE_*</code>
+</summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; ROTATE_VECTOR</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ROTATE_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>vector<span class="op">,</span> num_rotation<span class="op">,</span> <span class="op">[</span>as_column_vector<span class="op">],</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        vector<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>vector<span class="op">),</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        rotated_array<span class="op">,</span> <span class="fu">IFS</span><span class="op">(</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">OR</span><span class="op">(</span>num_rotation <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> num_rotation <span class="op">&gt;=</span> <span class="fu">ROWS</span><span class="op">(</span>vector<span class="op">),</span> num_rotation <span class="op">&lt;=</span> <span class="op">-</span><span class="fu">ROWS</span><span class="op">(</span>vector<span class="op">)),</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            vector<span class="op">,</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            num_rotation <span class="op">&gt;</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">VSTACK</span><span class="op">(</span><span class="fu">DROP</span><span class="op">(</span>vector<span class="op">,</span> num_rotation<span class="op">),</span> <span class="fu">TAKE</span><span class="op">(</span>vector<span class="op">,</span> num_rotation<span class="op">)),</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            num_rotation <span class="op">&lt;</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">VSTACK</span><span class="op">(</span><span class="fu">TAKE</span><span class="op">(</span>vector<span class="op">,</span> num_rotation<span class="op">),</span> <span class="fu">DROP</span><span class="op">(</span>vector<span class="op">,</span> num_rotation<span class="op">))</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">),</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        as_column_vector<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>as_column_vector<span class="op">),</span> FALSE<span class="op">,</span> TRUE<span class="op">),</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span>as_column_vector<span class="op">,</span> <span class="fu">TOROW</span><span class="op">(</span>rotated_array<span class="op">),</span> <span class="fu">TOCOL</span><span class="op">(</span>rotated_array<span class="op">))</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">// ROTATE_VECTOR --&gt; ROTATE_ARRAY</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>ROTATE_ARRAY <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> num_rotation<span class="op">,</span> <span class="op">[</span>rotate_columns<span class="op">],</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        rotate_columns<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>rotate_columns<span class="op">),</span> TRUE<span class="op">,</span> FALSE<span class="op">),</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        seqrows<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows<span class="op">),</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        seqcols<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> ncols<span class="op">),</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        results<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>            rotate_columns<span class="op">,</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">CHOOSECOLS</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">ROTATE_VECTOR</span><span class="op">(</span>seqcols<span class="op">,</span> num_rotation<span class="op">,</span> TRUE<span class="op">)),</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">CHOOSEROWS</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">ROTATE_VECTOR</span><span class="op">(</span>seqrows<span class="op">,</span> num_rotation<span class="op">,</span> FALSE<span class="op">))</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">),</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>        results</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="rotate_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="rotate_vector"><code>ROTATE_VECTOR()</code></h3>
+<p>Fungsi <code>ROTATE_VECTOR(vector, num_rotation, [as_column_vector])</code> digunakan untuk menggeser/memutar elemen yang ada di <em>vector</em> sebanyak <code>num_rotation</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+ROTATE_VECTOR(vector, num_rotation, [as_column_vector])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>vector</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>vector := [vector]</code></dt>
+<dd>
+Data berupa <em>vector</em> (<em>column vector</em> atau <em>row vector</em>).
+</dd>
+<dt><code>num_rotation := [integer]</code></dt>
+<dd>
+Jumlah berapa kali <em>vector</em> diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
+</dd>
+<dt><code>[as_column_vector] := TRUE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>TRUE</code>. Jika <code>TRUE</code>, maka <em>output</em> berupa <em>column vector</em>.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-rotate-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-07-rotate-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;9.2: Demonstrasi <code>ROTATE_VECTOR()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="rotate_array" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="rotate_array"><code>ROTATE_ARRAY()</code></h3>
+<p>Fungsi <code>ROTATE_ARRAY(array, num_rotation, [rotate_columns])</code> digunakan untuk menggeser/memutar elemen yang ada di <em>array</em> sebanyak <code>num_rotation</code> berdasarkan baris atau kolom.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+ROTATE_ARRAY(array, num_rotation, [rotate_columns])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [array]</code></dt>
+<dd>
+Data berupa <em>array</em>.
+</dd>
+<dt><code>num_rotation := [scalar | vector]</code></dt>
+<dd>
+Jumlah berapa kali <em>vector</em> diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
+</dd>
+<dt><code>[rotate_columns] := TRUE :: [TRUE | FALSE]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>TRUE</code>. Jika <code>TRUE</code>, maka <code>array</code> diputar berdasarkan kolom. Jika <code>FALSE</code>, maka <code>array</code> diputar berdasarkan baris.
+</dd>
+</dl>
+</div>
+<div class="column-page-left">
+<div id="fig-rotate-array" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-07-rotate-2.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;9.3: Demonstrasi <code>ROTATE_ARRAY()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="kategori-swap_" class="level1 page-columns page-full">
+<h1>Kategori <code>SWAP_*</code></h1>
+<p>Kategori <code>SWAP_*</code> merupakan kumpulan fungsi yang digunakan untuk mengganti atau mengubah posisi elemen atau <em>vector</em>. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-swap">Gambar&nbsp;10.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-swap" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-8">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --&gt; SWAP_COLUMNS
+  NONE --&gt; SWAP_ROWS
+</pre>
+<div id="mermaid-tooltip-8" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;10.1: Grafik <em>dependencies</em> kategori <code>SWAP_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>SWAP_*</code>
+</summary>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; SWAP_COLUMNS</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SWAP_COLUMNS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>from_index<span class="op">],</span> <span class="op">[</span>to_index<span class="op">],</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        from_index<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>from_index<span class="op">),</span> <span class="dv">1</span><span class="op">,</span> from_index<span class="op">),</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        to_index<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>to_index<span class="op">),</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> to_index<span class="op">),</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        from_value<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>from_index <span class="op">&lt;</span> <span class="dv">0</span><span class="op">,</span> from_index <span class="op">+</span> ncols <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> from_index<span class="op">),</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        to_value<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>to_index <span class="op">&lt;</span> <span class="dv">0</span><span class="op">,</span> to_index <span class="op">+</span> ncols <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> to_index<span class="op">),</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        column_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">)),</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        from_logical<span class="op">,</span> column_sequence <span class="op">=</span> from_value<span class="op">,</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        to_logical<span class="op">,</span> column_sequence <span class="op">=</span> to_value<span class="op">,</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        replace_from<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>from_logical<span class="op">,</span> to_value<span class="op">,</span> column_sequence<span class="op">),</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        replace_to<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>to_logical<span class="op">,</span> from_value<span class="op">,</span> replace_from<span class="op">),</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">CHOOSECOLS</span><span class="op">(</span>array<span class="op">,</span> replace_to<span class="op">)</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">// NONE --&gt; SWAP_ROWS</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>SWAP_ROWS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> <span class="op">[</span>from_index<span class="op">],</span> <span class="op">[</span>to_index<span class="op">],</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        from_index<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>from_index<span class="op">),</span> <span class="dv">1</span><span class="op">,</span> from_index<span class="op">),</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>        to_index<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>to_index<span class="op">),</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> to_index<span class="op">),</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>        from_value<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>from_index <span class="op">&lt;</span> <span class="dv">0</span><span class="op">,</span> from_index <span class="op">+</span> nrows <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> from_index<span class="op">),</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        to_value<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>to_index <span class="op">&lt;</span> <span class="dv">0</span><span class="op">,</span> to_index <span class="op">+</span> nrows <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> to_index<span class="op">),</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>        row_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span><span class="fu">ROWS</span><span class="op">(</span>array<span class="op">)),</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>        from_logical<span class="op">,</span> row_sequence <span class="op">=</span> from_value<span class="op">,</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>        to_logical<span class="op">,</span> row_sequence <span class="op">=</span> to_value<span class="op">,</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>        replace_from<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>from_logical<span class="op">,</span> to_value<span class="op">,</span> row_sequence<span class="op">),</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        replace_to<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>to_logical<span class="op">,</span> from_value<span class="op">,</span> replace_from<span class="op">),</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">CHOOSEROWS</span><span class="op">(</span>array<span class="op">,</span> replace_to<span class="op">)</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="swap_columns" class="level3">
+<h3 class="anchored" data-anchor-id="swap_columns"><code>SWAP_COLUMNS()</code></h3>
+<p>Fungsi <code>SWAP_COLUMNS(array, [from_index], [to_index])</code> digunakan untuk menukar posisi kolom ke-<code>from_index</code> dengan kolom ke-<code>to_index</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+SWAP_COLUMNS(array, [from_index], [to_index])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>vector</em> atau <em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [row vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>array</em> atau <em>row vector</em>.
+</dd>
+<dt><code>[from_index] := 1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>1</code>. Posisi <em>index</em> kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+<dt><code>[to_index] := -1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>-1</code>. Posisi <em>index</em> tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+</dl>
+</div>
+</section>
+<section id="swap_rows" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="swap_rows"><code>SWAP_ROWS()</code></h3>
+<p>Fungsi <code>SWAP_ROWS(array, [from_index], [to_index])</code> digunakan untuk menukar posisi baris ke-<code>from_index</code> dengan baris ke-<code>to_index</code>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+SWAP_COLUMNS(array, [from_index], [to_index])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>vector</em> atau <em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [column vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>array</em> atau <em>column vector</em>.
+</dd>
+<dt><code>[from_index] := 1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>1</code>. Posisi <em>index</em> baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+<dt><code>[to_index] := -1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>-1</code>. Posisi <em>index</em> tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+</dl>
+</div>
+<div class="column-page">
+<div id="fig-swap-columns-rows" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-08-swap-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;10.2: Demonstrasi <code>SWAP_COLUMNS()</code> dan <code>SWAP_ROWS()</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+<section id="sec-text" class="level1 page-columns page-full">
+<h1>Kategori <code>TEXT_*</code></h1>
+<p>Kategori <code>TEXT_*</code> merupakan kumpulan fungsi yang digunakan untuk memproses data teks. Hubungan antar fungsi di kategori ini bisa dilihat di <a href="#fig-dep-text">Gambar&nbsp;11.1</a>.</p>
+<div class="cell" data-fig-height="100%">
+<div class="cell-output-display">
+<div id="fig-dep-text" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-9">%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  _RECURSIVE_TEXT_SPLIT --&gt; _RECURSIVE_TEXT_SPLIT
+  _RECURSIVE_TEXT_SPLIT --&gt; TEXT_SPLIT_VECTOR
+</pre>
+<div id="mermaid-tooltip-9" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;11.1: Grafik <em>dependencies</em> kategori <code>TEXT_*</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.</p>
+<details>
+<summary>
+<em>Source Code</em> <code>TEXT_*</code>
+</summary>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_TEXT_SPLIT --&gt; _RECURSIVE_TEXT_SPLIT</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>_RECURSIVE_TEXT_SPLIT <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    text_vector<span class="op">,</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    ntry<span class="op">,</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    col_delimiter<span class="op">,</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>row_delimiter<span class="op">],</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>ignore_empty<span class="op">],</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>match_mode<span class="op">],</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>pad_with<span class="op">],</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        text_vector<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>text_vector<span class="op">),</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        selected_row<span class="op">,</span> <span class="fu">ARRAYTOTEXT</span><span class="op">(</span><span class="fu">INDEX</span><span class="op">(</span>text_vector<span class="op">,</span> ntry<span class="op">)),</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>            ntry <span class="op">=</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">TEXTSPLIT</span><span class="op">(</span>selected_row<span class="op">,</span> col_delimiter<span class="op">,</span> row_delimiter<span class="op">,</span> ignore_empty<span class="op">,</span> match_mode<span class="op">,</span> pad_with<span class="op">),</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>            <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>                next_try<span class="op">,</span> ntry <span class="op">-</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>                results<span class="op">,</span> <span class="fu">TEXTSPLIT</span><span class="op">(</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                    selected_row<span class="op">,</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                    col_delimiter<span class="op">,</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                    row_delimiter<span class="op">,</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                    ignore_empty<span class="op">,</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>                    match_mode<span class="op">,</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>                    pad_with</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                <span class="op">),</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                <span class="fu">VSTACK</span><span class="op">(</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">_RECURSIVE_TEXT_SPLIT</span><span class="op">(</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>                        text_vector<span class="op">,</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>                        next_try<span class="op">,</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>                        col_delimiter<span class="op">,</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>                        row_delimiter<span class="op">,</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>                        ignore_empty<span class="op">,</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>                        match_mode<span class="op">,</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>                        pad_with</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>                    <span class="op">),</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>                    results</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>                <span class="op">)</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>            <span class="op">)</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>        <span class="op">)</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">// _RECURSIVE_TEXT_SPLIT --&gt; TEXT_SPLIT_VECTOR</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>TEXT_SPLIT_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    text_vector<span class="op">,</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>col_delimiter<span class="op">],</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>row_delimiter<span class="op">],</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>ignore_empty<span class="op">],</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>match_mode<span class="op">],</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>pad_with<span class="op">],</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>replace_na<span class="op">],</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>text_vector<span class="op">),</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>        col_delimiter<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>col_delimiter<span class="op">),</span> <span class="st">" "</span><span class="op">,</span> col_delimiter<span class="op">),</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>        replace_na<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>replace_na<span class="op">),</span> <span class="fu">NA</span><span class="op">(),</span> replace_na<span class="op">),</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>        pad_with<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>pad_with<span class="op">),</span> <span class="st">""</span><span class="op">,</span> pad_with<span class="op">),</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>        result<span class="op">,</span> <span class="fu">_RECURSIVE_TEXT_SPLIT</span><span class="op">(</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>            text_vector<span class="op">,</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>            nrows<span class="op">,</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>            col_delimiter<span class="op">,</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>            row_delimiter<span class="op">,</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>            ignore_empty<span class="op">,</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>            match_mode<span class="op">,</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>            pad_with</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>        <span class="op">),</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IFERROR</span><span class="op">(</span>result<span class="op">,</span> replace_na<span class="op">)</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<section id="text_split_vector" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="text_split_vector"><code>TEXT_SPLIT_VECTOR()</code></h3>
+<p>Fungsi <code>TEXT_SPLIT_VECTOR(text_vector, [col_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with], [replace_na])</code> merupakan fungsi pengembangan lanjutan dari <code>TEXTSPLIT()</code> yang mampu menerima <em>input</em> data berupa <em>vector</em> dan menghasilkan dalam bentuk <em>dynamic array</em>.</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+TEXT_SPLIT_VECTOR(text_vector, [col_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with], [replace_na])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>text_vector := [text vector]</code></dt>
+<dd>
+Data harus berupa <em>text column vector</em>.
+</dd>
+<dt><code>[col_delimiter] := " " :: [text]</code></dt>
+<dd>
+Nilai <em>default</em> yaitu <code>" "</code> (spasi). Teks pemisah untuk setiap kolomnya.
+</dd>
+<dt><code>[row_delimiter] := "" :: [text]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>""</code> (tidak ada). Teks pemisah untuk setiap barisnya.
+</dd>
+<dt><code>[ignore_empty] := FALSE :: [TRUE | FALSE]</code></dt>
+<dd>
+Tentukan <code>TRUE</code> untuk mengabaikan pemisah berurutan. Default ke <code>FALSE</code>, yang membuat sel kosong. Opsional.
+</dd>
+<dt><code>[match_mode] := 0 :: [0 | 1]</code></dt>
+<dd>
+Tentukan <code>1</code> untuk melakukan kecocokan yang tidak peka huruf besar kecil. Default ke <code>0</code>, yang melakukan kecocokan peka huruf besar kecil. Opsional.
+</dd>
+<dt><code>[pad_with] := #N/A :: [text | number]</code></dt>
+<dd>
+Nilai untuk mengalihkan hasil. Defaultnya adalah <code>#N/A</code>.
+</dd>
+<dt><code>[replace_na] := #N/A :: [text | number]</code></dt>
+<dd>
+<strong><em>(New in v0.3.1)</em></strong>. Nilai untuk menggantikan nilai <code>#N/A</code> dari hasil akhir. Defaultnya adalah <code>#N/A</code>. Nilai <code>#N/A</code> yang ada dikarenakan proses <code>VSTACK()</code> yang memiliki dimensi hasil <code>TEXTSPLIT()</code> yang berbeda-beda.
+</dd>
+</dl>
+</div>
+<p>Deskripsi <code>ignore_empty</code>, <code>match_mode</code>, dan <code>pad_with</code> diambil dari halaman <a href="https://support.microsoft.com/id-id/office/fungsi-textsplit-b1ca414e-4c21-4ca0-b1b7-bdecace8a6e7">Fungsi TEXTSPLIT</a>.</p>
+<section id="limitasi-text_split_vector" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="limitasi-text_split_vector">Limitasi <code>TEXT_SPLIT_VECTOR()</code></h4>
+<ul>
+<li>Hindari menggunakan <code>TEXT_SPLIT_VECTOR()</code> dengan jumlah baris yang banyak ataupun dimensi <em>output</em> yang besar. Pastikan hasil <em>output</em> fungsi memiliki dimensi yang kecil seperti jumlah kolom <span class="math inline">\(\le 10\)</span> dan jumlah baris <span class="math inline">\(\le 1,000\)</span>.</li>
+<li>Ukuran <code>text_vector</code> masih bisa lebih besar dari batasan diatas, akan tetapi disarankan untuk penggunaan <code>TEXT_SPLIT_VECTOR()</code> selalu bertahap, yaitu dari jumlah baris yang sedikit sampai jumlah baris optimal yang tidak menampilkan <em>error</em> atau <em>crash</em>.</li>
+<li>Jika melebihi kemampuan, akan menghasilkan nilai <em>error</em> berupa <code>#NUM</code> / <code>#CALC</code>.</li>
+</ul>
+<div class="column-page">
+<div id="fig-text-split-vector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img-0-3-0/feidlambda-v03-09-text-1.gif" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;11.2: Demonstrasi <code>TEXT_SPLIT_VECTOR</code> (outdated)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+<p>Fungsi feidlambda v0.3 memiliki <span class="math inline">\(9\)</span> kategori dengan total <span class="math inline">\(23\)</span> fungsi utama dan pendukung. Dengan perombakan struktur dan penamaan dari v0.2 ke v0.3, harapannya v0.3 sudah memiliki struktur dan penamaan yang konsisten sehingga untuk memproduksi fungsi ataupun fitur barunya lebih cepat di versi-versi berikutnya.</p>
+<p>Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membuat <a href="https://github.com/fiakoenjiniring/feidlambda/issues/new">isu di github</a>. Dan jika bertemu masalah saat penggunaan feidlambda v0.3, bisa juga membuat <a href="https://github.com/fiakoenjiniring/feidlambda/issues/new">isu di github</a>.</p>
+<div class="column-screen-inset-shaded">
+<hr>
+</div>
+</section>
+</section>
+</section>
+<section id="changelog" class="level1">
+<h1>Changelog</h1>
+<ul>
+<li><strong>2022-01-13 (v0.3.1)</strong>
+<ul>
+<li>Perubahan fungsi utama:
+<ul>
+<li>Perubahan <code>FILTER_MINMAX_ARRAY()</code>:
+<ul>
+<li>Menambah <em>optional</em> argumen <code>take_first_only</code>.</li>
+<li>Mengganti nama argumen: <code>with_labels -&gt; with_label</code>.</li>
+<li>Penyesuaian <code>_RECURSIVE_FILTER_MINMAX()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Perubahan <code>GET_INDEX_2D()</code>:
+<ul>
+<li>Mengubah nama argumen: <code>return_order_only -&gt; return_as_order</code>.</li>
+</ul></li>
+<li>Perubahan <code>RESHAPE_BY_COLUMNS()</code>:
+<ul>
+<li>Mengubah hasil <em>error</em> menjadi <code>NA()</code>.</li>
+</ul></li>
+<li>Perubahan <code>ROTATE_VECTOR()</code> dan <code>ROTATE_ARRAY()</code>:
+<ul>
+<li>Mengubah nama argumen: <code>n -&gt; num_rotation</code>.</li>
+</ul></li>
+<li>Perubahan <code>SWAP_COLUMNS()</code> dan <code>SWAP_ROWS()</code>:
+<ul>
+<li>Argumen <code>from_index</code> dan <code>to_index</code> dapat menggunakan indeks negatif.</li>
+<li>Nilai <em>default</em> <code>to_index</code> menjadi <code>-1</code>.</li>
+</ul></li>
+<li>Perubahan <code>TEXT_SPLIT_VECTOR()</code>:
+<ul>
+<li>Mengubah metode menjadi <em>recursive</em>.</li>
+<li>Mengubah nama argumen: <code>text_delimiter -&gt; col_delimiter</code>.</li>
+<li>Menambah <em>optional</em> argumen <code>replace_na</code>.</li>
+</ul></li>
+</ul></li>
+<li>Perubahan fungsi pendukung:
+<ul>
+<li>Perubahan <code>FILTER_FUNC_COLUMN()</code>:
+<ul>
+<li>Mengganti nama argumen: <code>col -&gt; column_index</code>.</li>
+<li>Menukar posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Menambah optional argumen <code>take_first_only</code>.</li>
+</ul></li>
+<li>Perubahan <code>FILTER_MINMAX_COLUMN()</code>:
+<ul>
+<li>Mengganti nama argumen: <code>col -&gt; column_index</code>.</li>
+<li>Menukar posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Menambah <em>optional</em> argumen <code>take_first_only</code>.</li>
+<li>Penyesuaian <code>FILTER_FUNC_COLUMN()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Perubahan <code>_RECURSIVE_FILTER_MINMAX()</code>:
+<ul>
+<li>Mengubah posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Penyesuaian <code>FILTER_MINMAX_COLUMN()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Fungsi baru <code>_RECURSIVE_TEXT_SPLIT()</code>:
+<ul>
+<li>Fungsi pendukung <code>TEXT_SPLIT_VECTOR()</code>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>2022-01-06 (v0.3.0)</strong>
+<ul>
+<li>Rilis feidlambda v0.3</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/lambda\.fiako\.engineering/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022-2023 PT. FIAKO ENJINIRING INDONESIA</div>   
+    <div class="nav-footer-right">developed by <strong>fiako</strong>dev</div>
+  </div>
+</footer>
+
+
+
+</body></html>

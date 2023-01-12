@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.313">
@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Taruma Sakti Megariansyah">
-<meta name="dcterms.date" content="2022-10-20">
 
-<title>feidlambda - Instalasi feidlambda (outdated)</title>
+<title>feidlambda - Migrasi feidlambda v0.2 ke v0.3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,11 +61,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -154,65 +154,35 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><p>Instalasi feidlambda (outdated)</p></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Dokumentasi</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/install.html" class="sidebar-item-text sidebar-link">Instalasi feidlambda</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/glossary.html" class="sidebar-item-text sidebar-link">Daftar Istilah</a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Pada halaman ini</h2>
    
   <ul>
-  <li><a href="#advanced-formula-environment" id="toc-advanced-formula-environment" class="nav-link active" data-scroll-target="#advanced-formula-environment"><span class="toc-section-number">1</span>  <strong>Advanced Formula Environment</strong></a></li>
-  <li><a href="#import-menggunakan-afe" id="toc-import-menggunakan-afe" class="nav-link" data-scroll-target="#import-menggunakan-afe"><span class="toc-section-number">2</span>  <em>Import</em> menggunakan AFE</a></li>
-  <li><a href="#salin-github-gist-url" id="toc-salin-github-gist-url" class="nav-link" data-scroll-target="#salin-github-gist-url"><span class="toc-section-number">3</span>  Salin <em>Github Gist URL</em></a></li>
-  <li><a href="#sync-formula" id="toc-sync-formula" class="nav-link" data-scroll-target="#sync-formula"><span class="toc-section-number">4</span>  <em>Sync</em> formula</a></li>
-  <li><a href="#gunakan-koleksi-lambda" id="toc-gunakan-koleksi-lambda" class="nav-link" data-scroll-target="#gunakan-koleksi-lambda"><span class="toc-section-number">5</span>  Gunakan koleksi lambda</a></li>
+  <li><a href="#sec-migration" id="toc-sec-migration" class="nav-link active" data-scroll-target="#sec-migration">Migrasi v0.2 ke v0.3</a>
+  <ul class="collapse">
+  <li><a href="#mengulangimerepetisi-data" id="toc-mengulangimerepetisi-data" class="nav-link" data-scroll-target="#mengulangimerepetisi-data">Mengulangi/merepetisi data</a></li>
+  <li><a href="#mengurutkan-data-berdasarkan-baris" id="toc-mengurutkan-data-berdasarkan-baris" class="nav-link" data-scroll-target="#mengurutkan-data-berdasarkan-baris">Mengurutkan data berdasarkan baris</a></li>
+  <li><a href="#mengubah-dimensi-data" id="toc-mengubah-dimensi-data" class="nav-link" data-scroll-target="#mengubah-dimensi-data">Mengubah dimensi data</a></li>
+  <li><a href="#mencari-posisi-nilai-dari-data" id="toc-mencari-posisi-nilai-dari-data" class="nav-link" data-scroll-target="#mencari-posisi-nilai-dari-data">Mencari posisi nilai dari data</a></li>
+  <li><a href="#memeriksa-hasil-logical" id="toc-memeriksa-hasil-logical" class="nav-link" data-scroll-target="#memeriksa-hasil-logical">Memeriksa hasil <em>logical</em></a></li>
+  <li><a href="#menghapus-kolom-atau-baris-dari-data" id="toc-menghapus-kolom-atau-baris-dari-data" class="nav-link" data-scroll-target="#menghapus-kolom-atau-baris-dari-data">Menghapus kolom atau baris dari data</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fiakoenjiniring/feidlambda/edit/main/docs/penggunaan-v1.qmd" class="toc-action">Ubah halaman ini</a></p><p><a href="https://github.com/fiakoenjiniring/feidlambda/issues/new" class="toc-action">Melaporkan isu</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fiakoenjiniring/feidlambda/edit/main/article/migration-v0-2-to-v0-3.qmd" class="toc-action">Ubah halaman ini</a></p><p><a href="https://github.com/fiakoenjiniring/feidlambda/issues/new" class="toc-action">Melaporkan isu</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><p>Instalasi feidlambda (outdated)</p></h1>
-<p class="subtitle lead"></p><p>Panduan pemasangan koleksi lambda <code>feidlambda</code> versi 0.x</p><p></p>
+<h1 class="title"><p>Migrasi feidlambda v0.2 ke v0.3</p></h1>
+<p class="subtitle lead"></p><p>Panduan dan informasi migrasi feidlambda v0.2 ke v0.3</p><p></p>
 </div>
 
 
@@ -229,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Diterbitkan</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 20, 2022</p>
+      <p class="date">Jumat, 06 Januari 2023</p>
     </div>
   </div>
   
@@ -239,101 +209,171 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Halaman ini menjelaskan mengenai perubahan feidlambda v0.2 ke v0.3 dan panduan migrasinya.</p>
+<section id="sec-migration" class="level1 page-columns page-full">
+<h1>Migrasi v0.2 ke v0.3</h1>
+<p>Perubahan versi feidlambda v0.2 ke v0.3 bersifat <strong><em>breaking change</em></strong>, yang berarti penggunaan v0.2 tidak dapat digunakan lagi bersamaan dengan v0.3. Hal ini bisa terlihat dari nama fungsi maupun kodenya di v0.3. Perubahan ini diekspetasikan akan terjadi sepanjang pengembangan sampai versi v1.0, akan tetapi perubahan ini diusahakan seminimal mungkin.</p>
+<p>Penamaan juga yang sebelumnya menggunakan <code>feid.utils</code> menjadi <code>feid</code> saja atau bebas tergantung penamaan <em>module</em>-nya.</p>
+<p>Berikut nama-nama fungsi baru di feidlambda v0.3 yang menggantikan fungsi di versi sebelumnya (<a href="#tbl-feidlambda-v03-comparison">Tabel&nbsp;1</a>).</p>
+<div class="column-page">
+<div id="tbl-feidlambda-v03-comparison" class="anchored">
+<table class="table">
+<caption>Tabel&nbsp;1: Fungsi pengganti di feidlambda v0.3</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">v0.2</th>
+<th style="text-align: left;">v0.3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>REPEATCOLS(vector, [num_repeat])</code></td>
+<td style="text-align: left;"><code>REPEAT_ARRAY_BY_ROW(array, [num_repeat])</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>SORTCOLS(table, table_header)</code></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>REPEATROWS(vector, [num_repeat])</code></td>
+<td style="text-align: left;"><code>REPEAT_ARRAY_BY_COLUMN(array, [num_repeat])</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>RESHAPECOLS(array, [nsplit])</code></td>
+<td style="text-align: left;"><code>RESHAPE_BY_COLUMNS(array, [num_split])</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>FINDINDEX2D(lookup_value, array)</code></td>
+<td style="text-align: left;"><code>GET_INDEX_2D(lookup_value, array, [return_as_element])</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>COMPAREVECTOR(left_vector, right_vector)</code></td>
+<td style="text-align: left;"><code>IS_ALL_IN_VECTOR(array, lookup_vector)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>MULTICHECK(array, search_vector, [check_condition])</code></td>
+<td style="text-align: left;"><code>IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector. [logical_function])</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>DROPROWS(array, index_to_drop)</code></td>
+<td style="text-align: left;"><code>FILTER_DROP_ROWS(array, row_index)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>DROPCOLS(array, index_to_drop)</code></td>
+<td style="text-align: left;"><code>FILTER_DROP_COLUMNS(array, column_index)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>COUNTMULTICHECK(array, search_vector, [check_condition])</code></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="callout-caption-container flex-fill">
-AFE 1.1+
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Dengan diperbaruinya versi AFE menjadi 1.1+, terdapat beberapa perubahan cara dalam melakukan import feidlambda. Perubahan berupa:</p>
+<p>Selain pengganti fungsi baru tersebut, mulai versi v0.3 akan dibuat kategori fungsi. Berikut kategori fungsi yang tersedia di versi v0.3 beserta deskripsinya:</p>
 <ul>
-<li>Harus dilakukan instalasi ulang untuk add-ins <em>Advanced Formula Environment</em>.</li>
-<li>Fitur terbaru AFE 1.1 bisa dilihat pada <a href="https://github.com/microsoft/advanced-formula-environment#readme">README AFE</a>.</li>
-<li>Saat import module melalui gist, <em>namespace</em> modul tidak boleh memiliki karakter titik (<code>.</code>), sehingga yang sebelumnya <code>feid.utils</code> menjadi <code>feid_utils</code>. Perubahan ini akan dibarengi dengan pembaruan versi feidlambda 0.3.x.</li>
+<li><code>FILTER_*</code>: Melakukan <em>filtering</em> atau <em>subsetting</em> (memilah) dari data.</li>
+<li><code>GET_*</code>: Mengambil informasi dari data.</li>
+<li><code>IS_*</code>: Fungsi <em>logical</em> tambahan.</li>
+<li><code>MAKE_*</code>: Membangkitkan data.</li>
+<li><code>REPEAT_*</code>: Mengulangi/mereptisi data.</li>
+<li><code>RESHAPE_*</code>: Mengubah dimensi data.</li>
+<li><code>ROTATE_*</code>: Merubah posisi data dengan diputar.</li>
+<li><code>SWAP_*</code>: Mengganti posisi data.</li>
+<li><code>TEXT_*</code>: Fungsi tambahan yang berkaitan dengan teks.</li>
 </ul>
-</div>
-</div>
-<section id="advanced-formula-environment" class="level2 page-columns page-full" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="advanced-formula-environment"><span class="header-section-number">1</span> <strong>Advanced Formula Environment</strong></h2>
-<p><em>Install</em> add-ins <strong>Advanced Formula Environment</strong> dari menu <code>Insert</code> &gt; <code>Get Add-ins</code> &gt; Cari <strong>Advanced Formula Environment</strong> (AFE).</p>
-<div class="column-page">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1007910/192432581-0fd50e59-b0d0-4d9a-b802-81fda91060cb.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Menambahkan <strong>Advanced Formula Environment</strong> <em>Add-ins</em></figcaption><p></p>
-</figure>
-</div>
-</div>
+<section id="mengulangimerepetisi-data" class="level2">
+<h2 class="anchored" data-anchor-id="mengulangimerepetisi-data">Mengulangi/merepetisi data</h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>REPEATCOLS()</code> | <code>REPEATROWS()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+<code>REPEAT_ARRAY_BY_COLUMN()</code> | <code>REPEAT_ARRAY_BY_ROW()</code>
+</dd>
+</dl>
+<p>Di v0.2, fungsi untuk mengulangi data dapat menggunakan fungsi <code>REPEATCOLS()</code> atau <code>REPEATROWS()</code>. Akan tetapi, terdapat batasan terkait fungsi tersebut yaitu fungsi tersebut hanya menerima input berupa vector. Fungsi tersebut juga menggunakan fungsi <code>CHOOSE*()</code> sebagai fungsi utama dalam merepetisi datanya. Pada versi <strong>v0.3</strong>, fungsi tersebut digantikan oleh <code>REPEAT_ARRAY_BY_*()</code> atau <code>REPEAT_ARRAY()</code>.</p>
+<p>Sintaks yang awalnya <code>REPEAT*(vector, [num_repeat])</code> menjadi <code>REPEAT_ARRAY_BY_*(array, [num_repeat])</code>, jadi untuk fungsi ini <strong>cukup mengganti nama fungsinya</strong> saja. Perilakunya akan tetap sama dengan versi v0.2. Di versi v0.3, terdapat fungsi baru yaitu <code>REPEAT_ARRAY()</code> yang merupakan fungsi pembungkus untuk <code>REPEAT_ARRAY_BY_*()</code> dengan sintaks <code>REPEAT_ARRAY(array, [num_repeat], [by_row])</code>. Sehingga, bisa juga cukup mengganti fungsi versi sebelumnya dengan fungsi ini dengan tambahan opsional argumen <code>by_row</code>.</p>
 </section>
-<section id="import-menggunakan-afe" class="level2 page-columns page-full" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="import-menggunakan-afe"><span class="header-section-number">2</span> <em>Import</em> menggunakan AFE</h2>
-<p>Setelah AFE terpasang di Microsoft Excel, lakukan <em>import</em> dengan membuka AFE melalui <code>Home</code> &gt; <code>Advanced Formula Environment</code> &gt; <code>Import</code>.</p>
-<div class="column-page">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1007910/192432838-0b21184d-f06b-4d03-b56b-97aad0cd392a.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Melakukan <em>import</em> di AFE</figcaption><p></p>
-</figure>
-</div>
-</div>
+<section id="mengurutkan-data-berdasarkan-baris" class="level2">
+<h2 class="anchored" data-anchor-id="mengurutkan-data-berdasarkan-baris">Mengurutkan data berdasarkan baris</h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>SORTCOLS()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+-
+</dd>
+</dl>
+<p>Untuk mengurutkan kolom berdasarkan baris tertentu bisa langsung menggunakan <code>SORT(array, [sort_index], [sort_order], [by_cols])</code> yang sudah disediakan di Microsoft Excel. Jadi untuk formula <code>SORTCOLS(table, table_header)</code> menjadi <code>SORT(array, [sort_index], [sort_order], [by_cols])</code> dengan catatan menggunakan argumen <code>by_cols &lt;- TRUE</code>.</p>
 </section>
-<section id="salin-github-gist-url" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="salin-github-gist-url"><span class="header-section-number">3</span> Salin <em>Github Gist URL</em></h2>
-<p>Isi “Github Gist URL” dengan link koleksi lambda yang tersedia. <em>Checklist</em> ✅ bagian “<em>Add formulas to new namespace</em>” dan isi <em>namespace</em> dengan nama koleksi (contoh: <code>feid.utils</code>).</p>
-<div class="callout-tip callout callout-style-simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Lakukan langkah <em>import</em> (2-3) untuk setiap koleksi yang ingin ditambahkan.</p>
-</div>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1007910/192433790-edfb2237-dcc9-41e0-898e-36d8a58e3438.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Isi <em>GitHub Gist URL</em> dan <em>Namespace</em></figcaption><p></p>
-</figure>
-</div>
+<section id="mengubah-dimensi-data" class="level2">
+<h2 class="anchored" data-anchor-id="mengubah-dimensi-data">Mengubah dimensi data</h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>RESHAPECOLS()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+<code>RESHAPE_BY_COLUMNS()</code>
+</dd>
+</dl>
+<p>Untuk fungsi <code>RESHAPECOLS(array, [nsplit])</code> dapat diganti menggunakan fungsi <code>RESHAPE_BY_COLUMNS(array, [num_split])</code>. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa <strong>cukup mengganti nama fungsinya</strong>.</p>
 </section>
-<section id="sync-formula" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sync-formula"><span class="header-section-number">4</span> <em>Sync</em> formula</h2>
-<p>Setelah <em>import</em> seluruh koleksi yang digunakan, lakukan <em>synchronize</em> yang bertujuan menyamakan nama pada <em>Formula/Excel Name Manager</em>.</p>
-<div class="callout-caution callout callout-style-simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Jika muncul peringatan mengenai <em>hidden sheets</em>, pilih “Allow …”.</p>
-</div>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1007910/192444394-78f8a5d5-1015-45b7-91e9-57f77f86923f.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption"><em>Synchronize</em> AFE</figcaption><p></p>
-</figure>
-</div>
+<section id="mencari-posisi-nilai-dari-data" class="level2">
+<h2 class="anchored" data-anchor-id="mencari-posisi-nilai-dari-data">Mencari posisi nilai dari data</h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>FINDINDEX2D()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+<code>GET_INDEX_2D()</code>
+</dd>
+</dl>
+<p>Untuk fungsi <code>FINDINDEX2D(lookup_value, array)</code> dapat digantikan menggunakan fungsi <code>GET_INDEX_2D(lookup_value, array, [return_number_only])</code>. Tidak ada perubahan dari posisi argumennya sehingga migrasinya berupa <strong>cukup mengganti nama fungsinya</strong>. Terdapat tambahan argumen <code>return_number_only</code> yang hasilnya hanya menyajikan urutan keberapa elemen yang ditemukannya.</p>
 </section>
-<section id="gunakan-koleksi-lambda" class="level2 page-columns page-full" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="gunakan-koleksi-lambda"><span class="header-section-number">5</span> Gunakan koleksi lambda</h2>
-<p>Selesai <em>sync</em>, fungsi lambda bisa langsung digunakan.</p>
-<div class="column-page">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://user-images.githubusercontent.com/1007910/192445916-242b2745-110b-44f7-9332-245b7fdaa695.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Gunakan koleksi lambda yang telah di-<em>import</em></figcaption><p></p>
-</figure>
-</div>
-</div>
+<section id="memeriksa-hasil-logical" class="level2">
+<h2 class="anchored" data-anchor-id="memeriksa-hasil-logical">Memeriksa hasil <em>logical</em></h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>COMPAREVECTOR()</code> | <code>MULTICHECK()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+<code>IS_ALL_IN_VECTOR()</code> | <code>IS_ALL_COLS_EQUAL_VECTOR()</code>
+</dd>
+</dl>
+<p>Untuk fungsi <code>COMPAREVECTOR()</code> dan <code>MULTICHECK()</code> sebenarnya merupakan fungsi/formula yang digunakan untuk memeriksa suatu kondisi dari data. Oleh karena itu, penamaannya di v0.3 diganti menjadi <code>IS_*</code>. Hal tersebut menyamakan dengan fungsi <code>IS*</code> lainnya, yang bertujuan untuk memeriksa bahwa dataset ini memenuhi kondisi tertentu. <code>COMPAREVECTOR()</code> pada dasarnya adalah proses yang serupa dengan <code>%in%</code> di R, yang bertugas untuk memeriksa apakah setiap nilai elemen di suatu dataset termasuk dalam kumpulan nilai. Atau kata lainnya, memeriksa apakah elemen <span class="math inline">\(X_i\)</span> di <span class="math inline">\(X\)</span> ada di elemen <span class="math inline">\(Y\)</span>. Sedangkan untuk <code>MULTICHECK()</code> memeriksa untuk <em>setiap kolom</em> mengandung nilai yang sama dengan nilai yang dicari.</p>
+<p>Sintaks <code>COMPAREVECTOR(left_vector, right_vector)</code> menjadi <code>IS_ALL_IN_VECTOR(array, lookup_vector)</code>, yang bisa dibaca “Apakah (IS) semua elemen (ALL) termasuk (IN) di <code>lookup_vector</code> yang dicari (VECTOR)?”. Sedangkan untuk <code>MULTICHECK(array, search_array, [check_condition])</code> menjadi <code>IS_ALL_COLS_EQUAL_VECTOR(array, lookup_vector, [logical_function])</code>, yang bisa dibaca “Apakah (IS) semua (ALL) setiap kolom (COLS) sama dengan (EQUAL) <code>lookup_vector</code>?”. Jadi secara sekilas untuk migrasi <strong>cukup mengganti nama fungsinya</strong> dengan catatan <code>IS_ALL_COLS_EQUAL_VECTOR()</code> memiliki perubahan argumen opsional yang menjadi <code>logical_function</code> (berupa fungsi <code>LAMBDA()</code>).</p>
+</section>
+<section id="menghapus-kolom-atau-baris-dari-data" class="level2">
+<h2 class="anchored" data-anchor-id="menghapus-kolom-atau-baris-dari-data">Menghapus kolom atau baris dari data</h2>
+<dl>
+<dt>Fungsi v0.2</dt>
+<dd>
+<code>DROPROWS()</code> | <code>DROPCOLS()</code>
+</dd>
+<dt>Fungsi v0.3</dt>
+<dd>
+<code>FILTER_DROP_ROWS()</code> | <code>FILTER_DROP_COLUMNS()</code>
+</dd>
+</dl>
+<p>Fungsi <code>DROP*()</code> bertujuan untuk menghapus baris/kolom tertentu dari data. Fungsi tersebut dibuat karena saat ini belum ada fungsinya, yang telah tersedia kebalikannya yaitu mengambil kolom/baris tertentu dengan <code>CHOOSE*()</code>. Penggunaan di v0.3 sama saja dengan v0.2, yang berubah <strong>hanya nama fungsinya</strong>. Jadi dari <code>DROPROWS(array, index_to_drop)</code> menjadi <code>FILTER_DROP_ROWS(array, row_index)</code> dan <code>DROPCOLS(array, index_to_drop)</code> menjadi <code>FILTER_DROP_COLUMNS(array, column_index)</code>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

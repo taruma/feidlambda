@@ -2,54 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2023-01-06T08:57:55.529Z</lastmod>
+    <lastmod>2023-01-12T06:09:11.258Z</lastmod>
   </url>
   <url>
-    <loc>https://lambda.fiako.engineering/release/feidlambda-0-3-0.html</loc>
-    <lastmod>2023-01-06T08:57:57.085Z</lastmod>
+    <loc>https://lambda.fiako.engineering/release/source-code.html</loc>
+    <lastmod>2023-01-12T06:09:12.130Z</lastmod>
   </url>
   <url>
-    <loc>https://lambda.fiako.engineering/release/feidlambda.html</loc>
-    <lastmod>2023-01-06T08:57:58.033Z</lastmod>
+    <loc>https://lambda.fiako.engineering/release/feidlambda-0-3.html</loc>
+    <lastmod>2023-01-12T06:09:13.450Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2023-01-06T08:57:59.149Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/release/migration-v0-2-to-v0-3.html</loc>
-    <lastmod>2023-01-06T08:57:59.625Z</lastmod>
+    <lastmod>2023-01-12T06:09:14.034Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2023-01-06T08:58:00.033Z</lastmod>
+    <lastmod>2023-01-12T06:09:14.330Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/penggunaan-v1.html</loc>
-    <lastmod>2023-01-06T08:58:00.485Z</lastmod>
+    <lastmod>2023-01-12T06:09:14.706Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
-    <lastmod>2023-01-06T08:58:01.046Z</lastmod>
+    <lastmod>2023-01-12T06:09:15.122Z</lastmod>
   </url>
   <url>
-    <loc>https://lambda.fiako.engineering/docs/penggunaan.html</loc>
-    <lastmod>2023-01-06T08:58:01.474Z</lastmod>
+    <loc>https://lambda.fiako.engineering/docs/install.html</loc>
+    <lastmod>2023-01-12T06:09:15.466Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/index.html</loc>
-    <lastmod>2023-01-06T08:58:01.882Z</lastmod>
+    <lastmod>2023-01-12T06:09:15.826Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation.html</loc>
-    <lastmod>2023-01-06T08:58:03.526Z</lastmod>
+    <lastmod>2023-01-12T06:09:17.134Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/index.html</loc>
-    <lastmod>2023-01-06T08:58:04.346Z</lastmod>
+    <lastmod>2023-01-12T06:09:17.814Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2023-01-06T08:58:04.786Z</lastmod>
+    <lastmod>2023-01-12T06:09:18.154Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/article/migration-v0-2-to-v0-3.html</loc>
+    <lastmod>2023-01-12T06:09:18.530Z</lastmod>
   </url>
 </urlset>
