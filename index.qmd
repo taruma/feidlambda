@@ -24,10 +24,10 @@ sidebar: false
 
 ::: {.text-center}
 
-[<button type="button" class="btn btn-primary">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-info">MANUAL/API</button>](/release/feidlambda-0-3.qmd)
-[<button type="button" class="btn btn-dark">_SOURCE CODE_</button>](/release/source-code.qmd)
-[<button type="button" class="btn btn-danger">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+[<button type="button" class="btn btn-primary m-1">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-info m-1">MANUAL/API</button>](/release/feidlambda-0-3.qmd)
+[<button type="button" class="btn btn-dark m-1">_SOURCE CODE_</button>](/release/source-code.qmd)
+[<button type="button" class="btn btn-danger m-1">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 
 ### OFFICAL GIST URL (feidlambda v0.3.x)
 
