@@ -1,9 +1,9 @@
 /*
-feidlambda v0.3.0 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
-GIST feidlambda v0.3.0: https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+feidlambda v0.3.1 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
+OFFICIAL GIST (feidlambda v0.3.x): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
 REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
 AUTHOR: @taruma
-TESTED: Microsoft Excel v2211 (Build 16.0.15831.20098)
+TESTED: Microsoft Excel v2211
 */
 
 /*
@@ -35,38 +35,69 @@ FILTER_DROP_COLUMNS = LAMBDA(array, column_index,
 );
 
 // NONE --> FILTER_FUNC_COLUMN
-FILTER_FUNC_COLUMN = LAMBDA(array, [col], [label_col], [with_label], [function], [label_function],
+FILTER_FUNC_COLUMN = LAMBDA(
+    array,
+    [column_index],
+    [with_label],
+    [label_col],
+    [function],
+    [label_function],
+    [take_first_only],
     LET(
-        col, IF(ISOMITTED(col), 1, col),
-        label_col, IF(ISOMITTED(label_col), col, label_col),
+        take_first_only, IF(ISOMITTED(take_first_only), FALSE, take_first_only),
+        column_index, IF(ISOMITTED(column_index), 1, column_index),
+        label_col, IF(ISOMITTED(label_col), column_index, label_col),
         with_label, IF(ISOMITTED(with_label), FALSE, with_label),
         function, IF(ISOMITTED(function), LAMBDA(x, MAX(x)), function),
         label_function, IF(ISOMITTED(label_function), "func", label_function),
-        selected_vector, CHOOSECOLS(array, col),
+        selected_vector, CHOOSECOLS(array, column_index),
         func_value, function(selected_vector),
         selected_logical, selected_vector = func_value,
-        array_max, FILTER(array, selected_logical),
-        label, MAKEARRAY(ROWS(array_max), 1, LAMBDA(x, y, CONCAT(label_col, "_", label_function))),
-        IF(with_label, HSTACK(label, array_max), array_max)
+        array_filter, FILTER(array, selected_logical),
+        array_func, IF(take_first_only, TAKE(array_filter, 1), array_filter),
+        label, MAKEARRAY(ROWS(array_func), 1, LAMBDA(x, y, CONCAT(label_col, "_", label_function))),
+        IF(with_label, HSTACK(label, array_func), array_func)
     )
 );
 
 // FILTER_FUNC_COLUMN --> FILTER_MINMAX_COLUMN
-FILTER_MINMAX_COLUMN = LAMBDA(array, [col], [label_col], [with_label],
+FILTER_MINMAX_COLUMN = LAMBDA(array, [column_index], [with_label], [label_col], [take_first_only],
     LET(
         func_1, LAMBDA(x, MIN(x)),
         label_func_1, "min",
         func_2, LAMBDA(x, MAX(x)),
         label_func_2, "max",
-        func1_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_1, label_func_1),
-        func2_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_2, label_func_2),
+        func1_result, FILTER_FUNC_COLUMN(
+            array,
+            column_index,
+            with_label,
+            label_col,
+            func_1,
+            label_func_1,
+            take_first_only
+        ),
+        func2_result, FILTER_FUNC_COLUMN(
+            array,
+            column_index,
+            with_label,
+            label_col,
+            func_2,
+            label_func_2,
+            take_first_only
+        ),
         VSTACK(func1_result, func2_result)
     )
 );
 
 // FILTER_MINMAX_COLUMN --> _RECURSIVE_FILTER_MINMAX
 // _RECURSIVE_FILTER_MINMAX --> _RECURSIVE_FILTER_MINMAX
-_RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vector], [with_label],
+_RECURSIVE_FILTER_MINMAX = LAMBDA(
+    array,
+    ntry,
+    [ignore_first_column],
+    [with_label],
+    [label_vector],
+    [take_first_only],
     LET(
         ignore_first_column, IF(ISOMITTED(ignore_first_column), FALSE, ignore_first_column),
         stop_col, IF(ignore_first_column, 2, 1),
@@ -75,17 +106,18 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
         label_col, CHOOSECOLS(new_label, ntry),
         IF(
             ntry = stop_col,
-            FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+            FILTER_MINMAX_COLUMN(array, ntry, with_label, label_col, take_first_only),
             LET(
-                results, FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+                results, FILTER_MINMAX_COLUMN(array, ntry, with_label, label_col, take_first_only),
                 next_try, ntry - 1,
                 VSTACK(
                     _RECURSIVE_FILTER_MINMAX(
                         array,
                         next_try,
                         ignore_first_column,
+                        with_label,
                         label_vector,
-                        with_label
+                        take_first_only
                     ),
                     results
                 )
@@ -95,8 +127,15 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
 );
 
 // _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
-FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_labels], [label_vector],
-    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_labels)
+FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_label], [label_vector], [take_first_only],
+    _RECURSIVE_FILTER_MINMAX(
+        array,
+        COLUMNS(array),
+        ignore_first_column,
+        with_label,
+        label_vector,
+        take_first_only
+    )
 );
 
 /*
@@ -104,9 +143,9 @@ FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_labels], [label
 */
 
 // NONE --> GET_INDEX_2D
-GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
+GET_INDEX_2D = LAMBDA(lookup_value, array, [return_as_order],
     LET(
-        return_order_only, IF(ISOMITTED(return_order_only), FALSE, return_order_only),
+        return_as_order, IF(ISOMITTED(return_as_order), FALSE, return_as_order),
         nrows, ROWS(array),
         ncols, COLUMNS(array),
         size, nrows * ncols,
@@ -119,7 +158,7 @@ GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
         index_flatten, TOCOL(index_sequence, , TRUE),
         lookup_table, HSTACK(index_flatten, rows_flatten, columns_flatten),
         lookup_result, FILTER(lookup_table, array_flatten = lookup_value),
-        IF(return_order_only, CHOOSECOLS(lookup_result, 1), lookup_result)
+        IF(return_as_order, CHOOSECOLS(lookup_result, 1), lookup_result)
     )
 );
 
@@ -197,21 +236,11 @@ _RECURSIVE_MAKE_SEQUENCE = LAMBDA(start_vector, end_vector, ntry, [stack_horizon
                 IF(
                     stack_horizontally,
                     HSTACK(
-                        _RECURSIVE_MAKE_SEQUENCE(
-                            start_vector,
-                            end_vector,
-                            next_try,
-                            stack_horizontally
-                        ),
+                        _RECURSIVE_MAKE_SEQUENCE(start_vector, end_vector, next_try, stack_horizontally),
                         results
                     ),
                     VSTACK(
-                        _RECURSIVE_MAKE_SEQUENCE(
-                            start_vector,
-                            end_vector,
-                            next_try,
-                            stack_horizontally
-                        ),
+                        _RECURSIVE_MAKE_SEQUENCE(start_vector, end_vector, next_try, stack_horizontally),
                         results
                     )
                 )
@@ -234,11 +263,7 @@ REPEAT_ARRAY = LAMBDA(array, [num_repeat], [by_row],
     LET(
         by_row, IF(ISOMITTED(by_row), TRUE, by_row),
         num_repeat, IF(ISOMITTED(num_repeat), 2, num_repeat),
-        IF(
-            by_row,
-            REPEAT_ARRAY_BY_ROW(array, num_repeat),
-            REPEAT_ARRAY_BY_COLUMN(array, num_repeat)
-        )
+        IF(by_row, REPEAT_ARRAY_BY_ROW(array, num_repeat), REPEAT_ARRAY_BY_COLUMN(array, num_repeat))
     )
 );
 
@@ -261,10 +286,7 @@ REPEAT_ARRAY_BY_COLUMN = LAMBDA(array, [num_repeat],
         IF(
             num_repeat = 1,
             array,
-            LET(
-                next_repeat, num_repeat - 1,
-                HSTACK(REPEAT_ARRAY_BY_COLUMN(array, next_repeat), array)
-            )
+            LET(next_repeat, num_repeat - 1, HSTACK(REPEAT_ARRAY_BY_COLUMN(array, next_repeat), array))
         )
     )
 );
@@ -291,7 +313,7 @@ RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
                 array_sorted, SORTBY(array_flatten, divider_repeat_col),
                 WRAPROWS(array_sorted, num_split)
             ),
-            "#INVALID_NUM_SPLIT"
+            NA()
         )
     )
 );
@@ -301,16 +323,16 @@ RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
 */
 
 // NONE --> ROTATE_VECTOR
-ROTATE_VECTOR = LAMBDA(vector, n, [as_column_vector],
+ROTATE_VECTOR = LAMBDA(vector, num_rotation, [as_column_vector],
     LET(
         vector, TOCOL(vector),
         rotated_array, IFS(
-            OR(n = 0, n >= ROWS(vector), n <= -ROWS(vector)),
+            OR(num_rotation = 0, num_rotation >= ROWS(vector), num_rotation <= -ROWS(vector)),
             vector,
-            n > 0,
-            VSTACK(DROP(vector, n), TAKE(vector, n)),
-            n < 0,
-            VSTACK(TAKE(vector, n), DROP(vector, n))
+            num_rotation > 0,
+            VSTACK(DROP(vector, num_rotation), TAKE(vector, num_rotation)),
+            num_rotation < 0,
+            VSTACK(TAKE(vector, num_rotation), DROP(vector, num_rotation))
         ),
         as_column_vector, IF(ISOMITTED(as_column_vector), FALSE, TRUE),
         IF(as_column_vector, TOROW(rotated_array), TOCOL(rotated_array))
@@ -318,7 +340,7 @@ ROTATE_VECTOR = LAMBDA(vector, n, [as_column_vector],
 );
 
 // ROTATE_VECTOR --> ROTATE_ARRAY
-ROTATE_ARRAY = LAMBDA(array, n, [rotate_columns],
+ROTATE_ARRAY = LAMBDA(array, num_rotation, [rotate_columns],
     LET(
         rotate_columns, IF(ISOMITTED(rotate_columns), TRUE, FALSE),
         nrows, ROWS(array),
@@ -327,8 +349,8 @@ ROTATE_ARRAY = LAMBDA(array, n, [rotate_columns],
         seqcols, SEQUENCE(1, ncols),
         results, IF(
             rotate_columns,
-            CHOOSECOLS(array, ROTATE_VECTOR(seqcols, n, TRUE)),
-            CHOOSEROWS(array, ROTATE_VECTOR(seqrows, n, FALSE))
+            CHOOSECOLS(array, ROTATE_VECTOR(seqcols, num_rotation, TRUE)),
+            CHOOSEROWS(array, ROTATE_VECTOR(seqrows, num_rotation, FALSE))
         ),
         results
     )
@@ -341,13 +363,16 @@ ROTATE_ARRAY = LAMBDA(array, n, [rotate_columns],
 // NONE --> SWAP_COLUMNS
 SWAP_COLUMNS = LAMBDA(array, [from_index], [to_index],
     LET(
+        ncols, COLUMNS(array),
         from_index, IF(ISOMITTED(from_index), 1, from_index),
-        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        to_index, IF(ISOMITTED(to_index), -1, to_index),
+        from_value, IF(from_index < 0, from_index + ncols + 1, from_index),
+        to_value, IF(to_index < 0, to_index + ncols + 1, to_index),
         column_sequence, SEQUENCE(1, COLUMNS(array)),
-        from_logical, column_sequence = from_index,
-        to_logical, column_sequence = to_index,
-        replace_from, IF(from_logical, to_index, column_sequence),
-        replace_to, IF(to_logical, from_index, replace_from),
+        from_logical, column_sequence = from_value,
+        to_logical, column_sequence = to_value,
+        replace_from, IF(from_logical, to_value, column_sequence),
+        replace_to, IF(to_logical, from_value, replace_from),
         CHOOSECOLS(array, replace_to)
     )
 );
@@ -355,13 +380,16 @@ SWAP_COLUMNS = LAMBDA(array, [from_index], [to_index],
 // NONE --> SWAP_ROWS
 SWAP_ROWS = LAMBDA(array, [from_index], [to_index],
     LET(
+        nrows, ROWS(array),
         from_index, IF(ISOMITTED(from_index), 1, from_index),
-        to_index, IF(ISOMITTED(to_index), 2, to_index),
+        to_index, IF(ISOMITTED(to_index), -1, to_index),
+        from_value, IF(from_index < 0, from_index + nrows + 1, from_index),
+        to_value, IF(to_index < 0, to_index + nrows + 1, to_index),
         row_sequence, SEQUENCE(ROWS(array)),
-        from_logical, row_sequence = from_index,
-        to_logical, row_sequence = to_index,
-        replace_from, IF(from_logical, to_index, row_sequence),
-        replace_to, IF(to_logical, from_index, replace_from),
+        from_logical, row_sequence = from_value,
+        to_logical, row_sequence = to_value,
+        replace_from, IF(from_logical, to_value, row_sequence),
+        replace_to, IF(to_logical, from_value, replace_from),
         CHOOSEROWS(array, replace_to)
     )
 );
@@ -370,20 +398,72 @@ SWAP_ROWS = LAMBDA(array, [from_index], [to_index],
 ---- TEXT ----
 */
 
-// NONE --> TEXT_SPLIT_VECTOR
-TEXT_SPLIT_VECTOR = LAMBDA(
+// _RECURSIVE_TEXT_SPLIT --> _RECURSIVE_TEXT_SPLIT
+_RECURSIVE_TEXT_SPLIT = LAMBDA(
     text_vector,
-    [text_delimiter],
+    ntry,
+    col_delimiter,
     [row_delimiter],
     [ignore_empty],
     [match_mode],
     [pad_with],
     LET(
-        text_delimiter, IF(ISOMITTED(text_delimiter), " ", text_delimiter),
-        row_delimiter, IF(ISOMITTED(row_delimiter), "|<#>|", row_delimiter),
+        text_vector, TOCOL(text_vector),
+        selected_row, ARRAYTOTEXT(INDEX(text_vector, ntry)),
+        IF(
+            ntry = 1,
+            TEXTSPLIT(selected_row, col_delimiter, row_delimiter, ignore_empty, match_mode, pad_with),
+            LET(
+                next_try, ntry - 1,
+                results, TEXTSPLIT(
+                    selected_row,
+                    col_delimiter,
+                    row_delimiter,
+                    ignore_empty,
+                    match_mode,
+                    pad_with
+                ),
+                VSTACK(
+                    _RECURSIVE_TEXT_SPLIT(
+                        text_vector,
+                        next_try,
+                        col_delimiter,
+                        row_delimiter,
+                        ignore_empty,
+                        match_mode,
+                        pad_with
+                    ),
+                    results
+                )
+            )
+        )
+    )
+);
+
+// _RECURSIVE_TEXT_SPLIT --> TEXT_SPLIT_VECTOR
+TEXT_SPLIT_VECTOR = LAMBDA(
+    text_vector,
+    [col_delimiter],
+    [row_delimiter],
+    [ignore_empty],
+    [match_mode],
+    [pad_with],
+    [replace_na],
+    LET(
+        nrows, ROWS(text_vector),
+        col_delimiter, IF(ISOMITTED(col_delimiter), " ", col_delimiter),
+        replace_na, IF(ISOMITTED(replace_na), NA(), replace_na),
         pad_with, IF(ISOMITTED(pad_with), "", pad_with),
-        reduce_text, REDUCE(, text_vector, LAMBDA(acc, curr, CONCAT(acc, row_delimiter, curr))),
-        TEXTSPLIT(reduce_text, text_delimiter, row_delimiter, ignore_empty, match_mode, pad_with)
+        result, _RECURSIVE_TEXT_SPLIT(
+            text_vector,
+            nrows,
+            col_delimiter,
+            row_delimiter,
+            ignore_empty,
+            match_mode,
+            pad_with
+        ),
+        IFERROR(result, replace_na)
     )
 );
 

@@ -1,11 +1,11 @@
 ---
 title: |
-  feidlambda v0.3
+  feidlambda v0.3.1
 subtitle: |
-  Koleksi LAMBDA feidlambda v0.3
+  Koleksi LAMBDA feidlambda v0.3.1
 author: "Taruma Sakti Megariansyah"
-date: 2022-12-28
-date-modified: 2023-01-06
+date: 2023-01-06
+date-modified: 2023-01-13
 date-format: full
 lang: id
 
@@ -26,15 +26,25 @@ format:
 
 crossref: 
   chapters: true
+
+aliases: 
+  - feidlambda-0-3-0.html
+  - feidlambda-0-3-1.html
+
 ---
 
-::: {.callout-important icon="false" .text-center}
-## Official GIST **feidlambda** (v0.3)
+::: {.callout-important icon="false" .text-center appearance="minimal"}
+## Official GIST **feidlambda** (v0.3.x)
 
-[Official GIST feidlambda (feid)](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+```default
+https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+```
+
 :::
 
-Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3**](#sec-feid-v03).
+**Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
+
+Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
 
 ::: {.column-screen-inset-shaded}
 
@@ -42,9 +52,31 @@ Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [
 
 :::
 
-# Fungsi feidlambda v0.3 {#sec-feid-v03}
+# Update Log v0.3.x {#update-log}
 
-Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3:
+_Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian [_Changelog_](#changelog).
+
+- **Update v0.3.1 (2022-01-13)** 
+  - Pada fungsi `FILTER_MINMAX_ARRAY()` terdapat argumen opsional baru yaitu `take_first_only`. Jika `take_first_only = TRUE`, maka hasil filter minimum/maksimum hanya mengambil baris pertamanya saja (jika terdapat minimum/maksimum lebih dari satu baris). 
+  - Pada fungsi `SWAP_*()`, nilai argumen `from_index` dan `to_index` menerima index negatif (indeks dari belakang). Bersamaan perubahan tersebut, nilai _default_ `to_index` menjadi `-1` yang artinya secara _default_ (tanpa argumen) fungsi `SWAP_*()` menukar posisi terdepan dengan terbelakang (baik berdasarkan baris ataupun kolom). 
+  - Perubahan nama argumen pada beberapa fungsi seperti:
+    - `FILTER_MINMAX_COLUMN()`: `col -> column_index`, `with_lables -> with_label`.
+    - `GET_INDEX_2D()`: `return_order_only -> return_as_order`.
+    - `ROTATE_*()`: `n -> num_rotation`.
+    - `TEXT_SPLIT_VECTOR()`: `text_delimiter -> col_delimiter`.
+  - Fungsi `TEXT_SPLIT_VECTOR()` menggunakan metode _recursive_ dari fungsi `TEXTSPLIT()`. 
+  - Pada fungsi `TEXT_SPLIT_VECTOR()` terdapat argumen opsional baru yaitu `replace_na`, yang berfungsi untuk mengubah nilai `#NA` dari hasil akhir. 
+  - Tambahan informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()`.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Fungsi feidlambda v0.3.x {#sec-feid-v03}
+
+Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3.x:
 
 - `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
 - `GET_*`: Mengambil informasi dari data.
@@ -56,7 +88,11 @@ Pada feidlambda v0.3, setiap fungsi dikategorikan sesuai kegunaannya. Berikut ka
 - `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
-Download excel demonstrasi [RELEASE_feidlambda_v0_3.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.0/RELEASE_feidlambda_v0_3.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.
+Download excel demonstrasi [RELEASE_feidlambda_v0_3_1.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.1/RELEASE_feidlambda_v0_3_1.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.x.
+
+::: {.callout-note}
+Gambar yang ditampilkan pada halaman ini merupakan dari versi sebelumnya (feidlambda v0.3.0) dan tidak diperbarui untuk setiap _update_. Oleh karena itu, disarankan untuk mengeksplorasi langsung dari dokumen yang telah dilampirkan. 
+:::
 
 ::: {.column-screen-inset-shaded}
 
@@ -66,7 +102,7 @@ Download excel demonstrasi [RELEASE_feidlambda_v0_3.xlsx](https://github.com/fia
 
 # Kategori `FILTER_*` {#sec-filter}
 
-Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) dari data berupa vektor ataupun array. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
+Kategori `FILTER_*` merupakan kumpulan fungsi yang melakukan _filtering_ atau _subsetting_ (memilah) data berupa _vector_ ataupun _array_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-filter.
 
 ```{mermaid}
 %%| label: fig-dep-filter
@@ -152,14 +188,14 @@ _Output_
 
 ### `FILTER_MINMAX_ARRAY()` {#sec-filter-minmax-array}
 
-Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_labels], [label_vector])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
+Fungsi `FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])` digunakan untuk melakukan _filtering_ (memilah) data berdasarkan nilai minimum dan maksimum setiap kolomnya dan mengeluarkan hasil dalam berupa _dynamic array_.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 
 _Syntax_
-: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_labels], [label_vector])
+: FILTER_MINMAX_ARRAY(array, [ignore_first_column], [with_label], [label_vector], [take_first_only])
 
 _Output_
 : _array_
@@ -174,11 +210,14 @@ _Output_
 `[ignore_first_column] := FALSE :: [TRUE | FALSE]`
 : Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari `array` akan diabaikan dan tidak dilakukan _filtering_ nilai minimum/maksimum. 
 
-`[with_labels] := FALSE :: [TRUE | FALSE]`
+`[with_label] := FALSE :: [TRUE | FALSE]`
 : Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka kolom pertama dari _output_ adalah label informasi minimum dan maksimum seperti `1_min`, `1_max`, atau `no.column_min` dan `no.column_max`. Untuk menggunakan label sendiri, masukin _vector_ label di argumen `label_vector`. 
 
 `[label_vector] := NONE :: [vector]`
 : Nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
+
+`[take_first_only] := FALSE :: [TRUE | FALSE]` 
+: **_(New in v0.3.1)_**. Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum. 
 
 :::::
 
@@ -220,17 +259,17 @@ Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2
 
 ### `GET_INDEX_2D()`
 
-Fungsi `GET_INDEX_2D(lookup_value, array, [return_order_only])` dapat digunakan untuk mengambil informasi urutan nilai yang dicari ataupun posisi baris/kolom dari `array`. 
+Fungsi `GET_INDEX_2D(lookup_value, array, [return_as_order])` dapat digunakan untuk mengambil informasi urutan nilai yang dicari ataupun posisi baris/kolom dari `array`. 
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 
 _Syntax_
-: GET_INDEX_2D(lookup_value, array, [return_order_only])
+: GET_INDEX_2D(lookup_value, array, [return_as_order])
 
 _Output_
-: _array_ ([_order_, _row index_, _column index_]) atau _number_ (_order_)
+: _array_ ([_order_, _row index_, _column index_]) atau _number vector_ (_order_)
 
 :::
 
@@ -242,7 +281,7 @@ _Output_
 `array := [array]`
 : Data berupa _array_. 
 
-`[return_order_only] := FALSE :: [TRUE | FALSE]`
+`[return_as_order] := FALSE :: [TRUE | FALSE]`
 : Nilai _default_ yaitu `FALSE`. Jika `TRUE`, hasil fungsi memberikan urutan angka nilai yang dicari. Urutan dimulai dari horizontal kiri teratas sampai kanan terbawah. Jika `FALSE`, maka _output_ terdiri dari nomor urut, indeks kolom, dan indeks baris. 
 
 :::::
@@ -632,7 +671,7 @@ Fungsi utama yang tersedia saat ini hanya `RESHAPE_BY_COLUMNS()`.
 
 ### `RESHAPE_BY_COLUMNS()`
 
-Fungsi `RESHAPE_BY_COLUMNS(array, [num_split])` digunakan untuk mengubah dimensi (transformasi) `array` berdasarkan jumlah pembagi kolomnya.
+Fungsi `RESHAPE_BY_COLUMNS(array, [num_split])` digunakan untuk mengubah dimensi (transformasi) `array` berdasarkan jumlah pembagi kolomnya. Jika tidak jumlah kolom tidak habis dibagi oleh `num_split` akan mengeluarkan hasil `#N/A`. 
 
 :::::  {.border .p-3 .my-3 .justify}
 
@@ -689,13 +728,13 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 ### `ROTATE_VECTOR()`
 
-Fungsi `ROTATE_VECTOR(vector, n, [as_column_vector])` digunakan untuk menggeser/memutar elemen yang ada di _vector_ sebanyak `n`.
+Fungsi `ROTATE_VECTOR(vector, num_rotation, [as_column_vector])` digunakan untuk menggeser/memutar elemen yang ada di _vector_ sebanyak `num_rotation`.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: ROTATE_VECTOR(vector, n, [as_column_vector])
+: ROTATE_VECTOR(vector, num_rotation, [as_column_vector])
 
 _Output_
 : _vector_
@@ -706,7 +745,7 @@ _Output_
 `vector := [vector]`
 : Data berupa _vector_ (_column vector_ atau _row vector_). 
 
-`n := [integer]`
+`num_rotation := [integer]`
 : Jumlah berapa kali _vector_ diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
 
 `[as_column_vector] := TRUE :: [TRUE | FALSE]`
@@ -720,13 +759,13 @@ _Output_
 
 ### `ROTATE_ARRAY()`
 
-Fungsi `ROTATE_ARRAY(array, n, [rotate_columns])` digunakan untuk menggeser/memutar elemen yang ada di _array_ sebanyak `n` berdasarkan baris atau kolom.
+Fungsi `ROTATE_ARRAY(array, num_rotation, [rotate_columns])` digunakan untuk menggeser/memutar elemen yang ada di _array_ sebanyak `num_rotation` berdasarkan baris atau kolom.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: ROTATE_ARRAY(array, n, [rotate_columns])
+: ROTATE_ARRAY(array, num_rotation, [rotate_columns])
 
 _Output_
 : _array_
@@ -737,7 +776,7 @@ _Output_
 `array := [array]`
 : Data berupa _array_. 
 
-`n := [scalar | vector]`
+`num_rotation := [scalar | vector]`
 : Jumlah berapa kali _vector_ diputar/digeser. Nilai negatif untuk digeser berlawanan arah.
 
 `[rotate_columns] := TRUE :: [TRUE | FALSE]`
@@ -798,10 +837,10 @@ _Output_
 : Data dapat berupa _array_ atau _row vector_. 
 
 `[from_index] := 1 :: [integer]`
-: Nilai _default_ yaitu 1. Posisi _index_ kolom yang ingin dipindahkan.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
-`[to_index] := 2 :: [integer]`
-: Nilai _default_ yaitu 2. Posisi _index_ tujuan kolom.
+`[to_index] := -1 :: [integer]`
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -825,10 +864,10 @@ _Output_
 : Data dapat berupa _array_ atau _column vector_. 
 
 `[from_index] := 1 :: [integer]`
-: Nilai _default_ yaitu 1. Posisi _index_ baris yang ingin dipindahkan.
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
-`[to_index] := 2 :: [integer]`
-: Nilai _default_ yaitu 2. Posisi _index_ tujuan baris.
+`[to_index] := -1 :: [integer]`
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -853,7 +892,8 @@ Kategori `TEXT_*` merupakan kumpulan fungsi yang digunakan untuk memproses data 
 %%{ init: { 'theme': 'forest' } }%%
 
 flowchart LR
-  NONE --> TEXT_SPLIT_VECTOR
+  _RECURSIVE_TEXT_SPLIT --> _RECURSIVE_TEXT_SPLIT
+  _RECURSIVE_TEXT_SPLIT --> TEXT_SPLIT_VECTOR
 ```
 
 Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
@@ -866,13 +906,13 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 ### `TEXT_SPLIT_VECTOR()`
 
-Fungsi `TEXT_SPLIT_VECTOR(text_vector, [text_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with])` merupakan fungsi pengembangan lanjutan dari `TEXTSPLIT()` yang mampu menerima _input_ data berupa _vector_ dan menghasilkan dalam bentuk _dynamic array_.
+Fungsi `TEXT_SPLIT_VECTOR(text_vector, [col_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with], [replace_na])` merupakan fungsi pengembangan lanjutan dari `TEXTSPLIT()` yang mampu menerima _input_ data berupa _vector_ dan menghasilkan dalam bentuk _dynamic array_.
 
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
 _Syntax_
-: TEXT_SPLIT_VECTOR(text_vector, [text_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with])
+: TEXT_SPLIT_VECTOR(text_vector, [col_delimiter], [row_delimiter], [ignore_empty], [match_mode], [pad_with], [replace_na])
 
 _Output_
 : _array_
@@ -883,11 +923,11 @@ _Output_
 `text_vector := [text vector]`
 : Data harus berupa _text column vector_. 
 
-`[text_delimiter] := " " :: [text]`
+`[col_delimiter] := " " :: [text]`
 : Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap kolomnya.
 
-`[row_delimiter] := "|<#>|" :: [text]`
-: Nilai _default_ yaitu `"|<#>|"` (spasi). Teks pemisah untuk setiap barisnya. Fungsi `TEXT_SPLIT_VECTOR()` akan membuat `text_vector` menjadi tipe teks _scalar_ sebelum diubah menjadi _dynamic array_. Sehingga, opsi ini sebaiknya disesuaikan dengan teks yang ada di `text_vector`. 
+`[row_delimiter] := "" :: [text]`
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `""` (tidak ada). Teks pemisah untuk setiap barisnya. 
 
 `[ignore_empty] := FALSE :: [TRUE | FALSE]`
 : Tentukan `TRUE` untuk mengabaikan pemisah berurutan. Default ke `FALSE`, yang membuat sel kosong. Opsional. 
@@ -896,14 +936,23 @@ _Output_
 : Tentukan `1` untuk melakukan kecocokan yang tidak peka huruf besar kecil. Default ke `0`, yang melakukan kecocokan peka huruf besar kecil. Opsional.
 
 `[pad_with] := #N/A :: [text | number]`
-: Nilai untuk mengalihkan hasil. Defaultnya adalah #N/A.
+: Nilai untuk mengalihkan hasil. Defaultnya adalah `#N/A`.
+
+`[replace_na] := #N/A :: [text | number]`
+: **_(New in v0.3.1)_**. Nilai untuk menggantikan nilai `#N/A` dari hasil akhir. Defaultnya adalah `#N/A`. Nilai `#N/A` yang ada dikarenakan proses `VSTACK()` yang memiliki dimensi hasil `TEXTSPLIT()` yang berbeda-beda. 
 
 :::::
 
 Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fungsi TEXTSPLIT](https://support.microsoft.com/id-id/office/fungsi-textsplit-b1ca414e-4c21-4ca0-b1b7-bdecace8a6e7).
 
+#### Limitasi `TEXT_SPLIT_VECTOR()`
+
+- Hindari menggunakan `TEXT_SPLIT_VECTOR()` dengan jumlah baris yang banyak ataupun dimensi _output_ yang besar. Pastikan hasil _output_ fungsi memiliki dimensi yang kecil seperti jumlah kolom $\le 10$ dan jumlah baris $\le 1,000$.
+- Ukuran `text_vector` masih bisa lebih besar dari batasan diatas, akan tetapi disarankan untuk penggunaan `TEXT_SPLIT_VECTOR()` selalu bertahap, yaitu dari jumlah baris yang sedikit sampai jumlah baris optimal yang tidak menampilkan _error_ atau _crash_. 
+- Jika melebihi kemampuan, akan menghasilkan nilai _error_ berupa `#NUM` / `#CALC`. 
+
 ::: {.column-page}
-![Demonstrasi `TEXT_SPLIT_VECTOR`](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
+![Demonstrasi `TEXT_SPLIT_VECTOR` (outdated)](img-0-3-0/feidlambda-v03-09-text-1.gif){#fig-text-split-vector}
 :::
 
 ::: {.column-screen-inset-shaded}
@@ -921,3 +970,43 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membua
 ---
 
 :::
+
+# Changelog
+
+- **2022-01-13 (v0.3.1)**
+  - Perubahan fungsi utama:
+    - Perubahan `FILTER_MINMAX_ARRAY()`:
+      - Menambah _optional_ argumen `take_first_only`.
+      - Mengganti nama argumen: `with_labels -> with_label`. 
+      - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `GET_INDEX_2D()`:
+      - Mengubah nama argumen: `return_order_only -> return_as_order`.
+    - Perubahan `RESHAPE_BY_COLUMNS()`:
+      - Mengubah hasil _error_ menjadi `NA()`. 
+    - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
+      - Mengubah nama argumen: `n -> num_rotation`.
+    - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:
+      - Argumen `from_index` dan `to_index` dapat menggunakan indeks negatif.
+      - Nilai _default_ `to_index` menjadi `-1`. 
+    - Perubahan `TEXT_SPLIT_VECTOR()`:
+      - Mengubah metode menjadi _recursive_.
+      - Mengubah nama argumen: `text_delimiter -> col_delimiter`.
+      - Menambah _optional_ argumen `replace_na`. 
+  - Perubahan fungsi pendukung:
+    - Perubahan `FILTER_FUNC_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`.
+      - Menambah optional argumen `take_first_only`.
+    - Perubahan `FILTER_MINMAX_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`. 
+      - Menambah _optional_ argumen `take_first_only`.
+      - Penyesuaian `FILTER_FUNC_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `_RECURSIVE_FILTER_MINMAX()`:
+      - Mengubah posisi argumen `label_col` dan `with_label`.
+      - Penyesuaian `FILTER_MINMAX_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Fungsi baru `_RECURSIVE_TEXT_SPLIT()`:
+      - Fungsi pendukung `TEXT_SPLIT_VECTOR()`.
+- **2022-01-06 (v0.3.0)**
+  - Rilis feidlambda v0.3
+

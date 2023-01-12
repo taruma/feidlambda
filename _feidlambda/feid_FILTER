@@ -23,38 +23,69 @@ FILTER_DROP_COLUMNS = LAMBDA(array, column_index,
 );
 
 // NONE --> FILTER_FUNC_COLUMN
-FILTER_FUNC_COLUMN = LAMBDA(array, [col], [label_col], [with_label], [function], [label_function],
+FILTER_FUNC_COLUMN = LAMBDA(
+    array,
+    [column_index],
+    [with_label],
+    [label_col],
+    [function],
+    [label_function],
+    [take_first_only],
     LET(
-        col, IF(ISOMITTED(col), 1, col),
-        label_col, IF(ISOMITTED(label_col), col, label_col),
+        take_first_only, IF(ISOMITTED(take_first_only), FALSE, take_first_only),
+        column_index, IF(ISOMITTED(column_index), 1, column_index),
+        label_col, IF(ISOMITTED(label_col), column_index, label_col),
         with_label, IF(ISOMITTED(with_label), FALSE, with_label),
         function, IF(ISOMITTED(function), LAMBDA(x, MAX(x)), function),
         label_function, IF(ISOMITTED(label_function), "func", label_function),
-        selected_vector, CHOOSECOLS(array, col),
+        selected_vector, CHOOSECOLS(array, column_index),
         func_value, function(selected_vector),
         selected_logical, selected_vector = func_value,
-        array_max, FILTER(array, selected_logical),
-        label, MAKEARRAY(ROWS(array_max), 1, LAMBDA(x, y, CONCAT(label_col, "_", label_function))),
-        IF(with_label, HSTACK(label, array_max), array_max)
+        array_filter, FILTER(array, selected_logical),
+        array_func, IF(take_first_only, TAKE(array_filter, 1), array_filter),
+        label, MAKEARRAY(ROWS(array_func), 1, LAMBDA(x, y, CONCAT(label_col, "_", label_function))),
+        IF(with_label, HSTACK(label, array_func), array_func)
     )
 );
 
 // FILTER_FUNC_COLUMN --> FILTER_MINMAX_COLUMN
-FILTER_MINMAX_COLUMN = LAMBDA(array, [col], [label_col], [with_label],
+FILTER_MINMAX_COLUMN = LAMBDA(array, [column_index], [with_label], [label_col], [take_first_only],
     LET(
         func_1, LAMBDA(x, MIN(x)),
         label_func_1, "min",
         func_2, LAMBDA(x, MAX(x)),
         label_func_2, "max",
-        func1_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_1, label_func_1),
-        func2_result, FILTER_FUNC_COLUMN(array, col, label_col, with_label, func_2, label_func_2),
+        func1_result, FILTER_FUNC_COLUMN(
+            array,
+            column_index,
+            with_label,
+            label_col,
+            func_1,
+            label_func_1,
+            take_first_only
+        ),
+        func2_result, FILTER_FUNC_COLUMN(
+            array,
+            column_index,
+            with_label,
+            label_col,
+            func_2,
+            label_func_2,
+            take_first_only
+        ),
         VSTACK(func1_result, func2_result)
     )
 );
 
 // FILTER_MINMAX_COLUMN --> _RECURSIVE_FILTER_MINMAX
 // _RECURSIVE_FILTER_MINMAX --> _RECURSIVE_FILTER_MINMAX
-_RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vector], [with_label],
+_RECURSIVE_FILTER_MINMAX = LAMBDA(
+    array,
+    ntry,
+    [ignore_first_column],
+    [with_label],
+    [label_vector],
+    [take_first_only],
     LET(
         ignore_first_column, IF(ISOMITTED(ignore_first_column), FALSE, ignore_first_column),
         stop_col, IF(ignore_first_column, 2, 1),
@@ -63,17 +94,18 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
         label_col, CHOOSECOLS(new_label, ntry),
         IF(
             ntry = stop_col,
-            FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+            FILTER_MINMAX_COLUMN(array, ntry, with_label, label_col, take_first_only),
             LET(
-                results, FILTER_MINMAX_COLUMN(array, ntry, label_col, with_label),
+                results, FILTER_MINMAX_COLUMN(array, ntry, with_label, label_col, take_first_only),
                 next_try, ntry - 1,
                 VSTACK(
                     _RECURSIVE_FILTER_MINMAX(
                         array,
                         next_try,
                         ignore_first_column,
+                        with_label,
                         label_vector,
-                        with_label
+                        take_first_only
                     ),
                     results
                 )
@@ -83,6 +115,13 @@ _RECURSIVE_FILTER_MINMAX = LAMBDA(array, ntry, [ignore_first_column], [label_vec
 );
 
 // _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
-FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_labels], [label_vector],
-    _RECURSIVE_FILTER_MINMAX(array, COLUMNS(array), ignore_first_column, label_vector, with_labels)
+FILTER_MINMAX_ARRAY = LAMBDA(array, [ignore_first_column], [with_label], [label_vector], [take_first_only],
+    _RECURSIVE_FILTER_MINMAX(
+        array,
+        COLUMNS(array),
+        ignore_first_column,
+        with_label,
+        label_vector,
+        take_first_only
+    )
 );

@@ -22,8 +22,8 @@ website:
 
 
   # FOR TWITTER / open-graph
-  image: "fiakologo.png"
-  favicon: "fiakologo.png"
+  image: /assets/original_feidlambda_logo.png
+  favicon: /assets/original_feidlambda_logo.png
 
   ## NAVIGATION BAR
   navbar:
@@ -34,35 +34,24 @@ website:
 
     collapse: true
 
-    logo: "fiakologo.png"
+    logo: /assets/original_feidlambda_logo.png
 
     left:
       - text: Home
         href: index.qmd
-      - text: Dokumentasi
+      - text: feidlambda
         menu:
-        - href: docs/penggunaan.qmd
-        - href: docs/glossary.qmd
-      - text: feidlambda 0.x
-        menu:
-        - href: release/feidlambda.qmd
-        - href: release/migration-v0-2-to-v0-3.qmd
-        - href: release/feidlambda-0-3-0.qmd
+        - href: release/source-code.qmd
+        - href: release/feidlambda-0-3.qmd
         - href: release/feidlambda-0-2-0.qmd
         - href: release/feidlambda-0-1-0.qmd
-      - text: Greenhorn
+      - text: Dokumentasi
         menu:
-        - text: "Greenhorn"
-          href: greenhorn/index.qmd
-        - text: feidlambda I
-          href: greenhorn/index.qmd
-          # href: greenhorn/feidlambda-2/presentation.qmd
-        - text: feidlambda II
-          href: greenhorn/feidlambda-2/index.qmd
-        - text: feidlambda III
-          href: greenhorn/index.qmd
-          # href: release/feidlambda-0-1-0.qmd
-
+        - href: docs/install.qmd
+        - href: docs/glossary.qmd
+      - text: Artikel
+        menu:
+        - href: article/migration-v0-2-to-v0-3.qmd
         
     right:
       - icon: github
@@ -74,7 +63,7 @@ website:
       contents:
         - section: "Dokumentasi"
           contents: 
-            - href: docs/penggunaan.qmd
+            - href: docs/install.qmd
             - href: docs/glossary.qmd
 
     - id: side-feidlambda
@@ -117,11 +106,9 @@ website:
   ## SIDEBAR
   page-footer:
     right: >-
-      developed by **fiako**dev. 
-      built with ❤️ and [Quarto](https://quarto.org/).
+      developed by **fiako**dev
     left: >-
-      &copy; 2022 PT. FIAKO ENJINIRING INDONESIA. 
-      <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.
+      &copy; 2022-2023 PT. FIAKO ENJINIRING INDONESIA
 
 format:
   html:

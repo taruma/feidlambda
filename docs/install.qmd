@@ -15,9 +15,13 @@ number-sections: true
 link-external-newwindow: true
 layout: article
 sidebar: side-docs
+
+aliases: 
+  - penggunaan.html
+
 ---
 
-Panduan ini untuk __Advanced Formula Environment__ v1.1. Panduan versi sebelumnya (v1.0) bisa dilihat [disini](penggunaan-v1.qmd).
+Panduan ini untuk __Advanced Formula Environment__ v1.1.
 
 ## **Advanced Formula Environment**
 
@@ -38,7 +42,11 @@ Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE me
 
 ## Salin _Github Gist URL_
 
-Isi "Github Gist URL" dengan link koleksi lambda yang tersedia ([Link Github Gist feidlambda v0.3](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)). _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`).
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). Berikut link feidlambda v0.3.x:
+
+```default
+https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+```
 
 ![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
 
@@ -58,6 +66,6 @@ Selesai _save_, fungsi **feidlambda** bisa langsung digunakan.
 
 ## Baca dokumentasi **feidlambda** v0.3
 
-Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3-0.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/release/migration-v0-2-to-v0-3.qmd).
+Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
 
 Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 
