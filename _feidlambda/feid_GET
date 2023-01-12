@@ -1,7 +1,7 @@
 // NONE --> GET_INDEX_2D
-GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
+GET_INDEX_2D = LAMBDA(lookup_value, array, [return_as_order],
     LET(
-        return_order_only, IF(ISOMITTED(return_order_only), FALSE, return_order_only),
+        return_as_order, IF(ISOMITTED(return_as_order), FALSE, return_as_order),
         nrows, ROWS(array),
         ncols, COLUMNS(array),
         size, nrows * ncols,
@@ -14,6 +14,6 @@ GET_INDEX_2D = LAMBDA(lookup_value, array, [return_order_only],
         index_flatten, TOCOL(index_sequence, , TRUE),
         lookup_table, HSTACK(index_flatten, rows_flatten, columns_flatten),
         lookup_result, FILTER(lookup_table, array_flatten = lookup_value),
-        IF(return_order_only, CHOOSECOLS(lookup_result, 1), lookup_result)
+        IF(return_as_order, CHOOSECOLS(lookup_result, 1), lookup_result)
     )
 );

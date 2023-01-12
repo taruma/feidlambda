@@ -13,21 +13,11 @@ _RECURSIVE_MAKE_SEQUENCE = LAMBDA(start_vector, end_vector, ntry, [stack_horizon
                 IF(
                     stack_horizontally,
                     HSTACK(
-                        _RECURSIVE_MAKE_SEQUENCE(
-                            start_vector,
-                            end_vector,
-                            next_try,
-                            stack_horizontally
-                        ),
+                        _RECURSIVE_MAKE_SEQUENCE(start_vector, end_vector, next_try, stack_horizontally),
                         results
                     ),
                     VSTACK(
-                        _RECURSIVE_MAKE_SEQUENCE(
-                            start_vector,
-                            end_vector,
-                            next_try,
-                            stack_horizontally
-                        ),
+                        _RECURSIVE_MAKE_SEQUENCE(start_vector, end_vector, next_try, stack_horizontally),
                         results
                     )
                 )

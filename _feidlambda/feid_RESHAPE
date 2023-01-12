@@ -16,7 +16,7 @@ RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
                 array_sorted, SORTBY(array_flatten, divider_repeat_col),
                 WRAPROWS(array_sorted, num_split)
             ),
-            "#INVALID_NUM_SPLIT"
+            NA()
         )
     )
 );
