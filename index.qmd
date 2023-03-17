@@ -1,5 +1,5 @@
 ---
-pagetitle: "feidlambda"
+pagetitle: "feidlambda | User Defined LAMBDA (UDL) oleh FIAKO Engineering"
 # title: Home
 format: html
 toc: false
@@ -7,6 +7,7 @@ html-math-method: mathjax
 link-external-newwindow: true
 page-layout: full
 sidebar: false
+anchor-sections: false
 ---
 
 ::: {.text-center}
@@ -15,19 +16,25 @@ sidebar: false
 
 ::: {.text-center .mb-4}
 
-![](https://img.shields.io/github/v/release/fiakoenjiniring/feidlambda?color=informational&label=feidlambda&labelColor=blueviolet&logo=Microsoft%20Excel&style=flat-square){height=25}
-![](https://img.shields.io/github/release-date/fiakoenjiniring/feidlambda?color=black&label=release%20date&labelColor=brown&logo=GitHub&logoColor=white){height=25}
-![](https://img.shields.io/github/actions/workflow/status/fiakoenjiniring/feidlambda/publish.yml?branch=main&label=quarto&labelColor=informational&logo=GitHub%20Actions&logoColor=white){height=25}
-![](https://img.shields.io/github/license/fiakoenjiniring/feidlambda?color=yellow&labelColor=brown&label=license&){height=25}
+##### User Defined LAMBDA (UDL) by FIAKO Engineering & **fiako**dev
+
+![](https://img.shields.io/github/v/release/fiakoenjiniring/feidlambda?color=informational&label=feidlambda&labelColor=blueviolet&logo=Microsoft%20Excel&style=flat-square)
+![](https://img.shields.io/github/release-date/fiakoenjiniring/feidlambda?color=black&label=release%20date&labelColor=brown&logo=GitHub&logoColor=white)
+![](https://img.shields.io/github/actions/workflow/status/fiakoenjiniring/feidlambda/publish.yml?branch=main&label=quarto&labelColor=informational&logo=GitHub%20Actions&logoColor=white)
+![](https://img.shields.io/github/license/fiakoenjiniring/feidlambda?color=yellow&labelColor=brown&label=license&)
 
 :::
 
 ::: {.text-center}
 
+---
+
 [<button type="button" class="btn btn-primary m-1">INSTALASI</button>](/docs/install.qmd)
 [<button type="button" class="btn btn-info m-1">MANUAL/API</button>](/release/feidlambda-0-3.qmd)
 [<button type="button" class="btn btn-dark m-1">_SOURCE CODE_</button>](/release/source-code.qmd)
 [<button type="button" class="btn btn-danger m-1">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+
+---
 
 ### OFFICAL GIST URL (feidlambda v0.3.x)
 

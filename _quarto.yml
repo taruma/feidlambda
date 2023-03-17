@@ -8,7 +8,7 @@ execute:
 
 website:
   title: "feidlambda"
-  description: "Koleksi lambda oleh FIAKO Engineering"
+  description: "Koleksi User Defined LAMBDA (UDL) oleh FIAKO Engineering"
 
   site-url: https://lambda.fiako.engineering
   repo-url: https://github.com/fiakoenjiniring/feidlambda
@@ -27,7 +27,7 @@ website:
 
   ## NAVIGATION BAR
   navbar:
-    title: false
+    title: FIAKO-FEIDLAMBDA
     background: dark
     # foreground: warning
     # pinned: false
