@@ -44,16 +44,7 @@ https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
 
 :::
 
-::: {.text-center .callout-tip appearance="minimal"}
-## **STATUS PENGEMBANGAN**
-
----
-
-**feidlambda v0.3** sudah siap digunakan oleh publik. Dengan catatan masih banyak yang perlu dipelajari, perbaiki, dan dikembangkan sehingga status feidlambda masih bersifat **eksperimental**. 
-
-:::
-
 ::: {.text-center .callout-warning appearance="minimal"}
-Halaman *greenhorn* untuk sementara tidak tersedia di _navigation bar_. Untuk mengakses presentasi bisa mengunjungi [link ini](/greenhorn/feidlambda-2/presentation.qmd){target="_blank"}.
+Halaman *greenhorn* untuk sementara tidak tersedia di _navigation bar_ (akan dialihkan ke [fiako-manual](https://manual.fiako.engineering)). Untuk mengakses presentasi bisa mengunjungi [link ini](/greenhorn/feidlambda-2/presentation.qmd){target="_blank"}.
 :::
 

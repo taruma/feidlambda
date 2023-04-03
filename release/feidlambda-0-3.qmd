@@ -30,7 +30,6 @@ crossref:
 aliases: 
   - feidlambda-0-3-0.html
   - feidlambda-0-3-1.html
-  - latest.html
 
 ---
 

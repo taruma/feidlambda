@@ -2,7 +2,7 @@
 title: |
   Instalasi feidlambda
 subtitle: |
-  Panduan pemasangan `feidlambda` v0.3+
+  Panduan pemasangan `feidlambda` v0.3+ (AFE v1.1)
 author: Taruma Sakti Megariansyah
 date: 2022-10-20
 date-modified: 2023-01-06
@@ -64,8 +64,8 @@ Selesai _save_, fungsi **feidlambda** bisa langsung digunakan.
 ![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/210947524-d4a8bce7-d33d-47b4-8a72-6cf5244c9651.png)
 :::
 
-## Baca dokumentasi **feidlambda** v0.3
+## Baca dokumentasi **feidlambda**
 
-Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
+Dokumentasi feidlambda versi terbaru bisa baca di halaman [feidlambda (latest)](/release/latest.html). API atau struktur LAMBDA sudah dibuat konsisten sejak versi v0.3+. Panduan migrasi dari v0.2 ke v0.3 bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
 
 Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 

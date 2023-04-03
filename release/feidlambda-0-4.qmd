@@ -1,0 +1,50 @@
+---
+title: |
+  feidlambda v0.4
+subtitle: |
+  Koleksi LAMBDA feidlambda v0.4
+author: "Taruma Sakti Megariansyah"
+date: 2023-04-19
+# date-modified: 2023-04-19
+date-format: full
+lang: id
+
+toc: true
+toc-location: right
+number-sections: false
+number-offset: [0, 0]
+link-external-newwindow: true
+
+fig-responsive: true
+
+filters: 
+  - "../include-code-files.lua"
+
+format:
+  html:
+    mermaid-format: js
+
+crossref: 
+  chapters: true
+
+aliases: 
+  - latest.html
+
+---
+
+::: {.callout-important icon="false" .text-center appearance="minimal"}
+## Official GIST **feidlambda** (v0.4.x)
+
+```default
+https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
+```
+
+:::
+
+**Panduan instalasi feidlambda v0.4+ dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
