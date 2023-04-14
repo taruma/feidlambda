@@ -2,7 +2,7 @@
 title: |
   _Source Code_
 subtitle: |
-  _Source Code_ feidlambda v0.3
+  _Source Code_ feidlambda v0.4
 # author: fiakodev
 toc: false
 link-external-newwindow: true
