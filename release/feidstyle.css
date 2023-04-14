@@ -1,0 +1,41 @@
+.f-new,
+.f-patch,
+.f-note {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 2px solid black;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: small;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: bolder;
+    vertical-align: middle;
+    box-shadow: 2px 2px 4px #888888;
+}
+
+
+.f-new {
+    background-color: #ffff00;
+}
+
+.f-patch {
+    background-color: #c65911;
+    color: white;
+}
+
+.f-note {
+    background-color: #0070c0;
+    color: white;
+}
+
+section[id^="sec-"] img {
+    border-radius: 1%;
+    border: 1px solid;
+    box-shadow: 2px 2px 4px #888888;
+}
+
+p {
+    text-align: justify;
+}

@@ -1,0 +1,60 @@
+---
+title: |
+  feidmath v0.1
+subtitle: |
+  Koleksi LAMBDA feidmath v0.1
+author: "Taruma Sakti Megariansyah"
+date: 2023-05-19
+# date-modified: 2023-04-19
+date-format: full
+lang: id
+
+toc: true
+toc-location: right
+number-sections: false
+number-offset: [0, 0]
+link-external-newwindow: true
+
+fig-responsive: true
+
+filters: 
+  - "../include-code-files.lua"
+
+format:
+  html:
+    mermaid-format: js
+    css: feidstyle.css
+
+crossref: 
+  chapters: true
+
+aliases: 
+  - feidmath-latest.html
+
+---
+
+
+# FEIDMATH {#sec-feidmath}
+
+::: {.callout-tip icon="false" .text-center appearance="minimal"}
+## Official GIST **feidmath** (v0.1.x)
+
+```default
+https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
+```
+
+:::
+
+`feidlambda-math` atau **feidmath** merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. 
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Changelog
+
+- **2023-05-19 (v0.1.0)**
+  - Rilis feidmath v0.1
+

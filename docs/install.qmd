@@ -42,11 +42,7 @@ Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE me
 
 ## Salin _Github Gist URL_
 
-Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). Berikut link feidlambda v0.3.x:
-
-```default
-https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
-```
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). 
 
 ![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
 
@@ -66,6 +62,6 @@ Selesai _save_, fungsi **feidlambda** bisa langsung digunakan.
 
 ## Baca dokumentasi **feidlambda**
 
-Dokumentasi feidlambda versi terbaru bisa baca di halaman [feidlambda (latest)](/release/latest.html). API atau struktur LAMBDA sudah dibuat konsisten sejak versi v0.3+. Panduan migrasi dari v0.2 ke v0.3 bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
+Dokumentasi feidlambda versi terbaru (v0.4) bisa baca di halaman [feidlambda (latest)](/release/latest.html). API atau struktur LAMBDA sudah dibuat konsisten sejak versi v0.3+. Panduan migrasi dari v0.2 ke v0.3 bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
 
 Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 
