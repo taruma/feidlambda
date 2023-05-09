@@ -3,3 +3,7 @@ section[id^="sec-"] img {
     border: 1px solid;
     box-shadow: 2px 2px 4px #888888;
 }
+
+section[id^="sec-"] p {
+    text-align: justify;
+}

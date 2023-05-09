@@ -51,6 +51,7 @@ website:
         - href: release/feidmath-0-1.qmd
       - text: Dokumentasi
         menu:
+        - href: docs/lambda-style-guide.qmd
         - href: docs/install.qmd
         - href: docs/glossary.qmd
       - text: Artikel

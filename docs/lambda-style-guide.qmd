@@ -1,0 +1,125 @@
+---
+title: |
+  FIAKO's LAMBDA Style Guide
+subtitle: |
+  Panduan penulisan fungsi LAMBDA di Microsoft Excel. (_FIAKO's LAMBDA Function Style Guide for Microsoft Excel_)
+author: Taruma Sakti Megariansyah
+abstract: |
+  Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel oleh FIAKO Engineering. 
+abstract-title: Abstrak
+date: 2023-05-19
+# date-modified: 2023-01-06
+lang: id
+
+toc: true
+toc-title: Daftar Isi
+toc-depth: 5
+toc-location: right
+number-sections: false
+link-external-newwindow: true
+layout: article
+sidebar: side-docs
+fig-responsive: true
+css: docs-style.css
+---
+
+::: {.callout-note}
+
+Panduan ini dibuat dengan bantuan chatGPT (GPT-4) dengan penyesuaian oleh penulis. 
+
+:::
+
+# FIAKO's LAMBDA Style Guide (FLSG) {#sec-introduction}
+
+**FIAKO's LAMBDA Style Guide** adalah panduan gaya penulisan fungsi LAMBDA untuk Microsoft Excel yang disusun oleh tim fiakodev di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
+
+Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:
+
+- **Fleksibilitas**: Fungsi LAMBDA memungkinkan pengguna untuk membuat fungsi kustom yang dapat diadaptasi sesuai kebutuhan spesifik dan digunakan berulang kali dalam berbagai situasi.
+- **Pengurangan kompleksitas**: Dengan menggunakan fungsi LAMBDA, pengguna dapat menggabungkan beberapa fungsi yang ada menjadi satu fungsi yang lebih sederhana, sehingga memudahkan pembacaan dan pemahaman fungsi yang digunakan di dalam Microsoft Excel.
+- **Pemeliharaan yang lebih mudah**: Fungsi LAMBDA yang ditulis dengan baik memudahkan pemeliharaan dan pengembangan lebih lanjut, karena struktur yang jelas dan konvensi penamaan yang konsisten.
+- **Penggunaan berulang**: Fungsi LAMBDA yang dibuat dapat digunakan kembali di seluruh workbook atau bahkan di workbook lain, yang meningkatkan efisiensi dalam mengembangkan solusi Excel yang canggih.
+- **Kolaborasi dan berbagi**: Memudahkan pengguna untuk berbagi fungsi kustom dengan rekan kerja atau komunitas pengguna Excel, sehingga mengurangi pengulangaan pekerjaan yang sama dan meningkatkan kolaborasi. 
+
+Panduan ini disusun untuk membantu pengguna menguasai berbagai aspek penulisan fungsi LAMBDA yang efektif. Sebelum memulai, pastikan memahami konsep dasar Microsoft Excel, termasuk penggunaan sel, formula, dan fungsi bawaan, serta dasar-dasar pemrograman. Panduan ini ditujukan untuk pengembang fungsi LAMBDA di FIAKO Engineering dan umum. 
+
+# Prasyarat
+
+Sebelum mulai mengembangkan fungsi LAMBDA dan menggunakan panduan ini, terdapat yang harus dipersiapkan yaitu perngkat dan pengetahuan
+
+# Format dan Organisasi
+
+## Indentasi
+
+## Pemisahan Baris
+
+# Konvensi Penamaan
+
+## Pentingnya Konvensi Penamaan
+
+## Penamaan Variabel
+
+## Penamaan Fungsi yang Deskriptif
+
+# Keterbacaan dan Efisiensi
+
+## Rantai Fungsi
+
+## Fungsi Pembantu
+
+## Tanda Kurung untuk Kejelasan
+
+## Menjaga fungsi tetap sederhana
+
+# Penanganan Argumen
+
+## Urutan argumen yang konsisten
+
+## Contoh pengaturan urutan argumen
+
+# Penanganan Kesalahan
+
+## Menggunakan `IFERROR` dan `IFNA`
+
+## Cara lain untuk menangani kesalahan
+
+# Dokumentasi
+
+## Membuat dokumen atau lembar khusus untuk deskripsi fungsi LAMBDA
+
+## Kiat untuk membuat deskripsi yang jelas, singkat, dan informatif
+
+# Kinerja dan Skalabilitas
+
+## Mengoptimalkan kinerja
+
+## Menggunakan huruf besar dan huruf kecil yang konsisten untuk variabel
+
+## Menguji fungsi secara menyeluruh
+
+## Pertimbangkan skalabilitas
+
+## Memanfaatkan fungsi bawaan
+
+## Memanfaatkan _dynamic array_ dan fungsinya
+
+## Menghindari referensi lingkaran atau dependensi yang tidak perlu
+
+# Kolaborasi dan Pemeliharaan
+
+## Berbagi fungsi LAMBDA dengan rekan kerja
+
+## Meningkatkan fungsi secara kontinu
+
+## Membatasi Penggunaan fungsi yang mudah berubah
+
+## Mengimplementasikan kontrol versi
+
+## Mengelompokkan fungsi yang terkait
+
+## Modularisasi kode
+
+## Menyeimbangkan kinerja dan keterbacaan
+
+## Alat dan metode untuk mempermudah proses kolaborasi dan pemeliharaan
+
