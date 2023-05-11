@@ -1,8 +1,8 @@
 ---
 title: |
-  FSG-LAMBDA v1.0
+  LAMBDA Style Guide
 subtitle: |
-  Panduan penulisan fungsi LAMBDA di Microsoft Excel. (_LAMBDA Function Style Guide for Microsoft Excel_)
+  FIAKO LAMBDA Style Guide (FSG-LAMBDA) v1.0, panduan penulisan fungsi LAMBDA di Microsoft Excel. 
 author: Taruma Sakti Megariansyah
 abstract: |
   Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel di lingkungan FIAKO Engineering. 
@@ -31,7 +31,7 @@ Panduan ini dibuat dengan bantuan chatGPT (GPT-4) dengan penyesuaian oleh penuli
 
 # FIAKO LAMBDA Style Guide (FSG-LAMBDA) {#sec-introduction}
 
-**FIAKO LAMBDA Style Guide** adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
+**FIAKO LAMBDA Style Guide** (FSG-LAMBDA) adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
 
 Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:
 
@@ -43,24 +43,92 @@ Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:
 
 Panduan ini disusun untuk membantu pengguna menguasai berbagai aspek penulisan fungsi LAMBDA yang efektif.
 
-# Prasyarat
+# Prasyarat {#sec-requirements}
 
 Sebelum mulai mengembangkan fungsi LAMBDA dan menggunakan panduan ini, terdapat yang harus dipersiapkan yaitu dari perangkat yang digunakan dan pengetahuan yang dibutuhkan.
 
-## Perangkat
+## Perangkat {#sec-rec-device}
 
 Dalam mengembangkan fungsi LAMBDA dan mengikuti panduan ini berikut daftar perangkat dan _add-ins_:
 
-- **Microsoft Excel 365**: Microsoft Excel yang digunakan **minimum** versi 365 dikarenakan fungsi LAMBDA hanya tersedia di Microsoft Excel 365.
-- **Excel Labs** _add-ins_: Fitur _Advanced Formula Environment_ yang tersedia di _add-ins_ ini akan digunakan sebagai standar editor untuk pengembangan fungsi LAMBDA. Untuk instalasi dapat melihat [panduan instalasi](install.qmd).
+- **Microsoft Excel 365**: Pastikan menggunakan **Microsoft Excel 365**, karena fungsi LAMBDA hanya tersedia di Microsoft Excel 365.
+- **Excel Labs** _add-ins_: Fitur _Advanced Formula Environment_ yang tersedia di _add-ins_ ini direkomendasikan sebagai standar editor untuk pengembangan fungsi LAMBDA. Untuk panduan instalasi, silakan lihat [panduan instalasi](install.qmd).
 
-Fungsi LAMBDA dan fungsi terbaru lainnya yang tersedia di Microsoft Excel 365, kemungkinan tersedia juga di Excel Web (OFfice Online). Sehingga, untuk mengimplementasikan fungsi LAMBDA (jika tidak berlangganan), bisa bereksperimen melalui Microsoft Excel for Web. 
+Fungsi LAMBDA dan beberapa fungsi terbaru lainnya juga tersedia di Microsoft Excel for Web. Oleh karena itu, jika Anda belum berlangganan, Anda dapat bereksperimen dengan fungsi LAMBDA melalui Microsoft Excel for Web.
 
-# Format dan Organisasi
+## Pengetahuan {#sec-rec-knowledge}
 
-## Indentasi
+Fungsi LAMBDA dapat diterapkan oleh pengguna Microsoft Excel dengan berbagai tingkat keahlian, mulai dari pemula hingga mahir. Tingkat pengetahuan yang dibutuhkan dalam pengembangan fungsi LAMBDA di Microsoft Excel tergantung pada kompleksitas fungsi yang akan dikembangkan. Berikut ini adalah pengetahuan atau pemahaman yang diperlukan untuk memahami fungsi LAMBDA dan menerapkan FIAKO LAMBDA Style Guide:
 
-## Pemisahan Baris
+- **Pemahaman dasar tentang Microsoft Excel**: Pastikan memahami cara menggunakan sel, baris, kolom, serta mengedit rumus. Anda bisa belajar lebih lanjut di [Excel untuk Pemula](https://support.microsoft.com/id-id/office/excel-for-beginners-9bc05390-e94c-46af-a5b3-d7c22f6990bb).
+- **Dasar-dasar bahasa pemrograman**: Kuasai konsep dasar pemrograman seperti variabel, fungsi, dan logika bersyarat. Pelajari lebih lanjut di [Pemrograman Dasar](https://www.codecademy.com/learn/learn-how-to-code).
+- **Fungsi Excel yang umum**: Kembangkan kemampuan untuk menggunakan dan memahami fungsi Excel seperti SUM, AVERAGE, VLOOKUP, IF, AND, OR, INDEX, dan MATCH. Lihat [Fungsi Excel yang Harus Diketahui](https://exceljet.net/articles/101-excel-functions).
+- **Dasar-dasar penanganan kesalahan dalam Excel**: Pahami cara menggunakan fungsi IFERROR dan IFNA untuk mengatasi kesalahan. Pelajari lebih lanjut di [Penanganan Kesalahan di Excel](https://www.excel-easy.com/examples/iferror.html).
+- **Fungsi LAMBDA**: Mengerti tujuan dan cara kerja fungsi LAMBDA dalam menciptakan fungsi kustom di Microsoft Excel. Baca lebih lanjut di [Pengantar Fungsi LAMBDA](https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67).
+- **Pengetahuan tentang Dynamic Array di Microsoft Excel**: Kuasai konsep dan cara kerja fitur Dynamic Array dalam mengolah data berbentuk array. Informasi lebih lanjut dapat ditemukan di [Perilaku _Dynamic Arrays_ dan _spilled array_](https://support.microsoft.com/en-us/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+
+Dengan memenuhi prasyarat di atas, diharapkan untuk lebih siap untuk menggunakan fungsi LAMBDA dan memahami panduan ini secara efisien dan efektif. Pastikan untuk menggunakan alat yang sesuai dan menguasai pengetahuan yang dibutuhkan guna mengoptimalkan proses pengembangan fungsi LAMBDA dan penerapan panduan ini.
+
+## _Advanced Formula Environment_ (_Add-ins_ **Excel Lab**)
+
+Dalam panduan ini, disarankan untuk menggunakan _Advanced Formula Environment_ (AFE) dari Excel Labs sebagai editor saat mengembangkan fungsi LAMBDA. AFE sangat membantu pengguna dalam mengembangkan dan mengelola fungsi LAMBDA. Berikut beberapa fitur unggulan AFE^[Berdasarkan informasi yang tertera di [halaman GitHub AFE](https://github.com/microsoft/advanced-formula-environment)]:
+
+- Melihat, memformat, dan mengedit rumus yang telah didefinisikan dalam kisi dengan bilah rumus yang lebih canggih.
+- Mendefinisikan dan mengedit fungsi yang diberi nama, rentang, dan rumus yang dapat disinkronkan dengan Manajer Nama.
+- Membuat koleksi fungsi yang diberi nama, disebut modul, yang didefinisikan sebagai kode dan disimpan sebagai bagian dari Buku Kerja.
+- Mengimpor modul LAMBDA secara cepat langsung dari GitHub Gist.
+
+AFE juga mendukung fitur-fitur tambahan seperti _autocomplete_, _refactoring_, _formatting_, dan lainnya, yang akan memudahkan Anda dalam proses pengembangan fungsi LAMBDA. Pastikan Anda menggunakan AFE untuk meningkatkan efisiensi dan kenyamanan saat mengikuti panduan ini.
+
+# Format dan Organisasi {#sec-format}
+
+Mengatur kode dengan baik sangat penting untuk memastikan mudah dibaca dan dipahami. Untuk melakukan formatting, dapat dilakukan secara otomatis di AFE dengan menggunakan perintah `Format` (`Ctrl + Shift + F`). Berikut beberapa aspek yang harus diperhatikan dalam Format dan Organisasi pada fungsi LAMBDA:
+
+## Indentasi {#sec-format-indentation}
+
+Menggunakan indentasi yang konsisten akan membantu meningkatkan keterbacaan kode. Gunakan 4 spasi untuk indentasi. Indentasi otomatis dengan AFE akan menyesuaikan dengan lebar layar editor (disarankan sekitar 60-80 karakter).
+
+## Pemisahan Baris {#sec-format-line-break}
+
+Menggunakan pemisahan baris yang konsisten akan membantu memisahkan bagian kode yang berbeda dan memudahkan pemahaman.
+
+Contoh indentasi dan pemisahan baris yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, // variabel input
+    IF( /* operasi dimulai di baris baru */
+        x > y,
+        "X lebih besar",
+        IF(x < y, "Y lebih besar", "X dan Y sama")
+    )
+);
+```
+
+## Spasi untuk Kejelasan {#sec-format-spacing}
+
+Menggunakan spasi secara konsisten dalam kode LAMBDA akan membantu meningkatkan keterbacaan dan memudahkan pemahaman struktur kode. Pertimbangkan untuk menambahkan spasi di sekitar operator, seperti tanda kurung, koma, dan operator matematika:
+
+Contoh penggunaan spasi yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(a, b, c, IF(a > b, a, IF(b > c, b, c)));
+```
+
+## Komentar dan Catatan {#sec-format-comments}
+
+Menambahkan komentar atau catatan di sekitar kode LAMBDA dapat membantu menjelaskan logika atau maksud di balik kode tersebut. Meskipun Excel tidak mendukung komentar langsung dalam rumus, Anda dapat menggunakan komentar pada editor AFE dengan `// komentar` (satu baris) atau `/* komentar */` (lebih dari satu baris).
+
+## Urutan Operasi {#sec-format-operation-order}
+
+Urutan operasi sangat penting untuk memastikan hasil yang benar dari kode LAMBDA. Oleh karena itu, selalu pastikan urutan operasi dalam kode Anda jelas dan mudah dipahami. Jika perlu, gunakan tanda kurung untuk mengklarifikasi prioritas operasi.
+
+Contoh urutan operasi yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, (x + y) * (x - y));
+```
+
+Dengan memperhatikan aspek-aspek ini dalam bagian Format dan Organisasi, panduan gaya fungsi LAMBDA akan membantu pengguna menciptakan kode yang lebih rapi, konsisten, dan mudah dipahami. Selalu pastikan untuk mengikuti panduan ini dengan konsisten sepanjang kode Anda agar hasilnya optimal.
 
 # Konvensi Penamaan
 
