@@ -1,11 +1,11 @@
 ---
 title: |
-  LAMBDA Style Guide
+  FIAKO LAMBDA Style Guide v1.0
 subtitle: |
-  FIAKO LAMBDA Style Guide (FSG-LAMBDA) v1.0, panduan penulisan fungsi LAMBDA di Microsoft Excel. 
+  Panduan penulisan fungsi LAMBDA di Microsoft Excel yang digunakan oleh FIAKO Engineering. 
 author: Taruma Sakti Megariansyah
 abstract: |
-  Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel di lingkungan FIAKO Engineering. 
+  Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel. 
 abstract-title: Abstrak
 date: 2023-05-19
 # date-modified: 2023-01-06
@@ -375,15 +375,60 @@ Dalam contoh ini, kode diatur dengan rapi dan konsisten, dengan setiap fungsi da
 
 # Penanganan Argumen
 
+Penanganan argumen merupakan aspek yang sangat krusial dalam penulisan dan penggunaan fungsi LAMBDA di Microsoft Excel. Memahami bagaimana argumen didefinisikan, dipanggil, dan divalidasi tidak hanya mempengaruhi akurasi dan efisiensi fungsi, tetapi juga dapat mencegah berbagai kesalahan yang dapat terjadi. Selain itu, penanganan argumen yang baik dapat meningkatkan keterbacaan dan pemahaman fungsi, membuatnya lebih mudah digunakan dan dikelola. Oleh karena itu, membahas penanganan argumen dalam panduan gaya penulisan fungsi LAMBDA sangat penting untuk membantu pembaca dalam menulis fungsi yang lebih efektif dan efisien.
+
 ## Urutan argumen yang konsisten
+
+Argumen fungsi LAMBDA di Microsoft Excel harus disusun dengan hati-hati. Urutan argumen berperan penting dalam menentukan hasil fungsi. Setiap argumen dalam fungsi LAMBDA ditulis secara berurutan, dipisahkan oleh tanda koma.
+
+Sebagai contoh, jika fungsi LAMBDA memiliki tiga argumen: A, B, dan C, maka urutan penulisannya dalam fungsi adalah sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(A, B, C, ...)
+```
+
+Urutan argumen ini nantinya akan mempengaruhi cara fungsi tersebut dipanggil. Jika fungsi `MY_FUNCTION` dipanggil dengan tiga nilai, misalnya 1, 2, dan 3, maka nilai-nilai tersebut akan diberikan kepada argumen sesuai dengan urutannya. Dalam hal ini, A akan mendapatkan nilai 1, B mendapatkan nilai 2, dan C mendapatkan nilai 3.
 
 ## Contoh pengaturan urutan argumen
 
-# Penanganan Kesalahan
+Berikut adalah contoh penanganan argumen dalam fungsi LAMBDA. Misalkan, ada fungsi yang akan mengalikan tiga angka, maka penulisan dan pemanggilan fungsi tersebut adalah sebagai berikut:
 
-## Menggunakan `IFERROR` dan `IFNA`
+```scala
+MULTIPLY_THREE_NUMBERS = LAMBDA(A, B, C, A * B * C)
+```
 
-## Cara lain untuk menangani kesalahan
+Dalam contoh ini, `MULTIPLY_THREE_NUMBERS` adalah fungsi yang menerima tiga argumen: A, B, dan C. Argumen-argumen ini kemudian dikalikan bersama-sama dalam fungsi.
+
+Jika fungsi tersebut dipanggil dengan tiga angka, misalnya 2, 3, dan 4, maka hasilnya akan menjadi 24, karena 2 * 3 * 4 = 24.
+
+```scala
+MULTIPLY_THREE_NUMBERS(2, 3, 4)
+```
+
+Perhatikan bahwa argumen diberikan sesuai urutan. Angka 2 diberikan kepada A, 3 kepada B, dan 4 kepada C. Urutan argumen ini harus konsisten antara definisi fungsi dan pemanggilan fungsi. Kesalahan dalam urutan argumen dapat menghasilkan hasil yang tidak diharapkan atau kesalahan.
+
+## Argumen Opsional
+
+Argumen opsional adalah argumen yang tidak harus disertakan saat memanggil fungsi. Argumen ini biasanya ditandai dengan tanda kurung siku (`[]`). Contoh penulisan argumen opsional dalam fungsi LAMBDA adalah sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(A, [B], A * IF(ISBLANK(B), 1, B))
+```
+
+Dalam contoh ini, `MY_FUNCTION` adalah fungsi yang menerima dua argumen: A dan B. Namun, B adalah argumen opsional. Jika B tidak diberikan saat memanggil fungsi, maka B akan dianggap sebagai 1 (lihat fungsi `IF(ISBLANK(B), 1, B)`).
+
+Berikut adalah contoh pemanggilan fungsi `MY_FUNCTION` dengan dan tanpa argumen opsional:
+
+```scala
+MY_FUNCTION(2, 3) // Hasilnya adalah 6, karena 2 * 3 = 6
+MY_FUNCTION(2) // Hasilnya adalah 2, karena B dianggap sebagai 1, sehingga 2 * 1 = 2
+```
+
+Dalam contoh ini, perhatikan bahwa pemanggilan fungsi tanpa menyertakan argumen opsional tidak menyebabkan kesalahan. Argumen opsional memberikan fleksibilitas saat memanggil fungsi, tetapi harus digunakan dengan hati-hati untuk menghindari kebingungan.
+
+# Penanganan ERROR
+
+Untuk penanganan ERROR bisa diatasi dengan `IFERROR()`, `IFNA()`. 
 
 # Dokumentasi
 
