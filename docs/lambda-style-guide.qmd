@@ -80,6 +80,22 @@ Dalam panduan ini, disarankan untuk menggunakan _Advanced Formula Environment_ (
 
 AFE juga mendukung fitur-fitur tambahan seperti _autocomplete_, _refactoring_, _formatting_, dan lainnya, yang akan memudahkan Anda dalam proses pengembangan fungsi LAMBDA. Pastikan Anda menggunakan AFE untuk meningkatkan efisiensi dan kenyamanan saat mengikuti panduan ini.
 
+Dalam menggunakan fungsi LAMBDA, langkah yang umum digunakan adalah menuliskan fungsi LAMBDA pada Formula Name Manager. Akan tetapi, untuk panduan ini pengembangan fungsi LAMBDA akan menggunakan AFE. Semenjak AFE v1.1+, fungsi LAMBDA disimpan dalam dokumen excel dan muncul di Formula Name Manager ketika dilakukan sinkronisasi. Hanya saja, sifatnya satu arah, yaitu fungsi LAMBDA yang ditulis di AFE akan tersimpan juga pada Formula Name Manager, tapi tidak sebaliknya. Jadi fungsi LAMBDA yang dikembangkan secara manual di Formula Name Manager tidak akan muncul di AFE. 
+
+Pada umumnya pada tutorial formula lambda ditulis sebagai berikut:
+
+```scala
+=LAMBDA(x, y, z, x+y+z)
+```
+
+kemudian formula tersebut disimpan dalam Formula Name Manager dengan namanya, misalkan fungsi `JUMLAH`. Akan tetapi, dengan menggunakan AFE sebagai editor, dalam panduan ini penulisannya sebagai berikut:
+
+```scala
+JUMLAH = =LAMBDA(x, y, z, x+y+z);
+```
+
+Sehingga, kode yang terlampir dalam panduan ini adalah potongan kode yang cocok disalin ke editor AFE (Excel Labs). 
+
 # 📐 Format dan Organisasi {#sec-format}
 
 Mengatur kode dengan baik sangat penting untuk memastikan mudah dibaca dan dipahami. Untuk melakukan formatting, dapat dilakukan secara otomatis di AFE dengan menggunakan perintah `Format` (`Ctrl + Shift + F`). Akan tetapi berikut beberapa aspek yang dapat diperhatikan dalam Format dan Organisasi pada fungsi LAMBDA jika tidak menggunakan _autoformatting_:
@@ -89,9 +105,7 @@ Mengatur kode dengan baik sangat penting untuk memastikan mudah dibaca dan dipah
 Menggunakan indentasi yang konsisten akan membantu meningkatkan keterbacaan kode. Gunakan 4 spasi untuk indentasi. Indentasi otomatis dengan AFE akan menyesuaikan dengan lebar layar editor (disarankan maksimal 77 karakter). Gunakan potongan komentar kode dibawah ini sebagai indikator lebar layar editor maksimum. 
 
 ```scala
-// -----[                                                            ]-----#
 // BATAS MAKSMIMUM LAYAR EDITOR -------------------------------------------#
-// ------------------------------------------------------------------------#
 ```
 
 ## ↩️ Pemisahan Baris {#sec-format-line-break}
@@ -516,9 +530,9 @@ SQUARE_DYNAMIC_ARRAY = LAMBDA(array,
 
 Berbeda dengan fungsi scalar, fungsi dynamic array di atas dapat menghitung kuadrat dari setiap angka dalam array sekaligus, karena operasi kuadrat diterapkan pada seluruh array, bukan hanya pada elemen individual. Ini adalah contoh penggunaan vektorisasi dalam rumus array. Secara umum, menggunakan fungsi dynamic array dan memanfaatkan vektorisasi dalam rumus array dapat meningkatkan kinerja dan efisiensi pengolahan data Anda di Excel.
 
-## 🚫 Menghindari referensi lingkaran atau dependensi yang tidak perlu {#sec-avoiding-circular-references}
+## 🚫 Menghindari fungsi rekursif atau dependensi yang tidak perlu {#sec-avoiding-recursive-references}
 
-Referensi lingkaran atau dependensi yang tidak perlu dapat menyebabkan fungsi berjalan lebih lambat dan mengakibatkan kesalahan. Pastikan untuk menghindari ini ketika merancang fungsi Anda. Akan tetapi, jika ingin melakukan _looping_ setiap elemen/baris/kolom di suatu array, bisa memanfaatkan fungsi recursive. Hanya saja, fungsi rekursif ini akan sulit dibaca dibandingkan fungsi LAMBDA yang kompleks. Beberapa kasus dapat memanfaatkan fungsi rekursif, akan tetapi lebih baik untuk menjauhi fungsi yang bersifat referensi lingkaran atau rekursif. 
+Fungsi rekursif atau dependensi yang tidak perlu dapat menyebabkan fungsi berjalan lebih lambat dan mengakibatkan kesalahan. Pastikan untuk menghindari ini ketika merancang fungsi Anda. Akan tetapi, jika ingin melakukan _looping_ setiap elemen/baris/kolom di suatu array, bisa memanfaatkan fungsi recursive. Hanya saja, fungsi rekursif ini akan sulit dibaca dibandingkan fungsi LAMBDA yang kompleks. Beberapa kasus dapat memanfaatkan fungsi rekursif, akan tetapi lebih baik untuk menjauhi fungsi yang bersifat rekursif. 
 
 # 🤝 Kolaborasi dan Pemeliharaan {#sec-collaboration-maintenance}
 
@@ -527,6 +541,20 @@ Kolaborasi dan pemeliharaan adalah bagian penting dari siklus hidup pengembangan
 ## 🔄 Berbagi fungsi LAMBDA dengan rekan kerja {#sec-sharing-lambda-functions}
 
 Untuk berbagi fungsi LAMBDA dengan rekan kerja, Anda dapat menggunakan fasilitas dalam Microsoft Excel seperti *sharing* dan *co-authoring*. Anda juga dapat menyimpan fungsi dalam workbook yang dapat diakses oleh semua pengguna yang berkolaborasi. Workbook ini kemudian dapat disimpan di tempat yang aman dan mudah diakses seperti SharePoint atau OneDrive.
+
+Rekomendasi untuk membagikan fungsi LAMBDA yaitu dengan menggunakan GitHub Gist. GitHub Gist adalah layanan berbagi potongan kode dan catatan yang disediakan oleh GitHub. Ini memungkinkan pengguna untuk menyimpan, berbagi, dan berkolaborasi pada potongan kode secara mudah. Import fungsi LAMBDA dari GitHub Gist juga sudah [di dukung dengan AFE](install.qmd#sec-import-afe). Paket feidlambda menggunakan GitHub Gist untuk mendistribusikan dan menyebarkan fungsi LAMBDA-nya. 
+
+Jika fungsi LAMBDA berupa fungsi LAMBDA sederhana dapat langsung menyalinkan formula LAMBDA-nya. Dengan format seperti berikut:
+
+```scala
+=LAMBDA(x, y, z, x + y + z)
+```
+
+Jika rekannya menggunakan AFE, bisa juga langsung mengambil dari editor AFE. Sehingga formatnya sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z, x + y + z);
+```
 
 ## 📈 Meningkatkan fungsi secara kontinu {#sec-improving-functions-continuously}
 
