@@ -3,7 +3,11 @@ ROTATE_VECTOR = LAMBDA(vector, num_rotation, [as_column_vector],
     LET(
         vector, TOCOL(vector),
         rotated_array, IFS(
-            OR(num_rotation = 0, num_rotation >= ROWS(vector), num_rotation <= -ROWS(vector)),
+            OR(
+                num_rotation = 0,
+                num_rotation >= ROWS(vector),
+                num_rotation <= -ROWS(vector)
+            ),
             vector,
             num_rotation > 0,
             VSTACK(DROP(vector, num_rotation), TAKE(vector, num_rotation)),

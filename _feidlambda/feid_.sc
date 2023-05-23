@@ -1,10 +1,48 @@
 /*
-feidlambda v0.3.1 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
-OFFICIAL GIST (feidlambda v0.3.x): https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
-REPOSITORY: https://github.com/fiakoenjiniring/feidlambda
-AUTHOR: @taruma
-TESTED: Microsoft Excel v2211
+feidlambda v0.4.0 - LOGIC / UTILITIES FUNCTIONS BY FIAKO ENGINEERING
+OFFICIAL GIST (feidlambda v0.4.x): 
+    https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
+REPOSITORY: 
+    https://github.com/fiakoenjiniring/feidlambda
+CONTRIBUTOR: @taruma, @iingLK
+TESTED: Microsoft Excel 365 v2304
 */
+
+// BATAS MAKSMIMUM LAYAR EDITOR -------------------------------------------#
+
+/* 
+---- APPLY ----
+*/
+
+// NONE --> APPLY_COLUMN
+APPLY_COLUMN = LAMBDA(array, index_vector, LAMBDA_FUNCTION,
+    LET(
+        index_vector, SORT(index_vector),
+        selected_array, CHOOSECOLS(array, index_vector),
+        applied_array, LAMBDA_FUNCTION(selected_array),
+        sequence_vector, SEQUENCE(COLUMNS(array)),
+        logical_vector, BYROW(
+            sequence_vector,
+            LAMBDA(row, OR(row = index_vector))
+        ),
+        scan_vector, SCAN(
+            0,
+            logical_vector,
+            LAMBDA(acc, curr, IF(curr, acc + 1, acc))
+        ),
+        position_vector, scan_vector + COLUMNS(array),
+        all_array, HSTACK(array, applied_array),
+        selected_vector, MAP(
+            logical_vector,
+            sequence_vector,
+            position_vector,
+            LAMBDA(logical_el, seq_el, pos_el,
+                IF(logical_el, pos_el, seq_el)
+            )
+        ),
+        CHOOSECOLS(all_array, selected_vector)
+    )
+);
 
 /*
 ---- FILTER ----
@@ -29,7 +67,10 @@ FILTER_DROP_ROWS = LAMBDA(array, row_index,
 FILTER_DROP_COLUMNS = LAMBDA(array, column_index,
     LET(
         column_index, TOROW(column_index),
-        column_index_clean, FILTER(column_index, NOT(ISBLANK(column_index))),
+        column_index_clean, FILTER(
+            column_index,
+            NOT(ISBLANK(column_index))
+        ),
         ncols, COLUMNS(array),
         col_sequence, SEQUENCE(1, ncols),
         selected_col, BYCOL(
@@ -68,7 +109,11 @@ FILTER_FUNC_COLUMN = LAMBDA(
         func_value, function(selected_vector),
         selected_logical, selected_vector = func_value,
         array_filter, FILTER(array, selected_logical),
-        array_func, IF(take_first_only, TAKE(array_filter, 1), array_filter),
+        array_func, IF(
+            take_first_only,
+            TAKE(array_filter, 1),
+            array_filter
+        ),
         label, MAKEARRAY(
             ROWS(array_func),
             1,
@@ -215,6 +260,72 @@ GET_INDEX_2D = LAMBDA(lookup_value, array, [return_as_order],
         lookup_table, HSTACK(index_flatten, rows_flatten, columns_flatten),
         lookup_result, FILTER(lookup_table, array_flatten = lookup_value),
         IF(return_as_order, CHOOSECOLS(lookup_result, 1), lookup_result)
+    )
+);
+
+// _RECURSIVE_LOOKUP --> _RECURSIVE_LOOKUP
+_RECURSIVE_LOOKUP = LAMBDA(
+    ntry,
+    lookup_value,
+    lookup_vector,
+    return_array,
+    [if_not_found],
+    [match_mode],
+    [search_mode],
+    LET(
+        lookup_value, TOCOL(lookup_value),
+        LET(
+            selected_value, VALUE(
+                ARRAYTOTEXT(CHOOSEROWS(lookup_value, ntry))
+            ),
+            result, XLOOKUP(
+                selected_value,
+                lookup_vector,
+                return_array,
+                if_not_found,
+                match_mode,
+                search_mode
+            ),
+            IF(
+                ntry = 1,
+                result,
+                VSTACK(
+                    _RECURSIVE_LOOKUP(
+                        ntry - 1,
+                        lookup_value,
+                        lookup_vector,
+                        return_array,
+                        if_not_found,
+                        match_mode,
+                        search_mode
+                    ),
+                    result
+                )
+            )
+        )
+    )
+);
+
+// GET_RECURSIVE_LOOKUP --> GET_XLOOKUP
+GET_XLOOKUP = LAMBDA(
+    lookup_value,
+    lookup_vector,
+    return_array,
+    [if_not_found],
+    [match_mode],
+    [search_mode],
+    LET(
+        lookup_value, TOCOL(lookup_value),
+        ntry, ROWS(lookup_value),
+        _RECURSIVE_LOOKUP(
+            ntry,
+            lookup_value,
+            lookup_vector,
+            return_array,
+            if_not_found,
+            match_mode,
+            search_mode
+        )
     )
 );
 
