@@ -1,0 +1,582 @@
+---
+title: |
+  FIAKO LAMBDA Style Guide v1.0
+subtitle: |
+  Panduan penulisan fungsi LAMBDA di Microsoft Excel yang digunakan oleh FIAKO Engineering. 
+author: Taruma Sakti Megariansyah
+abstract: |
+  Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel. 
+abstract-title: Abstrak
+date: 2023-05-26
+# date-modified: 2023-01-06
+lang: id
+
+toc: true
+toc-title: Daftar Isi
+toc-expand: 3
+toc-location: right
+number-sections: false
+link-external-newwindow: true
+layout: article
+sidebar: false
+fig-responsive: true
+css: lambda-style.css
+---
+
+::: {.callout-note}
+
+Panduan ini dibuat dengan bantuan chatGPT (GPT-4) dengan penyesuaian oleh penulis. 
+
+:::
+
+# 📖 FIAKO LAMBDA Style Guide (FSG-LAMBDA) {#sec-introduction}
+
+**FIAKO LAMBDA Style Guide** (FLSG / FSG-LAMBDA) adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
+
+Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:
+
+- **Fleksibilitas**: Fungsi LAMBDA memungkinkan pengguna untuk membuat fungsi kustom yang dapat diadaptasi sesuai kebutuhan spesifik dan digunakan berulang kali dalam berbagai situasi.
+- **Pengurangan kompleksitas**: Dengan menggunakan fungsi LAMBDA, pengguna dapat menggabungkan beberapa fungsi yang ada menjadi satu fungsi yang lebih sederhana, sehingga memudahkan pembacaan dan pemahaman fungsi yang digunakan di dalam Microsoft Excel.
+- **Pemeliharaan yang lebih mudah**: Fungsi LAMBDA yang ditulis dengan baik memudahkan pemeliharaan dan pengembangan lebih lanjut, karena struktur yang jelas dan konvensi penamaan yang konsisten.
+- **Penggunaan berulang**: Fungsi LAMBDA yang dibuat dapat digunakan kembali di seluruh workbook atau bahkan di workbook lain, yang meningkatkan efisiensi dalam mengembangkan solusi Excel yang canggih.
+- **Kolaborasi dan berbagi**: Memudahkan pengguna untuk berbagi fungsi kustom dengan rekan kerja atau komunitas pengguna Excel, sehingga mengurangi pengulangaan pekerjaan yang sama dan meningkatkan kolaborasi. 
+
+Panduan ini disusun untuk membantu pengguna menguasai berbagai aspek penulisan fungsi LAMBDA yang efektif.
+
+# 📚 Prasyarat {#sec-requirements}
+
+Sebelum mulai mengembangkan fungsi LAMBDA dan menggunakan panduan ini, terdapat yang harus dipersiapkan yaitu dari perangkat yang digunakan dan pengetahuan yang dibutuhkan.
+
+## 💻 Perangkat {#sec-rec-device}
+
+Dalam mengembangkan fungsi LAMBDA dan mengikuti panduan ini berikut daftar perangkat dan _add-ins_ yang digunakan dalam pengembangan LAMBDA:
+
+- **Microsoft Excel 365**: Pastikan menggunakan **Microsoft Excel 365**, karena saat ini, fungsi LAMBDA hanya tersedia di Microsoft Excel 365.
+- **Excel Labs** _add-ins_: Fitur _Advanced Formula Environment_ yang tersedia di _add-ins_ ini direkomendasikan sebagai standar editor untuk pengembangan fungsi LAMBDA. Untuk panduan instalasi, silakan lihat [panduan instalasi](install.qmd).
+
+Fungsi LAMBDA dan beberapa fungsi _dynamic array_ terbaru lainnya juga tersedia di Microsoft Excel for Web. Oleh karena itu, jika Anda belum berlangganan, Anda dapat bereksperimen dengan fungsi LAMBDA melalui Microsoft Excel for Web.
+
+## 🧠 Pengetahuan {#sec-rec-knowledge}
+
+Fungsi LAMBDA dapat diterapkan oleh pengguna Microsoft Excel dengan berbagai tingkat keahlian, mulai dari pemula hingga mahir. Tingkat pengetahuan yang dibutuhkan dalam pengembangan fungsi LAMBDA di Microsoft Excel tergantung pada kompleksitas fungsi yang akan dikembangkan. Berikut ini adalah pengetahuan atau pemahaman yang diperlukan untuk memahami fungsi LAMBDA dan menerapkan FIAKO LAMBDA Style Guide:
+
+- **Pemahaman dasar tentang Microsoft Excel**: Pastikan memahami cara menggunakan sel, baris, kolom, serta mengedit rumus. Anda bisa belajar lebih lanjut di [Excel untuk Pemula](https://support.microsoft.com/id-id/office/excel-for-beginners-9bc05390-e94c-46af-a5b3-d7c22f6990bb).
+- **Dasar-dasar bahasa pemrograman**: Kuasai konsep dasar pemrograman seperti variabel, fungsi, dan logika bersyarat. Pelajari lebih lanjut di [Pemrograman Dasar](https://www.codecademy.com/learn/learn-how-to-code).
+- **Fungsi Excel yang umum**: Kembangkan kemampuan untuk menggunakan dan memahami fungsi Excel seperti SUM, AVERAGE, VLOOKUP, IF, AND, OR, INDEX, dan MATCH. Lihat [Fungsi Excel yang Harus Diketahui](https://exceljet.net/articles/101-excel-functions).
+- **Dasar-dasar penanganan kesalahan dalam Excel**: Pahami cara menggunakan fungsi IFERROR dan IFNA untuk mengatasi kesalahan. Pelajari lebih lanjut di [Penanganan Kesalahan di Excel](https://www.excel-easy.com/examples/iferror.html).
+- **Fungsi LAMBDA**: Mengerti tujuan dan cara kerja fungsi LAMBDA dalam menciptakan fungsi kustom di Microsoft Excel. Baca lebih lanjut di [Pengantar Fungsi LAMBDA](https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67).
+- **Pengetahuan tentang Dynamic Array di Microsoft Excel**: Kuasai konsep dan cara kerja fitur Dynamic Array dalam mengolah data berbentuk array. Informasi lebih lanjut dapat ditemukan di [Perilaku _Dynamic Arrays_ dan _spilled array_](https://support.microsoft.com/en-us/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+
+Dengan memenuhi prasyarat di atas, diharapkan untuk lebih siap untuk menggunakan fungsi LAMBDA dan memahami panduan ini secara efisien dan efektif. Pastikan untuk menggunakan alat yang sesuai dan menguasai pengetahuan yang dibutuhkan guna mengoptimalkan proses pengembangan fungsi LAMBDA dan penerapan panduan ini.
+
+## 🧩 _Advanced Formula Environment_ (_Add-ins_ **Excel Lab**) {#sec-rec-adv-formula-env}
+
+Dalam panduan ini, disarankan untuk menggunakan _Advanced Formula Environment_ (AFE) dari Excel Labs sebagai editor saat mengembangkan fungsi LAMBDA. AFE sangat membantu pengguna dalam mengembangkan dan mengelola fungsi LAMBDA. Berikut beberapa fitur unggulan AFE^[Berdasarkan informasi yang tertera di [halaman GitHub AFE](https://github.com/microsoft/advanced-formula-environment)]:
+
+- Melihat, memformat, dan mengedit rumus yang telah didefinisikan dalam kisi dengan bilah rumus yang lebih canggih.
+- Mendefinisikan dan mengedit fungsi yang diberi nama, rentang, dan rumus yang dapat disinkronkan dengan Manajer Nama.
+- Membuat koleksi fungsi yang diberi nama, disebut modul, yang didefinisikan sebagai kode dan disimpan sebagai bagian dari Buku Kerja.
+- Mengimpor modul LAMBDA secara cepat langsung dari GitHub Gist.
+
+AFE juga mendukung fitur-fitur tambahan seperti _autocomplete_, _refactoring_, _formatting_, dan lainnya, yang akan memudahkan Anda dalam proses pengembangan fungsi LAMBDA. Pastikan Anda menggunakan AFE untuk meningkatkan efisiensi dan kenyamanan saat mengikuti panduan ini.
+
+Dalam menggunakan fungsi LAMBDA, langkah yang umum digunakan adalah menuliskan fungsi LAMBDA pada Formula Name Manager. Akan tetapi, untuk panduan ini pengembangan fungsi LAMBDA akan menggunakan AFE. Semenjak AFE v1.1+, fungsi LAMBDA disimpan dalam dokumen excel dan muncul di Formula Name Manager ketika dilakukan sinkronisasi. Hanya saja, sifatnya satu arah, yaitu fungsi LAMBDA yang ditulis di AFE akan tersimpan juga pada Formula Name Manager, tapi tidak sebaliknya. Jadi fungsi LAMBDA yang dikembangkan secara manual di Formula Name Manager tidak akan muncul di AFE. 
+
+Pada umumnya pada tutorial formula lambda ditulis sebagai berikut:
+
+```scala
+=LAMBDA(x, y, z, x+y+z)
+```
+
+kemudian formula tersebut disimpan dalam Formula Name Manager dengan namanya, misalkan fungsi `JUMLAH`. Akan tetapi, dengan menggunakan AFE sebagai editor, dalam panduan ini penulisannya sebagai berikut:
+
+```scala
+JUMLAH = =LAMBDA(x, y, z, x+y+z);
+```
+
+Sehingga, kode yang terlampir dalam panduan ini adalah potongan kode yang cocok disalin ke editor AFE (Excel Labs). 
+
+# 📐 Format dan Organisasi {#sec-format}
+
+Mengatur kode dengan baik sangat penting untuk memastikan mudah dibaca dan dipahami. Untuk melakukan formatting, dapat dilakukan secara otomatis di AFE dengan menggunakan perintah `Format` (`Ctrl + Shift + F`). Akan tetapi berikut beberapa aspek yang dapat diperhatikan dalam Format dan Organisasi pada fungsi LAMBDA jika tidak menggunakan _autoformatting_:
+
+## ➡️ Indentasi {#sec-format-indentation}
+
+Menggunakan indentasi yang konsisten akan membantu meningkatkan keterbacaan kode. Gunakan 4 spasi untuk indentasi. Indentasi otomatis dengan AFE akan menyesuaikan dengan lebar layar editor (disarankan maksimal 77 karakter). Gunakan potongan komentar kode dibawah ini sebagai indikator lebar layar editor maksimum. 
+
+```scala
+// BATAS MAKSMIMUM LAYAR EDITOR -------------------------------------------#
+```
+
+## ↩️ Pemisahan Baris {#sec-format-line-break}
+
+Menggunakan pemisahan baris yang konsisten akan membantu memisahkan bagian kode yang berbeda dan memudahkan pemahaman.
+
+Contoh indentasi dan pemisahan baris yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, // variabel input
+    IF( /* operasi dimulai di baris baru */
+        x > y,
+        "X lebih besar",
+        IF(x < y, "Y lebih besar", "X dan Y sama")
+    )
+);
+```
+
+## 📏 Spasi untuk Kejelasan {#sec-format-spacing}
+
+Menggunakan spasi secara konsisten dalam kode LAMBDA akan membantu meningkatkan keterbacaan dan memudahkan pemahaman struktur kode. Pertimbangkan untuk menambahkan spasi di sekitar operator, seperti tanda kurung, koma, dan operator matematika:
+
+Contoh penggunaan spasi yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(a, b, c, IF(a > b, a, IF(b > c, b, c)));
+```
+
+## 💬 Komentar dan Catatan {#sec-format-comments}
+
+Menambahkan komentar atau catatan di sekitar kode LAMBDA dapat membantu menjelaskan logika atau maksud di balik kode tersebut. Meskipun Excel tidak mendukung komentar langsung dalam rumus, Anda dapat menggunakan komentar pada editor AFE dengan `// komentar` (satu baris) atau `/* komentar */` (lebih dari satu baris).
+
+## ⏭️ Urutan Operasi {#sec-format-operation-order}
+
+Urutan operasi sangat penting untuk memastikan hasil yang benar dari kode LAMBDA. Oleh karena itu, selalu pastikan urutan operasi dalam kode Anda jelas dan mudah dipahami. Jika perlu, gunakan tanda kurung untuk mengklarifikasi prioritas operasi.
+
+Contoh urutan operasi yang baik:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, (x + y) * (x - y));
+```
+
+Dengan memperhatikan aspek-aspek ini dalam bagian Format dan Organisasi, panduan gaya fungsi LAMBDA akan membantu pengguna menciptakan kode yang lebih rapi, konsisten, dan mudah dipahami. Selalu pastikan untuk mengikuti panduan ini dengan konsisten sepanjang kode Anda agar hasilnya optimal.
+
+# 🏷️ Konvensi Penamaan {#sec-naming-convention}
+
+Saat mengembangkan fungsi LAMBDA di Microsoft Excel, penting untuk mengikuti konvensi penamaan yang konsisten. Konvensi penamaan yang baik membantu meningkatkan keterbacaan dan pemahaman kode oleh pengembang lain, termasuk diri sendiri di masa depan. Dengan mengikuti konvensi penamaan yang baik, kode akan lebih mudah dipelajari, dipahami, dan dipelihara oleh orang lain. Sebagai catatan, nama variabel ataupun fungsi di Excel bersifat **_case-insensitive_**, yang artinya huruf besar dan kecil merujuk ke hal yang sama. Berikut adalah beberapa pedoman untuk konvensi penamaan dalam fungsi LAMBDA di Excel. 
+
+## 🆔 Penamaan Variabel {#sec-naming-variables}
+
+1. Gunakan huruf kecil: Saat menamai variabel dalam fungsi LAMBDA, gunakan huruf kecil untuk mengindikasikan bahwa itu adalah variabel. Terlepas sifat _case-insenstive_, disarankan untuk membedakan antara nama variabel (huruf kecil) dan nama fungsi (huruf besar) Contoh:
+
+   ```scala
+   MY_FUNCTION = LAMBDA(x, y, x+y)
+   ```
+
+   Di sini, `x` dan `y` adalah nama variabel yang ditulis dalam huruf kecil.
+
+2. Gunakan penamaan yang deskriptif: Pilih nama variabel yang mendeskripsikan data yang diwakili oleh variabel tersebut. Ini membantu meningkatkan pemahaman kode. Contoh:
+
+   ```scala
+   MY_FUNCTION = LAMBDA(item_count, unit_price, item_count * unit_price)
+   ```
+
+   Dalam contoh ini, `item_count` dan `unit_price` adalah nama variabel yang menjelaskan data yang digunakan dalam perhitungan.
+
+3. Hindari menggunakan nama variabel yang diakhiri angka: Hal tersebut untuk menghindari keserupaan dengan nama sel (Tiga karakter yang diikuti angka seperti `C1`, `XY35`, `UDS3213`). Untuk menghindari gunakan nama deskriptif atau menambahkan garis bawah (_underscore_ `_`) sebelum angka. Contoh:
+
+   ```scala
+   MY_FUNCTION = LAMBDA(x_1, vec_23, x_1 * vec_23)
+   ```
+
+   `x_1` dan `vec_23` adalah nama variabel yang tidak bentrok dengan nama sel (`X1`, `VEC23`) karena diberi tambahan garis bawah (`x_1`, `vec_23`).
+
+## 📋 Penamaan Fungsi {#sec-naming-functions}
+
+1. Gunakan huruf besar: Saat menamai fungsi LAMBDA, gunakan huruf besar untuk memberikan indikator yang berbeda antara fungsi dan variabel. Contoh:
+
+   ```scala
+   MY_FUNCTION = LAMBDA(x, y, MAX(x, y))
+   ```
+
+   Di sini, `MY_FUNCTION`, `LAMBDA`, `MAX` adalah nama fungsi, sedangkan `x` dan `y` adalah parameter yang diterima oleh fungsi LAMBDA yang kita definisikan atau dapat disebut variabel.
+
+2. Gunakan penamaan fungsi yang deskriptif: Pilih nama yang mencerminkan tujuan atau operasi yang dilakukan oleh fungsi tersebut. Nama yang jelas dan deskriptif membantu memahami fungsi saat dilihat atau digunakan di tempat lain. Contoh:
+
+   ```scala
+   TOTAL_PRICE = LAMBDA(item_count, unit_price, item_count * unit_price)
+   ```
+
+   Dalam contoh ini, fungsi `TOTAL_PRICE` menggambarkan total harga dari perhitungan perkalian `item_count` dengan `unit_price`.
+
+3. Gunakan pemisahan kata dengan garis bawah: Jika nama fungsi terdiri dari beberapa kata, gunakan garis bawah sebagai pemisah di awal setiap kata untuk memisahkannya. Contoh:
+
+   ```scala
+   CALCULATE_TOTAL_PRICE = LAMBDA(item_count, unit_price, item_count * unit_price)
+   ```
+
+   Di sini, `CALCULATE_TOTAL_PRICE` adalah nama fungsi yang terdiri dari beberapa kata, dan mengikuti panduan sebelumnya, semuanya menggunakan huruf besar.
+
+# 👀 Keterbacaan dan Efisiensi {#sec-readability-efficiency}
+
+Keterbacaan dan efisiensi adalah dua faktor penting dalam penulisan kode yang baik, termasuk saat menggunakan fungsi LAMBDA di Excel. Keterbacaan merujuk pada sejauh mana kode dapat dipahami dengan mudah oleh orang lain atau oleh penulis sendiri di masa mendatang. Ini melibatkan struktur, penamaan, dan organisasi kode. Sementara itu, efisiensi merujuk pada sejauh mana kode melakukan tugas dengan cepat dan efektif, tanpa penggunaan sumber daya yang berlebihan atau tidak perlu. Dalam konteks fungsi LAMBDA, ini dapat mencakup pemilihan fungsi yang tepat, penggunaan variabel, dan struktur kode. Dalam bagian ini, akan dibahas beberapa prinsip dan teknik untuk meningkatkan keterbacaan dan efisiensi saat menggunakan fungsi LAMBDA.
+
+## 🔗 Rantai Fungsi {#sec-function-chaining}
+
+Rantai fungsi dalam LAMBDA memungkinkan penulisan kode yang singkat dan ringkas. Namun, perlu diingat bahwa terlalu banyak fungsi yang dirantai dapat membingungkan. Sebaiknya batasi jumlah fungsi yang dirantai dan pisahkan dengan baris baru jika perlu.
+
+Contoh berikut menggambarkan rantai fungsi dalam LAMBDA:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z, SUM(PRODUCT(x, y), z));
+```
+
+Namun, untuk meningkatkan keterbacaan, bisa dipisahkan menjadi:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z,
+    LET(
+        calcProduct, PRODUCT(x, y),
+        SUM(calcProduct, z)
+    )
+)
+```
+
+## 🛠️ Fungsi Pembantu {#sec-helper-functions}
+
+Fungsi pembantu adalah cara yang baik untuk memisahkan logika dan membuat kode lebih mudah dibaca. Fungsi pembantu ini bisa melakukan tugas-tugas kecil yang membuat kode utama menjadi lebih bersih dan mudah dipahami.
+
+Berikut adalah contoh fungsi pembantu dalam LAMBDA:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z,
+    LET(
+        calcProduct, PRODUCT(x, y),
+        SUM(calcProduct, z)
+    )
+)
+```
+
+## 🟢 Tanda Kurung untuk Kejelasan {#sec-parentheses-for-clarity}
+
+Tanda kurung dapat meningkatkan keterbacaan dengan memisahkan bagian-bagian fungsi. Namun, hindari penggunaan tanda kurung yang berlebihan karena dapat membuat kode lebih sulit dipahami.
+
+Contoh berikut menggambarkan penggunaan tanda kurung yang efektif dalam LAMBDA:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z, SUM((PRODUCT(x, y)), z));
+```
+
+## 🧮 Menjaga fungsi tetap sederhana {#sec-keeping-functions-simple}
+
+Menggunakan fungsi LAMBDA yang sederhana dan mudah dipahami adalah kunci untuk keterbacaan dan efisiensi. Sebaiknya batasi jumlah fungsi dalam satu baris dan pisahkan tugas-tugas kecil ke dalam fungsi pembantu jika memungkinkan.
+
+Berikut adalah contoh bagaimana fungsi LAMBDA dapat disederhanakan:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z,
+    LET(
+        calcProduct, PRODUCT(x, y),
+        result, SUM(calcProduct, z),
+        result
+    )
+);
+```
+
+## ✏️ Penamaan Variabel {#sec-variable-naming}
+
+Penamaan variabel yang jelas dan deskriptif dapat membantu meningkatkan keterbacaan kode. Variabel harus diberi nama yang mencerminkan tujuan atau nilai yang mereka simpan. Menggunakan singkatan atau kode yang tidak jelas dapat membuat kode lebih sulit dipahami.
+
+Contoh berikut menunjukkan penggunaan penamaan variabel yang baik dalam LAMBDA:
+
+```scala
+MY_FUNCTION = LAMBDA(length, width, height,
+    LET(
+        volume, PRODUCT(length, width, height),
+        volume
+    )
+);
+```
+
+Dalam contoh ini, variabel `volume` jelas menunjukkan bahwa ia menyimpan nilai volume dari suatu objek.
+
+## 💭 Penggunaan Komentar {#sec-comment-usage}
+
+Penggunaan komentar dalam kode dapat membantu meningkatkan keterbacaan, terutama jika kode tersebut kompleks atau membingungkan. Namun, perlu diingat bahwa komentar harus digunakan dengan bijaksana. Komentar yang berlebihan atau tidak jelas bisa justru membuat kode lebih sulit dipahami.
+
+Penggunaan komentar dapat menggunakan `//` (untuk satu baris) atau `/* KOMENTAR */` (untuk satu blok). Disarankan untuk menghindari komentar di dalam fungsi untuk membuat mudah dibaca. Deskripsi cara kerja atau instruksi lebih lanjut mengenai fungsi bisa ditulis dibagian dokumentasinya. 
+
+Contoh penggunaan komentar:
+
+```scala
+MY_FUNCTION = LAMBDA(length, width, height,
+    LET( // Digunakan LET untuk memudahkan pembacaan
+        volume, PRODUCT(length, width, height), 
+        volume
+    )
+);
+```
+
+# 📜 Penanganan Argumen {#sec-argument-handling}
+
+Penanganan argumen merupakan aspek yang sangat krusial dalam penulisan dan penggunaan fungsi LAMBDA di Microsoft Excel. Memahami bagaimana argumen didefinisikan, dipanggil, dan divalidasi tidak hanya mempengaruhi akurasi dan efisiensi fungsi, tetapi juga dapat mencegah berbagai kesalahan yang dapat terjadi. Selain itu, penanganan argumen yang baik dapat meningkatkan keterbacaan dan pemahaman fungsi, membuatnya lebih mudah digunakan dan dikelola. Oleh karena itu, membahas penanganan argumen dalam panduan gaya penulisan fungsi LAMBDA sangat penting untuk membantu pembaca dalam menulis fungsi yang lebih efektif dan efisien.
+
+## 🔀 Urutan argumen yang konsisten {#sec-argument-order}
+
+Argumen fungsi LAMBDA di Microsoft Excel harus disusun dengan hati-hati. Urutan argumen berperan penting dalam menentukan hasil fungsi. Setiap argumen dalam fungsi LAMBDA ditulis secara berurutan, dipisahkan oleh tanda koma.
+
+Sebagai contoh, jika fungsi LAMBDA memiliki tiga argumen: A, B, dan C, maka urutan penulisannya dalam fungsi adalah sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(A, B, C, ...)
+```
+
+Urutan argumen ini nantinya akan mempengaruhi cara fungsi tersebut dipanggil. Jika fungsi `MY_FUNCTION` dipanggil dengan tiga nilai, misalnya 1, 2, dan 3, maka nilai-nilai tersebut akan diberikan kepada argumen sesuai dengan urutannya. Dalam hal ini, A akan mendapatkan nilai 1, B mendapatkan nilai 2, dan C mendapatkan nilai 3.
+
+Fungsi yang bersifat memanipulasi input maka argumen pertamanya merupakan input tersebut. Contoh, fungsi `APPLY_COLUMN` menerapkan fungsi LAMBDA pada kolom tertentu, maka urutan argumen dimulai dari inputnya yaitu _array_, indeks kolom, dan fungsi LAMBDA. Sehingga penulisan argumen fungsi sebagai berikut:
+
+```scala
+APPLY_COLUMN = LAMBDA(array, column_index, LAMBDA_FUNCTION, ...)
+```
+
+Jika fungsi LAMBDA yang dibuat menyerupai fungsi yang tersedia di Excel, gunakan urutan yang menyerupai fungsi tersebut agar bisa merujuk fungsi utama. Contoh: fungsi `XLOOKUP` memiliki urutan yang dimulai dari `lookup_value`, `lookup_vector`, `return_array`, dst. Maka fungsi buatan `XLOOKUP_EXTENDER` memiliki urutan yang serupa juga dengan fungsi `XLOOKUP`.
+
+```scala
+XLOOKUP_EXTENDER = LAMBDA(lookup_value, lookup_vector, return_array, ...)
+```
+
+## ➕ Argumen Opsional {#sec-optional-arguments}
+
+Argumen opsional adalah argumen yang tidak harus disertakan saat memanggil fungsi. Argumen ini biasanya ditandai dengan tanda kurung siku (`[]`). Contoh penulisan argumen opsional dalam fungsi LAMBDA adalah sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(A, [B],
+    LET(
+        B, IF(ISOMITTED(B), 2, B), 
+        A * B
+    )
+);
+```
+
+Dalam contoh ini, `MY_FUNCTION` adalah fungsi yang menerima dua argumen: A dan B. Namun, B adalah argumen opsional. Jika B tidak diberikan saat memanggil fungsi, maka B akan dianggap sebagai 2 (lihat fungsi `IF(ISOMITTED(B), 2, B)`). Gunakan fungsi `ISOMITTED()` untuk pengaturan nilai argumen opsional. 
+
+Berikut adalah contoh pemanggilan fungsi `MY_FUNCTION` dengan dan tanpa argumen opsional:
+
+```scala
+MY_FUNCTION(2, 3) // Hasilnya adalah 6, karena 2 * 3 = 6
+MY_FUNCTION(2) // Hasilnya adalah 4, karena B dianggap sebagai 2, sehingga 2 * 2 = 2
+```
+
+Dalam contoh ini, perhatikan bahwa pemanggilan fungsi tanpa menyertakan argumen opsional tidak menyebabkan kesalahan. Argumen opsional memberikan fleksibilitas saat memanggil fungsi, tetapi harus digunakan dengan hati-hati untuk menghindari kebingungan.
+
+# ❗ Penanganan ERROR {#sec-error-handling}
+
+Penanganan ERROR bisa dikembangkan dalam suatu fungsi LAMBDA menggunakan `IFERROR()` atau `IFNA()`, akan tetapi disarankan untuk menghindari penggunaan fungsi tersebut dengan membuat dokumentasi yang lengkap mengenai tipe argumen/variabel yang dapat diterima oleh fungsi LAMBDA. Penanganan ERROR hanya baik digunakan saat tahap pengembangan dan bukan saat tahap penyebaran (_deployment_). 
+
+# 📝 Dokumentasi {#sec-documentation}
+
+Dokumentasi adalah bagian krusial dalam setiap kode atau fungsi, termasuk fungsi LAMBDA di Excel. Dokumentasi tidak hanya membantu pengguna lain memahami apa yang dilakukan oleh kode dan bagaimana cara menggunakannya, tetapi juga membantu penulis kode tersebut dalam memahami dan mengingat detail dan logika di balik kode tersebut.
+
+## 📑 Membuat dokumen atau lembar khusus untuk deskripsi fungsi LAMBDA {#sec-documenting-lambda-functions}
+
+Setiap fungsi LAMBDA yang dibuat harus memiliki dokumentasi yang rinci dan mudah dipahami. Dokumentasi tersebut sebaiknya ditempatkan dalam dokumen atau lembar khusus yang mudah diakses dan ditemukan. Dokumentasi tersebut harus mencakup detail tentang fungsi tersebut, termasuk:
+
+- Nama fungsi dan versinya (jika ada)
+- Deskripsi singkat tentang apa yang dilakukan oleh fungsi tersebut
+- Daftar argumen yang diperlukan oleh fungsi dan deskripsi singkat tentang apa yang dilakukan oleh setiap argumen
+- Jenis input/argumen yang digunakan dalam fungsi
+- Contoh penggunaan fungsi dan hasil yang dihasilkan
+- Setiap perubahan yang telah dibuat pada fungsi dari versi sebelumnya
+
+## 📄 Kiat untuk membuat deskripsi yang jelas, singkat, dan informatif {#sec-tips-for-clear-descriptions}
+
+Berikut adalah beberapa kiat untuk membuat deskripsi fungsi LAMBDA yang jelas, singkat, dan informatif:
+
+- **Gunakan bahasa yang mudah dipahami:** Hindari jargon dan istilah teknis yang rumit kecuali jika perlu. Tujuannya adalah untuk membuat dokumentasi yang dapat dipahami oleh semua orang, termasuk mereka yang tidak memiliki pengetahuan teknis yang mendalam.
+- **Jelaskan apa yang dilakukan oleh fungsi:** Ini adalah bagian yang paling penting dari dokumentasi. Pengguna harus dapat memahami apa yang dilakukan oleh fungsi hanya dengan membaca deskripsi singkatnya.
+- **Jelaskan argumen fungsi:** Deskripsikan setiap argumen dan jelaskan perannya dalam fungsi. Jika argumen memiliki nilai default, sebutkan juga nilai tersebut.
+- **Berikan contoh penggunaan:** Contoh penggunaan yang konkret dapat membantu pengguna memahami cara kerja fungsi dan bagaimana cara menggunakannya.
+- **Jaga dokumentasi tetap up-to-date:** Setiap kali Anda membuat perubahan pada fungsi, pastikan untuk juga memperbarui dokumentasi.
+
+Berikut adalah contoh dokumentasi kode fungsi `SWAP_COLUMNS` di feidlambda v0.3 yang dapat digunakan untuk menukar posisi kolom  ke-`from_index` dengan kolom ke-`to_index`:
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: SWAP_COLUMNS(array, [from_index], [to_index])
+
+_Output_
+: _vector_ atau _array_
+:::
+
+---
+
+`array := [row vector | array]`
+: Data dapat berupa _array_ atau _row vector_. 
+
+`[from_index] := 1 :: [integer]`
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+
+`[to_index] := -1 :: [integer]`
+: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+
+:::::
+
+Contoh penggunaannya dapat berbentuk dalam gambar atau gif. Disarankan untuk menyediakan lembar kerja yang menguji fungsi tersebut. Ingatlah bahwa dokumentasi yang baik adalah investasi. Waktu yang dihabiskan untuk membuat dan merawat dokumentasi akan terbayar ketika orang lain (atau Anda sendiri di masa depan) perlu memahami atau menggunakan fungsi yang telah Anda buat.
+
+# 🚀 Kinerja dan Skalabilitas {#sec-performance-scalability}
+
+Mempertimbangkan kinerja dan skalabilitas sangat penting dalam membangun fungsi LAMBDA di Microsoft Excel. Berikut adalah beberapa strategi untuk memastikan fungsi Anda berjalan dengan efisiensi dan dapat menangani peningkatan ukuran data atau kompleksitas tugas.
+
+## ⏱️ Mengoptimalkan kinerja {#sec-optimizing-performance}
+
+Optimalisasi kinerja dapat dilakukan dengan menghindari pengulangan yang tidak perlu dan menggunakan fungsi bawaan Excel kapan pun mungkin. Misalnya, fungsi `SEQUENCE` dan `LET` bisa digunakan untuk mengurangi pengulangan dan meningkatkan kinerja.
+
+```scala
+// Menggunakan SEQUENCE dan LET untuk mengurangi pengulangan
+SUM_ODD_NUMBERS = LAMBDA(n,
+    LET(
+        sequence, SEQUENCE(n),
+        odd_sequence, IF(MOD(sequence, 2) = 1, sequence, 0),
+        SUM(odd_sequence)
+    )
+);
+```
+
+## 🔠 Menggunakan huruf besar dan huruf kecil yang konsisten {#sec-consistent-case-usage}
+
+Konsistensi penamaan variabel penting untuk memudahkan pembacaan kode. Ini tidak mempengaruhi kinerja, tetapi penting untuk pemeliharaan dan kolaborasi kode. Rekomendasi penulisan terkait ini antara lain:
+
+- Huruf besar digunakan untuk fungsi seperti `SEQUENCE()`, `LAMBDA()`.
+- Huruf kecil digunakan untuk variabel/nama argumen/parameter seperti `input_number`, `odd_sequence`.
+
+## 🧪 Menguji fungsi secara menyeluruh {#sec-thorough-function-testing}
+
+Pengujian fungsi secara menyeluruh penting untuk memastikan kinerja optimal dan menghindari kesalahan. Anda dapat melakukan ini dengan menguji fungsi Anda di berbagai skenario dan ukuran data.
+
+Misalnya, jika Anda memiliki fungsi `SUM_ODD_NUMBERS`, Anda dapat mengujinya dengan berbagai input, mulai dari 1 sampai 1.000.000, dan memeriksa apakah outputnya sesuai dengan yang diharapkan. 
+
+## 📈 Pertimbangkan skalabilitas {#sec-considering-scalability}
+
+Fungsi harus dirancang dengan pertimbangan bahwa ukuran data mungkin akan meningkat di masa mendatang. Misalnya, jika fungsi mengambil array sebagai argumen, pastikan bahwa ia dapat menangani array dengan jumlah elemen yang besar.
+
+```scala
+// Fungsi yang dirancang untuk menangani array dengan jumlah elemen yang besar
+IS_ALL_IN_VECTOR = LAMBDA(lookup_vector, array,
+    LET(
+        lookup_vector, TOCOL(lookup_vector),
+        MAP(array, LAMBDA(element, OR(BYROW(lookup_vector, LAMBDA(lookup, element = lookup)))))
+    )
+);
+```
+
+Oleh karena itu gunakan konsep pengembangan fungsi dengan vektorisasi. Vektorisasi mengacu pada teknik di mana operasi diterapkan pada seluruh array, bukan hanya pada elemen individual, yang dapat secara signifikan meningkatkan kinerja dan efisiensi. Excel mendukung vektorisasi melalui banyak fungsi bawaannya dan kemampuan untuk menerapkan operasi pada seluruh array dalam satu operasi.
+
+Sebagai contoh, berikut ini adalah perbandingan antara fungsi yang dirancang dengan vektorisasi dan tanpa vektorisasi. Kedua fungsi memiliki tujuan yang sama, yaitu menghitung kuadrat dari setiap angka dalam array.
+
+```scala
+// Tanpa vektorisasi
+SQUARE_EACH_NUMBER = LAMBDA(array,
+    LET(
+        nrows, ROWS(array),
+        ncols, COLUMNS(array),
+        row_sequence, SEQUENCE(nrows),
+        col_sequence, SEQUENCE(, ncols),
+        result, IFERROR(INDEX(array, row_sequence, col_sequence)^2, ""),
+        result
+    )
+);
+
+// Dengan vektorisasi
+SQUARE_EACH_NUMBER_VECTORIZED = LAMBDA(array,
+    array^2
+);
+```
+
+Dalam contoh ini, fungsi `SQUARE_EACH_NUMBER_VECTORIZED` akan jauh lebih cepat dan efisien dibandingkan dengan `SQUARE_EACH_NUMBER`, terutama saat bekerja dengan array yang berukuran besar.
+
+## 🎁 Memanfaatkan fungsi bawaan {#sec-utilizing-built-in-functions}
+
+Fungsi bawaan Excel biasanya lebih optimal dan efisien daripada fungsi yang dibuat secara kustom. Oleh karena itu, sebisa mungkin gunakan fungsi bawaan dalam implementasi fungsi LAMBDA Anda. Berikut adalah contoh fungsi untuk interpolasi linear antara dua titik. Satu fungsi tidak menggunakan fungsi bawaan dan satu lagi menggunakan fungsi `FORECAST.LINEAR()` di Excel.
+
+Tanpa menggunakan fungsi bawaan:
+
+```scala
+// Custom function for linear interpolation
+LINEAR_INTERPOLATION_CUSTOM = LAMBDA(x, x1, y1, x2, y2,
+    y1 + ((x - x1) * (y2 - y1)) / (x2 - x1)
+);
+```
+
+Di sini, `x` adalah nilai yang ingin kita interpolasi, `(x1, y1)` dan `(x2, y2)` adalah dua titik yang diketahui. Fungsi ini menghitung nilai y yang sesuai dengan x berdasarkan garis yang ditarik antara dua titik yang diberikan.
+
+Sekarang, mari kita buat fungsi yang sama menggunakan fungsi bawaan `FORECAST.LINEAR()`:
+
+```scala
+// Using built-in Excel function for linear interpolation
+LINEAR_INTERPOLATION_FORECAST = LAMBDA(x, known_y's, known_x's,
+    FORECAST.LINEAR(x, known_y's, known_x's)
+);
+```
+
+Di sini, `x` adalah nilai yang ingin kita interpolasi, `known_y's` dan `known_x's` adalah array y dan x yang diketahui. Fungsi `FORECAST.LINEAR()` menghitung, atau meramalkan, nilai y yang sesuai dengan x berdasarkan data x dan y yang diberikan.
+
+## 💹 Memanfaatkan _dynamic array_ dan fungsinya {#sec-utilizing-dynamic-arrays}
+
+Rumus array memungkinkan Anda untuk melakukan operasi pada seluruh array atau rentang data sekaligus, bukan pada setiap nilai secara individual. Ini sangat penting dalam mempercepat pengolahan dan analisis data, terutama jika Anda bekerja dengan dataset yang besar. 
+
+Konsep ini sering kali terkait dengan vektorisasi, sebuah teknik di mana operasi diterapkan pada seluruh array, bukan hanya pada elemen individual. Ini dapat secara signifikan meningkatkan kinerja dan efisiensi. 
+
+Ada dua jenis fungsi utama dalam Excel: fungsi scalar dan fungsi dynamic array. Fungsi scalar hanya mengembalikan satu nilai pada waktu tertentu. Di sisi lain, fungsi dynamic array mampu menghasilkan serangkaian nilai (atau array) sebagai output, dan jika ditempatkan di sel top-left, outputnya akan "mengisi" area yang sesuai di sekitar sel tersebut.
+
+Sebagai contoh, misalkan kita ingin menghitung kuadrat dari setiap angka dalam tabel. Biasanya, kita membuat kolom baru dimana formulanya sebagai berikut `=baris_kolom_angka^2` yang mengisi setiap baris di kolom kuadratnya. Formulasi tersebut dianggap sebagai fungsi scalar karena hanya menghasilkan satu nilai pada setiap baris. Solusinya adalah memanfaatkan _dynamic array_ dimana input fungsi merupakan array. 
+
+```scala
+// Fungsi dynamic array
+SQUARE_DYNAMIC_ARRAY = LAMBDA(array,
+    array^2
+);
+```
+
+Berbeda dengan fungsi scalar, fungsi dynamic array di atas dapat menghitung kuadrat dari setiap angka dalam array sekaligus, karena operasi kuadrat diterapkan pada seluruh array, bukan hanya pada elemen individual. Ini adalah contoh penggunaan vektorisasi dalam rumus array. Secara umum, menggunakan fungsi dynamic array dan memanfaatkan vektorisasi dalam rumus array dapat meningkatkan kinerja dan efisiensi pengolahan data Anda di Excel.
+
+## 🚫 Menghindari fungsi rekursif atau dependensi yang tidak perlu {#sec-avoiding-recursive-references}
+
+Fungsi rekursif atau dependensi yang tidak perlu dapat menyebabkan fungsi berjalan lebih lambat dan mengakibatkan kesalahan. Pastikan untuk menghindari ini ketika merancang fungsi Anda. Akan tetapi, jika ingin melakukan _looping_ setiap elemen/baris/kolom di suatu array, bisa memanfaatkan fungsi recursive. Hanya saja, fungsi rekursif ini akan sulit dibaca dibandingkan fungsi LAMBDA yang kompleks. Beberapa kasus dapat memanfaatkan fungsi rekursif, akan tetapi lebih baik untuk menjauhi fungsi yang bersifat rekursif. 
+
+# 🤝 Kolaborasi dan Pemeliharaan {#sec-collaboration-maintenance}
+
+Kolaborasi dan pemeliharaan adalah bagian penting dari siklus hidup pengembangan fungsi LAMBDA. Ini melibatkan berbagi fungsi dengan rekan kerja, melakukan perbaikan dan peningkatan fungsi, serta menerapkan praktek-praktek terbaik dalam penulisan dan pengaturan kode. Dalam bagian ini, dibahas berbagai aspek penting dalam proses kolaborasi dan pemeliharaan kode.
+
+## 🔄 Berbagi fungsi LAMBDA dengan rekan kerja {#sec-sharing-lambda-functions}
+
+Untuk berbagi fungsi LAMBDA dengan rekan kerja, Anda dapat menggunakan fasilitas dalam Microsoft Excel seperti *sharing* dan *co-authoring*. Anda juga dapat menyimpan fungsi dalam workbook yang dapat diakses oleh semua pengguna yang berkolaborasi. Workbook ini kemudian dapat disimpan di tempat yang aman dan mudah diakses seperti SharePoint atau OneDrive.
+
+Rekomendasi untuk membagikan fungsi LAMBDA yaitu dengan menggunakan GitHub Gist dan AFE. GitHub Gist adalah layanan berbagi potongan kode dan catatan yang disediakan oleh GitHub. Ini memungkinkan pengguna untuk menyimpan, berbagi, dan berkolaborasi pada potongan kode secara mudah. Import fungsi LAMBDA dari GitHub Gist juga sudah [di dukung dengan AFE](install.qmd#sec-import-afe). Paket feidlambda menggunakan GitHub Gist untuk mendistribusikan dan menyebarkan fungsi LAMBDA-nya. 
+
+Jika fungsi LAMBDA berupa formula sederhana dapat langsung menyalinkan formula LAMBDA-nya sebagai nama fungsinya di Formula Name Manager. Dengan format seperti berikut:
+
+```scala
+=LAMBDA(x, y, z, x + y + z)
+```
+
+Jika rekannya menggunakan AFE, bisa juga langsung mengambil dari editor AFE. Sehingga formatnya sebagai berikut:
+
+```scala
+MY_FUNCTION = LAMBDA(x, y, z, x + y + z);
+```
+
+Salah satu tantangan dalam menciptakan rangkaian fungsi LAMBDA tanpa memanfaatkan _Advanced Formula Environment_ (AFE) adalah ketiadaan kemampuan untuk memberi tahu nama fungsi tersebut secara eksplisit. Sebagai contoh, penulisan fungsi LAMBDA tanpa AFE akan muncul seperti ini: `=LAMBDA(x, y, z, x + y + z)`. Untuk menggunakan fungsi tersebut, kita harus menyampaikan nama fungsi ini kepada rekan kerja kita secara terpisah. Namun, dengan AFE, kita dapat mendefinisikan nama fungsi secara langsung dalam formula, seperti ini: `MY_FUNCTION = LAMBDA(x, y, z, x + y +z);`. Oleh karena itu, kami sangat menyarankan untuk mulai berkolaborasi dan berbagi fungsi LAMBDA melalui add-ins Excel Labs dengan AFE, demi peningkatan keterbacaan dan produktivitas.
+
+## 📜 Mengimplementasikan kontrol versi {#sec-implementing-version-control}
+
+Alat kontrol versi seperti Git bisa digunakan untuk melacak perubahan, memudahkan pemulihan kode saat terjadi kesalahan, dan memantau kontribusi dari anggota tim yang berbeda. Ini juga memfasilitasi peninjauan kode. Oleh karena itu, disarankan dalam pengembangan ataupun penyebaran menggunakan GitHub Gist atau GitHub Repository sehingga dapat melacak setiap perubahan yang terjadi. 
+
+Mendistribusikan koleksi fungsi LAMBDA melalui GitHub Gist/Repository memudahkan pengguna dan pengembang lain dalam meninjau penggunaan kumpulan fungsi LAMBDA tersebut dalam lembar kerja mereka. Penerapan kontrol versi sangat dianjurkan ketika kumpulan fungsi LAMBDA tersebut diharapkan untuk dikembangkan atau ditingkatkan lebih lanjut. 
+
+Sebagai contoh, lihat [github feidlambda](https://github.com/fiakoenjiniring/feidlambda). Repository ini digunakan sebagai tempat utama untuk pengembangan dan pelacakan saat ada penambahan atau perbaikan pada kumpulan fungsi LAMBDA di feidlambda. Setelah versi terbaru dirilis, isi GitHub GIST diperbarui untuk versi minor pada setiap rilis (x.1, x.2, x.3).
+
+## 📚 Mengelompokkan fungsi yang terkait {#sec-grouping-related-functions}
+
+Pengelompokan fungsi yang terkait dapat membantu dalam keterbacaan dan pemeliharaan kode. Misalnya, fungsi yang berhubungan dengan manipulasi data dapat dikelompokkan bersama. Contoh pengelompokkan ini dapat dilihat [proyek feidlambda](https://lambda.fiako.engineering) sejak versi v0.3+. Pengelompokkan ini akan memudahkan dan mengisolasi interaksi/hubungan antar fungsi LAMBDA dalam koleksinya. 
+
+Dalam pengelompokkan disarankan untuk menghilangkan ketergantungan/_dependency_ pada fungsi diluar kelompok tersebut. Hal ini untuk memudahkan saat mengevaluasi fungsi dan memudahkan distribusi jika ingin menggunakan koleksi fungsi LAMBDA pada kelompok tertentu saja. Pengelompokkan ini disaranakn mengubah penamaan nama fungsi yang diawali dengan kelompok fungsi LAMBDA-nya seperti `SWAP_*(...)` untuk [kelompok fungsi `SWAP`](/release/feidlambda-0-4.html#sec-swap).
+
+## 🧩 Modularisasi kode {#sec-code-modularization}
+
+Modularisasi kode melibatkan pemisahan fungsi atau operasi ke dalam modul-modul yang lebih kecil dan dapat dipertukarkan. Ini membantu dalam keterbacaan, pemeliharaan, dan pengujian kode. 
+
+## ⚖️ Menyeimbangkan kinerja dan keterbacaan {#sec-balancing-performance-readability}
+
+Ketika mengoptimalkan kode, penting untuk menemukan keseimbangan antara kinerja dan keterbacaan. Kode yang sangat dioptimalkan tetapi sulit dibaca dapat mengakibatkan kesulitan dalam pemeliharaan dan penyebaran kode. 
+
