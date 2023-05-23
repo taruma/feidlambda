@@ -7,7 +7,7 @@ author: Taruma Sakti Megariansyah
 abstract: |
   Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel. 
 abstract-title: Abstrak
-date: 2023-05-19
+date: 2023-05-26
 # date-modified: 2023-01-06
 lang: id
 
@@ -31,7 +31,7 @@ Panduan ini dibuat dengan bantuan chatGPT (GPT-4) dengan penyesuaian oleh penuli
 
 # 📖 FIAKO LAMBDA Style Guide (FSG-LAMBDA) {#sec-introduction}
 
-**FIAKO LAMBDA Style Guide** (FSG-LAMBDA) adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
+**FIAKO LAMBDA Style Guide** (FLSG / FSG-LAMBDA) adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA. 
 
 Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:
 
