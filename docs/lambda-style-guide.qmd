@@ -542,9 +542,9 @@ Kolaborasi dan pemeliharaan adalah bagian penting dari siklus hidup pengembangan
 
 Untuk berbagi fungsi LAMBDA dengan rekan kerja, Anda dapat menggunakan fasilitas dalam Microsoft Excel seperti *sharing* dan *co-authoring*. Anda juga dapat menyimpan fungsi dalam workbook yang dapat diakses oleh semua pengguna yang berkolaborasi. Workbook ini kemudian dapat disimpan di tempat yang aman dan mudah diakses seperti SharePoint atau OneDrive.
 
-Rekomendasi untuk membagikan fungsi LAMBDA yaitu dengan menggunakan GitHub Gist. GitHub Gist adalah layanan berbagi potongan kode dan catatan yang disediakan oleh GitHub. Ini memungkinkan pengguna untuk menyimpan, berbagi, dan berkolaborasi pada potongan kode secara mudah. Import fungsi LAMBDA dari GitHub Gist juga sudah [di dukung dengan AFE](install.qmd#sec-import-afe). Paket feidlambda menggunakan GitHub Gist untuk mendistribusikan dan menyebarkan fungsi LAMBDA-nya. 
+Rekomendasi untuk membagikan fungsi LAMBDA yaitu dengan menggunakan GitHub Gist dan AFE. GitHub Gist adalah layanan berbagi potongan kode dan catatan yang disediakan oleh GitHub. Ini memungkinkan pengguna untuk menyimpan, berbagi, dan berkolaborasi pada potongan kode secara mudah. Import fungsi LAMBDA dari GitHub Gist juga sudah [di dukung dengan AFE](install.qmd#sec-import-afe). Paket feidlambda menggunakan GitHub Gist untuk mendistribusikan dan menyebarkan fungsi LAMBDA-nya. 
 
-Jika fungsi LAMBDA berupa fungsi LAMBDA sederhana dapat langsung menyalinkan formula LAMBDA-nya. Dengan format seperti berikut:
+Jika fungsi LAMBDA berupa formula sederhana dapat langsung menyalinkan formula LAMBDA-nya sebagai nama fungsinya di Formula Name Manager. Dengan format seperti berikut:
 
 ```scala
 =LAMBDA(x, y, z, x + y + z)
@@ -556,25 +556,25 @@ Jika rekannya menggunakan AFE, bisa juga langsung mengambil dari editor AFE. Seh
 MY_FUNCTION = LAMBDA(x, y, z, x + y + z);
 ```
 
-## 📈 Meningkatkan fungsi secara kontinu {#sec-improving-functions-continuously}
-
-Peningkatan fungsi LAMBDA dapat dilakukan dengan cara melakukan refaktor atau peningkatan kode secara periodik untuk memastikan efisiensi dan keterbacaan. Setiap perubahan harus didokumentasikan dengan baik dan disertai dengan penjelasan alasan perubahan tersebut.
-
-## ⛔ Membatasi Penggunaan fungsi yang mudah berubah {#sec-limiting-volatile-functions}
-
-Fungsi yang mudah berubah seperti fungsi yang bergantung pada data eksternal atau waktu sebaiknya dihindari karena dapat mengurangi keandalan dan dapat menyebabkan masalah dalam pemeliharaan dan kolaborasi. 
+Salah satu tantangan dalam menciptakan rangkaian fungsi LAMBDA tanpa memanfaatkan _Advanced Formula Environment_ (AFE) adalah ketiadaan kemampuan untuk memberi tahu nama fungsi tersebut secara eksplisit. Sebagai contoh, penulisan fungsi LAMBDA tanpa AFE akan muncul seperti ini: `=LAMBDA(x, y, z, x + y + z)`. Untuk menggunakan fungsi tersebut, kita harus menyampaikan nama fungsi ini kepada rekan kerja kita secara terpisah. Namun, dengan AFE, kita dapat mendefinisikan nama fungsi secara langsung dalam formula, seperti ini: `MY_FUNCTION = LAMBDA(x, y, z, x + y +z);`. Oleh karena itu, kami sangat menyarankan untuk mulai berkolaborasi dan berbagi fungsi LAMBDA melalui add-ins Excel Labs dengan AFE, demi peningkatan keterbacaan dan produktivitas.
 
 ## 📜 Mengimplementasikan kontrol versi {#sec-implementing-version-control}
 
-Anda dapat menggunakan alat kontrol versi seperti Git untuk melacak perubahan dan memudahkan pemulihan kode jika terjadi kesalahan. Ini juga membantu untuk melacak kontribusi dari anggota tim yang berbeda dan memudahkan peninjauan kode.
+Alat kontrol versi seperti Git bisa digunakan untuk melacak perubahan, memudahkan pemulihan kode saat terjadi kesalahan, dan memantau kontribusi dari anggota tim yang berbeda. Ini juga memfasilitasi peninjauan kode. Oleh karena itu, disarankan dalam pengembangan ataupun penyebaran menggunakan GitHub Gist atau GitHub Repository sehingga dapat melacak setiap perubahan yang terjadi. 
+
+Mendistribusikan koleksi fungsi LAMBDA melalui GitHub Gist/Repository memudahkan pengguna dan pengembang lain dalam meninjau penggunaan kumpulan fungsi LAMBDA tersebut dalam lembar kerja mereka. Penerapan kontrol versi sangat dianjurkan ketika kumpulan fungsi LAMBDA tersebut diharapkan untuk dikembangkan atau ditingkatkan lebih lanjut. 
+
+Sebagai contoh, lihat [github feidlambda](https://github.com/fiakoenjiniring/feidlambda). Repository ini digunakan sebagai tempat utama untuk pengembangan dan pelacakan saat ada penambahan atau perbaikan pada kumpulan fungsi LAMBDA di feidlambda. Setelah versi terbaru dirilis, isi GitHub GIST diperbarui untuk versi minor pada setiap rilis (x.1, x.2, x.3).
 
 ## 📚 Mengelompokkan fungsi yang terkait {#sec-grouping-related-functions}
 
-Pengelompokan fungsi yang terkait dapat membantu dalam keterbacaan dan pemeliharaan kode. Misalnya, fungsi yang berhubungan dengan manipulasi data dapat dikelompokkan bersama.
+Pengelompokan fungsi yang terkait dapat membantu dalam keterbacaan dan pemeliharaan kode. Misalnya, fungsi yang berhubungan dengan manipulasi data dapat dikelompokkan bersama. Contoh pengelompokkan ini dapat dilihat [proyek feidlambda](https://lambda.fiako.engineering) sejak versi v0.3+. Pengelompokkan ini akan memudahkan dan mengisolasi interaksi/hubungan antar fungsi LAMBDA dalam koleksinya. 
+
+Dalam pengelompokkan disarankan untuk menghilangkan ketergantungan/_dependency_ pada fungsi diluar kelompok tersebut. Hal ini untuk memudahkan saat mengevaluasi fungsi dan memudahkan distribusi jika ingin menggunakan koleksi fungsi LAMBDA pada kelompok tertentu saja. Pengelompokkan ini disaranakn mengubah penamaan nama fungsi yang diawali dengan kelompok fungsi LAMBDA-nya seperti `SWAP_*(...)` untuk [kelompok fungsi `SWAP`](/release/feidlambda-0-4.html#sec-swap).
 
 ## 🧩 Modularisasi kode {#sec-code-modularization}
 
-Modularisasi kode melibatkan pemisahan fungsi atau operasi ke dalam modul-modul yang lebih kecil dan dapat dipertukarkan. Ini membantu dalam keterbacaan, pemeliharaan, dan pengujian kode.
+Modularisasi kode melibatkan pemisahan fungsi atau operasi ke dalam modul-modul yang lebih kecil dan dapat dipertukarkan. Ini membantu dalam keterbacaan, pemeliharaan, dan pengujian kode. 
 
 ## ⚖️ Menyeimbangkan kinerja dan keterbacaan {#sec-balancing-performance-readability}
 
