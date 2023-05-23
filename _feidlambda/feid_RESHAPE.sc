@@ -8,9 +8,15 @@ RESHAPE_BY_COLUMNS = LAMBDA(array, [num_split],
             MOD(ncols, num_split) = 0,
             LET(
                 divider, ncols / num_split,
-                divider_sequence, CHOOSEROWS(SEQUENCE(1, divider), SEQUENCE(num_split, , 1, 0)),
+                divider_sequence, CHOOSEROWS(
+                    SEQUENCE(1, divider),
+                    SEQUENCE(num_split, , 1, 0)
+                ),
                 divider_flatten, TOCOL(divider_sequence, , TRUE),
-                divider_repeat, CHOOSEROWS(TOROW(divider_flatten), SEQUENCE(nrows, , 1, 0)),
+                divider_repeat, CHOOSEROWS(
+                    TOROW(divider_flatten),
+                    SEQUENCE(nrows, , 1, 0)
+                ),
                 divider_repeat_col, TOCOL(divider_repeat),
                 array_flatten, TOCOL(array),
                 array_sorted, SORTBY(array_flatten, divider_repeat_col),
