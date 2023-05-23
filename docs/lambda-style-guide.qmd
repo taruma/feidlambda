@@ -21,6 +21,9 @@ layout: article
 sidebar: false
 fig-responsive: true
 css: lambda-style.css
+aliases: 
+  - latest-FLSG.html
+  - lambda-style-guide-v1.html
 ---
 
 ::: {.callout-note}
