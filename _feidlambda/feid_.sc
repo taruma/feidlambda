@@ -306,7 +306,7 @@ _RECURSIVE_LOOKUP = LAMBDA(
     )
 );
 
-// GET_RECURSIVE_LOOKUP --> GET_XLOOKUP
+// _RECURSIVE_LOOKUP --> GET_XLOOKUP
 GET_XLOOKUP = LAMBDA(
     lookup_value,
     lookup_vector,
