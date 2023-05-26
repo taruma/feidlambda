@@ -199,7 +199,7 @@ LINALG_ROTATE_POINT_ARRAY = LAMBDA(
 ---- GEOMETRY ----
 */
 
-// NONE ---> GEOMETRY_POINT_IN_POLYGON
+// NONE ---> GEOMETRY_IS_POINT_IN_POLYGON
 GEOMETRY_IS_POINT_IN_POLYGON = LAMBDA(point_vector, data_polygon,
     LET(
         point_vector, TOCOL(point_vector),
