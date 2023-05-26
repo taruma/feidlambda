@@ -353,7 +353,7 @@ _Output_
 
 ### `GET_XLOOKUP()`
 
-Fungsi `GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])` dapat digunakan sebagai pengganti fungsi `XLOOKUP()` bagi input berupa _vector_. 
+[NEW v0.4]{.f-new} Fungsi `GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])` dapat digunakan sebagai pengganti fungsi `XLOOKUP()` bagi input berupa _vector_. 
 
 :::::  {.border .p-3 .my-3 .justify}
 
