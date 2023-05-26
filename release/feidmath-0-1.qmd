@@ -60,7 +60,7 @@ Mengikuti panduan [FIAKO LAMBDA Style Guide](/docs/lambda-style-guide.qmd) dan [
 - [NEW]{.f-new} `LINALG_*`: Ini mencakup fungsi-fungsi yang berkaitan dengan aljabar linear, seperti operasi pada vektor dan matriks
 - [NEW]{.f-new} `GEOMETRY_*`: Kategori ini melibatkan fungsi geometri, termasuk mengidentifikasi titik berada di dalam/luar poligon.
 
-Download excel demonstrasi [RELEASE_feidmath_v0_4_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
+Download excel demonstrasi [RELEASE_feidmath_v0_1_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
 
 ::: {.column-screen-inset-shaded}
 
