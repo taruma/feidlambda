@@ -12,7 +12,14 @@ _RECURSIVE_TEXT_SPLIT = LAMBDA(
         selected_row, ARRAYTOTEXT(INDEX(text_vector, ntry)),
         IF(
             ntry = 1,
-            TEXTSPLIT(selected_row, col_delimiter, row_delimiter, ignore_empty, match_mode, pad_with),
+            TEXTSPLIT(
+                selected_row,
+                col_delimiter,
+                row_delimiter,
+                ignore_empty,
+                match_mode,
+                pad_with
+            ),
             LET(
                 next_try, ntry - 1,
                 results, TEXTSPLIT(

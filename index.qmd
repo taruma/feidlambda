@@ -27,33 +27,34 @@ anchor-sections: false
 
 ::: {.text-center}
 
----
-
 [<button type="button" class="btn btn-primary m-1">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-info m-1">MANUAL/API</button>](/release/feidlambda-0-3.qmd)
+[<button type="button" class="btn btn-info m-1">MANUAL/API</button>](/release/latest.html)
 [<button type="button" class="btn btn-dark m-1">_SOURCE CODE_</button>](/release/source-code.qmd)
 [<button type="button" class="btn btn-danger m-1">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
 
----
-
-### OFFICAL GIST URL (feidlambda v0.3.x)
-
-```default
-https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
-```
-
 :::
 
-::: {.text-center .callout-tip appearance="minimal"}
-## **STATUS PENGEMBANGAN**
+::: {.text-center}
+
+## OFFICIAL GIST
+
+### feidlambda v0.4.x
+
+```default
+https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
+```
+
+### feidmath v0.1.x
+
+```default
+https://gist.github.com/taruma/8b0978227dffbee50c3a9d56e31d34f3
+```
 
 ---
-
-**feidlambda v0.3** sudah siap digunakan oleh publik. Dengan catatan masih banyak yang perlu dipelajari, perbaiki, dan dikembangkan sehingga status feidlambda masih bersifat **eksperimental**. 
 
 :::
 
 ::: {.text-center .callout-warning appearance="minimal"}
-Halaman *greenhorn* untuk sementara tidak tersedia di _navigation bar_. Untuk mengakses presentasi bisa mengunjungi [link ini](/greenhorn/feidlambda-2/presentation.qmd){target="_blank"}.
+Halaman *greenhorn* untuk sementara tidak tersedia di _navigation bar_ (akan dialihkan ke [fiako-manual](https://manual.fiako.engineering)). Untuk mengakses presentasi bisa mengunjungi [link ini](/greenhorn/feidlambda-2/presentation.qmd){target="_blank"}.
 :::
 

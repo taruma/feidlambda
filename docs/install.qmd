@@ -1,11 +1,11 @@
 ---
 title: |
-  Instalasi feidlambda
+  Instalasi koleksi feidlambda
 subtitle: |
-  Panduan pemasangan `feidlambda` v0.3+
+  Panduan pemasangan koleksi feidlambda menggunakan Excel Labs: Advanced Formula Environment.
 author: Taruma Sakti Megariansyah
 date: 2022-10-20
-date-modified: 2023-01-06
+date-modified: 2023-05-26
 date-format: full
 lang: id
 
@@ -19,44 +19,65 @@ sidebar: side-docs
 aliases: 
   - penggunaan.html
 
+format: 
+  html:
+    css: docs-style.css
+
 ---
 
-Panduan ini untuk __Advanced Formula Environment__ v1.1.
+::: {.callout-important}
 
-## **Advanced Formula Environment**
-
-_Install_ add-ins **Advanced Formula Environment** dari menu `Insert` > `Get Add-ins` > Cari **Advanced Formula Environment** (AFE). 
-
-::: {.column-page}
-![Menambahkan **Advanced Formula Environment** _Add-ins_](https://user-images.githubusercontent.com/1007910/192432581-0fd50e59-b0d0-4d9a-b802-81fda91060cb.png)
-:::
-
-## _Import_ menggunakan AFE
-
-Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Formula` > `Advanced Formula Environment` > `Import`. 
-
-::: {.column-page}
-![Melakukan _import_ di AFE](https://user-images.githubusercontent.com/1007910/210946239-4c14ea78-eb85-42b3-a2f6-976e3f6b2704.png)
+Sejak April 2023, add-ins Advanced Formula Environment menjadi bagian fitur dari add-ins Excel Labs. Excel Labs sendiri adalah add-ins yang menyediakan fitur eksperimental oleh tim Microsoft Excel. 
 
 :::
 
-## Salin _Github Gist URL_
+Panduan ini untuk instalasi dan penggunaan __Excel Labs: Advanced Formula Environment__.
 
-Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). Berikut link feidlambda v0.3.x:
+## **Excel Labs** {#sec-excel-labs}
 
-```default
-https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
-```
+[**Excel Labs**](https://appsource.microsoft.com/en-us/product/office/WA200003696?exp=ubp8&tab=Overview) merupakan add-ins berisikan fitur eksperimental oleh tim Microsoft Excel. Pada add-ins ini tersedia _Advanced Formula Environment_ untuk memudahkan pengembangan dan penggunaan fungsi LAMBDA atau manipulasi formula di dalam Microsoft Excel. Add-ins tersebut wajib dipasang untuk dapat menggunakan koleksi feidlambda. Fitur LABS.GENERATIVEAI, saat ini tidak digunakan dalam penggunaan feidlambda. 
+
+- _Install_ add-ins **Excel Labs** dari menu `Insert` > `Get Add-ins` > Cari **Excel Labs** (AFE). 
+
+::: {.column-body}
+![Menambahkan **Excel Labs** _Add-ins_](img-install/install-01.png)
+:::
+
+## **Advanced Formula Environment** {#sec-afe}
+
+Advanced Formula Environment (AFE) adalah add-in untuk Excel yang memungkinkan Anda melihat, memformat dan mengedit rumus atau fungsi Excel. Sejak April 2023, add-in Advanced Formula Environment tergabung dalam satu add-ins bernama Excel Labs. 
+
+- Untuk memulai penggunaan AFE, buka Excel Labs melalui menu ribbon `Home` > `Excel Labs`.
+- Pada _feature gallery_, terdapat ada dua fitur yaitu _Advanced Formula Environment_ dan _`LABS.GENERATIVEAI` function_.
+- Centang _"Remember this choice"_ kemudian buka AFE dengan mengklik _"Open"_ disamping tulisan AFE. 
+
+::: {.column-body}
+![Membuka **Advanced Formula Environment (AFE)**](img-install/install-02.png)
+:::
+
+_Feature gallery_ bisa dibuka melalui menu burger dan memilih _feature gallery_. 
+
+## _Import_ menggunakan AFE {#sec-import-afe}
+
+Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Home` > `Excel Labs` > (AFE) > `Modules` > `Import`. 
+
+::: {.column-body}
+![Melakukan _import_ di AFE](img-install/install-03.png)
+:::
+
+## Salin _Github Gist URL_ {#sec-copy-to-gist}
+
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). 
 
 ![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
 
-## _Save_ / _Sync_ module 
+## _Save_ / _Sync_ module {#sec-sync}
 
 Setelah _import_ seluruh koleksi yang digunakan dan berhasil, lakukan _saving_ (_sync_) yang bertujuan untuk menerapkan module ke lembar kerja Excel. Shortcut untuk _save_ yaitu `Ctrl + S`. 
 
 ![_Save_ / _Apply module_ ke lembar kerja](https://user-images.githubusercontent.com/1007910/210946979-d64c1d4a-b61b-4ab1-ab7b-b2d2c6ae4e1c.png)
 
-## Gunakan koleksi lambda
+## Gunakan koleksi lambda {#sec-using}
 
 Selesai _save_, fungsi **feidlambda** bisa langsung digunakan. 
 
@@ -64,8 +85,8 @@ Selesai _save_, fungsi **feidlambda** bisa langsung digunakan.
 ![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/210947524-d4a8bce7-d33d-47b4-8a72-6cf5244c9651.png)
 :::
 
-## Baca dokumentasi **feidlambda** v0.3
+## Baca dokumentasi **feidlambda**
 
-Dokumentasi feidlambda v0.3 bisa baca di halaman [feidlambda v0.3](/release/feidlambda-0-3.qmd). Dan panduan migrasi bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
+Dokumentasi feidlambda versi terbaru (v0.4) bisa baca di halaman [feidlambda (latest)](/release/latest.html). API atau struktur LAMBDA sudah dibuat konsisten sejak versi v0.3+. Panduan migrasi dari v0.2 ke v0.3 bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
 
-Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 
+Jangan lupa juga untuk membaca [daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 

@@ -1,0 +1,64 @@
+---
+title: |
+  Instalasi feidlambda
+subtitle: |
+  Panduan pemasangan `feidlambda` v0.3+ (AFE v1.1)
+author: Taruma Sakti Megariansyah
+date: 2022-10-20
+date-modified: 2023-01-06
+date-format: full
+lang: id
+
+toc: true
+toc-location: right
+number-sections: true
+link-external-newwindow: true
+layout: article
+sidebar: side-docs
+
+---
+
+Panduan ini untuk __Advanced Formula Environment__ v1.1.
+
+## **Advanced Formula Environment**
+
+_Install_ add-ins **Advanced Formula Environment** dari menu `Insert` > `Get Add-ins` > Cari **Advanced Formula Environment** (AFE). 
+
+::: {.column-page}
+![Menambahkan **Advanced Formula Environment** _Add-ins_](https://user-images.githubusercontent.com/1007910/192432581-0fd50e59-b0d0-4d9a-b802-81fda91060cb.png)
+:::
+
+## _Import_ menggunakan AFE
+
+Setelah AFE terpasang di Microsoft Excel, lakukan _import_ dengan membuka AFE melalui `Formula` > `Advanced Formula Environment` > `Import`. 
+
+::: {.column-page}
+![Melakukan _import_ di AFE](https://user-images.githubusercontent.com/1007910/210946239-4c14ea78-eb85-42b3-a2f6-976e3f6b2704.png)
+
+:::
+
+## Salin _Github Gist URL_
+
+Isi "Github Gist URL" dengan link koleksi lambda yang tersedia. _Checklist_ ✅ bagian "_Add formulas to new module_" dan isi nama _module_ dengan nama koleksi (contoh: `feid`). 
+
+![Isi _GitHub Gist URL_ dan nama _module_](https://user-images.githubusercontent.com/1007910/210946750-5b2563aa-3e23-4147-8771-d7ab7a40a5e4.png)
+
+## _Save_ / _Sync_ module 
+
+Setelah _import_ seluruh koleksi yang digunakan dan berhasil, lakukan _saving_ (_sync_) yang bertujuan untuk menerapkan module ke lembar kerja Excel. Shortcut untuk _save_ yaitu `Ctrl + S`. 
+
+![_Save_ / _Apply module_ ke lembar kerja](https://user-images.githubusercontent.com/1007910/210946979-d64c1d4a-b61b-4ab1-ab7b-b2d2c6ae4e1c.png)
+
+## Gunakan koleksi lambda
+
+Selesai _save_, fungsi **feidlambda** bisa langsung digunakan. 
+
+::: {.column-page}
+![Gunakan koleksi lambda yang telah di-_import_](https://user-images.githubusercontent.com/1007910/210947524-d4a8bce7-d33d-47b4-8a72-6cf5244c9651.png)
+:::
+
+## Baca dokumentasi **feidlambda**
+
+Dokumentasi feidlambda versi terbaru (v0.4) bisa baca di halaman [feidlambda (latest)](/release/latest.html). API atau struktur LAMBDA sudah dibuat konsisten sejak versi v0.3+. Panduan migrasi dari v0.2 ke v0.3 bisa baca di halaman [Migrasi feidlambda v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd).
+
+Jangan lupa juga untuk membaca [Daftar istilah](/docs/glossary.qmd) yang digunakan dalam pada dokumentasi dan pengembangan feidlambda. 

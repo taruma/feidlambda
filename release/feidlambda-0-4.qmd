@@ -1,11 +1,11 @@
 ---
 title: |
-  feidlambda v0.3.1
+  feidlambda v0.4
 subtitle: |
-  Koleksi LAMBDA feidlambda v0.3.1
+  Koleksi LAMBDA feidlambda v0.4
 author: "Taruma Sakti Megariansyah"
-date: 2023-01-06
-date-modified: 2023-01-13
+date: 2023-05-26
+# date-modified: 2023-04-19
 date-format: full
 lang: id
 
@@ -23,28 +23,32 @@ filters:
 format:
   html:
     mermaid-format: js
+    css: feidstyle.css
 
 crossref: 
   chapters: true
 
 aliases: 
-  - feidlambda-0-3-0.html
-  - feidlambda-0-3-1.html
+  - latest.html
 
 ---
 
 ::: {.callout-important icon="false" .text-center appearance="minimal"}
-## Official GIST **feidlambda** (v0.3.x)
+## Official GIST **feidlambda** (v0.4.x)
 
 ```default
-https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ```
+:::
+
+::: {.text-center}
+
+[<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
 
 :::
 
-**Panduan instalasi feidlambda v0.3.x dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
-
-Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [perubahan penting dan migrasi v0.2 ke v0.3](/article/migration-v0-2-to-v0-3.qmd). Tapi, bagi yang baru menggunakan bisa [**langsung ke bagian fungsi feidlambda v0.3.x**](#sec-feid-v03).
+feidlambda v0.4 merupakan pengembangan lebih lanjut dari versi v0.3 sehingga fitur/fungsi yang telah tersedia di feidlambda v0.3 tersedia di versi feidlambda v0.4. Dan dengan dirilisnya feidlambda v0.4, tersedia paket feidlambda baru bernama `feidmath`. feidmath v0.1 merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematika seperti perkalian matriks, rotasi, interpolasi, dlsbnya. [Kunjungi halaman rilis feidmath](feidmath-0-1.qmd).
 
 ::: {.column-screen-inset-shaded}
 
@@ -52,21 +56,15 @@ Bagi yang sebelumnya menggunakan versi feidlambda v0.2 **wajib** untuk membaca [
 
 :::
 
-# Update Log v0.3.x {#update-log}
+# Update Log v0.4.x {#update-log}
 
 _Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian [_Changelog_](#changelog).
 
-- **Update v0.3.1 (2022-01-13)** 
-  - Pada fungsi `FILTER_MINMAX_ARRAY()` terdapat argumen opsional baru yaitu `take_first_only`. Jika `take_first_only = TRUE`, maka hasil filter minimum/maksimum hanya mengambil baris pertamanya saja (jika terdapat minimum/maksimum lebih dari satu baris). 
-  - Pada fungsi `SWAP_*()`, nilai argumen `from_index` dan `to_index` menerima index negatif (indeks dari belakang). Bersamaan perubahan tersebut, nilai _default_ `to_index` menjadi `-1` yang artinya secara _default_ (tanpa argumen) fungsi `SWAP_*()` menukar posisi terdepan dengan terbelakang (baik berdasarkan baris ataupun kolom). 
-  - Perubahan nama argumen pada beberapa fungsi seperti:
-    - `FILTER_MINMAX_COLUMN()`: `col -> column_index`, `with_lables -> with_label`.
-    - `GET_INDEX_2D()`: `return_order_only -> return_as_order`.
-    - `ROTATE_*()`: `n -> num_rotation`.
-    - `TEXT_SPLIT_VECTOR()`: `text_delimiter -> col_delimiter`.
-  - Fungsi `TEXT_SPLIT_VECTOR()` menggunakan metode _recursive_ dari fungsi `TEXTSPLIT()`. 
-  - Pada fungsi `TEXT_SPLIT_VECTOR()` terdapat argumen opsional baru yaitu `replace_na`, yang berfungsi untuk mengubah nilai `#NA` dari hasil akhir. 
-  - Tambahan informasi limitasi pada fungsi `TEXT_SPLIT_VECTOR()`.
+- **Update v0.4.0 (2023-05-26)** 
+  - Kategori baru bernama `APPLY_*`.
+    - Fungsi baru `APPLY_COLUMN()` yang dapat digunakan untuk menerapkan fungsi LAMBDA pada kolom tertentu di dataset.
+  - Fungsi baru di kategori `GET_*`:
+    - Fungsi baru `GET_XLOOKUP()` yang merupakan fungsi peningkatan dari fungsi bawaan `XLOOKUP()`. Fungsi `GET_XLOOKUP()` menerima input vector.
 
 ::: {.column-screen-inset-shaded}
 
@@ -74,12 +72,13 @@ _Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/p
 
 :::
 
-# Fungsi feidlambda v0.3.x {#sec-feid-v03}
+# Fungsi feidlambda v0.4.x {#sec-feid-v04}
 
-Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.3.x:
+Pada feidlambda v0.4.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut kategori yang tersedia di feidlambda v0.4.x:
 
+- [NEW]{.f-new} `APPLY_*`: Memanipulasi data dengan menerapkan fungsi pada subset atau kolom tertentu.
 - `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
-- `GET_*`: Mengambil informasi dari data.
+- [NEW]{.f-new} `GET_*`: Mengambil informasi dari data.
 - `IS_*`: Fungsi _logical_ tambahan.
 - `MAKE_*`: Membangkitkan data.
 - `REPEAT_*`: Mengulangi/merepetisi data.
@@ -88,11 +87,71 @@ Pada feidlambda v0.3.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut 
 - `SWAP_*`: Menukar posisi data.
 - `TEXT_*`: Fungsi tambahan yang berkaitan dengan teks.
 
-Download excel demonstrasi [RELEASE_feidlambda_v0_3_1.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.3.1/RELEASE_feidlambda_v0_3_1.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.3.x.
+Download excel demonstrasi [RELEASE_feidlambda_v0_4_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidlambda v0.4.x.
 
 ::: {.callout-note}
-Gambar yang ditampilkan pada halaman ini merupakan dari versi sebelumnya (feidlambda v0.3.0) dan tidak diperbarui untuk setiap _update_. Oleh karena itu, disarankan untuk mengeksplorasi langsung dari dokumen yang telah dilampirkan. 
+Gambar yang ditampilkan pada halaman ini terdapat dari versi sebelumnya (feidlambda v0.3.x) dan tidak diperbarui jika fungsi tersebut tidak memiliki perubahan signifikan. Oleh karena itu, disarankan untuk mengeksplorasi langsung dari dokumen yang telah dilampirkan. 
 :::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `APPLY_*` {#sec-apply}
+
+[NEW v0.4]{.f-new} Kategori `APPLY_*` merupakan kumpulan fungsi yang menerapkan fungsi LAMBDA pada kolom spesifik atau _subset_ tertentu. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-apply.
+
+```{mermaid}
+%%| label: fig-dep-apply
+%%| fig-cap: Grafik _dependencies_ kategori `APPLY_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE --> APPLY_COLUMN
+```
+
+Fungsi utama kategori `APPLY_*` yaitu `APPLY_COLUMN()`.
+
+<details>
+<summary>_Source Code_ `APPLY_*`</summary>
+```{.scala include="../_feidlambda/feid_APPLY.sc" }
+```
+</details>
+
+### `APPLY_COLUMN()` {#sec-apply-column}
+
+[NEW v0.4]{.f-new} Fungsi `APPLY_COLUMN(array, index_vector, LAMBDA_FUNCTION)` digunakan untuk menerapkan fungsi LAMBDA (`LAMBDA_FUNCTION()`) pada kolom tertentu di dalam _array_.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: APPLY_COLUMN(array, index_vector, LAMBDA_FUNCTION)
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array]`
+: Data berupa _array_ yang memiliki kolom lebih dari satu. 
+
+`index_vector := [integer number | integer vector]`
+: Indeks kolom yang ingin diterapkan fungsi lambda.
+
+`LAMBDA_FUNCTION := [LAMBDA FUNCTION]`
+: Fungsi LAMBDA yang ingin diterapkan pada kolom. Fungsi harus berupa formula LAMBDA (`=LAMBDA(...)`). Dapat berupa nama fungsi atau formula LAMBDA.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `APPLY_COLUMN()`](img-0-4-0/feidlambda-APPLY-01.gif){#fig-apply-column}
+:::
+
 
 ::: {.column-screen-inset-shaded}
 
@@ -217,7 +276,7 @@ _Output_
 : Nilai _default_ yaitu `NONE`. Jika `NONE`, maka label setiap baris akan dinomori berdasarkan kolomnya (`1_min`, `1_max`). Jika ingin menggunakan label dari nama kolom, jumlah elemen _vector_ harus sama dengan jumlah kolom dari `array`. Untuk menggunakan label nilai `with_label` harus `TRUE`.
 
 `[take_first_only] := FALSE :: [TRUE | FALSE]` 
-: **_(New in v0.3.1)_**. Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum. 
+: Nilai _default_ yaitu `FALSE`. Jika `TRUE`, maka hanya baris pertama yang diambil dari hasil pencarian nilai minimum/maksimum. 
 
 :::::
 
@@ -247,9 +306,11 @@ Kategori `GET_*` merupakan kumpulan fungsi yang digunakan untuk mengambil inform
 
 flowchart LR
   NONE --> GET_INDEX_2D
+  _RECURSIVE_LOOKUP --> _RECURSIVE_LOOKUP
+  _RECURSIVE_LOOKUP --> GET_XLOOKUP
 ```
 
-Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2D()`. 
+Dari @fig-dep-get, diketahui untuk versi v0.4 tersedia fungsi utama `GET_INDEX_2D()` dan `GET_XLOOKUP()`. 
 
 <details>
 <summary>_Source Code_ `GET_*`</summary>
@@ -288,6 +349,60 @@ _Output_
 
 ::: {.column-page-left}
 ![Demonstrasi `GET_INDEX_2D()`](img-0-3-0/feidlambda-v03-02-get-1.gif){#fig-get-index-2d}
+:::
+
+### `GET_XLOOKUP()`
+
+Fungsi `GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])` dapat digunakan sebagai pengganti fungsi `XLOOKUP()` bagi input berupa _vector_. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])
+
+_Output_
+: _array_
+
+:::
+
+---
+
+`lookup_value := [vector]`
+: Nilai yang akan dicari. Menerima input berupa _vector_. 
+
+`lookup_array := [array]`
+: _Array_ atau rentang untuk dicari. 
+
+`return_array := [array]`
+: _Array_ atau rentang yang akan dikembalikan
+
+`[if_not_found] := #N/A :: [text]`
+: Jika kecocokan valid tidak ditemukan, kembalikan teks `[if_not_found]` yang Anda masukkan. Jika kecocokan valid tidak ditemukan, dan `[if_not_found]` hilang, `#N/A` dikembalikan.
+
+`[match_mode] := 0 :: [0 | -1 | 1 | 2]`
+: Tentukan tipe yang cocok: 
+
+>   - `0` - Persis cocok. Jika tidak ditemukan, kembalikan `#N/A`. Ini adalah pengaturan **default**. 
+>   - `-1 ` - Persis cocok. Jika tidak ada yang ditemukan, kembalikan item berikutnya yang lebih kecil.
+>   - `1` - Persis sama. Jika tidak ditemukan, kembalikan item berikutnya yang lebih besar.
+>   - `2` - A wildcard match where *, ?, and ~ have special meaning.
+
+`[search_mode] := 1 :: [1 | -1 | 2 | -2]`
+: Tentukan mode pencarian yang akan digunakan:
+
+>   - `1` - Melakukan pencarian dimulai dari item pertama. Ini adalah pengaturan default.
+>   - `-1` - Melakukan pencarian terbalik dimulai dari item terakhir.
+>   - `2` - Melakukan pencarian biner yang bergantung pada lookup_array diurutkan dalam urutan naik . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+>   - `-2` - Melakukan pencarian biner yang mengandalkan lookup_array diurutkan dalam urutan menurun . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+
+:::::
+
+Penjelasan parameter diambil dari [halaman bantuan `XLOOKUP()`](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929)
+
+::: {.column-page-left}
+![Demonstrasi `GET_XLOOKUP()`](img-0-4-0/feidlambda-GET-XLOOKUP-01.gif){#fig-get-xlookup}
 :::
 
 ::: {.column-screen-inset-shaded}
@@ -794,7 +909,7 @@ _Output_
 
 :::
 
-# Kategori `SWAP_*`
+# Kategori `SWAP_*` {#sec-swap}
 
 Kategori `SWAP_*` merupakan kumpulan fungsi yang digunakan untuk mengganti atau mengubah posisi elemen atau _vector_. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-swap.
 
@@ -837,10 +952,10 @@ _Output_
 : Data dapat berupa _array_ atau _row vector_. 
 
 `[from_index] := 1 :: [integer]`
-: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: Nilai _default_ yaitu `1`. Posisi _index_ kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 `[to_index] := -1 :: [integer]`
-: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: Nilai _default_ yaitu `-1`. Posisi _index_ tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -864,10 +979,10 @@ _Output_
 : Data dapat berupa _array_ atau _column vector_. 
 
 `[from_index] := 1 :: [integer]`
-: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `1`. Posisi _index_ baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: Nilai _default_ yaitu `1`. Posisi _index_ baris yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 `[to_index] := -1 :: [integer]`
-: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `-1`. Posisi _index_ tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+: Nilai _default_ yaitu `-1`. Posisi _index_ tujuan baris. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
 
 :::::
 
@@ -927,7 +1042,7 @@ _Output_
 : Nilai _default_ yaitu `" "` (spasi). Teks pemisah untuk setiap kolomnya.
 
 `[row_delimiter] := "" :: [text]`
-: **_(Change in v0.3.1)_**. Nilai _default_ yaitu `""` (tidak ada). Teks pemisah untuk setiap barisnya. 
+: Nilai _default_ yaitu `""` (tidak ada). Teks pemisah untuk setiap barisnya. 
 
 `[ignore_empty] := FALSE :: [TRUE | FALSE]`
 : Tentukan `TRUE` untuk mengabaikan pemisah berurutan. Default ke `FALSE`, yang membuat sel kosong. Opsional. 
@@ -939,7 +1054,7 @@ _Output_
 : Nilai untuk mengalihkan hasil. Defaultnya adalah `#N/A`.
 
 `[replace_na] := #N/A :: [text | number]`
-: **_(New in v0.3.1)_**. Nilai untuk menggantikan nilai `#N/A` dari hasil akhir. Defaultnya adalah `#N/A`. Nilai `#N/A` yang ada dikarenakan proses `VSTACK()` yang memiliki dimensi hasil `TEXTSPLIT()` yang berbeda-beda. 
+: Nilai untuk menggantikan nilai `#N/A` dari hasil akhir. Defaultnya adalah `#N/A`. Nilai `#N/A` yang ada dikarenakan proses `VSTACK()` yang memiliki dimensi hasil `TEXTSPLIT()` yang berbeda-beda. 
 
 :::::
 
@@ -961,9 +1076,7 @@ Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fun
 
 :::
 
-Fungsi feidlambda v0.3 memiliki $9$ kategori dengan total $23$ fungsi utama dan pendukung. Dengan perombakan struktur dan penamaan dari v0.2 ke v0.3, harapannya v0.3 sudah memiliki struktur dan penamaan yang konsisten sehingga untuk memproduksi fungsi ataupun fitur barunya lebih cepat di versi-versi berikutnya. 
-
-Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). Dan jika bertemu masalah saat penggunaan feidlambda v0.3, bisa juga membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). 
+Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung disampaikan dengan membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). Dan jika bertemu masalah saat penggunaan feidlambda v0.4, bisa juga membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). 
 
 ::: {.column-screen-inset-shaded}
 
@@ -973,40 +1086,6 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung membua
 
 # Changelog
 
-- **2022-01-13 (v0.3.1)**
-  - Perubahan fungsi utama:
-    - Perubahan `FILTER_MINMAX_ARRAY()`:
-      - Menambah _optional_ argumen `take_first_only`.
-      - Mengganti nama argumen: `with_labels -> with_label`. 
-      - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
-    - Perubahan `GET_INDEX_2D()`:
-      - Mengubah nama argumen: `return_order_only -> return_as_order`.
-    - Perubahan `RESHAPE_BY_COLUMNS()`:
-      - Mengubah hasil _error_ menjadi `NA()`. 
-    - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
-      - Mengubah nama argumen: `n -> num_rotation`.
-    - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:
-      - Argumen `from_index` dan `to_index` dapat menggunakan indeks negatif.
-      - Nilai _default_ `to_index` menjadi `-1`. 
-    - Perubahan `TEXT_SPLIT_VECTOR()`:
-      - Mengubah metode menjadi _recursive_.
-      - Mengubah nama argumen: `text_delimiter -> col_delimiter`.
-      - Menambah _optional_ argumen `replace_na`. 
-  - Perubahan fungsi pendukung:
-    - Perubahan `FILTER_FUNC_COLUMN()`:
-      - Mengganti nama argumen: `col -> column_index`.
-      - Menukar posisi argumen `label_col` dan `with_label`.
-      - Menambah optional argumen `take_first_only`.
-    - Perubahan `FILTER_MINMAX_COLUMN()`:
-      - Mengganti nama argumen: `col -> column_index`.
-      - Menukar posisi argumen `label_col` dan `with_label`. 
-      - Menambah _optional_ argumen `take_first_only`.
-      - Penyesuaian `FILTER_FUNC_COLUMN()` dengan posisi dan opsi argumen terbaru.
-    - Perubahan `_RECURSIVE_FILTER_MINMAX()`:
-      - Mengubah posisi argumen `label_col` dan `with_label`.
-      - Penyesuaian `FILTER_MINMAX_COLUMN()` dengan posisi dan opsi argumen terbaru.
-    - Fungsi baru `_RECURSIVE_TEXT_SPLIT()`:
-      - Fungsi pendukung `TEXT_SPLIT_VECTOR()`.
-- **2022-01-06 (v0.3.0)**
-  - Rilis feidlambda v0.3
+- **2023-05-26 (v0.4.0)**
+  - Rilis feidlambda v0.4
 
