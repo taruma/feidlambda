@@ -39,12 +39,32 @@ aliases:
 ```default
 https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ```
+:::
+
+::: {.text-center}
+
+[<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
 
 :::
 
-**Panduan instalasi feidlambda dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
-
 feidlambda v0.4 merupakan pengembangan lebih lanjut dari versi v0.3 sehingga fitur/fungsi yang telah tersedia di feidlambda v0.3 tersedia di versi feidlambda v0.4. Dan dengan dirilisnya feidlambda v0.4, tersedia paket feidlambda baru bernama `feidmath`. feidmath v0.1 merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematika seperti perkalian matriks, rotasi, interpolasi, dlsbnya. [Kunjungi halaman rilis feidmath](feidmath-0-1.qmd).
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Update Log v0.4.x {#update-log}
+
+_Update Log_ merupakan catatan pembaruan feidlambda. Berikut catatan perubahan/pembaruan secara umum beserta penjelasan perubahan/pembaruan. Untuk perubahan berdasarkan fungsinya, bisa dilihat di bagian [_Changelog_](#changelog).
+
+- **Update v0.4.0 (2023-05-26)** 
+  - Kategori baru bernama `APPLY_*`.
+    - Fungsi baru `APPLY_COLUMN()` yang dapat digunakan untuk menerapkan fungsi LAMBDA pada kolom tertentu di dataset.
+  - Fungsi baru di kategori `GET_*`:
+    - Fungsi baru `GET_XLOOKUP()` yang merupakan fungsi peningkatan dari fungsi bawaan `XLOOKUP()`. Fungsi `GET_XLOOKUP()` menerima input vector.
 
 ::: {.column-screen-inset-shaded}
 
@@ -58,7 +78,7 @@ Pada feidlambda v0.4.x, setiap fungsi dikategorikan sesuai kegunaannya. Berikut 
 
 - [NEW]{.f-new} `APPLY_*`: Memanipulasi data dengan menerapkan fungsi pada subset atau kolom tertentu.
 - `FILTER_*`: Melakukan _filtering_ atau _subsetting_ (memilah) dari data.
-- `GET_*`: Mengambil informasi dari data.
+- [NEW]{.f-new} `GET_*`: Mengambil informasi dari data.
 - `IS_*`: Fungsi _logical_ tambahan.
 - `MAKE_*`: Membangkitkan data.
 - `REPEAT_*`: Mengulangi/merepetisi data.
@@ -90,22 +110,48 @@ Gambar yang ditampilkan pada halaman ini terdapat dari versi sebelumnya (feidlam
 %%{ init: { 'theme': 'forest' } }%%
 
 flowchart LR
-  NONE --> FILTER_DROP_ROWS
-  NONE --> FILTER_DROP_COLUMNS
-  NONE --> FILTER_FUNC_COLUMN
-  FILTER_FUNC_COLUMN --> FILTER_MINMAX_COLUMN
-  FILTER_MINMAX_COLUMN --> _RECURSIVE_FILTER_MINMAX
-  _RECURSIVE_FILTER_MINMAX --> _RECURSIVE_FILTER_MINMAX
-  _RECURSIVE_FILTER_MINMAX --> FILTER_MINMAX_ARRAY
+  NONE --> APPLY_COLUMN
 ```
 
 Fungsi utama kategori `APPLY_*` yaitu `APPLY_COLUMN()`.
 
 <details>
-<summary>_Source Code_ `FILTER_*`</summary>
-```{.scala include="../_feidlambda/feid_FILTER.sc" }
+<summary>_Source Code_ `APPLY_*`</summary>
+```{.scala include="../_feidlambda/feid_APPLY.sc" }
 ```
 </details>
+
+### `APPLY_COLUMN()` {#sec-apply-column}
+
+[NEW v0.4]{.f-new} Fungsi `APPLY_COLUMN(array, index_vector, LAMBDA_FUNCTION)` digunakan untuk menerapkan fungsi LAMBDA (`LAMBDA_FUNCTION()`) pada kolom tertentu di dalam _array_.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: APPLY_COLUMN(array, index_vector, LAMBDA_FUNCTION)
+
+_Output_
+: _array_
+:::
+
+---
+
+`array := [array]`
+: Data berupa _array_ yang memiliki kolom lebih dari satu. 
+
+`index_vector := [integer number | integer vector]`
+: Indeks kolom yang ingin diterapkan fungsi lambda.
+
+`LAMBDA_FUNCTION := [LAMBDA FUNCTION]`
+: Fungsi LAMBDA yang ingin diterapkan pada kolom. Fungsi harus berupa formula LAMBDA (`=LAMBDA(...)`). Dapat berupa nama fungsi atau formula LAMBDA.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `APPLY_COLUMN()`](img-0-4-0/feidlambda-APPLY-01.gif){#fig-apply-column}
+:::
+
 
 ::: {.column-screen-inset-shaded}
 
@@ -260,9 +306,11 @@ Kategori `GET_*` merupakan kumpulan fungsi yang digunakan untuk mengambil inform
 
 flowchart LR
   NONE --> GET_INDEX_2D
+  _RECURSIVE_LOOKUP --> _RECURSIVE_LOOKUP
+  _RECURSIVE_LOOKUP --> GET_XLOOKUP
 ```
 
-Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2D()`. 
+Dari @fig-dep-get, diketahui untuk versi v0.4 tersedia fungsi utama `GET_INDEX_2D()` dan `GET_XLOOKUP()`. 
 
 <details>
 <summary>_Source Code_ `GET_*`</summary>
@@ -301,6 +349,60 @@ _Output_
 
 ::: {.column-page-left}
 ![Demonstrasi `GET_INDEX_2D()`](img-0-3-0/feidlambda-v03-02-get-1.gif){#fig-get-index-2d}
+:::
+
+### `GET_XLOOKUP()`
+
+Fungsi `GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])` dapat digunakan sebagai pengganti fungsi `XLOOKUP()` bagi input berupa _vector_. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])
+
+_Output_
+: _array_
+
+:::
+
+---
+
+`lookup_value := [vector]`
+: Nilai yang akan dicari. Menerima input berupa _vector_. 
+
+`lookup_array := [array]`
+: _Array_ atau rentang untuk dicari. 
+
+`return_array := [array]`
+: _Array_ atau rentang yang akan dikembalikan
+
+`[if_not_found] := #N/A :: [text]`
+: Jika kecocokan valid tidak ditemukan, kembalikan teks `[if_not_found]` yang Anda masukkan. Jika kecocokan valid tidak ditemukan, dan `[if_not_found]` hilang, `#N/A` dikembalikan.
+
+`[match_mode] := 0 :: [0 | -1 | 1 | 2]`
+: Tentukan tipe yang cocok: 
+
+>   - `0` - Persis cocok. Jika tidak ditemukan, kembalikan `#N/A`. Ini adalah pengaturan **default**. 
+>   - `-1 ` - Persis cocok. Jika tidak ada yang ditemukan, kembalikan item berikutnya yang lebih kecil.
+>   - `1` - Persis sama. Jika tidak ditemukan, kembalikan item berikutnya yang lebih besar.
+>   - `2` - A wildcard match where *, ?, and ~ have special meaning.
+
+`[search_mode] := 1 :: [1 | -1 | 2 | -2]`
+: Tentukan mode pencarian yang akan digunakan:
+
+>   - `1` - Melakukan pencarian dimulai dari item pertama. Ini adalah pengaturan default.
+>   - `-1` - Melakukan pencarian terbalik dimulai dari item terakhir.
+>   - `2` - Melakukan pencarian biner yang bergantung pada lookup_array diurutkan dalam urutan naik . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+>   - `-2` - Melakukan pencarian biner yang mengandalkan lookup_array diurutkan dalam urutan menurun . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+
+:::::
+
+Penjelasan parameter diambil dari [halaman bantuan `XLOOKUP()`](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929)
+
+::: {.column-page-left}
+![Demonstrasi `GET_XLOOKUP()`](img-0-4-0/feidlambda-GET-XLOOKUP-01.gif){#fig-get-xlookup}
 :::
 
 ::: {.column-screen-inset-shaded}
@@ -974,8 +1076,6 @@ Deskripsi `ignore_empty`, `match_mode`, dan `pad_with` diambil dari halaman [Fun
 
 :::
 
-Fungsi feidlambda v0.4 memiliki $10$ kategori dengan total $23$ fungsi utama dan pendukung. 
-
 Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung disampaikan dengan membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). Dan jika bertemu masalah saat penggunaan feidlambda v0.4, bisa juga membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). 
 
 ::: {.column-screen-inset-shaded}
@@ -986,6 +1086,6 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung disamp
 
 # Changelog
 
-- **2023-05-19 (v0.4.0)**
+- **2023-05-26 (v0.4.0)**
   - Rilis feidlambda v0.4
 

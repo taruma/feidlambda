@@ -4,7 +4,7 @@ title: |
 subtitle: |
   Koleksi LAMBDA feidmath v0.1
 author: "Taruma Sakti Megariansyah"
-date: 2023-05-19
+date: 2023-05-26
 # date-modified: 2023-04-19
 date-format: full
 lang: id
@@ -39,6 +39,12 @@ aliases:
 ```default
 https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ```
+:::
+
+::: {.text-center}
+
+[<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDMATH v0.1.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx)
 
 :::
 
@@ -60,7 +66,7 @@ Mengikuti panduan [FIAKO LAMBDA Style Guide](/docs/lambda-style-guide.qmd) dan [
 - [NEW]{.f-new} `LINALG_*`: Ini mencakup fungsi-fungsi yang berkaitan dengan aljabar linear, seperti operasi pada vektor dan matriks
 - [NEW]{.f-new} `GEOMETRY_*`: Kategori ini melibatkan fungsi geometri, termasuk mengidentifikasi titik berada di dalam/luar poligon.
 
-Download excel demonstrasi [RELEASE_feidmath_v0_4_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
+Download excel demonstrasi [RELEASE_feidmath_v0_1_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
 
 ::: {.column-screen-inset-shaded}
 
