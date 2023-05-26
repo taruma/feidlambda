@@ -135,6 +135,149 @@ Demonstrasi `INTERPOLATION_LINEAR()`
 
 :::
 
+# Kategori `LINALG_*` {#sec-linalg}
+
+[NEW v0.1]{.f-new} Kategori `LINALG_*` merupakan kumpulan fungsi yang berkaitan dengan aljabar linear seperti operasi pada vektor atau matriks. `LINALG` merupakan singkatan dari `LINEAR ALGEBRA`. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-linalg.
+
+```{mermaid}
+%%| label: fig-dep-linalg
+%%| fig-cap: Grafik _dependencies_ kategori `LINALG_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE ---> LINALG_ROTATION_MATRIX
+  LINALG_ROTATION_MATRIX ---> LINALG_ROTATE_POINT
+  LINALG_ROTATE_POINT ---> _RECURSIVE_ROTATE_POINTS
+  _RECURSIVE_ROTATE_POINTS ---> _RECURSIVE_ROTATE_POINTS
+  _RECURSIVE_ROTATE_POINTS ---> LINALG_ROTATE_POINT_ARRAY
+```
+
+Fungsi utama kategori `LINALG_*` yaitu `LINALG_ROTATION_MATRIX()`, `LINALG_ROTATE_POINT()`, dan `LINALG_ROTATE_POINT_ARRAY()`.
+
+<details>
+<summary>_Source Code_ `LINALG_*`</summary>
+```{.scala include="../_feidmath/feidmath_LINALG.sc" }
+```
+</details>
+
+### `LINALG_ROTATION_MATRIX()` {#sec-linalg-rotation-matrix}
+
+Fungsi `LINALG_ROTATION_MATRIX(theta_x, theta_y, theta_z, [num_digits])` digunakan untuk menghasilkan matriks rotasi berdasarkan tiga sudut rotasi ($\theta_x$, $\theta_y$, dan $\theta_z$) yang ditentukan dalam derajat. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATION_MATRIX(theta_x, theta_y, theta_z, [num_digits])
+
+_Output_
+: $3 \times 3$ array
+:::
+
+---
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {#fig-linalg-rotation-matrix .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![menghitung matriks rotasi](img-feidmath-0-1/feidmath-linalg-01.gif)
+
+![implementasi rotasi pada titik](img-feidmath-0-1/feidmath-linalg-02.gif)
+
+Demonstrasi `LINALG_ROTATION_MATRIX()`
+:::
+
+### `LINALG_ROTATE_POINT()` {#sec-linalg-rotate-point}
+
+Fungsi `LINALG_ROTATE_POINT(point_vector, theta_x, theta_y, theta_z, [active_rotation], [num_digits])` digunakan untuk melakukan rotasi pada titik dalam ruang tiga dimensi. Fungsi ini menerima input dalam bentuk vektor dengan tiga nilai yaitu $x$, $y$, dan $z$. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATE_POINT(point_vector, theta_x, theta_y, theta_z, [active_rotation], [num_digits])
+
+_Output_
+: vector
+:::
+
+---
+
+`point_vector := [number vector]`
+: Koordinat titik dalam bentuk vektor ($x$, $y$, $z$). 
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[active_rotation] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Rotasi aktif akan mengubah posisi objek, sedangkan rotasi pasif akan mengubah sistem koordinat.
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-03.gif){#fig-linalg-rotate-point}
+:::
+
+### `LINALG_ROTATE_POINT_ARRAY()` {#sec-linalg-rotate-point-array}
+
+Fungsi `LINALG_ROTATE_POINT_ARRAY(data_points, theta_x, theta_y, theta_z, [active_rotation], [num_digits])` digunakan untuk melakukan rotasi pada sekumpulan titik dalam ruang tiga dimensi. Fungsi `LINALG_ROTATE_POINT_ARRAY()` sama dengan `LINALG_ROTATE_POINT()` tetapi dirancang untuk merotasikan sekumpulan titik sekaligus. Argumen `data_points` harus berupa array yang setiap barisnya merepresentasikan titik di ruang 3D. Fungsi ini menerima array dengan tiga kolom yaitu $x$, $y$, dan $z$. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATE_POINT_ARRAY(data_points, theta_x, theta_y, theta_z, [active_rotation], [num_digits])
+
+_Output_
+: $m \times 3$ array
+:::
+
+---
+
+`data_points := [number array]`
+: Sekumpulan koordinat titik dalam bentuk array dengan kolom $x$, $y$, $z$. 
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[active_rotation] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Rotasi aktif akan mengubah posisi objek, sedangkan rotasi pasif akan mengubah sistem koordinat.
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
+:::
+
+### Visualisasi Aktif vs. Pasif {#sec-linalg-viz-rotation}
+
+Berikut visualisasi perbedaan antara merotasikan objek (aktif) dan koordinatnya (pasif). Rotasi terhadap sumbu $z$ dengan grafik hubungan $x$ dan $y$. 
+
+::: {#fig-linalg-viz-rotation .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![rotasi aktif (objek)](img-feidmath-0-1/feidmath-linalg-05.gif)
+
+![rotasi pasif (koordinat)](img-feidmath-0-1/feidmath-linalg-06.gif)
+
+Demonstrasi Rotasi Aktif dan Pasif
+:::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
 
 
 
