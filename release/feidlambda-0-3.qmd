@@ -124,7 +124,7 @@ Fungsi utama kategori `FILTER_*` yaitu `FILTER_DROP_ROWS()`, `FILTER_DROP_COLUMN
 
 <details>
 <summary>_Source Code_ `FILTER_*`</summary>
-```{.scala include="../_feidlambda/feid_FILTER" }
+```{.scala include="../_feidlambda/feid_FILTER.sc" }
 ```
 </details>
 
@@ -253,7 +253,7 @@ Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2
 
 <details>
 <summary>_Source Code_ `GET_*`</summary>
-```{.scala include="../_feidlambda/feid_GET" }
+```{.scala include="../_feidlambda/feid_GET.sc" }
 ```
 </details>
 
@@ -318,7 +318,7 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 <details>
 <summary>_Source Code_ `IS_*`</summary>
-```{.scala include="../_feidlambda/feid_IS" }
+```{.scala include="../_feidlambda/feid_IS.sc" }
 ```
 </details>
 
@@ -488,7 +488,7 @@ Fungsi utama pada kategori ini adalah `MAKE_SEQUENCE_FROM_VECTOR()`.
 
 <details>
 <summary>_Source Code_ `MAKE_*`</summary>
-```{.scala include="../_feidlambda/feid_MAKE" }
+```{.scala include="../_feidlambda/feid_MAKE.sc" }
 ```
 </details>
 
@@ -549,7 +549,7 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 <details>
 <summary>_Source Code_ `REPEAT_*`</summary>
-```{.scala include="../_feidlambda/feid_REPEAT" }
+```{.scala include="../_feidlambda/feid_REPEAT.sc" }
 ```
 </details>
 
@@ -665,7 +665,7 @@ Fungsi utama yang tersedia saat ini hanya `RESHAPE_BY_COLUMNS()`.
 
 <details>
 <summary>_Source Code_ `RESHAPE_*`</summary>
-```{.scala include="../_feidlambda/feid_RESHAPE" }
+```{.scala include="../_feidlambda/feid_RESHAPE.sc" }
 ```
 </details>
 
@@ -722,7 +722,7 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 <details>
 <summary>_Source Code_ `ROTATE_*`</summary>
-```{.scala include="../_feidlambda/feid_ROTATE" }
+```{.scala include="../_feidlambda/feid_ROTATE.sc" }
 ```
 </details>
 
@@ -813,7 +813,7 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 <details>
 <summary>_Source Code_ `SWAP_*`</summary>
-```{.scala include="../_feidlambda/feid_SWAP" }
+```{.scala include="../_feidlambda/feid_SWAP.sc" }
 ```
 </details>
 
@@ -900,7 +900,7 @@ Seluruh fungsi yang tersedia di kategori ini akan dijelaskan.
 
 <details>
 <summary>_Source Code_ `TEXT_*`</summary>
-```{.scala include="../_feidlambda/feid_TEXT" }
+```{.scala include="../_feidlambda/feid_TEXT.sc" }
 ```
 </details>
 

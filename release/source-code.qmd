@@ -2,9 +2,10 @@
 title: |
   _Source Code_
 subtitle: |
-  _Source Code_ feidlambda v0.4
+  _Source Code_ feidlambda & feidmath
 # author: fiakodev
-toc: false
+toc: true
+toc-location: body
 link-external-newwindow: true
 layout: article
 license: MIT LICENSE
@@ -17,8 +18,14 @@ code-line-numbers: true
 
 filters: 
   - "../include-code-files.lua"
-
 ---
 
-```{.scala include="../_feidlambda/feid"}
+# feidlambda v0.4
+
+```{.scala include="../_feidlambda/feid_.sc"}
+```
+
+# feidmath v0.1
+
+```{.scala include="../_feidmath/feidmath_.sc"}
 ```
