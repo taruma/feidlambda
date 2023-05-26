@@ -1,0 +1,5 @@
+section[id^="sec-"] img {
+    border-radius: 1%;
+    border: 1px solid;
+    box-shadow: 2px 2px 4px #888888;
+}

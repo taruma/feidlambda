@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Taruma Sakti Megariansyah">
+
+<title>feidlambda - FIAKO LAMBDA Style Guide v1.0</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//assets/original_feidlambda_logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="lambda-style.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/original_feidlambda_logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">FIAKO-FEIDLAMBDA</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-feidlambda" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">feidlambda</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-feidlambda">    
+        <li>
+    <a class="dropdown-item" href="../release/source-code.html">
+ <span class="dropdown-text"><em>Source Code</em></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-4.html">
+ <span class="dropdown-text">feidlambda v0.4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-3.html">
+ <span class="dropdown-text">feidlambda v0.3.1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-2-0.html">
+ <span class="dropdown-text">feidlambda v0.2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../release/feidlambda-0-1-0.html">
+ <span class="dropdown-text">feidlambda v0.1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-feid" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">feid*</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-feid">    
+        <li>
+    <a class="dropdown-item" href="../release/feidmath-0-1.html">
+ <span class="dropdown-text">feidmath v0.1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dokumentasi" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dokumentasi</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dokumentasi">    
+        <li>
+    <a class="dropdown-item" href="../docs/lambda-style-guide.html">
+ <span class="dropdown-text">LAMBDA Stlye Guide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/install.html">
+ <span class="dropdown-text">Instalasi koleksi feidlambda</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/glossary.html">
+ <span class="dropdown-text">Daftar Istilah</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-artikel" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Artikel</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-artikel">    
+        <li>
+    <a class="dropdown-item" href="../article/migration-v0-2-to-v0-3.html">
+ <span class="dropdown-text">Migrasi feidlambda v0.2 ke v0.3</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fiakoenjiniring/feidlambda"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Daftar Isi</h2>
+   
+  <ul>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction">📖 FIAKO LAMBDA Style Guide (FSG-LAMBDA)</a></li>
+  <li><a href="#sec-requirements" id="toc-sec-requirements" class="nav-link" data-scroll-target="#sec-requirements">📚 Prasyarat</a>
+  <ul class="collapse">
+  <li><a href="#sec-rec-device" id="toc-sec-rec-device" class="nav-link" data-scroll-target="#sec-rec-device">💻 Perangkat</a></li>
+  <li><a href="#sec-rec-knowledge" id="toc-sec-rec-knowledge" class="nav-link" data-scroll-target="#sec-rec-knowledge">🧠 Pengetahuan</a></li>
+  <li><a href="#sec-rec-adv-formula-env" id="toc-sec-rec-adv-formula-env" class="nav-link" data-scroll-target="#sec-rec-adv-formula-env">🧩 <em>Advanced Formula Environment</em> (<em>Add-ins</em> <strong>Excel Lab</strong>)</a></li>
+  </ul></li>
+  <li><a href="#sec-format" id="toc-sec-format" class="nav-link" data-scroll-target="#sec-format">📐 Format dan Organisasi</a>
+  <ul class="collapse">
+  <li><a href="#sec-format-indentation" id="toc-sec-format-indentation" class="nav-link" data-scroll-target="#sec-format-indentation">➡️ Indentasi</a></li>
+  <li><a href="#sec-format-line-break" id="toc-sec-format-line-break" class="nav-link" data-scroll-target="#sec-format-line-break">↩︎️ Pemisahan Baris</a></li>
+  <li><a href="#sec-format-spacing" id="toc-sec-format-spacing" class="nav-link" data-scroll-target="#sec-format-spacing">📏 Spasi untuk Kejelasan</a></li>
+  <li><a href="#sec-format-comments" id="toc-sec-format-comments" class="nav-link" data-scroll-target="#sec-format-comments">💬 Komentar dan Catatan</a></li>
+  <li><a href="#sec-format-operation-order" id="toc-sec-format-operation-order" class="nav-link" data-scroll-target="#sec-format-operation-order">⏭️ Urutan Operasi</a></li>
+  </ul></li>
+  <li><a href="#sec-naming-convention" id="toc-sec-naming-convention" class="nav-link" data-scroll-target="#sec-naming-convention">🏷️ Konvensi Penamaan</a>
+  <ul class="collapse">
+  <li><a href="#sec-naming-variables" id="toc-sec-naming-variables" class="nav-link" data-scroll-target="#sec-naming-variables">🆔 Penamaan Variabel</a></li>
+  <li><a href="#sec-naming-functions" id="toc-sec-naming-functions" class="nav-link" data-scroll-target="#sec-naming-functions">📋 Penamaan Fungsi</a></li>
+  </ul></li>
+  <li><a href="#sec-readability-efficiency" id="toc-sec-readability-efficiency" class="nav-link" data-scroll-target="#sec-readability-efficiency">👀 Keterbacaan dan Efisiensi</a>
+  <ul class="collapse">
+  <li><a href="#sec-function-chaining" id="toc-sec-function-chaining" class="nav-link" data-scroll-target="#sec-function-chaining">🔗 Rantai Fungsi</a></li>
+  <li><a href="#sec-helper-functions" id="toc-sec-helper-functions" class="nav-link" data-scroll-target="#sec-helper-functions">🛠️ Fungsi Pembantu</a></li>
+  <li><a href="#sec-parentheses-for-clarity" id="toc-sec-parentheses-for-clarity" class="nav-link" data-scroll-target="#sec-parentheses-for-clarity">🟢 Tanda Kurung untuk Kejelasan</a></li>
+  <li><a href="#sec-keeping-functions-simple" id="toc-sec-keeping-functions-simple" class="nav-link" data-scroll-target="#sec-keeping-functions-simple">🧮 Menjaga fungsi tetap sederhana</a></li>
+  <li><a href="#sec-variable-naming" id="toc-sec-variable-naming" class="nav-link" data-scroll-target="#sec-variable-naming">✏️ Penamaan Variabel</a></li>
+  <li><a href="#sec-comment-usage" id="toc-sec-comment-usage" class="nav-link" data-scroll-target="#sec-comment-usage">💭 Penggunaan Komentar</a></li>
+  </ul></li>
+  <li><a href="#sec-argument-handling" id="toc-sec-argument-handling" class="nav-link" data-scroll-target="#sec-argument-handling">📜 Penanganan Argumen</a>
+  <ul class="collapse">
+  <li><a href="#sec-argument-order" id="toc-sec-argument-order" class="nav-link" data-scroll-target="#sec-argument-order">🔀 Urutan argumen yang konsisten</a></li>
+  <li><a href="#sec-optional-arguments" id="toc-sec-optional-arguments" class="nav-link" data-scroll-target="#sec-optional-arguments">➕ Argumen Opsional</a></li>
+  </ul></li>
+  <li><a href="#sec-error-handling" id="toc-sec-error-handling" class="nav-link" data-scroll-target="#sec-error-handling">❗ Penanganan ERROR</a></li>
+  <li><a href="#sec-documentation" id="toc-sec-documentation" class="nav-link" data-scroll-target="#sec-documentation">📝 Dokumentasi</a>
+  <ul class="collapse">
+  <li><a href="#sec-documenting-lambda-functions" id="toc-sec-documenting-lambda-functions" class="nav-link" data-scroll-target="#sec-documenting-lambda-functions">📑 Membuat dokumen atau lembar khusus untuk deskripsi fungsi LAMBDA</a></li>
+  <li><a href="#sec-tips-for-clear-descriptions" id="toc-sec-tips-for-clear-descriptions" class="nav-link" data-scroll-target="#sec-tips-for-clear-descriptions">📄 Kiat untuk membuat deskripsi yang jelas, singkat, dan informatif</a></li>
+  </ul></li>
+  <li><a href="#sec-performance-scalability" id="toc-sec-performance-scalability" class="nav-link" data-scroll-target="#sec-performance-scalability">🚀 Kinerja dan Skalabilitas</a>
+  <ul class="collapse">
+  <li><a href="#sec-optimizing-performance" id="toc-sec-optimizing-performance" class="nav-link" data-scroll-target="#sec-optimizing-performance">⏱️ Mengoptimalkan kinerja</a></li>
+  <li><a href="#sec-consistent-case-usage" id="toc-sec-consistent-case-usage" class="nav-link" data-scroll-target="#sec-consistent-case-usage">🔠 Menggunakan huruf besar dan huruf kecil yang konsisten</a></li>
+  <li><a href="#sec-thorough-function-testing" id="toc-sec-thorough-function-testing" class="nav-link" data-scroll-target="#sec-thorough-function-testing">🧪 Menguji fungsi secara menyeluruh</a></li>
+  <li><a href="#sec-considering-scalability" id="toc-sec-considering-scalability" class="nav-link" data-scroll-target="#sec-considering-scalability">📈 Pertimbangkan skalabilitas</a></li>
+  <li><a href="#sec-utilizing-built-in-functions" id="toc-sec-utilizing-built-in-functions" class="nav-link" data-scroll-target="#sec-utilizing-built-in-functions">🎁 Memanfaatkan fungsi bawaan</a></li>
+  <li><a href="#sec-utilizing-dynamic-arrays" id="toc-sec-utilizing-dynamic-arrays" class="nav-link" data-scroll-target="#sec-utilizing-dynamic-arrays">💹 Memanfaatkan <em>dynamic array</em> dan fungsinya</a></li>
+  <li><a href="#sec-avoiding-recursive-references" id="toc-sec-avoiding-recursive-references" class="nav-link" data-scroll-target="#sec-avoiding-recursive-references">🚫 Menghindari fungsi rekursif atau dependensi yang tidak perlu</a></li>
+  </ul></li>
+  <li><a href="#sec-collaboration-maintenance" id="toc-sec-collaboration-maintenance" class="nav-link" data-scroll-target="#sec-collaboration-maintenance">🤝 Kolaborasi dan Pemeliharaan</a>
+  <ul class="collapse">
+  <li><a href="#sec-sharing-lambda-functions" id="toc-sec-sharing-lambda-functions" class="nav-link" data-scroll-target="#sec-sharing-lambda-functions">🔄 Berbagi fungsi LAMBDA dengan rekan kerja</a></li>
+  <li><a href="#sec-implementing-version-control" id="toc-sec-implementing-version-control" class="nav-link" data-scroll-target="#sec-implementing-version-control">📜 Mengimplementasikan kontrol versi</a></li>
+  <li><a href="#sec-grouping-related-functions" id="toc-sec-grouping-related-functions" class="nav-link" data-scroll-target="#sec-grouping-related-functions">📚 Mengelompokkan fungsi yang terkait</a></li>
+  <li><a href="#sec-code-modularization" id="toc-sec-code-modularization" class="nav-link" data-scroll-target="#sec-code-modularization">🧩 Modularisasi kode</a></li>
+  <li><a href="#sec-balancing-performance-readability" id="toc-sec-balancing-performance-readability" class="nav-link" data-scroll-target="#sec-balancing-performance-readability">⚖️ Menyeimbangkan kinerja dan keterbacaan</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fiakoenjiniring/feidlambda/edit/main/docs/lambda-style-guide.qmd" class="toc-action">Ubah halaman ini</a></p><p><a href="https://github.com/fiakoenjiniring/feidlambda/issues/new" class="toc-action">Melaporkan isu</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><p>FIAKO LAMBDA Style Guide v1.0</p></h1>
+<p class="subtitle lead"></p><p>Panduan penulisan fungsi LAMBDA di Microsoft Excel yang digunakan oleh FIAKO Engineering.</p><p></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Penulis</div>
+    <div class="quarto-title-meta-contents">
+             <p>Taruma Sakti Megariansyah </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Diterbitkan</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">26 Mei 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstrak</div>
+    <p>Panduan ini mencakup berbagai prinsip penulisan, desain dan praktik terbaik untuk membuat dan mengolah fungsi LAMBDA di Microsoft Excel.</p>
+  </div>
+</div>
+
+</header>
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Catatan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Panduan ini dibuat dengan bantuan chatGPT (GPT-4) dengan penyesuaian oleh penulis.</p>
+</div>
+</div>
+<section id="sec-introduction" class="level1">
+<h1>📖 FIAKO LAMBDA Style Guide (FSG-LAMBDA)</h1>
+<p><strong>FIAKO LAMBDA Style Guide</strong> (FLSG / FSG-LAMBDA) adalah panduan penulisan fungsi LAMBDA untuk Microsoft Excel yang digunakan di FIAKO Engineering. Panduan ini dirancang untuk memberikan kerangka kerja yang konsisten dan mudah dipahami dalam mengembangkan, mengoptimalkan, dan memelihara fungsi LAMBDA yang efisien dan mudah dibaca. Panduan ini mencakup berbagai aspek, mulai dari format, konvensi penamaan, penanganan argumen, penanganan kesalahan, hingga tips keterbacaan dan kinerja fungsi LAMBDA.</p>
+<p>Adapun manfaat mengembangkan fungsi LAMBDA di Microsoft Excel yaitu:</p>
+<ul>
+<li><strong>Fleksibilitas</strong>: Fungsi LAMBDA memungkinkan pengguna untuk membuat fungsi kustom yang dapat diadaptasi sesuai kebutuhan spesifik dan digunakan berulang kali dalam berbagai situasi.</li>
+<li><strong>Pengurangan kompleksitas</strong>: Dengan menggunakan fungsi LAMBDA, pengguna dapat menggabungkan beberapa fungsi yang ada menjadi satu fungsi yang lebih sederhana, sehingga memudahkan pembacaan dan pemahaman fungsi yang digunakan di dalam Microsoft Excel.</li>
+<li><strong>Pemeliharaan yang lebih mudah</strong>: Fungsi LAMBDA yang ditulis dengan baik memudahkan pemeliharaan dan pengembangan lebih lanjut, karena struktur yang jelas dan konvensi penamaan yang konsisten.</li>
+<li><strong>Penggunaan berulang</strong>: Fungsi LAMBDA yang dibuat dapat digunakan kembali di seluruh workbook atau bahkan di workbook lain, yang meningkatkan efisiensi dalam mengembangkan solusi Excel yang canggih.</li>
+<li><strong>Kolaborasi dan berbagi</strong>: Memudahkan pengguna untuk berbagi fungsi kustom dengan rekan kerja atau komunitas pengguna Excel, sehingga mengurangi pengulangaan pekerjaan yang sama dan meningkatkan kolaborasi.</li>
+</ul>
+<p>Panduan ini disusun untuk membantu pengguna menguasai berbagai aspek penulisan fungsi LAMBDA yang efektif.</p>
+</section>
+<section id="sec-requirements" class="level1">
+<h1>📚 Prasyarat</h1>
+<p>Sebelum mulai mengembangkan fungsi LAMBDA dan menggunakan panduan ini, terdapat yang harus dipersiapkan yaitu dari perangkat yang digunakan dan pengetahuan yang dibutuhkan.</p>
+<section id="sec-rec-device" class="level2">
+<h2 class="anchored" data-anchor-id="sec-rec-device">💻 Perangkat</h2>
+<p>Dalam mengembangkan fungsi LAMBDA dan mengikuti panduan ini berikut daftar perangkat dan <em>add-ins</em> yang digunakan dalam pengembangan LAMBDA:</p>
+<ul>
+<li><strong>Microsoft Excel 365</strong>: Pastikan menggunakan <strong>Microsoft Excel 365</strong>, karena saat ini, fungsi LAMBDA hanya tersedia di Microsoft Excel 365.</li>
+<li><strong>Excel Labs</strong> <em>add-ins</em>: Fitur <em>Advanced Formula Environment</em> yang tersedia di <em>add-ins</em> ini direkomendasikan sebagai standar editor untuk pengembangan fungsi LAMBDA. Untuk panduan instalasi, silakan lihat <a href="../docs/install.html">panduan instalasi</a>.</li>
+</ul>
+<p>Fungsi LAMBDA dan beberapa fungsi <em>dynamic array</em> terbaru lainnya juga tersedia di Microsoft Excel for Web. Oleh karena itu, jika Anda belum berlangganan, Anda dapat bereksperimen dengan fungsi LAMBDA melalui Microsoft Excel for Web.</p>
+</section>
+<section id="sec-rec-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="sec-rec-knowledge">🧠 Pengetahuan</h2>
+<p>Fungsi LAMBDA dapat diterapkan oleh pengguna Microsoft Excel dengan berbagai tingkat keahlian, mulai dari pemula hingga mahir. Tingkat pengetahuan yang dibutuhkan dalam pengembangan fungsi LAMBDA di Microsoft Excel tergantung pada kompleksitas fungsi yang akan dikembangkan. Berikut ini adalah pengetahuan atau pemahaman yang diperlukan untuk memahami fungsi LAMBDA dan menerapkan FIAKO LAMBDA Style Guide:</p>
+<ul>
+<li><strong>Pemahaman dasar tentang Microsoft Excel</strong>: Pastikan memahami cara menggunakan sel, baris, kolom, serta mengedit rumus. Anda bisa belajar lebih lanjut di <a href="https://support.microsoft.com/id-id/office/excel-for-beginners-9bc05390-e94c-46af-a5b3-d7c22f6990bb">Excel untuk Pemula</a>.</li>
+<li><strong>Dasar-dasar bahasa pemrograman</strong>: Kuasai konsep dasar pemrograman seperti variabel, fungsi, dan logika bersyarat. Pelajari lebih lanjut di <a href="https://www.codecademy.com/learn/learn-how-to-code">Pemrograman Dasar</a>.</li>
+<li><strong>Fungsi Excel yang umum</strong>: Kembangkan kemampuan untuk menggunakan dan memahami fungsi Excel seperti SUM, AVERAGE, VLOOKUP, IF, AND, OR, INDEX, dan MATCH. Lihat <a href="https://exceljet.net/articles/101-excel-functions">Fungsi Excel yang Harus Diketahui</a>.</li>
+<li><strong>Dasar-dasar penanganan kesalahan dalam Excel</strong>: Pahami cara menggunakan fungsi IFERROR dan IFNA untuk mengatasi kesalahan. Pelajari lebih lanjut di <a href="https://www.excel-easy.com/examples/iferror.html">Penanganan Kesalahan di Excel</a>.</li>
+<li><strong>Fungsi LAMBDA</strong>: Mengerti tujuan dan cara kerja fungsi LAMBDA dalam menciptakan fungsi kustom di Microsoft Excel. Baca lebih lanjut di <a href="https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67">Pengantar Fungsi LAMBDA</a>.</li>
+<li><strong>Pengetahuan tentang Dynamic Array di Microsoft Excel</strong>: Kuasai konsep dan cara kerja fitur Dynamic Array dalam mengolah data berbentuk array. Informasi lebih lanjut dapat ditemukan di <a href="https://support.microsoft.com/en-us/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531">Perilaku <em>Dynamic Arrays</em> dan <em>spilled array</em></a>.</li>
+</ul>
+<p>Dengan memenuhi prasyarat di atas, diharapkan untuk lebih siap untuk menggunakan fungsi LAMBDA dan memahami panduan ini secara efisien dan efektif. Pastikan untuk menggunakan alat yang sesuai dan menguasai pengetahuan yang dibutuhkan guna mengoptimalkan proses pengembangan fungsi LAMBDA dan penerapan panduan ini.</p>
+</section>
+<section id="sec-rec-adv-formula-env" class="level2">
+<h2 class="anchored" data-anchor-id="sec-rec-adv-formula-env">🧩 <em>Advanced Formula Environment</em> (<em>Add-ins</em> <strong>Excel Lab</strong>)</h2>
+<p>Dalam panduan ini, disarankan untuk menggunakan <em>Advanced Formula Environment</em> (AFE) dari Excel Labs sebagai editor saat mengembangkan fungsi LAMBDA. AFE sangat membantu pengguna dalam mengembangkan dan mengelola fungsi LAMBDA. Berikut beberapa fitur unggulan AFE<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<ul>
+<li>Melihat, memformat, dan mengedit rumus yang telah didefinisikan dalam kisi dengan bilah rumus yang lebih canggih.</li>
+<li>Mendefinisikan dan mengedit fungsi yang diberi nama, rentang, dan rumus yang dapat disinkronkan dengan Manajer Nama.</li>
+<li>Membuat koleksi fungsi yang diberi nama, disebut modul, yang didefinisikan sebagai kode dan disimpan sebagai bagian dari Buku Kerja.</li>
+<li>Mengimpor modul LAMBDA secara cepat langsung dari GitHub Gist.</li>
+</ul>
+<p>AFE juga mendukung fitur-fitur tambahan seperti <em>autocomplete</em>, <em>refactoring</em>, <em>formatting</em>, dan lainnya, yang akan memudahkan Anda dalam proses pengembangan fungsi LAMBDA. Pastikan Anda menggunakan AFE untuk meningkatkan efisiensi dan kenyamanan saat mengikuti panduan ini.</p>
+<p>Dalam menggunakan fungsi LAMBDA, langkah yang umum digunakan adalah menuliskan fungsi LAMBDA pada Formula Name Manager. Akan tetapi, untuk panduan ini pengembangan fungsi LAMBDA akan menggunakan AFE. Semenjak AFE v1.1+, fungsi LAMBDA disimpan dalam dokumen excel dan muncul di Formula Name Manager ketika dilakukan sinkronisasi. Hanya saja, sifatnya satu arah, yaitu fungsi LAMBDA yang ditulis di AFE akan tersimpan juga pada Formula Name Manager, tapi tidak sebaliknya. Jadi fungsi LAMBDA yang dikembangkan secara manual di Formula Name Manager tidak akan muncul di AFE.</p>
+<p>Pada umumnya pada tutorial formula lambda ditulis sebagai berikut:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> x<span class="op">+</span>y<span class="op">+</span>z<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>kemudian formula tersebut disimpan dalam Formula Name Manager dengan namanya, misalkan fungsi <code>JUMLAH</code>. Akan tetapi, dengan menggunakan AFE sebagai editor, dalam panduan ini penulisannya sebagai berikut:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>JUMLAH <span class="op">=</span> <span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> x<span class="op">+</span>y<span class="op">+</span>z<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sehingga, kode yang terlampir dalam panduan ini adalah potongan kode yang cocok disalin ke editor AFE (Excel Labs).</p>
+</section>
+</section>
+<section id="sec-format" class="level1">
+<h1>📐 Format dan Organisasi</h1>
+<p>Mengatur kode dengan baik sangat penting untuk memastikan mudah dibaca dan dipahami. Untuk melakukan formatting, dapat dilakukan secara otomatis di AFE dengan menggunakan perintah <code>Format</code> (<code>Ctrl + Shift + F</code>). Akan tetapi berikut beberapa aspek yang dapat diperhatikan dalam Format dan Organisasi pada fungsi LAMBDA jika tidak menggunakan <em>autoformatting</em>:</p>
+<section id="sec-format-indentation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-format-indentation">➡️ Indentasi</h2>
+<p>Menggunakan indentasi yang konsisten akan membantu meningkatkan keterbacaan kode. Gunakan 4 spasi untuk indentasi. Indentasi otomatis dengan AFE akan menyesuaikan dengan lebar layar editor (disarankan maksimal 77 karakter). Gunakan potongan komentar kode dibawah ini sebagai indikator lebar layar editor maksimum.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// BATAS MAKSMIMUM LAYAR EDITOR -------------------------------------------#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-format-line-break" class="level2">
+<h2 class="anchored" data-anchor-id="sec-format-line-break">↩︎️ Pemisahan Baris</h2>
+<p>Menggunakan pemisahan baris yang konsisten akan membantu memisahkan bagian kode yang berbeda dan memudahkan pemahaman.</p>
+<p>Contoh indentasi dan pemisahan baris yang baik:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> <span class="co">// variabel input</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">IF</span><span class="op">(</span> <span class="co">/* operasi dimulai di baris baru */</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        x <span class="op">&gt;</span> y<span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"X lebih besar"</span><span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">IF</span><span class="op">(</span>x <span class="op">&lt;</span> y<span class="op">,</span> <span class="st">"Y lebih besar"</span><span class="op">,</span> <span class="st">"X dan Y sama"</span><span class="op">)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-format-spacing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-format-spacing">📏 Spasi untuk Kejelasan</h2>
+<p>Menggunakan spasi secara konsisten dalam kode LAMBDA akan membantu meningkatkan keterbacaan dan memudahkan pemahaman struktur kode. Pertimbangkan untuk menambahkan spasi di sekitar operator, seperti tanda kurung, koma, dan operator matematika:</p>
+<p>Contoh penggunaan spasi yang baik:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>a<span class="op">,</span> b<span class="op">,</span> c<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>a <span class="op">&gt;</span> b<span class="op">,</span> a<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span>b <span class="op">&gt;</span> c<span class="op">,</span> b<span class="op">,</span> c<span class="op">)));</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-format-comments" class="level2">
+<h2 class="anchored" data-anchor-id="sec-format-comments">💬 Komentar dan Catatan</h2>
+<p>Menambahkan komentar atau catatan di sekitar kode LAMBDA dapat membantu menjelaskan logika atau maksud di balik kode tersebut. Meskipun Excel tidak mendukung komentar langsung dalam rumus, Anda dapat menggunakan komentar pada editor AFE dengan <code>// komentar</code> (satu baris) atau <code>/* komentar */</code> (lebih dari satu baris).</p>
+</section>
+<section id="sec-format-operation-order" class="level2">
+<h2 class="anchored" data-anchor-id="sec-format-operation-order">⏭️ Urutan Operasi</h2>
+<p>Urutan operasi sangat penting untuk memastikan hasil yang benar dari kode LAMBDA. Oleh karena itu, selalu pastikan urutan operasi dalam kode Anda jelas dan mudah dipahami. Jika perlu, gunakan tanda kurung untuk mengklarifikasi prioritas operasi.</p>
+<p>Contoh urutan operasi yang baik:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> <span class="op">(</span>x <span class="op">+</span> y<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>x <span class="op">-</span> y<span class="op">));</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dengan memperhatikan aspek-aspek ini dalam bagian Format dan Organisasi, panduan gaya fungsi LAMBDA akan membantu pengguna menciptakan kode yang lebih rapi, konsisten, dan mudah dipahami. Selalu pastikan untuk mengikuti panduan ini dengan konsisten sepanjang kode Anda agar hasilnya optimal.</p>
+</section>
+</section>
+<section id="sec-naming-convention" class="level1">
+<h1>🏷️ Konvensi Penamaan</h1>
+<p>Saat mengembangkan fungsi LAMBDA di Microsoft Excel, penting untuk mengikuti konvensi penamaan yang konsisten. Konvensi penamaan yang baik membantu meningkatkan keterbacaan dan pemahaman kode oleh pengembang lain, termasuk diri sendiri di masa depan. Dengan mengikuti konvensi penamaan yang baik, kode akan lebih mudah dipelajari, dipahami, dan dipelihara oleh orang lain. Sebagai catatan, nama variabel ataupun fungsi di Excel bersifat <strong><em>case-insensitive</em></strong>, yang artinya huruf besar dan kecil merujuk ke hal yang sama. Berikut adalah beberapa pedoman untuk konvensi penamaan dalam fungsi LAMBDA di Excel.</p>
+<section id="sec-naming-variables" class="level2">
+<h2 class="anchored" data-anchor-id="sec-naming-variables">🆔 Penamaan Variabel</h2>
+<ol type="1">
+<li><p>Gunakan huruf kecil: Saat menamai variabel dalam fungsi LAMBDA, gunakan huruf kecil untuk mengindikasikan bahwa itu adalah variabel. Terlepas sifat <em>case-insenstive</em>, disarankan untuk membedakan antara nama variabel (huruf kecil) dan nama fungsi (huruf besar) Contoh:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> x<span class="op">+</span>y<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di sini, <code>x</code> dan <code>y</code> adalah nama variabel yang ditulis dalam huruf kecil.</p></li>
+<li><p>Gunakan penamaan yang deskriptif: Pilih nama variabel yang mendeskripsikan data yang diwakili oleh variabel tersebut. Ini membantu meningkatkan pemahaman kode. Contoh:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>item_count<span class="op">,</span> unit_price<span class="op">,</span> item_count <span class="op">*</span> unit_price<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, <code>item_count</code> dan <code>unit_price</code> adalah nama variabel yang menjelaskan data yang digunakan dalam perhitungan.</p></li>
+<li><p>Hindari menggunakan nama variabel yang diakhiri angka: Hal tersebut untuk menghindari keserupaan dengan nama sel (Tiga karakter yang diikuti angka seperti <code>C1</code>, <code>XY35</code>, <code>UDS3213</code>). Untuk menghindari gunakan nama deskriptif atau menambahkan garis bawah (<em>underscore</em> <code>_</code>) sebelum angka. Contoh:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x_1<span class="op">,</span> vec_23<span class="op">,</span> x_1 <span class="op">*</span> vec_23<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>x_1</code> dan <code>vec_23</code> adalah nama variabel yang tidak bentrok dengan nama sel (<code>X1</code>, <code>VEC23</code>) karena diberi tambahan garis bawah (<code>x_1</code>, <code>vec_23</code>).</p></li>
+</ol>
+</section>
+<section id="sec-naming-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-naming-functions">📋 Penamaan Fungsi</h2>
+<ol type="1">
+<li><p>Gunakan huruf besar: Saat menamai fungsi LAMBDA, gunakan huruf besar untuk memberikan indikator yang berbeda antara fungsi dan variabel. Contoh:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> <span class="fu">MAX</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di sini, <code>MY_FUNCTION</code>, <code>LAMBDA</code>, <code>MAX</code> adalah nama fungsi, sedangkan <code>x</code> dan <code>y</code> adalah parameter yang diterima oleh fungsi LAMBDA yang kita definisikan atau dapat disebut variabel.</p></li>
+<li><p>Gunakan penamaan fungsi yang deskriptif: Pilih nama yang mencerminkan tujuan atau operasi yang dilakukan oleh fungsi tersebut. Nama yang jelas dan deskriptif membantu memahami fungsi saat dilihat atau digunakan di tempat lain. Contoh:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TOTAL_PRICE <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>item_count<span class="op">,</span> unit_price<span class="op">,</span> item_count <span class="op">*</span> unit_price<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, fungsi <code>TOTAL_PRICE</code> menggambarkan total harga dari perhitungan perkalian <code>item_count</code> dengan <code>unit_price</code>.</p></li>
+<li><p>Gunakan pemisahan kata dengan garis bawah: Jika nama fungsi terdiri dari beberapa kata, gunakan garis bawah sebagai pemisah di awal setiap kata untuk memisahkannya. Contoh:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>CALCULATE_TOTAL_PRICE <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>item_count<span class="op">,</span> unit_price<span class="op">,</span> item_count <span class="op">*</span> unit_price<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di sini, <code>CALCULATE_TOTAL_PRICE</code> adalah nama fungsi yang terdiri dari beberapa kata, dan mengikuti panduan sebelumnya, semuanya menggunakan huruf besar.</p></li>
+</ol>
+</section>
+</section>
+<section id="sec-readability-efficiency" class="level1">
+<h1>👀 Keterbacaan dan Efisiensi</h1>
+<p>Keterbacaan dan efisiensi adalah dua faktor penting dalam penulisan kode yang baik, termasuk saat menggunakan fungsi LAMBDA di Excel. Keterbacaan merujuk pada sejauh mana kode dapat dipahami dengan mudah oleh orang lain atau oleh penulis sendiri di masa mendatang. Ini melibatkan struktur, penamaan, dan organisasi kode. Sementara itu, efisiensi merujuk pada sejauh mana kode melakukan tugas dengan cepat dan efektif, tanpa penggunaan sumber daya yang berlebihan atau tidak perlu. Dalam konteks fungsi LAMBDA, ini dapat mencakup pemilihan fungsi yang tepat, penggunaan variabel, dan struktur kode. Dalam bagian ini, akan dibahas beberapa prinsip dan teknik untuk meningkatkan keterbacaan dan efisiensi saat menggunakan fungsi LAMBDA.</p>
+<section id="sec-function-chaining" class="level2">
+<h2 class="anchored" data-anchor-id="sec-function-chaining">🔗 Rantai Fungsi</h2>
+<p>Rantai fungsi dalam LAMBDA memungkinkan penulisan kode yang singkat dan ringkas. Namun, perlu diingat bahwa terlalu banyak fungsi yang dirantai dapat membingungkan. Sebaiknya batasi jumlah fungsi yang dirantai dan pisahkan dengan baris baru jika perlu.</p>
+<p>Contoh berikut menggambarkan rantai fungsi dalam LAMBDA:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> <span class="fu">SUM</span><span class="op">(</span><span class="fu">PRODUCT</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">),</span> z<span class="op">));</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Namun, untuk meningkatkan keterbacaan, bisa dipisahkan menjadi:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        calcProduct<span class="op">,</span> <span class="fu">PRODUCT</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">),</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">SUM</span><span class="op">(</span>calcProduct<span class="op">,</span> z<span class="op">)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-helper-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-helper-functions">🛠️ Fungsi Pembantu</h2>
+<p>Fungsi pembantu adalah cara yang baik untuk memisahkan logika dan membuat kode lebih mudah dibaca. Fungsi pembantu ini bisa melakukan tugas-tugas kecil yang membuat kode utama menjadi lebih bersih dan mudah dipahami.</p>
+<p>Berikut adalah contoh fungsi pembantu dalam LAMBDA:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        calcProduct<span class="op">,</span> <span class="fu">PRODUCT</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">),</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">SUM</span><span class="op">(</span>calcProduct<span class="op">,</span> z<span class="op">)</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-parentheses-for-clarity" class="level2">
+<h2 class="anchored" data-anchor-id="sec-parentheses-for-clarity">🟢 Tanda Kurung untuk Kejelasan</h2>
+<p>Tanda kurung dapat meningkatkan keterbacaan dengan memisahkan bagian-bagian fungsi. Namun, hindari penggunaan tanda kurung yang berlebihan karena dapat membuat kode lebih sulit dipahami.</p>
+<p>Contoh berikut menggambarkan penggunaan tanda kurung yang efektif dalam LAMBDA:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> <span class="fu">SUM</span><span class="op">((</span><span class="fu">PRODUCT</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">)),</span> z<span class="op">));</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-keeping-functions-simple" class="level2">
+<h2 class="anchored" data-anchor-id="sec-keeping-functions-simple">🧮 Menjaga fungsi tetap sederhana</h2>
+<p>Menggunakan fungsi LAMBDA yang sederhana dan mudah dipahami adalah kunci untuk keterbacaan dan efisiensi. Sebaiknya batasi jumlah fungsi dalam satu baris dan pisahkan tugas-tugas kecil ke dalam fungsi pembantu jika memungkinkan.</p>
+<p>Berikut adalah contoh bagaimana fungsi LAMBDA dapat disederhanakan:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        calcProduct<span class="op">,</span> <span class="fu">PRODUCT</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">),</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        result<span class="op">,</span> <span class="fu">SUM</span><span class="op">(</span>calcProduct<span class="op">,</span> z<span class="op">),</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        result</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-variable-naming" class="level2">
+<h2 class="anchored" data-anchor-id="sec-variable-naming">✏️ Penamaan Variabel</h2>
+<p>Penamaan variabel yang jelas dan deskriptif dapat membantu meningkatkan keterbacaan kode. Variabel harus diberi nama yang mencerminkan tujuan atau nilai yang mereka simpan. Menggunakan singkatan atau kode yang tidak jelas dapat membuat kode lebih sulit dipahami.</p>
+<p>Contoh berikut menunjukkan penggunaan penamaan variabel yang baik dalam LAMBDA:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>length<span class="op">,</span> width<span class="op">,</span> height<span class="op">,</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        volume<span class="op">,</span> <span class="fu">PRODUCT</span><span class="op">(</span>length<span class="op">,</span> width<span class="op">,</span> height<span class="op">),</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        volume</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, variabel <code>volume</code> jelas menunjukkan bahwa ia menyimpan nilai volume dari suatu objek.</p>
+</section>
+<section id="sec-comment-usage" class="level2">
+<h2 class="anchored" data-anchor-id="sec-comment-usage">💭 Penggunaan Komentar</h2>
+<p>Penggunaan komentar dalam kode dapat membantu meningkatkan keterbacaan, terutama jika kode tersebut kompleks atau membingungkan. Namun, perlu diingat bahwa komentar harus digunakan dengan bijaksana. Komentar yang berlebihan atau tidak jelas bisa justru membuat kode lebih sulit dipahami.</p>
+<p>Penggunaan komentar dapat menggunakan <code>//</code> (untuk satu baris) atau <code>/* KOMENTAR */</code> (untuk satu blok). Disarankan untuk menghindari komentar di dalam fungsi untuk membuat mudah dibaca. Deskripsi cara kerja atau instruksi lebih lanjut mengenai fungsi bisa ditulis dibagian dokumentasinya.</p>
+<p>Contoh penggunaan komentar:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>length<span class="op">,</span> width<span class="op">,</span> height<span class="op">,</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span> <span class="co">// Digunakan LET untuk memudahkan pembacaan</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        volume<span class="op">,</span> <span class="fu">PRODUCT</span><span class="op">(</span>length<span class="op">,</span> width<span class="op">,</span> height<span class="op">),</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        volume</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sec-argument-handling" class="level1">
+<h1>📜 Penanganan Argumen</h1>
+<p>Penanganan argumen merupakan aspek yang sangat krusial dalam penulisan dan penggunaan fungsi LAMBDA di Microsoft Excel. Memahami bagaimana argumen didefinisikan, dipanggil, dan divalidasi tidak hanya mempengaruhi akurasi dan efisiensi fungsi, tetapi juga dapat mencegah berbagai kesalahan yang dapat terjadi. Selain itu, penanganan argumen yang baik dapat meningkatkan keterbacaan dan pemahaman fungsi, membuatnya lebih mudah digunakan dan dikelola. Oleh karena itu, membahas penanganan argumen dalam panduan gaya penulisan fungsi LAMBDA sangat penting untuk membantu pembaca dalam menulis fungsi yang lebih efektif dan efisien.</p>
+<section id="sec-argument-order" class="level2">
+<h2 class="anchored" data-anchor-id="sec-argument-order">🔀 Urutan argumen yang konsisten</h2>
+<p>Argumen fungsi LAMBDA di Microsoft Excel harus disusun dengan hati-hati. Urutan argumen berperan penting dalam menentukan hasil fungsi. Setiap argumen dalam fungsi LAMBDA ditulis secara berurutan, dipisahkan oleh tanda koma.</p>
+<p>Sebagai contoh, jika fungsi LAMBDA memiliki tiga argumen: A, B, dan C, maka urutan penulisannya dalam fungsi adalah sebagai berikut:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>A<span class="op">,</span> B<span class="op">,</span> C<span class="op">,</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Urutan argumen ini nantinya akan mempengaruhi cara fungsi tersebut dipanggil. Jika fungsi <code>MY_FUNCTION</code> dipanggil dengan tiga nilai, misalnya 1, 2, dan 3, maka nilai-nilai tersebut akan diberikan kepada argumen sesuai dengan urutannya. Dalam hal ini, A akan mendapatkan nilai 1, B mendapatkan nilai 2, dan C mendapatkan nilai 3.</p>
+<p>Fungsi yang bersifat memanipulasi input maka argumen pertamanya merupakan input tersebut. Contoh, fungsi <code>APPLY_COLUMN</code> menerapkan fungsi LAMBDA pada kolom tertentu, maka urutan argumen dimulai dari inputnya yaitu <em>array</em>, indeks kolom, dan fungsi LAMBDA. Sehingga penulisan argumen fungsi sebagai berikut:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>APPLY_COLUMN <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span> column_index<span class="op">,</span> LAMBDA_FUNCTION<span class="op">,</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Jika fungsi LAMBDA yang dibuat menyerupai fungsi yang tersedia di Excel, gunakan urutan yang menyerupai fungsi tersebut agar bisa merujuk fungsi utama. Contoh: fungsi <code>XLOOKUP</code> memiliki urutan yang dimulai dari <code>lookup_value</code>, <code>lookup_vector</code>, <code>return_array</code>, dst. Maka fungsi buatan <code>XLOOKUP_EXTENDER</code> memiliki urutan yang serupa juga dengan fungsi <code>XLOOKUP</code>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>XLOOKUP_EXTENDER <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_value<span class="op">,</span> lookup_vector<span class="op">,</span> return_array<span class="op">,</span> <span class="op">...)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-optional-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="sec-optional-arguments">➕ Argumen Opsional</h2>
+<p>Argumen opsional adalah argumen yang tidak harus disertakan saat memanggil fungsi. Argumen ini biasanya ditandai dengan tanda kurung siku (<code>[]</code>). Contoh penulisan argumen opsional dalam fungsi LAMBDA adalah sebagai berikut:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>A<span class="op">,</span> <span class="op">[</span>B<span class="op">],</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        B<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">ISOMITTED</span><span class="op">(</span>B<span class="op">),</span> <span class="dv">2</span><span class="op">,</span> B<span class="op">),</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        A <span class="op">*</span> B</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, <code>MY_FUNCTION</code> adalah fungsi yang menerima dua argumen: A dan B. Namun, B adalah argumen opsional. Jika B tidak diberikan saat memanggil fungsi, maka B akan dianggap sebagai 2 (lihat fungsi <code>IF(ISOMITTED(B), 2, B)</code>). Gunakan fungsi <code>ISOMITTED()</code> untuk pengaturan nilai argumen opsional.</p>
+<p>Berikut adalah contoh pemanggilan fungsi <code>MY_FUNCTION</code> dengan dan tanpa argumen opsional:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">MY_FUNCTION</span><span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">)</span> <span class="co">// Hasilnya adalah 6, karena 2 * 3 = 6</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MY_FUNCTION</span><span class="op">(</span><span class="dv">2</span><span class="op">)</span> <span class="co">// Hasilnya adalah 4, karena B dianggap sebagai 2, sehingga 2 * 2 = 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, perhatikan bahwa pemanggilan fungsi tanpa menyertakan argumen opsional tidak menyebabkan kesalahan. Argumen opsional memberikan fleksibilitas saat memanggil fungsi, tetapi harus digunakan dengan hati-hati untuk menghindari kebingungan.</p>
+</section>
+</section>
+<section id="sec-error-handling" class="level1">
+<h1>❗ Penanganan ERROR</h1>
+<p>Penanganan ERROR bisa dikembangkan dalam suatu fungsi LAMBDA menggunakan <code>IFERROR()</code> atau <code>IFNA()</code>, akan tetapi disarankan untuk menghindari penggunaan fungsi tersebut dengan membuat dokumentasi yang lengkap mengenai tipe argumen/variabel yang dapat diterima oleh fungsi LAMBDA. Penanganan ERROR hanya baik digunakan saat tahap pengembangan dan bukan saat tahap penyebaran (<em>deployment</em>).</p>
+</section>
+<section id="sec-documentation" class="level1">
+<h1>📝 Dokumentasi</h1>
+<p>Dokumentasi adalah bagian krusial dalam setiap kode atau fungsi, termasuk fungsi LAMBDA di Excel. Dokumentasi tidak hanya membantu pengguna lain memahami apa yang dilakukan oleh kode dan bagaimana cara menggunakannya, tetapi juga membantu penulis kode tersebut dalam memahami dan mengingat detail dan logika di balik kode tersebut.</p>
+<section id="sec-documenting-lambda-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-documenting-lambda-functions">📑 Membuat dokumen atau lembar khusus untuk deskripsi fungsi LAMBDA</h2>
+<p>Setiap fungsi LAMBDA yang dibuat harus memiliki dokumentasi yang rinci dan mudah dipahami. Dokumentasi tersebut sebaiknya ditempatkan dalam dokumen atau lembar khusus yang mudah diakses dan ditemukan. Dokumentasi tersebut harus mencakup detail tentang fungsi tersebut, termasuk:</p>
+<ul>
+<li>Nama fungsi dan versinya (jika ada)</li>
+<li>Deskripsi singkat tentang apa yang dilakukan oleh fungsi tersebut</li>
+<li>Daftar argumen yang diperlukan oleh fungsi dan deskripsi singkat tentang apa yang dilakukan oleh setiap argumen</li>
+<li>Jenis input/argumen yang digunakan dalam fungsi</li>
+<li>Contoh penggunaan fungsi dan hasil yang dihasilkan</li>
+<li>Setiap perubahan yang telah dibuat pada fungsi dari versi sebelumnya</li>
+</ul>
+</section>
+<section id="sec-tips-for-clear-descriptions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-tips-for-clear-descriptions">📄 Kiat untuk membuat deskripsi yang jelas, singkat, dan informatif</h2>
+<p>Berikut adalah beberapa kiat untuk membuat deskripsi fungsi LAMBDA yang jelas, singkat, dan informatif:</p>
+<ul>
+<li><strong>Gunakan bahasa yang mudah dipahami:</strong> Hindari jargon dan istilah teknis yang rumit kecuali jika perlu. Tujuannya adalah untuk membuat dokumentasi yang dapat dipahami oleh semua orang, termasuk mereka yang tidak memiliki pengetahuan teknis yang mendalam.</li>
+<li><strong>Jelaskan apa yang dilakukan oleh fungsi:</strong> Ini adalah bagian yang paling penting dari dokumentasi. Pengguna harus dapat memahami apa yang dilakukan oleh fungsi hanya dengan membaca deskripsi singkatnya.</li>
+<li><strong>Jelaskan argumen fungsi:</strong> Deskripsikan setiap argumen dan jelaskan perannya dalam fungsi. Jika argumen memiliki nilai default, sebutkan juga nilai tersebut.</li>
+<li><strong>Berikan contoh penggunaan:</strong> Contoh penggunaan yang konkret dapat membantu pengguna memahami cara kerja fungsi dan bagaimana cara menggunakannya.</li>
+<li><strong>Jaga dokumentasi tetap up-to-date:</strong> Setiap kali Anda membuat perubahan pada fungsi, pastikan untuk juga memperbarui dokumentasi.</li>
+</ul>
+<p>Berikut adalah contoh dokumentasi kode fungsi <code>SWAP_COLUMNS</code> di feidlambda v0.3 yang dapat digunakan untuk menukar posisi kolom ke-<code>from_index</code> dengan kolom ke-<code>to_index</code>:</p>
+<div class="border p-3 my-3 justify">
+<div class="text-center syntax">
+<dl>
+<dt><em>Syntax</em></dt>
+<dd>
+SWAP_COLUMNS(array, [from_index], [to_index])
+</dd>
+<dt><em>Output</em></dt>
+<dd>
+<em>vector</em> atau <em>array</em>
+</dd>
+</dl>
+</div>
+<hr>
+<dl>
+<dt><code>array := [row vector | array]</code></dt>
+<dd>
+Data dapat berupa <em>array</em> atau <em>row vector</em>.
+</dd>
+<dt><code>[from_index] := 1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>1</code>. Posisi <em>index</em> kolom yang ingin dipindahkan. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+<dt><code>[to_index] := -1 :: [integer]</code></dt>
+<dd>
+<strong><em>(Change in v0.3.1)</em></strong>. Nilai <em>default</em> yaitu <code>-1</code>. Posisi <em>index</em> tujuan kolom. Jika menggunakan indeks negatif, maka posisi diambil dari belakang.
+</dd>
+</dl>
+</div>
+<p>Contoh penggunaannya dapat berbentuk dalam gambar atau gif. Disarankan untuk menyediakan lembar kerja yang menguji fungsi tersebut. Ingatlah bahwa dokumentasi yang baik adalah investasi. Waktu yang dihabiskan untuk membuat dan merawat dokumentasi akan terbayar ketika orang lain (atau Anda sendiri di masa depan) perlu memahami atau menggunakan fungsi yang telah Anda buat.</p>
+</section>
+</section>
+<section id="sec-performance-scalability" class="level1">
+<h1>🚀 Kinerja dan Skalabilitas</h1>
+<p>Mempertimbangkan kinerja dan skalabilitas sangat penting dalam membangun fungsi LAMBDA di Microsoft Excel. Berikut adalah beberapa strategi untuk memastikan fungsi Anda berjalan dengan efisiensi dan dapat menangani peningkatan ukuran data atau kompleksitas tugas.</p>
+<section id="sec-optimizing-performance" class="level2">
+<h2 class="anchored" data-anchor-id="sec-optimizing-performance">⏱️ Mengoptimalkan kinerja</h2>
+<p>Optimalisasi kinerja dapat dilakukan dengan menghindari pengulangan yang tidak perlu dan menggunakan fungsi bawaan Excel kapan pun mungkin. Misalnya, fungsi <code>SEQUENCE</code> dan <code>LET</code> bisa digunakan untuk mengurangi pengulangan dan meningkatkan kinerja.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Menggunakan SEQUENCE dan LET untuk mengurangi pengulangan</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>SUM_ODD_NUMBERS <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>n<span class="op">,</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>n<span class="op">),</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        odd_sequence<span class="op">,</span> <span class="fu">IF</span><span class="op">(</span><span class="fu">MOD</span><span class="op">(</span>sequence<span class="op">,</span> <span class="dv">2</span><span class="op">)</span> <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> sequence<span class="op">,</span> <span class="dv">0</span><span class="op">),</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">SUM</span><span class="op">(</span>odd_sequence<span class="op">)</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-consistent-case-usage" class="level2">
+<h2 class="anchored" data-anchor-id="sec-consistent-case-usage">🔠 Menggunakan huruf besar dan huruf kecil yang konsisten</h2>
+<p>Konsistensi penamaan variabel penting untuk memudahkan pembacaan kode. Ini tidak mempengaruhi kinerja, tetapi penting untuk pemeliharaan dan kolaborasi kode. Rekomendasi penulisan terkait ini antara lain:</p>
+<ul>
+<li>Huruf besar digunakan untuk fungsi seperti <code>SEQUENCE()</code>, <code>LAMBDA()</code>.</li>
+<li>Huruf kecil digunakan untuk variabel/nama argumen/parameter seperti <code>input_number</code>, <code>odd_sequence</code>.</li>
+</ul>
+</section>
+<section id="sec-thorough-function-testing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-thorough-function-testing">🧪 Menguji fungsi secara menyeluruh</h2>
+<p>Pengujian fungsi secara menyeluruh penting untuk memastikan kinerja optimal dan menghindari kesalahan. Anda dapat melakukan ini dengan menguji fungsi Anda di berbagai skenario dan ukuran data.</p>
+<p>Misalnya, jika Anda memiliki fungsi <code>SUM_ODD_NUMBERS</code>, Anda dapat mengujinya dengan berbagai input, mulai dari 1 sampai 1.000.000, dan memeriksa apakah outputnya sesuai dengan yang diharapkan.</p>
+</section>
+<section id="sec-considering-scalability" class="level2">
+<h2 class="anchored" data-anchor-id="sec-considering-scalability">📈 Pertimbangkan skalabilitas</h2>
+<p>Fungsi harus dirancang dengan pertimbangan bahwa ukuran data mungkin akan meningkat di masa mendatang. Misalnya, jika fungsi mengambil array sebagai argumen, pastikan bahwa ia dapat menangani array dengan jumlah elemen yang besar.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Fungsi yang dirancang untuk menangani array dengan jumlah elemen yang besar</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>IS_ALL_IN_VECTOR <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup_vector<span class="op">,</span> array<span class="op">,</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        lookup_vector<span class="op">,</span> <span class="fu">TOCOL</span><span class="op">(</span>lookup_vector<span class="op">),</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">MAP</span><span class="op">(</span>array<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>element<span class="op">,</span> <span class="fu">OR</span><span class="op">(</span><span class="fu">BYROW</span><span class="op">(</span>lookup_vector<span class="op">,</span> <span class="fu">LAMBDA</span><span class="op">(</span>lookup<span class="op">,</span> element <span class="op">=</span> lookup<span class="op">)))))</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Oleh karena itu gunakan konsep pengembangan fungsi dengan vektorisasi. Vektorisasi mengacu pada teknik di mana operasi diterapkan pada seluruh array, bukan hanya pada elemen individual, yang dapat secara signifikan meningkatkan kinerja dan efisiensi. Excel mendukung vektorisasi melalui banyak fungsi bawaannya dan kemampuan untuk menerapkan operasi pada seluruh array dalam satu operasi.</p>
+<p>Sebagai contoh, berikut ini adalah perbandingan antara fungsi yang dirancang dengan vektorisasi dan tanpa vektorisasi. Kedua fungsi memiliki tujuan yang sama, yaitu menghitung kuadrat dari setiap angka dalam array.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Tanpa vektorisasi</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>SQUARE_EACH_NUMBER <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LET</span><span class="op">(</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        nrows<span class="op">,</span> <span class="fu">ROWS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        ncols<span class="op">,</span> <span class="fu">COLUMNS</span><span class="op">(</span>array<span class="op">),</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        row_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(</span>nrows<span class="op">),</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        col_sequence<span class="op">,</span> <span class="fu">SEQUENCE</span><span class="op">(,</span> ncols<span class="op">),</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        result<span class="op">,</span> <span class="fu">IFERROR</span><span class="op">(</span><span class="fu">INDEX</span><span class="op">(</span>array<span class="op">,</span> row_sequence<span class="op">,</span> col_sequence<span class="op">)^</span><span class="dv">2</span><span class="op">,</span> <span class="st">""</span><span class="op">),</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        result</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">)</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">// Dengan vektorisasi</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>SQUARE_EACH_NUMBER_VECTORIZED <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    array<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dalam contoh ini, fungsi <code>SQUARE_EACH_NUMBER_VECTORIZED</code> akan jauh lebih cepat dan efisien dibandingkan dengan <code>SQUARE_EACH_NUMBER</code>, terutama saat bekerja dengan array yang berukuran besar.</p>
+</section>
+<section id="sec-utilizing-built-in-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-utilizing-built-in-functions">🎁 Memanfaatkan fungsi bawaan</h2>
+<p>Fungsi bawaan Excel biasanya lebih optimal dan efisien daripada fungsi yang dibuat secara kustom. Oleh karena itu, sebisa mungkin gunakan fungsi bawaan dalam implementasi fungsi LAMBDA Anda. Berikut adalah contoh fungsi untuk interpolasi linear antara dua titik. Satu fungsi tidak menggunakan fungsi bawaan dan satu lagi menggunakan fungsi <code>FORECAST.LINEAR()</code> di Excel.</p>
+<p>Tanpa menggunakan fungsi bawaan:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Custom function for linear interpolation</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>LINEAR_INTERPOLATION_CUSTOM <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> x1<span class="op">,</span> y1<span class="op">,</span> x2<span class="op">,</span> y2<span class="op">,</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    y1 <span class="op">+</span> <span class="op">((</span>x <span class="op">-</span> x1<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>y2 <span class="op">-</span> y1<span class="op">))</span> <span class="op">/</span> <span class="op">(</span>x2 <span class="op">-</span> x1<span class="op">)</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di sini, <code>x</code> adalah nilai yang ingin kita interpolasi, <code>(x1, y1)</code> dan <code>(x2, y2)</code> adalah dua titik yang diketahui. Fungsi ini menghitung nilai y yang sesuai dengan x berdasarkan garis yang ditarik antara dua titik yang diberikan.</p>
+<p>Sekarang, mari kita buat fungsi yang sama menggunakan fungsi bawaan <code>FORECAST.LINEAR()</code>:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Using built-in Excel function for linear interpolation</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>LINEAR_INTERPOLATION_FORECAST <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> known_y<span class="er">'</span>s<span class="op">,</span> known_x<span class="er">'</span>s<span class="op">,</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    FORECAST<span class="op">.</span><span class="fu">LINEAR</span><span class="op">(</span>x<span class="op">,</span> known_y<span class="er">'</span>s<span class="op">,</span> known_x<span class="er">'</span>s<span class="op">)</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Di sini, <code>x</code> adalah nilai yang ingin kita interpolasi, <code>known_y's</code> dan <code>known_x's</code> adalah array y dan x yang diketahui. Fungsi <code>FORECAST.LINEAR()</code> menghitung, atau meramalkan, nilai y yang sesuai dengan x berdasarkan data x dan y yang diberikan.</p>
+</section>
+<section id="sec-utilizing-dynamic-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="sec-utilizing-dynamic-arrays">💹 Memanfaatkan <em>dynamic array</em> dan fungsinya</h2>
+<p>Rumus array memungkinkan Anda untuk melakukan operasi pada seluruh array atau rentang data sekaligus, bukan pada setiap nilai secara individual. Ini sangat penting dalam mempercepat pengolahan dan analisis data, terutama jika Anda bekerja dengan dataset yang besar.</p>
+<p>Konsep ini sering kali terkait dengan vektorisasi, sebuah teknik di mana operasi diterapkan pada seluruh array, bukan hanya pada elemen individual. Ini dapat secara signifikan meningkatkan kinerja dan efisiensi.</p>
+<p>Ada dua jenis fungsi utama dalam Excel: fungsi scalar dan fungsi dynamic array. Fungsi scalar hanya mengembalikan satu nilai pada waktu tertentu. Di sisi lain, fungsi dynamic array mampu menghasilkan serangkaian nilai (atau array) sebagai output, dan jika ditempatkan di sel top-left, outputnya akan “mengisi” area yang sesuai di sekitar sel tersebut.</p>
+<p>Sebagai contoh, misalkan kita ingin menghitung kuadrat dari setiap angka dalam tabel. Biasanya, kita membuat kolom baru dimana formulanya sebagai berikut <code>=baris_kolom_angka^2</code> yang mengisi setiap baris di kolom kuadratnya. Formulasi tersebut dianggap sebagai fungsi scalar karena hanya menghasilkan satu nilai pada setiap baris. Solusinya adalah memanfaatkan <em>dynamic array</em> dimana input fungsi merupakan array.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Fungsi dynamic array</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>SQUARE_DYNAMIC_ARRAY <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>array<span class="op">,</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    array<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Berbeda dengan fungsi scalar, fungsi dynamic array di atas dapat menghitung kuadrat dari setiap angka dalam array sekaligus, karena operasi kuadrat diterapkan pada seluruh array, bukan hanya pada elemen individual. Ini adalah contoh penggunaan vektorisasi dalam rumus array. Secara umum, menggunakan fungsi dynamic array dan memanfaatkan vektorisasi dalam rumus array dapat meningkatkan kinerja dan efisiensi pengolahan data Anda di Excel.</p>
+</section>
+<section id="sec-avoiding-recursive-references" class="level2">
+<h2 class="anchored" data-anchor-id="sec-avoiding-recursive-references">🚫 Menghindari fungsi rekursif atau dependensi yang tidak perlu</h2>
+<p>Fungsi rekursif atau dependensi yang tidak perlu dapat menyebabkan fungsi berjalan lebih lambat dan mengakibatkan kesalahan. Pastikan untuk menghindari ini ketika merancang fungsi Anda. Akan tetapi, jika ingin melakukan <em>looping</em> setiap elemen/baris/kolom di suatu array, bisa memanfaatkan fungsi recursive. Hanya saja, fungsi rekursif ini akan sulit dibaca dibandingkan fungsi LAMBDA yang kompleks. Beberapa kasus dapat memanfaatkan fungsi rekursif, akan tetapi lebih baik untuk menjauhi fungsi yang bersifat rekursif.</p>
+</section>
+</section>
+<section id="sec-collaboration-maintenance" class="level1">
+<h1>🤝 Kolaborasi dan Pemeliharaan</h1>
+<p>Kolaborasi dan pemeliharaan adalah bagian penting dari siklus hidup pengembangan fungsi LAMBDA. Ini melibatkan berbagi fungsi dengan rekan kerja, melakukan perbaikan dan peningkatan fungsi, serta menerapkan praktek-praktek terbaik dalam penulisan dan pengaturan kode. Dalam bagian ini, dibahas berbagai aspek penting dalam proses kolaborasi dan pemeliharaan kode.</p>
+<section id="sec-sharing-lambda-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sharing-lambda-functions">🔄 Berbagi fungsi LAMBDA dengan rekan kerja</h2>
+<p>Untuk berbagi fungsi LAMBDA dengan rekan kerja, Anda dapat menggunakan fasilitas dalam Microsoft Excel seperti <em>sharing</em> dan <em>co-authoring</em>. Anda juga dapat menyimpan fungsi dalam workbook yang dapat diakses oleh semua pengguna yang berkolaborasi. Workbook ini kemudian dapat disimpan di tempat yang aman dan mudah diakses seperti SharePoint atau OneDrive.</p>
+<p>Rekomendasi untuk membagikan fungsi LAMBDA yaitu dengan menggunakan GitHub Gist dan AFE. GitHub Gist adalah layanan berbagi potongan kode dan catatan yang disediakan oleh GitHub. Ini memungkinkan pengguna untuk menyimpan, berbagi, dan berkolaborasi pada potongan kode secara mudah. Import fungsi LAMBDA dari GitHub Gist juga sudah <a href="../docs/install.html#sec-import-afe">di dukung dengan AFE</a>. Paket feidlambda menggunakan GitHub Gist untuk mendistribusikan dan menyebarkan fungsi LAMBDA-nya.</p>
+<p>Jika fungsi LAMBDA berupa formula sederhana dapat langsung menyalinkan formula LAMBDA-nya sebagai nama fungsinya di Formula Name Manager. Dengan format seperti berikut:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span><span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> x <span class="op">+</span> y <span class="op">+</span> z<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Jika rekannya menggunakan AFE, bisa juga langsung mengambil dari editor AFE. Sehingga formatnya sebagai berikut:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode scala code-with-copy"><code class="sourceCode scala"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>MY_FUNCTION <span class="op">=</span> <span class="fu">LAMBDA</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> x <span class="op">+</span> y <span class="op">+</span> z<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Salah satu tantangan dalam menciptakan rangkaian fungsi LAMBDA tanpa memanfaatkan <em>Advanced Formula Environment</em> (AFE) adalah ketiadaan kemampuan untuk memberi tahu nama fungsi tersebut secara eksplisit. Sebagai contoh, penulisan fungsi LAMBDA tanpa AFE akan muncul seperti ini: <code>=LAMBDA(x, y, z, x + y + z)</code>. Untuk menggunakan fungsi tersebut, kita harus menyampaikan nama fungsi ini kepada rekan kerja kita secara terpisah. Namun, dengan AFE, kita dapat mendefinisikan nama fungsi secara langsung dalam formula, seperti ini: <code>MY_FUNCTION = LAMBDA(x, y, z, x + y +z);</code>. Oleh karena itu, kami sangat menyarankan untuk mulai berkolaborasi dan berbagi fungsi LAMBDA melalui add-ins Excel Labs dengan AFE, demi peningkatan keterbacaan dan produktivitas.</p>
+</section>
+<section id="sec-implementing-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="sec-implementing-version-control">📜 Mengimplementasikan kontrol versi</h2>
+<p>Alat kontrol versi seperti Git bisa digunakan untuk melacak perubahan, memudahkan pemulihan kode saat terjadi kesalahan, dan memantau kontribusi dari anggota tim yang berbeda. Ini juga memfasilitasi peninjauan kode. Oleh karena itu, disarankan dalam pengembangan ataupun penyebaran menggunakan GitHub Gist atau GitHub Repository sehingga dapat melacak setiap perubahan yang terjadi.</p>
+<p>Mendistribusikan koleksi fungsi LAMBDA melalui GitHub Gist/Repository memudahkan pengguna dan pengembang lain dalam meninjau penggunaan kumpulan fungsi LAMBDA tersebut dalam lembar kerja mereka. Penerapan kontrol versi sangat dianjurkan ketika kumpulan fungsi LAMBDA tersebut diharapkan untuk dikembangkan atau ditingkatkan lebih lanjut.</p>
+<p>Sebagai contoh, lihat <a href="https://github.com/fiakoenjiniring/feidlambda">github feidlambda</a>. Repository ini digunakan sebagai tempat utama untuk pengembangan dan pelacakan saat ada penambahan atau perbaikan pada kumpulan fungsi LAMBDA di feidlambda. Setelah versi terbaru dirilis, isi GitHub GIST diperbarui untuk versi minor pada setiap rilis (x.1, x.2, x.3).</p>
+</section>
+<section id="sec-grouping-related-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-grouping-related-functions">📚 Mengelompokkan fungsi yang terkait</h2>
+<p>Pengelompokan fungsi yang terkait dapat membantu dalam keterbacaan dan pemeliharaan kode. Misalnya, fungsi yang berhubungan dengan manipulasi data dapat dikelompokkan bersama. Contoh pengelompokkan ini dapat dilihat <a href="https://lambda.fiako.engineering">proyek feidlambda</a> sejak versi v0.3+. Pengelompokkan ini akan memudahkan dan mengisolasi interaksi/hubungan antar fungsi LAMBDA dalam koleksinya.</p>
+<p>Dalam pengelompokkan disarankan untuk menghilangkan ketergantungan/<em>dependency</em> pada fungsi diluar kelompok tersebut. Hal ini untuk memudahkan saat mengevaluasi fungsi dan memudahkan distribusi jika ingin menggunakan koleksi fungsi LAMBDA pada kelompok tertentu saja. Pengelompokkan ini disaranakn mengubah penamaan nama fungsi yang diawali dengan kelompok fungsi LAMBDA-nya seperti <code>SWAP_*(...)</code> untuk <a href="../release/feidlambda-0-4.html#sec-swap">kelompok fungsi <code>SWAP</code></a>.</p>
+</section>
+<section id="sec-code-modularization" class="level2">
+<h2 class="anchored" data-anchor-id="sec-code-modularization">🧩 Modularisasi kode</h2>
+<p>Modularisasi kode melibatkan pemisahan fungsi atau operasi ke dalam modul-modul yang lebih kecil dan dapat dipertukarkan. Ini membantu dalam keterbacaan, pemeliharaan, dan pengujian kode.</p>
+</section>
+<section id="sec-balancing-performance-readability" class="level2">
+<h2 class="anchored" data-anchor-id="sec-balancing-performance-readability">⚖️ Menyeimbangkan kinerja dan keterbacaan</h2>
+<p>Ketika mengoptimalkan kode, penting untuk menemukan keseimbangan antara kinerja dan keterbacaan. Kode yang sangat dioptimalkan tetapi sulit dibaca dapat mengakibatkan kesulitan dalam pemeliharaan dan penyebaran kode.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Catatan Kaki</h2>
+
+<ol>
+<li id="fn1"><p>Berdasarkan informasi yang tertera di <a href="https://github.com/microsoft/advanced-formula-environment">halaman GitHub AFE</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/lambda\.fiako\.engineering/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2022-2023 PT. FIAKO ENJINIRING INDONESIA</div>   
+    <div class="nav-footer-right">developed by <strong>fiako</strong>dev</div>
+  </div>
+</footer>
+
+
+
+</body></html>
