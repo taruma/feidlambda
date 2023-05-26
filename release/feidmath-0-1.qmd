@@ -96,7 +96,7 @@ Fungsi utama kategori `INTERPOLATION_*` yaitu `INTERPOLATION_LINEAR()`.
 
 ### `INTERPOLATION_LINEAR()` {#sec-interpolation-linear}
 
-Fungsi `INTERPOLATION_LINEAR(x_vector, known_y, known_x)` digunakan untuk mencari nilai interpolasi linear. Fungsi ini dikembangkan menggunakan fungsi bawaan `FORECAST.LINEAR(...)`. 
+Fungsi `INTERPOLATION_LINEAR(x_vector, known_y, known_x)` digunakan untuk mencari nilai interpolasi linear. Fungsi ini dikembangkan menggunakan fungsi bawaan `FORECAST.LINEAR(...)`. Fungsi ini bisa menerima input _scalar_ maupun _vector_. 
 
 :::::  {.border .p-3 .my-3 .justify}
 
@@ -120,6 +120,22 @@ _Output_
 : _vector_ atau rentang data terikat. 
 
 :::::
+
+::: {#fig-interpolation-linear .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![_scalar_ sebagai input](img-feidmath-0-1/feidmath-interpolation-01.gif)
+
+![_vector_ sebagai input](img-feidmath-0-1/feidmath-interpolation-02.gif)
+
+Demonstrasi `INTERPOLATION_LINEAR()`
+:::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+
 
 
 ::: {.column-screen-inset-shaded}
