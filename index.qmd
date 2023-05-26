@@ -44,10 +44,10 @@ anchor-sections: false
 https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ```
 
-### feidlambda v0.3.x
+### feidmath v0.1.x
 
 ```default
-https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12
+https://gist.github.com/taruma/8b0978227dffbee50c3a9d56e31d34f3
 ```
 
 ---

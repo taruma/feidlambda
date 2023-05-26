@@ -45,7 +45,82 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 
 :::
 
-`feidlambda-math` atau **feidmath** merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. 
+`feidlambda-math` atau **feidmath** merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. feidmath dibuat untuk fokus pengembangan yang bersifat penerapan dengan fungsi matematika. feidmath merupakan langkah awal untuk pengembangan koleksi LAMBDA lainnya yang bersifat terapan. 
+
+feidmath v0.1 di rilis bersamaan dengan feidlambda v0.4.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Fungsi feidmath v0.1.x {#sec-feid}
+
+Mengikuti panduan [FIAKO LAMBDA Style Guide](/docs/lambda-style-guide.qmd) dan [feidlambda v0.4](feidlambda-0-4.qmd), feidmath dipisahkan dengan kategori yang sesuai dengan fungsi yang tersedia. Berikut kategori yang tersedia di feidmath v0.1.x:
+
+- [NEW]{.f-new} `INTERPOLATION_*`: Kategori ini berisi fungsi untuk estimasi nilai berdasarkan data yang sudah diketahui.
+- [NEW]{.f-new} `LINALG_*`: Ini mencakup fungsi-fungsi yang berkaitan dengan aljabar linear, seperti operasi pada vektor dan matriks
+- [NEW]{.f-new} `GEOMETRY_*`: Kategori ini melibatkan fungsi geometri, termasuk mengidentifikasi titik berada di dalam/luar poligon.
+
+Download excel demonstrasi [RELEASE_feidmath_v0_4_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `INTERPOLATION_*` {#sec-interpolation}
+
+[NEW v0.1]{.f-new} Kategori `INTERPOLATION_*` merupakan kumpulan fungsi untuk mengestimasi nilai berdasarkan data yang sudah diketahui. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-interpolation.
+
+```{mermaid}
+%%| label: fig-dep-interpolation
+%%| fig-cap: Grafik _dependencies_ kategori `INTERPOLATION_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE ---> _INTERPOLATION_LINEAR
+  _INTERPOLATION_LINEAR ---> INTERPOLATION_LINEAR
+```
+
+Fungsi utama kategori `INTERPOLATION_*` yaitu `INTERPOLATION_LINEAR()`.
+
+<details>
+<summary>_Source Code_ `INTERPOLATION_*`</summary>
+```{.scala include="../_feidmath/feidmath_INTERPOLATION.sc" }
+```
+</details>
+
+### `INTERPOLATION_LINEAR()` {#sec-interpolation-linear}
+
+Fungsi `INTERPOLATION_LINEAR(x_vector, known_y, known_x)` digunakan untuk mencari nilai interpolasi linear. Fungsi ini dikembangkan menggunakan fungsi bawaan `FORECAST.LINEAR(...)`. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: INTERPOLATION_LINEAR(x_vector, known_y, known_x)
+
+_Output_
+: _scalar_ / _vector_
+:::
+
+---
+
+`x_vector := [scalar | vector]`
+: Poin data yang ingin Anda prediksikan nilainya. 
+
+`known_ys := [vector]`
+: _vector_ atau rentang data terikat. 
+
+`known_xs := [vector]`
+: _vector_ atau rentang data terikat. 
+
+:::::
+
 
 ::: {.column-screen-inset-shaded}
 
