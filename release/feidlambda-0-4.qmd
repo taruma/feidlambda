@@ -302,9 +302,11 @@ Kategori `GET_*` merupakan kumpulan fungsi yang digunakan untuk mengambil inform
 
 flowchart LR
   NONE --> GET_INDEX_2D
+  _RECURSIVE_LOOKUP --> _RECURSIVE_LOOKUP
+  _RECURSIVE_LOOKUP --> GET_XLOOKUP
 ```
 
-Dari @fig-dep-get, diketahui untuk versi v0.3 hanya tersedia fungsi `GET_INDEX_2D()`. 
+Dari @fig-dep-get, diketahui untuk versi v0.4 tersedia fungsi utama `GET_INDEX_2D()` dan `GET_XLOOKUP()`. 
 
 <details>
 <summary>_Source Code_ `GET_*`</summary>
@@ -343,6 +345,60 @@ _Output_
 
 ::: {.column-page-left}
 ![Demonstrasi `GET_INDEX_2D()`](img-0-3-0/feidlambda-v03-02-get-1.gif){#fig-get-index-2d}
+:::
+
+### `GET_XLOOKUP()`
+
+Fungsi `GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])` dapat digunakan sebagai pengganti fungsi `XLOOKUP()` bagi input berupa _vector_. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+
+_Syntax_
+: GET_XLOOKUP(lookup_value, lookup_vector, return_array, [if_not_found], [match_mode], [search_mode])
+
+_Output_
+: _array_
+
+:::
+
+---
+
+`lookup_value := [vector]`
+: Nilai yang akan dicari. Menerima input berupa _vector_. 
+
+`lookup_array := [array]`
+: _Array_ atau rentang untuk dicari. 
+
+`return_array := [array]`
+: _Array_ atau rentang yang akan dikembalikan
+
+`[if_not_found] := #N/A :: [text]`
+: Jika kecocokan valid tidak ditemukan, kembalikan teks `[if_not_found]` yang Anda masukkan. Jika kecocokan valid tidak ditemukan, dan `[if_not_found]` hilang, `#N/A` dikembalikan.
+
+`[match_mode] := 0 :: [0 | -1 | 1 | 2]`
+: Tentukan tipe yang cocok: 
+
+>   - `0` - Persis cocok. Jika tidak ditemukan, kembalikan `#N/A`. Ini adalah pengaturan **default**. 
+>   - `-1 ` - Persis cocok. Jika tidak ada yang ditemukan, kembalikan item berikutnya yang lebih kecil.
+>   - `1` - Persis sama. Jika tidak ditemukan, kembalikan item berikutnya yang lebih besar.
+>   - `2` - A wildcard match where *, ?, and ~ have special meaning.
+
+`[search_mode] := 1 :: [1 | -1 | 2 | -2]`
+: Tentukan mode pencarian yang akan digunakan:
+
+>   - `1` - Melakukan pencarian dimulai dari item pertama. Ini adalah pengaturan default.
+>   - `-1` - Melakukan pencarian terbalik dimulai dari item terakhir.
+>   - `2` - Melakukan pencarian biner yang bergantung pada lookup_array diurutkan dalam urutan naik . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+>   - `-2` - Melakukan pencarian biner yang mengandalkan lookup_array diurutkan dalam urutan menurun . Jika tidak diurutkan, hasil yang tidak valid akan dikembalikan.
+
+:::::
+
+Penjelasan parameter diambil dari [halaman bantuan `XLOOKUP()`](https://support.microsoft.com/id-id/office/fungsi-xlookup-b7fd680e-6d10-43e6-84f9-88eae8bf5929)
+
+::: {.column-page-left}
+![Demonstrasi `GET_XLOOKUP()`](img-0-4-0/feidlambda-GET-XLOOKUP-01.gif){#fig-get-xlookup}
 :::
 
 ::: {.column-screen-inset-shaded}
