@@ -39,10 +39,14 @@ aliases:
 ```default
 https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ```
-
 :::
 
-**Panduan instalasi feidlambda dapat dilihat di halaman [Penggunaan](/docs/install.qmd).**
+::: {.text-center}
+
+[<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
+[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
+
+:::
 
 feidlambda v0.4 merupakan pengembangan lebih lanjut dari versi v0.3 sehingga fitur/fungsi yang telah tersedia di feidlambda v0.3 tersedia di versi feidlambda v0.4. Dan dengan dirilisnya feidlambda v0.4, tersedia paket feidlambda baru bernama `feidmath`. feidmath v0.1 merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematika seperti perkalian matriks, rotasi, interpolasi, dlsbnya. [Kunjungi halaman rilis feidmath](feidmath-0-1.qmd).
 

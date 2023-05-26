@@ -5,7 +5,7 @@ subtitle: |
   Panduan pemasangan koleksi feidlambda menggunakan Excel Labs: Advanced Formula Environment.
 author: Taruma Sakti Megariansyah
 date: 2022-10-20
-date-modified: 2023-05-19
+date-modified: 2023-05-26
 date-format: full
 lang: id
 
