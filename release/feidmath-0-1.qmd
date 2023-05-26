@@ -37,7 +37,7 @@ aliases:
 ## Official GIST **feidmath** (v0.1.x)
 
 ```default
-https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
+https://gist.github.com/taruma/8b0978227dffbee50c3a9d56e31d34f3
 ```
 :::
 
