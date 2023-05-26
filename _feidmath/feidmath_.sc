@@ -14,7 +14,7 @@ TESTED: Microsoft Excel 365 v2304
 ---- INTERPOLATION ----
 */
 
-// NONE ---> INTERPOLATION_LINEAR
+// NONE ---> _INTERPOLATION_LINEAR
 _INTERPOLATION_LINEAR = LAMBDA(x, known_ys, known_xs,
     LET(
         known_xs, TOCOL(known_xs),
@@ -43,13 +43,13 @@ _INTERPOLATION_LINEAR = LAMBDA(x, known_ys, known_xs,
     )
 );
 
-// _INTERPOLATION_LINEAR ---> INTERPOLATION_LINEAR_VECTOR
-INTERPOLATION_LINEAR = LAMBDA(x_vector, known_y, known_x,
+// _INTERPOLATION_LINEAR ---> INTERPOLATION_LINEAR
+INTERPOLATION_LINEAR = LAMBDA(x_vector, known_ys, known_xs,
     LET(
         x_vector, TOCOL(x_vector),
         y_vector, BYROW(
             x_vector,
-            LAMBDA(x, _INTERPOLATION_LINEAR(x, known_y, known_x))
+            LAMBDA(x, _INTERPOLATION_LINEAR(x, known_ys, known_xs))
         ),
         y_vector
     )
@@ -199,7 +199,7 @@ LINALG_ROTATE_POINT_ARRAY = LAMBDA(
 ---- GEOMETRY ----
 */
 
-// NONE ---> GEOMETRY_POINT_IN_POLYGON
+// NONE ---> GEOMETRY_IS_POINT_IN_POLYGON
 GEOMETRY_IS_POINT_IN_POLYGON = LAMBDA(point_vector, data_polygon,
     LET(
         point_vector, TOCOL(point_vector),

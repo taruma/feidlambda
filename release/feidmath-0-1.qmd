@@ -33,9 +33,6 @@ aliases:
 
 ---
 
-
-# FEIDMATH {#sec-feidmath}
-
 ::: {.callout-tip icon="false" .text-center appearance="minimal"}
 ## Official GIST **feidmath** (v0.1.x)
 
@@ -45,7 +42,328 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 
 :::
 
-`feidlambda-math` atau **feidmath** merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. 
+`feidlambda-math` atau **feidmath** merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. feidmath dibuat untuk fokus pengembangan yang bersifat penerapan dengan fungsi matematika. feidmath merupakan langkah awal untuk pengembangan koleksi LAMBDA lainnya yang bersifat terapan. 
+
+feidmath v0.1 di rilis bersamaan dengan feidlambda v0.4.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Fungsi feidmath v0.1.x {#sec-feid}
+
+Mengikuti panduan [FIAKO LAMBDA Style Guide](/docs/lambda-style-guide.qmd) dan [feidlambda v0.4](feidlambda-0-4.qmd), feidmath dipisahkan dengan kategori yang sesuai dengan fungsi yang tersedia. Berikut kategori yang tersedia di feidmath v0.1.x:
+
+- [NEW]{.f-new} `INTERPOLATION_*`: Kategori ini berisi fungsi untuk estimasi nilai berdasarkan data yang sudah diketahui.
+- [NEW]{.f-new} `LINALG_*`: Ini mencakup fungsi-fungsi yang berkaitan dengan aljabar linear, seperti operasi pada vektor dan matriks
+- [NEW]{.f-new} `GEOMETRY_*`: Kategori ini melibatkan fungsi geometri, termasuk mengidentifikasi titik berada di dalam/luar poligon.
+
+Download excel demonstrasi [RELEASE_feidmath_v0_4_0.xlsx](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx), untuk memudahkan mengeksplorasi fungsi baru di feidmath v0.1.x.
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `INTERPOLATION_*` {#sec-interpolation}
+
+[NEW v0.1]{.f-new} Kategori `INTERPOLATION_*` merupakan kumpulan fungsi untuk mengestimasi nilai berdasarkan data yang sudah diketahui. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-interpolation.
+
+```{mermaid}
+%%| label: fig-dep-interpolation
+%%| fig-cap: Grafik _dependencies_ kategori `INTERPOLATION_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE ---> _INTERPOLATION_LINEAR
+  _INTERPOLATION_LINEAR ---> INTERPOLATION_LINEAR
+```
+
+Fungsi utama kategori `INTERPOLATION_*` yaitu `INTERPOLATION_LINEAR()`.
+
+<details>
+<summary>_Source Code_ `INTERPOLATION_*`</summary>
+```{.scala include="../_feidmath/feidmath_INTERPOLATION.sc" }
+```
+</details>
+
+### `INTERPOLATION_LINEAR()` {#sec-interpolation-linear}
+
+Fungsi `INTERPOLATION_LINEAR(x_vector, known_y, known_x)` digunakan untuk mencari nilai interpolasi linear. Fungsi ini dikembangkan menggunakan fungsi bawaan `FORECAST.LINEAR(...)`. Fungsi ini bisa menerima input _scalar_ maupun _vector_. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: INTERPOLATION_LINEAR(x_vector, known_y, known_x)
+
+_Output_
+: _scalar_ / _vector_
+:::
+
+---
+
+`x_vector := [scalar | vector]`
+: Poin data yang ingin Anda prediksikan nilainya. 
+
+`known_ys := [vector]`
+: _vector_ atau rentang data terikat. 
+
+`known_xs := [vector]`
+: _vector_ atau rentang data terikat. 
+
+:::::
+
+::: {#fig-interpolation-linear .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![_scalar_ sebagai input](img-feidmath-0-1/feidmath-interpolation-01.gif)
+
+![_vector_ sebagai input](img-feidmath-0-1/feidmath-interpolation-02.gif)
+
+Demonstrasi `INTERPOLATION_LINEAR()`
+:::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `LINALG_*` {#sec-linalg}
+
+[NEW v0.1]{.f-new} Kategori `LINALG_*` merupakan kumpulan fungsi yang berkaitan dengan aljabar linear seperti operasi pada vektor atau matriks. `LINALG` merupakan singkatan dari `LINEAR ALGEBRA`. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-linalg.
+
+```{mermaid}
+%%| label: fig-dep-linalg
+%%| fig-cap: Grafik _dependencies_ kategori `LINALG_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE ---> LINALG_ROTATION_MATRIX
+  LINALG_ROTATION_MATRIX ---> LINALG_ROTATE_POINT
+  LINALG_ROTATE_POINT ---> _RECURSIVE_ROTATE_POINTS
+  _RECURSIVE_ROTATE_POINTS ---> _RECURSIVE_ROTATE_POINTS
+  _RECURSIVE_ROTATE_POINTS ---> LINALG_ROTATE_POINT_ARRAY
+```
+
+Fungsi utama kategori `LINALG_*` yaitu `LINALG_ROTATION_MATRIX()`, `LINALG_ROTATE_POINT()`, dan `LINALG_ROTATE_POINT_ARRAY()`.
+
+<details>
+<summary>_Source Code_ `LINALG_*`</summary>
+```{.scala include="../_feidmath/feidmath_LINALG.sc" }
+```
+</details>
+
+### `LINALG_ROTATION_MATRIX()` {#sec-linalg-rotation-matrix}
+
+Fungsi `LINALG_ROTATION_MATRIX(theta_x, theta_y, theta_z, [num_digits])` digunakan untuk menghasilkan matriks rotasi berdasarkan tiga sudut rotasi ($\theta_x$, $\theta_y$, dan $\theta_z$) yang ditentukan dalam derajat. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATION_MATRIX(theta_x, theta_y, theta_z, [num_digits])
+
+_Output_
+: $3 \times 3$ array
+:::
+
+---
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {#fig-linalg-rotation-matrix .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![menghitung matriks rotasi](img-feidmath-0-1/feidmath-linalg-01.gif)
+
+![implementasi rotasi pada titik](img-feidmath-0-1/feidmath-linalg-02.gif)
+
+Demonstrasi `LINALG_ROTATION_MATRIX()`
+:::
+
+### `LINALG_ROTATE_POINT()` {#sec-linalg-rotate-point}
+
+Fungsi `LINALG_ROTATE_POINT(point_vector, theta_x, theta_y, theta_z, [active_rotation], [num_digits])` digunakan untuk melakukan rotasi pada titik dalam ruang tiga dimensi. Fungsi ini menerima input dalam bentuk vektor dengan tiga nilai yaitu $x$, $y$, dan $z$. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATE_POINT(point_vector, theta_x, theta_y, theta_z, [active_rotation], [num_digits])
+
+_Output_
+: vector
+:::
+
+---
+
+`point_vector := [number vector]`
+: Koordinat titik dalam bentuk vektor ($x$, $y$, $z$). 
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[active_rotation] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Rotasi aktif akan mengubah posisi objek, sedangkan rotasi pasif akan mengubah sistem koordinat.
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-03.gif){#fig-linalg-rotate-point}
+:::
+
+### `LINALG_ROTATE_POINT_ARRAY()` {#sec-linalg-rotate-point-array}
+
+Fungsi `LINALG_ROTATE_POINT_ARRAY(data_points, theta_x, theta_y, theta_z, [active_rotation], [num_digits])` digunakan untuk melakukan rotasi pada sekumpulan titik dalam ruang tiga dimensi. Fungsi `LINALG_ROTATE_POINT_ARRAY()` sama dengan `LINALG_ROTATE_POINT()` tetapi dirancang untuk merotasikan sekumpulan titik sekaligus. Argumen `data_points` harus berupa array yang setiap barisnya merepresentasikan titik di ruang 3D. Fungsi ini menerima array dengan tiga kolom yaitu $x$, $y$, dan $z$. 
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: LINALG_ROTATE_POINT_ARRAY(data_points, theta_x, theta_y, theta_z, [active_rotation], [num_digits])
+
+_Output_
+: $m \times 3$ array
+:::
+
+---
+
+`data_points := [number array]`
+: Sekumpulan koordinat titik dalam bentuk array dengan kolom $x$, $y$, $z$. 
+
+`theta_x | theta_y | theta_z := [number]`
+: Rotasi terhadap sumbu-nya dalam satuan derajat. 
+
+`[active_rotation] := TRUE :: [TRUE | FALSE]`
+: Nilai _default_ yaitu `TRUE`. Rotasi aktif akan mengubah posisi objek, sedangkan rotasi pasif akan mengubah sistem koordinat.
+
+`[num_digits] := 0 :: [number]`
+: Nilai _default_ yaitu `0` (tidak dibulatkan). Jumlah digit presisi yang diinginkan.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
+:::
+
+### Visualisasi Aktif vs. Pasif {#sec-linalg-viz-rotation}
+
+Berikut visualisasi perbedaan antara merotasikan objek (aktif) dan koordinatnya (pasif). Rotasi terhadap sumbu $z$ dengan grafik hubungan $x$ dan $y$. 
+
+::: {#fig-linalg-viz-rotation .column-screen-inset layout="[[1,1]]" layout-valign="bottom"}
+![rotasi aktif (objek)](img-feidmath-0-1/feidmath-linalg-05.gif)
+
+![rotasi pasif (koordinat)](img-feidmath-0-1/feidmath-linalg-06.gif)
+
+Demonstrasi Rotasi Aktif dan Pasif
+:::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+# Kategori `GEOMETRY_*` {#sec-geometry}
+
+[NEW v0.1]{.f-new} Kategori `GEOMETRY_*` berisikan fungsi geometri seperti mengidentifikasi titik berada di dalam/luar poligon. Hubungan antar fungsi di kategori ini bisa dilihat di @fig-dep-geometry.
+
+```{mermaid}
+%%| label: fig-dep-geometry
+%%| fig-cap: Grafik _dependencies_ kategori `GEOMETRY_*`
+%%| fig-height: 100%
+%%{ init: { 'theme': 'forest' } }%%
+
+flowchart LR
+  NONE ---> GEOMETRY_IS_POINT_IN_POLYGON
+  GEOMETRY_IS_POINT_IN_POLYGON ---> GEOMETRY_ARE_POINTS_IN_POLYGON
+```
+
+Fungsi utama kategori `GEOMETRY_*` yaitu `GEOMETRY_POINT_IN_POLYGON()` dan `GEOMETRY_ARE_POINTS_IN_POLYGON()`.
+
+<details>
+<summary>_Source Code_ `GEOMETRY_*`</summary>
+```{.scala include="../_feidmath/feidmath_GEOMETRY.sc" }
+```
+</details>
+
+### `GEOMETRY_IS_POINT_IN_POLYGON()` {#sec-geometry-is-point-in-polygon}
+
+Fungsi `GEOMETRY_IS_POINT_IN_POLYGON(point_vector, polygon_points)` digunakan untuk menentukan apakah sebuah titik berada di dalam atau di luar sebuah poligon yang tertutup. Titik yang akan dicek dinyatakan oleh `point_vector`, sedangkan `polygon_points` adalah array yang setiap barisnya merepresentasikan titik dari poligon. Fungsi ini mengembalikan nilai `boolean`/`logical`, yaitu `TRUE` jika titik berada di dalam poligon, dan `FALSE` jika tidak.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: GEOMETRY_IS_POINT_IN_POLYGON(point_vector, polygon_points)
+
+_Output_
+: _logical_
+:::
+
+---
+
+`point_vector := [number vector]`
+: Koordinat titik yang ingin dicek dalam bentuk vektor ($x$, $y$). 
+
+`polygon_points := [number array]`
+: Sekumpulan koordinat titik yang membentuk poligon dalam bentuk array dengan kolom $x$, $y$.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `GEOMETRY_IS_POINT_IN_POLYGON()`](img-feidmath-0-1/feidmath-geometry-01.gif){#fig-geometry-is-point-in-polygon}
+:::
+
+### `GEOMETRY_ARE_POINTS_IN_POLYGON()` {#sec-geometry-are-points-in-polygon}
+
+Fungsi `GEOMETRY_ARE_POINTS_IN_POLYGON(data_points, polygon_points)` sama dengan `GEOMETRY_IS_POINT_IN_POLYGON()` tetapi dirancang untuk mengecek sejumlah titik sekaligus. Argumen data_points harus berupa array yang setiap barisnya merepresentasikan titik yang akan dicek. Seperti halnya fungsi `GEOMETRY_IS_POINT_IN_POLYGON()`, fungsi ini mengembalikan array nilai `boolean`, yaitu `TRUE` untuk titik-titik yang berada di dalam poligon dan `FALSE` untuk titik-titik yang berada di luar poligon.
+
+:::::  {.border .p-3 .my-3 .justify}
+
+::: {.text-center .syntax}
+_Syntax_
+: GEOMETRY_ARE_POINTS_IN_POLYGON(data_points, polygon_points)
+
+_Output_
+: _logical vector_
+:::
+
+---
+
+`data_points := [number array]`
+: Sekumpulan koordinat titik yang ingin dicek dalam bentuk array $m \times 2$ dengan kolom ($x$, $y$). 
+
+`polygon_points := [number array]`
+: Sekumpulan koordinat titik yang membentuk poligon dalam bentuk array dengan kolom $x$, $y$.
+
+:::::
+
+::: {.column-page-left}
+![Demonstrasi `GEOMETRY_ARE_POINTS_IN_POLYGON()`](img-feidmath-0-1/feidmath-geometry-02.gif){#fig-geometry-are-points-in-polygon}
+:::
+
+::: {.column-screen-inset-shaded}
+
+---
+
+:::
+
+Fungsi feidmath v0.1 memiliki $3$ kategori dengan total $6$ fungsi utama. 
+
+Jika memiliki ide untuk pengembangan feidlambda atau fungsi baru bisa langsung disampaikan dengan membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). Dan jika bertemu masalah saat penggunaan feidmath v0.1, bisa juga membuat [isu di github](https://github.com/fiakoenjiniring/feidlambda/issues/new). 
 
 ::: {.column-screen-inset-shaded}
 
@@ -57,4 +375,14 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 
 - **2023-05-26 (v0.1.0)**
   - Rilis feidmath v0.1
+    - Kategori baru: `INTERPOLATION`
+      - Fungsi baru: `INTERPOLATION_LINEAR()`
+    - Kategori baru: `LINALG` (LINEAR ALGEBRA)
+      - Fungsi baru: `LINALG_ROTATION_MATRIX()`
+      - Fungsi baru: `LINALG_ROTATE_POINT()`
+      - Fungsi baru: `LINALG_ROTATE_POINT_ARRAY()`
+    - Kategori baru: `GEOMETRY`
+      - Fungsi baru: `GEOMETRY_IS_POINT_IN_POLYGON()`
+      - Fungsi baru: `GEOMETRY_ARE_POINTS_IN_POLYGON()`
+
 
