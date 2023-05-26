@@ -55,6 +55,6 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 
 # Changelog
 
-- **2023-05-19 (v0.1.0)**
+- **2023-05-26 (v0.1.0)**
   - Rilis feidmath v0.1
 
