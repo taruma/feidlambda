@@ -321,7 +321,7 @@ Official GIST <strong>feidmath</strong> (v0.1.x)
 </div>
 </div>
 <div class="text-center">
-<p><a href="../docs/install.html"><button type="button" class="btn btn-info m-1">INSTALASI</button></a> <a href="https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx"><button type="button" class="btn btn-primary m-1">WORKSHEET FEIDMATH v0.1.0</button></a></p>
+<p><a href="../docs/install.html"><button type="button" class="btn btn-info m-1">INSTALASI</button></a> <a href="https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx"><button type="button" class="btn btn-primary m-1">WORKBOOK FEIDMATH v0.1.0</button></a></p>
 </div>
 <p><code>feidlambda-math</code> atau <strong>feidmath</strong> merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematis seperti perkalian matriks, rotasi, interpolasi, dlsbnya. Pengembangan feidmath diusahakan tidak memerlukan fungsi dari feidlambda sehingga fungsi yang tersedia feidmath terisolasi dan dapat digunakan secara langsung sesuai kebutuhan. feidmath dibuat untuk fokus pengembangan yang bersifat penerapan dengan fungsi matematika. feidmath merupakan langkah awal untuk pengembangan koleksi LAMBDA lainnya yang bersifat terapan.</p>
 <p>feidmath v0.1 di rilis bersamaan dengan feidlambda v0.4.</p>
@@ -774,7 +774,7 @@ Nilai <em>default</em> yaitu <code>0</code> (tidak dibulatkan). Jumlah digit pre
 <div id="fig-linalg-rotate-point-array" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="img-feidmath-0-1/feidmath-linalg-04.gif" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Gambar&nbsp;3.4: Demonstrasi <code>LINALG_ROTATE_POINT()</code></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Gambar&nbsp;3.4: Demonstrasi <code>LINALG_ROTATE_POINT_ARRAY()</code></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -874,6 +874,12 @@ flowchart LR
 <section id="sec-geometry-is-point-in-polygon" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sec-geometry-is-point-in-polygon"><code>GEOMETRY_IS_POINT_IN_POLYGON()</code></h3>
 <p>Fungsi <code>GEOMETRY_IS_POINT_IN_POLYGON(point_vector, polygon_points)</code> digunakan untuk menentukan apakah sebuah titik berada di dalam atau di luar sebuah poligon yang tertutup. Titik yang akan dicek dinyatakan oleh <code>point_vector</code>, sedangkan <code>polygon_points</code> adalah array yang setiap barisnya merepresentasikan titik dari poligon. Fungsi ini mengembalikan nilai <code>boolean</code>/<code>logical</code>, yaitu <code>TRUE</code> jika titik berada di dalam poligon, dan <code>FALSE</code> jika tidak.</p>
+<dl>
+<dt>Referensi</dt>
+<dd>
+Fungsi ini dikembangkan berdasarkan video <a href="https://www.youtube.com/watch?v=RSXM9bgqxJM"><em>Checking if a point is inside a polygon is RIDICULOUSLY simple (Ray casting algorithm) - Inside code</em> oleh <strong>Inside code</strong></a>.
+</dd>
+</dl>
 <div class="border p-3 my-3 justify">
 <div class="text-center syntax">
 <dl>

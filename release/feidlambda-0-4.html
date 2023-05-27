@@ -357,7 +357,7 @@ Official GIST <strong>feidlambda</strong> (v0.4.x)
 </div>
 </div>
 <div class="text-center">
-<p><a href="../docs/install.html"><button type="button" class="btn btn-info m-1">INSTALASI</button></a> <a href="https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx"><button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button></a></p>
+<p><a href="../docs/install.html"><button type="button" class="btn btn-info m-1">INSTALASI</button></a> <a href="https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx"><button type="button" class="btn btn-primary m-1">WORKBOOK FEIDLAMBDA v0.4.0</button></a> <a href="../release/feidmath-0-1.html"><button type="button" class="btn btn-dark m-1">FEIDMATH v0.1</button></a></p>
 </div>
 <p>feidlambda v0.4 merupakan pengembangan lebih lanjut dari versi v0.3 sehingga fitur/fungsi yang telah tersedia di feidlambda v0.3 tersedia di versi feidlambda v0.4. Dan dengan dirilisnya feidlambda v0.4, tersedia paket feidlambda baru bernama <code>feidmath</code>. feidmath v0.1 merupakan kumpulan fungsi LAMBDA yang fokus menyelesaikan beberapa permasalahan matematika seperti perkalian matriks, rotasi, interpolasi, dlsbnya. <a href="../release/feidmath-0-1.html">Kunjungi halaman rilis feidmath</a>.</p>
 <div class="column-screen-inset-shaded">
@@ -2288,7 +2288,76 @@ Nilai untuk menggantikan nilai <code>#N/A</code> dari hasil akhir. Defaultnya ad
 <ul>
 <li><strong>2023-05-26 (v0.4.0)</strong>
 <ul>
-<li>Rilis feidlambda v0.4</li>
+<li>Penambahan kategori baru: <code>APPLY_*</code></li>
+<li>Fungsi baru:
+<ul>
+<li><code>APPLY_COLUMN()</code></li>
+<li><code>GET_XLOOKUP()</code></li>
+</ul></li>
+</ul></li>
+<li><strong>2022-01-13 (v0.3.1)</strong>
+<ul>
+<li>Perubahan fungsi utama:
+<ul>
+<li>Perubahan <code>FILTER_MINMAX_ARRAY()</code>:
+<ul>
+<li>Menambah <em>optional</em> argumen <code>take_first_only</code>.</li>
+<li>Mengganti nama argumen: <code>with_labels -&gt; with_label</code>.</li>
+<li>Penyesuaian <code>_RECURSIVE_FILTER_MINMAX()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Perubahan <code>GET_INDEX_2D()</code>:
+<ul>
+<li>Mengubah nama argumen: <code>return_order_only -&gt; return_as_order</code>.</li>
+</ul></li>
+<li>Perubahan <code>RESHAPE_BY_COLUMNS()</code>:
+<ul>
+<li>Mengubah hasil <em>error</em> menjadi <code>NA()</code>.</li>
+</ul></li>
+<li>Perubahan <code>ROTATE_VECTOR()</code> dan <code>ROTATE_ARRAY()</code>:
+<ul>
+<li>Mengubah nama argumen: <code>n -&gt; num_rotation</code>.</li>
+</ul></li>
+<li>Perubahan <code>SWAP_COLUMNS()</code> dan <code>SWAP_ROWS()</code>:
+<ul>
+<li>Argumen <code>from_index</code> dan <code>to_index</code> dapat menggunakan indeks negatif.</li>
+<li>Nilai <em>default</em> <code>to_index</code> menjadi <code>-1</code>.</li>
+</ul></li>
+<li>Perubahan <code>TEXT_SPLIT_VECTOR()</code>:
+<ul>
+<li>Mengubah metode menjadi <em>recursive</em>.</li>
+<li>Mengubah nama argumen: <code>text_delimiter -&gt; col_delimiter</code>.</li>
+<li>Menambah <em>optional</em> argumen <code>replace_na</code>.</li>
+</ul></li>
+</ul></li>
+<li>Perubahan fungsi pendukung:
+<ul>
+<li>Perubahan <code>FILTER_FUNC_COLUMN()</code>:
+<ul>
+<li>Mengganti nama argumen: <code>col -&gt; column_index</code>.</li>
+<li>Menukar posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Menambah optional argumen <code>take_first_only</code>.</li>
+</ul></li>
+<li>Perubahan <code>FILTER_MINMAX_COLUMN()</code>:
+<ul>
+<li>Mengganti nama argumen: <code>col -&gt; column_index</code>.</li>
+<li>Menukar posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Menambah <em>optional</em> argumen <code>take_first_only</code>.</li>
+<li>Penyesuaian <code>FILTER_FUNC_COLUMN()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Perubahan <code>_RECURSIVE_FILTER_MINMAX()</code>:
+<ul>
+<li>Mengubah posisi argumen <code>label_col</code> dan <code>with_label</code>.</li>
+<li>Penyesuaian <code>FILTER_MINMAX_COLUMN()</code> dengan posisi dan opsi argumen terbaru.</li>
+</ul></li>
+<li>Fungsi baru <code>_RECURSIVE_TEXT_SPLIT()</code>:
+<ul>
+<li>Fungsi pendukung <code>TEXT_SPLIT_VECTOR()</code>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>2022-01-06 (v0.3.0)</strong>
+<ul>
+<li>Rilis feidlambda v0.3</li>
 </ul></li>
 </ul>
 
