@@ -261,7 +261,7 @@ _Output_
 :::::
 
 ::: {.column-page-left}
-![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
+![Demonstrasi `LINALG_ROTATE_POINT_ARRAY()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
 :::
 
 ### Visualisasi Aktif vs. Pasif {#sec-linalg-viz-rotation}
