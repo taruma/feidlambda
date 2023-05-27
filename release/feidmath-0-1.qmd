@@ -309,6 +309,10 @@ Fungsi utama kategori `GEOMETRY_*` yaitu `GEOMETRY_POINT_IN_POLYGON()` dan `GEOM
 
 Fungsi `GEOMETRY_IS_POINT_IN_POLYGON(point_vector, polygon_points)` digunakan untuk menentukan apakah sebuah titik berada di dalam atau di luar sebuah poligon yang tertutup. Titik yang akan dicek dinyatakan oleh `point_vector`, sedangkan `polygon_points` adalah array yang setiap barisnya merepresentasikan titik dari poligon. Fungsi ini mengembalikan nilai `boolean`/`logical`, yaitu `TRUE` jika titik berada di dalam poligon, dan `FALSE` jika tidak.
 
+Referensi 
+: Fungsi ini dikembangkan berdasarkan video [
+_Checking if a point is inside a polygon is RIDICULOUSLY simple (Ray casting algorithm) - Inside code_ oleh **Inside code**](https://www.youtube.com/watch?v=RSXM9bgqxJM).
+
 :::::  {.border .p-3 .my-3 .justify}
 
 ::: {.text-center .syntax}
