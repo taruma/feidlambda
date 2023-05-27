@@ -1,1 +1,0 @@
-quarto render && xcopy _site\ "Z:\_INSITE\fiako-feidlambda\" /S /Y
