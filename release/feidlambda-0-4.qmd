@@ -44,7 +44,8 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ::: {.text-center}
 
 [<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
+[<button type="button" class="btn btn-primary m-1">WORKBOOK FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
+[<button type="button" class="btn btn-dark m-1">FEIDMATH v0.1</button>](feidmath-0-1.qmd)
 
 :::
 
@@ -1087,5 +1088,43 @@ Jika ada ide untuk pengembangan feidlambda atau fungsi baru bisa langsung disamp
 # Changelog
 
 - **2023-05-26 (v0.4.0)**
-  - Rilis feidlambda v0.4
-
+  - Penambahan kategori baru: `APPLY_*`
+  - Fungsi baru:
+    - `APPLY_COLUMN()`
+    - `GET_XLOOKUP()`
+- **2022-01-13 (v0.3.1)**
+  - Perubahan fungsi utama:
+    - Perubahan `FILTER_MINMAX_ARRAY()`:
+      - Menambah _optional_ argumen `take_first_only`.
+      - Mengganti nama argumen: `with_labels -> with_label`. 
+      - Penyesuaian `_RECURSIVE_FILTER_MINMAX()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `GET_INDEX_2D()`:
+      - Mengubah nama argumen: `return_order_only -> return_as_order`.
+    - Perubahan `RESHAPE_BY_COLUMNS()`:
+      - Mengubah hasil _error_ menjadi `NA()`. 
+    - Perubahan `ROTATE_VECTOR()` dan `ROTATE_ARRAY()`:
+      - Mengubah nama argumen: `n -> num_rotation`.
+    - Perubahan `SWAP_COLUMNS()` dan `SWAP_ROWS()`:
+      - Argumen `from_index` dan `to_index` dapat menggunakan indeks negatif.
+      - Nilai _default_ `to_index` menjadi `-1`. 
+    - Perubahan `TEXT_SPLIT_VECTOR()`:
+      - Mengubah metode menjadi _recursive_.
+      - Mengubah nama argumen: `text_delimiter -> col_delimiter`.
+      - Menambah _optional_ argumen `replace_na`. 
+  - Perubahan fungsi pendukung:
+    - Perubahan `FILTER_FUNC_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`.
+      - Menambah optional argumen `take_first_only`.
+    - Perubahan `FILTER_MINMAX_COLUMN()`:
+      - Mengganti nama argumen: `col -> column_index`.
+      - Menukar posisi argumen `label_col` dan `with_label`. 
+      - Menambah _optional_ argumen `take_first_only`.
+      - Penyesuaian `FILTER_FUNC_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Perubahan `_RECURSIVE_FILTER_MINMAX()`:
+      - Mengubah posisi argumen `label_col` dan `with_label`.
+      - Penyesuaian `FILTER_MINMAX_COLUMN()` dengan posisi dan opsi argumen terbaru.
+    - Fungsi baru `_RECURSIVE_TEXT_SPLIT()`:
+      - Fungsi pendukung `TEXT_SPLIT_VECTOR()`.
+- **2022-01-06 (v0.3.0)**
+  - Rilis feidlambda v0.3

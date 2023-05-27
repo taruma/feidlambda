@@ -44,7 +44,7 @@ https://gist.github.com/taruma/8b0978227dffbee50c3a9d56e31d34f3
 ::: {.text-center}
 
 [<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDMATH v0.1.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx)
+[<button type="button" class="btn btn-primary m-1">WORKBOOK FEIDMATH v0.1.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx)
 
 :::
 
@@ -261,7 +261,7 @@ _Output_
 :::::
 
 ::: {.column-page-left}
-![Demonstrasi `LINALG_ROTATE_POINT()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
+![Demonstrasi `LINALG_ROTATE_POINT_ARRAY()`](img-feidmath-0-1/feidmath-linalg-04.gif){#fig-linalg-rotate-point-array}
 :::
 
 ### Visualisasi Aktif vs. Pasif {#sec-linalg-viz-rotation}
@@ -308,6 +308,10 @@ Fungsi utama kategori `GEOMETRY_*` yaitu `GEOMETRY_POINT_IN_POLYGON()` dan `GEOM
 ### `GEOMETRY_IS_POINT_IN_POLYGON()` {#sec-geometry-is-point-in-polygon}
 
 Fungsi `GEOMETRY_IS_POINT_IN_POLYGON(point_vector, polygon_points)` digunakan untuk menentukan apakah sebuah titik berada di dalam atau di luar sebuah poligon yang tertutup. Titik yang akan dicek dinyatakan oleh `point_vector`, sedangkan `polygon_points` adalah array yang setiap barisnya merepresentasikan titik dari poligon. Fungsi ini mengembalikan nilai `boolean`/`logical`, yaitu `TRUE` jika titik berada di dalam poligon, dan `FALSE` jika tidak.
+
+Referensi 
+: Fungsi ini dikembangkan berdasarkan video [
+_Checking if a point is inside a polygon is RIDICULOUSLY simple (Ray casting algorithm) - Inside code_ oleh **Inside code**](https://www.youtube.com/watch?v=RSXM9bgqxJM).
 
 :::::  {.border .p-3 .my-3 .justify}
 
