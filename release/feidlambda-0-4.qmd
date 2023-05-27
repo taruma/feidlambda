@@ -44,7 +44,8 @@ https://gist.github.com/taruma/b4df638ecb7af48ab63691951481d6b2
 ::: {.text-center}
 
 [<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
+[<button type="button" class="btn btn-primary m-1">WORKBOOK FEIDLAMBDA v0.4.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidlambda_v0_4_0.xlsx)
+[<button type="button" class="btn btn-dark m-1">FEIDMATH v0.1</button>](feidmath-0-1.qmd)
 
 :::
 

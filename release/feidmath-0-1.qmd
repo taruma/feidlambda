@@ -44,7 +44,7 @@ https://gist.github.com/taruma/8b0978227dffbee50c3a9d56e31d34f3
 ::: {.text-center}
 
 [<button type="button" class="btn btn-info m-1">INSTALASI</button>](/docs/install.qmd)
-[<button type="button" class="btn btn-primary m-1">WORKSHEET FEIDMATH v0.1.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx)
+[<button type="button" class="btn btn-primary m-1">WORKBOOK FEIDMATH v0.1.0</button>](https://github.com/fiakoenjiniring/feidlambda/releases/download/v0.4.0/RELEASE_feidmath_v0_1_0.xlsx)
 
 :::
 
