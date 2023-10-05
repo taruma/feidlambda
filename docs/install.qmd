@@ -5,7 +5,7 @@ subtitle: |
   Panduan pemasangan koleksi feidlambda menggunakan Excel Labs: Advanced Formula Environment.
 author: Taruma Sakti Megariansyah
 date: 2022-10-20
-date-modified: 2023-05-26
+date-modified: 2023-10-06
 date-format: full
 lang: id
 
@@ -36,6 +36,11 @@ Panduan ini untuk instalasi dan penggunaan __Excel Labs: Advanced Formula Enviro
 ## **Excel Labs** {#sec-excel-labs}
 
 [**Excel Labs**](https://appsource.microsoft.com/en-us/product/office/WA200003696?exp=ubp8&tab=Overview) merupakan add-ins berisikan fitur eksperimental oleh tim Microsoft Excel. Pada add-ins ini tersedia _Advanced Formula Environment_ untuk memudahkan pengembangan dan penggunaan fungsi LAMBDA atau manipulasi formula di dalam Microsoft Excel. Add-ins tersebut wajib dipasang untuk dapat menggunakan koleksi feidlambda. Fitur LABS.GENERATIVEAI, saat ini tidak digunakan dalam penggunaan feidlambda. 
+
+::: {.callout-tip}
+# Menu Add-Ins
+Di versi terbaru Excel 365, menu Add-ins berada di ribbon `Home` > `Add-ins`, atau dapat diakses melalui `File` > `Get Add-Ins`.
+::: 
 
 - _Install_ add-ins **Excel Labs** dari menu `Insert` > `Get Add-ins` > Cari **Excel Labs** (AFE). 
 
