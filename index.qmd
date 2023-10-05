@@ -11,7 +11,7 @@ anchor-sections: false
 ---
 
 ::: {.text-center}
-![](/assets/original_feidlambda.png){width="300"}
+![](/assets/FEIDL2023_SQUARE_ORIGINAL_cropped.png){width="500"}
 :::
 
 ::: {.text-center .mb-4}
@@ -31,6 +31,8 @@ anchor-sections: false
 [<button type="button" class="btn btn-info m-1">MANUAL/API</button>](/release/latest.html)
 [<button type="button" class="btn btn-dark m-1">_SOURCE CODE_</button>](/release/source-code.qmd)
 [<button type="button" class="btn btn-danger m-1">OFFICIAL GIST</button>](https://gist.github.com/taruma/92bd33600a3d42dc9aead87558404a12)
+
+🚧 situs ini masih dalam pengembangan 🚧
 
 :::
 
