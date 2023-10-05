@@ -1,71 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lambda.fiako.engineering/index.html</loc>
-    <lastmod>2023-05-27T02:01:28.635Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/docs/penggunaan-v1.html</loc>
-    <lastmod>2023-05-27T02:01:29.403Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/docs/install-afe.html</loc>
-    <lastmod>2023-05-27T02:01:29.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
-    <lastmod>2023-05-27T02:01:30.323Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/docs/install.html</loc>
-    <lastmod>2023-05-27T02:01:30.755Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/docs/lambda-style-guide.html</loc>
-    <lastmod>2023-05-27T02:01:31.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/article/migration-v0-2-to-v0-3.html</loc>
-    <lastmod>2023-05-27T02:01:32.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/about.html</loc>
-    <lastmod>2023-05-27T02:01:32.375Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/greenhorn/index.html</loc>
-    <lastmod>2023-05-27T02:01:32.743Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/index.html</loc>
-    <lastmod>2023-05-27T02:01:33.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation.html</loc>
-    <lastmod>2023-05-27T02:01:34.491Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
-    <lastmod>2023-05-27T02:01:35.427Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lambda.fiako.engineering/release/feidmath-0-1.html</loc>
-    <lastmod>2023-05-27T02:01:36.079Z</lastmod>
+    <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
+    <lastmod>2023-10-05T21:31:29.317Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-4.html</loc>
-    <lastmod>2023-05-27T02:01:37.247Z</lastmod>
+    <lastmod>2023-10-05T21:31:30.961Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/source-code.html</loc>
-    <lastmod>2023-05-27T02:01:38.199Z</lastmod>
+    <lastmod>2023-10-05T21:31:32.017Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/release/feidmath-0-1.html</loc>
+    <lastmod>2023-10-05T21:31:33.065Z</lastmod>
   </url>
   <url>
     <loc>https://lambda.fiako.engineering/release/feidlambda-0-3.html</loc>
-    <lastmod>2023-05-27T02:01:39.607Z</lastmod>
+    <lastmod>2023-10-05T21:31:34.205Z</lastmod>
   </url>
   <url>
-    <loc>https://lambda.fiako.engineering/release/feidlambda-0-2-0.html</loc>
-    <lastmod>2023-05-27T02:01:40.231Z</lastmod>
+    <loc>https://lambda.fiako.engineering/release/feidlambda-0-1-0.html</loc>
+    <lastmod>2023-10-05T21:31:34.873Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/article/migration-v0-2-to-v0-3.html</loc>
+    <lastmod>2023-10-05T21:31:35.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/feidl2023/pertemuan-01/presentation.html</loc>
+    <lastmod>2023-10-05T21:31:36.933Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/feidl2023/pertemuan-01/index.html</loc>
+    <lastmod>2023-10-05T21:31:37.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/feidl2023/index.html</loc>
+    <lastmod>2023-10-05T21:31:38.137Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/index.html</loc>
+    <lastmod>2023-10-05T21:31:38.553Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/about.html</loc>
+    <lastmod>2023-10-05T21:31:38.925Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/penggunaan-v1.html</loc>
+    <lastmod>2023-10-05T21:31:39.405Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/install-afe.html</loc>
+    <lastmod>2023-10-05T21:31:39.873Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/lambda-style-guide.html</loc>
+    <lastmod>2023-10-05T21:31:40.841Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/glossary.html</loc>
+    <lastmod>2023-10-05T21:31:41.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/docs/install.html</loc>
+    <lastmod>2023-10-05T21:31:41.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/presentation.html</loc>
+    <lastmod>2023-10-05T21:31:43.285Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/feidlambda-2/index.html</loc>
+    <lastmod>2023-10-05T21:31:43.685Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lambda.fiako.engineering/greenhorn/index.html</loc>
+    <lastmod>2023-10-05T21:31:44.065Z</lastmod>
   </url>
 </urlset>
