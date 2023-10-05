@@ -2,10 +2,11 @@
 title: |
   Greenhorn:<br>feidlambda II
 subtitle: |
-  _**Exploring Dynamic Array + User Defined `Lambda` (UDL)**_
-date: |
+  _**Exploring Dynamic Array + User Defined `Lambda` (UDL)**_<br>
   _`v1.0 -> 25 Oktober 2022`_<br>
   [_`v2.0 -> 8 November 2022`_]
+date: |
+  2022-11-08
 author: |
   Taruma Sakti Megariansyah (**fiako**dev)
 format:
