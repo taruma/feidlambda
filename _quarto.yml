@@ -58,6 +58,15 @@ website:
       - text: Artikel
         menu:
         - href: article/migration-v0-2-to-v0-3.qmd
+        - text: greenhorn-feidl2022
+          href: greenhorn/feidlambda-2/presentation.qmd
+      - text: FEIDLAMBDA 2023
+        menu:
+        - href: feidl2023/index.qmd
+        - text: Website
+          href: https://bit.ly/feidlambda-2023
+        - text: Webinar
+          href: https://bit.ly/webinar-feidlambda-2023
         
     right:
       - icon: github

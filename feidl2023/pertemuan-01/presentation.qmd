@@ -19,7 +19,7 @@ format:
     theme: [dark, presentation.scss]
       # [dark] >-> night > moon > dark
       # [light] >-> default > serif (formal) > simple (code-like) > sky (code | thin / broken) 
-    logo: /fiakologo.png
+    logo: /assets/FEIDL2023_SQUARE_ORIGINAL_cropped.png
     transition: convex
     embed-resources: false
     touch: true

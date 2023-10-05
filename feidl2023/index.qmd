@@ -1,0 +1,34 @@
+---
+pagetitle: "FEIDLAMBDA 2023"
+# title: Home
+toc: false
+format: html
+html-math-method: mathjax
+link-external-newwindow: true
+page-layout: full
+sidebar: false
+---
+
+::: {.text-center}
+![](/assets/FEIDL2023_SQUARE_ORIGINAL_cropped.png){width="500"}
+:::
+
+::: {.text-center .m-0}
+# FEIDLAMBDA 2023 $[\text{\small{FEID}}{\lambda}^{20}_{23}]$
+### Explore the New and Exciting Features of Excel<br>Unleash The Power of Dynamic Array, LET, LAMBDA, and New Functions in 365
+:::
+
+::: {.text-center .callout-important appearance="simple" icon="false"}
+## Dalam Pengembangan
+Halaman ini masih dalam tahap pengembangan dan pelaksanaan. Seluruh materi yang disinggung akan dicatat di halaman ini. 
+:::
+
+::: {.text-center .fs-4}
+**Pertemuan Pertama** (08 Oktober 2023)<br>[Pengenalan Dynamic Array dan Fungsi Logika](pertemuan-01/index.qmd)
+
+**Pertemuan Kedua** (15 Oktober 2023)<br>Eksplorasi Fungsi LET dan Fungsi Baru di 365
+
+**Pertemuan Ketiga** (22 Oktober 2023)<br>Eksplorasi Fungsi LAMBDA dan Pengembangannya
+
+**Pertemuan Keempat** (29 Oktober 2023)<br>Kolaborasi dan Inovasi
+:::
