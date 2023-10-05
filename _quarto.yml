@@ -62,6 +62,7 @@ website:
           href: greenhorn/feidlambda-2/presentation.qmd
       - text: FEIDLAMBDA 2023
         menu:
+        - href: feidl2023/index.qmd
         - text: Website
           href: https://bit.ly/feidlambda-2023
         - text: Webinar
