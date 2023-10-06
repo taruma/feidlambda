@@ -16,14 +16,9 @@ sidebar: false
 author: Taruma Sakti Megariansyah
 date: 2023-10-08
 abstract: |
-    Pada feidlambda II, pembelajaran akan fokus untuk mengeksplorasi kegunaan _dynamic array formula_ dan penggunaan fungsi `LAMBDA`. 
+    Pada Pertemuan Pertama akan fokus ke gambaran besar manfaat dan kegunaan fitur dan fungsi yang dipelajari selama kegiatan.
+    Pertemuan ini memperkenalkan dynamic array dan memperlihatkan potensi inovasi yang dapat dikembangkan menggunakan fitur tersebut untuk membantu pekerjaan yang menggunakan Excel. Selain itu, pertemuan ini membahas fungsi logika dan fungsi baru di Excel 2021. 
 ---
-
-::: {.text-center .m-0}
-# FEIDLAMBDA 2023-01 
-### $[\text{\small{FEID}}{\lambda}^{20}_{23}]-01$
-### Explore the New and Exciting Features of Excel<br>Unleash The Power of Dynamic Array, LET, LAMBDA, and New Functions in 365
-:::
 
 Link Registrasi Pertemuan Pertama: [https://bit.ly/registrasi-webinar-1-feidlambda-2023](https://bit.ly/registrasi-webinar-1-feidlambda-2023)
 
